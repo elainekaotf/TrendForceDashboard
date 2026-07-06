@@ -23,39 +23,38 @@ Runs the FR-02-01..04 expansions in order:
 Platforms are derived from whatever FR-01's load_posts() returns (currently
 X and Facebook; LinkedIn is not yet scraped, see SRS Open Issue #3).
 
-Output: analysis/fuzzy_trends.json
+The "recent vs. prior" window is one of time_ranges.RANGE_ORDER (4h/8h/1d/
+1w/1q) - recent covers the window itself, prior covers the equal-length
+period immediately before it. Output: analysis/fuzzy_trends_<range>.json for
+each range, plus analysis/fuzzy_trends.json mirroring the 1w range (this
+script's original fixed window) for scripts that just want "the" rising list.
 """
 import json
 import os
 from collections import defaultdict
-from datetime import datetime, timedelta, timezone
+from datetime import timedelta, timezone
 
-from cluster_topics import ACCOUNTS, OWN_ACCOUNT, N_CLUSTERS, load_posts, label_cluster, cluster_posts
+from cluster_topics import N_CLUSTERS, load_posts, label_cluster, cluster_posts
+from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, parse_ts, format_window
 
 BASE = os.path.dirname(__file__)
 OUT_FILE = os.path.join(BASE, 'analysis', 'fuzzy_trends.json')
+LEGACY_RANGE = '1w'  # analysis/fuzzy_trends.json mirrors this range
+
+
+def range_out_file(range_key):
+    return os.path.join(BASE, 'analysis', f'fuzzy_trends_{range_key}.json')
+
 
 TOP_N_TOPICS = 10
 SUB_CLUSTERS_PER_TOPIC = 4
 MIN_SUBCLUSTER_DOCS = 5
 
-RECENT_WINDOW_DAYS = 7
-PRIOR_WINDOW_DAYS = 7
 
-
-def parse_ts(ts):
-    if not ts:
-        return None
-    try:
-        return datetime.fromisoformat(ts.replace('Z', '+00:00'))
-    except ValueError:
-        return None
-
-
-def split_windows(items, now):
+def split_windows(items, now, hours):
     """items: list of dicts with a parsed 'ts' datetime. Returns (recent, prior)."""
-    recent_start = now - timedelta(days=RECENT_WINDOW_DAYS)
-    prior_start = recent_start - timedelta(days=PRIOR_WINDOW_DAYS)
+    recent_start = now - timedelta(hours=hours)
+    prior_start = recent_start - timedelta(hours=hours)
     recent = [p for p in items if p['ts'] and p['ts'] >= recent_start]
     prior = [p for p in items if p['ts'] and prior_start <= p['ts'] < recent_start]
     return recent, prior
@@ -125,11 +124,11 @@ def normalize(values):
     return {k: (v - lo) / (hi - lo) for k, v in values.items()}
 
 
-def compute_entity_metrics(entities_posts, now):
+def compute_entity_metrics(entities_posts, now, hours):
     """entities_posts: {entity_key: [post,...]}. Returns raw growth/accel/spread per entity."""
     raw_growth, raw_accel, raw_spread = {}, {}, {}
     for key, posts in entities_posts.items():
-        recent, prior = split_windows(posts, now)
+        recent, prior = split_windows(posts, now, hours)
         recent_vol, prior_vol = len(recent), len(prior)
         recent_eng = sum(p['interaction'] for p in recent)
         prior_eng = sum(p['interaction'] for p in prior)
@@ -142,8 +141,8 @@ def compute_entity_metrics(entities_posts, now):
     return raw_growth, raw_accel, raw_spread
 
 
-def rank_entities(entities_posts, now, rationale_fn):
-    raw_growth, raw_accel, raw_spread = compute_entity_metrics(entities_posts, now)
+def rank_entities(entities_posts, now, hours, rationale_fn):
+    raw_growth, raw_accel, raw_spread = compute_entity_metrics(entities_posts, now, hours)
     norm_growth, norm_accel, norm_spread = normalize(raw_growth), normalize(raw_accel), normalize(raw_spread)
 
     scored = []
@@ -161,27 +160,31 @@ def rank_entities(entities_posts, now, rationale_fn):
     return scored
 
 
-def topic_rationale(growth, accel, spread):
+def topic_rationale(growth, accel, spread, window_label):
     parts = []
-    parts.append(f"volume {'+' if growth >= 0 else ''}{growth:.0%} vs prior {RECENT_WINDOW_DAYS}d")
+    parts.append(f"volume {'+' if growth >= 0 else ''}{growth:.0%} vs prior {window_label}")
     parts.append(f"engagement rate {'+' if accel >= 0 else ''}{accel:.0%}")
     parts.append(f"{spread} account(s) posting")
     return ', '.join(parts)
 
 
-def kol_rationale(growth, accel, spread):
-    return f"posts {'+' if growth >= 0 else ''}{growth:.0%}, engagement {'+' if accel >= 0 else ''}{accel:.0%} vs prior {RECENT_WINDOW_DAYS}d"
+def kol_rationale(growth, accel, spread, window_label):
+    return f"posts {'+' if growth >= 0 else ''}{growth:.0%}, engagement {'+' if accel >= 0 else ''}{accel:.0%} vs prior {window_label}"
 
 
-def compute_platform_trends(platform_posts, topic_labels, now):
+def compute_platform_trends(platform_posts, topic_labels, now, hours):
     """Run the FR-02-01..04 expansion chain for one platform's posts, which
     already carry a 'cluster_id' assigned from the cross-platform shared tree."""
+    window_label = format_window(hours)
+    topic_rat = lambda g, a, s: topic_rationale(g, a, s, window_label)
+    kol_rat = lambda g, a, s: kol_rationale(g, a, s, window_label)
+
     posts_by_topic = defaultdict(list)
     for p in platform_posts:
         posts_by_topic[p['cluster_id']].append(p)
 
     # FR-02-01: top-10 rising topics for this platform.
-    topic_ranking = rank_entities(posts_by_topic, now, topic_rationale)
+    topic_ranking = rank_entities(posts_by_topic, now, hours, topic_rat)
     for t in topic_ranking:
         t['topic_id'] = t.pop('key')
         t['label'] = topic_labels[t['topic_id']]
@@ -196,7 +199,7 @@ def compute_platform_trends(platform_posts, topic_labels, now):
         posts_by_account = defaultdict(list)
         for p in topic_posts:
             posts_by_account[p['handle']].append(p)
-        kol_ranking = rank_entities(posts_by_account, now, kol_rationale)
+        kol_ranking = rank_entities(posts_by_account, now, hours, kol_rat)
         for kol in kol_ranking:
             kol['handle'] = kol.pop('key')
 
@@ -212,7 +215,7 @@ def compute_platform_trends(platform_posts, topic_labels, now):
             for p in topic_posts:
                 posts_by_subtopic[p['sub_cluster_id']].append(p)
 
-            sub_ranking = rank_entities(posts_by_subtopic, now, topic_rationale)
+            sub_ranking = rank_entities(posts_by_subtopic, now, hours, topic_rat)
             for sub in sub_ranking:
                 sid = sub.pop('key')
                 sub['sub_topic_id'] = sid
@@ -222,7 +225,7 @@ def compute_platform_trends(platform_posts, topic_labels, now):
                 sub_posts_by_account = defaultdict(list)
                 for p in posts_by_subtopic[sid]:
                     sub_posts_by_account[p['handle']].append(p)
-                sub_kol_ranking = rank_entities(sub_posts_by_account, now, kol_rationale)
+                sub_kol_ranking = rank_entities(sub_posts_by_account, now, hours, kol_rat)
                 for kol in sub_kol_ranking:
                     kol['handle'] = kol.pop('key')
                 sub['rising_kols'] = sub_kol_ranking
@@ -233,6 +236,12 @@ def compute_platform_trends(platform_posts, topic_labels, now):
         result_topics.append(topic)
 
     return result_topics
+
+
+def write_json(path, result):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(result, f, ensure_ascii=False, indent=2)
 
 
 def main(now=None):
@@ -257,24 +266,41 @@ def main(now=None):
     for cid in set(labels):
         topic_labels[int(cid)] = ' / '.join(label_cluster(vectorizer, km.cluster_centers_[cid])) or f'cluster-{cid}'
 
-    platforms_out = {}
-    for platform in sorted({p['platform'] for p in posts}):
-        platform_posts = [p for p in posts if p['platform'] == platform]
-        result_topics = compute_platform_trends(platform_posts, topic_labels, now)
-        platforms_out[platform] = {'top_rising_topics': result_topics}
+    platforms = sorted({p['platform'] for p in posts})
+    written = 0
+    for range_key in RANGE_ORDER:
+        hours = RANGE_HOURS[range_key]
+        platforms_out = {}
+        for platform in platforms:
+            platform_posts = [p for p in posts if p['platform'] == platform
+                               and p['ts'] and p['ts'] >= now - timedelta(hours=hours * 2)]
+            if len(platform_posts) < MIN_WINDOW_POSTS:
+                continue
+            result_topics = compute_platform_trends(platform_posts, topic_labels, now, hours)
+            if result_topics:
+                platforms_out[platform] = {'top_rising_topics': result_topics}
 
-    result = {
-        'generated_at': now.isoformat(),
-        'windows': {'recent_days': RECENT_WINDOW_DAYS, 'prior_days': PRIOR_WINDOW_DAYS},
-        'platforms': platforms_out,
-    }
+        if not platforms_out:
+            print(f"Skipping {range_key}: no platform had enough posts in the recent+prior window.")
+            continue
 
-    os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
-    with open(OUT_FILE, 'w', encoding='utf-8') as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
+        result = {
+            'generated_at': now.isoformat(),
+            'range': range_key,
+            'window_hours': hours,
+            'platforms': platforms_out,
+        }
+        write_json(range_out_file(range_key), result)
+        if range_key == LEGACY_RANGE:
+            write_json(OUT_FILE, result)
 
-    total_topics = sum(len(v['top_rising_topics']) for v in platforms_out.values())
-    print(f"Wrote {total_topics} rising topics across {len(platforms_out)} platform(s) to {OUT_FILE}")
+        total_topics = sum(len(v['top_rising_topics']) for v in platforms_out.values())
+        print(f"[{range_key}] Wrote {total_topics} rising topics across {len(platforms_out)} platform(s) "
+              f"to {range_out_file(range_key)}")
+        written += 1
+
+    if written == 0:
+        print("No range had enough posts to run fuzzy trend prediction.")
 
 
 if __name__ == '__main__':

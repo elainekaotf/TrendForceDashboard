@@ -56,7 +56,7 @@ case "$JOB" in
   core)
     run_step "cluster_topics"  cluster_topics.py
     run_step "fuzzy_trend"     fuzzy_trend.py
-    run_step "nlp_sentiment"   nlp_sentiment.py daily
+    run_step "nlp_sentiment"   nlp_sentiment.py
     run_step "manual_review"   manual_review.py build
     ;;
   accounts)

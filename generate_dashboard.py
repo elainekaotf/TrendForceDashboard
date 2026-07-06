@@ -5,14 +5,19 @@ pipeline produces into something a person can actually look at.
 
 Reads whichever of these are present (skips sections gracefully if a file
 is missing, e.g. before the first pipeline run):
-  analysis/topic_clusters.json     FR-01 gaps
-  analysis/fuzzy_trends.json       FR-02 rising topics/KOLs
-  analysis/sentiment_dashboard.json FR-03 widgets
-  analysis/daily_summaries.json    FR-06 executive summaries
-  analysis/account_status.json     FR-05 account status
-  analysis/reply_queue.json        FR-05 reply drafts
-  analysis/review_queue.json       FR-04 review queue (summarized as counts
-                                    only - too large to list in full)
+  analysis/topic_clusters_<range>.json     FR-01 gaps, one per time range
+  analysis/fuzzy_trends_<range>.json       FR-02 rising topics/KOLs, one per range
+  analysis/sentiment_dashboard_<range>.json FR-03 widgets, one per range
+  analysis/daily_summaries.json            FR-06 executive summaries
+  analysis/account_status.json             FR-05 account status
+  analysis/reply_queue.json                FR-05 reply drafts
+  analysis/review_queue.json               FR-04 review queue (summarized as
+                                            counts only - too large to list in full)
+
+Topic Gaps, Rising Trends, and Sentiment all support a client-side time-range
+switch (4h/8h/1d/1w/1q, see time_ranges.py): every range's HTML is
+pre-rendered at build time and embedded in the page, and a dropdown just
+swaps which pre-rendered block is shown - no server or re-fetch needed.
 
 Static HTML + inline CSS/JS, no build step - open docs/index.html directly
 or serve docs/ (e.g. GitHub Pages, matching TrendforceTwitterScraper's setup).
@@ -22,11 +27,14 @@ import os
 import urllib.parse
 from datetime import datetime, timezone, timedelta
 
+from time_ranges import RANGE_ORDER, RANGE_LABELS
+
 BASE = os.path.dirname(__file__)
 ANALYSIS_DIR = os.path.join(BASE, 'analysis')
 DOCS_DIR = os.path.join(BASE, 'docs')
 OUT_FILE = os.path.join(DOCS_DIR, 'index.html')
 TAIWAN_TZ = timezone(timedelta(hours=8))
+DEFAULT_DASHBOARD_RANGE = '1d'
 
 _FAVICON_SVG_RAW = '''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
 <rect width="32" height="32" rx="7" fill="#0d1117"/>
@@ -223,15 +231,38 @@ def render_review_queue(data):
 def main():
     os.makedirs(DOCS_DIR, exist_ok=True)
 
-    topic_clusters = load('topic_clusters.json')
-    fuzzy_trends = load('fuzzy_trends.json')
-    sentiment_dashboard = load('sentiment_dashboard.json')
+    gaps_html_by_range = {}
+    rising_html_by_range = {}
+    sentiment_html_by_range = {}
+    available_ranges = []
+    for range_key in RANGE_ORDER:
+        topic_clusters = load(f'topic_clusters_{range_key}.json')
+        fuzzy_trends = load(f'fuzzy_trends_{range_key}.json')
+        sentiment_dashboard = load(f'sentiment_dashboard_{range_key}.json')
+        if topic_clusters or fuzzy_trends or sentiment_dashboard:
+            available_ranges.append(range_key)
+        gaps_html_by_range[range_key] = render_topic_gaps(topic_clusters)
+        rising_html_by_range[range_key] = render_rising_topics(fuzzy_trends)
+        sentiment_html_by_range[range_key] = render_sentiment(sentiment_dashboard)
+
+    default_range = DEFAULT_DASHBOARD_RANGE if DEFAULT_DASHBOARD_RANGE in available_ranges else (
+        available_ranges[0] if available_ranges else RANGE_ORDER[0])
+
     daily_summaries = load('daily_summaries.json')
     account_status = load('account_status.json')
     reply_queue = load('reply_queue.json')
     review_queue = load('review_queue.json')
 
     now_tw = datetime.now(TAIWAN_TZ).strftime('%B %d, %Y %H:%M Taiwan Time')
+
+    range_options = ''.join(
+        f'<option value="{r}"{" selected" if r == default_range else ""}>{esc(RANGE_LABELS[r])}</option>'
+        for r in RANGE_ORDER)
+    range_data_json = json.dumps({
+        'gaps': gaps_html_by_range,
+        'rising': rising_html_by_range,
+        'sentiment': sentiment_html_by_range,
+    }, ensure_ascii=False)
 
     html = f"""<!doctype html>
 <html lang="en"><head>
@@ -252,6 +283,10 @@ def main():
                 cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; }}
   nav button.active {{ color: var(--text); border-bottom-color: var(--blue); }}
   main {{ padding: 24px 32px; max-width: 1200px; margin: 0 auto; }}
+  .range-bar {{ display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }}
+  .range-bar label {{ color: var(--muted); font-size: 13px; }}
+  .range-bar select {{ background: var(--surface); color: var(--text); border: 1px solid var(--border);
+                        border-radius: 6px; padding: 6px 10px; font-size: 13px; }}
   section {{ display: none; }}
   section.active {{ display: block; }}
   h2 {{ font-size: 18px; margin-top: 0; }}
@@ -306,23 +341,41 @@ def main():
   <button class="tab-btn" data-tab="review">Review Queue</button>
 </nav>
 <main>
-  <section id="gaps" class="active"><h2>FR-01 &middot; Topic Gaps</h2>{render_topic_gaps(topic_clusters)}</section>
-  <section id="rising"><h2>FR-02 &middot; Rising Topics &amp; KOLs</h2>{render_rising_topics(fuzzy_trends)}</section>
-  <section id="sentiment"><h2>FR-03 &middot; Sentiment Dashboard</h2>{render_sentiment(sentiment_dashboard)}</section>
+  <div id="range-bar" class="range-bar">
+    <label for="range-select">Time range</label>
+    <select id="range-select">{range_options}</select>
+  </div>
+  <section id="gaps" class="active" data-ranged="true"><h2>FR-01 &middot; Topic Gaps</h2><div id="gaps-content"></div></section>
+  <section id="rising" data-ranged="true"><h2>FR-02 &middot; Rising Topics &amp; KOLs</h2><div id="rising-content"></div></section>
+  <section id="sentiment" data-ranged="true"><h2>FR-03 &middot; Sentiment Dashboard</h2><div id="sentiment-content"></div></section>
   <section id="summaries"><h2>FR-06 &middot; Daily Executive Summaries</h2>{render_summaries(daily_summaries)}</section>
   <section id="accounts"><h2>FR-05 &middot; Account Status</h2>{render_accounts(account_status)}</section>
   <section id="replies"><h2>FR-05 &middot; Reply Queue</h2>{render_reply_queue(reply_queue)}</section>
   <section id="review"><h2>FR-04 &middot; Manual Review Queue</h2>{render_review_queue(review_queue)}</section>
 </main>
 <script>
+  const RANGE_HTML = {range_data_json};
+
   document.querySelectorAll('.tab-btn').forEach(btn => {{
     btn.addEventListener('click', () => {{
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.querySelectorAll('main section').forEach(s => s.classList.remove('active'));
       btn.classList.add('active');
-      document.getElementById(btn.dataset.tab).classList.add('active');
+      const target = document.getElementById(btn.dataset.tab);
+      target.classList.add('active');
+      document.getElementById('range-bar').style.display =
+        target.dataset.ranged === 'true' ? 'flex' : 'none';
     }});
   }});
+
+  function applyRange(range) {{
+    document.getElementById('gaps-content').innerHTML = RANGE_HTML.gaps[range] || '';
+    document.getElementById('rising-content').innerHTML = RANGE_HTML.rising[range] || '';
+    document.getElementById('sentiment-content').innerHTML = RANGE_HTML.sentiment[range] || '';
+  }}
+
+  document.getElementById('range-select').addEventListener('change', e => applyRange(e.target.value));
+  applyRange(document.getElementById('range-select').value);
 </script>
 </body></html>"""
 

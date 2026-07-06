@@ -6,9 +6,10 @@ the scrapers into `translated_text`/`keywords`) + sentiment analysis (VADER,
 same engine used by TrendforceTwitterScraper/sentiment.py) + a fuzzy decision
 layer that fuses volume/engagement into heat & focus scores.
 
-Time range is selectable (hourly / 4h / daily / monthly / quarterly); all
-widgets recompute over the selected range. Reuses FR-01's topic clusters
-(cluster_topics.py) for topic-shaped widgets.
+Time range is selectable (4h / 8h / 1d / 1w / 1q - see time_ranges.py, shared
+with FR-01/FR-02 so all three line up); all widgets recompute over the
+selected range. Reuses FR-01's topic clusters (cluster_topics.py) for
+topic-shaped widgets.
 
 Widgets (FR-03-01..09):
   01 sentiment_overview        - real-time snapshot of volume/sentiment/topics
@@ -24,7 +25,9 @@ Widgets (FR-03-01..09):
 Platforms are derived from whatever FR-01's load_posts() returns (currently
 X and Facebook; LinkedIn is not yet scraped, see SRS Open Issue #3).
 
-Output: analysis/sentiment_dashboard.json
+Output: analysis/sentiment_dashboard_<range>.json for each range, plus
+analysis/sentiment_dashboard.json mirroring the 1d range (this script's
+original default) for scripts that just want "the" dashboard.
 """
 import json
 import os
@@ -33,19 +36,20 @@ from datetime import datetime, timedelta, timezone
 
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
-from cluster_topics import ACCOUNTS, OWN_ACCOUNT, N_CLUSTERS, load_posts, label_cluster, cluster_posts
+from cluster_topics import N_CLUSTERS, load_posts, label_cluster, cluster_posts
+from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS
 
 BASE = os.path.dirname(__file__)
 OUT_FILE = os.path.join(BASE, 'analysis', 'sentiment_dashboard.json')
+LEGACY_RANGE = '1d'  # analysis/sentiment_dashboard.json mirrors this range
 
-TIME_RANGES = {
-    'hourly': timedelta(hours=1),
-    '4h': timedelta(hours=4),
-    'daily': timedelta(days=1),
-    'monthly': timedelta(days=30),
-    'quarterly': timedelta(days=90),
-}
-DEFAULT_RANGE = 'daily'
+
+def range_out_file(range_key):
+    return os.path.join(BASE, 'analysis', f'sentiment_dashboard_{range_key}.json')
+
+
+TIME_RANGES = {key: timedelta(hours=hours) for key, hours in RANGE_HOURS.items()}
+DEFAULT_RANGE = LEGACY_RANGE
 
 TIME_SLOTS = [
     ('morning', 6, 12),
@@ -261,24 +265,13 @@ def widget_posting_timeslot_analysis(posts):
     return {'slots': slots, 'peak_slot': peak_slot}
 
 
-def main(time_range=DEFAULT_RANGE, keyword=None, now=None):
-    if time_range not in TIME_RANGES:
-        raise ValueError(f"time_range must be one of {list(TIME_RANGES)}")
+def build_dashboard(all_posts, time_range, now, keyword=None):
+    """Builds the widget dict for one time range. Returns None if there
+    aren't enough posts in the window to report a stable result."""
     span = TIME_RANGES[time_range]
-
-    all_posts = load_dashboard_posts()
-    if not all_posts:
-        print("No posts available, skipping.")
-        return
-
-    if now is None:
-        timestamps = [p['ts'] for p in all_posts if p['ts']]
-        now = max(timestamps) if timestamps else datetime.now(timezone.utc)
-
     posts = [p for p in all_posts if in_range(p, now, span)]
-    if not posts:
-        print(f"No posts in the last {time_range} window, falling back to all posts for widget shape.")
-        posts = all_posts
+    if len(posts) < MIN_WINDOW_POSTS:
+        return None
 
     # Shared topic tree with FR-01/FR-02.
     vectorizer, X, km, labels = cluster_posts(posts, N_CLUSTERS)
@@ -315,15 +308,49 @@ def main(time_range=DEFAULT_RANGE, keyword=None, now=None):
         result['widgets']['platform_keyword_ranking'] = None
         result['note'] = 'competitor_mentions/platform_share_bar/platform_keyword_ranking require a keyword argument'
 
-    os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
-    with open(OUT_FILE, 'w', encoding='utf-8') as f:
+    return result
+
+
+def write_json(path, result):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
-    print(f"Wrote sentiment dashboard ({time_range}, {len(posts)} posts) to {OUT_FILE}")
+
+def main(time_range=None, keyword=None, now=None):
+    """time_range=None builds all of RANGE_ORDER; pass a specific range to
+    build just that one (used by ad hoc CLI runs)."""
+    all_posts = load_dashboard_posts()
+    if not all_posts:
+        print("No posts available, skipping.")
+        return
+
+    if now is None:
+        timestamps = [p['ts'] for p in all_posts if p['ts']]
+        now = max(timestamps) if timestamps else datetime.now(timezone.utc)
+
+    ranges = [time_range] if time_range else RANGE_ORDER
+    written = 0
+    for rng in ranges:
+        if rng not in TIME_RANGES:
+            raise ValueError(f"time_range must be one of {list(TIME_RANGES)}")
+        result = build_dashboard(all_posts, rng, now, keyword)
+        if result is None:
+            print(f"Skipping {rng}: fewer than {MIN_WINDOW_POSTS} posts in window.")
+            continue
+        write_json(range_out_file(rng), result)
+        if rng == LEGACY_RANGE:
+            write_json(OUT_FILE, result)
+        n_posts = result['widgets']['sentiment_overview']['total_posts']
+        print(f"[{rng}] Wrote sentiment dashboard ({n_posts} posts) to {range_out_file(rng)}")
+        written += 1
+
+    if written == 0:
+        print("No range had enough posts to build a sentiment dashboard.")
 
 
 if __name__ == '__main__':
     import sys
     kw = sys.argv[2] if len(sys.argv) > 2 else None
-    rng = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_RANGE
+    rng = sys.argv[1] if len(sys.argv) > 1 else None
     main(time_range=rng, keyword=kw)

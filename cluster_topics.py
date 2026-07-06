@@ -13,10 +13,21 @@ Platforms covered (PLATFORM_ACCOUNTS below):
               QQ_Timmy, technews_tw
   - Facebook: TrendForce.tw (own) vs. ctee.fans, yutinghaosfinance
 
-Output: analysis/topic_clusters.json
+Output: analysis/topic_clusters_<range>.json for each of time_ranges.RANGE_ORDER
+(4h/8h/1d/1w/1q), plus analysis/topic_clusters.json for the broadest (1q)
+range, kept for scripts that just want "the" topic tree without picking a
+window.
   - clusters: [{id, label, top_terms, size, accounts: {handle: count}}]
   - gaps: topics with strong competitor presence but weak/no own-account coverage
   - suggested_entry_points: gap topics ranked by competitor engagement
+
+The K-Means tree itself is fit ONCE on all available posts (clustering needs
+enough documents to be stable - a 4h window rarely has enough). Each range
+just filters which posts count toward cluster sizes/gaps using that same
+shared tree, so "topic labels" are identical across ranges - only the
+volume/engagement numbers (and which gaps clear the threshold) change.
+Windows with fewer than time_ranges.MIN_WINDOW_POSTS matching posts are
+skipped rather than reported as a misleadingly precise zero.
 
 Scope note: LinkedIn competitor sources are not yet collected (see SRS Data
 Requirements / Open Issue #3) and are out of scope until that crawler exists.
@@ -31,10 +42,17 @@ from datetime import datetime
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 
+from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, parse_ts, window_bounds
+
 BASE = os.path.dirname(__file__)
 CSV_DIR = os.path.join(BASE, 'csv')
 FACEBOOK_CSV_DIR = os.path.join(CSV_DIR, 'facebook')
 OUT_FILE = os.path.join(BASE, 'analysis', 'topic_clusters.json')
+LEGACY_RANGE = '1q'  # analysis/topic_clusters.json mirrors this range
+
+
+def range_out_file(range_key):
+    return os.path.join(BASE, 'analysis', f'topic_clusters_{range_key}.json')
 
 PLATFORM_ACCOUNTS = {
     'X': {
@@ -167,17 +185,11 @@ def cluster_posts(posts, n_clusters=N_CLUSTERS, min_docs_per_cluster=5):
     return vectorizer, X, km, labels
 
 
-def main():
-    posts = load_posts()
-    if len(posts) < MIN_DOCS:
-        print(f"Not enough posts ({len(posts)}) for {N_CLUSTERS} clusters, skipping.")
-        return
-
-    vectorizer, X, km, labels = cluster_posts(posts, N_CLUSTERS)
-    k = km.n_clusters
-
+def summarize_clusters(posts, labels, topic_labels):
+    """Build clusters/gaps for whatever subset of (posts, labels) is passed
+    in - the caller decides the time window, if any."""
     clusters = []
-    for cid in range(k):
+    for cid in sorted(set(labels)):
         idxs = [i for i, l in enumerate(labels) if l == cid]
         if not idxs:
             continue
@@ -186,11 +198,9 @@ def main():
         for i in idxs:
             by_account[posts[i]['handle']] += 1
             engagement_by_account[posts[i]['handle']] += posts[i]['interaction']
-        top_terms = label_cluster(vectorizer, km.cluster_centers_[cid])
         clusters.append({
-            'id': cid,
-            'label': ' / '.join(top_terms) if top_terms else f'cluster-{cid}',
-            'top_terms': top_terms,
+            'id': int(cid),
+            'label': topic_labels[cid],
             'size': len(idxs),
             'accounts': dict(by_account),
             'engagement_by_account': dict(engagement_by_account),
@@ -211,20 +221,59 @@ def main():
                 'competitor_engagement': competitor_engagement,
                 'competitors_covering': [k for k in c['accounts'] if k not in OWN_HANDLES],
             })
-
     gaps.sort(key=lambda g: g['competitor_engagement'], reverse=True)
 
-    result = {
+    return {
         'clusters': sorted(clusters, key=lambda c: c['size'], reverse=True),
         'gaps': gaps,
         'suggested_entry_points': gaps[:5],
     }
 
-    os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
-    with open(OUT_FILE, 'w', encoding='utf-8') as f:
+
+def write_json(path, result):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
-    print(f"Wrote {len(clusters)} clusters, {len(gaps)} topic gaps to {OUT_FILE}")
+
+def main():
+    posts = load_posts()
+    if len(posts) < MIN_DOCS:
+        print(f"Not enough posts ({len(posts)}) for {N_CLUSTERS} clusters, skipping.")
+        return
+
+    # Fit the tree once on everything - short windows rarely have enough
+    # posts to cluster on their own, so every range reuses this same tree
+    # and just filters which posts count.
+    vectorizer, X, km, labels = cluster_posts(posts, N_CLUSTERS)
+    topic_labels = {int(cid): (' / '.join(label_cluster(vectorizer, km.cluster_centers_[cid])) or f'cluster-{cid}')
+                    for cid in set(labels)}
+
+    timestamps = [parse_ts(p['timestamp']) for p in posts]
+    now = max((t for t in timestamps if t), default=None)
+
+    written = 0
+    for range_key in RANGE_ORDER:
+        if now is None:
+            break
+        start, end = window_bounds(range_key, now)
+        idxs = [i for i, t in enumerate(timestamps) if t and start <= t <= end]
+        if len(idxs) < MIN_WINDOW_POSTS:
+            print(f"Skipping {range_key}: only {len(idxs)} posts in window (need {MIN_WINDOW_POSTS}).")
+            continue
+
+        window_posts = [posts[i] for i in idxs]
+        window_labels = [labels[i] for i in idxs]
+        result = summarize_clusters(window_posts, window_labels, topic_labels)
+        write_json(range_out_file(range_key), result)
+        if range_key == LEGACY_RANGE:
+            write_json(OUT_FILE, result)
+        print(f"[{range_key}] Wrote {len(result['clusters'])} clusters, {len(result['gaps'])} topic gaps "
+              f"({len(idxs)} posts) to {range_out_file(range_key)}")
+        written += 1
+
+    if written == 0:
+        print("No range had enough posts to summarize.")
 
 
 if __name__ == '__main__':

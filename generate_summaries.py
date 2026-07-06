@@ -185,8 +185,8 @@ def main():
     # Sentiment/engagement summaries need the "Daily" cadence the SRS
     # specifies for FR-06, regardless of what time_range nlp_sentiment.py
     # was last run with for other purposes.
-    nlp_sentiment.main(time_range='daily')
-    with open(nlp_sentiment.OUT_FILE, encoding='utf-8') as f:
+    nlp_sentiment.main(time_range='1d')
+    with open(nlp_sentiment.range_out_file('1d'), encoding='utf-8') as f:
         daily_dashboard = json.load(f)
 
     summaries = []
