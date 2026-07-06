@@ -20,6 +20,9 @@
 #            separately. FR-04 refreshes again to queue the day's
 #            summaries for review.
 #
+# Every job ends by regenerating docs/index.html (generate_dashboard.py)
+# so the dashboard reflects whatever that job just produced.
+#
 # FR-07 (self-service upload) is user-triggered, not scheduled - it isn't
 # part of any job here.
 #
@@ -68,6 +71,10 @@ case "$JOB" in
     exit 1
     ;;
 esac
+
+# Regenerate the dashboard (docs/index.html) after every job so it always
+# reflects whichever analysis files that job just refreshed.
+run_step "generate_dashboard" generate_dashboard.py
 
 if [ ${#FAILURES[@]} -gt 0 ]; then
   JOINED=$(IFS=', '; echo "${FAILURES[*]}")
