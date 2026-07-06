@@ -2,15 +2,18 @@
 FR-04 Manual Review & Detail View.
 
 Human review of automated outputs from FR-01 (topic clustering), FR-02
-(rising-KOL calls), and FR-03 (sentiment) to catch misclassifications before
-they reach the executive summaries (FR-06) or self-service export (FR-07).
+(rising-KOL calls), FR-03 (sentiment), and FR-06 (executive summaries) to
+catch misclassifications before they reach stakeholders or self-service
+export (FR-07).
 
-Two record types are queued for review:
+Three record types are queued for review:
   - 'post'      one per scraped post: its assigned topic (FR-01) and
                 sentiment label (FR-03), correctable to a different topic
                 or sentiment.
   - 'kol_rising' one per (topic, handle) the last fuzzy_trend.py run flagged
                 as a rising KOL (FR-02), correctable to confirm/reject the call.
+  - 'summary'   one per generate_summaries.py daily executive summary
+                (FR-06), correctable to a rewritten summary text.
 
 Review state persists in analysis/review_queue.json, keyed by a content
 hash so re-running `build` after a data refresh adds newly-seen records
@@ -42,6 +45,7 @@ BASE = os.path.dirname(__file__)
 QUEUE_FILE = os.path.join(BASE, 'analysis', 'review_queue.json')
 CORRECTION_LOG_FILE = os.path.join(BASE, 'analysis', 'correction_log.jsonl')
 FUZZY_TRENDS_FILE = os.path.join(BASE, 'analysis', 'fuzzy_trends.json')
+DAILY_SUMMARIES_FILE = os.path.join(BASE, 'analysis', 'daily_summaries.json')
 
 
 def record_id(*parts):
@@ -121,6 +125,32 @@ def build_kol_rising_records():
     return records
 
 
+def build_summary_records():
+    """One record per FR-06 daily executive summary, so a reviewer can spot
+    check length/tone/accuracy before it goes out."""
+    if not os.path.exists(DAILY_SUMMARIES_FILE):
+        return {}
+    with open(DAILY_SUMMARIES_FILE, encoding='utf-8') as f:
+        report = json.load(f)
+
+    records = {}
+    for s in report.get('summaries', []):
+        rid = record_id('summary', report['date'], s['id'])
+        records[rid] = {
+            'id': rid,
+            'type': 'summary',
+            'platform': s['ref'].get('platform', 'N/A'),
+            'handle': '',
+            'generated_at': report['generated_at'],
+            'automated': {
+                'category': s['category'],
+                'text': s['text'],
+                'char_count': s['char_count'],
+            },
+        }
+    return records
+
+
 def build():
     posts = load_dashboard_posts()
     if not posts:
@@ -137,6 +167,7 @@ def build():
     new_records = {}
     new_records.update(build_post_records(posts, labels, topic_labels))
     new_records.update(build_kol_rising_records())
+    new_records.update(build_summary_records())
 
     queue = load_queue()
     added, refreshed = 0, 0
@@ -168,7 +199,8 @@ def list_records(status=None, type_=None, limit=20):
         records = [r for r in records if r['type'] == type_]
     records.sort(key=lambda r: r.get('timestamp') or r.get('generated_at') or '', reverse=True)
     for r in records[:limit]:
-        label = r['automated'].get('topic_label') or r['automated'].get('rationale', '')
+        label = (r['automated'].get('topic_label') or r['automated'].get('rationale')
+                 or r['automated'].get('text', ''))
         print(f"{r['id']}  [{r['status']:9}] {r['type']:11} {r['platform']:8} {r['handle']:20} {label}")
     print(f"({min(len(records), limit)} of {len(records)} shown)")
 
@@ -195,7 +227,7 @@ def approve_record(rid, reviewer):
     print(f"Approved {rid}")
 
 
-def correct_record(rid, reviewer, topic_label=None, sentiment=None, is_rising=None, notes=None):
+def correct_record(rid, reviewer, topic_label=None, sentiment=None, is_rising=None, summary_text=None, notes=None):
     queue = load_queue()
     rec = queue.get(rid)
     if not rec:
@@ -209,8 +241,12 @@ def correct_record(rid, reviewer, topic_label=None, sentiment=None, is_rising=No
         correction['sentiment'] = sentiment
     if is_rising is not None:
         correction['is_rising'] = is_rising
+    if summary_text is not None:
+        if not (80 <= len(summary_text) <= 120):
+            print(f"Warning: corrected summary is {len(summary_text)} chars, outside the 80-120 spec.")
+        correction['text'] = summary_text
     if not correction:
-        print("No correction fields given (use --topic-label / --sentiment / --is-rising).")
+        print("No correction fields given (use --topic-label / --sentiment / --is-rising / --summary-text).")
         return
 
     rec['status'] = 'corrected'
@@ -242,7 +278,7 @@ def main():
 
     p_list = sub.add_parser('list')
     p_list.add_argument('--status', choices=['pending', 'approved', 'corrected'])
-    p_list.add_argument('--type', dest='type_', choices=['post', 'kol_rising'])
+    p_list.add_argument('--type', dest='type_', choices=['post', 'kol_rising', 'summary'])
     p_list.add_argument('--limit', type=int, default=20)
 
     p_show = sub.add_parser('show')
@@ -258,6 +294,7 @@ def main():
     p_correct.add_argument('--topic-label')
     p_correct.add_argument('--sentiment', choices=['positive', 'neutral', 'negative'])
     p_correct.add_argument('--is-rising', choices=['true', 'false'])
+    p_correct.add_argument('--summary-text')
     p_correct.add_argument('--notes')
 
     args = parser.parse_args()
@@ -271,7 +308,8 @@ def main():
         approve_record(args.record_id, args.reviewer)
     elif args.command == 'correct':
         is_rising = {'true': True, 'false': False, None: None}[args.is_rising]
-        correct_record(args.record_id, args.reviewer, args.topic_label, args.sentiment, is_rising, args.notes)
+        correct_record(args.record_id, args.reviewer, args.topic_label, args.sentiment, is_rising,
+                        args.summary_text, args.notes)
 
 
 if __name__ == '__main__':
