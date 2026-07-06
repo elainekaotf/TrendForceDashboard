@@ -37,7 +37,7 @@ from datetime import datetime, timedelta, timezone
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 from cluster_topics import N_CLUSTERS, load_posts, label_cluster, cluster_posts
-from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS
+from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, window_dict
 
 BASE = os.path.dirname(__file__)
 OUT_FILE = os.path.join(BASE, 'analysis', 'sentiment_dashboard.json')
@@ -286,6 +286,7 @@ def build_dashboard(all_posts, time_range, now, keyword=None):
     result = {
         'generated_at': now.isoformat(),
         'time_range': time_range,
+        'window': window_dict(now - span, now),
         'keyword': keyword,
         'widgets': {
             'sentiment_overview': widget_sentiment_overview(posts),

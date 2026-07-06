@@ -35,7 +35,7 @@ from collections import defaultdict
 from datetime import timedelta, timezone
 
 from cluster_topics import N_CLUSTERS, load_posts, label_cluster, cluster_posts
-from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, parse_ts, format_window
+from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, parse_ts, format_window, window_dict
 
 BASE = os.path.dirname(__file__)
 OUT_FILE = os.path.join(BASE, 'analysis', 'fuzzy_trends.json')
@@ -288,6 +288,7 @@ def main(now=None):
             'generated_at': now.isoformat(),
             'range': range_key,
             'window_hours': hours,
+            'window': window_dict(now - timedelta(hours=hours), now),
             'platforms': platforms_out,
         }
         write_json(range_out_file(range_key), result)

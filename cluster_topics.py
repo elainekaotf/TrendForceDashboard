@@ -42,7 +42,7 @@ from datetime import datetime
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 
-from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, parse_ts, window_bounds
+from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, parse_ts, window_bounds, window_dict
 
 BASE = os.path.dirname(__file__)
 CSV_DIR = os.path.join(BASE, 'csv')
@@ -265,6 +265,7 @@ def main():
         window_posts = [posts[i] for i in idxs]
         window_labels = [labels[i] for i in idxs]
         result = summarize_clusters(window_posts, window_labels, topic_labels)
+        result['window'] = window_dict(start, end)
         write_json(range_out_file(range_key), result)
         if range_key == LEGACY_RANGE:
             write_json(OUT_FILE, result)

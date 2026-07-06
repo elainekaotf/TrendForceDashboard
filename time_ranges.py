@@ -4,7 +4,7 @@ Shared time-range vocabulary for FR-01/02/03, so "4h / 8h / 1 day / 1 week /
 its own labels (FR-03 previously had hourly/4h/daily/monthly/quarterly,
 which didn't line up with FR-01/02 at all).
 """
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 RANGE_HOURS = {
     '4h': 4,
@@ -46,3 +46,23 @@ def format_window(hours):
     if hours < 24:
         return f"{hours}h"
     return f"{hours // 24}d"
+
+
+TAIWAN_TZ = timezone(timedelta(hours=8))
+
+
+def taiwan_str(dt):
+    return dt.astimezone(TAIWAN_TZ).strftime('%b %d, %H:%M')
+
+
+def window_dict(start, end):
+    """JSON-friendly window bounds, in UTC ISO and pre-formatted Taiwan time -
+    every range script's "now" is the latest scraped post, not wall-clock
+    time, so callers must show this explicitly (see the dashboard's range
+    caption) rather than implying "now" means "right now"."""
+    return {
+        'start_utc': start.isoformat(),
+        'end_utc': end.isoformat(),
+        'start_tw': taiwan_str(start),
+        'end_tw': taiwan_str(end),
+    }

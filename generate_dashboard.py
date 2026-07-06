@@ -234,6 +234,7 @@ def main():
     gaps_html_by_range = {}
     rising_html_by_range = {}
     sentiment_html_by_range = {}
+    window_caption_by_range = {}
     available_ranges = []
     for range_key in RANGE_ORDER:
         topic_clusters = load(f'topic_clusters_{range_key}.json')
@@ -244,6 +245,17 @@ def main():
         gaps_html_by_range[range_key] = render_topic_gaps(topic_clusters)
         rising_html_by_range[range_key] = render_rising_topics(fuzzy_trends)
         sentiment_html_by_range[range_key] = render_sentiment(sentiment_dashboard)
+
+        # All three scripts anchor "now" to the latest *scraped post*, not
+        # wall-clock time, so the window is spelled out explicitly here -
+        # "last 4 hours" without a stated end time reads as "as of right
+        # now," which it usually isn't.
+        window = next((d.get('window') for d in (topic_clusters, fuzzy_trends, sentiment_dashboard)
+                       if d and d.get('window')), None)
+        window_caption_by_range[range_key] = (
+            f"Data window: {esc(window['start_tw'])} – {esc(window['end_tw'])} (Taiwan time)"
+            if window else 'No window data available for this range.'
+        )
 
     default_range = DEFAULT_DASHBOARD_RANGE if DEFAULT_DASHBOARD_RANGE in available_ranges else (
         available_ranges[0] if available_ranges else RANGE_ORDER[0])
@@ -263,6 +275,7 @@ def main():
         'rising': rising_html_by_range,
         'sentiment': sentiment_html_by_range,
     }, ensure_ascii=False)
+    window_caption_json = json.dumps(window_caption_by_range, ensure_ascii=False)
 
     html = f"""<!doctype html>
 <html lang="en"><head>
@@ -344,6 +357,7 @@ def main():
   <div id="range-bar" class="range-bar">
     <label for="range-select">Time range</label>
     <select id="range-select">{range_options}</select>
+    <span id="range-window" class="muted"></span>
   </div>
   <section id="gaps" class="active" data-ranged="true"><h2>FR-01 &middot; Topic Gaps</h2><div id="gaps-content"></div></section>
   <section id="rising" data-ranged="true"><h2>FR-02 &middot; Rising Topics &amp; KOLs</h2><div id="rising-content"></div></section>
@@ -355,6 +369,7 @@ def main():
 </main>
 <script>
   const RANGE_HTML = {range_data_json};
+  const RANGE_WINDOW = {window_caption_json};
 
   document.querySelectorAll('.tab-btn').forEach(btn => {{
     btn.addEventListener('click', () => {{
@@ -372,6 +387,7 @@ def main():
     document.getElementById('gaps-content').innerHTML = RANGE_HTML.gaps[range] || '';
     document.getElementById('rising-content').innerHTML = RANGE_HTML.rising[range] || '';
     document.getElementById('sentiment-content').innerHTML = RANGE_HTML.sentiment[range] || '';
+    document.getElementById('range-window').textContent = RANGE_WINDOW[range] || '';
   }}
 
   document.getElementById('range-select').addEventListener('change', e => applyRange(e.target.value));
