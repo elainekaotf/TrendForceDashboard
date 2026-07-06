@@ -1,37 +1,59 @@
 """
 FR-01 Competitor Topic Clustering.
 
-Clusters posts from our own account (TrendForce) and competitor accounts
-(dylan522p, SemiAnalysis_, jukan05, QQ_Timmy, technews_tw) into topics using
-TF-IDF + K-Means over each tweet's `translated_text`/`keywords` fields (the
-existing scrapers already normalize text into English via translated_text,
-so no separate embedding model is needed for cross-lingual matching).
+Clusters posts from our own accounts and competitor accounts, across
+platforms, into topics using TF-IDF + K-Means over each post's normalized
+text (X posts are pre-translated into `translated_text` by the existing
+scraper; Facebook posts are native zh-TW and pass through as-is - the
+Chinese-character range in NON_WORD_RE keeps them usable for clustering
+alongside the translated English X text).
+
+Platforms covered (PLATFORM_ACCOUNTS below):
+  - X:        TrendForce (own) vs. dylan522p, SemiAnalysis_, jukan05,
+              QQ_Timmy, technews_tw
+  - Facebook: TrendForce.tw (own) vs. ctee.fans, yutinghaosfinance
 
 Output: analysis/topic_clusters.json
   - clusters: [{id, label, top_terms, size, accounts: {handle: count}}]
-  - gaps: topics with strong competitor presence but weak/no TrendForce coverage
+  - gaps: topics with strong competitor presence but weak/no own-account coverage
   - suggested_entry_points: gap topics ranked by competitor engagement
 
-Scope note: only covers X/Twitter accounts already scraped by this repo.
-Facebook/LinkedIn competitor sources are not yet collected (see SRS Data
-Requirements / Open Issue #3) and are out of scope until those crawlers exist.
+Scope note: LinkedIn competitor sources are not yet collected (see SRS Data
+Requirements / Open Issue #3) and are out of scope until that crawler exists.
 """
 import csv
 import json
 import os
 import re
 from collections import defaultdict
+from datetime import datetime
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 
 BASE = os.path.dirname(__file__)
 CSV_DIR = os.path.join(BASE, 'csv')
+FACEBOOK_CSV_DIR = os.path.join(CSV_DIR, 'facebook')
 OUT_FILE = os.path.join(BASE, 'analysis', 'topic_clusters.json')
 
-OWN_ACCOUNT = 'TrendForce'
-COMPETITOR_ACCOUNTS = ['dylan522p', 'SemiAnalysis_', 'jukan05', 'QQ_Timmy', 'technews_tw']
-ACCOUNTS = [OWN_ACCOUNT] + COMPETITOR_ACCOUNTS
+PLATFORM_ACCOUNTS = {
+    'X': {
+        'dir': CSV_DIR,
+        'own': 'TrendForce',
+        'competitors': ['dylan522p', 'SemiAnalysis_', 'jukan05', 'QQ_Timmy', 'technews_tw'],
+    },
+    'Facebook': {
+        'dir': FACEBOOK_CSV_DIR,
+        'own': 'TrendForce.tw',
+        'competitors': ['ctee.fans', 'yutinghaosfinance'],
+    },
+}
+OWN_HANDLES = {p['own'] for p in PLATFORM_ACCOUNTS.values()}
+ACCOUNTS = [h for p in PLATFORM_ACCOUNTS.values() for h in [p['own']] + p['competitors']]
+
+# Backward-compat aliases (X was the only platform when these were introduced).
+OWN_ACCOUNT = PLATFORM_ACCOUNTS['X']['own']
+COMPETITOR_ACCOUNTS = PLATFORM_ACCOUNTS['X']['competitors']
 
 N_CLUSTERS = 18
 MIN_DOCS = N_CLUSTERS * 3  # need enough posts for stable clusters
@@ -63,25 +85,64 @@ def clean_text(text):
     return text.strip()
 
 
+def parse_facebook_timestamp(row):
+    """Facebook rows carry a human-readable exactDate ("Thursday, July 2,
+    2026 at 1:00 PM") when the scraper resolved one, else fall back to the
+    machine-readable scrapedAt (when the post was scraped, not posted)."""
+    exact = row.get('exactDate')
+    if exact:
+        try:
+            return datetime.strptime(exact, '%A, %B %d, %Y at %I:%M %p').isoformat() + 'Z'
+        except ValueError:
+            pass
+    return row.get('scrapedAt')
+
+
+def load_x_posts(handle, path):
+    posts = []
+    with open(path, newline='', encoding='utf-8') as f:
+        for row in csv.DictReader(f):
+            text = row.get('translated_text') or row.get('text') or ''
+            keywords = row.get('keywords', '')
+            doc = clean_text(text + ' ' + keywords.replace(';', ' '))
+            if doc:
+                posts.append({
+                    'handle': handle,
+                    'platform': 'X',
+                    'text': doc,
+                    'timestamp': row.get('timestamp'),
+                    'likes': parse_count(row.get('likes')),
+                    'interaction': parse_count(row.get('likes')) + parse_count(row.get('retweets')) + parse_count(row.get('replies')),
+                })
+    return posts
+
+
+def load_facebook_posts(handle, path):
+    posts = []
+    with open(path, newline='', encoding='utf-8') as f:
+        for row in csv.DictReader(f):
+            doc = clean_text(row.get('text', ''))
+            if doc:
+                posts.append({
+                    'handle': handle,
+                    'platform': 'Facebook',
+                    'text': doc,
+                    'timestamp': parse_facebook_timestamp(row),
+                    'likes': parse_count(row.get('reactions')),
+                    'interaction': parse_count(row.get('reactions')) + parse_count(row.get('comments')) + parse_count(row.get('shares')),
+                })
+    return posts
+
+
 def load_posts():
     posts = []
-    for handle in ACCOUNTS:
-        path = os.path.join(CSV_DIR, f'{handle}.csv')
-        if not os.path.exists(path):
-            continue
-        with open(path, newline='', encoding='utf-8') as f:
-            for row in csv.DictReader(f):
-                text = row.get('translated_text') or row.get('text') or ''
-                keywords = row.get('keywords', '')
-                doc = clean_text(text + ' ' + keywords.replace(';', ' '))
-                if doc:
-                    posts.append({
-                        'handle': handle,
-                        'text': doc,
-                        'timestamp': row.get('timestamp'),
-                        'likes': parse_count(row.get('likes')),
-                        'interaction': parse_count(row.get('likes')) + parse_count(row.get('retweets')) + parse_count(row.get('replies')),
-                    })
+    for platform, cfg in PLATFORM_ACCOUNTS.items():
+        loader = load_x_posts if platform == 'X' else load_facebook_posts
+        for handle in [cfg['own']] + cfg['competitors']:
+            path = os.path.join(cfg['dir'], f'{handle}.csv')
+            if not os.path.exists(path):
+                continue
+            posts.extend(loader(handle, path))
     return posts
 
 
@@ -133,12 +194,12 @@ def main():
             'engagement_by_account': dict(engagement_by_account),
         })
 
-    # Topic gaps: clusters where competitors post a lot but TrendForce posts little/none.
+    # Topic gaps: clusters where competitors post a lot but our own accounts post little/none.
     gaps = []
     for c in clusters:
-        own_count = c['accounts'].get(OWN_ACCOUNT, 0)
-        competitor_count = sum(v for k, v in c['accounts'].items() if k != OWN_ACCOUNT)
-        competitor_engagement = sum(v for k, v in c['engagement_by_account'].items() if k != OWN_ACCOUNT)
+        own_count = sum(v for k, v in c['accounts'].items() if k in OWN_HANDLES)
+        competitor_count = sum(v for k, v in c['accounts'].items() if k not in OWN_HANDLES)
+        competitor_engagement = sum(v for k, v in c['engagement_by_account'].items() if k not in OWN_HANDLES)
         if competitor_count >= 3 and own_count <= max(1, competitor_count // 4):
             gaps.append({
                 'cluster_id': c['id'],
@@ -146,7 +207,7 @@ def main():
                 'own_count': own_count,
                 'competitor_count': competitor_count,
                 'competitor_engagement': competitor_engagement,
-                'competitors_covering': [k for k in c['accounts'] if k != OWN_ACCOUNT],
+                'competitors_covering': [k for k in c['accounts'] if k not in OWN_HANDLES],
             })
 
     gaps.sort(key=lambda g: g['competitor_engagement'], reverse=True)
