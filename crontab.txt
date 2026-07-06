@@ -1,0 +1,16 @@
+# Recommended schedule for TrendForceDash, per SRS Section 6 (Scheduling
+# Requirements). Not installed automatically - review, then install with:
+#   crontab -e   (paste the lines below, adjusting the path if needed)
+# or merge with an existing crontab via `crontab -l`.
+#
+# All output is appended to pipeline.log; failures also fire a macOS
+# notification (see alert.sh).
+
+# FR-01/02/03/04 core refresh - every 6 hours
+0 */6 * * * /bin/bash /Users/elainekao/TrendForceDash/run_pipeline.sh core >> /Users/elainekao/TrendForceDash/pipeline.log 2>&1
+
+# FR-05 account & comment management - every 8 hours
+0 */8 * * * /bin/bash /Users/elainekao/TrendForceDash/run_pipeline.sh accounts >> /Users/elainekao/TrendForceDash/pipeline.log 2>&1
+
+# FR-06 daily executive summaries (+ FR-04 refresh) - once a day at 07:00
+0 7 * * * /bin/bash /Users/elainekao/TrendForceDash/run_pipeline.sh daily >> /Users/elainekao/TrendForceDash/pipeline.log 2>&1
