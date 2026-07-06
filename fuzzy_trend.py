@@ -20,8 +20,8 @@ Runs the FR-02-01..04 expansions in order:
   03 vertical:   sub-topic drill-down of the top-10 topics
   04 horizontal: rising KOLs within each (platform x sub-topic)
 
-Scope note: only the X/Twitter platform is scraped today (see FR-01), so
-"per platform" currently yields a single platform, X.
+Platforms are derived from whatever FR-01's load_posts() returns (currently
+X and Facebook; LinkedIn is not yet scraped, see SRS Open Issue #3).
 
 Output: analysis/fuzzy_trends.json
 """
@@ -35,7 +35,6 @@ from cluster_topics import ACCOUNTS, OWN_ACCOUNT, N_CLUSTERS, load_posts, label_
 BASE = os.path.dirname(__file__)
 OUT_FILE = os.path.join(BASE, 'analysis', 'fuzzy_trends.json')
 
-PLATFORM = 'X'
 TOP_N_TOPICS = 10
 SUB_CLUSTERS_PER_TOPIC = 4
 MIN_SUBCLUSTER_DOCS = 5
@@ -174,33 +173,14 @@ def kol_rationale(growth, accel, spread):
     return f"posts {'+' if growth >= 0 else ''}{growth:.0%}, engagement {'+' if accel >= 0 else ''}{accel:.0%} vs prior {RECENT_WINDOW_DAYS}d"
 
 
-def main(now=None):
-    posts = load_posts()
-    for p in posts:
-        p['ts'] = parse_ts(p['timestamp'])
-
-    if len(posts) < N_CLUSTERS * 3:
-        print(f"Not enough posts ({len(posts)}) to run fuzzy trend prediction, skipping.")
-        return
-
-    if now is None:
-        timestamps = [p['ts'] for p in posts if p['ts']]
-        now = max(timestamps) if timestamps else datetime.now(timezone.utc)
-
-    # Shared topic tree with FR-01.
-    vectorizer, X, km, labels = cluster_posts(posts, N_CLUSTERS)
-    for p, label in zip(posts, labels):
-        p['cluster_id'] = int(label)
-
+def compute_platform_trends(platform_posts, topic_labels, now):
+    """Run the FR-02-01..04 expansion chain for one platform's posts, which
+    already carry a 'cluster_id' assigned from the cross-platform shared tree."""
     posts_by_topic = defaultdict(list)
-    for p in posts:
+    for p in platform_posts:
         posts_by_topic[p['cluster_id']].append(p)
 
-    topic_labels = {}
-    for cid in posts_by_topic:
-        topic_labels[cid] = ' / '.join(label_cluster(vectorizer, km.cluster_centers_[cid])) or f'cluster-{cid}'
-
-    # FR-02-01: top-10 rising topics per platform.
+    # FR-02-01: top-10 rising topics for this platform.
     topic_ranking = rank_entities(posts_by_topic, now, topic_rationale)
     for t in topic_ranking:
         t['topic_id'] = t.pop('key')
@@ -252,21 +232,49 @@ def main(now=None):
         topic['sub_topics'] = sub_topics_out
         result_topics.append(topic)
 
+    return result_topics
+
+
+def main(now=None):
+    posts = load_posts()
+    for p in posts:
+        p['ts'] = parse_ts(p['timestamp'])
+
+    if len(posts) < N_CLUSTERS * 3:
+        print(f"Not enough posts ({len(posts)}) to run fuzzy trend prediction, skipping.")
+        return
+
+    if now is None:
+        timestamps = [p['ts'] for p in posts if p['ts']]
+        now = max(timestamps) if timestamps else datetime.now(timezone.utc)
+
+    # Shared topic tree across all platforms, per FR-01.
+    vectorizer, X, km, labels = cluster_posts(posts, N_CLUSTERS)
+    for p, label in zip(posts, labels):
+        p['cluster_id'] = int(label)
+
+    topic_labels = {}
+    for cid in set(labels):
+        topic_labels[int(cid)] = ' / '.join(label_cluster(vectorizer, km.cluster_centers_[cid])) or f'cluster-{cid}'
+
+    platforms_out = {}
+    for platform in sorted({p['platform'] for p in posts}):
+        platform_posts = [p for p in posts if p['platform'] == platform]
+        result_topics = compute_platform_trends(platform_posts, topic_labels, now)
+        platforms_out[platform] = {'top_rising_topics': result_topics}
+
     result = {
         'generated_at': now.isoformat(),
         'windows': {'recent_days': RECENT_WINDOW_DAYS, 'prior_days': PRIOR_WINDOW_DAYS},
-        'platforms': {
-            PLATFORM: {
-                'top_rising_topics': result_topics,
-            }
-        },
+        'platforms': platforms_out,
     }
 
     os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
     with open(OUT_FILE, 'w', encoding='utf-8') as f:
         json.dump(result, f, ensure_ascii=False, indent=2)
 
-    print(f"Wrote top {len(result_topics)} rising topics (with sub-topics/KOLs) to {OUT_FILE}")
+    total_topics = sum(len(v['top_rising_topics']) for v in platforms_out.values())
+    print(f"Wrote {total_topics} rising topics across {len(platforms_out)} platform(s) to {OUT_FILE}")
 
 
 if __name__ == '__main__':

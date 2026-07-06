@@ -21,9 +21,8 @@ Widgets (FR-03-01..09):
   08 top_engagement_ranking    - highest-engagement topics
   09 posting_timeslot_analysis - Mon-Fri by time slot: volume/likes/engagement
 
-Scope note: only the X/Twitter platform is scraped today (see FR-01), so
-FR-03-05 currently yields a single-platform share (100% X) until
-Facebook/LinkedIn crawlers exist.
+Platforms are derived from whatever FR-01's load_posts() returns (currently
+X and Facebook; LinkedIn is not yet scraped, see SRS Open Issue #3).
 
 Output: analysis/sentiment_dashboard.json
 """
@@ -39,7 +38,6 @@ from cluster_topics import ACCOUNTS, OWN_ACCOUNT, N_CLUSTERS, load_posts, label_
 BASE = os.path.dirname(__file__)
 OUT_FILE = os.path.join(BASE, 'analysis', 'sentiment_dashboard.json')
 
-PLATFORM = 'X'
 TIME_RANGES = {
     'hourly': timedelta(hours=1),
     '4h': timedelta(hours=4),
@@ -182,12 +180,15 @@ def widget_sentiment_trend_curve(posts, now, span, buckets=14):
 
 
 def widget_competitor_mentions(posts, keyword):
-    counts = Counter()
+    """Returns (mentions_by_handle, mentions_by_platform) for posts matching keyword."""
+    by_handle = Counter()
+    by_platform = Counter()
     kw = keyword.lower()
     for p in posts:
         if kw in p['text'].lower():
-            counts[p['handle']] += 1
-    return dict(counts)
+            by_handle[p['handle']] += 1
+            by_platform[p['platform']] += 1
+    return dict(by_handle), dict(by_platform)
 
 
 def widget_platform_share_bar(mentions_by_platform):
@@ -195,9 +196,18 @@ def widget_platform_share_bar(mentions_by_platform):
     return {plat: round(v / total, 3) for plat, v in mentions_by_platform.items()} if total else {}
 
 
-def widget_platform_keyword_ranking(mentions_by_handle):
-    return sorted(({'handle': h, 'mentions': c} for h, c in mentions_by_handle.items()),
-                  key=lambda r: r['mentions'], reverse=True)
+def widget_platform_keyword_ranking(posts, keyword):
+    """Per-platform ranking of handles for a keyword (FR-03-06)."""
+    kw = keyword.lower()
+    counts = defaultdict(Counter)
+    for p in posts:
+        if kw in p['text'].lower():
+            counts[p['platform']][p['handle']] += 1
+    return {
+        platform: sorted(({'handle': h, 'mentions': c} for h, c in handle_counts.items()),
+                          key=lambda r: r['mentions'], reverse=True)
+        for platform, handle_counts in counts.items()
+    }
 
 
 def widget_coverage_focus_ranking(posts_by_topic, topic_labels):
@@ -295,14 +305,10 @@ def main(time_range=DEFAULT_RANGE, keyword=None, now=None):
     }
 
     if keyword:
-        mentions_by_handle = widget_competitor_mentions(posts, keyword)
+        mentions_by_handle, mentions_by_platform = widget_competitor_mentions(posts, keyword)
         result['widgets']['competitor_mentions'] = mentions_by_handle
-        # Only X is scraped today, so the "platform" share is a single bucket.
-        result['widgets']['platform_share_bar'] = widget_platform_share_bar(
-            {PLATFORM: sum(mentions_by_handle.values())})
-        result['widgets']['platform_keyword_ranking'] = {
-            PLATFORM: widget_platform_keyword_ranking(mentions_by_handle)
-        }
+        result['widgets']['platform_share_bar'] = widget_platform_share_bar(mentions_by_platform)
+        result['widgets']['platform_keyword_ranking'] = widget_platform_keyword_ranking(posts, keyword)
     else:
         result['widgets']['competitor_mentions'] = None
         result['widgets']['platform_share_bar'] = None
