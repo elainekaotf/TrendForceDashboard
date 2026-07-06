@@ -79,6 +79,7 @@ def load_posts():
                         'handle': handle,
                         'text': doc,
                         'timestamp': row.get('timestamp'),
+                        'likes': parse_count(row.get('likes')),
                         'interaction': parse_count(row.get('likes')) + parse_count(row.get('retweets')) + parse_count(row.get('replies')),
                     })
     return posts
