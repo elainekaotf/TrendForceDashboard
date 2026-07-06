@@ -112,6 +112,7 @@ def load_x_posts(handle, path):
                     'text': doc,
                     'timestamp': row.get('timestamp'),
                     'likes': parse_count(row.get('likes')),
+                    'replies': parse_count(row.get('replies')),
                     'interaction': parse_count(row.get('likes')) + parse_count(row.get('retweets')) + parse_count(row.get('replies')),
                 })
     return posts
@@ -129,6 +130,7 @@ def load_facebook_posts(handle, path):
                     'text': doc,
                     'timestamp': parse_facebook_timestamp(row),
                     'likes': parse_count(row.get('reactions')),
+                    'replies': parse_count(row.get('comments')),
                     'interaction': parse_count(row.get('reactions')) + parse_count(row.get('comments')) + parse_count(row.get('shares')),
                 })
     return posts
