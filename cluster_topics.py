@@ -78,6 +78,7 @@ def load_posts():
                     posts.append({
                         'handle': handle,
                         'text': doc,
+                        'timestamp': row.get('timestamp'),
                         'interaction': parse_count(row.get('likes')) + parse_count(row.get('retweets')) + parse_count(row.get('replies')),
                     })
     return posts
@@ -89,20 +90,27 @@ def label_cluster(vectorizer, centroid, top_n=4):
     return [terms[i] for i in top_idx if centroid[i] > 0]
 
 
+def cluster_posts(posts, n_clusters=N_CLUSTERS, min_docs_per_cluster=5):
+    """Shared clustering step so FR-02's topic hierarchy matches FR-01's tree."""
+    docs = [p['text'] for p in posts]
+    stop_words = list(TfidfVectorizer(stop_words='english').get_stop_words()) + list(LINK_NOISE)
+    vectorizer = TfidfVectorizer(max_features=3000, stop_words=stop_words, min_df=2)
+    X = vectorizer.fit_transform(docs)
+
+    k = max(1, min(n_clusters, len(posts) // min_docs_per_cluster))
+    km = KMeans(n_clusters=k, n_init=10, random_state=42)
+    labels = km.fit_predict(X)
+    return vectorizer, X, km, labels
+
+
 def main():
     posts = load_posts()
     if len(posts) < MIN_DOCS:
         print(f"Not enough posts ({len(posts)}) for {N_CLUSTERS} clusters, skipping.")
         return
 
-    docs = [p['text'] for p in posts]
-    stop_words = list(TfidfVectorizer(stop_words='english').get_stop_words()) + list(LINK_NOISE)
-    vectorizer = TfidfVectorizer(max_features=3000, stop_words=stop_words, min_df=2)
-    X = vectorizer.fit_transform(docs)
-
-    k = min(N_CLUSTERS, len(posts) // 5)
-    km = KMeans(n_clusters=k, n_init=10, random_state=42)
-    labels = km.fit_predict(X)
+    vectorizer, X, km, labels = cluster_posts(posts, N_CLUSTERS)
+    k = km.n_clusters
 
     clusters = []
     for cid in range(k):
