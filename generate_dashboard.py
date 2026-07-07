@@ -63,26 +63,43 @@ def fmt_int(n):
     return f"{n:,}" if isinstance(n, (int, float)) else esc(n)
 
 
+def panel(body_html, title=None, eyebrow=None):
+    """Consistent card wrapper for a titled block of content - every major
+    piece of content (a table, a stat row, a chart) sits inside one of
+    these instead of floating directly on the page background."""
+    head = ''
+    if title:
+        eyebrow_html = f'<span class="panel-eyebrow">{esc(eyebrow)}</span>' if eyebrow else ''
+        head = f'<div class="panel-head"><h3>{esc(title)}</h3>{eyebrow_html}</div>'
+    return f'<div class="panel">{head}{body_html}</div>'
+
+
+def table(headers, rows_html, empty_message=None):
+    if not rows_html:
+        return f'<p class="empty">{esc(empty_message or "No data.")}</p>'
+    head_cells = ''.join(f'<th class="num">{esc(h[1:])}</th>' if h.startswith('#') else f'<th>{esc(h)}</th>' for h in headers)
+    return f"""<div class="table-wrap"><table>
+      <thead><tr>{head_cells}</tr></thead>
+      <tbody>{rows_html}</tbody>
+    </table></div>"""
+
+
 # --- Section builders --------------------------------------------------
 def render_topic_gaps(data):
     if not data:
         return '<p class="empty">No FR-01 data yet — run cluster_topics.py.</p>'
     gaps = sorted(data.get('gaps', []), key=lambda g: g['competitor_engagement'], reverse=True)[:10]
-    if not gaps:
-        return '<p class="empty">No topic gaps detected.</p>'
     rows = ''.join(f"""
       <tr>
-        <td>{esc(g['label'])}</td>
+        <td class="cell-primary">{esc(g['label'])}</td>
         <td class="num">{fmt_int(g['own_count'])}</td>
         <td class="num">{fmt_int(g['competitor_count'])}</td>
         <td class="num">{fmt_int(g['competitor_engagement'])}</td>
         <td>{esc(', '.join(g['competitors_covering'][:4]))}</td>
       </tr>""" for g in gaps)
-    return f"""
-    <div class="table-wrap"><table>
-      <thead><tr><th>Topic</th><th class="num">Our posts</th><th class="num">Competitor posts</th><th class="num">Competitor engagement</th><th>Covered by</th></tr></thead>
-      <tbody>{rows}</tbody>
-    </table></div>"""
+    body = table(['Topic', '#Our posts', '#Competitor posts', '#Competitor engagement', 'Covered by'],
+                 rows, 'No topic gaps detected — our coverage is keeping pace with competitors.')
+    return panel(body, 'Where competitors are outpacing us', 'Top 10 by competitor engagement')
 
 
 def render_rising_topics(data):
@@ -92,15 +109,15 @@ def render_rising_topics(data):
     for platform, pdata in data.get('platforms', {}).items():
         topics = pdata.get('top_rising_topics', [])
         cards = ''.join(f"""
-        <div class="card">
-          <div class="card-head">
+        <div class="rising-card">
+          <div class="rising-card-head">
             <span class="badge score">{t['rising_score']}</span>
             <strong>{esc(t['label'])}</strong>
           </div>
           <div class="muted">{esc(t['rationale'])}</div>
-          <div class="kols">{''.join(f'<span class="chip">{esc(k["handle"])} ({k["rising_score"]})</span>' for k in t['rising_kols'][:4])}</div>
+          <div class="kols">{''.join(f'<span class="chip">{esc(k["handle"])} <b>{k["rising_score"]}</b></span>' for k in t['rising_kols'][:4])}</div>
         </div>""" for t in topics)
-        sections.append(f'<h3>{esc(platform)}</h3><div class="card-grid">{cards}</div>')
+        sections.append(panel(f'<div class="card-grid">{cards}</div>', platform, f'{len(topics)} rising topic(s)'))
     return ''.join(sections)
 
 
@@ -112,51 +129,44 @@ def render_sentiment(data):
     share = overview.get('sentiment_share', {})
     stat_cards = f"""
     <div class="stat-grid">
-      <div class="stat"><div class="stat-num">{fmt_int(overview['total_posts'])}</div><div class="stat-label">Posts ({esc(data['time_range'])})</div></div>
+      <div class="stat"><div class="stat-num">{fmt_int(overview['total_posts'])}</div><div class="stat-label">Posts</div></div>
       <div class="stat pos"><div class="stat-num">{round(share.get('positive', 0) * 100, 1)}%</div><div class="stat-label">Positive</div></div>
       <div class="stat neu"><div class="stat-num">{round(share.get('neutral', 0) * 100, 1)}%</div><div class="stat-label">Neutral</div></div>
       <div class="stat neg"><div class="stat-num">{round(share.get('negative', 0) * 100, 1)}%</div><div class="stat-label">Negative</div></div>
     </div>"""
 
     heat_rows = ''.join(f"""
-      <tr><td>{esc(b['label'])}</td><td class="num heat-{('hot' if b['heat']>=70 else 'warm' if b['heat']>=40 else 'cold')}">{b['heat']}</td>
+      <tr><td class="cell-primary">{esc(b['label'])}</td><td class="num heat-{('hot' if b['heat']>=70 else 'warm' if b['heat']>=40 else 'cold')}">{b['heat']}</td>
       <td class="num">{fmt_int(b['volume'])}</td><td class="num">{fmt_int(b['engagement'])}</td></tr>"""
       for b in w['temperature_bar'][:10])
 
     engagement_rows = ''.join(f"""
-      <tr><td>{esc(r['label'])}</td><td class="num">{fmt_int(r['total_engagement'])}</td><td class="num">{r['post_count']}</td></tr>"""
+      <tr><td class="cell-primary">{esc(r['label'])}</td><td class="num">{fmt_int(r['total_engagement'])}</td><td class="num">{r['post_count']}</td></tr>"""
       for r in w['top_engagement_ranking'][:8])
 
     slots = w['posting_timeslot_analysis']['slots']
     peak = w['posting_timeslot_analysis']['peak_slot']
     slot_rows = ''.join(f"""
-      <tr class="{'peak' if name == peak else ''}"><td>{esc(name)}</td><td class="num">{s['post_count']}</td>
+      <tr class="{'peak' if name == peak else ''}"><td class="cell-primary">{esc(name.replace('_', ' ').title())}{' <span class="badge score">peak</span>' if name == peak else ''}</td><td class="num">{s['post_count']}</td>
       <td class="num">{fmt_int(s['likes'])}</td><td class="num">{fmt_int(s['engagement'])}</td></tr>"""
       for name, s in slots.items())
 
-    keyword_search_html = """
-    <h3>Keyword search (FR-03-04/05/06)</h3>
+    keyword_search_html = panel(f"""
     <div class="keyword-search-bar">
       <input type="text" id="keyword-input" placeholder="Search a keyword, e.g. nvidia, tariff, dram..." autocomplete="off">
     </div>
     <div id="keyword-results"><p class="empty">Type a keyword to see mention counts by account and platform, for the currently selected time range.</p></div>
-    """
+    """, 'Keyword search', 'FR-03-04 / 05 / 06')
 
     return f"""
     {stat_cards}
     {keyword_search_html}
     <div class="col-2">
-      <div>
-        <h3>Temperature bar</h3>
-        <div class="table-wrap"><table><thead><tr><th>Topic</th><th class="num">Heat</th><th class="num">Volume</th><th class="num">Engagement</th></tr></thead><tbody>{heat_rows}</tbody></table></div>
-      </div>
-      <div>
-        <h3>Top engagement</h3>
-        <div class="table-wrap"><table><thead><tr><th>Topic</th><th class="num">Engagement</th><th class="num">Posts</th></tr></thead><tbody>{engagement_rows}</tbody></table></div>
-      </div>
+      {panel(table(['Topic', '#Heat', '#Volume', '#Engagement'], heat_rows), 'Temperature bar')}
+      {panel(table(['Topic', '#Engagement', '#Posts'], engagement_rows), 'Top engagement')}
     </div>
-    <h3>Posting time-slot analysis (Mon-Fri, peak highlighted)</h3>
-    <div class="table-wrap"><table><thead><tr><th>Slot</th><th class="num">Posts</th><th class="num">Likes</th><th class="num">Engagement</th></tr></thead><tbody>{slot_rows}</tbody></table></div>"""
+    {panel(table(['Time slot', '#Posts', '#Likes', '#Engagement'], slot_rows), 'Posting time-slot analysis', 'Mon–Fri, peak highlighted')}
+    """
 
 
 def render_summaries(data):
@@ -164,11 +174,10 @@ def render_summaries(data):
         return '<p class="empty">No FR-06 data yet — run generate_summaries.py.</p>'
     cards = ''.join(f"""
       <div class="summary-card">
-        <span class="badge cat">{esc(s['category'])}</span>
-        <span class="char-count">{s['char_count']} chars</span>
+        <div class="summary-card-head"><span class="badge cat">{esc(s['category'].replace('_', ' '))}</span><span class="char-count">{s['char_count']} chars</span></div>
         <p>{esc(s['text'])}</p>
       </div>""" for s in data.get('summaries', []))
-    return f"<div class='muted'>Generated {esc(data['generated_at'])}</div><div class='summary-grid'>{cards}</div>"
+    return panel(f"<div class='summary-grid'>{cards}</div>", 'Today’s summaries', f"Generated {esc(data['generated_at'])}")
 
 
 def render_accounts(data):
@@ -176,39 +185,32 @@ def render_accounts(data):
         return '<p class="empty">No FR-05 data yet — run account_comment_management.py build.</p>'
     rows = ''.join(f"""
       <tr>
-        <td>{esc(a['handle'])}{' <span class="badge own">own</span>' if a['is_own'] else ''}</td>
+        <td class="cell-primary">{esc(a['handle'])}{' <span class="badge own">own</span>' if a['is_own'] else ''}</td>
         <td>{esc(a['platform'])}</td>
         <td><span class="badge status-{esc(a['status'])}">{esc(a['status'])}</span></td>
         <td class="num">{fmt_int(a['follower_count']) if a['follower_count'] else '—'}</td>
         <td class="num">{fmt_int(a['post_count'])}</td>
         <td>{esc(a['last_post_at'] or '—')}</td>
       </tr>""" for a in data.get('accounts', []))
-    return f"""
-    <div class="table-wrap"><table>
-      <thead><tr><th>Handle</th><th>Platform</th><th>Status</th><th class="num">Followers</th><th class="num">Posts</th><th>Last post</th></tr></thead>
-      <tbody>{rows}</tbody>
-    </table></div>"""
+    body = table(['Handle', 'Platform', 'Status', '#Followers', '#Posts', 'Last post'], rows)
+    return panel(body, 'Tracked accounts', f"{len(data.get('accounts', []))} accounts")
 
 
 def render_reply_queue(data):
     if not data:
         return '<p class="empty">No FR-05 reply drafts yet.</p>'
     records = sorted(data.values(), key=lambda r: r['reply_count'], reverse=True)
-    if not records:
-        return '<p class="empty">No own-account posts currently need a response.</p>'
     rows = ''.join(f"""
       <tr>
         <td><span class="badge status-{esc(r['status'])}">{esc(r['status'])}</span></td>
-        <td>{esc(r['handle'])}</td>
+        <td class="cell-primary">{esc(r['handle'])}</td>
         <td class="num">{r['reply_count']}</td>
         <td>{esc(r['topic_label'])}</td>
         <td>{esc(r['draft_reply'])}</td>
       </tr>""" for r in records)
-    return f"""
-    <div class="table-wrap"><table>
-      <thead><tr><th>Status</th><th>Account</th><th class="num">Replies</th><th>Topic</th><th>Draft reply</th></tr></thead>
-      <tbody>{rows}</tbody>
-    </table></div>"""
+    body = table(['Status', 'Account', '#Replies', 'Topic', 'Draft reply'], rows,
+                 'No own-account posts currently need a response.')
+    return panel(body, 'Own-account posts needing a reply', 'Never touches competitor accounts')
 
 
 def render_review_queue(data):
@@ -222,19 +224,18 @@ def render_review_queue(data):
 
     status_cards = ''.join(f'<div class="stat"><div class="stat-num">{fmt_int(c)}</div><div class="stat-label">{esc(s)}</div></div>'
                             for s, c in sorted(by_status.items()))
-    type_chips = ''.join(f'<span class="chip">{esc(t)}: {fmt_int(c)}</span>' for t, c in sorted(by_type.items()))
+    type_chips = ''.join(f'<span class="chip">{esc(t)} <b>{fmt_int(c)}</b></span>' for t, c in sorted(by_type.items()))
 
     pending = [r for r in records if r['status'] == 'pending'][:10]
     rows = ''.join(f"""
-      <tr><td>{esc(r['type'])}</td><td>{esc(r.get('platform', ''))}</td><td>{esc(r.get('handle', ''))}</td>
+      <tr><td>{esc(r['type'])}</td><td>{esc(r.get('platform', ''))}</td><td class="cell-primary">{esc(r.get('handle', ''))}</td>
       <td>{esc((r['automated'].get('topic_label') or r['automated'].get('rationale') or r['automated'].get('text', ''))[:80])}</td></tr>"""
       for r in pending)
 
-    return f"""
-    <div class="stat-grid">{status_cards}</div>
-    <div class="muted">{fmt_int(len(records))} total records — {type_chips}</div>
-    <h3>Sample of pending items</h3>
-    <div class="table-wrap"><table><thead><tr><th>Type</th><th>Platform</th><th>Handle</th><th>Automated label</th></tr></thead><tbody>{rows}</tbody></table></div>"""
+    overview = panel(f'<div class="stat-grid">{status_cards}</div><div class="chip-row">{type_chips}</div>',
+                      'Queue overview', f"{fmt_int(len(records))} total records")
+    sample = panel(table(['Type', 'Platform', 'Handle', 'Automated label'], rows), 'Sample of pending items')
+    return overview + sample
 
 
 def main():
@@ -300,64 +301,131 @@ def main():
 <title>TrendForceDash</title>
 <link rel="icon" href="data:image/svg+xml,{FAVICON_SVG}">
 <style>
-  :root {{ --bg: #0d1117; --surface: #161b22; --border: #30363d; --text: #e6edf3; --muted: #8b949e;
-           --blue: #3b9eff; --gold: #f0b429; --green: #3fb950; --red: #f85149; --yellow: #d29922; }}
+  :root {{
+    --bg: #0a0e14; --bg-grad: radial-gradient(ellipse 1200px 600px at 50% -10%, rgba(59,158,255,0.08), transparent);
+    --surface: #131a24; --surface-2: #1a2331; --border: #262f3d; --border-soft: #1d2530;
+    --text: #eef2f7; --muted: #8593a6; --muted-dim: #5c6b80;
+    --blue: #4da3ff; --blue-dim: rgba(77,163,255,0.12);
+    --gold: #f0b429; --green: #3fb968; --red: #f85149; --yellow: #d29922;
+    --radius: 10px; --radius-sm: 7px;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px -8px rgba(0,0,0,0.5);
+  }}
   * {{ box-sizing: border-box; }}
-  body {{ background: var(--bg); color: var(--text); font-family: -apple-system, "Segoe UI", sans-serif; margin: 0; }}
-  header {{ padding: 24px 32px; border-bottom: 1px solid var(--border); }}
-  header h1 {{ margin: 0; font-size: 22px; }}
-  header .muted {{ margin-top: 4px; }}
+  body {{
+    background: var(--bg-grad), var(--bg); background-attachment: fixed;
+    color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    margin: 0; -webkit-font-smoothing: antialiased;
+  }}
+  header {{ padding: 28px 32px 22px; }}
+  header h1 {{ margin: 0; font-size: 24px; font-weight: 700; letter-spacing: -0.01em; }}
+  header .muted {{ margin-top: 5px; }}
   .muted {{ color: var(--muted); font-size: 13px; }}
-  nav {{ display: flex; gap: 4px; padding: 0 32px; border-bottom: 1px solid var(--border); overflow-x: auto; }}
-  nav button {{ background: none; border: none; color: var(--muted); padding: 12px 16px; font-size: 14px;
-                cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap; }}
-  nav button.active {{ color: var(--text); border-bottom-color: var(--blue); }}
-  main {{ padding: 24px 32px; max-width: 1200px; margin: 0 auto; }}
-  .range-bar {{ display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }}
-  .range-bar label {{ color: var(--muted); font-size: 13px; }}
-  .range-bar select {{ background: var(--surface); color: var(--text); border: 1px solid var(--border);
-                        border-radius: 6px; padding: 6px 10px; font-size: 13px; }}
-  .keyword-search-bar {{ margin-bottom: 12px; }}
-  .keyword-search-bar input {{ width: 100%; max-width: 420px; background: var(--surface); color: var(--text);
-                                border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 13px; }}
-  .keyword-search-bar input:focus {{ outline: none; border-color: var(--blue); }}
+  nav {{
+    display: flex; gap: 2px; padding: 0 28px; border-bottom: 1px solid var(--border);
+    overflow-x: auto; position: sticky; top: 0; background: rgba(10,14,20,0.92);
+    backdrop-filter: blur(10px); z-index: 10;
+  }}
+  nav button {{
+    background: none; border: none; color: var(--muted); padding: 13px 16px; font-size: 13.5px;
+    font-weight: 500; cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap;
+    transition: color 0.15s ease;
+  }}
+  nav button:hover {{ color: var(--text); }}
+  nav button.active {{ color: var(--text); border-bottom-color: var(--blue); font-weight: 600; }}
+  main {{ padding: 28px 32px 64px; max-width: 1180px; margin: 0 auto; }}
+  .range-bar {{
+    display: flex; align-items: center; gap: 12px; margin-bottom: 24px; flex-wrap: wrap;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+    padding: 10px 14px;
+  }}
+  .range-bar label {{ color: var(--muted); font-size: 12.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em; }}
+  .range-bar select {{
+    background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+    border-radius: 6px; padding: 6px 10px; font-size: 13px; cursor: pointer;
+  }}
+  .keyword-search-bar input {{
+    width: 100%; max-width: 460px; background: var(--surface-2); color: var(--text);
+    border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; font-size: 13.5px;
+    transition: border-color 0.15s ease;
+  }}
+  .keyword-search-bar input::placeholder {{ color: var(--muted-dim); }}
+  .keyword-search-bar input:focus {{ outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-dim); }}
   section {{ display: none; }}
-  section.active {{ display: block; }}
-  h2 {{ font-size: 18px; margin-top: 0; text-align: center; }}
-  h3 {{ font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; margin: 20px 0 8px; }}
-  .table-wrap {{ overflow-x: auto; margin-bottom: 16px; }}
-  table {{ width: 100%; min-width: 480px; border-collapse: collapse; font-size: 13px; }}
-  th, td {{ text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }}
-  th {{ color: var(--muted); font-weight: 600; }}
+  section.active {{ display: block; animation: fadein 0.2s ease; }}
+  @keyframes fadein {{ from {{ opacity: 0; transform: translateY(2px); }} to {{ opacity: 1; transform: translateY(0); }} }}
+  h2 {{ font-size: 20px; font-weight: 700; margin: 0 0 22px; text-align: center; letter-spacing: -0.01em; }}
+  h3 {{ font-size: 13.5px; font-weight: 600; color: var(--text); margin: 22px 0 12px; }}
+  h3:first-child {{ margin-top: 0; }}
+  .panel {{
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 18px 20px; margin-bottom: 18px; box-shadow: var(--shadow);
+  }}
+  .panel-head {{ display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }}
+  .panel-head h3 {{ margin: 0; }}
+  .panel-eyebrow {{ color: var(--muted); font-size: 12px; }}
+  .table-wrap {{ overflow-x: auto; margin: -4px -4px -2px; }}
+  table {{ width: 100%; min-width: 480px; border-collapse: collapse; font-size: 13.5px; }}
+  th, td {{ text-align: left; padding: 9px 10px; }}
+  th {{
+    color: var(--muted); font-weight: 600; font-size: 11.5px; text-transform: uppercase;
+    letter-spacing: 0.04em; border-bottom: 1px solid var(--border); padding-bottom: 10px;
+  }}
+  td {{ border-bottom: 1px solid var(--border-soft); }}
+  tbody tr:last-child td {{ border-bottom: none; }}
+  tbody tr {{ transition: background 0.1s ease; }}
+  tbody tr:hover {{ background: var(--surface-2); }}
   td.num, th.num {{ text-align: center; font-variant-numeric: tabular-nums; }}
-  tr.peak {{ background: rgba(59, 158, 255, 0.08); }}
-  .empty {{ color: var(--muted); font-style: italic; }}
-  .col-2 {{ display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }}
-  .card-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 12px; margin-bottom: 16px; }}
-  .card {{ background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }}
-  .card-head {{ display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }}
-  .kols {{ margin-top: 8px; display: flex; flex-wrap: wrap; gap: 4px; }}
-  .chip {{ background: var(--bg); border: 1px solid var(--border); border-radius: 999px; padding: 2px 8px; font-size: 11px; color: var(--muted); }}
-  .badge {{ display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }}
-  .badge.score {{ background: var(--gold); color: #000; }}
-  .badge.cat {{ background: var(--blue); color: #000; margin-right: 8px; }}
-  .badge.own {{ background: var(--green); color: #000; }}
-  .badge.status-active, .badge.status-sent, .badge.status-approved {{ background: var(--green); color: #000; }}
-  .badge.status-stale, .badge.status-drafted, .badge.status-pending {{ background: var(--yellow); color: #000; }}
-  .badge.status-inactive, .badge.status-dismissed {{ background: var(--red); color: #000; }}
+  td.cell-primary {{ font-weight: 600; }}
+  tr.peak {{ background: var(--blue-dim); }}
+  tr.peak:hover {{ background: var(--blue-dim); }}
+  .empty {{ color: var(--muted); font-style: italic; font-size: 13.5px; padding: 8px 2px; }}
+  .col-2 {{ display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }}
+  .col-2 > .panel {{ margin-bottom: 0; }}
+  .card-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 10px; }}
+  .rising-card {{
+    background: var(--surface-2); border: 1px solid var(--border-soft); border-radius: var(--radius-sm);
+    padding: 12px 14px; transition: border-color 0.15s ease;
+  }}
+  .rising-card:hover {{ border-color: var(--border); }}
+  .rising-card-head {{ display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }}
+  .rising-card-head strong {{ font-size: 13.5px; line-height: 1.35; }}
+  .kols {{ margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; }}
+  .chip {{
+    background: var(--surface); border: 1px solid var(--border); border-radius: 999px;
+    padding: 3px 9px; font-size: 11px; color: var(--muted);
+  }}
+  .chip b {{ color: var(--text); font-weight: 600; }}
+  .chip-row {{ display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }}
+  .badge {{ display: inline-block; padding: 3px 9px; border-radius: 999px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.02em; }}
+  .badge.score {{ background: rgba(240,180,41,0.16); color: var(--gold); }}
+  .badge.cat {{ background: var(--blue-dim); color: var(--blue); text-transform: capitalize; }}
+  .badge.own {{ background: rgba(63,185,104,0.16); color: var(--green); }}
+  .badge.status-active, .badge.status-sent, .badge.status-approved {{ background: rgba(63,185,104,0.16); color: var(--green); }}
+  .badge.status-stale, .badge.status-drafted, .badge.status-pending {{ background: rgba(210,153,34,0.18); color: var(--yellow); }}
+  .badge.status-inactive, .badge.status-dismissed {{ background: rgba(248,81,73,0.16); color: var(--red); }}
   .heat-hot {{ color: var(--red); font-weight: 700; }}
-  .heat-warm {{ color: var(--yellow); }}
+  .heat-warm {{ color: var(--yellow); font-weight: 600; }}
   .heat-cold {{ color: var(--muted); }}
-  .stat-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; margin-bottom: 16px; }}
-  .stat {{ background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px; text-align: center; }}
-  .stat-num {{ font-size: 22px; font-weight: 700; }}
-  .stat-label {{ color: var(--muted); font-size: 12px; text-transform: capitalize; }}
+  .stat-grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; }}
+  .stat {{
+    background: var(--surface-2); border: 1px solid var(--border-soft); border-radius: var(--radius-sm);
+    padding: 14px 12px; text-align: center;
+  }}
+  .stat-num {{ font-size: 24px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }}
+  .stat-label {{ color: var(--muted); font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.03em; margin-top: 3px; }}
   .stat.pos .stat-num {{ color: var(--green); }} .stat.neg .stat-num {{ color: var(--red); }} .stat.neu .stat-num {{ color: var(--muted); }}
-  .summary-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }}
-  .summary-card {{ background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }}
-  .summary-card p {{ margin: 8px 0 0; font-size: 13px; line-height: 1.5; }}
-  .char-count {{ color: var(--muted); font-size: 11px; float: right; }}
-  @media (max-width: 800px) {{ .col-2 {{ grid-template-columns: 1fr; }} }}
+  .summary-grid {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 12px; }}
+  .summary-card {{
+    background: var(--surface-2); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 14px 16px;
+  }}
+  .summary-card-head {{ display: flex; align-items: center; justify-content: space-between; }}
+  .summary-card p {{ margin: 10px 0 0; font-size: 13.5px; line-height: 1.55; }}
+  .char-count {{ color: var(--muted-dim); font-size: 11px; }}
+  @media (max-width: 800px) {{
+    header, nav, main {{ padding-left: 18px; padding-right: 18px; }}
+    .col-2 {{ grid-template-columns: 1fr; }}
+    .panel {{ padding: 14px 16px; }}
+  }}
 </style>
 </head>
 <body>
