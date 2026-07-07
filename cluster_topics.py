@@ -82,6 +82,19 @@ NON_WORD_RE = re.compile(r'[^a-zA-Z一-鿿\s#]')
 # TF-IDF terms as meaningless noise once URLs are stripped to bare tokens.
 LINK_NOISE = {'dlvr', 'buff', 'ly', 'tt', 'http', 'https', 'www', 'com'}
 
+# Generic financial/temporal boilerplate that shows up in nearly every
+# Traditional Chinese finance-news post (億元, 年增, 今年, 月增, ...) - it's
+# high-frequency but carries no topic identity, so it crowds out the actual
+# technical/product terms a topic label should surface.
+CHINESE_STOP_WORDS = {
+    '億元', '萬元', '千元', '元', '億美元', '萬美元', '美元',
+    '年增', '月增', '季增', '年減', '月減', '季減', '增加', '減少', '成長',
+    '今年', '去年', '明年', '本季', '上季', '下季', '本月', '上月', '下月',
+    '同期', '同比', '較去年同期', '較上季', '較上月', '目前', '近期', '日前',
+    '報導', '指出', '表示', '預估', '預計', '據悉', '消息指出', '最新研究指出',
+    '營收', '獲利', '毛利率', '目標價', '股價', '創新高', '新高', '新低',
+}
+
 
 def parse_count(val):
     if not val:
@@ -137,6 +150,7 @@ def load_x_posts(handle, path):
                     'platform': 'X',
                     'text': doc,
                     'timestamp': row.get('timestamp'),
+                    'url': row.get('tweetUrl') or '',
                     'likes': parse_count(row.get('likes')),
                     'replies': parse_count(row.get('replies')),
                     'interaction': parse_count(row.get('likes')) + parse_count(row.get('retweets')) + parse_count(row.get('replies')),
@@ -155,6 +169,7 @@ def load_facebook_posts(handle, path):
                     'platform': 'Facebook',
                     'text': doc,
                     'timestamp': parse_facebook_timestamp(row),
+                    'url': row.get('postUrl') or '',
                     'likes': parse_count(row.get('reactions')),
                     'replies': parse_count(row.get('comments')),
                     'interaction': parse_count(row.get('reactions')) + parse_count(row.get('comments')) + parse_count(row.get('shares')),
@@ -198,7 +213,7 @@ def cluster_posts(posts, n_clusters=N_CLUSTERS, min_docs_per_cluster=5):
     documents, which raises instead of degrading gracefully. Retry with a
     looser min_df, then without stop-word filtering, before giving up."""
     docs = [p['text'] for p in posts]
-    stop_words = list(TfidfVectorizer(stop_words='english').get_stop_words()) + list(LINK_NOISE)
+    stop_words = list(TfidfVectorizer(stop_words='english').get_stop_words()) + list(LINK_NOISE) + list(CHINESE_STOP_WORDS)
 
     X = vectorizer = None
     for kwargs in ({'min_df': 2, 'stop_words': stop_words},

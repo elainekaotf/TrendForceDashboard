@@ -497,6 +497,19 @@ def main():
   td.cell-primary {{ font-weight: 600; }}
   tr.peak {{ background: var(--blue-dim); }}
   tr.peak:hover {{ background: var(--blue-dim); }}
+  tr.kw-link-row {{ cursor: pointer; }}
+  tr.kw-link-row:hover, tr.kw-link-row:focus {{ background: var(--blue-dim); outline: none; }}
+  .kw-link-popover {{
+    position: absolute; z-index: 30; background: var(--surface-2); border: 1px solid var(--border);
+    border-radius: 8px; padding: 10px 14px; box-shadow: var(--shadow); max-width: 420px;
+    max-height: 260px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px;
+  }}
+  .kw-link-popover a {{
+    color: var(--blue); font-size: 12px; line-height: 1.5; text-decoration: none;
+    word-break: break-all; white-space: normal;
+  }}
+  .kw-link-popover a:hover {{ text-decoration: underline; }}
+  .kw-link-popover .empty {{ font-size: 12px; color: var(--muted); margin: 0; }}
   .empty {{ color: var(--muted); font-style: italic; font-size: 13.5px; padding: 8px 2px; }}
   .col-2 {{ display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }}
   .col-2 > .panel {{ margin-bottom: 0; }}
@@ -649,6 +662,9 @@ def main():
   const RANGE_BOUNDS = {window_bounds_json};
   const KEYWORD_POSTS = {keyword_index_json};
 
+  function escapeHtml(s) {{ const d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }}
+  function escapeAttr(s) {{ return escapeHtml(s).replace(/"/g, '&quot;'); }}
+
   document.querySelectorAll('.tab-btn').forEach(btn => {{
     btn.addEventListener('click', () => {{
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -692,24 +708,39 @@ def main():
     }}
 
     const byHandle = {{}}, byPlatform = {{}}, byPlatformHandle = {{}};
+    const urlsByHandle = {{}}, urlsByPlatformHandle = {{}};
     for (const p of matches) {{
       byHandle[p.handle] = (byHandle[p.handle] || 0) + 1;
       byPlatform[p.platform] = (byPlatform[p.platform] || 0) + 1;
       byPlatformHandle[p.platform] = byPlatformHandle[p.platform] || {{}};
       byPlatformHandle[p.platform][p.handle] = (byPlatformHandle[p.platform][p.handle] || 0) + 1;
+      if (p.url) {{
+        (urlsByHandle[p.handle] = urlsByHandle[p.handle] || []).push(p.url);
+        urlsByPlatformHandle[p.platform] = urlsByPlatformHandle[p.platform] || {{}};
+        (urlsByPlatformHandle[p.platform][p.handle] = urlsByPlatformHandle[p.platform][p.handle] || []).push(p.url);
+      }}
     }}
 
+    // Source-link hover box (FR-03-04/06): each account row's mention count
+    // is a hit target - hovering/focusing it shows every matching post's
+    // URL so the reader can jump straight to the source instead of just
+    // seeing a number. Encoded as a data attribute (not inline onclick) so
+    // the URLs go through textContent/href, never innerHTML string-built.
+    const linkRow = (h, c, urls) =>
+      `<tr class="kw-link-row" tabindex="0" data-urls="${{escapeAttr(JSON.stringify(urls || []))}}"><td>${{escapeHtml(h)}}</td><td class="num">${{c}}</td></tr>`;
+
     const mentionRows = Object.entries(byHandle).sort((a, b) => b[1] - a[1])
-      .map(([h, c]) => `<tr><td>${{h}}</td><td class="num">${{c}}</td></tr>`).join('');
+      .map(([h, c]) => linkRow(h, c, urlsByHandle[h])).join('');
 
     const total = matches.length;
     const shareRows = Object.entries(byPlatform).sort((a, b) => b[1] - a[1])
       .map(([plat, c]) => `<tr><td>${{plat}}</td><td class="num">${{Math.round(c / total * 1000) / 10}}%</td><td class="num">${{c}}</td></tr>`).join('');
 
     const rankingBlocks = Object.entries(byPlatformHandle).map(([plat, handles]) => {{
+      const urls = urlsByPlatformHandle[plat] || {{}};
       const rows = Object.entries(handles).sort((a, b) => b[1] - a[1])
-        .map(([h, c]) => `<tr><td>${{h}}</td><td class="num">${{c}}</td></tr>`).join('');
-      return `<div><h3>${{plat}}</h3><div class="table-wrap"><table><thead><tr><th>Account</th><th class="num">Mentions</th></tr></thead><tbody>${{rows}}</tbody></table></div></div>`;
+        .map(([h, c]) => linkRow(h, c, urls[h])).join('');
+      return `<div><h3>${{escapeHtml(plat)}}</h3><div class="table-wrap"><table><thead><tr><th>Account</th><th class="num">Mentions</th></tr></thead><tbody>${{rows}}</tbody></table></div></div>`;
     }}).join('');
 
     container.innerHTML = `
@@ -728,6 +759,60 @@ def main():
       <div class="col-2">${{rankingBlocks}}</div>
     `;
   }}
+
+  // Source-link hover/focus box: shows every matching post's URL for the
+  // row under the pointer/focus. A single shared popover element (not one
+  // per row) so it can be positioned near whichever row is active and torn
+  // down cleanly on mouseleave/blur.
+  let kwLinkPopover = null;
+  function showKwLinkPopover(row) {{
+    hideKwLinkPopover();
+    let urls = [];
+    try {{ urls = JSON.parse(row.dataset.urls || '[]'); }} catch (e) {{ urls = []; }}
+    const pop = document.createElement('div');
+    pop.className = 'kw-link-popover';
+    if (urls.length === 0) {{
+      const p = document.createElement('p');
+      p.className = 'empty';
+      p.textContent = 'No source link recorded for these post(s).';
+      pop.appendChild(p);
+    }} else {{
+      urls.forEach((url, i) => {{
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener noreferrer';
+        a.textContent = `${{i + 1}}. ${{url}}`;
+        pop.appendChild(a);
+      }});
+    }}
+    document.body.appendChild(pop);
+    const r = row.getBoundingClientRect();
+    const top = window.scrollY + r.bottom + 6;
+    let left = window.scrollX + r.left;
+    const maxLeft = window.scrollX + document.documentElement.clientWidth - pop.offsetWidth - 12;
+    if (left > maxLeft) left = Math.max(12, maxLeft);
+    pop.style.top = `${{top}}px`;
+    pop.style.left = `${{left}}px`;
+    kwLinkPopover = pop;
+  }}
+  function hideKwLinkPopover() {{
+    if (kwLinkPopover) {{ kwLinkPopover.remove(); kwLinkPopover = null; }}
+  }}
+  document.addEventListener('mouseover', e => {{
+    const row = e.target.closest('.kw-link-row');
+    if (row) showKwLinkPopover(row);
+  }});
+  document.addEventListener('focusin', e => {{
+    const row = e.target.closest('.kw-link-row');
+    if (row) showKwLinkPopover(row);
+  }});
+  document.addEventListener('mouseout', e => {{
+    if (e.target.closest('.kw-link-row') && !e.relatedTarget?.closest('.kw-link-popover, .kw-link-row')) hideKwLinkPopover();
+  }});
+  document.addEventListener('focusout', e => {{
+    if (e.target.closest('.kw-link-row') && !e.relatedTarget?.closest('.kw-link-popover, .kw-link-row')) hideKwLinkPopover();
+  }});
 
   document.addEventListener('input', e => {{
     if (e.target.id === 'keyword-input') {{

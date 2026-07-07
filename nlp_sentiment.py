@@ -278,7 +278,7 @@ def build_keyword_index(all_posts):
     every post FR-01/02/03 see); the dashboard filters by timestamp itself
     to match whatever range is selected."""
     return [
-        {'handle': p['handle'], 'platform': p['platform'], 'ts': p['timestamp'], 'text': p['text']}
+        {'handle': p['handle'], 'platform': p['platform'], 'ts': p['timestamp'], 'text': p['text'], 'url': p.get('url', '')}
         for p in all_posts if p['timestamp']
     ]
 
