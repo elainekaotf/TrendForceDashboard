@@ -265,7 +265,7 @@ def render_trend_curve(curve):
       <span><span class="legend-dot" style="background:var(--status-critical)"></span>Negative</span>
       <span class="muted">Bar height = share of posts (not volume) &middot; faded = fewer than {LOW_SAMPLE_THRESHOLD} posts, weak signal</span>
     </div>
-    <div class="table-wrap"><div class="trend-chart">{''.join(bars)}</div></div>"""
+    <div class="trend-chart">{''.join(bars)}</div>"""
 
 
 def render_summaries(data):
@@ -544,7 +544,8 @@ def main():
   .legend-dot {{ display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }}
   .trend-chart {{
     display: flex; align-items: stretch; gap: 6px; min-width: 640px;
-    padding-top: 20px; /* room for the count label above each bar */
+    padding-top: 92px; /* clears both the count label and the hover tooltip above each bar,
+                           with room to spare so the tooltip never touches the panel above */
   }}
   .trend-bar {{
     position: relative; flex: 1; display: flex; flex-direction: column; align-items: center;
@@ -566,9 +567,10 @@ def main():
      which is slow to appear and easy to miss. */
   .trend-bar[data-tooltip]:hover::after, .trend-bar[data-tooltip]:focus::after {{
     content: attr(data-tooltip); position: absolute; bottom: 100%; left: 50%;
-    transform: translateX(-50%); margin-bottom: 8px; padding: 7px 11px;
-    background: var(--surface-2); border: 1px solid var(--border); border-radius: 7px;
-    font-size: 11.5px; line-height: 1.5; color: var(--text); white-space: pre-line;
+    transform: translateX(-50%); margin-bottom: 12px; padding: 10px 14px;
+    background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px;
+    font-size: 12px; line-height: 1.7; color: var(--text); white-space: pre-line;
+    width: max-content; max-width: 220px;
     text-align: left; box-shadow: var(--shadow); z-index: 20; pointer-events: none;
   }}
   @media (max-width: 800px) {{
