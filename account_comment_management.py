@@ -194,6 +194,7 @@ def build():
             queue[rid]['reply_count'] = rec['reply_count']
             queue[rid]['draft_reply'] = queue[rid].get('draft_reply') or rec['draft_reply']
             queue[rid]['url'] = queue[rid].get('url') or rec['url']
+            queue[rid]['topic_label'] = rec['topic_label']  # re-clustering (e.g. a noise-filter fix) should refresh stale labels
             refreshed += 1
         else:
             rec['status'] = 'drafted'
