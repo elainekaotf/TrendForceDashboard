@@ -30,9 +30,12 @@
 #            summaries for review.
 #
 # Every job starts with sync_data.sh (pulls fresh CSVs from the sibling
-# scraper repos - see that script's header for why this is needed at all)
-# and ends by regenerating docs/index.html (generate_dashboard.py) so the
-# dashboard reflects whatever that job just produced.
+# scraper repos - see that script's header for why this is needed at all),
+# regenerates docs/index.html (generate_dashboard.py), then publishes it
+# (publish.sh: commit, push, confirm the GitHub Pages deploy) so the live
+# site reflects whatever that job just produced - previously this only
+# updated the local file, so scheduled runs left the public URL stale
+# until someone happened to push manually.
 #
 # FR-07 (self-service upload) is user-triggered, not scheduled - it isn't
 # part of any job here.
@@ -90,6 +93,15 @@ esac
 # Regenerate the dashboard (docs/index.html) after every job so it always
 # reflects whichever analysis files that job just refreshed.
 run_step "generate_dashboard" generate_dashboard.py
+
+# Publish (commit + push + confirm the GitHub Pages deploy) whatever just
+# got generated, even if an earlier step in this job failed - a partial
+# update published beats a correct one nobody sees until someone happens
+# to push manually.
+if ! bash publish.sh; then
+  echo "[WARN] publish failed"
+  FAILURES+=("publish")
+fi
 
 if [ ${#FAILURES[@]} -gt 0 ]; then
   JOINED=$(IFS=', '; echo "${FAILURES[*]}")
