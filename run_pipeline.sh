@@ -4,13 +4,21 @@
 # the rest of the job. See crontab.txt for the recommended schedule and
 # SRS Section 6 (Scheduling Requirements) for the source frequencies.
 #
-# Usage: bash run_pipeline.sh <core|accounts|daily>
+# Usage: bash run_pipeline.sh <scan|core|accounts|daily>
 #
 # Jobs:
-#   core     (every 6h)  FR-01 -> FR-02 -> FR-03 -> FR-04
+#   scan     (every 4h)   FR-02 (scan tier only) -> FR-04
+#            Implements the SRS's own proposed resolution to Open Issue #1
+#            ("detect every 4 hours" vs "run every 6 hours"): a two-tier
+#            schedule. This tier is FR-02-01 only (top rising topics, no
+#            KOL/sub-topic drill-down) for the 4h range - fast enough to
+#            run every 4h without duplicating 'core's full 6h recompute.
+#   core     (every 6h)  FR-01 -> FR-02 (full) -> FR-03 -> FR-04
 #            Topic clustering feeds FR-02/03/06; FR-04 refreshes right
 #            after so newly-produced topic/sentiment/KOL calls are
-#            queued for review promptly.
+#            queued for review promptly. FR-02 here is the full
+#            FR-02-01..04 chain across all 5 ranges - the other tier of
+#            the two-tier schedule above.
 #   accounts (every 8h)  FR-05
 #            Independent of the core chain - only touches account
 #            status + own-account reply drafts.
@@ -27,11 +35,6 @@
 #
 # FR-07 (self-service upload) is user-triggered, not scheduled - it isn't
 # part of any job here.
-#
-# FR-02's frequency is still an open question in the SRS (Open Issue #1:
-# "detect every 4 hours" vs "run every 6 hours"). This runs it inside the
-# 6-hour 'core' job pending that decision - see docs/fr02-frequency.md if
-# a two-tier schedule gets confirmed instead.
 
 set -u
 export PATH="/usr/local/bin:/usr/bin:/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:$PATH"
@@ -39,7 +42,7 @@ cd "$(dirname "$0")"
 
 JOB="${1:-}"
 if [[ -z "$JOB" ]]; then
-  echo "Usage: $0 <core|accounts|daily>" >&2
+  echo "Usage: $0 <scan|core|accounts|daily>" >&2
   exit 1
 fi
 
@@ -60,9 +63,13 @@ if ! bash sync_data.sh; then
 fi
 
 case "$JOB" in
+  scan)
+    run_step "fuzzy_trend_scan" fuzzy_trend.py scan
+    run_step "manual_review"    manual_review.py build
+    ;;
   core)
     run_step "cluster_topics"  cluster_topics.py
-    run_step "fuzzy_trend"     fuzzy_trend.py
+    run_step "fuzzy_trend"     fuzzy_trend.py full
     run_step "nlp_sentiment"   nlp_sentiment.py
     run_step "manual_review"   manual_review.py build
     ;;
@@ -74,7 +81,7 @@ case "$JOB" in
     run_step "manual_review"      manual_review.py build
     ;;
   *)
-    echo "Unknown job '$JOB'. Expected core|accounts|daily." >&2
+    echo "Unknown job '$JOB'. Expected scan|core|accounts|daily." >&2
     exit 1
     ;;
 esac

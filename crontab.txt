@@ -6,7 +6,12 @@
 # All output is appended to pipeline.log; failures also fire a macOS
 # notification (see alert.sh).
 
-# FR-01/02/03/04 core refresh - every 6 hours
+# FR-02 scan tier - every 4 hours (SRS Open Issue #1's own proposed
+# two-tier resolution: fast top-rising-topics-only scan every 4h, full
+# FR-02-01..04 recompute every 6h via 'core' below)
+0 */4 * * * /bin/bash /Users/elainekao/TrendForceDash/run_pipeline.sh scan >> /Users/elainekao/TrendForceDash/pipeline.log 2>&1
+
+# FR-01/02(full)/03/04 core refresh - every 6 hours
 0 */6 * * * /bin/bash /Users/elainekao/TrendForceDash/run_pipeline.sh core >> /Users/elainekao/TrendForceDash/pipeline.log 2>&1
 
 # FR-05 account & comment management - every 8 hours

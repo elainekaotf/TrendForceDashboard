@@ -28,6 +28,18 @@ The "recent vs. prior" window is one of time_ranges.RANGE_ORDER (4h/8h/1d/
 period immediately before it. Output: analysis/fuzzy_trends_<range>.json for
 each range, plus analysis/fuzzy_trends.json mirroring the 1w range (this
 script's original fixed window) for scripts that just want "the" rising list.
+
+Frequency (SRS Open Issue #1 - "detect every 4 hours" vs "run every 6
+hours"): implements the SRS's own proposed resolution, a two-tier schedule.
+  - main(mode='scan'): FR-02-01 only (top rising topics per platform, no
+    KOL/sub-topic drill-down) for the 4h range, run every 4h - writes
+    straight into fuzzy_trends_4h.json with rising_kols/sub_topics left
+    empty and 'scan_only': true, so a scan-only refresh doesn't clobber a
+    prior full run's depth with a missing field (consumers just see less
+    until the next full run fills it back in).
+  - main(mode='full') (default): the complete FR-02-01..04 chain across all
+    5 ranges, run every 6h - this is what every range file other than a
+    just-scanned 4h one always contains.
 """
 import json
 import os
@@ -172,9 +184,12 @@ def kol_rationale(growth, accel, spread, window_label):
     return f"posts {'+' if growth >= 0 else ''}{growth:.0%}, engagement {'+' if accel >= 0 else ''}{accel:.0%} vs prior {window_label}"
 
 
-def compute_platform_trends(platform_posts, topic_labels, now, hours):
+def compute_platform_trends(platform_posts, topic_labels, now, hours, full=True):
     """Run the FR-02-01..04 expansion chain for one platform's posts, which
-    already carry a 'cluster_id' assigned from the cross-platform shared tree."""
+    already carry a 'cluster_id' assigned from the cross-platform shared tree.
+
+    full=False stops after FR-02-01 (the "scan" tier - see module docstring):
+    just the top rising topics, no KOL ranking or sub-topic drill-down."""
     window_label = format_window(hours)
     topic_rat = lambda g, a, s: topic_rationale(g, a, s, window_label)
     kol_rat = lambda g, a, s: kol_rationale(g, a, s, window_label)
@@ -189,6 +204,12 @@ def compute_platform_trends(platform_posts, topic_labels, now, hours):
         t['topic_id'] = t.pop('key')
         t['label'] = topic_labels[t['topic_id']]
     top_topics = topic_ranking[:TOP_N_TOPICS]
+
+    if not full:
+        for topic in top_topics:
+            topic['rising_kols'] = []
+            topic['sub_topics'] = []
+        return top_topics
 
     result_topics = []
     for topic in top_topics:
@@ -244,7 +265,13 @@ def write_json(path, result):
         json.dump(result, f, ensure_ascii=False, indent=2)
 
 
-def main(now=None):
+def main(now=None, mode='full'):
+    """mode='full' (default, every 6h): FR-02-01..04 across all 5 ranges.
+    mode='scan' (every 4h): FR-02-01 only, just the 4h range - see module
+    docstring for why this two-tier split exists."""
+    if mode not in ('full', 'scan'):
+        raise ValueError("mode must be 'full' or 'scan'")
+
     posts = load_posts()
     for p in posts:
         p['ts'] = parse_ts(p['timestamp'])
@@ -267,8 +294,9 @@ def main(now=None):
         topic_labels[int(cid)] = ' / '.join(label_cluster(vectorizer, km.cluster_centers_[cid])) or f'cluster-{cid}'
 
     platforms = sorted({p['platform'] for p in posts})
+    ranges = ['4h'] if mode == 'scan' else RANGE_ORDER
     written = 0
-    for range_key in RANGE_ORDER:
+    for range_key in ranges:
         hours = RANGE_HOURS[range_key]
         platforms_out = {}
         for platform in platforms:
@@ -276,7 +304,7 @@ def main(now=None):
                                and p['ts'] and p['ts'] >= now - timedelta(hours=hours * 2)]
             if len(platform_posts) < MIN_WINDOW_POSTS:
                 continue
-            result_topics = compute_platform_trends(platform_posts, topic_labels, now, hours)
+            result_topics = compute_platform_trends(platform_posts, topic_labels, now, hours, full=(mode == 'full'))
             if result_topics:
                 platforms_out[platform] = {'top_rising_topics': result_topics}
 
@@ -289,6 +317,7 @@ def main(now=None):
             'range': range_key,
             'window_hours': hours,
             'window': window_dict(now - timedelta(hours=hours), now),
+            'scan_only': mode == 'scan',
             'platforms': platforms_out,
         }
         write_json(range_out_file(range_key), result)
@@ -296,8 +325,8 @@ def main(now=None):
             write_json(OUT_FILE, result)
 
         total_topics = sum(len(v['top_rising_topics']) for v in platforms_out.values())
-        print(f"[{range_key}] Wrote {total_topics} rising topics across {len(platforms_out)} platform(s) "
-              f"to {range_out_file(range_key)}")
+        print(f"[{range_key}{'/scan' if mode == 'scan' else ''}] Wrote {total_topics} rising topics across "
+              f"{len(platforms_out)} platform(s) to {range_out_file(range_key)}")
         written += 1
 
     if written == 0:
@@ -305,4 +334,5 @@ def main(now=None):
 
 
 if __name__ == '__main__':
-    main()
+    import sys
+    main(mode=sys.argv[1] if len(sys.argv) > 1 else 'full')
