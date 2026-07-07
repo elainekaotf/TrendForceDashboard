@@ -53,6 +53,22 @@ def load(name):
         return json.load(f)
 
 
+def load_vader_lexicon():
+    """FR-07's self-service upload runs entirely client-side (static site,
+    no backend) - embed VADER's actual word->score lexicon so its sentiment
+    scoring matches the rest of the dashboard (nlp_sentiment.py) instead of
+    approximating with a small ad hoc word list."""
+    import vaderSentiment
+    path = os.path.join(os.path.dirname(vaderSentiment.__file__), 'vader_lexicon.txt')
+    lexicon = {}
+    with open(path, encoding='utf-8') as f:
+        for line in f:
+            parts = line.split('\t')
+            if len(parts) >= 2:
+                lexicon[parts[0]] = float(parts[1])
+    return lexicon
+
+
 def esc(s):
     if s is None:
         return ''
@@ -330,6 +346,7 @@ def main():
     window_caption_json = json.dumps(window_caption_by_range, ensure_ascii=False)
     window_bounds_json = json.dumps(window_bounds_by_range, ensure_ascii=False)
     keyword_index_json = json.dumps(keyword_index, ensure_ascii=False)
+    vader_lexicon_json = json.dumps(load_vader_lexicon())
 
     html = f"""<!doctype html>
 <html lang="en"><head>
@@ -386,6 +403,22 @@ def main():
   }}
   .keyword-search-bar input::placeholder {{ color: var(--muted-dim); }}
   .keyword-search-bar input:focus {{ outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-dim); }}
+  .upload-row {{ display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 16px; }}
+  .upload-row label {{ color: var(--muted); font-size: 12.5px; }}
+  .upload-row input[type="file"] {{
+    color: var(--text); font-size: 13px; background: var(--surface-2); border: 1px solid var(--border);
+    border-radius: 7px; padding: 8px 10px;
+  }}
+  .upload-row select {{
+    background: var(--surface-2); color: var(--text); border: 1px solid var(--border);
+    border-radius: 6px; padding: 6px 10px; font-size: 13px;
+  }}
+  .download-row {{ display: flex; gap: 10px; margin-top: 14px; }}
+  .btn {{
+    background: var(--blue-dim); color: var(--blue); border: 1px solid transparent; border-radius: 7px;
+    padding: 8px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
+  }}
+  .btn:hover {{ filter: brightness(1.15); }}
   section {{ display: none; }}
   section.active {{ display: block; animation: fadein 0.2s ease; }}
   @keyframes fadein {{ from {{ opacity: 0; transform: translateY(2px); }} to {{ opacity: 1; transform: translateY(0); }} }}
@@ -477,6 +510,13 @@ def main():
     .col-2 {{ grid-template-columns: 1fr; }}
     .panel {{ padding: 14px 16px; }}
   }}
+  @media print {{
+    nav, .range-bar, .upload-row, .download-row {{ display: none !important; }}
+    body {{ background: #fff; color: #111; }}
+    .panel {{ background: #fff; border: 1px solid #ccc; box-shadow: none; break-inside: avoid; }}
+    th, .badge, .stat-label {{ color: #444 !important; }}
+    .badge {{ background: #eee !important; }}
+  }}
 </style>
 </head>
 <body>
@@ -492,6 +532,7 @@ def main():
   <button class="tab-btn" data-tab="accounts">Accounts</button>
   <button class="tab-btn" data-tab="replies">Reply Queue</button>
   <button class="tab-btn" data-tab="summaries">Daily Summaries</button>
+  <button class="tab-btn" data-tab="selfservice">Self-service Upload</button>
 </nav>
 <main>
   <div id="range-bar" class="range-bar">
@@ -506,6 +547,30 @@ def main():
   <section id="accounts"><h2>FR-05 &middot; Account Status</h2>{render_accounts(account_status)}</section>
   <section id="replies"><h2>FR-05 &middot; Reply Queue</h2>{render_reply_queue(reply_queue)}</section>
   <section id="summaries"><h2>FR-06 &middot; Daily Executive Summaries</h2>{render_summaries(daily_summaries)}</section>
+  <section id="selfservice">
+    <h2>FR-07 &middot; Self-service Data Analysis &amp; Export</h2>
+    {panel(f'''
+      <p class="muted" style="margin:0 0 14px">
+        Upload your own CSV export, analyzed entirely in your browser (this is a static site - nothing is
+        uploaded anywhere). Timestamps without a timezone are assumed to be in the source timezone below and
+        converted to Asia/Taipei (UTC+8), matching self_service_analysis.py's CLI behavior.
+      </p>
+      <div class="upload-row">
+        <input type="file" id="upload-file" accept=".csv">
+        <label for="upload-tz">Source timezone (for naive timestamps)</label>
+        <select id="upload-tz">
+          <option value="America/Los_Angeles" selected>America/Los_Angeles (PT)</option>
+          <option value="America/New_York">America/New_York (ET)</option>
+          <option value="America/Chicago">America/Chicago (CT)</option>
+          <option value="UTC">UTC</option>
+          <option value="Asia/Taipei">Asia/Taipei (UTC+8)</option>
+        </select>
+      </div>
+      <div id="upload-results"><p class="empty">Choose a CSV file to analyze. Expected columns: a text column
+        (text/content/message) and a timestamp column (timestamp/date/created_at) - extra columns are kept
+        and passed through untouched.</p></div>
+    ''', 'Upload a CSV', 'Analyzed client-side, nothing leaves your browser')}
+  </section>
 </main>
 <script>
   const RANGE_HTML = {range_data_json};
@@ -612,6 +677,260 @@ def main():
 
   document.getElementById('range-select').addEventListener('change', e => applyRange(e.target.value));
   applyRange(document.getElementById('range-select').value);
+
+  // --- FR-07: self-service upload, analyzed entirely client-side (no
+  // backend on a static site). Sentiment uses a JS port of VADER's core
+  // algorithm (negation, boosters, ALLCAPS/punctuation emphasis,
+  // "but"-contrast, compound normalization) over the same lexicon
+  // nlp_sentiment.py uses server-side, so scores are consistent with the
+  // rest of the dashboard rather than an ad hoc approximation.
+  const VADER_LEXICON = {vader_lexicon_json};
+  const VADER_NEGATE = ["aint","arent","cannot","cant","couldnt","darent","didnt","doesnt",
+    "ain't","aren't","can't","couldn't","daren't","didn't","doesn't",
+    "dont","hadnt","hasnt","havent","isnt","mightnt","mustnt","neither",
+    "don't","hadn't","hasn't","haven't","isn't","mightn't","mustn't",
+    "neednt","needn't","never","none","nope","nor","not","nothing","nowhere",
+    "oughtnt","shant","shouldnt","uhuh","wasnt","werent",
+    "oughtn't","shan't","shouldn't","uh-uh","wasn't","weren't",
+    "without","wont","wouldnt","won't","wouldn't","rarely","seldom","despite"];
+  const B_INCR = 0.293, B_DECR = -0.293, C_INCR = 0.733, N_SCALAR = -0.74;
+  const VADER_BOOSTER = {{
+    absolutely:B_INCR,amazingly:B_INCR,awfully:B_INCR,completely:B_INCR,considerable:B_INCR,considerably:B_INCR,
+    decidedly:B_INCR,deeply:B_INCR,effing:B_INCR,enormous:B_INCR,enormously:B_INCR,entirely:B_INCR,especially:B_INCR,
+    exceptional:B_INCR,exceptionally:B_INCR,extreme:B_INCR,extremely:B_INCR,fabulously:B_INCR,flipping:B_INCR,
+    flippin:B_INCR,frackin:B_INCR,fracking:B_INCR,fricking:B_INCR,frickin:B_INCR,frigging:B_INCR,friggin:B_INCR,
+    fully:B_INCR,greatly:B_INCR,hella:B_INCR,highly:B_INCR,hugely:B_INCR,incredible:B_INCR,incredibly:B_INCR,
+    intensely:B_INCR,major:B_INCR,majorly:B_INCR,more:B_INCR,most:B_INCR,particularly:B_INCR,purely:B_INCR,
+    quite:B_INCR,really:B_INCR,remarkably:B_INCR,so:B_INCR,substantially:B_INCR,thoroughly:B_INCR,total:B_INCR,
+    totally:B_INCR,tremendous:B_INCR,tremendously:B_INCR,uber:B_INCR,unbelievably:B_INCR,unusually:B_INCR,
+    utter:B_INCR,utterly:B_INCR,very:B_INCR,
+    almost:B_DECR,barely:B_DECR,hardly:B_DECR,less:B_DECR,little:B_DECR,marginal:B_DECR,marginally:B_DECR,
+    occasional:B_DECR,occasionally:B_DECR,partly:B_DECR,scarce:B_DECR,scarcely:B_DECR,slight:B_DECR,
+    slightly:B_DECR,somewhat:B_DECR,
+  }};
+
+  function vaderNegated(word) {{
+    const w = word.toLowerCase();
+    return VADER_NEGATE.includes(w) || w.includes("n't");
+  }}
+  function vaderScalar(word, valence, isCapDiff) {{
+    const wl = word.toLowerCase();
+    if (!(wl in VADER_BOOSTER)) return 0;
+    let scalar = VADER_BOOSTER[wl];
+    if (valence < 0) scalar *= -1;
+    if (word === word.toUpperCase() && isCapDiff) scalar += (valence > 0 ? C_INCR : -C_INCR);
+    return scalar;
+  }}
+  function stripPunc(token) {{
+    const stripped = token.replace(/^[.,!?;:'"()\\[\\]{{}}\\-]+|[.,!?;:'"()\\[\\]{{}}\\-]+$/g, '');
+    return stripped.length <= 2 ? token : stripped;
+  }}
+  function vaderScore(text) {{
+    const words = (text || '').split(/\s+/).filter(Boolean).map(stripPunc);
+    if (!words.length) return 0;
+    const upperCount = words.filter(w => w === w.toUpperCase() && /[A-Z]/.test(w)).length;
+    const isCapDiff = upperCount > 0 && upperCount < words.length;
+    const sentiments = [];
+    for (let i = 0; i < words.length; i++) {{
+      const wl = words[i].toLowerCase();
+      let valence = 0;
+      if (wl in VADER_LEXICON) {{
+        valence = VADER_LEXICON[wl];
+        if (words[i] === words[i].toUpperCase() && isCapDiff) valence += (valence > 0 ? C_INCR : -C_INCR);
+        for (let startI = 0; startI < 3; startI++) {{
+          if (i > startI && !(words[i - (startI + 1)].toLowerCase() in VADER_LEXICON)) {{
+            let s = vaderScalar(words[i - (startI + 1)], valence, isCapDiff);
+            if (startI === 1 && s !== 0) s *= 0.95;
+            if (startI === 2 && s !== 0) s *= 0.9;
+            valence += s;
+            if (vaderNegated(words[i - (startI + 1)])) valence *= N_SCALAR;
+          }}
+        }}
+      }}
+      sentiments.push(valence);
+    }}
+    // contrastive "but": halve sentiment before it, boost 1.5x after
+    const lower = words.map(w => w.toLowerCase());
+    const butIdx = lower.indexOf('but');
+    if (butIdx !== -1) {{
+      for (let i = 0; i < sentiments.length; i++) sentiments[i] *= (i < butIdx ? 0.5 : (i > butIdx ? 1.5 : 1));
+    }}
+    let sum = sentiments.reduce((a, b) => a + b, 0);
+    const epCount = Math.min((text.match(/!/g) || []).length, 4);
+    sum += (sum > 0 ? 1 : sum < 0 ? -1 : 0) * epCount * 0.292;
+    return sum / Math.sqrt(sum * sum + 15);
+  }}
+  function classifySentiment(text) {{
+    const c = vaderScore(text);
+    return c >= 0.05 ? 'positive' : c <= -0.05 ? 'negative' : 'neutral';
+  }}
+
+  // Minimal CSV parser: handles quoted fields with embedded commas/newlines.
+  function parseCsv(text) {{
+    const rows = [];
+    let row = [], field = '', inQuotes = false;
+    for (let i = 0; i < text.length; i++) {{
+      const c = text[i];
+      if (inQuotes) {{
+        if (c === '"' && text[i + 1] === '"') {{ field += '"'; i++; }}
+        else if (c === '"') {{ inQuotes = false; }}
+        else {{ field += c; }}
+      }} else {{
+        if (c === '"') inQuotes = true;
+        else if (c === ',') {{ row.push(field); field = ''; }}
+        else if (c === '\\n' || c === '\\r') {{
+          if (c === '\\r' && text[i + 1] === '\\n') i++;
+          row.push(field); field = '';
+          if (row.length > 1 || row[0] !== '') rows.push(row);
+          row = [];
+        }} else {{ field += c; }}
+      }}
+    }}
+    if (field !== '' || row.length) {{ row.push(field); rows.push(row); }}
+    if (!rows.length) return [];
+    const headers = rows[0];
+    return rows.slice(1).map(r => Object.fromEntries(headers.map((h, i) => [h, r[i] ?? ''])));
+  }}
+
+  const TEXT_COLUMN_CANDIDATES = ['translated_text', 'text', 'content', 'message', 'body'];
+  const TIMESTAMP_COLUMN_CANDIDATES = ['timestamp', 'created_at', 'date', 'exactDate', 'scrapedAt'];
+
+  function detectColumn(fieldnames, candidates) {{
+    return candidates.find(c => fieldnames.includes(c)) || null;
+  }}
+
+  // Convert a wall-clock time assumed to be in `timeZone` to a real UTC
+  // Date, using Intl to get that zone's offset at that instant (handles
+  // DST automatically, same guarantee zoneinfo gave the Python version).
+  function zonedTimeToUtc(y, mo, d, h, mi, s, timeZone) {{
+    let guess = new Date(Date.UTC(y, mo - 1, d, h, mi, s));
+    for (let i = 0; i < 2; i++) {{
+      const dtf = new Intl.DateTimeFormat('en-US', {{
+        timeZone, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit',
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+      }});
+      const parts = Object.fromEntries(dtf.formatToParts(guess).map(p => [p.type, p.value]));
+      const asIfUtc = Date.UTC(+parts.year, +parts.month - 1, +parts.day, +parts.hour, +parts.minute, +parts.second);
+      const offsetMs = asIfUtc - guess.getTime();
+      guess = new Date(Date.UTC(y, mo - 1, d, h, mi, s) - offsetMs);
+    }}
+    return guess;
+  }}
+
+  function parseUploadTimestamp(raw, sourceTz) {{
+    if (!raw) return {{ date: null, hadOffset: false }};
+    const trimmed = raw.trim();
+    // Explicit offset/Z present -> parse directly, no zone assumption needed.
+    if (/[zZ]$|[+-]\d{{2}}:?\d{{2}}$/.test(trimmed)) {{
+      const d = new Date(trimmed);
+      return isNaN(d) ? {{ date: null, hadOffset: false }} : {{ date: d, hadOffset: true }};
+    }}
+    const m = trimmed.match(/(\d{{4}})-(\d{{2}})-(\d{{2}})[ T](\d{{2}}):(\d{{2}})(?::(\d{{2}}))?/);
+    if (!m) return {{ date: null, hadOffset: false }};
+    const [, y, mo, d, h, mi, s] = m.map(Number);
+    return {{ date: zonedTimeToUtc(y, mo, d, h, mi, s || 0, sourceTz), hadOffset: false }};
+  }}
+
+  function csvCell(v) {{
+    const s = String(v ?? '');
+    return /[",\\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s;
+  }}
+
+  function downloadBlob(filename, content, type) {{
+    const blob = new Blob([content], {{ type }});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename; a.click();
+    URL.revokeObjectURL(url);
+  }}
+
+  let uploadedRows = null, uploadedFields = null, uploadedBaseName = 'upload';
+
+  function renderUploadResults(rows, fields, meta) {{
+    const container = document.getElementById('upload-results');
+    if (!rows.length) {{
+      container.innerHTML = '<p class="empty">No rows found (or no recognizable text column).</p>';
+      return;
+    }}
+    const counts = {{ positive: 0, neutral: 0, negative: 0 }};
+    let withOffset = 0;
+    for (const r of rows) {{
+      counts[r.sentiment]++;
+      if (r._hadOffset) withOffset++;
+    }}
+    const total = rows.length;
+    const rankRows = Object.entries(counts).map(([k, v]) =>
+      `<tr><td class="cell-primary">${{k}}</td><td class="num">${{v}}</td><td class="num">${{Math.round(v/total*1000)/10}}%</td></tr>`).join('');
+    const sampleRows = rows.slice(0, 15).map(r => `
+      <tr><td>${{esc(r[meta.textCol] || '').slice(0, 90)}}</td>
+      <td>${{r.converted_timestamp_utc8 || '—'}}</td>
+      <td><span class="badge status-${{r.sentiment === 'positive' ? 'active' : r.sentiment === 'negative' ? 'inactive' : 'stale'}}">${{r.sentiment}}</span></td></tr>`).join('');
+
+    container.innerHTML = `
+      <div class="stat-grid" style="margin-bottom:16px">
+        <div class="stat"><div class="stat-num">${{total}}</div><div class="stat-label">Rows</div></div>
+        <div class="stat"><div class="stat-num">${{withOffset}}/${{total}}</div><div class="stat-label">Had explicit offset</div></div>
+      </div>
+      <div class="col-2">
+        <div>${{table_(['Sentiment', '#Count', '#Share'], rankRows)}}</div>
+        <div>${{table_(['Text', 'Converted (UTC+8)', 'Sentiment'], sampleRows)}}</div>
+      </div>
+      <div class="download-row">
+        <button class="btn" id="download-csv-btn">Download CSV</button>
+        <button class="btn" id="download-print-btn">Print / Save as PDF</button>
+      </div>
+    `;
+    function esc(s) {{ const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }}
+    function table_(headers, rowsHtml) {{
+      const head = headers.map(h => h.startsWith('#') ? `<th class="num">${{h.slice(1)}}</th>` : `<th>${{h}}</th>`).join('');
+      return `<div class="table-wrap"><table><thead><tr>${{head}}</tr></thead><tbody>${{rowsHtml}}</tbody></table></div>`;
+    }}
+
+    document.getElementById('download-csv-btn').onclick = () => {{
+      const outFields = [...fields, 'converted_timestamp_utc8', 'sentiment'];
+      const lines = [outFields.map(csvCell).join(',')];
+      for (const r of rows) lines.push(outFields.map(f => csvCell(r[f])).join(','));
+      downloadBlob(uploadedBaseName + '_analyzed.csv', lines.join('\\n'), 'text/csv');
+    }};
+    document.getElementById('download-print-btn').onclick = () => window.print();
+  }}
+
+  document.getElementById('upload-file').addEventListener('change', e => {{
+    const file = e.target.files[0];
+    if (!file) return;
+    uploadedBaseName = file.name.replace(/\.csv$/i, '');
+    const reader = new FileReader();
+    reader.onload = () => {{
+      const parsed = parseCsv(reader.result);
+      if (!parsed.length) {{
+        document.getElementById('upload-results').innerHTML = '<p class="empty">Could not parse any rows from this file.</p>';
+        return;
+      }}
+      const fields = Object.keys(parsed[0]);
+      const textCol = detectColumn(fields, TEXT_COLUMN_CANDIDATES);
+      const tsCol = detectColumn(fields, TIMESTAMP_COLUMN_CANDIDATES);
+      if (!textCol) {{
+        document.getElementById('upload-results').innerHTML = '<p class="empty">No text/content/message column found in this CSV.</p>';
+        return;
+      }}
+      const sourceTz = document.getElementById('upload-tz').value;
+      const rows = parsed.map(r => {{
+        const {{ date, hadOffset }} = tsCol ? parseUploadTimestamp(r[tsCol], sourceTz) : {{ date: null, hadOffset: false }};
+        return {{
+          ...r,
+          sentiment: classifySentiment(r[textCol]),
+          converted_timestamp_utc8: date ? new Intl.DateTimeFormat('sv-SE', {{
+            timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit',
+            hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23',
+          }}).format(date).replace(' ', 'T') + '+08:00' : null,
+          _hadOffset: hadOffset,
+        }};
+      }});
+      uploadedRows = rows; uploadedFields = fields;
+      renderUploadResults(rows, fields, {{ textCol, tsCol }});
+    }};
+    reader.readAsText(file);
+  }});
 </script>
 </body></html>"""
 
