@@ -332,8 +332,9 @@ def render_reply_queue(data):
         <td class="num">{r['reply_count']}</td>
         <td>{esc(r['topic_label'])}</td>
         <td>{esc(r['draft_reply'])}</td>
+        <td>{f'<a href="{esc(r["url"])}" target="_blank" rel="noopener noreferrer">Open post</a>' if r.get('url') else '—'}</td>
       </tr>""" for r in records)
-    body = table(['Status', 'Account', '#Replies', 'Topic', 'Draft reply'], rows,
+    body = table(['Status', 'Account', '#Replies', 'Topic', 'Draft reply', 'Post'], rows,
                  'No own-account posts currently need a response.')
     return panel(body, 'Own-account posts needing a reply', 'Never touches competitor accounts')
 

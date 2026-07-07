@@ -142,6 +142,7 @@ def build_comment_queue(posts, topic_labels_by_cluster, cluster_id_by_post):
             'platform': p['platform'],
             'handle': p['handle'],
             'timestamp': p['timestamp'],
+            'url': p.get('url', ''),
             'text_excerpt': p['text'][:200],
             'reply_count': replies,
             'topic_label': topic_labels_by_cluster[cid],
@@ -192,6 +193,7 @@ def build():
         if rid in queue:
             queue[rid]['reply_count'] = rec['reply_count']
             queue[rid]['draft_reply'] = queue[rid].get('draft_reply') or rec['draft_reply']
+            queue[rid]['url'] = queue[rid].get('url') or rec['url']
             refreshed += 1
         else:
             rec['status'] = 'drafted'
