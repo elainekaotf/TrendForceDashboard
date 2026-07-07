@@ -1,239 +1,372 @@
 {
-  "generated_at": "2026-07-07T12:45:00+00:00",
+  "generated_at": "2026-07-07T04:45:00+00:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-07T04:45:00+00:00",
-    "end_utc": "2026-07-07T12:45:00+00:00",
-    "start_tw": "Jul 07, 12:45",
-    "end_tw": "Jul 07, 20:45"
+    "start_utc": "2026-07-06T20:45:00+00:00",
+    "end_utc": "2026-07-07T04:45:00+00:00",
+    "start_tw": "Jul 07, 04:45",
+    "end_tw": "Jul 07, 12:45"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 20,
+      "total_posts": 57,
       "sentiment_counts": {
-        "negative": 3,
-        "neutral": 10,
-        "positive": 7
+        "positive": 23,
+        "neutral": 23,
+        "negative": 11
       },
       "sentiment_share": {
-        "negative": 0.15,
-        "neutral": 0.5,
-        "positive": 0.35
+        "positive": 0.404,
+        "neutral": 0.404,
+        "negative": 0.193
       },
       "top_terms": [
+        "the",
+        "memory",
         "See",
         "more",
-        "兆韓元",
-        "美國總統川普今天表示",
-        "美國若無法與伊朗達成協議",
-        "做個了結",
-        "隨著德黑蘭當局在最高領袖哈米尼葬禮後展現不妥協的態度",
-        "川普這番話也讓軍事行動的威脅再升級",
-        "#工商報爆",
-        "旗下公司再爆百億負債"
+        "samsung",
+        "nvidia",
+        "#三星",
+        "Nvidia",
+        "KRW",
+        "debt"
       ]
     },
     "temperature_bar": [
       {
+        "topic_id": 7,
+        "label": "memory / nvidia / samsung / case",
+        "heat": 62.8,
+        "volume": 6,
+        "engagement": 6035
+      },
+      {
         "topic_id": 0,
-        "label": "工商報爆",
-        "heat": 79.1,
-        "volume": 14,
-        "engagement": 212
+        "label": "雖然 / 工商報爆 / compute / 英特爾",
+        "heat": 62.3,
+        "volume": 27,
+        "engagement": 933
       },
       {
         "topic_id": 1,
-        "label": "道瓊再創高 / 早晨財經速解讀 / 散戶歸隊 / 大賣空貝瑞狙擊美光",
-        "heat": 50.0,
+        "label": "川普",
+        "heat": 10.2,
+        "volume": 3,
+        "engagement": 19
+      },
+      {
+        "topic_id": 8,
+        "label": "debt / ai / gpu / nvidia",
+        "heat": 10.0,
         "volume": 2,
-        "engagement": 535
+        "engagement": 460
+      },
+      {
+        "topic_id": 10,
+        "label": "krw / samsung / operating / profit",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 929
+      },
+      {
+        "topic_id": 6,
+        "label": "ai / 億美元 / 雖然",
+        "heat": 10.0,
+        "volume": 5,
+        "engagement": 6
       },
       {
         "topic_id": 2,
-        "label": "隨著德黑蘭當局在最高領袖哈米尼葬禮後展現不妥協的態度 / 美國若無法與伊朗達成協議 / 美國總統川普今天表示 / 川普這番話也讓軍事行動的威脅再升級",
+        "label": "輝達 / ai",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 5
+      },
+      {
+        "topic_id": 9,
+        "label": "三星 / 兆韓圜 / 英特爾 / 兆元",
+        "heat": 10.0,
+        "volume": 4,
+        "engagement": 8
+      },
+      {
+        "topic_id": 4,
+        "label": "就會 / 隨著德黑蘭當局在最高領袖哈米尼葬禮後展現不妥協的態度 / 美國若無法與伊朗達成協議 / 美國總統川普今天表示",
         "heat": 10.0,
         "volume": 2,
         "engagement": 27
       },
       {
-        "topic_id": 3,
+        "topic_id": 5,
         "label": "集團股被波及 / 永崴投控慘跌停 / 旗下公司再爆百億負債 / 工商報爆",
         "heat": 10.0,
         "volume": 2,
         "engagement": 29
+      },
+      {
+        "topic_id": 3,
+        "label": "道瓊再創高 / 修正來了嗎 / 早晨財經速解讀 / 散戶歸隊",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 535
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-07T04:45:00.000002+00:00",
-        "bucket_end": "2026-07-07T05:19:17.142859+00:00",
+        "bucket_start": "2026-07-06T20:45:00.000002+00:00",
+        "bucket_end": "2026-07-06T21:19:17.142859+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-06T21:19:17.142859+00:00",
+        "bucket_end": "2026-07-06T21:53:34.285716+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-07T05:19:17.142859+00:00",
-        "bucket_end": "2026-07-07T05:53:34.285716+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-07T05:53:34.285716+00:00",
-        "bucket_end": "2026-07-07T06:27:51.428573+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-07T06:27:51.428573+00:00",
-        "bucket_end": "2026-07-07T07:02:08.571430+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-07T07:02:08.571430+00:00",
-        "bucket_end": "2026-07-07T07:36:25.714287+00:00",
+        "bucket_start": "2026-07-06T21:53:34.285716+00:00",
+        "bucket_end": "2026-07-06T22:27:51.428573+00:00",
         "positive": 1,
         "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-06T22:27:51.428573+00:00",
+        "bucket_end": "2026-07-06T23:02:08.571430+00:00",
+        "positive": 3,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-06T23:02:08.571430+00:00",
+        "bucket_end": "2026-07-06T23:36:25.714287+00:00",
+        "positive": 2,
+        "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-07T07:36:25.714287+00:00",
-        "bucket_end": "2026-07-07T08:10:42.857144+00:00",
-        "positive": 0,
+        "bucket_start": "2026-07-06T23:36:25.714287+00:00",
+        "bucket_end": "2026-07-07T00:10:42.857144+00:00",
+        "positive": 1,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-07T08:10:42.857144+00:00",
-        "bucket_end": "2026-07-07T08:45:00.000001+00:00",
-        "positive": 2,
+        "bucket_start": "2026-07-07T00:10:42.857144+00:00",
+        "bucket_end": "2026-07-07T00:45:00.000001+00:00",
+        "positive": 4,
         "neutral": 3,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-07T08:45:00.000001+00:00",
-        "bucket_end": "2026-07-07T09:19:17.142858+00:00",
+        "bucket_start": "2026-07-07T00:45:00.000001+00:00",
+        "bucket_end": "2026-07-07T01:19:17.142858+00:00",
         "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-07T09:19:17.142858+00:00",
-        "bucket_end": "2026-07-07T09:53:34.285715+00:00",
-        "positive": 0,
         "neutral": 1,
-        "negative": 0
+        "negative": 1
       },
       {
-        "bucket_start": "2026-07-07T09:53:34.285715+00:00",
-        "bucket_end": "2026-07-07T10:27:51.428572+00:00",
-        "positive": 0,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-07T10:27:51.428572+00:00",
-        "bucket_end": "2026-07-07T11:02:08.571429+00:00",
+        "bucket_start": "2026-07-07T01:19:17.142858+00:00",
+        "bucket_end": "2026-07-07T01:53:34.285715+00:00",
         "positive": 2,
-        "neutral": 0,
-        "negative": 0
+        "neutral": 2,
+        "negative": 1
       },
       {
-        "bucket_start": "2026-07-07T11:02:08.571429+00:00",
-        "bucket_end": "2026-07-07T11:36:25.714286+00:00",
+        "bucket_start": "2026-07-07T01:53:34.285715+00:00",
+        "bucket_end": "2026-07-07T02:27:51.428572+00:00",
         "positive": 0,
+        "neutral": 5,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-07T02:27:51.428572+00:00",
+        "bucket_end": "2026-07-07T03:02:08.571429+00:00",
+        "positive": 7,
         "neutral": 1,
-        "negative": 0
+        "negative": 1
       },
       {
-        "bucket_start": "2026-07-07T11:36:25.714286+00:00",
-        "bucket_end": "2026-07-07T12:10:42.857143+00:00",
+        "bucket_start": "2026-07-07T03:02:08.571429+00:00",
+        "bucket_end": "2026-07-07T03:36:25.714286+00:00",
         "positive": 0,
-        "neutral": 0,
+        "neutral": 3,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-07T03:36:25.714286+00:00",
+        "bucket_end": "2026-07-07T04:10:42.857143+00:00",
+        "positive": 1,
+        "neutral": 2,
         "negative": 3
       },
       {
-        "bucket_start": "2026-07-07T12:10:42.857143+00:00",
-        "bucket_end": "2026-07-07T12:45:00+00:00",
+        "bucket_start": "2026-07-07T04:10:42.857143+00:00",
+        "bucket_end": "2026-07-07T04:45:00+00:00",
         "positive": 0,
-        "neutral": 2,
+        "neutral": 4,
         "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 1,
-        "top_topic_label": "道瓊再創高 / 早晨財經速解讀 / 散戶歸隊 / 大賣空貝瑞狙擊美光",
+        "handle": "TrendForce",
+        "top_topic_id": 0,
+        "top_topic_label": "雖然 / 工商報爆 / compute / 英特爾",
         "focus_share": 1.0,
-        "post_count": 2
+        "post_count": 1
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 0,
+        "top_topic_label": "雖然 / 工商報爆 / compute / 英特爾",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "dylan522p",
+        "top_topic_id": 8,
+        "top_topic_label": "debt / ai / gpu / nvidia",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 0,
+        "top_topic_label": "雖然 / 工商報爆 / compute / 英特爾",
+        "focus_share": 0.8,
+        "post_count": 5
+      },
+      {
+        "handle": "jukan05",
+        "top_topic_id": 7,
+        "top_topic_label": "memory / nvidia / samsung / case",
+        "focus_share": 0.75,
+        "post_count": 8
       },
       {
         "handle": "ctee.fans",
         "top_topic_id": 0,
-        "top_topic_label": "工商報爆",
-        "focus_share": 0.778,
+        "top_topic_label": "雖然 / 工商報爆 / compute / 英特爾",
+        "focus_share": 0.722,
         "post_count": 18
+      },
+      {
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 3,
+        "top_topic_label": "道瓊再創高 / 修正來了嗎 / 早晨財經速解讀 / 散戶歸隊",
+        "focus_share": 0.667,
+        "post_count": 3
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 0,
+        "top_topic_label": "雖然 / 工商報爆 / compute / 英特爾",
+        "focus_share": 0.35,
+        "post_count": 20
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 1,
-        "label": "道瓊再創高 / 早晨財經速解讀 / 散戶歸隊 / 大賣空貝瑞狙擊美光",
+        "topic_id": 7,
+        "label": "memory / nvidia / samsung / case",
+        "total_engagement": 6035,
+        "post_count": 6
+      },
+      {
+        "topic_id": 0,
+        "label": "雖然 / 工商報爆 / compute / 英特爾",
+        "total_engagement": 933,
+        "post_count": 27
+      },
+      {
+        "topic_id": 10,
+        "label": "krw / samsung / operating / profit",
+        "total_engagement": 929,
+        "post_count": 2
+      },
+      {
+        "topic_id": 3,
+        "label": "道瓊再創高 / 修正來了嗎 / 早晨財經速解讀 / 散戶歸隊",
         "total_engagement": 535,
         "post_count": 2
       },
       {
-        "topic_id": 0,
-        "label": "工商報爆",
-        "total_engagement": 212,
-        "post_count": 14
+        "topic_id": 8,
+        "label": "debt / ai / gpu / nvidia",
+        "total_engagement": 460,
+        "post_count": 2
       },
       {
-        "topic_id": 3,
+        "topic_id": 5,
         "label": "集團股被波及 / 永崴投控慘跌停 / 旗下公司再爆百億負債 / 工商報爆",
         "total_engagement": 29,
         "post_count": 2
       },
       {
-        "topic_id": 2,
-        "label": "隨著德黑蘭當局在最高領袖哈米尼葬禮後展現不妥協的態度 / 美國若無法與伊朗達成協議 / 美國總統川普今天表示 / 川普這番話也讓軍事行動的威脅再升級",
+        "topic_id": 4,
+        "label": "就會 / 隨著德黑蘭當局在最高領袖哈米尼葬禮後展現不妥協的態度 / 美國若無法與伊朗達成協議 / 美國總統川普今天表示",
         "total_engagement": 27,
+        "post_count": 2
+      },
+      {
+        "topic_id": 1,
+        "label": "川普",
+        "total_engagement": 19,
+        "post_count": 3
+      },
+      {
+        "topic_id": 9,
+        "label": "三星 / 兆韓圜 / 英特爾 / 兆元",
+        "total_engagement": 8,
+        "post_count": 4
+      },
+      {
+        "topic_id": 6,
+        "label": "ai / 億美元 / 雖然",
+        "total_engagement": 6,
+        "post_count": 5
+      },
+      {
+        "topic_id": 2,
+        "label": "輝達 / ai",
+        "total_engagement": 5,
         "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 46,
+          "likes": 7369,
+          "engagement": 8227,
+          "avg_engagement": 178.8
         },
         "afternoon": {
-          "post_count": 9,
-          "likes": 652,
-          "engagement": 652,
-          "avg_engagement": 72.4
+          "post_count": 8,
+          "likes": 425,
+          "engagement": 427,
+          "avg_engagement": 53.4
         },
         "evening": {
-          "post_count": 11,
-          "likes": 151,
-          "engagement": 151,
-          "avg_engagement": 13.7
-        },
-        "late_night": {
           "post_count": 0,
           "likes": 0,
           "engagement": 0,
           "avg_engagement": 0.0
+        },
+        "late_night": {
+          "post_count": 3,
+          "likes": 275,
+          "engagement": 332,
+          "avg_engagement": 110.7
         }
       },
-      "peak_slot": "evening"
+      "peak_slot": "morning"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,

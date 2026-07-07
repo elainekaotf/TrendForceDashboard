@@ -9,9 +9,31 @@
 #
 # Run before analysis, not after: cluster_topics.py etc. only see whatever
 # is already in csv/ when they start.
+#
+# Locking: run_pipeline.sh calls this at the start of every job, and the
+# cron schedule has jobs that land on the same minute (scan every 4h and
+# accounts every 8h both fire at 0/8/16h) - two concurrent instances both
+# truncating and writing the same csv/facebook/<handle>.csv raced and
+# corrupted it (a UTF-8 multi-byte sequence split mid-character) the first
+# time this actually happened. mkdir is atomic on POSIX filesystems, so use
+# a lock directory as a mutex; a second instance waits rather than racing.
 
 set -u
 cd "$(dirname "$0")"
+
+LOCKDIR=".sync_data.lock"
+waited=0
+while ! mkdir "$LOCKDIR" 2>/dev/null; do
+  if [ "$waited" -ge 60 ]; then
+    echo "[WARN] sync_data: lock held for 60s - assuming it's stale (a crashed run left it behind) and taking over"
+    rmdir "$LOCKDIR" 2>/dev/null
+    mkdir "$LOCKDIR" 2>/dev/null
+    break
+  fi
+  sleep 1
+  waited=$((waited + 1))
+done
+trap 'rmdir "$LOCKDIR" 2>/dev/null' EXIT
 
 TWITTER_SRC=/Users/elainekao/TrendforceTwitterScraper
 FACEBOOK_SRC=/Users/elainekao/TrendforceFacebookScraper

@@ -37,12 +37,12 @@ import json
 import os
 import re
 from collections import defaultdict
-from datetime import datetime
+from datetime import datetime, timezone
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
 
-from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, parse_ts, window_bounds, window_dict
+from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, parse_ts, window_bounds, window_dict, TAIWAN_TZ
 
 BASE = os.path.dirname(__file__)
 CSV_DIR = os.path.join(BASE, 'csv')
@@ -106,11 +106,19 @@ def clean_text(text):
 def parse_facebook_timestamp(row):
     """Facebook rows carry a human-readable exactDate ("Thursday, July 2,
     2026 at 1:00 PM") when the scraper resolved one, else fall back to the
-    machine-readable scrapedAt (when the post was scraped, not posted)."""
+    machine-readable scrapedAt (when the post was scraped, not posted).
+
+    exactDate is in the viewer's local time - Taiwan (UTC+8), confirmed by
+    comparing it against scrapedAt on real rows (e.g. exactDate "12:45 PM"
+    lands ~8 minutes before a scrapedAt of 04:53 UTC, which is 12:53 in
+    Taiwan - consistent; interpreting exactDate as UTC directly would put
+    the post 8 hours in the future). Attach Taiwan tzinfo and convert to
+    UTC rather than treating the naive parse as if it were already UTC."""
     exact = row.get('exactDate')
     if exact:
         try:
-            return datetime.strptime(exact, '%A, %B %d, %Y at %I:%M %p').isoformat() + 'Z'
+            naive = datetime.strptime(exact, '%A, %B %d, %Y at %I:%M %p')
+            return naive.replace(tzinfo=TAIWAN_TZ).astimezone(timezone.utc).isoformat().replace('+00:00', 'Z')
         except ValueError:
             pass
     return row.get('scrapedAt')
