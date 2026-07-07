@@ -488,10 +488,10 @@ def main():
   <button class="tab-btn active" data-tab="gaps">Topic Gaps</button>
   <button class="tab-btn" data-tab="rising">Rising Trends</button>
   <button class="tab-btn" data-tab="sentiment">Sentiment</button>
-  <button class="tab-btn" data-tab="summaries">Daily Summaries</button>
+  <button class="tab-btn" data-tab="review">Review Queue</button>
   <button class="tab-btn" data-tab="accounts">Accounts</button>
   <button class="tab-btn" data-tab="replies">Reply Queue</button>
-  <button class="tab-btn" data-tab="review">Review Queue</button>
+  <button class="tab-btn" data-tab="summaries">Daily Summaries</button>
 </nav>
 <main>
   <div id="range-bar" class="range-bar">
@@ -502,10 +502,10 @@ def main():
   <section id="gaps" class="active" data-ranged="true"><h2>FR-01 &middot; Topic Gaps</h2><div id="gaps-content"></div></section>
   <section id="rising" data-ranged="true"><h2>FR-02 &middot; Rising Topics &amp; KOLs</h2><div id="rising-content"></div></section>
   <section id="sentiment" data-ranged="true"><h2>FR-03 &middot; Sentiment Dashboard</h2><div id="sentiment-content"></div></section>
-  <section id="summaries"><h2>FR-06 &middot; Daily Executive Summaries</h2>{render_summaries(daily_summaries)}</section>
+  <section id="review"><h2>FR-04 &middot; Manual Review Queue</h2>{render_review_queue(review_queue)}</section>
   <section id="accounts"><h2>FR-05 &middot; Account Status</h2>{render_accounts(account_status)}</section>
   <section id="replies"><h2>FR-05 &middot; Reply Queue</h2>{render_reply_queue(reply_queue)}</section>
-  <section id="review"><h2>FR-04 &middot; Manual Review Queue</h2>{render_review_queue(review_queue)}</section>
+  <section id="summaries"><h2>FR-06 &middot; Daily Executive Summaries</h2>{render_summaries(daily_summaries)}</section>
 </main>
 <script>
   const RANGE_HTML = {range_data_json};
