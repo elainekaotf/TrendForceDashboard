@@ -1,8 +1,9 @@
 #!/bin/bash
 # Scheduler entry point for TrendForceDash. Runs a named job (a group of
 # FR scripts in dependency order) and reports failures without stopping
-# the rest of the job. See crontab.txt for the recommended schedule and
-# SRS Section 6 (Scheduling Requirements) for the source frequencies.
+# the rest of the job. See scheduling.md for how this is actually
+# scheduled (launchd, not cron) and SRS Section 6 (Scheduling
+# Requirements) for the source frequencies.
 #
 # Usage: bash run_pipeline.sh <scan|core|accounts|daily>
 #
