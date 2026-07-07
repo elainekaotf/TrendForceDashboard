@@ -194,6 +194,10 @@ def render_sentiment(data):
     """
 
 
+LOW_SAMPLE_THRESHOLD = 10  # below this many posts, a solid-color bar is noise, not signal
+MIN_BAR_OPACITY = 0.35
+
+
 def render_trend_curve(curve):
     if not curve:
         return '<p class="empty">Not enough data to plot a trend curve.</p>'
@@ -203,10 +207,15 @@ def render_trend_curve(curve):
         pos_pct = b['positive'] / total * 100 if total else 0
         neu_pct = b['neutral'] / total * 100 if total else 0
         neg_pct = b['negative'] / total * 100 if total else 0
+        # A bar built from 1-2 posts looks visually identical to one built
+        # from hundreds (both can render fully one color) - fade low-sample
+        # bars so it's obvious at a glance which ones are weak signal.
+        opacity = MIN_BAR_OPACITY + (1 - MIN_BAR_OPACITY) * min(total, LOW_SAMPLE_THRESHOLD) / LOW_SAMPLE_THRESHOLD
         bucket_end_tw = datetime.fromisoformat(b['bucket_end']).astimezone(TAIWAN_TZ)
-        label = f"{bucket_end_tw.strftime('%m-%d %H:%M')} TW — {total} post(s): {b['positive']} pos, {b['neutral']} neu, {b['negative']} neg"
+        sample_note = ' (low sample size)' if total < LOW_SAMPLE_THRESHOLD else ''
+        label = f"{bucket_end_tw.strftime('%m-%d %H:%M')} TW — {total} post(s){sample_note}: {b['positive']} pos, {b['neutral']} neu, {b['negative']} neg"
         bars.append(f"""
-          <div class="trend-bar" title="{esc(label)}">
+          <div class="trend-bar" title="{esc(label)}" style="opacity:{round(opacity, 2)}">
             <div class="trend-bar-stack">
               <div class="seg pos" style="height:{pos_pct}%"></div>
               <div class="seg neu" style="height:{neu_pct}%"></div>
@@ -219,6 +228,7 @@ def render_trend_curve(curve):
       <span><span class="legend-dot pos"></span>Positive</span>
       <span><span class="legend-dot neu"></span>Neutral</span>
       <span><span class="legend-dot neg"></span>Negative</span>
+      <span class="muted">Faded bars = fewer than {LOW_SAMPLE_THRESHOLD} posts (weak signal)</span>
     </div>"""
 
 
