@@ -42,6 +42,7 @@ from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, window_dict
 BASE = os.path.dirname(__file__)
 OUT_FILE = os.path.join(BASE, 'analysis', 'sentiment_dashboard.json')
 LEGACY_RANGE = '1d'  # analysis/sentiment_dashboard.json mirrors this range
+KEYWORD_INDEX_FILE = os.path.join(BASE, 'analysis', 'keyword_index.json')
 
 
 def range_out_file(range_key):
@@ -214,6 +215,21 @@ def widget_platform_keyword_ranking(posts, keyword):
     }
 
 
+def build_keyword_index(all_posts):
+    """Lightweight per-post export (handle/platform/timestamp/text) so
+    FR-03-04/05/06 (competitor mentions, platform share, platform ranking)
+    can be searched live in the browser instead of needing a fixed keyword
+    baked in at pipeline-run time - there's no backend to query on demand
+    (this is a static site), so the dashboard does its own substring-match
+    + aggregation client-side over this index. Range-independent (covers
+    every post FR-01/02/03 see); the dashboard filters by timestamp itself
+    to match whatever range is selected."""
+    return [
+        {'handle': p['handle'], 'platform': p['platform'], 'ts': p['timestamp'], 'text': p['text']}
+        for p in all_posts if p['timestamp']
+    ]
+
+
 def widget_coverage_focus_ranking(posts_by_topic, topic_labels):
     """Each account's dominant (most-posted) topic."""
     by_account_topic = defaultdict(Counter)
@@ -329,6 +345,8 @@ def main(time_range=None, keyword=None, now=None):
     if now is None:
         timestamps = [p['ts'] for p in all_posts if p['ts']]
         now = max(timestamps) if timestamps else datetime.now(timezone.utc)
+
+    write_json(KEYWORD_INDEX_FILE, build_keyword_index(all_posts))
 
     ranges = [time_range] if time_range else RANGE_ORDER
     written = 0

@@ -134,8 +134,17 @@ def render_sentiment(data):
       <td class="num">{fmt_int(s['likes'])}</td><td class="num">{fmt_int(s['engagement'])}</td></tr>"""
       for name, s in slots.items())
 
+    keyword_search_html = """
+    <h3>Keyword search (FR-03-04/05/06)</h3>
+    <div class="keyword-search-bar">
+      <input type="text" id="keyword-input" placeholder="Search a keyword, e.g. nvidia, tariff, dram..." autocomplete="off">
+    </div>
+    <div id="keyword-results"><p class="empty">Type a keyword to see mention counts by account and platform, for the currently selected time range.</p></div>
+    """
+
     return f"""
     {stat_cards}
+    {keyword_search_html}
     <div class="col-2">
       <div>
         <h3>Temperature bar</h3>
@@ -235,6 +244,7 @@ def main():
     rising_html_by_range = {}
     sentiment_html_by_range = {}
     window_caption_by_range = {}
+    window_bounds_by_range = {}
     available_ranges = []
     for range_key in RANGE_ORDER:
         topic_clusters = load(f'topic_clusters_{range_key}.json')
@@ -256,6 +266,11 @@ def main():
             f"Data window: {esc(window['start_tw'])} – {esc(window['end_tw'])} (Taiwan time)"
             if window else 'No window data available for this range.'
         )
+        window_bounds_by_range[range_key] = (
+            {'start': window['start_utc'], 'end': window['end_utc']} if window else None
+        )
+
+    keyword_index = load('keyword_index.json') or []
 
     default_range = DEFAULT_DASHBOARD_RANGE if DEFAULT_DASHBOARD_RANGE in available_ranges else (
         available_ranges[0] if available_ranges else RANGE_ORDER[0])
@@ -276,6 +291,8 @@ def main():
         'sentiment': sentiment_html_by_range,
     }, ensure_ascii=False)
     window_caption_json = json.dumps(window_caption_by_range, ensure_ascii=False)
+    window_bounds_json = json.dumps(window_bounds_by_range, ensure_ascii=False)
+    keyword_index_json = json.dumps(keyword_index, ensure_ascii=False)
 
     html = f"""<!doctype html>
 <html lang="en"><head>
@@ -300,6 +317,10 @@ def main():
   .range-bar label {{ color: var(--muted); font-size: 13px; }}
   .range-bar select {{ background: var(--surface); color: var(--text); border: 1px solid var(--border);
                         border-radius: 6px; padding: 6px 10px; font-size: 13px; }}
+  .keyword-search-bar {{ margin-bottom: 12px; }}
+  .keyword-search-bar input {{ width: 100%; max-width: 420px; background: var(--surface); color: var(--text);
+                                border: 1px solid var(--border); border-radius: 6px; padding: 8px 12px; font-size: 13px; }}
+  .keyword-search-bar input:focus {{ outline: none; border-color: var(--blue); }}
   section {{ display: none; }}
   section.active {{ display: block; }}
   h2 {{ font-size: 18px; margin-top: 0; }}
@@ -370,6 +391,8 @@ def main():
 <script>
   const RANGE_HTML = {range_data_json};
   const RANGE_WINDOW = {window_caption_json};
+  const RANGE_BOUNDS = {window_bounds_json};
+  const KEYWORD_POSTS = {keyword_index_json};
 
   document.querySelectorAll('.tab-btn').forEach(btn => {{
     btn.addEventListener('click', () => {{
@@ -383,11 +406,89 @@ def main():
     }});
   }});
 
+  // FR-03-04/05/06: no backend to query on demand (static site), so
+  // mention counts / platform share / platform ranking are computed live
+  // in the browser over the embedded KEYWORD_POSTS index, filtered to
+  // whichever range window is currently selected.
+  let currentKeyword = '';
+
+  function renderKeywordResults(range) {{
+    const container = document.getElementById('keyword-results');
+    if (!container) return; // sentiment tab's DOM not present right now
+    const kw = currentKeyword.trim().toLowerCase();
+    if (!kw) {{
+      container.innerHTML = '<p class="empty">Type a keyword to see mention counts by account and platform, for the currently selected time range.</p>';
+      return;
+    }}
+    const bounds = RANGE_BOUNDS[range];
+    if (!bounds) {{
+      container.innerHTML = '<p class="empty">No data window available for this range.</p>';
+      return;
+    }}
+    const start = new Date(bounds.start), end = new Date(bounds.end);
+    const matches = KEYWORD_POSTS.filter(p => {{
+      const t = new Date(p.ts);
+      return t >= start && t <= end && p.text.toLowerCase().includes(kw);
+    }});
+
+    if (matches.length === 0) {{
+      container.innerHTML = `<p class="empty">No mentions of "${{kw}}" in this time range.</p>`;
+      return;
+    }}
+
+    const byHandle = {{}}, byPlatform = {{}}, byPlatformHandle = {{}};
+    for (const p of matches) {{
+      byHandle[p.handle] = (byHandle[p.handle] || 0) + 1;
+      byPlatform[p.platform] = (byPlatform[p.platform] || 0) + 1;
+      byPlatformHandle[p.platform] = byPlatformHandle[p.platform] || {{}};
+      byPlatformHandle[p.platform][p.handle] = (byPlatformHandle[p.platform][p.handle] || 0) + 1;
+    }}
+
+    const mentionRows = Object.entries(byHandle).sort((a, b) => b[1] - a[1])
+      .map(([h, c]) => `<tr><td>${{h}}</td><td class="num">${{c}}</td></tr>`).join('');
+
+    const total = matches.length;
+    const shareRows = Object.entries(byPlatform).sort((a, b) => b[1] - a[1])
+      .map(([plat, c]) => `<tr><td>${{plat}}</td><td class="num">${{Math.round(c / total * 1000) / 10}}%</td><td class="num">${{c}}</td></tr>`).join('');
+
+    const rankingBlocks = Object.entries(byPlatformHandle).map(([plat, handles]) => {{
+      const rows = Object.entries(handles).sort((a, b) => b[1] - a[1])
+        .map(([h, c]) => `<tr><td>${{h}}</td><td class="num">${{c}}</td></tr>`).join('');
+      return `<div><h3>${{plat}}</h3><div class="table-wrap"><table><thead><tr><th>Account</th><th>Mentions</th></tr></thead><tbody>${{rows}}</tbody></table></div></div>`;
+    }}).join('');
+
+    container.innerHTML = `
+      <p class="muted">${{total}} post(s) mention "${{kw}}" in this window.</p>
+      <div class="col-2">
+        <div>
+          <h3>Competitor mentions (FR-03-04)</h3>
+          <div class="table-wrap"><table><thead><tr><th>Account</th><th>Mentions</th></tr></thead><tbody>${{mentionRows}}</tbody></table></div>
+        </div>
+        <div>
+          <h3>Platform share of voice (FR-03-05)</h3>
+          <div class="table-wrap"><table><thead><tr><th>Platform</th><th>Share</th><th>Mentions</th></tr></thead><tbody>${{shareRows}}</tbody></table></div>
+        </div>
+      </div>
+      <h3>Platform keyword ranking (FR-03-06)</h3>
+      <div class="col-2">${{rankingBlocks}}</div>
+    `;
+  }}
+
+  document.addEventListener('input', e => {{
+    if (e.target.id === 'keyword-input') {{
+      currentKeyword = e.target.value;
+      renderKeywordResults(document.getElementById('range-select').value);
+    }}
+  }});
+
   function applyRange(range) {{
     document.getElementById('gaps-content').innerHTML = RANGE_HTML.gaps[range] || '';
     document.getElementById('rising-content').innerHTML = RANGE_HTML.rising[range] || '';
     document.getElementById('sentiment-content').innerHTML = RANGE_HTML.sentiment[range] || '';
     document.getElementById('range-window').textContent = RANGE_WINDOW[range] || '';
+    const input = document.getElementById('keyword-input');
+    if (input) input.value = currentKeyword;
+    renderKeywordResults(range);
   }}
 
   document.getElementById('range-select').addEventListener('change', e => applyRange(e.target.value));
