@@ -2,9 +2,18 @@
 FR-03 NLP Sentiment Dashboard.
 
 Analyzes audience preferences via NLP (tokenization already done upstream by
-the scrapers into `translated_text`/`keywords`) + sentiment analysis (VADER,
-same engine used by TrendforceTwitterScraper/sentiment.py) + a fuzzy decision
-layer that fuses volume/engagement into heat & focus scores.
+the scrapers into `translated_text`/`keywords`) + sentiment analysis + a
+fuzzy decision layer that fuses volume/engagement into heat & focus scores.
+
+Sentiment is bilingual per NFR-07: VADER (same engine as
+TrendforceTwitterScraper/sentiment.py) scores English/Latin-majority text
+(X's translated_text); Traditional Chinese text (Facebook's native posts)
+routes to cnsenti's dictionary instead, since VADER's English-only lexicon
+silently scored 100% of Chinese text as neutral (compound 0.0) - not a
+partial gap, every Facebook post was affected. cnsenti's dictionary is
+simplified-Chinese, so Traditional input is converted via OpenCC first.
+Routing is by each text's actual character composition (CJK vs Latin count),
+not by platform, so it still works on self-service uploads or mixed text.
 
 Time range is selectable (4h / 8h / 1d / 1w / 1q - see time_ranges.py, shared
 with FR-01/FR-02 so all three line up); all widgets recompute over the
@@ -31,13 +40,16 @@ original default) for scripts that just want "the" dashboard.
 """
 import json
 import os
+import re
 from collections import defaultdict, Counter
 from datetime import datetime, timedelta, timezone
 
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+from cnsenti import Sentiment as ChineseSentiment
+from opencc import OpenCC
 
 from cluster_topics import N_CLUSTERS, load_posts, label_cluster, cluster_posts
-from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, window_dict
+from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, window_dict, TAIWAN_TZ
 
 BASE = os.path.dirname(__file__)
 OUT_FILE = os.path.join(BASE, 'analysis', 'sentiment_dashboard.json')
@@ -60,6 +72,10 @@ TIME_SLOTS = [
 ]
 
 _analyzer = SentimentIntensityAnalyzer()
+_zh_analyzer = ChineseSentiment()
+_tw2sp = OpenCC('tw2sp')  # Traditional (Taiwan) -> Simplified, for cnsenti's dictionary
+CJK_RE = re.compile(r'[一-鿿]')
+LATIN_RE = re.compile(r'[A-Za-z]')
 
 
 def parse_ts(ts):
@@ -72,7 +88,44 @@ def parse_ts(ts):
 
 
 def score_sentiment(text):
-    compound = _analyzer.polarity_scores(text or '')['compound']
+    """NFR-07 requires supporting both Traditional Chinese and English -
+    VADER's lexicon is English-only and silently scores all-Chinese text as
+    neutral (compound 0.0), which was happening for every Facebook post.
+    Route by actual character composition (not platform - self-service
+    uploads and mixed-language text have no reliable platform signal)."""
+    text = text or ''
+    if len(CJK_RE.findall(text)) > len(LATIN_RE.findall(text)):
+        return _score_sentiment_zh(text)
+    return _score_sentiment_en(text)
+
+
+def _score_sentiment_en(text):
+    compound = _analyzer.polarity_scores(text)['compound']
+    if compound >= 0.05:
+        label = 'positive'
+    elif compound <= -0.05:
+        label = 'negative'
+    else:
+        label = 'neutral'
+    return label, compound
+
+
+def _score_sentiment_zh(text):
+    """cnsenti's bundled dictionary is simplified-Chinese only; our data is
+    Traditional Chinese (Taiwan Facebook pages), so convert first or every
+    lookup silently misses. Compound-style score: (pos - neg) / (pos + neg),
+    same [-1, 1] range and thresholds as the English VADER path.
+
+    cnsenti's bundled pos.pkl contains a literal whitespace character as a
+    "positive word" - jieba tokenizes each run of spaces (common here since
+    clean_text() replaces stripped digits/punctuation with spaces) into
+    individual space tokens, and every one matched, making nearly all
+    Chinese text score as strongly positive regardless of content. Collapse
+    whitespace before scoring; Chinese segmentation doesn't need it anyway."""
+    simplified = re.sub(r'\s+', '', _tw2sp.convert(text))
+    counts = _zh_analyzer.sentiment_count(simplified)
+    pos, neg = counts['pos'], counts['neg']
+    compound = (pos - neg) / (pos + neg) if (pos + neg) else 0.0
     if compound >= 0.05:
         label = 'positive'
     elif compound <= -0.05:
@@ -263,12 +316,17 @@ def widget_top_engagement_ranking(posts_by_topic, topic_labels):
 
 
 def widget_posting_timeslot_analysis(posts):
-    """Mon-Fri only, per SRS FR-03-09."""
+    """Mon-Fri only, per SRS FR-03-09. NFR-01 requires everything in UTC+8 -
+    bucketing by raw UTC weekday/hour would misfile a post like UTC Monday
+    20:00 (Tuesday 04:00 in Taiwan) into the wrong day and time slot."""
     slots = {name: {'post_count': 0, 'likes': 0, 'engagement': 0} for name, _, _ in TIME_SLOTS}
     for p in posts:
-        if not p['ts'] or p['ts'].weekday() >= 5:  # Sat=5, Sun=6
+        if not p['ts']:
             continue
-        hour = p['ts'].hour
+        local_ts = p['ts'].astimezone(TAIWAN_TZ)
+        if local_ts.weekday() >= 5:  # Sat=5, Sun=6
+            continue
+        hour = local_ts.hour
         for name, start, end in TIME_SLOTS:
             if start <= hour < end:
                 slots[name]['post_count'] += 1

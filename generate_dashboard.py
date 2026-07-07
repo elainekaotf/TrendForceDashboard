@@ -203,7 +203,8 @@ def render_trend_curve(curve):
         pos_pct = b['positive'] / total * 100 if total else 0
         neu_pct = b['neutral'] / total * 100 if total else 0
         neg_pct = b['negative'] / total * 100 if total else 0
-        label = f"{b['bucket_end'][5:10]} {b['bucket_end'][11:16]} — {total} post(s): {b['positive']} pos, {b['neutral']} neu, {b['negative']} neg"
+        bucket_end_tw = datetime.fromisoformat(b['bucket_end']).astimezone(TAIWAN_TZ)
+        label = f"{bucket_end_tw.strftime('%m-%d %H:%M')} TW — {total} post(s): {b['positive']} pos, {b['neutral']} neu, {b['negative']} neg"
         bars.append(f"""
           <div class="trend-bar" title="{esc(label)}">
             <div class="trend-bar-stack">

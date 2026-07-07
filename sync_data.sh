@@ -35,10 +35,25 @@ done
 
 mkdir -p csv/facebook
 for h in "${FB_HANDLES[@]}"; do
-  # The Facebook scraper writes dated files like facebook_<handle>_<date>.csv - take the newest.
-  latest=$(ls -t "$FACEBOOK_SRC"/csv/facebook_"$h"_*.csv 2>/dev/null | head -1)
-  if [ -n "$latest" ]; then
-    cp "$latest" "csv/facebook/$h.csv"
+  # The Facebook scraper writes one dated file per day it ran
+  # (facebook_<handle>_<date>.csv), each holding only that day's *new*
+  # posts (parse_facebook.py dedups against all prior dated files before
+  # writing). Copying only the newest file (as this used to do) silently
+  # dropped every earlier day's history the moment a new day's file
+  # appeared - concatenate all of them instead, keeping one header row.
+  dated_files=$(ls -tr "$FACEBOOK_SRC"/csv/facebook_"$h"_*.csv 2>/dev/null)
+  if [ -n "$dated_files" ]; then
+    out="csv/facebook/$h.csv"
+    : > "$out"
+    first=1
+    for f in $dated_files; do
+      if [ "$first" -eq 1 ]; then
+        cat "$f" > "$out"
+        first=0
+      else
+        tail -n +2 "$f" >> "$out"
+      fi
+    done
     synced=$((synced + 1))
   else
     echo "[WARN] sync_data: no dated CSV found for Facebook handle $h in $FACEBOOK_SRC/csv"

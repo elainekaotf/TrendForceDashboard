@@ -12,12 +12,14 @@
     "sentiment_overview": {
       "total_posts": 13,
       "sentiment_counts": {
-        "neutral": 12,
-        "positive": 1
+        "negative": 3,
+        "neutral": 6,
+        "positive": 4
       },
       "sentiment_share": {
-        "neutral": 0.923,
-        "positive": 0.077
+        "negative": 0.231,
+        "neutral": 0.462,
+        "positive": 0.308
       },
       "top_terms": [
         "See",
@@ -52,8 +54,8 @@
       {
         "bucket_start": "2026-07-07T08:44:59.999994+00:00",
         "bucket_end": "2026-07-07T09:02:08.571423+00:00",
-        "positive": 0,
-        "neutral": 1,
+        "positive": 1,
+        "neutral": 0,
         "negative": 0
       },
       {
@@ -94,8 +96,8 @@
       {
         "bucket_start": "2026-07-07T10:27:51.428568+00:00",
         "bucket_end": "2026-07-07T10:44:59.999997+00:00",
-        "positive": 0,
-        "neutral": 1,
+        "positive": 1,
+        "neutral": 0,
         "negative": 0
       },
       {
@@ -123,15 +125,15 @@
         "bucket_start": "2026-07-07T11:36:25.714284+00:00",
         "bucket_end": "2026-07-07T11:53:34.285713+00:00",
         "positive": 0,
-        "neutral": 2,
-        "negative": 0
+        "neutral": 0,
+        "negative": 2
       },
       {
         "bucket_start": "2026-07-07T11:53:34.285713+00:00",
         "bucket_end": "2026-07-07T12:10:42.857142+00:00",
         "positive": 0,
-        "neutral": 1,
-        "negative": 0
+        "neutral": 0,
+        "negative": 1
       },
       {
         "bucket_start": "2026-07-07T12:10:42.857142+00:00",
@@ -174,22 +176,22 @@
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 9,
-          "likes": 144,
-          "engagement": 144,
-          "avg_engagement": 16.0
-        },
-        "afternoon": {
-          "post_count": 4,
-          "likes": 34,
-          "engagement": 34,
-          "avg_engagement": 8.5
-        },
-        "evening": {
           "post_count": 0,
           "likes": 0,
           "engagement": 0,
           "avg_engagement": 0.0
+        },
+        "afternoon": {
+          "post_count": 2,
+          "likes": 27,
+          "engagement": 27,
+          "avg_engagement": 13.5
+        },
+        "evening": {
+          "post_count": 11,
+          "likes": 151,
+          "engagement": 151,
+          "avg_engagement": 13.7
         },
         "late_night": {
           "post_count": 0,
@@ -198,7 +200,7 @@
           "avg_engagement": 0.0
         }
       },
-      "peak_slot": "morning"
+      "peak_slot": "evening"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,

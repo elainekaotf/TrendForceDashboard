@@ -155,14 +155,24 @@ def load_facebook_posts(handle, path):
 
 
 def load_posts():
+    """NFR-02 requires deduplication after collection. Nothing upstream
+    guarantees it: sync_data.sh re-copies whole CSVs (a scraper re-run with
+    an overlapping window would duplicate rows), so dedup on the way in
+    rather than trusting every source file is already clean."""
     posts = []
+    seen = set()
     for platform, cfg in PLATFORM_ACCOUNTS.items():
         loader = load_x_posts if platform == 'X' else load_facebook_posts
         for handle in [cfg['own']] + cfg['competitors']:
             path = os.path.join(cfg['dir'], f'{handle}.csv')
             if not os.path.exists(path):
                 continue
-            posts.extend(loader(handle, path))
+            for post in loader(handle, path):
+                key = (post['platform'], post['handle'], post['timestamp'], post['text'])
+                if key in seen:
+                    continue
+                seen.add(key)
+                posts.append(post)
     return posts
 
 
