@@ -1,175 +1,190 @@
 {
-  "generated_at": "2026-07-06T01:34:12+00:00",
+  "generated_at": "2026-07-07T01:29:34+00:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-05T21:34:12+00:00",
-    "end_utc": "2026-07-06T01:34:12+00:00",
-    "start_tw": "Jul 06, 05:34",
-    "end_tw": "Jul 06, 09:34"
+    "start_utc": "2026-07-06T21:29:34+00:00",
+    "end_utc": "2026-07-07T01:29:34+00:00",
+    "start_tw": "Jul 07, 05:29",
+    "end_tw": "Jul 07, 09:29"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 9,
+      "total_posts": 12,
       "sentiment_counts": {
-        "positive": 1,
-        "neutral": 8
+        "positive": 4,
+        "negative": 1,
+        "neutral": 7
       },
       "sentiment_share": {
-        "positive": 0.111,
-        "neutral": 0.889
+        "positive": 0.333,
+        "negative": 0.083,
+        "neutral": 0.583
       },
       "top_terms": [
+        "samsung",
+        "KRW",
+        "#輝達",
+        "專家也認為目前資料中心最大瓶頸仍是電力供應",
         "the",
-        "CPO",
-        "#台股",
-        "法國公寓熱如烤箱",
-        "supply",
-        "chain",
-        "NVIDIA",
         "nvidia",
-        "discovery",
-        "居全球之冠"
+        "Samsung",
+        "Electronics",
+        "CXL",
+        "memory"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 0,
-        "label": "ai / 台股 / nvidia / cpo",
-        "heat": 50.0,
-        "volume": 9,
-        "engagement": 860
+        "label": "samsung / 輝達 / krw / electronics",
+        "heat": 90.0,
+        "volume": 8,
+        "engagement": 3418
+      },
+      {
+        "topic_id": 1,
+        "label": "ai",
+        "heat": 10.0,
+        "volume": 4,
+        "engagement": 253
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-05T21:34:11.999994+00:00",
-        "bucket_end": "2026-07-05T21:51:20.571423+00:00",
+        "bucket_start": "2026-07-06T21:29:33.999994+00:00",
+        "bucket_end": "2026-07-06T21:46:42.571423+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-05T21:51:20.571423+00:00",
-        "bucket_end": "2026-07-05T22:08:29.142852+00:00",
+        "bucket_start": "2026-07-06T21:46:42.571423+00:00",
+        "bucket_end": "2026-07-06T22:03:51.142852+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-06T22:03:51.142852+00:00",
+        "bucket_end": "2026-07-06T22:20:59.714281+00:00",
         "positive": 1,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-05T22:08:29.142852+00:00",
-        "bucket_end": "2026-07-05T22:25:37.714281+00:00",
-        "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-05T22:25:37.714281+00:00",
-        "bucket_end": "2026-07-05T22:42:46.285710+00:00",
+        "bucket_start": "2026-07-06T22:20:59.714281+00:00",
+        "bucket_end": "2026-07-06T22:38:08.285710+00:00",
         "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-06T22:38:08.285710+00:00",
+        "bucket_end": "2026-07-06T22:55:16.857139+00:00",
+        "positive": 2,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-05T22:42:46.285710+00:00",
-        "bucket_end": "2026-07-05T22:59:54.857139+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-05T22:59:54.857139+00:00",
-        "bucket_end": "2026-07-05T23:17:03.428568+00:00",
+        "bucket_start": "2026-07-06T22:55:16.857139+00:00",
+        "bucket_end": "2026-07-06T23:12:25.428568+00:00",
         "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-05T23:17:03.428568+00:00",
-        "bucket_end": "2026-07-05T23:34:11.999997+00:00",
+        "bucket_start": "2026-07-06T23:12:25.428568+00:00",
+        "bucket_end": "2026-07-06T23:29:33.999997+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-06T23:29:33.999997+00:00",
+        "bucket_end": "2026-07-06T23:46:42.571426+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-05T23:34:11.999997+00:00",
-        "bucket_end": "2026-07-05T23:51:20.571426+00:00",
+        "bucket_start": "2026-07-06T23:46:42.571426+00:00",
+        "bucket_end": "2026-07-07T00:03:51.142855+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-05T23:51:20.571426+00:00",
-        "bucket_end": "2026-07-06T00:08:29.142855+00:00",
+        "bucket_start": "2026-07-07T00:03:51.142855+00:00",
+        "bucket_end": "2026-07-07T00:20:59.714284+00:00",
         "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-06T00:08:29.142855+00:00",
-        "bucket_end": "2026-07-06T00:25:37.714284+00:00",
+        "bucket_start": "2026-07-07T00:20:59.714284+00:00",
+        "bucket_end": "2026-07-07T00:38:08.285713+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-07T00:38:08.285713+00:00",
+        "bucket_end": "2026-07-07T00:55:16.857142+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-06T00:25:37.714284+00:00",
-        "bucket_end": "2026-07-06T00:42:46.285713+00:00",
+        "bucket_start": "2026-07-07T00:55:16.857142+00:00",
+        "bucket_end": "2026-07-07T01:12:25.428571+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-07T01:12:25.428571+00:00",
+        "bucket_end": "2026-07-07T01:29:34+00:00",
         "positive": 0,
         "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-06T00:42:46.285713+00:00",
-        "bucket_end": "2026-07-06T00:59:54.857142+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-06T00:59:54.857142+00:00",
-        "bucket_end": "2026-07-06T01:17:03.428571+00:00",
-        "positive": 0,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-06T01:17:03.428571+00:00",
-        "bucket_end": "2026-07-06T01:34:12+00:00",
-        "positive": 0,
-        "neutral": 0,
         "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / 台股 / nvidia / cpo",
-        "focus_share": 1.0,
-        "post_count": 2
-      },
-      {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / 台股 / nvidia / cpo",
+        "handle": "dylan522p",
+        "top_topic_id": 1,
+        "top_topic_label": "ai",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
+        "handle": "jukan05",
+        "top_topic_id": 0,
+        "top_topic_label": "samsung / 輝達 / krw / electronics",
+        "focus_share": 1.0,
+        "post_count": 4
+      },
+      {
         "handle": "technews_tw",
         "top_topic_id": 0,
-        "top_topic_label": "ai / 台股 / nvidia / cpo",
-        "focus_share": 1.0,
-        "post_count": 6
+        "top_topic_label": "samsung / 輝達 / krw / electronics",
+        "focus_share": 0.571,
+        "post_count": 7
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 0,
-        "label": "ai / 台股 / nvidia / cpo",
-        "total_engagement": 860,
-        "post_count": 9
+        "label": "samsung / 輝達 / krw / electronics",
+        "total_engagement": 3418,
+        "post_count": 8
+      },
+      {
+        "topic_id": 1,
+        "label": "ai",
+        "total_engagement": 253,
+        "post_count": 4
       }
     ],
     "posting_timeslot_analysis": {
@@ -187,19 +202,19 @@
           "avg_engagement": 0.0
         },
         "evening": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 6,
+          "likes": 3201,
+          "engagement": 3664,
+          "avg_engagement": 610.7
         },
         "late_night": {
           "post_count": 6,
-          "likes": 27,
-          "engagement": 36,
-          "avg_engagement": 6.0
+          "likes": 6,
+          "engagement": 7,
+          "avg_engagement": 1.2
         }
       },
-      "peak_slot": "late_night"
+      "peak_slot": "evening"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,

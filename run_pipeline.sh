@@ -20,8 +20,10 @@
 #            separately. FR-04 refreshes again to queue the day's
 #            summaries for review.
 #
-# Every job ends by regenerating docs/index.html (generate_dashboard.py)
-# so the dashboard reflects whatever that job just produced.
+# Every job starts with sync_data.sh (pulls fresh CSVs from the sibling
+# scraper repos - see that script's header for why this is needed at all)
+# and ends by regenerating docs/index.html (generate_dashboard.py) so the
+# dashboard reflects whatever that job just produced.
 #
 # FR-07 (self-service upload) is user-triggered, not scheduled - it isn't
 # part of any job here.
@@ -51,6 +53,11 @@ run_step() {
     FAILURES+=("$label")
   fi
 }
+
+if ! bash sync_data.sh; then
+  echo "[WARN] sync_data had missing sources - continuing with whatever csv/ already has"
+  FAILURES+=("sync_data")
+fi
 
 case "$JOB" in
   core)

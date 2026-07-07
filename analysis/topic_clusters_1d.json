@@ -2,24 +2,59 @@
   "clusters": [
     {
       "id": 1,
-      "label": "ai / nvidia / 億元 / semianalysis",
-      "size": 32,
+      "label": "ai / nvidia / memory / samsung",
+      "size": 56,
       "accounts": {
-        "SemiAnalysis_": 3,
+        "TrendForce": 7,
+        "dylan522p": 1,
         "jukan05": 9,
-        "QQ_Timmy": 2,
-        "technews_tw": 18
+        "technews_tw": 39
       },
       "engagement_by_account": {
-        "SemiAnalysis_": 1170,
-        "jukan05": 4181,
-        "QQ_Timmy": 176,
-        "technews_tw": 168
+        "TrendForce": 162,
+        "dylan522p": 252,
+        "jukan05": 7042,
+        "technews_tw": 217
       }
     },
     {
-      "id": 14,
-      "label": "ai / pcb / 最新研究指出 / nvidia",
+      "id": 0,
+      "label": "ai / pcb / openai / 最新研究指出",
+      "size": 8,
+      "accounts": {
+        "technews_tw": 8
+      },
+      "engagement_by_account": {
+        "technews_tw": 36
+      }
+    },
+    {
+      "id": 2,
+      "label": "億元 / 年增 / 今年 / eps",
+      "size": 4,
+      "accounts": {
+        "technews_tw": 4
+      },
+      "engagement_by_account": {
+        "technews_tw": 8
+      }
+    },
+    {
+      "id": 10,
+      "label": "hbm / memory / samsung / hynix",
+      "size": 3,
+      "accounts": {
+        "jukan05": 2,
+        "technews_tw": 1
+      },
+      "engagement_by_account": {
+        "jukan05": 738,
+        "technews_tw": 6
+      }
+    },
+    {
+      "id": 13,
+      "label": "年新高 / 聯電 / 高達 / eps",
       "size": 3,
       "accounts": {
         "technews_tw": 3
@@ -29,45 +64,21 @@
       }
     },
     {
-      "id": 16,
-      "label": "hbm / dram / hynix / nand",
+      "id": 17,
+      "label": "trendforce / ai / dram / analysis",
       "size": 3,
       "accounts": {
         "TrendForce": 1,
-        "jukan05": 1,
-        "QQ_Timmy": 1
+        "technews_tw": 2
       },
       "engagement_by_account": {
-        "TrendForce": 64,
-        "jukan05": 1210,
-        "QQ_Timmy": 55
+        "TrendForce": 15,
+        "technews_tw": 3
       }
     },
     {
-      "id": 0,
-      "label": "台積電 / 魏哲家 / cowos / copos",
-      "size": 1,
-      "accounts": {
-        "QQ_Timmy": 1
-      },
-      "engagement_by_account": {
-        "QQ_Timmy": 22
-      }
-    },
-    {
-      "id": 8,
-      "label": "tsmc / packaging / intel / advanced",
-      "size": 1,
-      "accounts": {
-        "jukan05": 1
-      },
-      "engagement_by_account": {
-        "jukan05": 765
-      }
-    },
-    {
-      "id": 9,
-      "label": "oled / trendforce / 根據trendforce最新報告 / apple",
+      "id": 12,
+      "label": "台股 / 台股逐洞賽 / 台股雷達 / 美國",
       "size": 1,
       "accounts": {
         "technews_tw": 1
@@ -77,34 +88,64 @@
       }
     },
     {
-      "id": 17,
-      "label": "億美元 / 年增 / ai / ipo",
+      "id": 16,
+      "label": "川普 / 荷莫茲海峽 / 億美元 / 聯準會",
       "size": 1,
       "accounts": {
-        "QQ_Timmy": 1
+        "technews_tw": 1
       },
       "engagement_by_account": {
-        "QQ_Timmy": 45
+        "technews_tw": 1
       }
     }
   ],
   "gaps": [
     {
       "cluster_id": 1,
-      "label": "ai / nvidia / 億元 / semianalysis",
-      "own_count": 0,
-      "competitor_count": 32,
-      "competitor_engagement": 5695,
+      "label": "ai / nvidia / memory / samsung",
+      "own_count": 7,
+      "competitor_count": 49,
+      "competitor_engagement": 7511,
       "competitors_covering": [
-        "SemiAnalysis_",
+        "dylan522p",
         "jukan05",
-        "QQ_Timmy",
         "technews_tw"
       ]
     },
     {
-      "cluster_id": 14,
-      "label": "ai / pcb / 最新研究指出 / nvidia",
+      "cluster_id": 10,
+      "label": "hbm / memory / samsung / hynix",
+      "own_count": 0,
+      "competitor_count": 3,
+      "competitor_engagement": 744,
+      "competitors_covering": [
+        "jukan05",
+        "technews_tw"
+      ]
+    },
+    {
+      "cluster_id": 0,
+      "label": "ai / pcb / openai / 最新研究指出",
+      "own_count": 0,
+      "competitor_count": 8,
+      "competitor_engagement": 36,
+      "competitors_covering": [
+        "technews_tw"
+      ]
+    },
+    {
+      "cluster_id": 2,
+      "label": "億元 / 年增 / 今年 / eps",
+      "own_count": 0,
+      "competitor_count": 4,
+      "competitor_engagement": 8,
+      "competitors_covering": [
+        "technews_tw"
+      ]
+    },
+    {
+      "cluster_id": 13,
+      "label": "年新高 / 聯電 / 高達 / eps",
       "own_count": 0,
       "competitor_count": 3,
       "competitor_engagement": 6,
@@ -116,20 +157,50 @@
   "suggested_entry_points": [
     {
       "cluster_id": 1,
-      "label": "ai / nvidia / 億元 / semianalysis",
-      "own_count": 0,
-      "competitor_count": 32,
-      "competitor_engagement": 5695,
+      "label": "ai / nvidia / memory / samsung",
+      "own_count": 7,
+      "competitor_count": 49,
+      "competitor_engagement": 7511,
       "competitors_covering": [
-        "SemiAnalysis_",
+        "dylan522p",
         "jukan05",
-        "QQ_Timmy",
         "technews_tw"
       ]
     },
     {
-      "cluster_id": 14,
-      "label": "ai / pcb / 最新研究指出 / nvidia",
+      "cluster_id": 10,
+      "label": "hbm / memory / samsung / hynix",
+      "own_count": 0,
+      "competitor_count": 3,
+      "competitor_engagement": 744,
+      "competitors_covering": [
+        "jukan05",
+        "technews_tw"
+      ]
+    },
+    {
+      "cluster_id": 0,
+      "label": "ai / pcb / openai / 最新研究指出",
+      "own_count": 0,
+      "competitor_count": 8,
+      "competitor_engagement": 36,
+      "competitors_covering": [
+        "technews_tw"
+      ]
+    },
+    {
+      "cluster_id": 2,
+      "label": "億元 / 年增 / 今年 / eps",
+      "own_count": 0,
+      "competitor_count": 4,
+      "competitor_engagement": 8,
+      "competitors_covering": [
+        "technews_tw"
+      ]
+    },
+    {
+      "cluster_id": 13,
+      "label": "年新高 / 聯電 / 高達 / eps",
       "own_count": 0,
       "competitor_count": 3,
       "competitor_engagement": 6,
@@ -139,9 +210,9 @@
     }
   ],
   "window": {
-    "start_utc": "2026-07-05T01:34:12+00:00",
-    "end_utc": "2026-07-06T01:34:12+00:00",
-    "start_tw": "Jul 05, 09:34",
-    "end_tw": "Jul 06, 09:34"
+    "start_utc": "2026-07-06T01:29:34+00:00",
+    "end_utc": "2026-07-07T01:29:34+00:00",
+    "start_tw": "Jul 06, 09:29",
+    "end_tw": "Jul 07, 09:29"
   }
 }
