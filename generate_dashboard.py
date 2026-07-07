@@ -80,7 +80,7 @@ def render_topic_gaps(data):
       </tr>""" for g in gaps)
     return f"""
     <div class="table-wrap"><table>
-      <thead><tr><th>Topic</th><th>Our posts</th><th>Competitor posts</th><th>Competitor engagement</th><th>Covered by</th></tr></thead>
+      <thead><tr><th>Topic</th><th class="num">Our posts</th><th class="num">Competitor posts</th><th class="num">Competitor engagement</th><th>Covered by</th></tr></thead>
       <tbody>{rows}</tbody>
     </table></div>"""
 
@@ -148,15 +148,15 @@ def render_sentiment(data):
     <div class="col-2">
       <div>
         <h3>Temperature bar</h3>
-        <div class="table-wrap"><table><thead><tr><th>Topic</th><th>Heat</th><th>Volume</th><th>Engagement</th></tr></thead><tbody>{heat_rows}</tbody></table></div>
+        <div class="table-wrap"><table><thead><tr><th>Topic</th><th class="num">Heat</th><th class="num">Volume</th><th class="num">Engagement</th></tr></thead><tbody>{heat_rows}</tbody></table></div>
       </div>
       <div>
         <h3>Top engagement</h3>
-        <div class="table-wrap"><table><thead><tr><th>Topic</th><th>Engagement</th><th>Posts</th></tr></thead><tbody>{engagement_rows}</tbody></table></div>
+        <div class="table-wrap"><table><thead><tr><th>Topic</th><th class="num">Engagement</th><th class="num">Posts</th></tr></thead><tbody>{engagement_rows}</tbody></table></div>
       </div>
     </div>
     <h3>Posting time-slot analysis (Mon-Fri, peak highlighted)</h3>
-    <div class="table-wrap"><table><thead><tr><th>Slot</th><th>Posts</th><th>Likes</th><th>Engagement</th></tr></thead><tbody>{slot_rows}</tbody></table></div>"""
+    <div class="table-wrap"><table><thead><tr><th>Slot</th><th class="num">Posts</th><th class="num">Likes</th><th class="num">Engagement</th></tr></thead><tbody>{slot_rows}</tbody></table></div>"""
 
 
 def render_summaries(data):
@@ -185,7 +185,7 @@ def render_accounts(data):
       </tr>""" for a in data.get('accounts', []))
     return f"""
     <div class="table-wrap"><table>
-      <thead><tr><th>Handle</th><th>Platform</th><th>Status</th><th>Followers</th><th>Posts</th><th>Last post</th></tr></thead>
+      <thead><tr><th>Handle</th><th>Platform</th><th>Status</th><th class="num">Followers</th><th class="num">Posts</th><th>Last post</th></tr></thead>
       <tbody>{rows}</tbody>
     </table></div>"""
 
@@ -206,7 +206,7 @@ def render_reply_queue(data):
       </tr>""" for r in records)
     return f"""
     <div class="table-wrap"><table>
-      <thead><tr><th>Status</th><th>Account</th><th>Replies</th><th>Topic</th><th>Draft reply</th></tr></thead>
+      <thead><tr><th>Status</th><th>Account</th><th class="num">Replies</th><th>Topic</th><th>Draft reply</th></tr></thead>
       <tbody>{rows}</tbody>
     </table></div>"""
 
@@ -323,13 +323,13 @@ def main():
   .keyword-search-bar input:focus {{ outline: none; border-color: var(--blue); }}
   section {{ display: none; }}
   section.active {{ display: block; }}
-  h2 {{ font-size: 18px; margin-top: 0; }}
+  h2 {{ font-size: 18px; margin-top: 0; text-align: center; }}
   h3 {{ font-size: 14px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; margin: 20px 0 8px; }}
   .table-wrap {{ overflow-x: auto; margin-bottom: 16px; }}
   table {{ width: 100%; min-width: 480px; border-collapse: collapse; font-size: 13px; }}
   th, td {{ text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }}
   th {{ color: var(--muted); font-weight: 600; }}
-  td.num, th.num {{ text-align: right; font-variant-numeric: tabular-nums; }}
+  td.num, th.num {{ text-align: center; font-variant-numeric: tabular-nums; }}
   tr.peak {{ background: rgba(59, 158, 255, 0.08); }}
   .empty {{ color: var(--muted); font-style: italic; }}
   .col-2 {{ display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }}
@@ -454,7 +454,7 @@ def main():
     const rankingBlocks = Object.entries(byPlatformHandle).map(([plat, handles]) => {{
       const rows = Object.entries(handles).sort((a, b) => b[1] - a[1])
         .map(([h, c]) => `<tr><td>${{h}}</td><td class="num">${{c}}</td></tr>`).join('');
-      return `<div><h3>${{plat}}</h3><div class="table-wrap"><table><thead><tr><th>Account</th><th>Mentions</th></tr></thead><tbody>${{rows}}</tbody></table></div></div>`;
+      return `<div><h3>${{plat}}</h3><div class="table-wrap"><table><thead><tr><th>Account</th><th class="num">Mentions</th></tr></thead><tbody>${{rows}}</tbody></table></div></div>`;
     }}).join('');
 
     container.innerHTML = `
@@ -462,11 +462,11 @@ def main():
       <div class="col-2">
         <div>
           <h3>Competitor mentions (FR-03-04)</h3>
-          <div class="table-wrap"><table><thead><tr><th>Account</th><th>Mentions</th></tr></thead><tbody>${{mentionRows}}</tbody></table></div>
+          <div class="table-wrap"><table><thead><tr><th>Account</th><th class="num">Mentions</th></tr></thead><tbody>${{mentionRows}}</tbody></table></div>
         </div>
         <div>
           <h3>Platform share of voice (FR-03-05)</h3>
-          <div class="table-wrap"><table><thead><tr><th>Platform</th><th>Share</th><th>Mentions</th></tr></thead><tbody>${{shareRows}}</tbody></table></div>
+          <div class="table-wrap"><table><thead><tr><th>Platform</th><th class="num">Share</th><th class="num">Mentions</th></tr></thead><tbody>${{shareRows}}</tbody></table></div>
         </div>
       </div>
       <h3>Platform keyword ranking (FR-03-06)</h3>
