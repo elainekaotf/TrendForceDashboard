@@ -173,11 +173,27 @@ def label_cluster(vectorizer, centroid, top_n=4):
 
 
 def cluster_posts(posts, n_clusters=N_CLUSTERS, min_docs_per_cluster=5):
-    """Shared clustering step so FR-02's topic hierarchy matches FR-01's tree."""
+    """Shared clustering step so FR-02's topic hierarchy matches FR-01's tree.
+
+    On a small/sparse subset (a short time window, or FR-02's sub-topic
+    drill-down), min_df=2 can prune every term if nothing repeats across
+    documents, which raises instead of degrading gracefully. Retry with a
+    looser min_df, then without stop-word filtering, before giving up."""
     docs = [p['text'] for p in posts]
     stop_words = list(TfidfVectorizer(stop_words='english').get_stop_words()) + list(LINK_NOISE)
-    vectorizer = TfidfVectorizer(max_features=3000, stop_words=stop_words, min_df=2)
-    X = vectorizer.fit_transform(docs)
+
+    X = vectorizer = None
+    for kwargs in ({'min_df': 2, 'stop_words': stop_words},
+                   {'min_df': 1, 'stop_words': stop_words},
+                   {'min_df': 1}):
+        vectorizer = TfidfVectorizer(max_features=3000, **kwargs)
+        try:
+            X = vectorizer.fit_transform(docs)
+            break
+        except ValueError:
+            continue
+    if X is None:
+        raise ValueError(f"Could not vectorize {len(docs)} document(s) even without stop-word filtering.")
 
     k = max(1, min(n_clusters, len(posts) // min_docs_per_cluster))
     km = KMeans(n_clusters=k, n_init=10, random_state=42)
