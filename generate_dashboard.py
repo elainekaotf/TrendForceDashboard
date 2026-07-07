@@ -240,7 +240,9 @@ def render_summaries(data):
         <div class="summary-card-head"><span class="badge cat">{esc(s['category'].replace('_', ' '))}</span><span class="char-count">{s['char_count']} chars</span></div>
         <p>{esc(s['text'])}</p>
       </div>""" for s in data.get('summaries', []))
-    return panel(f"<div class='summary-grid'>{cards}</div>", 'Today’s summaries', f"Generated {esc(data['generated_at'])}")
+    generated_tw = datetime.fromisoformat(data['generated_at']).astimezone(TAIWAN_TZ)
+    generated_label = generated_tw.strftime('%-I:%M %p')
+    return panel(f"<div class='summary-grid'>{cards}</div>", 'Today’s summaries', f"Generated {generated_label}")
 
 
 def render_accounts(data):
