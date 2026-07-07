@@ -151,6 +151,13 @@ def render_sentiment(data):
       <td class="num">{fmt_int(s['likes'])}</td><td class="num">{fmt_int(s['engagement'])}</td></tr>"""
       for name, s in slots.items())
 
+    trend_html = render_trend_curve(w['sentiment_trend_curve'])
+
+    focus_rows = ''.join(f"""
+      <tr><td class="cell-primary">{esc(r['handle'])}</td><td>{esc(r['top_topic_label'])}</td>
+      <td class="num">{round(r['focus_share'] * 100, 1)}%</td><td class="num">{fmt_int(r['post_count'])}</td></tr>"""
+      for r in sorted(w['coverage_focus_ranking'], key=lambda r: r['focus_share'], reverse=True)[:10])
+
     keyword_search_html = panel(f"""
     <div class="keyword-search-bar">
       <input type="text" id="keyword-input" placeholder="Search a keyword, e.g. nvidia, tariff, dram..." autocomplete="off">
@@ -160,13 +167,42 @@ def render_sentiment(data):
 
     return f"""
     {stat_cards}
+    {panel(trend_html, 'Sentiment trend curve', 'Positive / neutral / negative over time')}
     {keyword_search_html}
     <div class="col-2">
       {panel(table(['Topic', '#Heat', '#Volume', '#Engagement'], heat_rows), 'Temperature bar')}
       {panel(table(['Topic', '#Engagement', '#Posts'], engagement_rows), 'Top engagement')}
     </div>
+    {panel(table(['Account', 'Top topic', '#Focus share', '#Posts'], focus_rows), 'Coverage focus ranking', "Each account's dominant topic")}
     {panel(table(['Time slot', '#Posts', '#Likes', '#Engagement'], slot_rows), 'Posting time-slot analysis', 'Mon–Fri, peak highlighted')}
     """
+
+
+def render_trend_curve(curve):
+    if not curve:
+        return '<p class="empty">Not enough data to plot a trend curve.</p>'
+    bars = []
+    for b in curve:
+        total = b['positive'] + b['neutral'] + b['negative']
+        pos_pct = b['positive'] / total * 100 if total else 0
+        neu_pct = b['neutral'] / total * 100 if total else 0
+        neg_pct = b['negative'] / total * 100 if total else 0
+        label = f"{b['bucket_end'][5:10]} {b['bucket_end'][11:16]} — {total} post(s): {b['positive']} pos, {b['neutral']} neu, {b['negative']} neg"
+        bars.append(f"""
+          <div class="trend-bar" title="{esc(label)}">
+            <div class="trend-bar-stack">
+              <div class="seg pos" style="height:{pos_pct}%"></div>
+              <div class="seg neu" style="height:{neu_pct}%"></div>
+              <div class="seg neg" style="height:{neg_pct}%"></div>
+            </div>
+          </div>""")
+    return f"""
+    <div class="trend-chart">{''.join(bars)}</div>
+    <div class="trend-legend">
+      <span><span class="legend-dot pos"></span>Positive</span>
+      <span><span class="legend-dot neu"></span>Neutral</span>
+      <span><span class="legend-dot neg"></span>Negative</span>
+    </div>"""
 
 
 def render_summaries(data):
@@ -421,6 +457,21 @@ def main():
   .summary-card-head {{ display: flex; align-items: center; justify-content: space-between; }}
   .summary-card p {{ margin: 10px 0 0; font-size: 13.5px; line-height: 1.55; }}
   .char-count {{ color: var(--muted-dim); font-size: 11px; }}
+  .trend-chart {{ display: flex; align-items: flex-end; gap: 4px; height: 130px; }}
+  .trend-bar {{ flex: 1; height: 100%; display: flex; align-items: flex-end; cursor: default; }}
+  .trend-bar-stack {{
+    width: 100%; height: 100%; display: flex; flex-direction: column;
+    border-radius: 3px; overflow: hidden; background: var(--surface-2);
+  }}
+  .seg {{ width: 100%; }}
+  .seg.pos {{ background: var(--green); }}
+  .seg.neu {{ background: var(--muted-dim); }}
+  .seg.neg {{ background: var(--red); }}
+  .trend-legend {{ display: flex; gap: 16px; font-size: 11.5px; color: var(--muted); margin-top: 10px; }}
+  .legend-dot {{ display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }}
+  .legend-dot.pos {{ background: var(--green); }}
+  .legend-dot.neu {{ background: var(--muted-dim); }}
+  .legend-dot.neg {{ background: var(--red); }}
   @media (max-width: 800px) {{
     header, nav, main {{ padding-left: 18px; padding-right: 18px; }}
     .col-2 {{ grid-template-columns: 1fr; }}
