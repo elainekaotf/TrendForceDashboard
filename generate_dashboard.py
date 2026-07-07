@@ -519,6 +519,9 @@ def main():
     .badge {{ background: #eee !important; }}
   }}
 </style>
+<!-- SheetJS Community Edition (Apache-2.0), vendored locally - see docs/vendor/README.md.
+     Powers FR-07's Excel upload/export entirely client-side (no backend on this static site). -->
+<script src="vendor/xlsx.full.min.js"></script>
 </head>
 <body>
 <header>
@@ -552,12 +555,12 @@ def main():
     <h2>FR-07 &middot; Self-service Data Analysis &amp; Export</h2>
     {panel(f'''
       <p class="muted" style="margin:0 0 14px">
-        Upload your own CSV export, analyzed entirely in your browser (this is a static site - nothing is
-        uploaded anywhere). Timestamps without a timezone are assumed to be in the source timezone below and
-        converted to Asia/Taipei (UTC+8), matching self_service_analysis.py's CLI behavior.
+        Upload your own CSV or Excel (.xlsx) export, analyzed entirely in your browser (this is a static
+        site - nothing is uploaded anywhere). Timestamps without a timezone are assumed to be in the source
+        timezone below and converted to Asia/Taipei (UTC+8), matching self_service_analysis.py's CLI behavior.
       </p>
       <div class="upload-row">
-        <input type="file" id="upload-file" accept=".csv">
+        <input type="file" id="upload-file" accept=".csv,.xlsx">
         <label for="upload-tz">Source timezone (for naive timestamps)</label>
         <select id="upload-tz">
           <option value="America/Los_Angeles" selected>America/Los_Angeles (PT)</option>
@@ -567,10 +570,10 @@ def main():
           <option value="Asia/Taipei">Asia/Taipei (UTC+8)</option>
         </select>
       </div>
-      <div id="upload-results"><p class="empty">Choose a CSV file to analyze. Expected columns: a text column
-        (text/content/message) and a timestamp column (timestamp/date/created_at) - extra columns are kept
-        and passed through untouched.</p></div>
-    ''', 'Upload a CSV', 'Analyzed client-side, nothing leaves your browser')}
+      <div id="upload-results"><p class="empty">Choose a CSV or Excel file to analyze. Expected columns: a
+        text column (text/content/message) and a timestamp column (timestamp/date/created_at) - extra
+        columns are kept and passed through untouched.</p></div>
+    ''', 'Upload a file', 'CSV or Excel, analyzed client-side, nothing leaves your browser')}
   </section>
 </main>
 <script>
@@ -878,6 +881,7 @@ def main():
       </div>
       <div class="download-row">
         <button class="btn" id="download-csv-btn">Download CSV</button>
+        <button class="btn" id="download-xlsx-btn">Download Excel</button>
         <button class="btn" id="download-print-btn">Print / Save as PDF</button>
       </div>
     `;
@@ -887,50 +891,68 @@ def main():
       return `<div class="table-wrap"><table><thead><tr>${{head}}</tr></thead><tbody>${{rowsHtml}}</tbody></table></div>`;
     }}
 
+    const outFields = [...fields, 'converted_timestamp_utc8', 'sentiment'];
     document.getElementById('download-csv-btn').onclick = () => {{
-      const outFields = [...fields, 'converted_timestamp_utc8', 'sentiment'];
       const lines = [outFields.map(csvCell).join(',')];
       for (const r of rows) lines.push(outFields.map(f => csvCell(r[f])).join(','));
       downloadBlob(uploadedBaseName + '_analyzed.csv', lines.join('\\n'), 'text/csv');
     }};
+    document.getElementById('download-xlsx-btn').onclick = () => {{
+      const sheetRows = rows.map(r => Object.fromEntries(outFields.map(f => [f, r[f] ?? ''])));
+      const sheet = XLSX.utils.json_to_sheet(sheetRows, {{ header: outFields }});
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, sheet, 'Analyzed');
+      XLSX.writeFile(wb, uploadedBaseName + '_analyzed.xlsx');
+    }};
     document.getElementById('download-print-btn').onclick = () => window.print();
+  }}
+
+  function analyzeUploadedRows(parsed) {{
+    if (!parsed.length) {{
+      document.getElementById('upload-results').innerHTML = '<p class="empty">Could not parse any rows from this file.</p>';
+      return;
+    }}
+    const fields = Object.keys(parsed[0]);
+    const textCol = detectColumn(fields, TEXT_COLUMN_CANDIDATES);
+    const tsCol = detectColumn(fields, TIMESTAMP_COLUMN_CANDIDATES);
+    if (!textCol) {{
+      document.getElementById('upload-results').innerHTML = '<p class="empty">No text/content/message column found in this file.</p>';
+      return;
+    }}
+    const sourceTz = document.getElementById('upload-tz').value;
+    const rows = parsed.map(r => {{
+      const {{ date, hadOffset }} = tsCol ? parseUploadTimestamp(String(r[tsCol] ?? ''), sourceTz) : {{ date: null, hadOffset: false }};
+      return {{
+        ...r,
+        sentiment: classifySentiment(r[textCol]),
+        converted_timestamp_utc8: date ? new Intl.DateTimeFormat('sv-SE', {{
+          timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit',
+          hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23',
+        }}).format(date).replace(' ', 'T') + '+08:00' : null,
+        _hadOffset: hadOffset,
+      }};
+    }});
+    uploadedRows = rows; uploadedFields = fields;
+    renderUploadResults(rows, fields, {{ textCol, tsCol }});
   }}
 
   document.getElementById('upload-file').addEventListener('change', e => {{
     const file = e.target.files[0];
     if (!file) return;
-    uploadedBaseName = file.name.replace(/\.csv$/i, '');
+    const isExcel = /\.xlsx$/i.test(file.name);
+    uploadedBaseName = file.name.replace(/\.(csv|xlsx)$/i, '');
     const reader = new FileReader();
     reader.onload = () => {{
-      const parsed = parseCsv(reader.result);
-      if (!parsed.length) {{
-        document.getElementById('upload-results').innerHTML = '<p class="empty">Could not parse any rows from this file.</p>';
-        return;
+      if (isExcel) {{
+        const wb = XLSX.read(reader.result, {{ type: 'array' }});
+        const sheet = wb.Sheets[wb.SheetNames[0]];
+        analyzeUploadedRows(XLSX.utils.sheet_to_json(sheet, {{ defval: '' }}));
+      }} else {{
+        analyzeUploadedRows(parseCsv(reader.result));
       }}
-      const fields = Object.keys(parsed[0]);
-      const textCol = detectColumn(fields, TEXT_COLUMN_CANDIDATES);
-      const tsCol = detectColumn(fields, TIMESTAMP_COLUMN_CANDIDATES);
-      if (!textCol) {{
-        document.getElementById('upload-results').innerHTML = '<p class="empty">No text/content/message column found in this CSV.</p>';
-        return;
-      }}
-      const sourceTz = document.getElementById('upload-tz').value;
-      const rows = parsed.map(r => {{
-        const {{ date, hadOffset }} = tsCol ? parseUploadTimestamp(r[tsCol], sourceTz) : {{ date: null, hadOffset: false }};
-        return {{
-          ...r,
-          sentiment: classifySentiment(r[textCol]),
-          converted_timestamp_utc8: date ? new Intl.DateTimeFormat('sv-SE', {{
-            timeZone: 'Asia/Taipei', year: 'numeric', month: '2-digit', day: '2-digit',
-            hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23',
-          }}).format(date).replace(' ', 'T') + '+08:00' : null,
-          _hadOffset: hadOffset,
-        }};
-      }});
-      uploadedRows = rows; uploadedFields = fields;
-      renderUploadResults(rows, fields, {{ textCol, tsCol }});
     }};
-    reader.readAsText(file);
+    if (isExcel) reader.readAsArrayBuffer(file);
+    else reader.readAsText(file);
   }});
 </script>
 </body></html>"""
