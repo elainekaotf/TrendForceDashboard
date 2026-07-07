@@ -196,40 +196,61 @@ def render_sentiment(data):
 
 LOW_SAMPLE_THRESHOLD = 10  # below this many posts, a solid-color bar is noise, not signal
 MIN_BAR_OPACITY = 0.35
+TREND_ARM_PX = 70  # height of one arm (above or below the zero line) at 100% share
 
 
 def render_trend_curve(curve):
+    """Sentiment is ordered/polarized data (negative < neutral < positive), which
+    calls for a diverging stacked bar centered on a zero baseline rather than a
+    bottom-anchored 100%-stack: neutral splits evenly across the baseline, positive
+    extends up, negative extends down, so "is this net positive or negative"
+    reads from the bar's silhouette alone instead of requiring three-way
+    mental subtraction. Each bar is also directly labeled with its post count and
+    date, and low-sample bars are faded - all per the dataviz skill (diverging
+    color = polarity; direct labels over hover-only; never gate a value behind a
+    tooltip)."""
     if not curve:
         return '<p class="empty">Not enough data to plot a trend curve.</p>'
     bars = []
     for b in curve:
         total = b['positive'] + b['neutral'] + b['negative']
-        pos_pct = b['positive'] / total * 100 if total else 0
-        neu_pct = b['neutral'] / total * 100 if total else 0
-        neg_pct = b['negative'] / total * 100 if total else 0
+        pos_share = b['positive'] / total if total else 0
+        neu_share = b['neutral'] / total if total else 0
+        neg_share = b['negative'] / total if total else 0
+        half_neu_px = neu_share / 2 * TREND_ARM_PX
+        pos_px = pos_share * TREND_ARM_PX
+        neg_px = neg_share * TREND_ARM_PX
+
         # A bar built from 1-2 posts looks visually identical to one built
         # from hundreds (both can render fully one color) - fade low-sample
         # bars so it's obvious at a glance which ones are weak signal.
         opacity = MIN_BAR_OPACITY + (1 - MIN_BAR_OPACITY) * min(total, LOW_SAMPLE_THRESHOLD) / LOW_SAMPLE_THRESHOLD
         bucket_end_tw = datetime.fromisoformat(b['bucket_end']).astimezone(TAIWAN_TZ)
         sample_note = ' (low sample size)' if total < LOW_SAMPLE_THRESHOLD else ''
-        label = f"{bucket_end_tw.strftime('%m-%d %H:%M')} TW — {total} post(s){sample_note}: {b['positive']} pos, {b['neutral']} neu, {b['negative']} neg"
+        tooltip = f"{bucket_end_tw.strftime('%b %d, %H:%M')} TW — {total} post(s){sample_note}: {b['positive']} positive, {b['neutral']} neutral, {b['negative']} negative"
+
         bars.append(f"""
-          <div class="trend-bar" title="{esc(label)}" style="opacity:{round(opacity, 2)}">
-            <div class="trend-bar-stack">
-              <div class="seg pos" style="height:{pos_pct}%"></div>
-              <div class="seg neu" style="height:{neu_pct}%"></div>
-              <div class="seg neg" style="height:{neg_pct}%"></div>
+          <div class="trend-bar" title="{esc(tooltip)}" style="opacity:{round(opacity, 2)}" tabindex="0">
+            <div class="trend-count">{fmt_int(total)}</div>
+            <div class="trend-arm trend-arm-up">
+              <div class="seg seg-pos" style="height:{pos_px}px"></div>
+              <div class="seg seg-neu-up" style="height:{half_neu_px}px"></div>
             </div>
+            <div class="trend-arm trend-arm-down">
+              <div class="seg seg-neu-down" style="height:{half_neu_px}px"></div>
+              <div class="seg seg-neg" style="height:{neg_px}px"></div>
+            </div>
+            <div class="trend-date">{bucket_end_tw.strftime('%-m/%-d')}<br>{bucket_end_tw.strftime('%H:%M')}</div>
           </div>""")
+
     return f"""
-    <div class="trend-chart">{''.join(bars)}</div>
     <div class="trend-legend">
-      <span><span class="legend-dot pos"></span>Positive</span>
-      <span><span class="legend-dot neu"></span>Neutral</span>
-      <span><span class="legend-dot neg"></span>Negative</span>
-      <span class="muted">Faded bars = fewer than {LOW_SAMPLE_THRESHOLD} posts (weak signal)</span>
-    </div>"""
+      <span><span class="legend-dot" style="background:var(--status-good)"></span>Positive</span>
+      <span><span class="legend-dot" style="background:var(--muted-dim)"></span>Neutral</span>
+      <span><span class="legend-dot" style="background:var(--status-critical)"></span>Negative</span>
+      <span class="muted">Bar height = share of posts (not volume) &middot; faded = fewer than {LOW_SAMPLE_THRESHOLD} posts, weak signal</span>
+    </div>
+    <div class="table-wrap"><div class="trend-chart">{''.join(bars)}</div></div>"""
 
 
 def render_summaries(data):
@@ -373,6 +394,7 @@ def main():
     --text: #eef2f7; --muted: #8593a6; --muted-dim: #5c6b80;
     --blue: #4da3ff; --blue-dim: rgba(77,163,255,0.12);
     --gold: #f0b429; --green: #3fb968; --red: #f85149; --yellow: #d29922;
+    --status-good: #0ca30c; --status-critical: #d03b3b;
     --radius: 10px; --radius-sm: 7px;
     --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px -8px rgba(0,0,0,0.5);
   }}
@@ -503,21 +525,30 @@ def main():
   .summary-card-head {{ display: flex; align-items: center; justify-content: space-between; }}
   .summary-card p {{ margin: 10px 0 0; font-size: 13.5px; line-height: 1.55; }}
   .char-count {{ color: var(--muted-dim); font-size: 11px; }}
-  .trend-chart {{ display: flex; align-items: flex-end; gap: 4px; height: 130px; }}
-  .trend-bar {{ flex: 1; height: 100%; display: flex; align-items: flex-end; cursor: default; }}
-  .trend-bar-stack {{
-    width: 100%; height: 100%; display: flex; flex-direction: column;
-    border-radius: 3px; overflow: hidden; background: var(--surface-2);
-  }}
-  .seg {{ width: 100%; }}
-  .seg.pos {{ background: var(--green); }}
-  .seg.neu {{ background: var(--muted-dim); }}
-  .seg.neg {{ background: var(--red); }}
-  .trend-legend {{ display: flex; gap: 16px; font-size: 11.5px; color: var(--muted); margin-top: 10px; }}
+  .trend-legend {{ display: flex; flex-wrap: wrap; gap: 16px; font-size: 11.5px; color: var(--muted); margin-bottom: 14px; align-items: center; }}
   .legend-dot {{ display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }}
-  .legend-dot.pos {{ background: var(--green); }}
-  .legend-dot.neu {{ background: var(--muted-dim); }}
-  .legend-dot.neg {{ background: var(--red); }}
+  .trend-chart {{
+    display: flex; align-items: stretch; gap: 6px; min-width: 640px;
+    padding-top: 20px; /* room for the count label above each bar */
+  }}
+  .trend-bar {{
+    flex: 1; display: flex; flex-direction: column; align-items: center; cursor: default;
+    min-width: 32px; border-radius: 4px; transition: background 0.1s ease;
+  }}
+  .trend-bar:hover, .trend-bar:focus {{ background: var(--surface-2); outline: none; }}
+  .trend-count {{ font-size: 10.5px; color: var(--muted); font-variant-numeric: tabular-nums; margin-bottom: 3px; }}
+  .trend-arm {{ width: 100%; display: flex; }}
+  .trend-arm-up {{ flex-direction: column-reverse; height: {TREND_ARM_PX}px; align-items: center; }}
+  .trend-arm-down {{ flex-direction: column; height: {TREND_ARM_PX}px; align-items: center; border-top: 1px solid var(--border); }}
+  .seg {{ width: 100%; }}
+  .seg-pos {{ background: var(--status-good); border-radius: 3px 3px 0 0; }}
+  .seg-neg {{ background: var(--status-critical); border-radius: 0 0 3px 3px; }}
+  .seg-neu-up {{ background: var(--muted-dim); margin-bottom: 2px; }}
+  .seg-neu-down {{ background: var(--muted-dim); margin-top: 2px; }}
+  .trend-date {{
+    margin-top: 6px; font-size: 10px; line-height: 1.3; color: var(--muted);
+    text-align: center; white-space: nowrap;
+  }}
   @media (max-width: 800px) {{
     header, nav, main {{ padding-left: 18px; padding-right: 18px; }}
     .col-2 {{ grid-template-columns: 1fr; }}
