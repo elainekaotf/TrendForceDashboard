@@ -294,7 +294,31 @@ def render_accounts(data):
         <td>{esc(a['last_post_at'] or '—')}</td>
       </tr>""" for a in data.get('accounts', []))
     body = table(['Handle', 'Platform', 'Status', '#Followers', '#Posts', 'Last post'], rows)
-    return panel(body, 'Tracked accounts', f"{len(data.get('accounts', []))} accounts")
+    accounts_panel = panel(body, 'Tracked accounts', f"{len(data.get('accounts', []))} accounts")
+
+    # This is a static site with no backend to add an account and start
+    # scraping on the spot - the request form instead opens a pre-filled
+    # GitHub issue (no credentials needed client-side, just a normal issue
+    # creation link) that elainekao reviews and approves locally by running
+    # add_account.py, which registers the account and kicks off a one-off
+    # scrape + pipeline run for it.
+    request_panel = panel(f"""
+    <div class="add-account-form">
+      <label>Platform
+        <select id="add-account-platform">
+          <option value="X">X (Twitter)</option>
+          <option value="Facebook">Facebook</option>
+        </select>
+      </label>
+      <label>Handle
+        <input type="text" id="add-account-handle" placeholder="e.g. some_competitor" autocomplete="off">
+      </label>
+      <button class="btn" id="add-account-btn">Request tracking</button>
+    </div>
+    <p class="muted add-account-hint">Opens a GitHub issue for review - tracking starts once it's approved and run locally.</p>
+    """, 'Request a new account to track', 'FR-05')
+
+    return accounts_panel + request_panel
 
 
 def render_reply_queue(data):
@@ -510,6 +534,19 @@ def main():
   }}
   .kw-link-popover a:hover {{ text-decoration: underline; }}
   .kw-link-popover .empty {{ font-size: 12px; color: var(--muted); margin: 0; }}
+  .add-account-form {{ display: flex; flex-wrap: wrap; align-items: end; gap: 14px; }}
+  .add-account-form label {{
+    display: flex; flex-direction: column; gap: 6px; font-size: 11.5px;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em;
+  }}
+  .add-account-form select, .add-account-form input {{
+    background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px;
+    color: var(--text); padding: 9px 12px; font-size: 13px; min-width: 220px;
+  }}
+  .add-account-form input:focus, .add-account-form select:focus {{
+    outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-dim);
+  }}
+  .add-account-hint {{ margin-top: 10px; font-size: 12px; }}
   .empty {{ color: var(--muted); font-style: italic; font-size: 13.5px; padding: 8px 2px; }}
   .col-2 {{ display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }}
   .col-2 > .panel {{ margin-bottom: 0; }}
@@ -812,6 +849,23 @@ def main():
   }});
   document.addEventListener('focusout', e => {{
     if (e.target.closest('.kw-link-row') && !e.relatedTarget?.closest('.kw-link-popover, .kw-link-row')) hideKwLinkPopover();
+  }});
+
+  // FR-05: no backend on a static site to add an account and start
+  // crawling immediately, so the request opens a pre-filled GitHub issue
+  // instead (no credentials needed client-side) for elainekao to review
+  // and approve locally with add_account.py.
+  document.getElementById('add-account-btn')?.addEventListener('click', () => {{
+    const platform = document.getElementById('add-account-platform').value;
+    const handle = document.getElementById('add-account-handle').value.trim();
+    if (!handle) {{
+      document.getElementById('add-account-handle').focus();
+      return;
+    }}
+    const title = `Add account: ${{platform}}/${{handle}}`;
+    const body = `Please start tracking this account:\n\n- Platform: ${{platform}}\n- Handle: ${{handle}}\n\nRequested from the dashboard's Account Status tab.`;
+    const url = `https://github.com/elainekaotf/TrendForceDashboard/issues/new?title=${{encodeURIComponent(title)}}&body=${{encodeURIComponent(body)}}&labels=add-account`;
+    window.open(url, '_blank', 'noopener,noreferrer');
   }});
 
   document.addEventListener('input', e => {{

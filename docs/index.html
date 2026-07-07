@@ -111,6 +111,19 @@
   }
   .kw-link-popover a:hover { text-decoration: underline; }
   .kw-link-popover .empty { font-size: 12px; color: var(--muted); margin: 0; }
+  .add-account-form { display: flex; flex-wrap: wrap; align-items: end; gap: 14px; }
+  .add-account-form label {
+    display: flex; flex-direction: column; gap: 6px; font-size: 11.5px;
+    color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .add-account-form select, .add-account-form input {
+    background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px;
+    color: var(--text); padding: 9px 12px; font-size: 13px; min-width: 220px;
+  }
+  .add-account-form input:focus, .add-account-form select:focus {
+    outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-dim);
+  }
+  .add-account-hint { margin-top: 10px; font-size: 12px; }
   .empty { color: var(--muted); font-style: italic; font-size: 13.5px; padding: 8px 2px; }
   .col-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }
   .col-2 > .panel { margin-bottom: 0; }
@@ -207,7 +220,7 @@
 <body>
 <header>
   <h1>TrendForceDash</h1>
-  <div class="muted">Generated July 07, 2026 18:12 Taiwan Time &middot; FR-01 through FR-06</div>
+  <div class="muted">Generated July 07, 2026 18:21 Taiwan Time &middot; FR-01 through FR-06</div>
 </header>
 <nav>
   <button class="tab-btn active" data-tab="gaps">Topic Gaps</button>
@@ -327,7 +340,21 @@
         <td class="num">890</td>
         <td>2026-07-07T08:58:08.755596+00:00</td>
       </tr></tbody>
-    </table></div></div></section>
+    </table></div></div><div class="panel"><div class="panel-head"><h3>Request a new account to track</h3><span class="panel-eyebrow">FR-05</span></div>
+    <div class="add-account-form">
+      <label>Platform
+        <select id="add-account-platform">
+          <option value="X">X (Twitter)</option>
+          <option value="Facebook">Facebook</option>
+        </select>
+      </label>
+      <label>Handle
+        <input type="text" id="add-account-handle" placeholder="e.g. some_competitor" autocomplete="off">
+      </label>
+      <button class="btn" id="add-account-btn">Request tracking</button>
+    </div>
+    <p class="muted add-account-hint">Opens a GitHub issue for review - tracking starts once it's approved and run locally.</p>
+    </div></section>
   <section id="replies"><h2>FR-05 &middot; Reply Queue</h2><div class="panel"><div class="panel-head"><h3>Own-account posts needing a reply</h3><span class="panel-eyebrow">Never touches competitor accounts</span></div><div class="table-wrap"><table>
       <thead><tr><th>Status</th><th>Account</th><th class="num">Replies</th><th>Topic</th><th>Draft reply</th></tr></thead>
       <tbody>
@@ -612,6 +639,28 @@
   });
   document.addEventListener('focusout', e => {
     if (e.target.closest('.kw-link-row') && !e.relatedTarget?.closest('.kw-link-popover, .kw-link-row')) hideKwLinkPopover();
+  });
+
+  // FR-05: no backend on a static site to add an account and start
+  // crawling immediately, so the request opens a pre-filled GitHub issue
+  // instead (no credentials needed client-side) for elainekao to review
+  // and approve locally with add_account.py.
+  document.getElementById('add-account-btn')?.addEventListener('click', () => {
+    const platform = document.getElementById('add-account-platform').value;
+    const handle = document.getElementById('add-account-handle').value.trim();
+    if (!handle) {
+      document.getElementById('add-account-handle').focus();
+      return;
+    }
+    const title = `Add account: ${platform}/${handle}`;
+    const body = `Please start tracking this account:
+
+- Platform: ${platform}
+- Handle: ${handle}
+
+Requested from the dashboard's Account Status tab.`;
+    const url = `https://github.com/elainekaotf/TrendForceDashboard/issues/new?title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}&labels=add-account`;
+    window.open(url, '_blank', 'noopener,noreferrer');
   });
 
   document.addEventListener('input', e => {

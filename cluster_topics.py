@@ -54,16 +54,35 @@ LEGACY_RANGE = '1q'  # analysis/topic_clusters.json mirrors this range
 def range_out_file(range_key):
     return os.path.join(BASE, 'analysis', f'topic_clusters_{range_key}.json')
 
+# Competitor handles live in accounts_config.json (not hardcoded here) so
+# add_account.py can register a newly-approved account - see FR-05's
+# "request tracking" flow on the dashboard - without editing this file.
+ACCOUNTS_CONFIG_PATH = os.path.join(BASE, 'accounts_config.json')
+_DEFAULT_COMPETITORS = {
+    'X': ['dylan522p', 'SemiAnalysis_', 'jukan05', 'QQ_Timmy', 'technews_tw'],
+    'Facebook': ['ctee.fans', 'yutinghaosfinance'],
+}
+
+
+def load_competitors_config():
+    if os.path.exists(ACCOUNTS_CONFIG_PATH):
+        with open(ACCOUNTS_CONFIG_PATH, encoding='utf-8') as f:
+            return json.load(f)
+    return {}
+
+
+_competitors_cfg = load_competitors_config()
+
 PLATFORM_ACCOUNTS = {
     'X': {
         'dir': CSV_DIR,
         'own': 'TrendForce',
-        'competitors': ['dylan522p', 'SemiAnalysis_', 'jukan05', 'QQ_Timmy', 'technews_tw'],
+        'competitors': _competitors_cfg.get('X', {}).get('competitors', _DEFAULT_COMPETITORS['X']),
     },
     'Facebook': {
         'dir': FACEBOOK_CSV_DIR,
         'own': 'TrendForce.tw',
-        'competitors': ['ctee.fans', 'yutinghaosfinance'],
+        'competitors': _competitors_cfg.get('Facebook', {}).get('competitors', _DEFAULT_COMPETITORS['Facebook']),
     },
 }
 OWN_HANDLES = {p['own'] for p in PLATFORM_ACCOUNTS.values()}
