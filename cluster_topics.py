@@ -83,17 +83,29 @@ NON_WORD_RE = re.compile(r'[^a-zA-Z一-鿿\s#]')
 LINK_NOISE = {'dlvr', 'buff', 'ly', 'tt', 'http', 'https', 'www', 'com'}
 
 # Generic financial/temporal boilerplate that shows up in nearly every
-# Traditional Chinese finance-news post (億元, 年增, 今年, 月增, ...) - it's
-# high-frequency but carries no topic identity, so it crowds out the actual
-# technical/product terms a topic label should surface.
-CHINESE_STOP_WORDS = {
-    '億元', '萬元', '千元', '元', '億美元', '萬美元', '美元',
-    '年增', '月增', '季增', '年減', '月減', '季減', '增加', '減少', '成長',
-    '今年', '去年', '明年', '本季', '上季', '下季', '本月', '上月', '下月',
-    '同期', '同比', '較去年同期', '較上季', '較上月', '目前', '近期', '日前',
-    '報導', '指出', '表示', '預估', '預計', '據悉', '消息指出', '最新研究指出',
-    '營收', '獲利', '毛利率', '目標價', '股價', '創新高', '新高', '新低',
-}
+# Traditional Chinese finance-news post (億元, 年增, 今年, 月增, 個百分點, ...)
+# - it's high-frequency but carries no topic identity, so it crowds out the
+# actual technical/product terms a topic label should surface. The X CSVs'
+# pre-extracted `keywords` column hands the vectorizer whole boilerplate
+# phrases as single tokens (兆日圓, 個百分點, 創下歷史新高, ...), so an exact
+# stop-word set only catches the literal phrases it lists - a combinatorial
+# family like [億|萬|千|兆][元|日圓|美元|韓元] needs a pattern, not a list.
+CHINESE_NOISE_SUBSTRINGS = [
+    '年增', '年減', '月增', '月減', '季增', '季減', '去年', '今年', '明年',
+    '本季', '上季', '下季', '本月', '上月', '下月', '同期', '同比',
+    '目前', '近期', '日前', '日起', '報導', '指出', '表示', '預估', '預計', '據悉',
+    '營收', '獲利', '毛利率', '目標價', '股價', '創新高', '創下', '新高', '新低',
+    '百分點', '歷史新高', '央行', '因此', '經濟日報', '導讀', 'reurl',
+    '年的', '年至', '年間', '年以來', '過去',
+]
+CHINESE_NOISE_RE = re.compile('|'.join(re.escape(w) for w in CHINESE_NOISE_SUBSTRINGS))
+# Pure currency/magnitude tokens (億元, 兆日圓, 萬美元, ...) carry no topic
+# identity on their own - they're units, not subjects.
+CHINESE_UNIT_TOKEN_RE = re.compile(r'^[0-9億萬千兆]+[元日圓韓美歐]{0,2}$')
+
+
+def is_chinese_noise_token(token):
+    return bool(CHINESE_UNIT_TOKEN_RE.match(token)) or bool(CHINESE_NOISE_RE.search(token))
 
 
 def parse_count(val):
@@ -213,11 +225,16 @@ def cluster_posts(posts, n_clusters=N_CLUSTERS, min_docs_per_cluster=5):
     documents, which raises instead of degrading gracefully. Retry with a
     looser min_df, then without stop-word filtering, before giving up."""
     docs = [p['text'] for p in posts]
-    stop_words = list(TfidfVectorizer(stop_words='english').get_stop_words()) + list(LINK_NOISE) + list(CHINESE_STOP_WORDS)
+    stop_words = list(TfidfVectorizer(stop_words='english').get_stop_words()) + list(LINK_NOISE)
+    # Default analyzer (lowercasing + tokenizing + stop-word removal) plus the
+    # Chinese noise-pattern filter, which stop_words alone can't express
+    # since it only matches whole tokens exactly.
+    base_analyzer = TfidfVectorizer(stop_words=stop_words).build_analyzer()
+    noise_filtered_analyzer = lambda doc: [t for t in base_analyzer(doc) if not is_chinese_noise_token(t)]
 
     X = vectorizer = None
-    for kwargs in ({'min_df': 2, 'stop_words': stop_words},
-                   {'min_df': 1, 'stop_words': stop_words},
+    for kwargs in ({'min_df': 2, 'analyzer': noise_filtered_analyzer},
+                   {'min_df': 1, 'analyzer': noise_filtered_analyzer},
                    {'min_df': 1}):
         vectorizer = TfidfVectorizer(max_features=3000, **kwargs)
         try:
