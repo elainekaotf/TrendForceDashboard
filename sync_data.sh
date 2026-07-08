@@ -76,24 +76,16 @@ for h in "${FB_HANDLES[@]}"; do
   dated_files=$(ls -tr "$FACEBOOK_SRC"/csv/facebook_"$h"_*.csv 2>/dev/null)
   if [ -n "$dated_files" ]; then
     out="csv/facebook/$h.csv"
-    # Build the concatenated file in a temp path, then rename it into place
-    # atomically - the previous version truncated $out with ": > $out" and
-    # appended into it across several writes, leaving a window where a
-    # concurrent reader (a *different* job's cluster_topics.py, not
-    # sync_data.sh itself - the lock above only serializes sync_data.sh
-    # against other sync_data.sh runs) could see it half-written or empty.
-    # `mv` on the same filesystem is atomic: any reader sees either the
-    # complete old file or the complete new one, never a partial one.
+    # Merge via merge_facebook_csv.py (schema-aware: each dated file is read
+    # under its OWN header, not assumed to match the first file's - a plain
+    # `cat`/`tail -n +2` broke the day the scraper added a
+    # reactionsBreakdown column, silently shifting every field in the newer
+    # rows and leaving `text` empty), building into a temp path and
+    # `mv`-ing it into place atomically for the same reason as the X copy
+    # below: a concurrent reader (a *different* job's cluster_topics.py)
+    # must never see a partially-written file.
     tmp="$out.tmp.$$"
-    first=1
-    for f in $dated_files; do
-      if [ "$first" -eq 1 ]; then
-        cat "$f" > "$tmp"
-        first=0
-      else
-        tail -n +2 "$f" >> "$tmp"
-      fi
-    done
+    python3 merge_facebook_csv.py "$tmp" $dated_files
     mv "$tmp" "$out"
     synced=$((synced + 1))
   else
