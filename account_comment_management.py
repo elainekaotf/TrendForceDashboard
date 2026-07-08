@@ -53,30 +53,19 @@ NEEDS_RESPONSE_THRESHOLD = 5  # replies on a post before it's queued for a draft
 STALE_AFTER_DAYS = 3
 INACTIVE_AFTER_DAYS = 14
 
-# Reply-count cutoff that adds a warm nod to how much a post has taken off,
-# on top of the base tone - free/instant/offline, unlike an LLM-drafted
-# version (traded off against that with elainekao: no API key/cost, just
-# reuses data already computed by FR-01/03).
-HIGH_ENGAGEMENT_REPLIES = 20
-
-
-def draft_reply(sentiment, reply_count=0):
-    buzzing = reply_count >= HIGH_ENGAGEMENT_REPLIES
-
+def draft_reply(sentiment):
+    # Per elainekao's feedback: calling out the reply count ("with 25
+    # people weighing in...") read as impersonal/off, even meant warmly -
+    # every draft stays a consistent warm tone regardless of volume now.
     if sentiment == 'positive':
-        base = "Thank you so much for the kind words, it truly means a lot to us!"
-        base += (f" Seeing {reply_count} replies like this makes our day, we'll keep the great content coming."
-                  if buzzing else " We're so glad this resonated with you, and we'll keep the great content coming.")
+        return ("Thank you so much for the kind words, it truly means a lot to us! "
+                 "We're so glad this resonated with you, and we'll keep the great content coming.")
     elif sentiment == 'negative':
-        base = "Thank you for taking the time to share your thoughts with us."
-        base += " We really do appreciate the feedback, and we'd love to hear more so we can make things better."
-        if buzzing:
-            base += f" With {reply_count} people weighing in, we want to make sure everyone feels heard."
+        return ("Thank you for taking the time to share your thoughts with us. "
+                 "We really do appreciate the feedback, and we'd love to hear more so we can make things better.")
     else:
-        base = "Thanks so much for reading and taking the time to comment!"
-        base += (f" This post has sparked {reply_count} replies already, so please let us know what you'd love to see next."
-                  if buzzing else " We'd love to hear what you'd like us to cover next.")
-    return base
+        return ("Thanks so much for reading and taking the time to comment! "
+                 "We'd love to hear what you'd like us to cover next.")
 
 
 def now_iso():
@@ -165,7 +154,7 @@ def build_comment_queue(posts, topic_labels_by_cluster, cluster_id_by_post):
             'topic_label': topic_label,
             'sentiment': p['sentiment'],
             'sentiment_score': sentiment_score,
-            'draft_reply': draft_reply(p['sentiment'], replies),
+            'draft_reply': draft_reply(p['sentiment']),
         })
     flagged.sort(key=lambda r: r['reply_count'], reverse=True)
     return flagged
