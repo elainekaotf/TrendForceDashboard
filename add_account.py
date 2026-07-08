@@ -25,6 +25,7 @@ into, so this prints the exact edit needed there instead of guessing at
 undocumented behavior.
 """
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -41,6 +42,19 @@ _DEFAULT_OWN = {'X': ['TrendForce'], 'Facebook': ['TrendForce.tw']}
 
 def _default_own(platform):
     return _DEFAULT_OWN[platform]
+
+
+def normalize_handle(raw):
+    """Accepts a bare handle or a pasted profile URL - the dashboard's
+    request form normalizes client-side too, but a request can still reach
+    here typed straight from a GitHub issue (one came through as
+    "https://x.com/tphuang" before the form-side fix), so normalize here
+    too rather than trusting the caller."""
+    h = raw.strip()
+    h = re.sub(r'^https?://(www\.)?(x\.com|twitter\.com|facebook\.com)/', '', h, flags=re.IGNORECASE)
+    h = h.lstrip('@').rstrip('/')
+    h = re.split(r'[/?#]', h)[0]
+    return h
 
 
 def load_config():
@@ -60,6 +74,7 @@ def main():
         print(__doc__)
         sys.exit(1)
     platform, handle = args
+    handle = normalize_handle(handle)
 
     cfg = load_config()
     cfg.setdefault(platform, {}).setdefault('own', list(_default_own(platform)))
@@ -97,11 +112,11 @@ def main():
             print("Done. Run 'bash run_pipeline.sh core' in TrendForceDash to pick it up.")
     else:
         print(
-            f"X/Twitter scraping is driven by a hardcoded KNOWN_ACCOUNTS list in "
-            f"{TWITTER_SCRAPER_DIR / 'scraper.js'} - there's no one-off CLI hook for a "
-            f"single new handle. To finish onboarding {handle}:\n"
-            f"  1. Add '@{handle}' to KNOWN_ACCOUNTS in {TWITTER_SCRAPER_DIR / 'scraper.js'}\n"
-            f"  2. Run the scraper's normal job (e.g. `npm run scrape`) in that repo\n"
+            f"To finish onboarding {handle} on X:\n"
+            f"  1. For an immediate one-off scrape: `node scrape_accounts.js @{handle}` in "
+            f"{TWITTER_SCRAPER_DIR} - it writes csv/{handle}.csv directly, no full-run wait.\n"
+            f"  2. For it to stay covered by future scheduled runs, also add '@{handle}' to "
+            f"KNOWN_ACCOUNTS in {TWITTER_SCRAPER_DIR / 'scraper.js'}\n"
             f"  3. Run `bash run_pipeline.sh core` here in TrendForceDash to pick up the new CSV"
         )
 
