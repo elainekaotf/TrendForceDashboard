@@ -825,11 +825,18 @@ def main():
       }});
     }}
     document.body.appendChild(pop);
+    // Opens beside the row, not below it - a popover below means the mouse
+    // has to cross the next row (and its own hover trigger) to reach it,
+    // which flips the popover to that row before the pointer arrives.
+    // Sitting to the side keeps a straight, uninterrupted path from the
+    // row to the popover.
     const r = row.getBoundingClientRect();
-    const top = window.scrollY + r.bottom + 6;
-    let left = window.scrollX + r.left;
-    const maxLeft = window.scrollX + document.documentElement.clientWidth - pop.offsetWidth - 12;
-    if (left > maxLeft) left = Math.max(12, maxLeft);
+    const spaceRight = document.documentElement.clientWidth - r.right;
+    const openLeft = spaceRight < pop.offsetWidth + 20 && r.left > pop.offsetWidth + 20;
+    const left = window.scrollX + (openLeft ? r.left - pop.offsetWidth - 10 : r.right + 10);
+    let top = window.scrollY + r.top - 4;
+    const maxTop = window.scrollY + document.documentElement.clientHeight - pop.offsetHeight - 12;
+    if (top > maxTop) top = Math.max(window.scrollY + 12, maxTop);
     pop.style.top = `${{top}}px`;
     pop.style.left = `${{left}}px`;
     kwLinkPopover = pop;
