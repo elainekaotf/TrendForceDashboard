@@ -43,9 +43,17 @@ BASE = os.path.dirname(__file__)
 DEFAULT_OUT_DIR = os.path.join(BASE, 'analysis', 'self_service')
 TARGET_TZ = ZoneInfo('Asia/Taipei')  # UTC+8, no DST
 
-TIMESTAMP_COLUMN_CANDIDATES = ['timestamp', 'created_at', 'date', 'exactDate', 'scrapedAt']
-TEXT_COLUMN_CANDIDATES = ['translated_text', 'text', 'content', 'message', 'body']
-ENGAGEMENT_COLUMN_CANDIDATES = ['likes', 'reactions', 'retweets', 'shares', 'comments', 'replies']
+# Column names only ever matched exact English headers - a Traditional
+# Chinese export (e.g. 內容/時間 instead of content/timestamp) found none of
+# them and failed with "No text/content/message column found", which read
+# as broken rather than "wrong header language." Added the common zh-TW
+# header names actual exports use alongside the English ones.
+TIMESTAMP_COLUMN_CANDIDATES = ['timestamp', 'created_at', 'date', 'exactDate', 'scrapedAt',
+                                '時間', '日期', '發布時間', '發文時間', '貼文時間', '建立時間', '時間戳記']
+TEXT_COLUMN_CANDIDATES = ['translated_text', 'text', 'content', 'message', 'body',
+                           '內容', '文字', '貼文', '貼文內容', '內文', '文章內容', '訊息', '標題']
+ENGAGEMENT_COLUMN_CANDIDATES = ['likes', 'reactions', 'retweets', 'shares', 'comments', 'replies',
+                                 '讚', '按讚數', '讚數', '留言', '留言數', '評論', '評論數', '分享', '分享數', '轉發']
 
 # datetime.fromisoformat() only accepts ISO 8601 - every other common export
 # format (US-style MM/DD/YYYY, or Facebook's own scraper's "Thursday, July 2,

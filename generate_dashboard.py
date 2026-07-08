@@ -1253,8 +1253,15 @@ def main():
     return rows.slice(1).map(r => Object.fromEntries(headers.map((h, i) => [h, r[i] ?? ''])));
   }}
 
-  const TEXT_COLUMN_CANDIDATES = ['translated_text', 'text', 'content', 'message', 'body'];
-  const TIMESTAMP_COLUMN_CANDIDATES = ['timestamp', 'created_at', 'date', 'exactDate', 'scrapedAt'];
+  // Column names only ever matched exact English headers - a Traditional
+  // Chinese export (e.g. 內容/時間 instead of content/timestamp) found none
+  // of them and failed with "No text/content/message column found", which
+  // read as broken rather than "wrong header language." Added the common
+  // zh-TW header names actual exports use alongside the English ones.
+  const TEXT_COLUMN_CANDIDATES = ['translated_text', 'text', 'content', 'message', 'body',
+    '內容', '文字', '貼文', '貼文內容', '內文', '文章內容', '訊息', '標題'];
+  const TIMESTAMP_COLUMN_CANDIDATES = ['timestamp', 'created_at', 'date', 'exactDate', 'scrapedAt',
+    '時間', '日期', '發布時間', '發文時間', '貼文時間', '建立時間', '時間戳記'];
 
   function detectColumn(fieldnames, candidates) {{
     return candidates.find(c => fieldnames.includes(c)) || null;
