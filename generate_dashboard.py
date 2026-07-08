@@ -78,6 +78,51 @@ def load_vader_lexicon():
     return lexicon
 
 
+def load_chinese_sentiment_data():
+    """FR-07's self-service upload runs entirely client-side and only ever
+    had VADER (English-only) - Chinese text silently scored as neutral
+    regardless of actual sentiment, every time, the same bug NFR-07 already
+    fixed server-side (nlp_sentiment.py). Embed the same cnsenti word lists
+    plus a Traditional->Simplified single-character map (cnsenti's dictionary
+    is simplified-only) so the browser can approximate the server-side path.
+
+    This is a substring scan over the raw text, not real word segmentation -
+    porting jieba's segmenter to JS is out of scope, and cnsenti's own
+    sentiment_count() is just word-list membership counting (no negation/
+    intensity handling) once jieba has segmented, so scanning substrings
+    directly is a reasonable client-side approximation of the same idea.
+    Character-level T2S (not OpenCC's full phrase-aware conversion) covers
+    the large majority of Traditional/Simplified differences, which are
+    per-character far more often than per-phrase.
+    """
+    import pickle
+    import cnsenti
+    cnsenti_dict_dir = os.path.join(os.path.dirname(cnsenti.__file__), 'dictionary', 'hownet')
+    with open(os.path.join(cnsenti_dict_dir, 'pos.pkl'), 'rb') as f:
+        pos_words = pickle.load(f)
+    with open(os.path.join(cnsenti_dict_dir, 'neg.pkl'), 'rb') as f:
+        neg_words = pickle.load(f)
+    # Same whitespace bug fixed server-side: some dictionary entries carry a
+    # trailing space, and a stray literal space would otherwise "match".
+    pos_words = sorted({w.strip() for w in pos_words if w.strip()})
+    neg_words = sorted({w.strip() for w in neg_words if w.strip()})
+
+    import opencc
+    opencc_dict_dir = os.path.join(os.path.dirname(opencc.__file__), 'dictionary')
+    t2s_map = {}
+    # Taiwan-specific character variants first, then the general
+    # Traditional->Simplified table - same override order as tw2sp's own
+    # conversion_chain, so e.g. 啟 resolves through TWVariantsRev before
+    # falling through to TSCharacters.
+    for fname in ('TWVariantsRev.txt', 'TSCharacters.txt'):
+        with open(os.path.join(opencc_dict_dir, fname), encoding='utf-8') as f:
+            for line in f:
+                parts = line.rstrip('\n').split('\t')
+                if len(parts) == 2 and parts[0] not in t2s_map:
+                    t2s_map[parts[0]] = parts[1].split(' ')[0]  # first candidate only
+    return pos_words, neg_words, t2s_map
+
+
 def esc(s):
     if s is None:
         return ''
@@ -464,6 +509,10 @@ def main():
     window_bounds_json = json.dumps(window_bounds_by_range, ensure_ascii=False)
     keyword_index_json = json.dumps(keyword_index, ensure_ascii=False)
     vader_lexicon_json = json.dumps(load_vader_lexicon())
+    zh_pos_words, zh_neg_words, zh_t2s_map = load_chinese_sentiment_data()
+    zh_pos_words_json = json.dumps(zh_pos_words, ensure_ascii=False)
+    zh_neg_words_json = json.dumps(zh_neg_words, ensure_ascii=False)
+    zh_t2s_map_json = json.dumps(zh_t2s_map, ensure_ascii=False)
 
     html = f"""<!doctype html>
 <html lang="en"><head>
@@ -1064,6 +1113,37 @@ def main():
   // nlp_sentiment.py uses server-side, so scores are consistent with the
   // rest of the dashboard rather than an ad hoc approximation.
   const VADER_LEXICON = {vader_lexicon_json};
+
+  // Chinese sentiment (same NFR-07 gap fixed server-side in nlp_sentiment.py:
+  // VADER is English-only and silently scored 100% of Chinese text as
+  // neutral). Substring scan over cnsenti's word lists after a character-
+  // level Traditional->Simplified pass - see load_chinese_sentiment_data()'s
+  // docstring in generate_dashboard.py for why this isn't full jieba+OpenCC.
+  const ZH_POS_WORDS = new Set({zh_pos_words_json});
+  const ZH_NEG_WORDS = new Set({zh_neg_words_json});
+  const ZH_T2S_MAP = {zh_t2s_map_json};
+  const ZH_MAX_WORD_LEN = Math.max(...[...ZH_POS_WORDS, ...ZH_NEG_WORDS].map(w => w.length));
+  const CJK_RE = /[一-鿿]/g;
+  const LATIN_RE = /[A-Za-z]/g;
+
+  function toSimplified(text) {{
+    let out = '';
+    for (const ch of text) out += ZH_T2S_MAP[ch] || ch;
+    return out;
+  }}
+
+  function scoreChineseSentiment(text) {{
+    const simplified = toSimplified(text).replace(/\s+/g, '');
+    let pos = 0, neg = 0;
+    for (let i = 0; i < simplified.length; i++) {{
+      for (let len = 2; len <= ZH_MAX_WORD_LEN && i + len <= simplified.length; len++) {{
+        const w = simplified.slice(i, i + len);
+        if (ZH_POS_WORDS.has(w)) pos++;
+        if (ZH_NEG_WORDS.has(w)) neg++;
+      }}
+    }}
+    return (pos + neg) ? (pos - neg) / (pos + neg) : 0.0;
+  }}
   const VADER_NEGATE = ["aint","arent","cannot","cant","couldnt","darent","didnt","doesnt",
     "ain't","aren't","can't","couldn't","daren't","didn't","doesn't",
     "dont","hadnt","hasnt","havent","isnt","mightnt","mustnt","neither",
@@ -1140,7 +1220,9 @@ def main():
     return sum / Math.sqrt(sum * sum + 15);
   }}
   function classifySentiment(text) {{
-    const c = vaderScore(text);
+    const cjkCount = (text.match(CJK_RE) || []).length;
+    const latinCount = (text.match(LATIN_RE) || []).length;
+    const c = cjkCount > latinCount ? scoreChineseSentiment(text) : vaderScore(text);
     return c >= 0.05 ? 'positive' : c <= -0.05 ? 'negative' : 'neutral';
   }}
 
