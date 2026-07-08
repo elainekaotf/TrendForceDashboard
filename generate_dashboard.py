@@ -597,6 +597,10 @@ def main():
     transition: background 0.1s ease, border-color 0.1s ease;
   }}
   .remove-account-btn:hover {{ background: rgba(248,81,73,0.16); border-color: var(--red); }}
+  .remove-account-btn.confirming {{
+    background: var(--red); border-color: var(--red); color: var(--surface); font-weight: 600;
+  }}
+  .remove-account-btn.confirming:hover {{ background: var(--red); }}
   .empty {{ color: var(--muted); font-style: italic; font-size: 13.5px; padding: 8px 2px; }}
   .col-2 {{ display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }}
   .col-2 > .panel {{ margin-bottom: 0; }}
@@ -946,10 +950,26 @@ def main():
   // Same static-site constraint as adding: no backend to remove an
   // account on the spot, so this opens a pre-filled GitHub issue too -
   // elainekao reviews and approves it locally with remove_account.py.
+  // Two-click inline confirm (Remove -> Confirm remove?) instead of a
+  // native confirm() dialog, so it matches the rest of the dashboard's
+  // look instead of a jarring OS-styled popup; reverts on its own after
+  // a few seconds if the second click never comes.
   document.querySelectorAll('.remove-account-btn').forEach(btn => {{
+    let confirmTimer = null;
     btn.addEventListener('click', () => {{
       const {{ platform, handle }} = btn.dataset;
-      if (!window.confirm(`Request removal of ${{handle}} (${{platform}})? This opens a GitHub issue for review - it won't remove anything immediately.`)) return;
+      if (!btn.classList.contains('confirming')) {{
+        btn.classList.add('confirming');
+        btn.textContent = 'Confirm remove?';
+        confirmTimer = setTimeout(() => {{
+          btn.classList.remove('confirming');
+          btn.textContent = 'Remove';
+        }}, 4000);
+        return;
+      }}
+      clearTimeout(confirmTimer);
+      btn.classList.remove('confirming');
+      btn.textContent = 'Remove';
       const title = `Remove account: ${{platform}}/${{handle}}`;
       const body = `Please stop tracking this account:\n\n- Platform: ${{platform}}\n- Handle: ${{handle}}\n\nRequested from the dashboard's Account Status tab.`;
       const url = `https://github.com/elainekaotf/TrendForceDashboard/issues/new?title=${{encodeURIComponent(title)}}&body=${{encodeURIComponent(body)}}&labels=remove-account`;
