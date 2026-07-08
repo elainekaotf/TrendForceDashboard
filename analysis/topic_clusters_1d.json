@@ -1,34 +1,55 @@
 {
   "clusters": [
     {
-      "id": 1,
-      "label": "ai / samsung / 台積電 / memory",
-      "size": 181,
+      "id": 0,
+      "label": "ai / nvidia / semianalysis / 蘋果",
+      "size": 178,
       "accounts": {
         "TrendForce": 2,
         "technews_tw": 38,
         "SemiAnalysis_": 6,
         "jukan05": 6,
-        "QQ_Timmy": 6,
+        "QQ_Timmy": 10,
         "tphuang": 9,
-        "technewsinside": 71,
-        "ctee.fans": 33,
+        "technewsinside": 66,
+        "ctee.fans": 31,
         "yutinghaosfinance": 10
       },
       "engagement_by_account": {
         "TrendForce": 74,
-        "technews_tw": 74,
+        "technews_tw": 79,
         "SemiAnalysis_": 582,
         "jukan05": 7900,
-        "QQ_Timmy": 195,
-        "tphuang": 368,
-        "technewsinside": 3336,
-        "ctee.fans": 1087,
+        "QQ_Timmy": 437,
+        "tphuang": 399,
+        "technewsinside": 3134,
+        "ctee.fans": 997,
         "yutinghaosfinance": 2956
       }
     },
     {
-      "id": 6,
+      "id": 4,
+      "label": "samsung / hbm / dram / nand",
+      "size": 13,
+      "accounts": {
+        "TrendForce": 2,
+        "technews_tw": 3,
+        "SemiAnalysis_": 1,
+        "jukan05": 1,
+        "QQ_Timmy": 1,
+        "technewsinside": 5
+      },
+      "engagement_by_account": {
+        "TrendForce": 40,
+        "technews_tw": 9,
+        "SemiAnalysis_": 173,
+        "jukan05": 1020,
+        "QQ_Timmy": 45,
+        "technewsinside": 103
+      }
+    },
+    {
+      "id": 2,
       "label": "ai / 科技早報 / physical / pcb",
       "size": 12,
       "accounts": {
@@ -41,70 +62,34 @@
       }
     },
     {
-      "id": 11,
-      "label": "nvidia / ai / amd / gpu",
+      "id": 7,
+      "label": "台積電 / 英特爾 / 魏哲家 / 奈米",
       "size": 8,
       "accounts": {
-        "technews_tw": 3,
-        "SemiAnalysis_": 1,
-        "QQ_Timmy": 2,
-        "technewsinside": 2
+        "technews_tw": 4,
+        "technewsinside": 4
       },
       "engagement_by_account": {
-        "technews_tw": 5,
-        "SemiAnalysis_": 173,
-        "QQ_Timmy": 186,
-        "technewsinside": 33
+        "technews_tw": 6,
+        "technewsinside": 184
       }
     },
     {
-      "id": 16,
-      "label": "三星 / sk海力士 / hbm / 兆韓圜",
-      "size": 7,
+      "id": 8,
+      "label": "川普 / 荷莫茲海峽 / 加密貨幣 / 關稅",
+      "size": 4,
       "accounts": {
-        "technews_tw": 4,
+        "technews_tw": 1,
         "technewsinside": 3
       },
       "engagement_by_account": {
-        "technews_tw": 9,
-        "technewsinside": 71
+        "technews_tw": 0,
+        "technewsinside": 83
       }
     },
     {
-      "id": 14,
-      "label": "dram / nand / hbm / trendforce",
-      "size": 5,
-      "accounts": {
-        "technews_tw": 1,
-        "jukan05": 1,
-        "QQ_Timmy": 1,
-        "technewsinside": 2
-      },
-      "engagement_by_account": {
-        "technews_tw": 4,
-        "jukan05": 1020,
-        "QQ_Timmy": 45,
-        "technewsinside": 31
-      }
-    },
-    {
-      "id": 2,
-      "label": "ddr / spot / price / prices",
-      "size": 4,
-      "accounts": {
-        "TrendForce": 2,
-        "technews_tw": 1,
-        "technewsinside": 1
-      },
-      "engagement_by_account": {
-        "TrendForce": 40,
-        "technews_tw": 2,
-        "technewsinside": 45
-      }
-    },
-    {
-      "id": 13,
-      "label": "openai / ai / gpt / chatgpt",
+      "id": 15,
+      "label": "openai / ai / anthropic / gpt",
       "size": 3,
       "accounts": {
         "technews_tw": 1,
@@ -118,21 +103,32 @@
       }
     },
     {
-      "id": 10,
-      "label": "eps / 聯電 / 環球晶 / 美元",
+      "id": 3,
+      "label": "美國 / 核能 / rc / 中國",
       "size": 2,
       "accounts": {
-        "QQ_Timmy": 1,
+        "technews_tw": 1,
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "QQ_Timmy": 21,
-        "technewsinside": 31
+        "technews_tw": 0,
+        "technewsinside": 18
       }
     },
     {
-      "id": 3,
-      "label": "名家評論 / ai / maybe / 人工智慧",
+      "id": 5,
+      "label": "台股逐洞賽 / 台股 / 收在 / 被動元件",
+      "size": 1,
+      "accounts": {
+        "ctee.fans": 1
+      },
+      "engagement_by_account": {
+        "ctee.fans": 10
+      }
+    },
+    {
+      "id": 9,
+      "label": "名家評論 / ai / 公布 / 人工智慧",
       "size": 1,
       "accounts": {
         "ctee.fans": 1
@@ -142,25 +138,36 @@
       }
     },
     {
-      "id": 8,
-      "label": "glass / tsmc / fiber / copos",
-      "size": 1,
-      "accounts": {
-        "QQ_Timmy": 1
-      },
-      "engagement_by_account": {
-        "QQ_Timmy": 35
-      }
-    },
-    {
-      "id": 15,
-      "label": "台股 / 台積電 / etf / 台股逐洞賽",
+      "id": 10,
+      "label": "美股 / 標普 / 點大關 / 突破",
       "size": 1,
       "accounts": {
         "ctee.fans": 1
       },
       "engagement_by_account": {
-        "ctee.fans": 10
+        "ctee.fans": 86
+      }
+    },
+    {
+      "id": 16,
+      "label": "gcap / 加拿大 / 日本",
+      "size": 1,
+      "accounts": {
+        "technewsinside": 1
+      },
+      "engagement_by_account": {
+        "technewsinside": 25
+      }
+    },
+    {
+      "id": 17,
+      "label": "盤中熱門焦點股 / 聯發科",
+      "size": 1,
+      "accounts": {
+        "ctee.fans": 1
+      },
+      "engagement_by_account": {
+        "ctee.fans": 4
       }
     }
   ],
