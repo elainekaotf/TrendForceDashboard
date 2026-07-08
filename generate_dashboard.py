@@ -301,8 +301,10 @@ def render_accounts(data):
         <td class="num">{fmt_int(a['follower_count']) if a['follower_count'] else '—'}</td>
         <td class="num">{fmt_int(a['post_count'])}</td>
         <td>{esc(a['last_post_at'] or '—')}</td>
+        <td><button class="remove-account-btn" data-platform="{esc(a['platform'])}" data-handle="{esc(a['handle'])}">Remove</button></td>
       </tr>""" for a in data.get('accounts', []))
-    body = table(['Handle', 'Platform', 'Status', '#Followers', '#Posts', 'Last post'], rows)
+    body = table(['Handle', 'Platform', 'Status', '#Followers', '#Posts', 'Last post', ''], rows)
+    body += '<p class="muted add-account-hint">"Remove" opens a GitHub issue for review - tracking stops once it\'s approved and run locally.</p>'
     accounts_panel = panel(body, 'Tracked accounts', f"{len(data.get('accounts', []))} accounts")
 
     # This is a static site with no backend to add an account and start
@@ -589,6 +591,12 @@ def main():
     outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-dim);
   }}
   .add-account-hint {{ margin-top: 10px; font-size: 12px; }}
+  .remove-account-btn {{
+    background: transparent; border: 1px solid var(--border); border-radius: 6px;
+    color: var(--red); font-size: 11.5px; padding: 5px 10px; cursor: pointer;
+    transition: background 0.1s ease, border-color 0.1s ease;
+  }}
+  .remove-account-btn:hover {{ background: rgba(248,81,73,0.16); border-color: var(--red); }}
   .empty {{ color: var(--muted); font-style: italic; font-size: 13.5px; padding: 8px 2px; }}
   .col-2 {{ display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; }}
   .col-2 > .panel {{ margin-bottom: 0; }}
@@ -691,6 +699,7 @@ def main():
   <button class="tab-btn active" data-tab="gaps">Topic Gaps</button>
   <button class="tab-btn" data-tab="rising">Rising Trends</button>
   <button class="tab-btn" data-tab="sentiment">Sentiment</button>
+  <button class="tab-btn" data-tab="competitor">Competitor Watch</button>
   <button class="tab-btn" data-tab="review">Review Queue</button>
   <button class="tab-btn" data-tab="accounts">Accounts</button>
   <button class="tab-btn" data-tab="replies">Reply Queue</button>
@@ -706,6 +715,12 @@ def main():
   <section id="gaps" class="active" data-ranged="true"><h2>FR-01 &middot; Topic Gaps</h2><div id="gaps-content"></div></section>
   <section id="rising" data-ranged="true"><h2>FR-02 &middot; Rising Topics &amp; KOLs</h2><div id="rising-content"></div></section>
   <section id="sentiment" data-ranged="true"><h2>FR-03 &middot; Sentiment Dashboard</h2><div id="sentiment-content"></div></section>
+  <section id="competitor" data-ranged="true"><h2>Competitor Watch</h2>{panel(f'''
+    <div class="keyword-search-bar">
+      <input type="text" id="competitor-keyword-input" placeholder="Search a topic or keyword, e.g. nvidia, tariff, dram..." autocomplete="off">
+    </div>
+    <div id="competitor-results"><p class="empty">Type a topic or keyword to see every non-TrendForce account's post mentioning it, for the currently selected time range.</p></div>
+    ''', 'Search competitor posts', 'Every account that is not ours')}</section>
   <section id="review"><h2>FR-04 &middot; Manual Review Queue</h2>{render_review_queue(review_queue)}</section>
   <section id="accounts"><h2>FR-05 &middot; Account Status</h2>{render_accounts(account_status)}</section>
   <section id="replies"><h2>FR-05 &middot; Reply Queue</h2>{render_reply_queue(reply_queue)}</section>
@@ -928,10 +943,79 @@ def main():
     window.open(url, '_blank', 'noopener,noreferrer');
   }});
 
+  // Same static-site constraint as adding: no backend to remove an
+  // account on the spot, so this opens a pre-filled GitHub issue too -
+  // elainekao reviews and approves it locally with remove_account.py.
+  document.querySelectorAll('.remove-account-btn').forEach(btn => {{
+    btn.addEventListener('click', () => {{
+      const {{ platform, handle }} = btn.dataset;
+      if (!window.confirm(`Request removal of ${{handle}} (${{platform}})? This opens a GitHub issue for review - it won't remove anything immediately.`)) return;
+      const title = `Remove account: ${{platform}}/${{handle}}`;
+      const body = `Please stop tracking this account:\n\n- Platform: ${{platform}}\n- Handle: ${{handle}}\n\nRequested from the dashboard's Account Status tab.`;
+      const url = `https://github.com/elainekaotf/TrendForceDashboard/issues/new?title=${{encodeURIComponent(title)}}&body=${{encodeURIComponent(body)}}&labels=remove-account`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }});
+  }});
+
+  // Competitor Watch: same substring-match-over-KEYWORD_POSTS approach as
+  // the Sentiment tab's keyword search, but scoped to `!p.is_own` and
+  // surfacing the actual matching posts (not aggregated counts) - "show me
+  // every non-TrendForce account's post about X in this window."
+  let currentCompetitorKeyword = '';
+  const MAX_COMPETITOR_RESULTS = 200;
+
+  function renderCompetitorResults(range) {{
+    const container = document.getElementById('competitor-results');
+    if (!container) return;
+    const kw = currentCompetitorKeyword.trim().toLowerCase();
+    if (!kw) {{
+      container.innerHTML = '<p class="empty">Type a topic or keyword to see every non-TrendForce account\\'s post mentioning it, for the currently selected time range.</p>';
+      return;
+    }}
+    const bounds = RANGE_BOUNDS[range];
+    if (!bounds) {{
+      container.innerHTML = '<p class="empty">No data window available for this range.</p>';
+      return;
+    }}
+    const start = new Date(bounds.start), end = new Date(bounds.end);
+    const matches = KEYWORD_POSTS.filter(p => {{
+      const t = new Date(p.ts);
+      return !p.is_own && t >= start && t <= end && p.text.toLowerCase().includes(kw);
+    }}).sort((a, b) => new Date(b.ts) - new Date(a.ts));
+
+    if (matches.length === 0) {{
+      container.innerHTML = `<p class="empty">No non-TrendForce posts mention "${{escapeHtml(kw)}}" in this time range.</p>`;
+      return;
+    }}
+
+    const shown = matches.slice(0, MAX_COMPETITOR_RESULTS);
+    const rows = shown.map(p => `
+      <tr>
+        <td class="cell-primary">${{escapeHtml(p.handle)}}</td>
+        <td>${{escapeHtml(p.platform)}}</td>
+        <td>${{escapeHtml(new Date(p.ts).toLocaleString('en-US', {{timeZone: 'Asia/Taipei', month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit'}}))}}</td>
+        <td>${{escapeHtml(p.text.slice(0, 200))}}</td>
+        <td>${{p.url ? `<a href="${{escapeAttr(p.url)}}" target="_blank" rel="noopener noreferrer">Open post</a>` : '—'}}</td>
+      </tr>`).join('');
+
+    const truncatedNote = matches.length > MAX_COMPETITOR_RESULTS
+      ? `<p class="muted">Showing the ${{MAX_COMPETITOR_RESULTS}} most recent of ${{matches.length}} matching posts.</p>` : '';
+
+    container.innerHTML = `
+      <p class="muted">${{matches.length}} non-TrendForce post(s) mention "${{escapeHtml(kw)}}" in this window (Taiwan time).</p>
+      ${{truncatedNote}}
+      <div class="table-wrap"><table><thead><tr><th>Account</th><th>Platform</th><th>Time</th><th>Post</th><th>Link</th></tr></thead><tbody>${{rows}}</tbody></table></div>
+    `;
+  }}
+
   document.addEventListener('input', e => {{
     if (e.target.id === 'keyword-input') {{
       currentKeyword = e.target.value;
       renderKeywordResults(document.getElementById('range-select').value);
+    }}
+    if (e.target.id === 'competitor-keyword-input') {{
+      currentCompetitorKeyword = e.target.value;
+      renderCompetitorResults(document.getElementById('range-select').value);
     }}
   }});
 
@@ -943,6 +1027,9 @@ def main():
     const input = document.getElementById('keyword-input');
     if (input) input.value = currentKeyword;
     renderKeywordResults(range);
+    const competitorInput = document.getElementById('competitor-keyword-input');
+    if (competitorInput) competitorInput.value = currentCompetitorKeyword;
+    renderCompetitorResults(range);
   }}
 
   document.getElementById('range-select').addEventListener('change', e => applyRange(e.target.value));

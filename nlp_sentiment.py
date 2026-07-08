@@ -61,7 +61,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from cnsenti import Sentiment as ChineseSentiment
 from opencc import OpenCC
 
-from cluster_topics import N_CLUSTERS, load_posts, label_cluster, cluster_posts
+from cluster_topics import N_CLUSTERS, load_posts, label_cluster, cluster_posts, OWN_HANDLES
 from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, window_dict, TAIWAN_TZ
 
 BASE = os.path.dirname(__file__)
@@ -291,7 +291,8 @@ def build_keyword_index(all_posts):
     every post FR-01/02/03 see); the dashboard filters by timestamp itself
     to match whatever range is selected."""
     return [
-        {'handle': p['handle'], 'platform': p['platform'], 'ts': p['timestamp'], 'text': p['text'], 'url': p.get('url', '')}
+        {'handle': p['handle'], 'platform': p['platform'], 'ts': p['timestamp'], 'text': p['text'],
+         'url': p.get('url', ''), 'is_own': p['handle'] in OWN_HANDLES}
         for p in all_posts if p['timestamp']
     ]
 
