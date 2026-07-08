@@ -53,11 +53,51 @@ NEEDS_RESPONSE_THRESHOLD = 5  # replies on a post before it's queued for a draft
 STALE_AFTER_DAYS = 3
 INACTIVE_AFTER_DAYS = 14
 
-SENTIMENT_TEMPLATES = {
-    'positive': "Thanks for the engagement on our {topic} post — glad it resonated! We'll keep the coverage coming.",
-    'neutral': "Thanks for weighing in on our {topic} post. Happy to dig into specifics if useful — let us know what you'd like covered next.",
-    'negative': "Appreciate the feedback on our {topic} post. We'd like to understand the concern better — could you share more detail?",
-}
+# Reply-count and sentiment-score cutoffs that push the draft from a
+# generic acknowledgment toward something that actually reads like it's
+# about THIS post - free/instant/offline, unlike an LLM-drafted version
+# (traded off against that with elainekao: this reuses data already
+# computed by FR-01/03 rather than adding an API key + per-run cost).
+HIGH_ENGAGEMENT_REPLIES = 20
+STRONG_POSITIVE_SCORE = 0.5
+STRONG_NEGATIVE_SCORE = -0.5
+
+
+def focus_phrase(topic_label, text_excerpt):
+    """The topic cluster's label is 4 generic terms; pick whichever one
+    actually appears in THIS post's text so the reply references what the
+    post is about, not just the cluster it landed in."""
+    terms = [t.strip() for t in (topic_label or '').split('/') if t.strip()]
+    text_lower = (text_excerpt or '').lower()
+    for term in sorted(terms, key=len, reverse=True):  # most specific first
+        if term and term.lower() in text_lower:
+            return term
+    return terms[0] if terms else (topic_label or 'this')
+
+
+def draft_reply(sentiment, topic_label, sentiment_score=0.0, reply_count=0, text_excerpt=''):
+    topic = focus_phrase(topic_label, text_excerpt)
+    buzzing = reply_count >= HIGH_ENGAGEMENT_REPLIES
+
+    if sentiment == 'positive':
+        base = (f"Really glad this landed — thanks for all the love on our {topic} post!"
+                if sentiment_score >= STRONG_POSITIVE_SCORE else
+                f"Thanks for the engagement on our {topic} post — glad it resonated!")
+        base += (f" With {reply_count} replies rolling in, we'll keep this coverage going."
+                 if buzzing else " We'll keep the coverage coming.")
+    elif sentiment == 'negative':
+        base = (f"We hear you on the {topic} post — sounds like this one struck a nerve."
+                if sentiment_score <= STRONG_NEGATIVE_SCORE else
+                f"Appreciate the feedback on our {topic} post.")
+        base += " We'd like to understand the concern better — could you share more detail?"
+        if buzzing:
+            base += f" With {reply_count} comments on this one, we want to make sure we're addressing it properly."
+    else:
+        base = f"Thanks for weighing in on our {topic} post."
+        base += (f" This one's sparked {reply_count} replies — happy to dig into specifics, "
+                  "just let us know what you'd like covered next." if buzzing else
+                  " Happy to dig into specifics if useful — let us know what you'd like covered next.")
+    return base
 
 
 def now_iso():
@@ -122,11 +162,6 @@ def build_account_status(posts, now):
     return accounts
 
 
-def draft_reply(sentiment, topic_label):
-    template = SENTIMENT_TEMPLATES.get(sentiment, SENTIMENT_TEMPLATES['neutral'])
-    return template.format(topic=topic_label)
-
-
 def build_comment_queue(posts, topic_labels_by_cluster, cluster_id_by_post):
     """Flag our own high-reply posts and draft a suggested response for each."""
     flagged = []
@@ -137,17 +172,21 @@ def build_comment_queue(posts, topic_labels_by_cluster, cluster_id_by_post):
         if replies < NEEDS_RESPONSE_THRESHOLD:
             continue
         rid = record_id('reply', p['platform'], p['handle'], p['timestamp'], p['text'][:80])
+        text_excerpt = p['text'][:200]
+        topic_label = topic_labels_by_cluster[cid]
+        sentiment_score = p.get('sentiment_score', 0.0)
         flagged.append({
             'id': rid,
             'platform': p['platform'],
             'handle': p['handle'],
             'timestamp': p['timestamp'],
             'url': p.get('url', ''),
-            'text_excerpt': p['text'][:200],
+            'text_excerpt': text_excerpt,
             'reply_count': replies,
-            'topic_label': topic_labels_by_cluster[cid],
+            'topic_label': topic_label,
             'sentiment': p['sentiment'],
-            'draft_reply': draft_reply(p['sentiment'], topic_labels_by_cluster[cid]),
+            'sentiment_score': sentiment_score,
+            'draft_reply': draft_reply(p['sentiment'], topic_label, sentiment_score, replies, text_excerpt),
         })
     flagged.sort(key=lambda r: r['reply_count'], reverse=True)
     return flagged
@@ -192,9 +231,15 @@ def build():
         rid = rec['id']
         if rid in queue:
             queue[rid]['reply_count'] = rec['reply_count']
-            queue[rid]['draft_reply'] = queue[rid].get('draft_reply') or rec['draft_reply']
             queue[rid]['url'] = queue[rid].get('url') or rec['url']
             queue[rid]['topic_label'] = rec['topic_label']  # re-clustering (e.g. a noise-filter fix) should refresh stale labels
+            queue[rid]['sentiment_score'] = rec['sentiment_score']
+            # Regenerate the draft while it's still just a suggestion nobody
+            # has acted on yet (e.g. picking up a template wording change) -
+            # but never touch it once a human has approved or sent it, since
+            # that's the actual record of what was reviewed/posted.
+            if queue[rid]['status'] == 'drafted':
+                queue[rid]['draft_reply'] = rec['draft_reply']
             refreshed += 1
         else:
             rec['status'] = 'drafted'
