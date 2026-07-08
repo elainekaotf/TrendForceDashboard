@@ -896,9 +896,20 @@ def main():
   // crawling immediately, so the request opens a pre-filled GitHub issue
   // instead (no credentials needed client-side) for elainekao to review
   // and approve locally with add_account.py.
+  // Accepts a bare handle or a pasted profile URL (people paste URLs -
+  // one already came through as "https://x.com/tphuang" and needed manual
+  // cleanup) and normalizes to the bare handle either way.
+  function normalizeHandle(raw) {{
+    let h = raw.trim();
+    h = h.replace(/^https?:\/\/(www\.)?(x\.com|twitter\.com|facebook\.com)\//i, '');
+    h = h.replace(/^@/, '').replace(/\/+$/, '');
+    h = h.split(/[/?#]/)[0];
+    return h;
+  }}
+
   document.getElementById('add-account-btn')?.addEventListener('click', () => {{
     const platform = document.getElementById('add-account-platform').value;
-    const handle = document.getElementById('add-account-handle').value.trim();
+    const handle = normalizeHandle(document.getElementById('add-account-handle').value);
     if (!handle) {{
       document.getElementById('add-account-handle').focus();
       return;

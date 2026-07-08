@@ -220,7 +220,7 @@
 <body>
 <header>
   <h1>TrendForceDash</h1>
-  <div class="muted">Generated July 08, 2026 11:40 Taiwan Time &middot; FR-01 through FR-06</div>
+  <div class="muted">Generated July 08, 2026 11:56 Taiwan Time &middot; FR-01 through FR-06</div>
 </header>
 <nav>
   <button class="tab-btn active" data-tab="gaps">Topic Gaps</button>
@@ -241,29 +241,29 @@
   <section id="gaps" class="active" data-ranged="true"><h2>FR-01 &middot; Topic Gaps</h2><div id="gaps-content"></div></section>
   <section id="rising" data-ranged="true"><h2>FR-02 &middot; Rising Topics &amp; KOLs</h2><div id="rising-content"></div></section>
   <section id="sentiment" data-ranged="true"><h2>FR-03 &middot; Sentiment Dashboard</h2><div id="sentiment-content"></div></section>
-  <section id="review"><h2>FR-04 &middot; Manual Review Queue</h2><div class="panel"><div class="panel-head"><h3>Queue overview</h3><span class="panel-eyebrow">8,261 total records</span></div><div class="stat-grid"><div class="stat"><div class="stat-num">1</div><div class="stat-label">corrected</div></div><div class="stat"><div class="stat-num">8,260</div><div class="stat-label">pending</div></div></div><div class="chip-row"><span class="chip">kol_rising <b>601</b></span><span class="chip">post <b>7,632</b></span><span class="chip">summary <b>28</b></span></div></div><div class="panel"><div class="panel-head"><h3>Sample of pending items</h3></div><div class="table-wrap"><table>
+  <section id="review"><h2>FR-04 &middot; Manual Review Queue</h2><div class="panel"><div class="panel-head"><h3>Queue overview</h3><span class="panel-eyebrow">8,284 total records</span></div><div class="stat-grid"><div class="stat"><div class="stat-num">1</div><div class="stat-label">corrected</div></div><div class="stat"><div class="stat-num">8,283</div><div class="stat-label">pending</div></div></div><div class="chip-row"><span class="chip">kol_rising <b>624</b></span><span class="chip">post <b>7,632</b></span><span class="chip">summary <b>28</b></span></div></div><div class="panel"><div class="panel-head"><h3>Sample of pending items</h3></div><div class="table-wrap"><table>
       <thead><tr><th>Type</th><th>Platform</th><th>Handle</th><th>Automated label</th></tr></thead>
       <tbody>
       <tr><td>post</td><td>X</td><td class="cell-primary">TrendForce</td>
-      <td>dram / nand / spot / trendforce</td></tr>
+      <td>ai / nvidia / memory / samsung</td></tr>
       <tr><td>post</td><td>X</td><td class="cell-primary">TrendForce</td>
-      <td>dram / nand / spot / trendforce</td></tr>
+      <td>ai / nvidia / memory / samsung</td></tr>
       <tr><td>post</td><td>X</td><td class="cell-primary">TrendForce</td>
-      <td>hbm / memory / samsung / hynix</td></tr>
+      <td>ai / nvidia / memory / samsung</td></tr>
       <tr><td>post</td><td>X</td><td class="cell-primary">TrendForce</td>
-      <td>ai / nvidia / memory / semianalysis</td></tr>
+      <td>ai / nvidia / memory / samsung</td></tr>
       <tr><td>post</td><td>X</td><td class="cell-primary">TrendForce</td>
-      <td>ai / nvidia / memory / semianalysis</td></tr>
+      <td>ai / nvidia / memory / samsung</td></tr>
       <tr><td>post</td><td>X</td><td class="cell-primary">TrendForce</td>
-      <td>ai / nvidia / memory / semianalysis</td></tr>
+      <td>ai / nvidia / memory / samsung</td></tr>
       <tr><td>post</td><td>X</td><td class="cell-primary">TrendForce</td>
-      <td>ai / nvidia / memory / semianalysis</td></tr>
+      <td>ai / nvidia / memory / samsung</td></tr>
       <tr><td>post</td><td>X</td><td class="cell-primary">TrendForce</td>
-      <td>tsmc / packaging / intel / foundry</td></tr>
+      <td>tsmc / packaging / intel / advanced</td></tr>
       <tr><td>post</td><td>X</td><td class="cell-primary">TrendForce</td>
-      <td>ai / nvidia / memory / semianalysis</td></tr>
+      <td>ai / nvidia / memory / samsung</td></tr>
       <tr><td>post</td><td>X</td><td class="cell-primary">TrendForce</td>
-      <td>tsmc / packaging / intel / foundry</td></tr></tbody>
+      <td>tsmc / packaging / intel / advanced</td></tr></tbody>
     </table></div></div></section>
   <section id="accounts"><h2>FR-05 &middot; Account Status</h2><div class="panel"><div class="panel-head"><h3>Tracked accounts</h3><span class="panel-eyebrow">10 accounts</span></div><div class="table-wrap"><table>
       <thead><tr><th>Handle</th><th>Platform</th><th>Status</th><th class="num">Followers</th><th class="num">Posts</th><th>Last post</th></tr></thead>
@@ -682,9 +682,20 @@
   // crawling immediately, so the request opens a pre-filled GitHub issue
   // instead (no credentials needed client-side) for elainekao to review
   // and approve locally with add_account.py.
+  // Accepts a bare handle or a pasted profile URL (people paste URLs -
+  // one already came through as "https://x.com/tphuang" and needed manual
+  // cleanup) and normalizes to the bare handle either way.
+  function normalizeHandle(raw) {
+    let h = raw.trim();
+    h = h.replace(/^https?:\/\/(www\.)?(x\.com|twitter\.com|facebook\.com)\//i, '');
+    h = h.replace(/^@/, '').replace(/\/+$/, '');
+    h = h.split(/[/?#]/)[0];
+    return h;
+  }
+
   document.getElementById('add-account-btn')?.addEventListener('click', () => {
     const platform = document.getElementById('add-account-platform').value;
-    const handle = document.getElementById('add-account-handle').value.trim();
+    const handle = normalizeHandle(document.getElementById('add-account-handle').value);
     if (!handle) {
       document.getElementById('add-account-handle').focus();
       return;
