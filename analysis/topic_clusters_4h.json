@@ -1,37 +1,41 @@
 {
   "clusters": [
     {
-      "id": 0,
-      "label": "ai / nvidia / 台積電 / memory",
-      "size": 57,
+      "id": 1,
+      "label": "ai / memory / spacex / samsung",
+      "size": 56,
       "accounts": {
-        "technews_tw": 7,
-        "TrendForce.tw": 7,
-        "technewsinside": 35,
+        "TrendForce": 2,
+        "technews_tw": 6,
+        "tengyanAI": 2,
+        "TrendForce.tw": 5,
+        "technewsinside": 33,
         "ctee.fans": 8
       },
       "engagement_by_account": {
-        "technews_tw": 6,
-        "TrendForce.tw": 180,
-        "technewsinside": 2108,
+        "TrendForce": 40,
+        "technews_tw": 9,
+        "tengyanAI": 74,
+        "TrendForce.tw": 121,
+        "technewsinside": 1739,
         "ctee.fans": 158
       }
     },
     {
-      "id": 13,
-      "label": "trendforce / ai / csp / mlcc",
-      "size": 7,
+      "id": 8,
+      "label": "trendforce / dram / ai / nand",
+      "size": 10,
       "accounts": {
-        "TrendForce.tw": 6,
+        "TrendForce.tw": 9,
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "TrendForce.tw": 125,
+        "TrendForce.tw": 295,
         "technewsinside": 30
       }
     },
     {
-      "id": 2,
+      "id": 16,
       "label": "ai / 科技早報 / physical / pcb",
       "size": 5,
       "accounts": {
@@ -46,23 +50,32 @@
       }
     },
     {
-      "id": 10,
-      "label": "dram / trendforce / micron / cxmt",
+      "id": 15,
+      "label": "台積電 / 魏哲家 / ai / cowos",
       "size": 4,
       "accounts": {
-        "technews_tw": 1,
-        "TrendForce.tw": 2,
-        "technewsinside": 1
+        "technews_tw": 2,
+        "technewsinside": 2
       },
       "engagement_by_account": {
-        "technews_tw": 4,
-        "TrendForce.tw": 79,
-        "technewsinside": 6
+        "technews_tw": 1,
+        "technewsinside": 55
       }
     },
     {
-      "id": 4,
-      "label": "三星 / sk海力士 / 新聞來源 / ai",
+      "id": 3,
+      "label": "datatrack / 看詳情 / 了解詳情 / 美國",
+      "size": 3,
+      "accounts": {
+        "TrendForce.tw": 3
+      },
+      "engagement_by_account": {
+        "TrendForce.tw": 28
+      }
+    },
+    {
+      "id": 9,
+      "label": "三星 / sk海力士 / hbm / 新聞來源",
       "size": 3,
       "accounts": {
         "technews_tw": 2,
@@ -74,62 +87,78 @@
       }
     },
     {
-      "id": 6,
-      "label": "datatrack / 看詳情 / 美國 / 了解詳情",
+      "id": 10,
+      "label": "新聞來源 / hbm / sk / dram",
       "size": 3,
       "accounts": {
         "TrendForce.tw": 3
       },
       "engagement_by_account": {
-        "TrendForce.tw": 28
+        "TrendForce.tw": 74
+      }
+    },
+    {
+      "id": 2,
+      "label": "美光 / 記憶體 / dram / ai",
+      "size": 1,
+      "accounts": {
+        "technewsinside": 1
+      },
+      "engagement_by_account": {
+        "technewsinside": 11
       }
     },
     {
       "id": 7,
-      "label": "nand / flash / dram / ssd",
-      "size": 3,
+      "label": "semianalysis / ai / claude / nvidia",
+      "size": 1,
       "accounts": {
-        "TrendForce": 1,
-        "TrendForce.tw": 1,
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "TrendForce": 11,
-        "TrendForce.tw": 91,
-        "technewsinside": 25
+        "technewsinside": 233
       }
     },
     {
-      "id": 1,
-      "label": "ic / ai / trendforce / pcb",
-      "size": 2,
+      "id": 12,
+      "label": "nvidia / ai / amd / gpu",
+      "size": 1,
       "accounts": {
-        "technewsinside": 2
+        "technewsinside": 1
       },
       "engagement_by_account": {
-        "technewsinside": 6
+        "technewsinside": 13
       }
     },
     {
-      "id": 17,
-      "label": "ddr / dram / spot / 新聞來源",
-      "size": 2,
+      "id": 13,
+      "label": "hynix / sk / samsung / hbm",
+      "size": 1,
       "accounts": {
-        "TrendForce": 1,
-        "TrendForce.tw": 1
+        "tengyanAI": 1
       },
       "engagement_by_account": {
-        "TrendForce": 29,
-        "TrendForce.tw": 15
+        "tengyanAI": 24
+      }
+    },
+    {
+      "id": 14,
+      "label": "英特爾 / 蘋果 / 台積電 / intel",
+      "size": 1,
+      "accounts": {
+        "technewsinside": 1
+      },
+      "engagement_by_account": {
+        "technewsinside": 94
       }
     }
   ],
   "gaps": [],
   "suggested_entry_points": [],
   "window": {
-    "start_utc": "2026-07-08T02:35:31.345762+00:00",
-    "end_utc": "2026-07-08T06:35:31.345762+00:00",
-    "start_tw": "Jul 08, 10:35",
-    "end_tw": "Jul 08, 14:35"
+    "start_utc": "2026-07-08T10:36:37+08:00",
+    "end_utc": "2026-07-08T14:36:37+08:00",
+    "start_tw": "Jul 08, 10:36",
+    "end_tw": "Jul 08, 14:36"
   }
 }
