@@ -1196,6 +1196,24 @@ def main():
     return guess;
   }}
 
+  const MONTH_NAMES = ['january','february','march','april','may','june','july','august','september','october','november','december'];
+
+  function to24Hour(h, ampm) {{
+    h = Number(h);
+    if (!ampm) return h;
+    const isPM = /pm/i.test(ampm);
+    if (isPM && h !== 12) h += 12;
+    if (!isPM && h === 12) h = 0;
+    return h;
+  }}
+
+  // datetime.fromisoformat()'s JS equivalent (the regex below) only ever
+  // matched ISO 8601 - every other common export format (US-style
+  // MM/DD/YYYY, or Facebook's own scraper's "Thursday, July 2, 2026 at
+  // 1:00 PM" exactDate format, produced by the sibling scraper this same
+  // codebase uses) silently failed, leaving converted_timestamp_utc8=null
+  // for those rows with no error shown anywhere - "self-service doesn't
+  // always work" was this, not a crash. Try ISO first, then these.
   function parseUploadTimestamp(raw, sourceTz) {{
     if (!raw) return {{ date: null, hadOffset: false }};
     const trimmed = raw.trim();
@@ -1204,10 +1222,33 @@ def main():
       const d = new Date(trimmed);
       return isNaN(d) ? {{ date: null, hadOffset: false }} : {{ date: d, hadOffset: true }};
     }}
-    const m = trimmed.match(/(\d{{4}})-(\d{{2}})-(\d{{2}})[ T](\d{{2}}):(\d{{2}})(?::(\d{{2}}))?/);
-    if (!m) return {{ date: null, hadOffset: false }};
-    const [, y, mo, d, h, mi, s] = m.map(Number);
-    return {{ date: zonedTimeToUtc(y, mo, d, h, mi, s || 0, sourceTz), hadOffset: false }};
+
+    let m = trimmed.match(/^(\d{{4}})-(\d{{2}})-(\d{{2}})[ T](\d{{2}}):(\d{{2}})(?::(\d{{2}}))?/);
+    if (m) {{
+      const [, y, mo, d, h, mi, s] = m.map(Number);
+      return {{ date: zonedTimeToUtc(y, mo, d, h, mi, s || 0, sourceTz), hadOffset: false }};
+    }}
+
+    // US-style MM/DD/YYYY[ T]HH:MM[:SS] [AM/PM]
+    m = trimmed.match(/^(\d{{1,2}})\/(\d{{1,2}})\/(\d{{2,4}})[ T](\d{{1,2}}):(\d{{2}})(?::(\d{{2}}))?\s*(AM|PM)?/i);
+    if (m) {{
+      let [, mo, d, y, h, mi, s, ampm] = m;
+      y = Number(y); if (y < 100) y += 2000;
+      return {{ date: zonedTimeToUtc(y, Number(mo), Number(d), to24Hour(h, ampm), Number(mi), Number(s || 0), sourceTz), hadOffset: false }};
+    }}
+
+    // "Month DD, YYYY [at] HH:MM [AM/PM]", optionally prefixed with a
+    // weekday name (Facebook's own exactDate format).
+    m = trimmed.match(/^(?:[A-Za-z]+,\s*)?([A-Za-z]+)\s+(\d{{1,2}}),?\s+(\d{{4}})(?:\s+at)?\s+(\d{{1,2}}):(\d{{2}})\s*(AM|PM)?/i);
+    if (m) {{
+      const [, monthName, d, y, h, mi, ampm] = m;
+      const mo = MONTH_NAMES.indexOf(monthName.toLowerCase()) + 1;
+      if (mo > 0) {{
+        return {{ date: zonedTimeToUtc(Number(y), mo, Number(d), to24Hour(h, ampm), Number(mi), 0, sourceTz), hadOffset: false }};
+      }}
+    }}
+
+    return {{ date: null, hadOffset: false }};
   }}
 
   function csvCell(v) {{

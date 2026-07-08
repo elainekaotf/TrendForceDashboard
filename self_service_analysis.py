@@ -47,6 +47,23 @@ TIMESTAMP_COLUMN_CANDIDATES = ['timestamp', 'created_at', 'date', 'exactDate', '
 TEXT_COLUMN_CANDIDATES = ['translated_text', 'text', 'content', 'message', 'body']
 ENGAGEMENT_COLUMN_CANDIDATES = ['likes', 'reactions', 'retweets', 'shares', 'comments', 'replies']
 
+# datetime.fromisoformat() only accepts ISO 8601 - every other common export
+# format (US-style MM/DD/YYYY, or Facebook's own scraper's "Thursday, July 2,
+# 2026 at 1:00 PM" exactDate format, produced by the sibling scraper THIS
+# same codebase uses) silently failed to parse, leaving converted_ts=None
+# for those rows with no error shown - "self-service doesn't always work"
+# was this, not a crash. Try ISO first, then these, in order.
+FALLBACK_TIMESTAMP_FORMATS = [
+    '%m/%d/%Y %I:%M:%S %p',
+    '%m/%d/%Y %I:%M %p',
+    '%m/%d/%Y %H:%M:%S',
+    '%m/%d/%Y %H:%M',
+    '%m/%d/%y %H:%M',
+    '%B %d, %Y %I:%M %p',
+    '%B %d, %Y at %I:%M %p',
+    '%A, %B %d, %Y at %I:%M %p',
+]
+
 
 def detect_column(fieldnames, candidates, explicit=None):
     if explicit:
@@ -59,14 +76,27 @@ def detect_column(fieldnames, candidates, explicit=None):
     return None
 
 
+def parse_naive_timestamp(raw):
+    """Try ISO first, then the common non-ISO export formats. Returns a
+    (possibly tz-aware) datetime, or None if nothing matched."""
+    try:
+        return datetime.fromisoformat(raw.replace('Z', '+00:00'))
+    except ValueError:
+        pass
+    for fmt in FALLBACK_TIMESTAMP_FORMATS:
+        try:
+            return datetime.strptime(raw, fmt)
+        except ValueError:
+            continue
+    return None
+
+
 def parse_and_convert_timestamp(raw, source_tz):
     """Returns (utc8_iso_string, had_explicit_offset) or (None, False)."""
     if not raw:
         return None, False
-    raw = raw.strip()
-    try:
-        dt = datetime.fromisoformat(raw.replace('Z', '+00:00'))
-    except ValueError:
+    dt = parse_naive_timestamp(raw.strip())
+    if dt is None:
         return None, False
 
     had_offset = dt.tzinfo is not None
