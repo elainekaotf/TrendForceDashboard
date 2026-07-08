@@ -52,19 +52,37 @@ FOLLOWER_CACHE_FILE = os.path.join(BASE, 'follower_cache.json')
 NEEDS_RESPONSE_THRESHOLD = 5  # replies on a post before it's queued for a draft
 STALE_AFTER_DAYS = 3
 INACTIVE_AFTER_DAYS = 14
+RECENT_WITHIN_DAYS = 3  # only draft replies for posts still recent enough that a reply is timely
 
-def draft_reply(sentiment):
+
+def focus_phrase(topic_label, text_excerpt):
+    """The topic cluster's label is 4 generic terms; pick whichever one
+    actually appears in THIS post's text so the reply names what the post
+    is actually about, rather than every draft reading identically."""
+    terms = [t.strip() for t in (topic_label or '').split('/') if t.strip()]
+    text_lower = (text_excerpt or '').lower()
+    for term in sorted(terms, key=len, reverse=True):  # most specific first
+        if term and term.lower() in text_lower:
+            return term
+    return terms[0] if terms else ''
+
+
+def draft_reply(sentiment, topic_label='', text_excerpt=''):
     # Per elainekao's feedback: calling out the reply count ("with 25
-    # people weighing in...") read as impersonal/off, even meant warmly -
-    # every draft stays a consistent warm tone regardless of volume now.
+    # people weighing in...") read as impersonal/off, so volume never
+    # factors into the tone - but the post's own topic still does, so
+    # replies don't all read as one identical form letter.
+    topic = focus_phrase(topic_label, text_excerpt)
+    about = f" about {topic}" if topic else ""
+
     if sentiment == 'positive':
-        return ("Thank you so much for the kind words, it truly means a lot to us! "
+        return (f"Thank you so much for the kind words on our post{about}, it truly means a lot to us! "
                  "We're so glad this resonated with you, and we'll keep the great content coming.")
     elif sentiment == 'negative':
-        return ("Thank you for taking the time to share your thoughts with us. "
+        return (f"Thank you for taking the time to share your thoughts on our post{about}. "
                  "We really do appreciate the feedback, and we'd love to hear more so we can make things better.")
     else:
-        return ("Thanks so much for reading and taking the time to comment! "
+        return (f"Thanks so much for reading our post{about} and taking the time to comment! "
                  "We'd love to hear what you'd like us to cover next.")
 
 
@@ -130,11 +148,17 @@ def build_account_status(posts, now):
     return accounts
 
 
-def build_comment_queue(posts, topic_labels_by_cluster, cluster_id_by_post):
-    """Flag our own high-reply posts and draft a suggested response for each."""
+def build_comment_queue(posts, topic_labels_by_cluster, cluster_id_by_post, now):
+    """Flag our own high-reply *recent* posts and draft a suggested response
+    for each. A reply is only worth drafting while it's still timely - a
+    3-day-old post getting a reply today reads as stale/random to whoever
+    sees it, so posts older than RECENT_WITHIN_DAYS are skipped even if
+    they'd otherwise qualify on reply count."""
     flagged = []
     for p, cid in zip(posts, cluster_id_by_post):
         if p['handle'] not in OWN_HANDLES:
+            continue
+        if not p.get('ts') or (now - p['ts']).days >= RECENT_WITHIN_DAYS:
             continue
         replies = p.get('replies', 0)
         if replies < NEEDS_RESPONSE_THRESHOLD:
@@ -154,7 +178,7 @@ def build_comment_queue(posts, topic_labels_by_cluster, cluster_id_by_post):
             'topic_label': topic_label,
             'sentiment': p['sentiment'],
             'sentiment_score': sentiment_score,
-            'draft_reply': draft_reply(p['sentiment']),
+            'draft_reply': draft_reply(p['sentiment'], topic_label, text_excerpt),
         })
     flagged.sort(key=lambda r: r['reply_count'], reverse=True)
     return flagged
@@ -191,7 +215,7 @@ def build():
     vectorizer, X, km, labels = cluster_posts(posts, N_CLUSTERS)
     topic_labels = {int(cid): ' / '.join(label_cluster(vectorizer, km.cluster_centers_[cid])) or f'cluster-{cid}'
                     for cid in set(labels)}
-    flagged = build_comment_queue(posts, topic_labels, [int(l) for l in labels])
+    flagged = build_comment_queue(posts, topic_labels, [int(l) for l in labels], now)
 
     queue = load_reply_queue()
     added, refreshed = 0, 0
@@ -216,10 +240,26 @@ def build():
             rec['notes'] = None
             queue[rid] = rec
             added += 1
+
+    # A still-'drafted' entry whose post has aged out of build_comment_queue's
+    # recency window (it's no longer in `flagged`) would otherwise sit
+    # untouched forever - replying to it now would read as stale/random, so
+    # auto-dismiss it. Approved/sent records are left alone either way, since
+    # by then the reply already happened or was consciously queued to.
+    flagged_ids = {rec['id'] for rec in flagged}
+    aged_out = 0
+    for rid, rec in queue.items():
+        if rec['status'] == 'drafted' and rid not in flagged_ids:
+            rec['status'] = 'dismissed'
+            rec['reviewer'] = None
+            rec['reviewed_at'] = now_iso()
+            rec['notes'] = f'Auto-dismissed: post is older than the {RECENT_WITHIN_DAYS}-day reply window.'
+            aged_out += 1
     save_reply_queue(queue)
 
     print(f"Wrote account status for {len(accounts)} accounts to {STATUS_FILE}")
-    print(f"Reply queue: {added} new, {refreshed} refreshed, {len(queue)} total (own-account posts needing a response draft).")
+    print(f"Reply queue: {added} new, {refreshed} refreshed, {aged_out} aged out, {len(queue)} total "
+          f"(own-account posts needing a response draft).")
 
 
 def list_records(status=None, limit=20):
