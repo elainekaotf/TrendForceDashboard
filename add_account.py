@@ -30,6 +30,7 @@ hook for that file) - this script prints a reminder but can't do that
 part for you.
 """
 import json
+import os
 import re
 import subprocess
 import sys
@@ -43,6 +44,12 @@ TWITTER_SCRAPER_DIR = Path('/Users/elainekao/TrendforceTwitterScraper')
 # so this script stays lightweight (no sklearn/pandas import chain) for a
 # one-off local CLI action.
 _DEFAULT_OWN = {'X': ['TrendForce'], 'Facebook': ['TrendForce.tw']}
+
+# A brand-new account has no history yet, so its first scrape goes deeper
+# than the daily top-up (X: 15 scrolls, Facebook light: 20) but well short
+# of a full backfill (Facebook: 400, which took ~1.5h onboarding
+# technewsinside) - deep enough to be useful, fast enough not to block on it.
+ONBOARDING_SCROLLS = {'X': 75, 'Facebook': 250}
 
 
 def _default_own(platform):
@@ -108,8 +115,9 @@ def main():
             print(f"[WARN] {FACEBOOK_SCRAPER_DIR} not found - skipping scrape trigger.")
         else:
             page_url = f'https://www.facebook.com/{handle}'
-            print(f"Starting a one-off Facebook scrape for {page_url} ...")
-            subprocess.run(['node', 'scrape_facebook.js', page_url, '400'], cwd=FACEBOOK_SCRAPER_DIR)
+            scrolls = ONBOARDING_SCROLLS['Facebook']
+            print(f"Starting a one-off Facebook scrape for {page_url} ({scrolls} scrolls) ...")
+            subprocess.run(['node', 'scrape_facebook.js', page_url, str(scrolls)], cwd=FACEBOOK_SCRAPER_DIR)
             # scrape_facebook.js only saves the scrolled-through raw HTML
             # (raw_facebook_<slug>.html) - parse_facebook.py is the step
             # that turns it into the dated CSV sync_data.sh looks for.
@@ -120,8 +128,10 @@ def main():
         if not TWITTER_SCRAPER_DIR.exists():
             print(f"[WARN] {TWITTER_SCRAPER_DIR} not found - skipping scrape trigger.")
         else:
-            print(f"Starting a one-off X scrape for @{handle} ...")
-            subprocess.run(['node', 'scrape_accounts.js', f'@{handle}'], cwd=TWITTER_SCRAPER_DIR)
+            scrolls = ONBOARDING_SCROLLS['X']
+            print(f"Starting a one-off X scrape for @{handle} ({scrolls} scrolls) ...")
+            env = {**os.environ, 'MAX_SCROLLS': str(scrolls)}
+            subprocess.run(['node', 'scrape_accounts.js', f'@{handle}'], cwd=TWITTER_SCRAPER_DIR, env=env)
             scraped = True
         print(
             f"[REMINDER] For @{handle} to stay covered by *future* scheduled scrapes, also add "
