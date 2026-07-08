@@ -27,7 +27,8 @@ import os
 import urllib.parse
 from datetime import datetime, timezone, timedelta
 
-from time_ranges import RANGE_ORDER, RANGE_LABELS
+from time_ranges import RANGE_ORDER, RANGE_LABELS, RANGE_HOURS, MIN_WINDOW_POSTS, parse_ts, window_bounds, format_window
+from cluster_topics import load_posts
 
 BASE = os.path.dirname(__file__)
 ANALYSIS_DIR = os.path.join(BASE, 'analysis')
@@ -372,6 +373,7 @@ def main():
     sentiment_html_by_range = {}
     window_caption_by_range = {}
     window_bounds_by_range = {}
+    window_by_range = {}
     available_ranges = []
     for range_key in RANGE_ORDER:
         topic_clusters = load(f'topic_clusters_{range_key}.json')
@@ -389,13 +391,44 @@ def main():
         # now," which it usually isn't.
         window = next((d.get('window') for d in (topic_clusters, fuzzy_trends, sentiment_dashboard)
                        if d and d.get('window')), None)
-        window_caption_by_range[range_key] = (
-            f"Data window: {esc(window['start_tw'])} – {esc(window['end_tw'])} (Taiwan time)"
-            if window else 'No window data available for this range.'
-        )
+        window_by_range[range_key] = window
         window_bounds_by_range[range_key] = (
             {'start': window['start_utc'], 'end': window['end_utc']} if window else None
         )
+
+    # A range's window can lag behind the others: each of the three source
+    # scripts skips writing its file for a range when that window doesn't
+    # clear MIN_WINDOW_POSTS, leaving the last successful (older) result on
+    # disk rather than an empty/misleading one. That's the right call for
+    # the *data* (a stale-but-real result beats no result), but left silent
+    # it reads as a time-math bug when a shorter range's caption shows an
+    # earlier end time than a longer range's. Flag it explicitly instead,
+    # with the actual post count so it's clear why.
+    parsed_ends = [datetime.fromisoformat(w['end_utc']) for w in window_by_range.values() if w]
+    freshest_end = max(parsed_ends) if parsed_ends else None
+    posts_for_staleness_check = None
+
+    for range_key in RANGE_ORDER:
+        window = window_by_range[range_key]
+        if not window:
+            window_caption_by_range[range_key] = 'No window data available for this range.'
+            continue
+        caption = f"Data window: {esc(window['start_tw'])} – {esc(window['end_tw'])} (Taiwan time)"
+        window_end = datetime.fromisoformat(window['end_utc'])
+        if freshest_end and (freshest_end - window_end).total_seconds() > 60:
+            if posts_for_staleness_check is None:
+                posts_for_staleness_check = load_posts()
+                for p in posts_for_staleness_check:
+                    p['_ts'] = parse_ts(p['timestamp'])
+            current_start, current_end = window_bounds(range_key, freshest_end)
+            current_count = sum(1 for p in posts_for_staleness_check
+                                 if p['_ts'] and current_start <= p['_ts'] <= current_end)
+            caption += (
+                f" — showing the last window with enough data; the most recent "
+                f"{format_window(RANGE_HOURS[range_key])} only has {current_count} "
+                f"post{'s' if current_count != 1 else ''} (needs {MIN_WINDOW_POSTS})."
+            )
+        window_caption_by_range[range_key] = caption
 
     keyword_index = load('keyword_index.json') or []
 
