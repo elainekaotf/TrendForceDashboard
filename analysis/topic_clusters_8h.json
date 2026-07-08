@@ -1,112 +1,68 @@
 {
   "clusters": [
     {
-      "id": 2,
-      "label": "ai / nvidia / semianalysis / image",
-      "size": 22,
+      "id": 0,
+      "label": "ai / nvidia / memory / trendforce",
+      "size": 10,
       "accounts": {
-        "TrendForce": 1,
+        "SemiAnalysis_": 5,
         "jukan05": 1,
-        "technews_tw": 15,
-        "ctee.fans": 3,
-        "yutinghaosfinance": 2
+        "QQ_Timmy": 2,
+        "technews_tw": 2
       },
       "engagement_by_account": {
-        "TrendForce": 38,
-        "jukan05": 107,
-        "technews_tw": 26,
-        "ctee.fans": 36,
-        "yutinghaosfinance": 285
-      }
-    },
-    {
-      "id": 5,
-      "label": "ai / pcb / physical / nvidia",
-      "size": 3,
-      "accounts": {
-        "technews_tw": 3
-      },
-      "engagement_by_account": {
-        "technews_tw": 11
-      }
-    },
-    {
-      "id": 15,
-      "label": "其中 / iphone / 環球晶 / ai資料中心",
-      "size": 1,
-      "accounts": {
-        "technews_tw": 1
-      },
-      "engagement_by_account": {
+        "SemiAnalysis_": 457,
+        "jukan05": 483,
+        "QQ_Timmy": 61,
         "technews_tw": 0
       }
     },
     {
-      "id": 16,
-      "label": "hbm / dram / hynix / nand",
+      "id": 4,
+      "label": "intel / tsmc / foundry / cpu",
       "size": 1,
       "accounts": {
-        "technews_tw": 1
+        "SemiAnalysis_": 1
       },
       "engagement_by_account": {
-        "technews_tw": 2
+        "SemiAnalysis_": 13
       }
     }
   ],
   "gaps": [
     {
-      "cluster_id": 2,
-      "label": "ai / nvidia / semianalysis / image",
-      "own_count": 1,
-      "competitor_count": 21,
-      "competitor_engagement": 454,
-      "competitors_covering": [
-        "jukan05",
-        "technews_tw",
-        "ctee.fans",
-        "yutinghaosfinance"
-      ]
-    },
-    {
-      "cluster_id": 5,
-      "label": "ai / pcb / physical / nvidia",
+      "cluster_id": 0,
+      "label": "ai / nvidia / memory / trendforce",
       "own_count": 0,
-      "competitor_count": 3,
-      "competitor_engagement": 11,
+      "competitor_count": 10,
+      "competitor_engagement": 1001,
       "competitors_covering": [
+        "SemiAnalysis_",
+        "jukan05",
+        "QQ_Timmy",
         "technews_tw"
       ]
     }
   ],
   "suggested_entry_points": [
     {
-      "cluster_id": 2,
-      "label": "ai / nvidia / semianalysis / image",
-      "own_count": 1,
-      "competitor_count": 21,
-      "competitor_engagement": 454,
-      "competitors_covering": [
-        "jukan05",
-        "technews_tw",
-        "ctee.fans",
-        "yutinghaosfinance"
-      ]
-    },
-    {
-      "cluster_id": 5,
-      "label": "ai / pcb / physical / nvidia",
+      "cluster_id": 0,
+      "label": "ai / nvidia / memory / trendforce",
       "own_count": 0,
-      "competitor_count": 3,
-      "competitor_engagement": 11,
+      "competitor_count": 10,
+      "competitor_engagement": 1001,
       "competitors_covering": [
+        "SemiAnalysis_",
+        "jukan05",
+        "QQ_Timmy",
         "technews_tw"
       ]
     }
   ],
   "window": {
-    "start_utc": "2026-07-07T07:09:35+00:00",
-    "end_utc": "2026-07-07T15:09:35+00:00",
-    "start_tw": "Jul 07, 15:09",
-    "end_tw": "Jul 07, 23:09"
+    "start_utc": "2026-07-07T13:00:43+00:00",
+    "end_utc": "2026-07-07T21:00:43+00:00",
+    "start_tw": "Jul 07, 21:00",
+    "end_tw": "Jul 08, 05:00"
   }
 }

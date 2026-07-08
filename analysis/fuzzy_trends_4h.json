@@ -8,7 +8,7 @@
     "start_tw": "Jul 08, 01:00",
     "end_tw": "Jul 08, 05:00"
   },
-  "scan_only": true,
+  "scan_only": false,
   "platforms": {
     "X": {
       "top_rising_topics": [
@@ -20,7 +20,16 @@
           "rationale": "volume +100% vs prior 4h, engagement rate +1300%, 1 account(s) posting",
           "topic_id": 4,
           "label": "intel / tsmc / foundry / cpu",
-          "rising_kols": [],
+          "rising_kols": [
+            {
+              "rising_score": 50.0,
+              "volume_growth_rate": 1.0,
+              "engagement_acceleration": 13.0,
+              "active_accounts": 1,
+              "rationale": "posts +100%, engagement +1300% vs prior 4h",
+              "handle": "SemiAnalysis_"
+            }
+          ],
           "sub_topics": []
         },
         {
@@ -31,7 +40,40 @@
           "rationale": "volume -57% vs prior 4h, engagement rate -3%, 1 account(s) posting",
           "topic_id": 0,
           "label": "ai / nvidia / memory / trendforce",
-          "rising_kols": [],
+          "rising_kols": [
+            {
+              "rising_score": 90.0,
+              "volume_growth_rate": 0.5,
+              "engagement_acceleration": 0.191,
+              "active_accounts": 1,
+              "rationale": "posts +50%, engagement +19% vs prior 4h",
+              "handle": "SemiAnalysis_"
+            },
+            {
+              "rising_score": 10.0,
+              "volume_growth_rate": -1.0,
+              "engagement_acceleration": -1.0,
+              "active_accounts": 0,
+              "rationale": "posts -100%, engagement -100% vs prior 4h",
+              "handle": "jukan05"
+            },
+            {
+              "rising_score": 10.0,
+              "volume_growth_rate": -1.0,
+              "engagement_acceleration": -1.0,
+              "active_accounts": 0,
+              "rationale": "posts -100%, engagement -100% vs prior 4h",
+              "handle": "QQ_Timmy"
+            },
+            {
+              "rising_score": 10.0,
+              "volume_growth_rate": -1.0,
+              "engagement_acceleration": 0.0,
+              "active_accounts": 0,
+              "rationale": "posts -100%, engagement +0% vs prior 4h",
+              "handle": "technews_tw"
+            }
+          ],
           "sub_topics": []
         }
       ]
