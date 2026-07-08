@@ -1,144 +1,60 @@
 {
   "clusters": [
     {
-      "id": 4,
-      "label": "ai / nvidia / memory / hbm",
-      "size": 73,
-      "accounts": {
-        "technews_tw": 7,
-        "jukan05": 3,
-        "QQ_Timmy": 3,
-        "tengyanAI": 1,
-        "TrendForce.tw": 7,
-        "technewsinside": 31,
-        "ctee.fans": 12,
-        "yutinghaosfinance": 9
-      },
-      "engagement_by_account": {
-        "technews_tw": 5,
-        "jukan05": 581,
-        "QQ_Timmy": 74,
-        "tengyanAI": 24,
-        "TrendForce.tw": 171,
-        "technewsinside": 1908,
-        "ctee.fans": 169,
-        "yutinghaosfinance": 1288
-      }
-    },
-    {
-      "id": 5,
-      "label": "trendforce / dram / ai / nand",
-      "size": 11,
-      "accounts": {
-        "TrendForce.tw": 9,
-        "technewsinside": 2
-      },
-      "engagement_by_account": {
-        "TrendForce.tw": 295,
-        "technewsinside": 43
-      }
-    },
-    {
-      "id": 13,
-      "label": "ai / pcb / 科技早報 / physical",
-      "size": 6,
-      "accounts": {
-        "technews_tw": 2,
-        "TrendForce.tw": 1,
-        "technewsinside": 3
-      },
-      "engagement_by_account": {
-        "technews_tw": 3,
-        "TrendForce.tw": 26,
-        "technewsinside": 63
-      }
-    },
-    {
-      "id": 7,
-      "label": "蘋果 / iphone / pro / apple",
-      "size": 4,
-      "accounts": {
-        "technews_tw": 2,
-        "technewsinside": 2
-      },
-      "engagement_by_account": {
-        "technews_tw": 6,
-        "technewsinside": 52
-      }
-    },
-    {
       "id": 0,
-      "label": "datatrack / 看詳情 / 了解詳情 / 美國",
-      "size": 3,
+      "label": "ai / memory / spacex / samsung",
+      "size": 17,
       "accounts": {
-        "TrendForce.tw": 3
+        "ctee.fans": 9,
+        "yutinghaosfinance": 8
       },
       "engagement_by_account": {
-        "TrendForce.tw": 28
+        "ctee.fans": 301,
+        "yutinghaosfinance": 2204
       }
     },
     {
-      "id": 12,
-      "label": "台積電 / 英特爾 / 魏哲家 / 奈米",
-      "size": 3,
-      "accounts": {
-        "technewsinside": 3
-      },
-      "engagement_by_account": {
-        "technewsinside": 149
-      }
-    },
-    {
-      "id": 1,
-      "label": "tsmc / intel / packaging / foundry",
-      "size": 1,
-      "accounts": {
-        "jukan05": 1
-      },
-      "engagement_by_account": {
-        "jukan05": 14
-      }
-    },
-    {
-      "id": 8,
+      "id": 4,
       "label": "台股 / 台積電 / etf / 台股逐洞賽",
       "size": 1,
       "accounts": {
-        "technews_tw": 1
+        "ctee.fans": 1
       },
       "engagement_by_account": {
-        "technews_tw": 2
-      }
-    },
-    {
-      "id": 16,
-      "label": "spacex / ipo / 馬斯克 / ai",
-      "size": 1,
-      "accounts": {
-        "technews_tw": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 2
-      }
-    },
-    {
-      "id": 17,
-      "label": "高盛 / ai / 國巨 / 聯發科",
-      "size": 1,
-      "accounts": {
-        "technewsinside": 1
-      },
-      "engagement_by_account": {
-        "technewsinside": 18
+        "ctee.fans": 23
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 0,
+      "label": "ai / memory / spacex / samsung",
+      "own_count": 0,
+      "competitor_count": 17,
+      "competitor_engagement": 2505,
+      "competitors_covering": [
+        "ctee.fans",
+        "yutinghaosfinance"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 0,
+      "label": "ai / memory / spacex / samsung",
+      "own_count": 0,
+      "competitor_count": 17,
+      "competitor_engagement": 2505,
+      "competitors_covering": [
+        "ctee.fans",
+        "yutinghaosfinance"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-08T04:42:00+00:00",
-    "end_utc": "2026-07-08T08:42:00+00:00",
-    "start_tw": "Jul 08, 12:42",
-    "end_tw": "Jul 08, 16:42"
+    "start_utc": "2026-07-08T10:30:00+00:00",
+    "end_utc": "2026-07-08T14:30:00+00:00",
+    "start_tw": "Jul 08, 18:30",
+    "end_tw": "Jul 08, 22:30"
   }
 }
