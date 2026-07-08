@@ -17,12 +17,17 @@ and FR-05's reply-drafting queue starts drafting suggested replies for
 ITS posts too (account_comment_management.py never touches anything but
 own accounts). Only mark an account own if TrendForce actually operates it.
 
-For Facebook, this can trigger a genuine one-off scrape immediately,
-since TrendforceFacebookScraper's scrape_facebook.js takes a page URL as
-a CLI argument. For X, TrendforceTwitterScraper's KNOWN_ACCOUNTS list is
-hardcoded in scraper.js - there's no one-off CLI handle argument to hook
-into, so this prints the exact edit needed there instead of guessing at
-undocumented behavior.
+This is the entire "accept a request" flow in one command: it registers
+the handle, triggers a real one-off scrape (Facebook via
+scrape_facebook.js + parse_facebook.py; X via scrape_accounts.js, which
+writes csv/<handle>.csv directly), then runs `run_pipeline.sh core` to
+sync, rebuild every analysis file, regenerate the dashboard, and publish
+it to GitHub Pages - so accepting a request never needs a second command.
+
+X's KNOWN_ACCOUNTS list in scraper.js still needs the handle added by
+hand for it to stay covered by *future* scheduled runs (there's no CLI
+hook for that file) - this script prints a reminder but can't do that
+part for you.
 """
 import json
 import re
@@ -97,6 +102,7 @@ def main():
         save_config(cfg)
         print(f"Added {handle} to {platform} in {CONFIG_PATH.name}.")
 
+    scraped = False
     if platform == 'Facebook':
         if not FACEBOOK_SCRAPER_DIR.exists():
             print(f"[WARN] {FACEBOOK_SCRAPER_DIR} not found - skipping scrape trigger.")
@@ -109,16 +115,30 @@ def main():
             # that turns it into the dated CSV sync_data.sh looks for.
             print("Parsing the scraped HTML into a CSV ...")
             subprocess.run(['python3', 'parse_facebook.py', page_url], cwd=FACEBOOK_SCRAPER_DIR)
-            print("Done. Run 'bash run_pipeline.sh core' in TrendForceDash to pick it up.")
+            scraped = True
     else:
+        if not TWITTER_SCRAPER_DIR.exists():
+            print(f"[WARN] {TWITTER_SCRAPER_DIR} not found - skipping scrape trigger.")
+        else:
+            print(f"Starting a one-off X scrape for @{handle} ...")
+            subprocess.run(['node', 'scrape_accounts.js', f'@{handle}'], cwd=TWITTER_SCRAPER_DIR)
+            scraped = True
         print(
-            f"To finish onboarding {handle} on X:\n"
-            f"  1. For an immediate one-off scrape: `node scrape_accounts.js @{handle}` in "
-            f"{TWITTER_SCRAPER_DIR} - it writes csv/{handle}.csv directly, no full-run wait.\n"
-            f"  2. For it to stay covered by future scheduled runs, also add '@{handle}' to "
-            f"KNOWN_ACCOUNTS in {TWITTER_SCRAPER_DIR / 'scraper.js'}\n"
-            f"  3. Run `bash run_pipeline.sh core` here in TrendForceDash to pick up the new CSV"
+            f"[REMINDER] For @{handle} to stay covered by *future* scheduled scrapes, also add "
+            f"it to KNOWN_ACCOUNTS in {TWITTER_SCRAPER_DIR / 'scraper.js'} by hand - "
+            f"there's no CLI hook for that file."
         )
+
+    if not scraped:
+        print("Skipping the pipeline run since no scrape ran - nothing new to pick up.")
+        return
+
+    print("Running the TrendForceDash pipeline (sync, rebuild, regenerate, publish) ...")
+    result = subprocess.run(['bash', 'run_pipeline.sh', 'core'], cwd=BASE)
+    if result.returncode == 0:
+        print(f"Done. {handle} is live on the dashboard.")
+    else:
+        print(f"[WARN] run_pipeline.sh exited with code {result.returncode} - check pipeline.log.")
 
 
 if __name__ == '__main__':
