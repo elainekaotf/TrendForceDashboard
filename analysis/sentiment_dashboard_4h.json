@@ -10,16 +10,16 @@
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 17,
+      "total_posts": 19,
       "sentiment_counts": {
         "negative": 4,
-        "positive": 11,
+        "positive": 13,
         "neutral": 2
       },
       "sentiment_share": {
-        "negative": 0.235,
-        "positive": 0.647,
-        "neutral": 0.118
+        "negative": 0.211,
+        "positive": 0.684,
+        "neutral": 0.105
       },
       "top_terms": [
         "萬美元",
@@ -28,33 +28,33 @@
         "#ai",
         "#英特爾",
         "and",
+        "release",
+        "The",
         "with",
-        "are",
-        "全球記憶體價格狂飆的趨勢即將踩煞車",
-        "樂觀指出"
+        "are"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 1,
-        "label": "cluster-1",
-        "heat": 90.0,
-        "volume": 10,
-        "engagement": 680
-      },
-      {
-        "topic_id": 0,
-        "label": "ai / model",
-        "heat": 80.0,
+        "label": "ai / model / release / like",
+        "heat": 74.0,
         "volume": 5,
         "engagement": 786
       },
       {
+        "topic_id": 0,
+        "label": "英特爾 / release / ai / like",
+        "heat": 50.0,
+        "volume": 12,
+        "engagement": 96
+      },
+      {
         "topic_id": 2,
-        "label": "英特爾 / ai",
-        "heat": 10.0,
+        "label": "china",
+        "heat": 32.4,
         "volume": 2,
-        "engagement": 0
+        "engagement": 634
       }
     ],
     "sentiment_trend_curve": [
@@ -82,7 +82,7 @@
       {
         "bucket_start": "2026-07-08T06:53:59.714281+08:00",
         "bucket_end": "2026-07-08T07:11:08.285710+08:00",
-        "positive": 0,
+        "positive": 1,
         "neutral": 0,
         "negative": 1
       },
@@ -124,7 +124,7 @@
       {
         "bucket_start": "2026-07-08T08:36:51.142855+08:00",
         "bucket_end": "2026-07-08T08:53:59.714284+08:00",
-        "positive": 0,
+        "positive": 1,
         "neutral": 1,
         "negative": 0
       },
@@ -160,67 +160,74 @@
     "coverage_focus_ranking": [
       {
         "handle": "TrendForce",
-        "top_topic_id": 1,
-        "top_topic_label": "cluster-1",
+        "top_topic_id": 0,
+        "top_topic_label": "英特爾 / release / ai / like",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "QQ_Timmy",
-        "top_topic_id": 1,
-        "top_topic_label": "cluster-1",
+        "top_topic_id": 0,
+        "top_topic_label": "英特爾 / release / ai / like",
         "focus_share": 1.0,
         "post_count": 3
       },
       {
         "handle": "SemiAnalysis_",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / model",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / model / release / like",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "technews_tw",
-        "top_topic_id": 1,
-        "top_topic_label": "cluster-1",
-        "focus_share": 0.5,
+        "top_topic_id": 0,
+        "top_topic_label": "英特爾 / release / ai / like",
+        "focus_share": 0.7,
         "post_count": 10
+      },
+      {
+        "handle": "tphuang",
+        "top_topic_id": 0,
+        "top_topic_label": "英特爾 / release / ai / like",
+        "focus_share": 0.5,
+        "post_count": 2
       },
       {
         "handle": "jukan05",
         "top_topic_id": 1,
-        "top_topic_label": "cluster-1",
+        "top_topic_label": "ai / model / release / like",
         "focus_share": 0.5,
         "post_count": 2
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "ai / model",
+        "topic_id": 1,
+        "label": "ai / model / release / like",
         "total_engagement": 786,
         "post_count": 5
       },
       {
-        "topic_id": 1,
-        "label": "cluster-1",
-        "total_engagement": 680,
-        "post_count": 10
+        "topic_id": 2,
+        "label": "china",
+        "total_engagement": 634,
+        "post_count": 2
       },
       {
-        "topic_id": 2,
-        "label": "英特爾 / ai",
-        "total_engagement": 0,
-        "post_count": 2
+        "topic_id": 0,
+        "label": "英特爾 / release / ai / like",
+        "total_engagement": 96,
+        "post_count": 12
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 17,
-          "likes": 1211,
-          "engagement": 1466,
-          "avg_engagement": 86.2
+          "post_count": 19,
+          "likes": 1259,
+          "engagement": 1516,
+          "avg_engagement": 79.8
         },
         "afternoon": {
           "post_count": 0,

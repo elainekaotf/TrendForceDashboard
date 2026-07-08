@@ -38,8 +38,13 @@ trap 'rmdir "$LOCKDIR" 2>/dev/null' EXIT
 TWITTER_SRC=/Users/elainekao/TrendforceTwitterScraper
 FACEBOOK_SRC=/Users/elainekao/TrendforceFacebookScraper
 
-X_HANDLES=(TrendForce dylan522p SemiAnalysis_ jukan05 QQ_Timmy technews_tw)
-FB_HANDLES=(TrendForce.tw ctee.fans yutinghaosfinance)
+# Pulled from cluster_topics.PLATFORM_ACCOUNTS (own + competitors merged,
+# accounts_config.json included) rather than hardcoded here - a hardcoded
+# second copy of the account list is exactly how tphuang/technewsinside
+# ended up registered via add_account.py but never actually synced into
+# this repo's own csv/: this file's list just didn't know they existed.
+X_HANDLES=($(python3 -c "from cluster_topics import PLATFORM_ACCOUNTS as P; print(' '.join(P['X']['own'] + P['X']['competitors']))"))
+FB_HANDLES=($(python3 -c "from cluster_topics import PLATFORM_ACCOUNTS as P; print(' '.join(P['Facebook']['own'] + P['Facebook']['competitors']))"))
 
 synced=0
 missing=0
@@ -47,7 +52,12 @@ missing=0
 for h in "${X_HANDLES[@]}"; do
   src="$TWITTER_SRC/csv/$h.csv"
   if [ -f "$src" ]; then
-    cp "$src" "csv/$h.csv"
+    # cp truncates-then-writes the destination, same non-atomic hazard as
+    # the Facebook concatenation below - copy to a temp path and rename
+    # into place instead.
+    tmp="csv/$h.csv.tmp.$$"
+    cp "$src" "$tmp"
+    mv "$tmp" "csv/$h.csv"
     synced=$((synced + 1))
   else
     echo "[WARN] sync_data: missing $src"
@@ -66,16 +76,25 @@ for h in "${FB_HANDLES[@]}"; do
   dated_files=$(ls -tr "$FACEBOOK_SRC"/csv/facebook_"$h"_*.csv 2>/dev/null)
   if [ -n "$dated_files" ]; then
     out="csv/facebook/$h.csv"
-    : > "$out"
+    # Build the concatenated file in a temp path, then rename it into place
+    # atomically - the previous version truncated $out with ": > $out" and
+    # appended into it across several writes, leaving a window where a
+    # concurrent reader (a *different* job's cluster_topics.py, not
+    # sync_data.sh itself - the lock above only serializes sync_data.sh
+    # against other sync_data.sh runs) could see it half-written or empty.
+    # `mv` on the same filesystem is atomic: any reader sees either the
+    # complete old file or the complete new one, never a partial one.
+    tmp="$out.tmp.$$"
     first=1
     for f in $dated_files; do
       if [ "$first" -eq 1 ]; then
-        cat "$f" > "$out"
+        cat "$f" > "$tmp"
         first=0
       else
-        tail -n +2 "$f" >> "$out"
+        tail -n +2 "$f" >> "$tmp"
       fi
     done
+    mv "$tmp" "$out"
     synced=$((synced + 1))
   else
     echo "[WARN] sync_data: no dated CSV found for Facebook handle $h in $FACEBOOK_SRC/csv"

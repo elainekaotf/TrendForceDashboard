@@ -1,53 +1,33 @@
 {
   "clusters": [
     {
-      "id": 1,
-      "label": "ai / nvidia / memory / samsung",
-      "size": 91,
+      "id": 4,
+      "label": "ai / nvidia / semianalysis / memory",
+      "size": 101,
       "accounts": {
-        "TrendForce": 3,
-        "technews_tw": 34,
-        "SemiAnalysis_": 5,
+        "TrendForce": 2,
+        "technews_tw": 37,
+        "SemiAnalysis_": 4,
         "jukan05": 11,
-        "QQ_Timmy": 10,
+        "QQ_Timmy": 9,
+        "tphuang": 10,
         "ctee.fans": 17,
         "yutinghaosfinance": 11
       },
       "engagement_by_account": {
-        "TrendForce": 100,
-        "technews_tw": 86,
-        "SemiAnalysis_": 386,
+        "TrendForce": 57,
+        "technews_tw": 87,
+        "SemiAnalysis_": 223,
         "jukan05": 10863,
-        "QQ_Timmy": 397,
+        "QQ_Timmy": 354,
+        "tphuang": 447,
         "ctee.fans": 272,
         "yutinghaosfinance": 3680
       }
     },
     {
-      "id": 6,
-      "label": "英特爾 / intel / 台積電 / 蘋果",
-      "size": 5,
-      "accounts": {
-        "technews_tw": 5
-      },
-      "engagement_by_account": {
-        "technews_tw": 10
-      }
-    },
-    {
-      "id": 9,
-      "label": "ai / pcb / physical / nvidia",
-      "size": 4,
-      "accounts": {
-        "technews_tw": 4
-      },
-      "engagement_by_account": {
-        "technews_tw": 15
-      }
-    },
-    {
-      "id": 10,
-      "label": "tsmc / packaging / intel / advanced",
+      "id": 1,
+      "label": "tsmc / nm / intel / foundry",
       "size": 4,
       "accounts": {
         "SemiAnalysis_": 2,
@@ -61,54 +41,91 @@
       }
     },
     {
-      "id": 2,
-      "label": "iphone / 蘋果 / apple / pro",
-      "size": 3,
+      "id": 6,
+      "label": "ai / pcb / physical / nvidia",
+      "size": 4,
       "accounts": {
-        "technews_tw": 3
+        "technews_tw": 4
       },
       "engagement_by_account": {
-        "technews_tw": 6
-      }
-    },
-    {
-      "id": 13,
-      "label": "川普 / 荷莫茲海峽 / 聯準會 / 加密貨幣",
-      "size": 3,
-      "accounts": {
-        "technews_tw": 3
-      },
-      "engagement_by_account": {
-        "technews_tw": 5
-      }
-    },
-    {
-      "id": 5,
-      "label": "台股 / 台股逐洞賽 / 台股雷達 / 美國",
-      "size": 1,
-      "accounts": {
-        "technews_tw": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 1
+        "technews_tw": 15
       }
     },
     {
       "id": 14,
-      "label": "台積電 / 魏哲家 / cowos / ai",
+      "label": "英特爾 / intel / 台積電 / 蘋果",
+      "size": 4,
+      "accounts": {
+        "technews_tw": 4
+      },
+      "engagement_by_account": {
+        "technews_tw": 7
+      }
+    },
+    {
+      "id": 11,
+      "label": "hbm / memory / dram / samsung",
+      "size": 3,
+      "accounts": {
+        "technews_tw": 2,
+        "QQ_Timmy": 1
+      },
+      "engagement_by_account": {
+        "technews_tw": 7,
+        "QQ_Timmy": 43
+      }
+    },
+    {
+      "id": 12,
+      "label": "美元 / amd / coreweave / sandisk",
+      "size": 2,
+      "accounts": {
+        "technews_tw": 2
+      },
+      "engagement_by_account": {
+        "technews_tw": 9
+      }
+    },
+    {
+      "id": 15,
+      "label": "samsung / foundry / skhynix / memory",
+      "size": 2,
+      "accounts": {
+        "TrendForce": 1,
+        "SemiAnalysis_": 1
+      },
+      "engagement_by_account": {
+        "TrendForce": 43,
+        "SemiAnalysis_": 163
+      }
+    },
+    {
+      "id": 0,
+      "label": "cowos / tsmc / 台積電 / emib",
       "size": 1,
       "accounts": {
         "technews_tw": 1
       },
       "engagement_by_account": {
-        "technews_tw": 4
+        "technews_tw": 1
+      }
+    },
+    {
+      "id": 10,
+      "label": "台股 / 台股逐洞賽 / 台股雷達 / 台積電",
+      "size": 1,
+      "accounts": {
+        "technews_tw": 1
+      },
+      "engagement_by_account": {
+        "technews_tw": 1
       }
     }
   ],
   "gaps": [
     {
-      "cluster_id": 10,
-      "label": "tsmc / packaging / intel / advanced",
+      "cluster_id": 1,
+      "label": "tsmc / nm / intel / foundry",
       "own_count": 0,
       "competitor_count": 4,
       "competitor_engagement": 1352,
@@ -121,8 +138,8 @@
   ],
   "suggested_entry_points": [
     {
-      "cluster_id": 10,
-      "label": "tsmc / packaging / intel / advanced",
+      "cluster_id": 1,
+      "label": "tsmc / nm / intel / foundry",
       "own_count": 0,
       "competitor_count": 4,
       "competitor_engagement": 1352,

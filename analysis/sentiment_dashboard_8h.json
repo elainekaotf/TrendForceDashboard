@@ -10,47 +10,54 @@
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 18,
+      "total_posts": 23,
       "sentiment_counts": {
-        "negative": 4,
-        "positive": 12,
-        "neutral": 2
+        "negative": 5,
+        "positive": 15,
+        "neutral": 3
       },
       "sentiment_share": {
-        "negative": 0.222,
-        "positive": 0.667,
-        "neutral": 0.111
+        "negative": 0.217,
+        "positive": 0.652,
+        "neutral": 0.13
       },
       "top_terms": [
+        "the",
         "and",
         "萬美元",
+        "red",
+        "phosphorus",
+        "domestic",
         "memory",
         "#AI",
         "#ai",
-        "#英特爾",
-        "with",
-        "are",
-        "全球記憶體價格狂飆的趨勢即將踩煞車",
-        "樂觀指出"
+        "#英特爾"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 1,
-        "label": "cluster-1",
-        "heat": 90.0,
-        "volume": 11,
-        "engagement": 837
+        "topic_id": 0,
+        "label": "domestic / inp / release / phosphorus",
+        "heat": 87.5,
+        "volume": 14,
+        "engagement": 368
       },
       {
-        "topic_id": 0,
-        "label": "ai / model",
-        "heat": 67.5,
+        "topic_id": 2,
+        "label": "ai / model / release / like",
+        "heat": 70.0,
         "volume": 5,
         "engagement": 786
       },
       {
-        "topic_id": 2,
+        "topic_id": 3,
+        "label": "china",
+        "heat": 34.5,
+        "volume": 2,
+        "engagement": 634
+      },
+      {
+        "topic_id": 1,
         "label": "英特爾 / ai",
         "heat": 10.0,
         "volume": 2,
@@ -75,9 +82,9 @@
       {
         "bucket_start": "2026-07-08T03:11:08.285716+08:00",
         "bucket_end": "2026-07-08T03:45:25.428573+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
+        "positive": 1,
+        "neutral": 1,
+        "negative": 1
       },
       {
         "bucket_start": "2026-07-08T03:45:25.428573+08:00",
@@ -117,7 +124,7 @@
       {
         "bucket_start": "2026-07-08T06:36:51.142858+08:00",
         "bucket_end": "2026-07-08T07:11:08.285715+08:00",
-        "positive": 0,
+        "positive": 1,
         "neutral": 0,
         "negative": 1
       },
@@ -138,7 +145,7 @@
       {
         "bucket_start": "2026-07-08T08:19:42.571429+08:00",
         "bucket_end": "2026-07-08T08:53:59.714286+08:00",
-        "positive": 2,
+        "positive": 3,
         "neutral": 2,
         "negative": 0
       },
@@ -160,55 +167,68 @@
     "coverage_focus_ranking": [
       {
         "handle": "TrendForce",
-        "top_topic_id": 1,
-        "top_topic_label": "cluster-1",
+        "top_topic_id": 0,
+        "top_topic_label": "domestic / inp / release / phosphorus",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "QQ_Timmy",
-        "top_topic_id": 1,
-        "top_topic_label": "cluster-1",
+        "top_topic_id": 0,
+        "top_topic_label": "domestic / inp / release / phosphorus",
         "focus_share": 1.0,
         "post_count": 3
       },
       {
+        "handle": "tphuang",
+        "top_topic_id": 0,
+        "top_topic_label": "domestic / inp / release / phosphorus",
+        "focus_share": 0.8,
+        "post_count": 5
+      },
+      {
         "handle": "technews_tw",
-        "top_topic_id": 1,
-        "top_topic_label": "cluster-1",
+        "top_topic_id": 0,
+        "top_topic_label": "domestic / inp / release / phosphorus",
         "focus_share": 0.5,
         "post_count": 10
       },
       {
         "handle": "SemiAnalysis_",
-        "top_topic_id": 1,
-        "top_topic_label": "cluster-1",
+        "top_topic_id": 0,
+        "top_topic_label": "domestic / inp / release / phosphorus",
         "focus_share": 0.5,
         "post_count": 2
       },
       {
         "handle": "jukan05",
-        "top_topic_id": 1,
-        "top_topic_label": "cluster-1",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / model / release / like",
         "focus_share": 0.5,
         "post_count": 2
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 1,
-        "label": "cluster-1",
-        "total_engagement": 837,
-        "post_count": 11
-      },
-      {
-        "topic_id": 0,
-        "label": "ai / model",
+        "topic_id": 2,
+        "label": "ai / model / release / like",
         "total_engagement": 786,
         "post_count": 5
       },
       {
-        "topic_id": 2,
+        "topic_id": 3,
+        "label": "china",
+        "total_engagement": 634,
+        "post_count": 2
+      },
+      {
+        "topic_id": 0,
+        "label": "domestic / inp / release / phosphorus",
+        "total_engagement": 368,
+        "post_count": 14
+      },
+      {
+        "topic_id": 1,
         "label": "英特爾 / ai",
         "total_engagement": 0,
         "post_count": 2
@@ -217,10 +237,10 @@
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 17,
-          "likes": 1211,
-          "engagement": 1466,
-          "avg_engagement": 86.2
+          "post_count": 19,
+          "likes": 1259,
+          "engagement": 1516,
+          "avg_engagement": 79.8
         },
         "afternoon": {
           "post_count": 0,
@@ -235,10 +255,10 @@
           "avg_engagement": 0.0
         },
         "late_night": {
-          "post_count": 1,
-          "likes": 141,
-          "engagement": 157,
-          "avg_engagement": 157.0
+          "post_count": 4,
+          "likes": 240,
+          "engagement": 272,
+          "avg_engagement": 68.0
         }
       },
       "peak_slot": "morning"
