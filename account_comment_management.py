@@ -92,7 +92,7 @@ def build_account_status(posts, now):
 
     accounts = []
     for platform, cfg in PLATFORM_ACCOUNTS.items():
-        for handle in [cfg['own']] + cfg['competitors']:
+        for handle in cfg['own'] + cfg['competitors']:
             handle_posts = by_handle.get(handle, [])
             timestamps = [parse_ts(p['timestamp']) for p in handle_posts]
             timestamps = [t for t in timestamps if t]

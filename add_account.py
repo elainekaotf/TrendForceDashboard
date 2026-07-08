@@ -9,6 +9,13 @@ in accounts_config.json and (where possible) kicks off scraping for it.
 Usage:
     python3 add_account.py X technews_tw2
     python3 add_account.py Facebook SomeCompetitorPage
+    python3 add_account.py X technews_tw --own      (register/promote as an own account, not a competitor)
+
+Marking an account 'own' changes real behavior elsewhere: FR-01/02's
+competitor-gap analysis stops counting its posts as competitor activity,
+and FR-05's reply-drafting queue starts drafting suggested replies for
+ITS posts too (account_comment_management.py never touches anything but
+own accounts). Only mark an account own if TrendForce actually operates it.
 
 For Facebook, this can trigger a genuine one-off scrape immediately,
 since TrendforceFacebookScraper's scrape_facebook.js takes a page URL as
@@ -26,6 +33,14 @@ BASE = Path(__file__).resolve().parent
 CONFIG_PATH = BASE / 'accounts_config.json'
 FACEBOOK_SCRAPER_DIR = Path('/Users/elainekao/TrendforceFacebookScraper')
 TWITTER_SCRAPER_DIR = Path('/Users/elainekao/TrendforceTwitterScraper')
+# Mirrors cluster_topics.py's _DEFAULT_OWN - duplicated rather than imported
+# so this script stays lightweight (no sklearn/pandas import chain) for a
+# one-off local CLI action.
+_DEFAULT_OWN = {'X': ['TrendForce'], 'Facebook': ['TrendForce.tw']}
+
+
+def _default_own(platform):
+    return _DEFAULT_OWN[platform]
 
 
 def load_config():
@@ -39,14 +54,28 @@ def save_config(cfg):
 
 
 def main():
-    if len(sys.argv) != 3 or sys.argv[1] not in ('X', 'Facebook'):
+    args = [a for a in sys.argv[1:] if a != '--own']
+    as_own = '--own' in sys.argv
+    if len(args) != 2 or args[0] not in ('X', 'Facebook'):
         print(__doc__)
         sys.exit(1)
-    platform, handle = sys.argv[1], sys.argv[2]
+    platform, handle = args
 
     cfg = load_config()
+    cfg.setdefault(platform, {}).setdefault('own', list(_default_own(platform)))
     cfg.setdefault(platform, {}).setdefault('competitors', [])
-    if handle in cfg[platform]['competitors']:
+
+    if as_own:
+        if handle in cfg[platform]['competitors']:
+            cfg[platform]['competitors'].remove(handle)
+            print(f"Moved {handle} on {platform} from competitor to own.")
+        if handle in cfg[platform]['own']:
+            print(f"{handle} is already marked own on {platform}.")
+        else:
+            cfg[platform]['own'].append(handle)
+            print(f"Marked {handle} own on {platform}.")
+        save_config(cfg)
+    elif handle in cfg[platform]['competitors']:
         print(f"{handle} is already tracked on {platform}.")
     else:
         cfg[platform]['competitors'].append(handle)
@@ -60,7 +89,12 @@ def main():
             page_url = f'https://www.facebook.com/{handle}'
             print(f"Starting a one-off Facebook scrape for {page_url} ...")
             subprocess.run(['node', 'scrape_facebook.js', page_url, '400'], cwd=FACEBOOK_SCRAPER_DIR)
-            print("Facebook scrape finished. Run 'bash run_pipeline.sh core' in TrendForceDash to pick it up.")
+            # scrape_facebook.js only saves the scrolled-through raw HTML
+            # (raw_facebook_<slug>.html) - parse_facebook.py is the step
+            # that turns it into the dated CSV sync_data.sh looks for.
+            print("Parsing the scraped HTML into a CSV ...")
+            subprocess.run(['python3', 'parse_facebook.py', page_url], cwd=FACEBOOK_SCRAPER_DIR)
+            print("Done. Run 'bash run_pipeline.sh core' in TrendForceDash to pick it up.")
     else:
         print(
             f"X/Twitter scraping is driven by a hardcoded KNOWN_ACCOUNTS list in "

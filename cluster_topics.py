@@ -54,10 +54,16 @@ LEGACY_RANGE = '1q'  # analysis/topic_clusters.json mirrors this range
 def range_out_file(range_key):
     return os.path.join(BASE, 'analysis', f'topic_clusters_{range_key}.json')
 
-# Competitor handles live in accounts_config.json (not hardcoded here) so
-# add_account.py can register a newly-approved account - see FR-05's
-# "request tracking" flow on the dashboard - without editing this file.
+# Own and competitor handles live in accounts_config.json (not hardcoded
+# here) so add_account.py can register a newly-approved account - see
+# FR-05's "request tracking" flow on the dashboard - without editing this
+# file. 'own' is a list, not a single handle: a platform can have more than
+# one account that's actually ours (e.g. a second outlet TrendForce runs).
 ACCOUNTS_CONFIG_PATH = os.path.join(BASE, 'accounts_config.json')
+_DEFAULT_OWN = {
+    'X': ['TrendForce'],
+    'Facebook': ['TrendForce.tw'],
+}
 _DEFAULT_COMPETITORS = {
     'X': ['dylan522p', 'SemiAnalysis_', 'jukan05', 'QQ_Timmy', 'technews_tw'],
     'Facebook': ['ctee.fans', 'yutinghaosfinance'],
@@ -76,20 +82,20 @@ _competitors_cfg = load_competitors_config()
 PLATFORM_ACCOUNTS = {
     'X': {
         'dir': CSV_DIR,
-        'own': 'TrendForce',
+        'own': _competitors_cfg.get('X', {}).get('own', _DEFAULT_OWN['X']),
         'competitors': _competitors_cfg.get('X', {}).get('competitors', _DEFAULT_COMPETITORS['X']),
     },
     'Facebook': {
         'dir': FACEBOOK_CSV_DIR,
-        'own': 'TrendForce.tw',
+        'own': _competitors_cfg.get('Facebook', {}).get('own', _DEFAULT_OWN['Facebook']),
         'competitors': _competitors_cfg.get('Facebook', {}).get('competitors', _DEFAULT_COMPETITORS['Facebook']),
     },
 }
-OWN_HANDLES = {p['own'] for p in PLATFORM_ACCOUNTS.values()}
-ACCOUNTS = [h for p in PLATFORM_ACCOUNTS.values() for h in [p['own']] + p['competitors']]
+OWN_HANDLES = {h for p in PLATFORM_ACCOUNTS.values() for h in p['own']}
+ACCOUNTS = [h for p in PLATFORM_ACCOUNTS.values() for h in p['own'] + p['competitors']]
 
 # Backward-compat aliases (X was the only platform when these were introduced).
-OWN_ACCOUNT = PLATFORM_ACCOUNTS['X']['own']
+OWN_ACCOUNT = PLATFORM_ACCOUNTS['X']['own'][0]
 COMPETITOR_ACCOUNTS = PLATFORM_ACCOUNTS['X']['competitors']
 
 N_CLUSTERS = 18
@@ -217,7 +223,7 @@ def load_posts():
     seen = set()
     for platform, cfg in PLATFORM_ACCOUNTS.items():
         loader = load_x_posts if platform == 'X' else load_facebook_posts
-        for handle in [cfg['own']] + cfg['competitors']:
+        for handle in cfg['own'] + cfg['competitors']:
             path = os.path.join(cfg['dir'], f'{handle}.csv')
             if not os.path.exists(path):
                 continue
