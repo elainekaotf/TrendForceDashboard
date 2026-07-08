@@ -21,6 +21,14 @@ swaps which pre-rendered block is shown - no server or re-fetch needed.
 
 Static HTML + inline CSS/JS, no build step - open docs/index.html directly
 or serve docs/ (e.g. GitHub Pages, matching TrendforceTwitterScraper's setup).
+
+Gap vs. spec: SRS Open Issue #7 (roles & permissions) is unresolved and,
+as built, unresolvable without new infrastructure - this is a public
+static site with no backend, so there's no login and no admin/analyst/
+reviewer distinction. Everyone with the URL sees and can do everything
+a visitor can do here (including submitting FR-05 account-tracking
+requests). Real roles would need an auth provider and a backend, which
+is a different architecture than "static site, no server."
 """
 import json
 import os

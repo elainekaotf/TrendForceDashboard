@@ -3,6 +3,11 @@ Shared time-range vocabulary for FR-01/02/03, so "4h / 8h / 1 day / 1 week /
 1 quarter" means the same thing everywhere instead of each script inventing
 its own labels (FR-03 previously had hourly/4h/daily/monthly/quarterly,
 which didn't line up with FR-01/02 at all).
+
+Gap vs. spec: the SRS's FR-03 Time Range row literally asks for hourly /
+4h / daily / monthly / quarterly - this set (no hourly, weekly instead
+of monthly) is a deliberate substitution for one shared vocabulary
+across FR-01/02/03, not what FR-03 alone specifies.
 """
 from datetime import datetime, timedelta, timezone
 

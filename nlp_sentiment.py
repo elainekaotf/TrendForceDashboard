@@ -5,6 +5,12 @@ Analyzes audience preferences via NLP (tokenization already done upstream by
 the scrapers into `translated_text`/`keywords`) + sentiment analysis + a
 fuzzy decision layer that fuses volume/engagement into heat & focus scores.
 
+Gap vs. spec: FR-03's Processing row also names NER (named entity
+recognition) alongside tokenization/sentiment/keyword-stats - not
+implemented anywhere in this pipeline. Nothing here extracts entities
+(people/orgs/products) from post text; keyword-based widgets rely on the
+scrapers' own `keywords` field and clustering's TF-IDF terms instead.
+
 Sentiment is bilingual per NFR-07: VADER (same engine as
 TrendforceTwitterScraper/sentiment.py) scores English/Latin-majority text
 (X's translated_text); Traditional Chinese text (Facebook's native posts)
@@ -32,7 +38,14 @@ Widgets (FR-03-01..09):
   09 posting_timeslot_analysis - Mon-Fri by time slot: volume/likes/engagement
 
 Platforms are derived from whatever FR-01's load_posts() returns (currently
-X and Facebook; LinkedIn is not yet scraped, see SRS Open Issue #3).
+X and Facebook; LinkedIn - one of the SRS's three named target platforms,
+cover page / Section 7 - is not yet scraped. Not one of the SRS's 7
+numbered Open Issues itself, just an unaddressed scope gap).
+
+Time-range gap vs. spec: FR-03's own Time Range row asks for hourly /
+4h / daily / monthly / quarterly. This shares FR-01/02's range set
+instead (4h/8h/1d/1w/1q) for one consistent vocabulary across all three
+dashboards - no hourly option, weekly substituted for monthly.
 
 Output: analysis/sentiment_dashboard_<range>.json for each range, plus
 analysis/sentiment_dashboard.json mirroring the 1d range (this script's

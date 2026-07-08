@@ -10,6 +10,14 @@
 # Run before analysis, not after: cluster_topics.py etc. only see whatever
 # is already in csv/ when they start.
 #
+# Gap vs. spec: SRS Open Issue #3 asks whether data collection should use
+# official APIs, licensed data providers, or "other" - still unresolved.
+# The sibling scrapers use Playwright browser automation against real
+# logged-in sessions (X: username/password; Facebook: manual login), not
+# an official API with a data-use license. NFR-04 (adhere to platform ToS)
+# is a standing, unaddressed risk as a result, not something this repo
+# can fix on its own since the scraping itself lives in the sibling repos.
+#
 # Locking: run_pipeline.sh calls this at the start of every job, and the
 # cron schedule has jobs that land on the same minute (scan every 4h and
 # accounts every 8h both fire at 0/8/16h) - two concurrent instances both

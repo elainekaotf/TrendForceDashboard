@@ -29,8 +29,16 @@ volume/engagement numbers (and which gaps clear the threshold) change.
 Windows with fewer than time_ranges.MIN_WINDOW_POSTS matching posts are
 skipped rather than reported as a misleadingly precise zero.
 
-Scope note: LinkedIn competitor sources are not yet collected (see SRS Data
-Requirements / Open Issue #3) and are out of scope until that crawler exists.
+Scope note: the SRS names Facebook, LinkedIn, and X as the three target
+platforms (cover page, Section 7 Data Requirements), but no LinkedIn
+crawler exists - X and Facebook only, here and everywhere else in this
+pipeline, until one is built. Not one of the SRS's 7 numbered Open
+Issues itself, just an unaddressed scope gap against Section 7.
+
+Method note: FR-01 specifies "cross-lingual text embedding (zh/en) +
+unsupervised clustering" - this uses TF-IDF + K-Means instead of true
+embeddings (LASER/mBERT/etc). Output requirements (clusters, topic
+labels, gap list, entry points) are met; the specified technique isn't.
 """
 import csv
 import json

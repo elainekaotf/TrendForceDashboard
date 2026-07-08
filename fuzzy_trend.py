@@ -21,7 +21,9 @@ Runs the FR-02-01..04 expansions in order:
   04 horizontal: rising KOLs within each (platform x sub-topic)
 
 Platforms are derived from whatever FR-01's load_posts() returns (currently
-X and Facebook; LinkedIn is not yet scraped, see SRS Open Issue #3).
+X and Facebook; LinkedIn - one of the SRS's three named target platforms,
+cover page / Section 7 - is not yet scraped. Not one of the SRS's 7
+numbered Open Issues itself, just an unaddressed scope gap).
 
 The "recent vs. prior" window is one of time_ranges.RANGE_ORDER (4h/8h/1d/
 1w/1q) - recent covers the window itself, prior covers the equal-length
