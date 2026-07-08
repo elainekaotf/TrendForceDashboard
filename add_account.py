@@ -133,12 +133,19 @@ def main():
         print("Skipping the pipeline run since no scrape ran - nothing new to pick up.")
         return
 
-    print("Running the TrendForceDash pipeline (sync, rebuild, regenerate, publish) ...")
-    result = subprocess.run(['bash', 'run_pipeline.sh', 'core'], cwd=BASE)
-    if result.returncode == 0:
+    # 'core' rebuilds Topic Gaps/Rising Trends/Sentiment; 'accounts' rebuilds
+    # the Account Status tab (FR-05) separately, on its own 8h schedule -
+    # a new account showed up in the former but not the latter the first
+    # time this ran, since only 'core' was being chained here.
+    ok = True
+    for job in ('core', 'accounts'):
+        print(f"Running the TrendForceDash '{job}' pipeline job ...")
+        result = subprocess.run(['bash', 'run_pipeline.sh', job], cwd=BASE)
+        if result.returncode != 0:
+            print(f"[WARN] run_pipeline.sh {job} exited with code {result.returncode} - check pipeline.log.")
+            ok = False
+    if ok:
         print(f"Done. {handle} is live on the dashboard.")
-    else:
-        print(f"[WARN] run_pipeline.sh exited with code {result.returncode} - check pipeline.log.")
 
 
 if __name__ == '__main__':
