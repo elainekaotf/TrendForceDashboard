@@ -482,6 +482,8 @@ def main():
     --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 8px 24px -8px rgba(0,0,0,0.5);
   }}
   * {{ box-sizing: border-box; }}
+  a {{ color: var(--blue); }}
+  a:visited {{ color: var(--blue); }}
   body {{
     background: var(--bg-grad), var(--bg); background-attachment: fixed;
     color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
