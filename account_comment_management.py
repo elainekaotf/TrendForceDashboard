@@ -53,50 +53,29 @@ NEEDS_RESPONSE_THRESHOLD = 5  # replies on a post before it's queued for a draft
 STALE_AFTER_DAYS = 3
 INACTIVE_AFTER_DAYS = 14
 
-# Reply-count and sentiment-score cutoffs that push the draft from a
-# generic acknowledgment toward something that actually reads like it's
-# about THIS post - free/instant/offline, unlike an LLM-drafted version
-# (traded off against that with elainekao: this reuses data already
-# computed by FR-01/03 rather than adding an API key + per-run cost).
+# Reply-count cutoff that adds a warm nod to how much a post has taken off,
+# on top of the base tone - free/instant/offline, unlike an LLM-drafted
+# version (traded off against that with elainekao: no API key/cost, just
+# reuses data already computed by FR-01/03).
 HIGH_ENGAGEMENT_REPLIES = 20
-STRONG_POSITIVE_SCORE = 0.5
-STRONG_NEGATIVE_SCORE = -0.5
 
 
-def focus_phrase(topic_label, text_excerpt):
-    """The topic cluster's label is 4 generic terms; pick whichever one
-    actually appears in THIS post's text so the reply references what the
-    post is about, not just the cluster it landed in."""
-    terms = [t.strip() for t in (topic_label or '').split('/') if t.strip()]
-    text_lower = (text_excerpt or '').lower()
-    for term in sorted(terms, key=len, reverse=True):  # most specific first
-        if term and term.lower() in text_lower:
-            return term
-    return terms[0] if terms else (topic_label or 'this')
-
-
-def draft_reply(sentiment, topic_label, sentiment_score=0.0, reply_count=0, text_excerpt=''):
-    topic = focus_phrase(topic_label, text_excerpt)
+def draft_reply(sentiment, reply_count=0):
     buzzing = reply_count >= HIGH_ENGAGEMENT_REPLIES
 
     if sentiment == 'positive':
-        base = (f"Really glad this landed — thanks for all the love on our {topic} post!"
-                if sentiment_score >= STRONG_POSITIVE_SCORE else
-                f"Thanks for the engagement on our {topic} post — glad it resonated!")
-        base += (f" With {reply_count} replies rolling in, we'll keep this coverage going."
-                 if buzzing else " We'll keep the coverage coming.")
+        base = "Thank you so much for the kind words, it truly means a lot to us!"
+        base += (f" Seeing {reply_count} replies like this makes our day, we'll keep the great content coming."
+                  if buzzing else " We're so glad this resonated with you, and we'll keep the great content coming.")
     elif sentiment == 'negative':
-        base = (f"We hear you on the {topic} post — sounds like this one struck a nerve."
-                if sentiment_score <= STRONG_NEGATIVE_SCORE else
-                f"Appreciate the feedback on our {topic} post.")
-        base += " We'd like to understand the concern better — could you share more detail?"
+        base = "Thank you for taking the time to share your thoughts with us."
+        base += " We really do appreciate the feedback, and we'd love to hear more so we can make things better."
         if buzzing:
-            base += f" With {reply_count} comments on this one, we want to make sure we're addressing it properly."
+            base += f" With {reply_count} people weighing in, we want to make sure everyone feels heard."
     else:
-        base = f"Thanks for weighing in on our {topic} post."
-        base += (f" This one's sparked {reply_count} replies — happy to dig into specifics, "
-                  "just let us know what you'd like covered next." if buzzing else
-                  " Happy to dig into specifics if useful — let us know what you'd like covered next.")
+        base = "Thanks so much for reading and taking the time to comment!"
+        base += (f" This post has sparked {reply_count} replies already, so please let us know what you'd love to see next."
+                  if buzzing else " We'd love to hear what you'd like us to cover next.")
     return base
 
 
@@ -186,7 +165,7 @@ def build_comment_queue(posts, topic_labels_by_cluster, cluster_id_by_post):
             'topic_label': topic_label,
             'sentiment': p['sentiment'],
             'sentiment_score': sentiment_score,
-            'draft_reply': draft_reply(p['sentiment'], topic_label, sentiment_score, replies, text_excerpt),
+            'draft_reply': draft_reply(p['sentiment'], replies),
         })
     flagged.sort(key=lambda r: r['reply_count'], reverse=True)
     return flagged
