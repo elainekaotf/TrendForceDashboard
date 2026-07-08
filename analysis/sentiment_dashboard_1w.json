@@ -36,46 +36,74 @@
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "ai / dram / samsung / meta",
-        "heat": 90.0,
-        "volume": 612,
-        "engagement": 95526
-      },
-      {
         "topic_id": 2,
-        "label": "nvidia / ai / kyber / semianalysis",
-        "heat": 12.4,
-        "volume": 23,
-        "engagement": 16436
+        "label": "ai / 川普 / samsung / meta",
+        "heat": 90.0,
+        "volume": 614,
+        "engagement": 88932
       },
       {
-        "topic_id": 11,
-        "label": "hbm / ai / packaging / memory",
-        "heat": 11.7,
-        "volume": 17,
-        "engagement": 2227
+        "topic_id": 12,
+        "label": "nvidia / kyber / semianalysis / nvl",
+        "heat": 12.2,
+        "volume": 21,
+        "engagement": 16377
       },
       {
-        "topic_id": 5,
-        "label": "ai / meta / 全球 / 鎧俠",
-        "heat": 11.7,
-        "volume": 42,
+        "topic_id": 8,
+        "label": "ai / meta / 全球 / server",
+        "heat": 11.8,
+        "volume": 43,
         "engagement": 2205
       },
       {
-        "topic_id": 1,
-        "label": "台積電 / cowos / ai / 英特爾",
+        "topic_id": 0,
+        "label": "nand / dram / flash / ai",
         "heat": 11.5,
-        "volume": 18,
-        "engagement": 1873
+        "volume": 14,
+        "engagement": 2453
       },
       {
-        "topic_id": 9,
-        "label": "trendforce / dram / nand / ai",
+        "topic_id": 11,
+        "label": "hbm / ai / gpu / packaging",
+        "heat": 10.9,
+        "volume": 12,
+        "engagement": 1071
+      },
+      {
+        "topic_id": 14,
+        "label": "trendforce / dram / ai / apple",
         "heat": 10.6,
-        "volume": 23,
-        "engagement": 742
+        "volume": 20,
+        "engagement": 629
+      },
+      {
+        "topic_id": 17,
+        "label": "hynix / sk / krw / estimates",
+        "heat": 10.5,
+        "volume": 6,
+        "engagement": 6070
+      },
+      {
+        "topic_id": 5,
+        "label": "萬人 / 不過 / 低於 / 並於",
+        "heat": 10.4,
+        "volume": 5,
+        "engagement": 1132
+      },
+      {
+        "topic_id": 6,
+        "label": "台積電 / cowos / ai / 英特爾",
+        "heat": 10.3,
+        "volume": 15,
+        "engagement": 285
+      },
+      {
+        "topic_id": 16,
+        "label": "美元 / amd / 面板 / 英特爾",
+        "heat": 10.3,
+        "volume": 5,
+        "engagement": 313
       },
       {
         "topic_id": 7,
@@ -85,46 +113,32 @@
         "engagement": 125
       },
       {
-        "topic_id": 8,
-        "label": "台股 / 小時 / etf / fed",
+        "topic_id": 4,
+        "label": "早晨財經速解讀",
         "heat": 10.1,
-        "volume": 7,
-        "engagement": 68
+        "volume": 3,
+        "engagement": 891
       },
       {
-        "topic_id": 16,
-        "label": "inference / sram / feed / forward",
+        "topic_id": 3,
+        "label": "ultra / core / plus / intel",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 557
+        "engagement": 106
       },
       {
-        "topic_id": 17,
-        "label": "terafab / 馬斯克 / 英特爾 / fab",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 34
-      },
-      {
-        "topic_id": 15,
+        "topic_id": 9,
         "label": "三星 / sk海力士 / 年量產 / 兆韓圜",
         "heat": 10.0,
         "volume": 13,
         "engagement": 38
       },
       {
-        "topic_id": 3,
-        "label": "川普 / 加密貨幣 / 月底 / 戴爾",
+        "topic_id": 1,
+        "label": "hbm / standard / jesd / sphbm",
         "heat": 10.0,
-        "volume": 11,
-        "engagement": 47
-      },
-      {
-        "topic_id": 14,
-        "label": "聯電 / eps",
-        "heat": 10.0,
-        "volume": 3,
-        "engagement": 38
+        "volume": 2,
+        "engagement": 397
       },
       {
         "topic_id": 10,
@@ -135,31 +149,17 @@
       },
       {
         "topic_id": 13,
-        "label": "萬點",
+        "label": "盤中熱門焦點股",
         "heat": 10.0,
-        "volume": 2,
-        "engagement": 101
+        "volume": 4,
+        "engagement": 23
       },
       {
-        "topic_id": 12,
-        "label": "福壽",
+        "topic_id": 15,
+        "label": "盤前",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 18
-      },
-      {
-        "topic_id": 4,
-        "label": "共和兩黨",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 516
-      },
-      {
-        "topic_id": 6,
-        "label": "道瓊再創高 / 散戶歸隊 / 修正來了嗎 / 大賣空貝瑞狙擊美光",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 535
+        "engagement": 39
       }
     ],
     "sentiment_trend_curve": [
@@ -265,122 +265,140 @@
     "coverage_focus_ranking": [
       {
         "handle": "dylan522p",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / dram / samsung / meta",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / 川普 / samsung / meta",
         "focus_share": 1.0,
         "post_count": 4
       },
       {
         "handle": "yutinghaosfinance",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / dram / samsung / meta",
-        "focus_share": 0.943,
+        "top_topic_id": 2,
+        "top_topic_label": "ai / 川普 / samsung / meta",
+        "focus_share": 0.924,
         "post_count": 105
       },
       {
         "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / dram / samsung / meta",
-        "focus_share": 0.936,
+        "top_topic_id": 2,
+        "top_topic_label": "ai / 川普 / samsung / meta",
+        "focus_share": 0.92,
         "post_count": 125
       },
       {
-        "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / dram / samsung / meta",
-        "focus_share": 0.867,
-        "post_count": 75
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / 川普 / samsung / meta",
+        "focus_share": 0.809,
+        "post_count": 47
       },
       {
         "handle": "TrendForce",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / dram / samsung / meta",
-        "focus_share": 0.828,
+        "top_topic_id": 2,
+        "top_topic_label": "ai / 川普 / samsung / meta",
+        "focus_share": 0.793,
         "post_count": 29
       },
       {
+        "handle": "jukan05",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / 川普 / samsung / meta",
+        "focus_share": 0.787,
+        "post_count": 75
+      },
+      {
         "handle": "QQ_Timmy",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / dram / samsung / meta",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / 川普 / samsung / meta",
         "focus_share": 0.759,
         "post_count": 79
       },
       {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / dram / samsung / meta",
-        "focus_share": 0.745,
-        "post_count": 47
-      },
-      {
         "handle": "technews_tw",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / dram / samsung / meta",
-        "focus_share": 0.654,
+        "top_topic_id": 2,
+        "top_topic_label": "ai / 川普 / samsung / meta",
+        "focus_share": 0.699,
         "post_count": 272
       },
       {
         "handle": "TrendForce.tw",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / dram / samsung / meta",
-        "focus_share": 0.492,
+        "top_topic_id": 2,
+        "top_topic_label": "ai / 川普 / samsung / meta",
+        "focus_share": 0.459,
         "post_count": 61
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "ai / dram / samsung / meta",
-        "total_engagement": 95526,
-        "post_count": 612
-      },
-      {
         "topic_id": 2,
-        "label": "nvidia / ai / kyber / semianalysis",
-        "total_engagement": 16436,
-        "post_count": 23
+        "label": "ai / 川普 / samsung / meta",
+        "total_engagement": 88932,
+        "post_count": 614
       },
       {
-        "topic_id": 11,
-        "label": "hbm / ai / packaging / memory",
-        "total_engagement": 2227,
-        "post_count": 17
+        "topic_id": 12,
+        "label": "nvidia / kyber / semianalysis / nvl",
+        "total_engagement": 16377,
+        "post_count": 21
+      },
+      {
+        "topic_id": 17,
+        "label": "hynix / sk / krw / estimates",
+        "total_engagement": 6070,
+        "post_count": 6
+      },
+      {
+        "topic_id": 0,
+        "label": "nand / dram / flash / ai",
+        "total_engagement": 2453,
+        "post_count": 14
+      },
+      {
+        "topic_id": 8,
+        "label": "ai / meta / 全球 / server",
+        "total_engagement": 2205,
+        "post_count": 43
       },
       {
         "topic_id": 5,
-        "label": "ai / meta / 全球 / 鎧俠",
-        "total_engagement": 2205,
-        "post_count": 42
+        "label": "萬人 / 不過 / 低於 / 並於",
+        "total_engagement": 1132,
+        "post_count": 5
       },
       {
-        "topic_id": 1,
-        "label": "台積電 / cowos / ai / 英特爾",
-        "total_engagement": 1873,
-        "post_count": 18
-      },
-      {
-        "topic_id": 9,
-        "label": "trendforce / dram / nand / ai",
-        "total_engagement": 742,
-        "post_count": 23
-      },
-      {
-        "topic_id": 16,
-        "label": "inference / sram / feed / forward",
-        "total_engagement": 557,
-        "post_count": 2
-      },
-      {
-        "topic_id": 6,
-        "label": "道瓊再創高 / 散戶歸隊 / 修正來了嗎 / 大賣空貝瑞狙擊美光",
-        "total_engagement": 535,
-        "post_count": 2
+        "topic_id": 11,
+        "label": "hbm / ai / gpu / packaging",
+        "total_engagement": 1071,
+        "post_count": 12
       },
       {
         "topic_id": 4,
-        "label": "共和兩黨",
-        "total_engagement": 516,
+        "label": "早晨財經速解讀",
+        "total_engagement": 891,
+        "post_count": 3
+      },
+      {
+        "topic_id": 14,
+        "label": "trendforce / dram / ai / apple",
+        "total_engagement": 629,
+        "post_count": 20
+      },
+      {
+        "topic_id": 1,
+        "label": "hbm / standard / jesd / sphbm",
+        "total_engagement": 397,
         "post_count": 2
+      },
+      {
+        "topic_id": 16,
+        "label": "美元 / amd / 面板 / 英特爾",
+        "total_engagement": 313,
+        "post_count": 5
+      },
+      {
+        "topic_id": 6,
+        "label": "台積電 / cowos / ai / 英特爾",
+        "total_engagement": 285,
+        "post_count": 15
       },
       {
         "topic_id": 7,
@@ -389,46 +407,28 @@
         "post_count": 8
       },
       {
-        "topic_id": 13,
-        "label": "萬點",
-        "total_engagement": 101,
+        "topic_id": 3,
+        "label": "ultra / core / plus / intel",
+        "total_engagement": 106,
         "post_count": 2
       },
       {
-        "topic_id": 8,
-        "label": "台股 / 小時 / etf / fed",
-        "total_engagement": 68,
-        "post_count": 7
-      },
-      {
-        "topic_id": 3,
-        "label": "川普 / 加密貨幣 / 月底 / 戴爾",
-        "total_engagement": 47,
-        "post_count": 11
-      },
-      {
         "topic_id": 15,
+        "label": "盤前",
+        "total_engagement": 39,
+        "post_count": 2
+      },
+      {
+        "topic_id": 9,
         "label": "三星 / sk海力士 / 年量產 / 兆韓圜",
         "total_engagement": 38,
         "post_count": 13
       },
       {
-        "topic_id": 14,
-        "label": "聯電 / eps",
-        "total_engagement": 38,
-        "post_count": 3
-      },
-      {
-        "topic_id": 17,
-        "label": "terafab / 馬斯克 / 英特爾 / fab",
-        "total_engagement": 34,
-        "post_count": 2
-      },
-      {
-        "topic_id": 12,
-        "label": "福壽",
-        "total_engagement": 18,
-        "post_count": 2
+        "topic_id": 13,
+        "label": "盤中熱門焦點股",
+        "total_engagement": 23,
+        "post_count": 4
       },
       {
         "topic_id": 10,
