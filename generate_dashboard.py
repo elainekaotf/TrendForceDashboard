@@ -583,15 +583,20 @@ def main():
     border-radius: 6px; padding: 6px 10px; font-size: 13px;
   }}
   .download-row {{ display: flex; gap: 10px; margin-top: 14px; }}
-  .upload-posts-toolbar {{ display: flex; justify-content: flex-end; margin: 16px 0 10px; }}
+  .upload-posts-toolbar {{ display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px; margin: 16px 0 10px; }}
   .upload-posts-toolbar label {{
     display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--muted);
     text-transform: uppercase; letter-spacing: 0.04em;
   }}
-  .upload-posts-toolbar select {{
+  .upload-posts-toolbar select, .upload-posts-toolbar input[type="text"] {{
     background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px;
     color: var(--text); padding: 7px 10px; font-size: 13px;
   }}
+  .upload-posts-toolbar input[type="text"]:focus, .upload-posts-toolbar select:focus {{
+    outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px var(--blue-dim);
+  }}
+  .upload-search-label {{ flex: 1; min-width: 220px; }}
+  .upload-search-label input {{ flex: 1; min-width: 180px; }}
   .pager {{ display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }}
   .page-btn {{
     background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px;
@@ -1375,6 +1380,7 @@ def main():
   const UPLOAD_PAGE_SIZE = 25;
   let uploadSortKey = 'time_desc';
   let uploadPage = 1;
+  let uploadSearchTerm = '';
 
   // English stopwords (reused from a small fixed list - full server-side
   // clustering pulls sklearn's, out of reach client-side) plus a length
@@ -1388,7 +1394,16 @@ def main():
     // common enough to otherwise crowd out actual entities/topics in a
     // frequency-only extraction with no TF-IDF corpus to weight against.
     'just','today','regarding','really','very','also','some','amazing','great','good','bad','terrible',
-    'awesome','disappointing','news','update','report','story','article']);
+    'awesome','disappointing','news','update','report','story','article',
+    // Geography and generic non-technical business words - "topics" here
+    // are meant to read as industry/technical subject matter (chip names,
+    // companies, products), not country names or generic corporate filler
+    // that says nothing about what's actually being discussed.
+    'china','chinese','usa','america','american','united','states','taiwan','taiwanese','japan','japanese',
+    'korea','korean','europe','european','global','world','worldwide','international','domestic','local',
+    'company','companies','business','businesses','market','markets','industry','industries','economy',
+    'economic','government','country','countries','nation','national','region','regional','sector',
+    'firm','firms','corporate','corporation','group','groups']);
 
   function esc(s) {{ const d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }}
 
@@ -1399,6 +1414,12 @@ def main():
   // frequent 2-4 character substrings within each contiguous CJK run as an
   // approximation of Chinese compound words. Good enough to surface "what
   // does this upload mostly talk about," not a claim of real clustering.
+  // Same reasoning as EN_STOPWORDS - geography and generic business/
+  // economy words read as noise in an "industry topics" list, not signal.
+  const ZH_TOPIC_STOPWORDS = new Set(['中國','中國大陸','大陸','美國','台灣','日本','韓國','歐洲','全球','世界',
+    '國際','國內','本地','地區','區域','公司','企業','商業','市場','產業','行業','經濟','政府','國家','國家隊',
+    '集團','廠商','業者','今天','今年','昨天','明天','目前','最近','報導','新聞','指出','表示']);
+
   function extractTopics(rows, textCol, topN) {{
     const counts = new Map();
     const bump = (term) => counts.set(term, (counts.get(term) || 0) + 1);
@@ -1414,7 +1435,7 @@ def main():
         for (let len = 2; len <= 4 && len <= run.length; len++) {{
           for (let i = 0; i + len <= run.length; i++) {{
             const term = run.slice(i, i + len);
-            if (seenInRow.has(term)) continue;
+            if (seenInRow.has(term) || ZH_TOPIC_STOPWORDS.has(term)) continue;
             seenInRow.add(term);
             bump(term);
           }}
@@ -1457,7 +1478,11 @@ def main():
   function renderUploadPostsPage(rows, meta) {{
     const container = document.getElementById('upload-posts-table');
     const pagerEl = document.getElementById('upload-pager');
-    const sorted = sortUploadRows(rows, uploadSortKey);
+    const term = uploadSearchTerm.trim().toLowerCase();
+    const filtered = term
+      ? rows.filter(r => String(r[meta.textCol] || '').toLowerCase().includes(term) || r.topic.toLowerCase().includes(term))
+      : rows;
+    const sorted = sortUploadRows(filtered, uploadSortKey);
     const totalPages = Math.max(1, Math.ceil(sorted.length / UPLOAD_PAGE_SIZE));
     uploadPage = Math.min(Math.max(1, uploadPage), totalPages);
     const start = (uploadPage - 1) * UPLOAD_PAGE_SIZE;
@@ -1467,7 +1492,8 @@ def main():
       <tr><td>${{esc(r[meta.textCol] || '').slice(0, 90)}}</td>
       <td>${{esc(r.topic)}}</td>
       <td>${{esc(r.converted_timestamp_utc8 || '—')}}</td>
-      <td><span class="badge status-${{r.sentiment === 'positive' ? 'active' : r.sentiment === 'negative' ? 'inactive' : 'stale'}}">${{esc(r.sentiment)}}</span></td></tr>`).join('');
+      <td><span class="badge status-${{r.sentiment === 'positive' ? 'active' : r.sentiment === 'negative' ? 'inactive' : 'stale'}}">${{esc(r.sentiment)}}</span></td></tr>`).join('')
+      || `<tr><td colspan="4" class="empty">No posts match "${{esc(term)}}".</td></tr>`;
     container.innerHTML = `<div class="table-wrap"><table><thead><tr><th>Text</th><th>Topic</th><th>Converted (UTC+8)</th><th>Sentiment</th></tr></thead><tbody>${{bodyRows}}</tbody></table></div>`;
 
     const pageBtns = [];
@@ -1506,7 +1532,7 @@ def main():
     const topicRows = topics.map(({{ term, count }}) =>
       `<tr><td class="cell-primary">${{esc(term)}}</td><td class="num">${{count}}</td></tr>`).join('');
 
-    uploadSortKey = 'time_desc'; uploadPage = 1;
+    uploadSortKey = 'time_desc'; uploadPage = 1; uploadSearchTerm = '';
 
     container.innerHTML = `
       <div class="stat-grid" style="margin-bottom:16px">
@@ -1520,6 +1546,9 @@ def main():
         </div>
       </div>
       <div class="upload-posts-toolbar">
+        <label class="upload-search-label">Search a topic or keyword
+          <input type="text" id="upload-search-input" placeholder="e.g. nvidia, tariff, dram..." autocomplete="off">
+        </label>
         <label>Sort by
           <select id="upload-sort-select">
             <option value="time_desc">Newest first</option>
@@ -1546,6 +1575,11 @@ def main():
     renderUploadPostsPage(rows, meta);
     document.getElementById('upload-sort-select').addEventListener('change', e => {{
       uploadSortKey = e.target.value;
+      uploadPage = 1;
+      renderUploadPostsPage(rows, meta);
+    }});
+    document.getElementById('upload-search-input').addEventListener('input', e => {{
+      uploadSearchTerm = e.target.value;
       uploadPage = 1;
       renderUploadPostsPage(rows, meta);
     }});
