@@ -583,6 +583,23 @@ def main():
     border-radius: 6px; padding: 6px 10px; font-size: 13px;
   }}
   .download-row {{ display: flex; gap: 10px; margin-top: 14px; }}
+  .upload-posts-toolbar {{ display: flex; justify-content: flex-end; margin: 16px 0 10px; }}
+  .upload-posts-toolbar label {{
+    display: flex; align-items: center; gap: 8px; font-size: 11.5px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.04em;
+  }}
+  .upload-posts-toolbar select {{
+    background: var(--surface-2); border: 1px solid var(--border); border-radius: 8px;
+    color: var(--text); padding: 7px 10px; font-size: 13px;
+  }}
+  .pager {{ display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }}
+  .page-btn {{
+    background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px;
+    color: var(--text); font-size: 12.5px; padding: 5px 11px; cursor: pointer;
+    font-variant-numeric: tabular-nums; transition: background 0.1s ease, border-color 0.1s ease;
+  }}
+  .page-btn:hover {{ border-color: var(--blue); }}
+  .page-btn.active {{ background: var(--blue); border-color: var(--blue); color: var(--surface); font-weight: 600; }}
   .btn {{
     background: var(--blue-dim); color: var(--blue); border: 1px solid transparent; border-radius: 7px;
     padding: 8px 14px; font-size: 13px; font-weight: 600; cursor: pointer;
@@ -1355,6 +1372,119 @@ def main():
 
   let uploadedRows = null, uploadedFields = null, uploadedBaseName = 'upload';
 
+  const UPLOAD_PAGE_SIZE = 25;
+  let uploadSortKey = 'time_desc';
+  let uploadPage = 1;
+
+  // English stopwords (reused from a small fixed list - full server-side
+  // clustering pulls sklearn's, out of reach client-side) plus a length
+  // floor, so "the/and/for" don't dominate every upload's topic list.
+  const EN_STOPWORDS = new Set(['the','and','for','are','but','not','you','all','can','her','was','one','our','out',
+    'day','get','has','him','his','how','man','new','now','old','see','two','way','who','boy','did','its','let',
+    'put','say','she','too','use','with','this','that','from','have','more','will','your','about','which','their',
+    'said','there','been','would','could','should','into','than','them','then','when','what','were','are',
+    // Generic filler/sentiment-adjacent words - not stopwords in the
+    // traditional sense, but redundant with the Sentiment column and
+    // common enough to otherwise crowd out actual entities/topics in a
+    // frequency-only extraction with no TF-IDF corpus to weight against.
+    'just','today','regarding','really','very','also','some','amazing','great','good','bad','terrible',
+    'awesome','disappointing','news','update','report','story','article']);
+
+  function esc(s) {{ const d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }}
+
+  // Lightweight client-side topic extraction - not the server-side pipeline's
+  // TF-IDF + K-Means (that needs a Python ML stack this static page doesn't
+  // have), just word/phrase frequency: English words (3+ letters, stopwords
+  // dropped) and, since there's no jieba segmenter in the browser either,
+  // frequent 2-4 character substrings within each contiguous CJK run as an
+  // approximation of Chinese compound words. Good enough to surface "what
+  // does this upload mostly talk about," not a claim of real clustering.
+  function extractTopics(rows, textCol, topN) {{
+    const counts = new Map();
+    const bump = (term) => counts.set(term, (counts.get(term) || 0) + 1);
+    for (const r of rows) {{
+      const text = String(r[textCol] || '');
+      const seenInRow = new Set();
+      for (const w of text.toLowerCase().match(/[a-z]{{3,}}/g) || []) {{
+        if (EN_STOPWORDS.has(w) || seenInRow.has(w)) continue;
+        seenInRow.add(w);
+        bump(w);
+      }}
+      for (const run of text.match(/[一-鿿]{{2,}}/g) || []) {{
+        for (let len = 2; len <= 4 && len <= run.length; len++) {{
+          for (let i = 0; i + len <= run.length; i++) {{
+            const term = run.slice(i, i + len);
+            if (seenInRow.has(term)) continue;
+            seenInRow.add(term);
+            bump(term);
+          }}
+        }}
+      }}
+    }}
+    // A term in nearly every row is boilerplate (a shared connector word,
+    // a recurring sign-off), not a topic - a real topic differentiates
+    // SOME posts from others. Cap at 60% of rows so frequency alone can't
+    // let a common word crowd out the actual distinguishing terms.
+    const maxAllowed = Math.max(2, Math.floor(rows.length * 0.6));
+    return [...counts.entries()]
+      .filter(([, c]) => c >= 2 && c <= maxAllowed)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, topN)
+      .map(([term, count]) => ({{ term, count }}));
+  }}
+
+  function assignTopic(text, topics) {{
+    const lower = String(text || '').toLowerCase();
+    for (const {{ term }} of topics) {{
+      if (lower.includes(term)) return term;
+    }}
+    return '(other)';
+  }}
+
+  function sortUploadRows(rows, key) {{
+    const sorted = rows.slice();
+    const sentimentRank = {{ positive: 2, neutral: 1, negative: 0 }};
+    switch (key) {{
+      case 'time_desc': return sorted.sort((a, b) => (b.converted_timestamp_utc8 || '').localeCompare(a.converted_timestamp_utc8 || ''));
+      case 'time_asc': return sorted.sort((a, b) => (a.converted_timestamp_utc8 || '').localeCompare(b.converted_timestamp_utc8 || ''));
+      case 'sentiment_desc': return sorted.sort((a, b) => sentimentRank[b.sentiment] - sentimentRank[a.sentiment]);
+      case 'sentiment_asc': return sorted.sort((a, b) => sentimentRank[a.sentiment] - sentimentRank[b.sentiment]);
+      case 'topic': return sorted.sort((a, b) => a.topic.localeCompare(b.topic));
+      default: return sorted;
+    }}
+  }}
+
+  function renderUploadPostsPage(rows, meta) {{
+    const container = document.getElementById('upload-posts-table');
+    const pagerEl = document.getElementById('upload-pager');
+    const sorted = sortUploadRows(rows, uploadSortKey);
+    const totalPages = Math.max(1, Math.ceil(sorted.length / UPLOAD_PAGE_SIZE));
+    uploadPage = Math.min(Math.max(1, uploadPage), totalPages);
+    const start = (uploadPage - 1) * UPLOAD_PAGE_SIZE;
+    const pageRows = sorted.slice(start, start + UPLOAD_PAGE_SIZE);
+
+    const bodyRows = pageRows.map(r => `
+      <tr><td>${{esc(r[meta.textCol] || '').slice(0, 90)}}</td>
+      <td>${{esc(r.topic)}}</td>
+      <td>${{esc(r.converted_timestamp_utc8 || '—')}}</td>
+      <td><span class="badge status-${{r.sentiment === 'positive' ? 'active' : r.sentiment === 'negative' ? 'inactive' : 'stale'}}">${{esc(r.sentiment)}}</span></td></tr>`).join('');
+    container.innerHTML = `<div class="table-wrap"><table><thead><tr><th>Text</th><th>Topic</th><th>Converted (UTC+8)</th><th>Sentiment</th></tr></thead><tbody>${{bodyRows}}</tbody></table></div>`;
+
+    const pageBtns = [];
+    for (let p = 1; p <= totalPages; p++) {{
+      pageBtns.push(`<button class="page-btn${{p === uploadPage ? ' active' : ''}}" data-page="${{p}}">${{p}}</button>`);
+    }}
+    pagerEl.innerHTML = totalPages > 1
+      ? `<div class="pager">${{pageBtns.join('')}}</div><p class="muted">Showing ${{start + 1}}-${{Math.min(start + UPLOAD_PAGE_SIZE, sorted.length)}} of ${{sorted.length}}</p>`
+      : `<p class="muted">${{sorted.length}} post(s)</p>`;
+    pagerEl.querySelectorAll('.page-btn').forEach(btn => {{
+      btn.addEventListener('click', () => {{
+        uploadPage = Number(btn.dataset.page);
+        renderUploadPostsPage(rows, meta);
+      }});
+    }});
+  }}
+
   function renderUploadResults(rows, fields, meta) {{
     const container = document.getElementById('upload-results');
     if (!rows.length) {{
@@ -1370,10 +1500,13 @@ def main():
     const total = rows.length;
     const rankRows = Object.entries(counts).map(([k, v]) =>
       `<tr><td class="cell-primary">${{k}}</td><td class="num">${{v}}</td><td class="num">${{Math.round(v/total*1000)/10}}%</td></tr>`).join('');
-    const sampleRows = rows.slice(0, 15).map(r => `
-      <tr><td>${{esc(r[meta.textCol] || '').slice(0, 90)}}</td>
-      <td>${{r.converted_timestamp_utc8 || '—'}}</td>
-      <td><span class="badge status-${{r.sentiment === 'positive' ? 'active' : r.sentiment === 'negative' ? 'inactive' : 'stale'}}">${{r.sentiment}}</span></td></tr>`).join('');
+
+    const topics = extractTopics(rows, meta.textCol, 12);
+    for (const r of rows) r.topic = assignTopic(r[meta.textCol], topics);
+    const topicRows = topics.map(({{ term, count }}) =>
+      `<tr><td class="cell-primary">${{esc(term)}}</td><td class="num">${{count}}</td></tr>`).join('');
+
+    uploadSortKey = 'time_desc'; uploadPage = 1;
 
     container.innerHTML = `
       <div class="stat-grid" style="margin-bottom:16px">
@@ -1382,21 +1515,42 @@ def main():
       </div>
       <div class="col-2">
         <div>${{table_(['Sentiment', '#Count', '#Share'], rankRows)}}</div>
-        <div>${{table_(['Text', 'Converted (UTC+8)', 'Sentiment'], sampleRows)}}</div>
+        <div>
+          ${{table_(['Topic', '#Mentions'], topicRows || '<tr><td colspan="2" class="empty">Not enough repeated words to surface a topic.</td></tr>')}}
+        </div>
       </div>
+      <div class="upload-posts-toolbar">
+        <label>Sort by
+          <select id="upload-sort-select">
+            <option value="time_desc">Newest first</option>
+            <option value="time_asc">Oldest first</option>
+            <option value="sentiment_desc">Sentiment: positive first</option>
+            <option value="sentiment_asc">Sentiment: negative first</option>
+            <option value="topic">Topic (A-Z)</option>
+          </select>
+        </label>
+      </div>
+      <div id="upload-posts-table"></div>
+      <div id="upload-pager"></div>
       <div class="download-row">
         <button class="btn" id="download-csv-btn">Download CSV</button>
         <button class="btn" id="download-xlsx-btn">Download Excel</button>
         <button class="btn" id="download-print-btn">Print / Save as PDF</button>
       </div>
     `;
-    function esc(s) {{ const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }}
     function table_(headers, rowsHtml) {{
       const head = headers.map(h => h.startsWith('#') ? `<th class="num">${{h.slice(1)}}</th>` : `<th>${{h}}</th>`).join('');
       return `<div class="table-wrap"><table><thead><tr>${{head}}</tr></thead><tbody>${{rowsHtml}}</tbody></table></div>`;
     }}
 
-    const outFields = [...fields, 'converted_timestamp_utc8', 'sentiment'];
+    renderUploadPostsPage(rows, meta);
+    document.getElementById('upload-sort-select').addEventListener('change', e => {{
+      uploadSortKey = e.target.value;
+      uploadPage = 1;
+      renderUploadPostsPage(rows, meta);
+    }});
+
+    const outFields = [...fields, 'converted_timestamp_utc8', 'sentiment', 'topic'];
     document.getElementById('download-csv-btn').onclick = () => {{
       const lines = [outFields.map(csvCell).join(',')];
       for (const r of rows) lines.push(outFields.map(f => csvCell(r[f])).join(','));
