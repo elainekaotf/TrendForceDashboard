@@ -1284,9 +1284,33 @@ def main():
     '內容', '文字', '貼文', '貼文內容', '內文', '文章內容', '訊息', '標題'];
   const TIMESTAMP_COLUMN_CANDIDATES = ['timestamp', 'created_at', 'date', 'exactDate', 'scrapedAt',
     '時間', '日期', '發布時間', '發文時間', '貼文時間', '建立時間', '時間戳記'];
+  // Interaction = every matching engagement column summed per row (likes +
+  // comments + shares + ...); views is kept separate since it's a reach
+  // metric, not an engagement one, and the two shouldn't be added together.
+  const ENGAGEMENT_COLUMN_CANDIDATES = ['likes', 'reactions', 'retweets', 'shares', 'comments', 'replies',
+    '讚', '按讚數', '讚數', '留言', '留言數', '評論', '評論數', '分享', '分享數', '轉發'];
+  const VIEWS_COLUMN_CANDIDATES = ['views', 'view_count', 'impressions', '觀看數', '瀏覽數', '觀看次數', '瀏覽次數'];
 
   function detectColumn(fieldnames, candidates) {{
     return candidates.find(c => fieldnames.includes(c)) || null;
+  }}
+
+  function detectColumns(fieldnames, candidates) {{
+    return candidates.filter(c => fieldnames.includes(c));
+  }}
+
+  // Mirrors cluster_topics.py's parse_count: strips commas, handles a
+  // trailing K/M shorthand some exports use (e.g. "1.2K", "3M").
+  function parseCount(v) {{
+    if (v == null || v === '') return 0;
+    const s = String(v).trim().replace(/,/g, '');
+    const m = s.match(/^([\d.]+)\s*(K|M)?$/i);
+    if (!m) return 0;
+    const n = parseFloat(m[1]);
+    if (isNaN(n)) return 0;
+    if (/k/i.test(m[2] || '')) return Math.round(n * 1000);
+    if (/m/i.test(m[2] || '')) return Math.round(n * 1000000);
+    return Math.round(n);
   }}
 
   // Convert a wall-clock time assumed to be in `timeZone` to a real UTC
@@ -1471,6 +1495,8 @@ def main():
       case 'sentiment_desc': return sorted.sort((a, b) => sentimentRank[b.sentiment] - sentimentRank[a.sentiment]);
       case 'sentiment_asc': return sorted.sort((a, b) => sentimentRank[a.sentiment] - sentimentRank[b.sentiment]);
       case 'topic': return sorted.sort((a, b) => a.topic.localeCompare(b.topic));
+      case 'interaction_desc': return sorted.sort((a, b) => b._interaction - a._interaction);
+      case 'views_desc': return sorted.sort((a, b) => (b._views || 0) - (a._views || 0));
       default: return sorted;
     }}
   }}
@@ -1488,13 +1514,19 @@ def main():
     const start = (uploadPage - 1) * UPLOAD_PAGE_SIZE;
     const pageRows = sorted.slice(start, start + UPLOAD_PAGE_SIZE);
 
+    const extraCols = (meta.hasEngagement ? 1 : 0) + (meta.hasViews ? 1 : 0);
     const bodyRows = pageRows.map(r => `
       <tr><td>${{esc(r[meta.textCol] || '').slice(0, 90)}}</td>
       <td>${{esc(r.topic)}}</td>
       <td>${{esc(r.converted_timestamp_utc8 || '—')}}</td>
-      <td><span class="badge status-${{r.sentiment === 'positive' ? 'active' : r.sentiment === 'negative' ? 'inactive' : 'stale'}}">${{esc(r.sentiment)}}</span></td></tr>`).join('')
-      || `<tr><td colspan="4" class="empty">No posts match "${{esc(term)}}".</td></tr>`;
-    container.innerHTML = `<div class="table-wrap"><table><thead><tr><th>Text</th><th>Topic</th><th>Converted (UTC+8)</th><th>Sentiment</th></tr></thead><tbody>${{bodyRows}}</tbody></table></div>`;
+      <td><span class="badge status-${{r.sentiment === 'positive' ? 'active' : r.sentiment === 'negative' ? 'inactive' : 'stale'}}">${{esc(r.sentiment)}}</span></td>
+      ${{meta.hasEngagement ? `<td class="num">${{r._interaction.toLocaleString()}}</td>` : ''}}
+      ${{meta.hasViews ? `<td class="num">${{(r._views || 0).toLocaleString()}}</td>` : ''}}</tr>`).join('')
+      || `<tr><td colspan="${{4 + extraCols}}" class="empty">No posts match "${{esc(term)}}".</td></tr>`;
+    container.innerHTML = `<div class="table-wrap"><table><thead><tr><th>Text</th><th>Topic</th><th>Converted (UTC+8)</th><th>Sentiment</th>
+      ${{meta.hasEngagement ? '<th class="num">Interaction</th>' : ''}}
+      ${{meta.hasViews ? '<th class="num">Views</th>' : ''}}
+      </tr></thead><tbody>${{bodyRows}}</tbody></table></div>`;
 
     const pageBtns = [];
     for (let p = 1; p <= totalPages; p++) {{
@@ -1556,6 +1588,8 @@ def main():
             <option value="sentiment_desc">Sentiment: positive first</option>
             <option value="sentiment_asc">Sentiment: negative first</option>
             <option value="topic">Topic (A-Z)</option>
+            ${{meta.hasEngagement ? '<option value="interaction_desc">Interaction: most first</option>' : ''}}
+            ${{meta.hasViews ? '<option value="views_desc">Views: most first</option>' : ''}}
           </select>
         </label>
       </div>
@@ -1612,6 +1646,8 @@ def main():
       document.getElementById('upload-results').innerHTML = '<p class="empty">No text/content/message column found in this file.</p>';
       return;
     }}
+    const engagementCols = detectColumns(fields, ENGAGEMENT_COLUMN_CANDIDATES);
+    const viewsCol = detectColumn(fields, VIEWS_COLUMN_CANDIDATES);
     const sourceTz = document.getElementById('upload-tz').value;
     const rows = parsed.map(r => {{
       const {{ date, hadOffset }} = tsCol ? parseUploadTimestamp(String(r[tsCol] ?? ''), sourceTz) : {{ date: null, hadOffset: false }};
@@ -1623,10 +1659,12 @@ def main():
           hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23',
         }}).format(date).replace(' ', 'T') + '+08:00' : null,
         _hadOffset: hadOffset,
+        _interaction: engagementCols.reduce((sum, c) => sum + parseCount(r[c]), 0),
+        _views: viewsCol ? parseCount(r[viewsCol]) : null,
       }};
     }});
     uploadedRows = rows; uploadedFields = fields;
-    renderUploadResults(rows, fields, {{ textCol, tsCol }});
+    renderUploadResults(rows, fields, {{ textCol, tsCol, hasEngagement: engagementCols.length > 0, hasViews: !!viewsCol }});
   }}
 
   document.getElementById('upload-file').addEventListener('change', e => {{
