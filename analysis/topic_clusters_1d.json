@@ -1,46 +1,69 @@
 {
   "clusters": [
     {
-      "id": 0,
-      "label": "ai / memory / 台積電 / dram",
-      "size": 120,
+      "id": 10,
+      "label": "ai / memory / chip / openai",
+      "size": 134,
       "accounts": {
-        "TrendForce": 4,
-        "technews_tw": 40,
+        "TrendForce": 5,
+        "technews_tw": 35,
         "SemiAnalysis_": 12,
-        "jukan05": 4,
-        "QQ_Timmy": 13,
-        "TrendForce.tw": 1,
+        "jukan05": 3,
+        "QQ_Timmy": 12,
+        "tphuang": 9,
+        "tengyanAI": 10,
+        "TrendForce.tw": 2,
         "ctee.fans": 36,
         "yutinghaosfinance": 10
       },
       "engagement_by_account": {
-        "TrendForce": 36,
-        "technews_tw": 160,
+        "TrendForce": 44,
+        "technews_tw": 134,
         "SemiAnalysis_": 1467,
-        "jukan05": 1239,
-        "QQ_Timmy": 513,
-        "TrendForce.tw": 1,
+        "jukan05": 1107,
+        "QQ_Timmy": 478,
+        "tphuang": 658,
+        "tengyanAI": 224,
+        "TrendForce.tw": 8,
         "ctee.fans": 858,
         "yutinghaosfinance": 2892
       }
     },
     {
-      "id": 5,
-      "label": "nvidia / ai / amd / gpu",
-      "size": 5,
+      "id": 4,
+      "label": "nvidia / ai / gpu / rubin",
+      "size": 6,
       "accounts": {
         "TrendForce": 3,
-        "jukan05": 2
+        "jukan05": 2,
+        "tengyanAI": 1
       },
       "engagement_by_account": {
         "TrendForce": 112,
-        "jukan05": 2326
+        "jukan05": 2326,
+        "tengyanAI": 9
       }
     },
     {
-      "id": 1,
-      "label": "ai / pcb / 科技早報 / physical",
+      "id": 14,
+      "label": "dram / nand / trendforce / ddr",
+      "size": 4,
+      "accounts": {
+        "technews_tw": 1,
+        "jukan05": 1,
+        "QQ_Timmy": 1,
+        "TrendForce.tw": 1
+      },
+      "engagement_by_account": {
+        "technews_tw": 10,
+        "jukan05": 132,
+        "QQ_Timmy": 35,
+        "TrendForce.tw": 9
+      }
+    },
+    {
+      "id": 16,
+      "label": "ai / 科技早報 / 中國 / physical",
       "size": 4,
       "accounts": {
         "technews_tw": 4
@@ -50,33 +73,18 @@
       }
     },
     {
-      "id": 2,
-      "label": "trendforce / dram / ai / csp",
+      "id": 1,
+      "label": "hbm / memory / samsung / dram",
       "size": 2,
       "accounts": {
-        "technews_tw": 1,
-        "TrendForce.tw": 1
+        "technews_tw": 2
       },
       "engagement_by_account": {
-        "technews_tw": 1,
-        "TrendForce.tw": 9
+        "technews_tw": 11
       }
     },
     {
-      "id": 10,
-      "label": "datatrack / 看詳情 / 了解詳情 / 美國",
-      "size": 2,
-      "accounts": {
-        "TrendForce": 1,
-        "TrendForce.tw": 1
-      },
-      "engagement_by_account": {
-        "TrendForce": 8,
-        "TrendForce.tw": 7
-      }
-    },
-    {
-      "id": 13,
+      "id": 3,
       "label": "spacex / ipo / 馬斯克 / ai",
       "size": 2,
       "accounts": {
@@ -87,8 +95,30 @@
       }
     },
     {
-      "id": 8,
-      "label": "鎧俠 / nand / ai / 市場",
+      "id": 5,
+      "label": "read / weekend / analysis / chart",
+      "size": 2,
+      "accounts": {
+        "tengyanAI": 2
+      },
+      "engagement_by_account": {
+        "tengyanAI": 2
+      }
+    },
+    {
+      "id": 17,
+      "label": "輝達 / ai / 黃仁勳 / blackwell",
+      "size": 2,
+      "accounts": {
+        "technews_tw": 2
+      },
+      "engagement_by_account": {
+        "technews_tw": 4
+      }
+    },
+    {
+      "id": 12,
+      "label": "trendforce / ai / csp / oled",
       "size": 1,
       "accounts": {
         "technews_tw": 1
@@ -96,14 +126,25 @@
       "engagement_by_account": {
         "technews_tw": 1
       }
+    },
+    {
+      "id": 13,
+      "label": "台積電 / 英特爾 / 魏哲家 / 奈米",
+      "size": 1,
+      "accounts": {
+        "technews_tw": 1
+      },
+      "engagement_by_account": {
+        "technews_tw": 2
+      }
     }
   ],
   "gaps": [],
   "suggested_entry_points": [],
   "window": {
-    "start_utc": "2026-07-08T08:53:42.865953+00:00",
-    "end_utc": "2026-07-09T08:53:42.865953+00:00",
-    "start_tw": "Jul 08, 16:53",
-    "end_tw": "Jul 09, 16:53"
+    "start_utc": "2026-07-08T16:56:00+08:00",
+    "end_utc": "2026-07-09T16:56:00+08:00",
+    "start_tw": "Jul 08, 16:56",
+    "end_tw": "Jul 09, 16:56"
   }
 }
