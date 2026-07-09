@@ -133,6 +133,19 @@ def fmt_int(n):
     return f"{n:,}" if isinstance(n, (int, float)) else esc(n)
 
 
+def fmt_dt(iso_str):
+    """Account status timestamps came through as raw ISO strings (some
+    +08:00, some +00:00, some with microseconds - whatever the source data
+    happened to have) instead of one consistent, readable format. Always
+    show Taiwan time, plain "YYYY-MM-DD HH:MM"."""
+    if not iso_str:
+        return '—'
+    try:
+        return datetime.fromisoformat(iso_str).astimezone(TAIWAN_TZ).strftime('%Y-%m-%d %H:%M')
+    except ValueError:
+        return esc(iso_str)
+
+
 def panel(body_html, title=None, eyebrow=None):
     """Consistent card wrapper for a titled block of content - every major
     piece of content (a table, a stat row, a chart) sits inside one of
@@ -345,7 +358,7 @@ def render_accounts(data):
         <td><span class="badge status-{esc(a['status'])}">{esc(a['status'])}</span></td>
         <td class="num">{fmt_int(a['follower_count']) if a['follower_count'] else '—'}</td>
         <td class="num">{fmt_int(a['post_count'])}</td>
-        <td>{esc(a['last_post_at'] or '—')}</td>
+        <td>{fmt_dt(a['last_post_at'])}</td>
         <td><button class="remove-account-btn" data-platform="{esc(a['platform'])}" data-handle="{esc(a['handle'])}">Remove</button></td>
       </tr>""" for a in data.get('accounts', []))
     body = table(['Handle', 'Platform', 'Status', '#Followers', '#Posts', 'Last post', ''], rows)
