@@ -1,258 +1,291 @@
 {
-  "generated_at": "2026-07-09T04:20:00+00:00",
+  "generated_at": "2026-07-09T08:53:42.865953+00:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-09T00:20:00+00:00",
-    "end_utc": "2026-07-09T04:20:00+00:00",
-    "start_tw": "Jul 09, 08:20",
-    "end_tw": "Jul 09, 12:20"
+    "start_utc": "2026-07-09T04:53:42.865953+00:00",
+    "end_utc": "2026-07-09T08:53:42.865953+00:00",
+    "start_tw": "Jul 09, 12:53",
+    "end_tw": "Jul 09, 16:53"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 27,
+      "total_posts": 35,
       "sentiment_counts": {
-        "neutral": 12,
-        "positive": 8,
-        "negative": 7
+        "positive": 16,
+        "neutral": 11,
+        "negative": 8
       },
       "sentiment_share": {
-        "neutral": 0.444,
-        "positive": 0.296,
-        "negative": 0.259
+        "positive": 0.457,
+        "neutral": 0.314,
+        "negative": 0.229
       },
       "top_terms": [
         "See",
         "more",
-        "spacex",
-        "hbm",
-        "#蘋果",
-        "SpaceX",
-        "盤中創掛牌以來新低",
-        "爆料美國把關失職",
-        "商務部工業暨安全局疏忽",
-        "資金轉向"
+        "meta",
+        "wolfspeed",
+        "memory",
+        "for",
+        "its",
+        "the",
+        "#輝達",
+        "#記憶體"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 1,
-        "label": "cluster-1",
+        "label": "market / dram / 輝達 / memory",
         "heat": 90.0,
-        "volume": 14,
-        "engagement": 517
+        "volume": 21,
+        "engagement": 290
       },
       {
-        "topic_id": 2,
-        "label": "spacex",
-        "heat": 15.0,
+        "topic_id": 6,
+        "label": "ai / memory / 記憶體",
+        "heat": 10.5,
         "volume": 3,
-        "engagement": 57
+        "engagement": 7
+      },
+      {
+        "topic_id": 5,
+        "label": "trendforce / server / dram / 記憶體",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 10
       },
       {
         "topic_id": 0,
-        "label": "ai",
-        "heat": 12.2,
-        "volume": 5,
-        "engagement": 20
-      },
-      {
-        "topic_id": 4,
-        "label": "蘋果 / ai",
+        "label": "wolfspeed / navitas",
         "heat": 10.0,
-        "volume": 3,
-        "engagement": 4
+        "volume": 2,
+        "engagement": 21
       },
       {
         "topic_id": 3,
-        "label": "fomc",
+        "label": "meta / ai",
+        "heat": 10.0,
+        "volume": 3,
+        "engagement": 5
+      },
+      {
+        "topic_id": 4,
+        "label": "字節跳動 / deepseek / 晶片 / 輝達",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 44
+        "engagement": 16
+      },
+      {
+        "topic_id": 2,
+        "label": "不過",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 82
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-09T00:19:59.999994+00:00",
-        "bucket_end": "2026-07-09T00:37:08.571423+00:00",
-        "positive": 2,
-        "neutral": 2,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-09T00:37:08.571423+00:00",
-        "bucket_end": "2026-07-09T00:54:17.142852+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-09T00:54:17.142852+00:00",
-        "bucket_end": "2026-07-09T01:11:25.714281+00:00",
+        "bucket_start": "2026-07-09T04:53:42.865947+00:00",
+        "bucket_end": "2026-07-09T05:10:51.437376+00:00",
         "positive": 2,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-09T01:11:25.714281+00:00",
-        "bucket_end": "2026-07-09T01:28:34.285710+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-09T01:28:34.285710+00:00",
-        "bucket_end": "2026-07-09T01:45:42.857139+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-09T01:45:42.857139+00:00",
-        "bucket_end": "2026-07-09T02:02:51.428568+00:00",
-        "positive": 1,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-09T02:02:51.428568+00:00",
-        "bucket_end": "2026-07-09T02:19:59.999997+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-09T02:19:59.999997+00:00",
-        "bucket_end": "2026-07-09T02:37:08.571426+00:00",
-        "positive": 0,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-09T02:37:08.571426+00:00",
-        "bucket_end": "2026-07-09T02:54:17.142855+00:00",
+        "bucket_start": "2026-07-09T05:10:51.437376+00:00",
+        "bucket_end": "2026-07-09T05:28:00.008805+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-09T02:54:17.142855+00:00",
-        "bucket_end": "2026-07-09T03:11:25.714284+00:00",
-        "positive": 0,
-        "neutral": 2,
+        "bucket_start": "2026-07-09T05:28:00.008805+00:00",
+        "bucket_end": "2026-07-09T05:45:08.580234+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-09T05:45:08.580234+00:00",
+        "bucket_end": "2026-07-09T06:02:17.151663+00:00",
+        "positive": 2,
+        "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-09T03:11:25.714284+00:00",
-        "bucket_end": "2026-07-09T03:28:34.285713+00:00",
-        "positive": 0,
-        "neutral": 0,
+        "bucket_start": "2026-07-09T06:02:17.151663+00:00",
+        "bucket_end": "2026-07-09T06:19:25.723092+00:00",
+        "positive": 2,
+        "neutral": 2,
         "negative": 2
       },
       {
-        "bucket_start": "2026-07-09T03:28:34.285713+00:00",
-        "bucket_end": "2026-07-09T03:45:42.857142+00:00",
+        "bucket_start": "2026-07-09T06:19:25.723092+00:00",
+        "bucket_end": "2026-07-09T06:36:34.294521+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-09T06:36:34.294521+00:00",
+        "bucket_end": "2026-07-09T06:53:42.865950+00:00",
+        "positive": 2,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T06:53:42.865950+00:00",
+        "bucket_end": "2026-07-09T07:10:51.437379+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-09T03:45:42.857142+00:00",
-        "bucket_end": "2026-07-09T04:02:51.428571+00:00",
+        "bucket_start": "2026-07-09T07:10:51.437379+00:00",
+        "bucket_end": "2026-07-09T07:28:00.008808+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-09T07:28:00.008808+00:00",
+        "bucket_end": "2026-07-09T07:45:08.580237+00:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-09T07:45:08.580237+00:00",
+        "bucket_end": "2026-07-09T08:02:17.151666+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T08:02:17.151666+00:00",
+        "bucket_end": "2026-07-09T08:19:25.723095+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T08:19:25.723095+00:00",
+        "bucket_end": "2026-07-09T08:36:34.294524+00:00",
         "positive": 0,
         "neutral": 1,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-09T04:02:51.428571+00:00",
-        "bucket_end": "2026-07-09T04:20:00+00:00",
-        "positive": 1,
-        "neutral": 1,
+        "bucket_start": "2026-07-09T08:36:34.294524+00:00",
+        "bucket_end": "2026-07-09T08:53:42.865953+00:00",
+        "positive": 0,
+        "neutral": 0,
         "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 2,
-        "top_topic_label": "spacex",
+        "handle": "jukan05",
+        "top_topic_id": 1,
+        "top_topic_label": "market / dram / 輝達 / memory",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "QQ_Timmy",
+        "handle": "TrendForce",
         "top_topic_id": 1,
-        "top_topic_label": "cluster-1",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 1,
-        "top_topic_label": "cluster-1",
-        "focus_share": 1.0,
-        "post_count": 1
+        "top_topic_label": "market / dram / 輝達 / memory",
+        "focus_share": 0.667,
+        "post_count": 3
       },
       {
         "handle": "ctee.fans",
         "top_topic_id": 1,
-        "top_topic_label": "cluster-1",
-        "focus_share": 0.636,
-        "post_count": 11
+        "top_topic_label": "market / dram / 輝達 / memory",
+        "focus_share": 0.667,
+        "post_count": 9
       },
       {
         "handle": "technews_tw",
         "top_topic_id": 1,
-        "top_topic_label": "cluster-1",
-        "focus_share": 0.385,
-        "post_count": 13
+        "top_topic_label": "market / dram / 輝達 / memory",
+        "focus_share": 0.611,
+        "post_count": 18
+      },
+      {
+        "handle": "TrendForce.tw",
+        "top_topic_id": 6,
+        "top_topic_label": "ai / memory / 記憶體",
+        "focus_share": 0.5,
+        "post_count": 2
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 1,
+        "top_topic_label": "market / dram / 輝達 / memory",
+        "focus_share": 0.5,
+        "post_count": 2
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 1,
-        "label": "cluster-1",
-        "total_engagement": 517,
-        "post_count": 14
+        "label": "market / dram / 輝達 / memory",
+        "total_engagement": 290,
+        "post_count": 21
       },
       {
         "topic_id": 2,
-        "label": "spacex",
-        "total_engagement": 57,
-        "post_count": 3
-      },
-      {
-        "topic_id": 3,
-        "label": "fomc",
-        "total_engagement": 44,
+        "label": "不過",
+        "total_engagement": 82,
         "post_count": 2
       },
       {
         "topic_id": 0,
-        "label": "ai",
-        "total_engagement": 20,
-        "post_count": 5
+        "label": "wolfspeed / navitas",
+        "total_engagement": 21,
+        "post_count": 2
       },
       {
         "topic_id": 4,
-        "label": "蘋果 / ai",
-        "total_engagement": 4,
+        "label": "字節跳動 / deepseek / 晶片 / 輝達",
+        "total_engagement": 16,
+        "post_count": 2
+      },
+      {
+        "topic_id": 5,
+        "label": "trendforce / server / dram / 記憶體",
+        "total_engagement": 10,
+        "post_count": 2
+      },
+      {
+        "topic_id": 6,
+        "label": "ai / memory / 記憶體",
+        "total_engagement": 7,
+        "post_count": 3
+      },
+      {
+        "topic_id": 3,
+        "label": "meta / ai",
+        "total_engagement": 5,
         "post_count": 3
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 24,
-          "likes": 609,
-          "engagement": 637,
-          "avg_engagement": 26.5
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 3,
-          "likes": 4,
-          "engagement": 5,
-          "avg_engagement": 1.7
+          "post_count": 35,
+          "likes": 377,
+          "engagement": 431,
+          "avg_engagement": 12.3
         },
         "evening": {
           "post_count": 0,
@@ -267,7 +300,7 @@
           "avg_engagement": 0.0
         }
       },
-      "peak_slot": "morning"
+      "peak_slot": "afternoon"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,
