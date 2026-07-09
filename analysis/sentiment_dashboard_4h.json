@@ -1,192 +1,226 @@
 {
-  "generated_at": "2026-07-08T14:30:00+00:00",
+  "generated_at": "2026-07-09T09:02:35+08:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-08T10:30:00+00:00",
-    "end_utc": "2026-07-08T14:30:00+00:00",
-    "start_tw": "Jul 08, 18:30",
-    "end_tw": "Jul 08, 22:30"
+    "start_utc": "2026-07-09T05:02:35+08:00",
+    "end_utc": "2026-07-09T09:02:35+08:00",
+    "start_tw": "Jul 09, 05:02",
+    "end_tw": "Jul 09, 09:02"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 18,
+      "total_posts": 19,
       "sentiment_counts": {
-        "neutral": 5,
-        "positive": 8,
-        "negative": 5
+        "positive": 9,
+        "negative": 3,
+        "neutral": 7
       },
       "sentiment_share": {
-        "neutral": 0.278,
-        "positive": 0.444,
-        "negative": 0.278
+        "positive": 0.474,
+        "negative": 0.158,
+        "neutral": 0.368
       },
       "top_terms": [
-        "See",
+        "and",
+        "the",
         "more",
-        "日持續上沖下洗",
-        "部分高價股在近期波動中",
-        "痛失千金寶座",
-        "摩根大通證券反而趁回檔時出手",
-        "逆勢調升這一檔財務預期",
-        "看好股價未來重返四位數等級",
-        "國際貨幣基金組織",
-        "IMF"
+        "The",
+        "See",
+        "年關鍵零組件漲價表",
+        "dram",
+        "server",
+        "race",
+        "ECTC"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "cluster-0",
+        "topic_id": 1,
+        "label": "just / ectc / guc / em",
         "heat": 90.0,
-        "volume": 16,
-        "engagement": 2394
+        "volume": 15,
+        "engagement": 730
       },
       {
-        "topic_id": 1,
-        "label": "不過",
+        "topic_id": 2,
+        "label": "ai",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 134
+        "engagement": 10
+      },
+      {
+        "topic_id": 0,
+        "label": "gb / xai",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 29
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-08T10:29:59.999994+00:00",
-        "bucket_end": "2026-07-08T10:47:08.571423+00:00",
+        "bucket_start": "2026-07-09T05:02:34.999994+08:00",
+        "bucket_end": "2026-07-09T05:19:43.571423+08:00",
         "positive": 0,
-        "neutral": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T05:19:43.571423+08:00",
+        "bucket_end": "2026-07-09T05:36:52.142852+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T05:36:52.142852+08:00",
+        "bucket_end": "2026-07-09T05:54:00.714281+08:00",
+        "positive": 3,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T05:54:00.714281+08:00",
+        "bucket_end": "2026-07-09T06:11:09.285710+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T06:11:09.285710+08:00",
+        "bucket_end": "2026-07-09T06:28:17.857139+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T06:28:17.857139+08:00",
+        "bucket_end": "2026-07-09T06:45:26.428568+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T06:45:26.428568+08:00",
+        "bucket_end": "2026-07-09T07:02:34.999997+08:00",
+        "positive": 1,
+        "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-08T10:47:08.571423+00:00",
-        "bucket_end": "2026-07-08T11:04:17.142852+00:00",
+        "bucket_start": "2026-07-09T07:02:34.999997+08:00",
+        "bucket_end": "2026-07-09T07:19:43.571426+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T07:19:43.571426+08:00",
+        "bucket_end": "2026-07-09T07:36:52.142855+08:00",
         "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-08T11:04:17.142852+00:00",
-        "bucket_end": "2026-07-08T11:21:25.714281+00:00",
+        "bucket_start": "2026-07-09T07:36:52.142855+08:00",
+        "bucket_end": "2026-07-09T07:54:00.714284+08:00",
         "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-08T11:21:25.714281+00:00",
-        "bucket_end": "2026-07-08T11:38:34.285710+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-08T11:38:34.285710+00:00",
-        "bucket_end": "2026-07-08T11:55:42.857139+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-08T11:55:42.857139+00:00",
-        "bucket_end": "2026-07-08T12:12:51.428568+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-08T12:12:51.428568+00:00",
-        "bucket_end": "2026-07-08T12:29:59.999997+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-08T12:29:59.999997+00:00",
-        "bucket_end": "2026-07-08T12:47:08.571426+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-08T12:47:08.571426+00:00",
-        "bucket_end": "2026-07-08T13:04:17.142855+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-08T13:04:17.142855+00:00",
-        "bucket_end": "2026-07-08T13:21:25.714284+00:00",
-        "positive": 4,
         "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T07:54:00.714284+08:00",
+        "bucket_end": "2026-07-09T08:11:09.285713+08:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T08:11:09.285713+08:00",
+        "bucket_end": "2026-07-09T08:28:17.857142+08:00",
+        "positive": 2,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T08:28:17.857142+08:00",
+        "bucket_end": "2026-07-09T08:45:26.428571+08:00",
+        "positive": 1,
+        "neutral": 0,
         "negative": 2
       },
       {
-        "bucket_start": "2026-07-08T13:21:25.714284+00:00",
-        "bucket_end": "2026-07-08T13:38:34.285713+00:00",
+        "bucket_start": "2026-07-09T08:45:26.428571+08:00",
+        "bucket_end": "2026-07-09T09:02:35+08:00",
         "positive": 1,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-08T13:38:34.285713+00:00",
-        "bucket_end": "2026-07-08T13:55:42.857142+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-08T13:55:42.857142+00:00",
-        "bucket_end": "2026-07-08T14:12:51.428571+00:00",
-        "positive": 0,
         "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-08T14:12:51.428571+00:00",
-        "bucket_end": "2026-07-08T14:30:00+00:00",
-        "positive": 0,
-        "neutral": 0,
         "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "cluster-0",
-        "focus_share": 0.9,
-        "post_count": 10
+        "handle": "jukan05",
+        "top_topic_id": 1,
+        "top_topic_label": "just / ectc / guc / em",
+        "focus_share": 1.0,
+        "post_count": 1
       },
       {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 0,
-        "top_topic_label": "cluster-0",
-        "focus_share": 0.875,
-        "post_count": 8
+        "handle": "ctee.fans",
+        "top_topic_id": 1,
+        "top_topic_label": "just / ectc / guc / em",
+        "focus_share": 0.857,
+        "post_count": 7
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 1,
+        "top_topic_label": "just / ectc / guc / em",
+        "focus_share": 0.75,
+        "post_count": 4
+      },
+      {
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 1,
+        "top_topic_label": "just / ectc / guc / em",
+        "focus_share": 0.75,
+        "post_count": 4
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 1,
+        "top_topic_label": "just / ectc / guc / em",
+        "focus_share": 0.667,
+        "post_count": 3
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "cluster-0",
-        "total_engagement": 2394,
-        "post_count": 16
+        "topic_id": 1,
+        "label": "just / ectc / guc / em",
+        "total_engagement": 730,
+        "post_count": 15
       },
       {
-        "topic_id": 1,
-        "label": "不過",
-        "total_engagement": 134,
+        "topic_id": 0,
+        "label": "gb / xai",
+        "total_engagement": 29,
+        "post_count": 2
+      },
+      {
+        "topic_id": 2,
+        "label": "ai",
+        "total_engagement": 10,
         "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 16,
+          "likes": 614,
+          "engagement": 718,
+          "avg_engagement": 44.9
         },
         "afternoon": {
           "post_count": 0,
@@ -195,19 +229,19 @@
           "avg_engagement": 0.0
         },
         "evening": {
-          "post_count": 18,
-          "likes": 2528,
-          "engagement": 2528,
-          "avg_engagement": 140.4
-        },
-        "late_night": {
           "post_count": 0,
           "likes": 0,
           "engagement": 0,
           "avg_engagement": 0.0
+        },
+        "late_night": {
+          "post_count": 3,
+          "likes": 44,
+          "engagement": 51,
+          "avg_engagement": 17.0
         }
       },
-      "peak_slot": "evening"
+      "peak_slot": "morning"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,
