@@ -1,157 +1,171 @@
 {
-  "generated_at": "2026-07-09T09:02:35+08:00",
+  "generated_at": "2026-07-09T04:20:00+00:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-09T05:02:35+08:00",
-    "end_utc": "2026-07-09T09:02:35+08:00",
-    "start_tw": "Jul 09, 05:02",
-    "end_tw": "Jul 09, 09:02"
+    "start_utc": "2026-07-09T00:20:00+00:00",
+    "end_utc": "2026-07-09T04:20:00+00:00",
+    "start_tw": "Jul 09, 08:20",
+    "end_tw": "Jul 09, 12:20"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 19,
+      "total_posts": 27,
       "sentiment_counts": {
-        "positive": 9,
-        "negative": 3,
-        "neutral": 7
+        "neutral": 12,
+        "positive": 8,
+        "negative": 7
       },
       "sentiment_share": {
-        "positive": 0.474,
-        "negative": 0.158,
-        "neutral": 0.368
+        "neutral": 0.444,
+        "positive": 0.296,
+        "negative": 0.259
       },
       "top_terms": [
-        "and",
-        "the",
-        "more",
-        "The",
         "See",
-        "年關鍵零組件漲價表",
-        "dram",
-        "server",
-        "race",
-        "ECTC"
+        "more",
+        "spacex",
+        "hbm",
+        "#蘋果",
+        "SpaceX",
+        "盤中創掛牌以來新低",
+        "爆料美國把關失職",
+        "商務部工業暨安全局疏忽",
+        "資金轉向"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 1,
-        "label": "just / ectc / guc / em",
+        "label": "cluster-1",
         "heat": 90.0,
-        "volume": 15,
-        "engagement": 730
+        "volume": 14,
+        "engagement": 517
       },
       {
         "topic_id": 2,
-        "label": "ai",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 10
+        "label": "spacex",
+        "heat": 15.0,
+        "volume": 3,
+        "engagement": 57
       },
       {
         "topic_id": 0,
-        "label": "gb / xai",
+        "label": "ai",
+        "heat": 12.2,
+        "volume": 5,
+        "engagement": 20
+      },
+      {
+        "topic_id": 4,
+        "label": "蘋果 / ai",
+        "heat": 10.0,
+        "volume": 3,
+        "engagement": 4
+      },
+      {
+        "topic_id": 3,
+        "label": "fomc",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 29
+        "engagement": 44
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-09T05:02:34.999994+08:00",
-        "bucket_end": "2026-07-09T05:19:43.571423+08:00",
+        "bucket_start": "2026-07-09T00:19:59.999994+00:00",
+        "bucket_end": "2026-07-09T00:37:08.571423+00:00",
+        "positive": 2,
+        "neutral": 2,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-09T00:37:08.571423+00:00",
+        "bucket_end": "2026-07-09T00:54:17.142852+00:00",
         "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-09T05:19:43.571423+08:00",
-        "bucket_end": "2026-07-09T05:36:52.142852+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-09T05:36:52.142852+08:00",
-        "bucket_end": "2026-07-09T05:54:00.714281+08:00",
-        "positive": 3,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-09T05:54:00.714281+08:00",
-        "bucket_end": "2026-07-09T06:11:09.285710+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-09T06:11:09.285710+08:00",
-        "bucket_end": "2026-07-09T06:28:17.857139+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-09T06:28:17.857139+08:00",
-        "bucket_end": "2026-07-09T06:45:26.428568+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-09T06:45:26.428568+08:00",
-        "bucket_end": "2026-07-09T07:02:34.999997+08:00",
-        "positive": 1,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-09T07:02:34.999997+08:00",
-        "bucket_end": "2026-07-09T07:19:43.571426+08:00",
+        "bucket_start": "2026-07-09T00:54:17.142852+00:00",
+        "bucket_end": "2026-07-09T01:11:25.714281+00:00",
+        "positive": 2,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T01:11:25.714281+00:00",
+        "bucket_end": "2026-07-09T01:28:34.285710+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-09T01:28:34.285710+00:00",
+        "bucket_end": "2026-07-09T01:45:42.857139+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-09T01:45:42.857139+00:00",
+        "bucket_end": "2026-07-09T02:02:51.428568+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T02:02:51.428568+00:00",
+        "bucket_end": "2026-07-09T02:19:59.999997+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-09T07:19:43.571426+08:00",
-        "bucket_end": "2026-07-09T07:36:52.142855+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-09T07:36:52.142855+08:00",
-        "bucket_end": "2026-07-09T07:54:00.714284+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-09T07:54:00.714284+08:00",
-        "bucket_end": "2026-07-09T08:11:09.285713+08:00",
+        "bucket_start": "2026-07-09T02:19:59.999997+00:00",
+        "bucket_end": "2026-07-09T02:37:08.571426+00:00",
         "positive": 0,
         "neutral": 2,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-09T08:11:09.285713+08:00",
-        "bucket_end": "2026-07-09T08:28:17.857142+08:00",
-        "positive": 2,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-09T08:28:17.857142+08:00",
-        "bucket_end": "2026-07-09T08:45:26.428571+08:00",
+        "bucket_start": "2026-07-09T02:37:08.571426+00:00",
+        "bucket_end": "2026-07-09T02:54:17.142855+00:00",
         "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T02:54:17.142855+00:00",
+        "bucket_end": "2026-07-09T03:11:25.714284+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T03:11:25.714284+00:00",
+        "bucket_end": "2026-07-09T03:28:34.285713+00:00",
+        "positive": 0,
         "neutral": 0,
         "negative": 2
       },
       {
-        "bucket_start": "2026-07-09T08:45:26.428571+08:00",
-        "bucket_end": "2026-07-09T09:02:35+08:00",
+        "bucket_start": "2026-07-09T03:28:34.285713+00:00",
+        "bucket_end": "2026-07-09T03:45:42.857142+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-09T03:45:42.857142+00:00",
+        "bucket_end": "2026-07-09T04:02:51.428571+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-09T04:02:51.428571+00:00",
+        "bucket_end": "2026-07-09T04:20:00+00:00",
         "positive": 1,
         "neutral": 1,
         "negative": 0
@@ -159,74 +173,86 @@
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "jukan05",
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 2,
+        "top_topic_label": "spacex",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "QQ_Timmy",
         "top_topic_id": 1,
-        "top_topic_label": "just / ectc / guc / em",
+        "top_topic_label": "cluster-1",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 1,
+        "top_topic_label": "cluster-1",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "ctee.fans",
         "top_topic_id": 1,
-        "top_topic_label": "just / ectc / guc / em",
-        "focus_share": 0.857,
-        "post_count": 7
+        "top_topic_label": "cluster-1",
+        "focus_share": 0.636,
+        "post_count": 11
       },
       {
         "handle": "technews_tw",
         "top_topic_id": 1,
-        "top_topic_label": "just / ectc / guc / em",
-        "focus_share": 0.75,
-        "post_count": 4
-      },
-      {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 1,
-        "top_topic_label": "just / ectc / guc / em",
-        "focus_share": 0.75,
-        "post_count": 4
-      },
-      {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 1,
-        "top_topic_label": "just / ectc / guc / em",
-        "focus_share": 0.667,
-        "post_count": 3
+        "top_topic_label": "cluster-1",
+        "focus_share": 0.385,
+        "post_count": 13
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 1,
-        "label": "just / ectc / guc / em",
-        "total_engagement": 730,
-        "post_count": 15
-      },
-      {
-        "topic_id": 0,
-        "label": "gb / xai",
-        "total_engagement": 29,
-        "post_count": 2
+        "label": "cluster-1",
+        "total_engagement": 517,
+        "post_count": 14
       },
       {
         "topic_id": 2,
-        "label": "ai",
-        "total_engagement": 10,
+        "label": "spacex",
+        "total_engagement": 57,
+        "post_count": 3
+      },
+      {
+        "topic_id": 3,
+        "label": "fomc",
+        "total_engagement": 44,
         "post_count": 2
+      },
+      {
+        "topic_id": 0,
+        "label": "ai",
+        "total_engagement": 20,
+        "post_count": 5
+      },
+      {
+        "topic_id": 4,
+        "label": "蘋果 / ai",
+        "total_engagement": 4,
+        "post_count": 3
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 16,
-          "likes": 614,
-          "engagement": 718,
-          "avg_engagement": 44.9
+          "post_count": 24,
+          "likes": 609,
+          "engagement": 637,
+          "avg_engagement": 26.5
         },
         "afternoon": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 3,
+          "likes": 4,
+          "engagement": 5,
+          "avg_engagement": 1.7
         },
         "evening": {
           "post_count": 0,
@@ -235,10 +261,10 @@
           "avg_engagement": 0.0
         },
         "late_night": {
-          "post_count": 3,
-          "likes": 44,
-          "engagement": 51,
-          "avg_engagement": 17.0
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         }
       },
       "peak_slot": "morning"
