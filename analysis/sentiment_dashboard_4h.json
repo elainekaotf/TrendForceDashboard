@@ -1,246 +1,278 @@
 {
-  "generated_at": "2026-07-10T01:09:56.436689+00:00",
+  "generated_at": "2026-07-10T09:00:00+00:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-09T21:09:56.436689+00:00",
-    "end_utc": "2026-07-10T01:09:56.436689+00:00",
-    "start_tw": "Jul 10, 05:09",
-    "end_tw": "Jul 10, 09:09"
+    "start_utc": "2026-07-10T05:00:00+00:00",
+    "end_utc": "2026-07-10T09:00:00+00:00",
+    "start_tw": "Jul 10, 13:00",
+    "end_tw": "Jul 10, 17:00"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 15,
+      "total_posts": 32,
       "sentiment_counts": {
-        "neutral": 5,
-        "positive": 7,
-        "negative": 3
+        "neutral": 9,
+        "negative": 6,
+        "positive": 17
       },
       "sentiment_share": {
-        "neutral": 0.333,
-        "positive": 0.467,
-        "negative": 0.2
+        "neutral": 0.281,
+        "negative": 0.188,
+        "positive": 0.531
       },
       "top_terms": [
         "the",
-        "compute",
-        "億日圓",
+        "and",
         "memory",
-        "has",
-        "semianalysis",
-        "model",
-        "歷史新高",
-        "open",
-        "you"
+        "dram",
+        "See",
+        "more",
+        "meta",
+        "#半導體",
+        "NVIDIA",
+        "CPU"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 1,
-        "label": "compute / production / scale",
+        "label": "cpu / nvidia / ai / anthropic",
         "heat": 90.0,
-        "volume": 9,
-        "engagement": 1023
+        "volume": 21,
+        "engagement": 1484
+      },
+      {
+        "topic_id": 5,
+        "label": "meta / ai資料中心 / ai / iris",
+        "heat": 10.1,
+        "volume": 3,
+        "engagement": 5
       },
       {
         "topic_id": 2,
-        "label": "model",
-        "heat": 50.0,
+        "label": "dram / memory / global",
+        "heat": 10.0,
         "volume": 2,
-        "engagement": 1359
+        "engagement": 8
+      },
+      {
+        "topic_id": 4,
+        "label": "半導體",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 4
       },
       {
         "topic_id": 0,
+        "label": "gpt / openai",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 20
+      },
+      {
+        "topic_id": 3,
         "label": "ai",
         "heat": 10.0,
-        "volume": 4,
-        "engagement": 91
+        "volume": 2,
+        "engagement": 15
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-09T21:09:56.436683+00:00",
-        "bucket_end": "2026-07-09T21:27:05.008112+00:00",
-        "positive": 0,
-        "neutral": 0,
+        "bucket_start": "2026-07-10T04:59:59.999994+00:00",
+        "bucket_end": "2026-07-10T05:17:08.571423+00:00",
+        "positive": 1,
+        "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-09T21:27:05.008112+00:00",
-        "bucket_end": "2026-07-09T21:44:13.579541+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
+        "bucket_start": "2026-07-10T05:17:08.571423+00:00",
+        "bucket_end": "2026-07-10T05:34:17.142852+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 1
       },
       {
-        "bucket_start": "2026-07-09T21:44:13.579541+00:00",
-        "bucket_end": "2026-07-09T22:01:22.150970+00:00",
+        "bucket_start": "2026-07-10T05:34:17.142852+00:00",
+        "bucket_end": "2026-07-10T05:51:25.714281+00:00",
+        "positive": 5,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-10T05:51:25.714281+00:00",
+        "bucket_end": "2026-07-10T06:08:34.285710+00:00",
         "positive": 2,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-09T22:01:22.150970+00:00",
-        "bucket_end": "2026-07-09T22:18:30.722399+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-09T22:18:30.722399+00:00",
-        "bucket_end": "2026-07-09T22:35:39.293828+00:00",
+        "bucket_start": "2026-07-10T06:08:34.285710+00:00",
+        "bucket_end": "2026-07-10T06:25:42.857139+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-09T22:35:39.293828+00:00",
-        "bucket_end": "2026-07-09T22:52:47.865257+00:00",
+        "bucket_start": "2026-07-10T06:25:42.857139+00:00",
+        "bucket_end": "2026-07-10T06:42:51.428568+00:00",
         "positive": 0,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-10T06:42:51.428568+00:00",
+        "bucket_end": "2026-07-10T06:59:59.999997+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-10T06:59:59.999997+00:00",
+        "bucket_end": "2026-07-10T07:17:08.571426+00:00",
+        "positive": 3,
         "neutral": 0,
-        "negative": 0
+        "negative": 1
       },
       {
-        "bucket_start": "2026-07-09T22:52:47.865257+00:00",
-        "bucket_end": "2026-07-09T23:09:56.436686+00:00",
+        "bucket_start": "2026-07-10T07:17:08.571426+00:00",
+        "bucket_end": "2026-07-10T07:34:17.142855+00:00",
         "positive": 0,
-        "neutral": 1,
+        "neutral": 2,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-09T23:09:56.436686+00:00",
-        "bucket_end": "2026-07-09T23:27:05.008115+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-09T23:27:05.008115+00:00",
-        "bucket_end": "2026-07-09T23:44:13.579544+00:00",
+        "bucket_start": "2026-07-10T07:34:17.142855+00:00",
+        "bucket_end": "2026-07-10T07:51:25.714284+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-09T23:44:13.579544+00:00",
-        "bucket_end": "2026-07-10T00:01:22.150973+00:00",
+        "bucket_start": "2026-07-10T07:51:25.714284+00:00",
+        "bucket_end": "2026-07-10T08:08:34.285713+00:00",
         "positive": 1,
         "neutral": 0,
-        "negative": 0
+        "negative": 1
       },
       {
-        "bucket_start": "2026-07-10T00:01:22.150973+00:00",
-        "bucket_end": "2026-07-10T00:18:30.722402+00:00",
+        "bucket_start": "2026-07-10T08:08:34.285713+00:00",
+        "bucket_end": "2026-07-10T08:25:42.857142+00:00",
         "positive": 0,
         "neutral": 0,
-        "negative": 0
+        "negative": 1
       },
       {
-        "bucket_start": "2026-07-10T00:18:30.722402+00:00",
-        "bucket_end": "2026-07-10T00:35:39.293831+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-10T00:35:39.293831+00:00",
-        "bucket_end": "2026-07-10T00:52:47.865260+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-10T00:52:47.865260+00:00",
-        "bucket_end": "2026-07-10T01:09:56.436689+00:00",
+        "bucket_start": "2026-07-10T08:25:42.857142+00:00",
+        "bucket_end": "2026-07-10T08:42:51.428571+00:00",
         "positive": 2,
         "neutral": 1,
-        "negative": 1
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-10T08:42:51.428571+00:00",
+        "bucket_end": "2026-07-10T09:00:00+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
         "handle": "TrendForce",
-        "top_topic_id": 1,
-        "top_topic_label": "compute / production / scale",
+        "top_topic_id": 2,
+        "top_topic_label": "dram / memory / global",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "SemiAnalysis_",
+        "handle": "jukan05",
         "top_topic_id": 1,
-        "top_topic_label": "compute / production / scale",
+        "top_topic_label": "cpu / nvidia / ai / anthropic",
+        "focus_share": 1.0,
+        "post_count": 6
+      },
+      {
+        "handle": "ctee.fans",
+        "top_topic_id": 1,
+        "top_topic_label": "cpu / nvidia / ai / anthropic",
+        "focus_share": 1.0,
+        "post_count": 8
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 0,
+        "top_topic_label": "gpt / openai",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "QQ_Timmy",
-        "top_topic_id": 1,
-        "top_topic_label": "compute / production / scale",
+        "top_topic_id": 3,
+        "top_topic_label": "ai",
         "focus_share": 1.0,
-        "post_count": 3
-      },
-      {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 1,
-        "top_topic_label": "compute / production / scale",
-        "focus_share": 1.0,
-        "post_count": 2
+        "post_count": 1
       },
       {
         "handle": "technews_tw",
-        "top_topic_id": 0,
-        "top_topic_label": "ai",
-        "focus_share": 0.667,
-        "post_count": 3
-      },
-      {
-        "handle": "tphuang",
-        "top_topic_id": 0,
-        "top_topic_label": "ai",
-        "focus_share": 0.667,
-        "post_count": 3
-      },
-      {
-        "handle": "jukan05",
         "top_topic_id": 1,
-        "top_topic_label": "compute / production / scale",
-        "focus_share": 0.5,
-        "post_count": 2
+        "top_topic_label": "cpu / nvidia / ai / anthropic",
+        "focus_share": 0.467,
+        "post_count": 15
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 2,
-        "label": "model",
-        "total_engagement": 1359,
-        "post_count": 2
-      },
-      {
         "topic_id": 1,
-        "label": "compute / production / scale",
-        "total_engagement": 1023,
-        "post_count": 9
+        "label": "cpu / nvidia / ai / anthropic",
+        "total_engagement": 1484,
+        "post_count": 21
       },
       {
         "topic_id": 0,
+        "label": "gpt / openai",
+        "total_engagement": 20,
+        "post_count": 2
+      },
+      {
+        "topic_id": 3,
         "label": "ai",
-        "total_engagement": 91,
-        "post_count": 4
+        "total_engagement": 15,
+        "post_count": 2
+      },
+      {
+        "topic_id": 2,
+        "label": "dram / memory / global",
+        "total_engagement": 8,
+        "post_count": 2
+      },
+      {
+        "topic_id": 5,
+        "label": "meta / ai資料中心 / ai / iris",
+        "total_engagement": 5,
+        "post_count": 3
+      },
+      {
+        "topic_id": 4,
+        "label": "半導體",
+        "total_engagement": 4,
+        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 13,
-          "likes": 2189,
-          "engagement": 2387,
-          "avg_engagement": 183.6
-        },
-        "afternoon": {
           "post_count": 0,
           "likes": 0,
           "engagement": 0,
           "avg_engagement": 0.0
+        },
+        "afternoon": {
+          "post_count": 32,
+          "likes": 1301,
+          "engagement": 1536,
+          "avg_engagement": 48.0
         },
         "evening": {
           "post_count": 0,
@@ -249,13 +281,13 @@
           "avg_engagement": 0.0
         },
         "late_night": {
-          "post_count": 2,
-          "likes": 74,
-          "engagement": 86,
-          "avg_engagement": 43.0
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         }
       },
-      "peak_slot": "morning"
+      "peak_slot": "afternoon"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,
