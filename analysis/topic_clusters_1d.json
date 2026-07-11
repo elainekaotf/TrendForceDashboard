@@ -2,112 +2,82 @@
   "clusters": [
     {
       "id": 0,
-      "label": "ai / nvidia / memory / 台積電",
-      "size": 110,
+      "label": "ai / memory / 台積電 / hbm",
+      "size": 100,
       "accounts": {
-        "TrendForce": 3,
-        "technews_tw": 30,
+        "technews_tw": 25,
         "dylan522p": 1,
         "SemiAnalysis_": 5,
-        "jukan05": 3,
-        "QQ_Timmy": 8,
+        "jukan05": 4,
+        "QQ_Timmy": 9,
         "tphuang": 9,
-        "tengyanAI": 6,
-        "ctee.fans": 27,
-        "yutinghaosfinance": 18
+        "tengyanAI": 2,
+        "ctee.fans": 30,
+        "yutinghaosfinance": 15
       },
       "engagement_by_account": {
-        "TrendForce": 27,
-        "technews_tw": 59,
-        "dylan522p": 1063,
-        "SemiAnalysis_": 1182,
-        "jukan05": 1174,
-        "QQ_Timmy": 364,
-        "tphuang": 645,
-        "tengyanAI": 128,
-        "ctee.fans": 606,
-        "yutinghaosfinance": 1888
+        "technews_tw": 79,
+        "dylan522p": 1382,
+        "SemiAnalysis_": 1223,
+        "jukan05": 3928,
+        "QQ_Timmy": 361,
+        "tphuang": 352,
+        "tengyanAI": 32,
+        "ctee.fans": 943,
+        "yutinghaosfinance": 6024
       }
     },
     {
-      "id": 8,
-      "label": "samsung / hbm / hynix / sk",
-      "size": 9,
+      "id": 17,
+      "label": "nvidia / ai / amd / rubin",
+      "size": 5,
       "accounts": {
-        "TrendForce": 2,
+        "technews_tw": 1,
+        "SemiAnalysis_": 1,
+        "jukan05": 3
+      },
+      "engagement_by_account": {
         "technews_tw": 3,
-        "jukan05": 3,
-        "QQ_Timmy": 1
-      },
-      "engagement_by_account": {
-        "TrendForce": 66,
-        "technews_tw": 7,
-        "jukan05": 3149,
-        "QQ_Timmy": 25
-      }
-    },
-    {
-      "id": 16,
-      "label": "dram / nand / trendforce / ddr",
-      "size": 3,
-      "accounts": {
-        "TrendForce": 1,
-        "QQ_Timmy": 1,
-        "tengyanAI": 1
-      },
-      "engagement_by_account": {
-        "TrendForce": 42,
-        "QQ_Timmy": 21,
-        "tengyanAI": 44
+        "SemiAnalysis_": 61,
+        "jukan05": 1708
       }
     },
     {
       "id": 3,
-      "label": "三星 / sk海力士 / ai / 新聞來源",
-      "size": 1,
+      "label": "ai / 中國 / pcb / physical",
+      "size": 2,
       "accounts": {
-        "technews_tw": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 11
-      }
-    },
-    {
-      "id": 9,
-      "label": "anthropic / claude / openai / ai",
-      "size": 1,
-      "accounts": {
-        "technews_tw": 1
-      },
-      "engagement_by_account": {
         "technews_tw": 2
-      }
-    },
-    {
-      "id": 12,
-      "label": "美股 / 點或 / 標普 / ai泡沫",
-      "size": 1,
-      "accounts": {
-        "technews_tw": 1
       },
       "engagement_by_account": {
-        "technews_tw": 1
+        "technews_tw": 0
       }
     },
     {
-      "id": 14,
-      "label": "ai / openai / 中國 / pcb",
+      "id": 1,
+      "label": "iphone / 蘋果 / pro / apple",
       "size": 1,
       "accounts": {
-        "yutinghaosfinance": 1
+        "TrendForce": 1
       },
       "engagement_by_account": {
-        "yutinghaosfinance": 51
+        "TrendForce": 4
       }
     },
     {
-      "id": 15,
-      "label": "英特爾 / 蘋果 / intel / 台積電",
+      "id": 6,
+      "label": "trendforce / dram / ai / samsung",
+      "size": 1,
+      "accounts": {
+        "tengyanAI": 1
+      },
+      "engagement_by_account": {
+        "tengyanAI": 72
+      }
+    },
+    {
+      "id": 13,
+      "label": "spacex / ipo / 馬斯克 / ai",
       "size": 1,
       "accounts": {
         "technews_tw": 1
@@ -117,12 +87,36 @@
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 17,
+      "label": "nvidia / ai / amd / rubin",
+      "own_count": 1,
+      "competitor_count": 4,
+      "competitor_engagement": 1769,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "jukan05"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 17,
+      "label": "nvidia / ai / amd / rubin",
+      "own_count": 1,
+      "competitor_count": 4,
+      "competitor_engagement": 1769,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "jukan05"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-10T16:31:11+08:00",
-    "end_utc": "2026-07-11T16:31:11+08:00",
-    "start_tw": "Jul 10, 16:31",
-    "end_tw": "Jul 11, 16:31"
+    "start_utc": "2026-07-10T18:02:56.590316+00:00",
+    "end_utc": "2026-07-11T18:02:56.590316+00:00",
+    "start_tw": "Jul 11, 02:02",
+    "end_tw": "Jul 12, 02:02"
   }
 }
