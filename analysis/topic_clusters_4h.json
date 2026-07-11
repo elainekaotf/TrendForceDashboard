@@ -1,83 +1,45 @@
 {
   "clusters": [
     {
-      "id": 6,
-      "label": "ai / memory / chip / intel",
-      "size": 39,
+      "id": 3,
+      "label": "ai / nvidia / memory / hbm",
+      "size": 6,
       "accounts": {
-        "TrendForce": 3,
-        "technews_tw": 6,
-        "SemiAnalysis_": 1,
-        "QQ_Timmy": 2,
-        "tphuang": 2,
-        "tengyanAI": 2,
-        "ctee.fans": 6,
-        "yutinghaosfinance": 17
+        "ctee.fans": 6
       },
       "engagement_by_account": {
-        "TrendForce": 20,
-        "technews_tw": 1,
-        "SemiAnalysis_": 13,
-        "QQ_Timmy": 23,
-        "tphuang": 60,
-        "tengyanAI": 25,
-        "ctee.fans": 52,
-        "yutinghaosfinance": 1846
-      }
-    },
-    {
-      "id": 7,
-      "label": "google / tpu / ai / gemini",
-      "size": 2,
-      "accounts": {
-        "technews_tw": 1,
-        "SemiAnalysis_": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 1,
-        "SemiAnalysis_": 55
-      }
-    },
-    {
-      "id": 8,
-      "label": "trendforce / dram / nand / hbm",
-      "size": 1,
-      "accounts": {
-        "TrendForce": 1
-      },
-      "engagement_by_account": {
-        "TrendForce": 17
-      }
-    },
-    {
-      "id": 12,
-      "label": "ai / 中國 / pcb / 科技早報",
-      "size": 1,
-      "accounts": {
-        "yutinghaosfinance": 1
-      },
-      "engagement_by_account": {
-        "yutinghaosfinance": 51
-      }
-    },
-    {
-      "id": 16,
-      "label": "openai / anthropic / ai / claude",
-      "size": 1,
-      "accounts": {
-        "yutinghaosfinance": 1
-      },
-      "engagement_by_account": {
-        "yutinghaosfinance": 42
+        "ctee.fans": 221
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 3,
+      "label": "ai / nvidia / memory / hbm",
+      "own_count": 0,
+      "competitor_count": 6,
+      "competitor_engagement": 221,
+      "competitors_covering": [
+        "ctee.fans"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 3,
+      "label": "ai / nvidia / memory / hbm",
+      "own_count": 0,
+      "competitor_count": 6,
+      "competitor_engagement": 221,
+      "competitors_covering": [
+        "ctee.fans"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-10T11:00:00+00:00",
-    "end_utc": "2026-07-10T15:00:00+00:00",
-    "start_tw": "Jul 10, 19:00",
-    "end_tw": "Jul 10, 23:00"
+    "start_utc": "2026-07-10T21:33:00+00:00",
+    "end_utc": "2026-07-11T01:33:00+00:00",
+    "start_tw": "Jul 11, 05:33",
+    "end_tw": "Jul 11, 09:33"
   }
 }
