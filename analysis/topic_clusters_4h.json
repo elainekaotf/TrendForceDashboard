@@ -2,44 +2,39 @@
   "clusters": [
     {
       "id": 3,
-      "label": "ai / nvidia / memory / hbm",
-      "size": 6,
+      "label": "ai / trendforce / 台積電 / memory",
+      "size": 13,
       "accounts": {
+        "technews_tw": 3,
+        "QQ_Timmy": 3,
+        "tengyanAI": 1,
         "ctee.fans": 6
       },
       "engagement_by_account": {
-        "ctee.fans": 221
+        "technews_tw": 4,
+        "QQ_Timmy": 19,
+        "tengyanAI": 34,
+        "ctee.fans": 150
+      }
+    },
+    {
+      "id": 5,
+      "label": "hbm / dram / memory / samsung",
+      "size": 2,
+      "accounts": {
+        "technews_tw": 2
+      },
+      "engagement_by_account": {
+        "technews_tw": 3
       }
     }
   ],
-  "gaps": [
-    {
-      "cluster_id": 3,
-      "label": "ai / nvidia / memory / hbm",
-      "own_count": 0,
-      "competitor_count": 6,
-      "competitor_engagement": 221,
-      "competitors_covering": [
-        "ctee.fans"
-      ]
-    }
-  ],
-  "suggested_entry_points": [
-    {
-      "cluster_id": 3,
-      "label": "ai / nvidia / memory / hbm",
-      "own_count": 0,
-      "competitor_count": 6,
-      "competitor_engagement": 221,
-      "competitors_covering": [
-        "ctee.fans"
-      ]
-    }
-  ],
+  "gaps": [],
+  "suggested_entry_points": [],
   "window": {
-    "start_utc": "2026-07-10T21:33:00+00:00",
-    "end_utc": "2026-07-11T01:33:00+00:00",
-    "start_tw": "Jul 11, 05:33",
-    "end_tw": "Jul 11, 09:33"
+    "start_utc": "2026-07-11T09:04:38+08:00",
+    "end_utc": "2026-07-11T13:04:38+08:00",
+    "start_tw": "Jul 11, 09:04",
+    "end_tw": "Jul 11, 13:04"
   }
 }

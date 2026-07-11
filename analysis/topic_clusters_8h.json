@@ -2,24 +2,65 @@
   "clusters": [
     {
       "id": 3,
-      "label": "ai / nvidia / memory / hbm",
-      "size": 6,
+      "label": "ai / trendforce / 台積電 / memory",
+      "size": 30,
       "accounts": {
-        "ctee.fans": 6
+        "technews_tw": 4,
+        "dylan522p": 1,
+        "jukan05": 2,
+        "QQ_Timmy": 6,
+        "tphuang": 5,
+        "tengyanAI": 1,
+        "ctee.fans": 11
       },
       "engagement_by_account": {
-        "ctee.fans": 221
+        "technews_tw": 5,
+        "dylan522p": 873,
+        "jukan05": 512,
+        "QQ_Timmy": 92,
+        "tphuang": 125,
+        "tengyanAI": 34,
+        "ctee.fans": 285
+      }
+    },
+    {
+      "id": 5,
+      "label": "hbm / dram / memory / samsung",
+      "size": 2,
+      "accounts": {
+        "technews_tw": 2
+      },
+      "engagement_by_account": {
+        "technews_tw": 3
+      }
+    },
+    {
+      "id": 8,
+      "label": "hynix / sk / samsung / memory",
+      "size": 2,
+      "accounts": {
+        "jukan05": 1,
+        "QQ_Timmy": 1
+      },
+      "engagement_by_account": {
+        "jukan05": 1175,
+        "QQ_Timmy": 20
       }
     }
   ],
   "gaps": [
     {
       "cluster_id": 3,
-      "label": "ai / nvidia / memory / hbm",
-      "own_count": 0,
-      "competitor_count": 6,
-      "competitor_engagement": 221,
+      "label": "ai / trendforce / 台積電 / memory",
+      "own_count": 4,
+      "competitor_count": 26,
+      "competitor_engagement": 1921,
       "competitors_covering": [
+        "dylan522p",
+        "jukan05",
+        "QQ_Timmy",
+        "tphuang",
+        "tengyanAI",
         "ctee.fans"
       ]
     }
@@ -27,19 +68,24 @@
   "suggested_entry_points": [
     {
       "cluster_id": 3,
-      "label": "ai / nvidia / memory / hbm",
-      "own_count": 0,
-      "competitor_count": 6,
-      "competitor_engagement": 221,
+      "label": "ai / trendforce / 台積電 / memory",
+      "own_count": 4,
+      "competitor_count": 26,
+      "competitor_engagement": 1921,
       "competitors_covering": [
+        "dylan522p",
+        "jukan05",
+        "QQ_Timmy",
+        "tphuang",
+        "tengyanAI",
         "ctee.fans"
       ]
     }
   ],
   "window": {
-    "start_utc": "2026-07-10T17:33:00+00:00",
-    "end_utc": "2026-07-11T01:33:00+00:00",
-    "start_tw": "Jul 11, 01:33",
-    "end_tw": "Jul 11, 09:33"
+    "start_utc": "2026-07-11T05:04:38+08:00",
+    "end_utc": "2026-07-11T13:04:38+08:00",
+    "start_tw": "Jul 11, 05:04",
+    "end_tw": "Jul 11, 13:04"
   }
 }
