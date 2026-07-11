@@ -10,16 +10,16 @@
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 34,
+      "total_posts": 40,
       "sentiment_counts": {
-        "negative": 10,
-        "positive": 13,
-        "neutral": 11
+        "negative": 11,
+        "positive": 16,
+        "neutral": 13
       },
       "sentiment_share": {
-        "negative": 0.294,
-        "positive": 0.382,
-        "neutral": 0.324
+        "negative": 0.275,
+        "positive": 0.4,
+        "neutral": 0.325
       },
       "top_terms": [
         "more",
@@ -36,46 +36,60 @@
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "chips / apple / use / fab",
+        "topic_id": 1,
+        "label": "cluster-1",
         "heat": 90.0,
-        "volume": 20,
-        "engagement": 2581
+        "volume": 24,
+        "engagement": 1675
       },
       {
-        "topic_id": 4,
+        "topic_id": 5,
         "label": "sk / ceo / company",
-        "heat": 13.9,
+        "heat": 42.6,
         "volume": 2,
         "engagement": 1421
       },
       {
-        "topic_id": 2,
-        "label": "ai / 南亞科 / apple",
-        "heat": 10.1,
-        "volume": 5,
-        "engagement": 9
+        "topic_id": 7,
+        "label": "apple / ai / chips / use",
+        "heat": 13.0,
+        "volume": 2,
+        "engagement": 584
       },
       {
-        "topic_id": 5,
-        "label": "sk海力士 / hbm / sk / ai",
-        "heat": 10.0,
-        "volume": 3,
-        "engagement": 7
+        "topic_id": 6,
+        "label": "dram / 南亞科 / ll",
+        "heat": 12.5,
+        "volume": 2,
+        "engagement": 65
       },
       {
-        "topic_id": 1,
+        "topic_id": 3,
         "label": "日宣布",
-        "heat": 10.0,
+        "heat": 11.6,
         "volume": 2,
         "engagement": 42
       },
       {
-        "topic_id": 3,
-        "label": "dram / 南亞科 / ll",
+        "topic_id": 4,
+        "label": "sk海力士 / hbm / sk / ai",
+        "heat": 10.1,
+        "volume": 3,
+        "engagement": 7
+      },
+      {
+        "topic_id": 2,
+        "label": "ai / 南亞科",
         "heat": 10.0,
-        "volume": 2,
-        "engagement": 65
+        "volume": 4,
+        "engagement": 5
+      },
+      {
+        "topic_id": 0,
+        "label": "use / ll / fab / company",
+        "heat": 10.0,
+        "volume": 1,
+        "engagement": 453
       }
     ],
     "sentiment_trend_curve": [
@@ -139,13 +153,13 @@
         "bucket_start": "2026-07-11T13:05:28.142858+08:00",
         "bucket_end": "2026-07-11T13:39:45.285715+08:00",
         "positive": 0,
-        "neutral": 1,
+        "neutral": 2,
         "negative": 0
       },
       {
         "bucket_start": "2026-07-11T13:39:45.285715+08:00",
         "bucket_end": "2026-07-11T14:14:02.428572+08:00",
-        "positive": 1,
+        "positive": 2,
         "neutral": 0,
         "negative": 1
       },
@@ -153,7 +167,7 @@
         "bucket_start": "2026-07-11T14:14:02.428572+08:00",
         "bucket_end": "2026-07-11T14:48:19.571429+08:00",
         "positive": 1,
-        "neutral": 0,
+        "neutral": 1,
         "negative": 1
       },
       {
@@ -161,19 +175,19 @@
         "bucket_end": "2026-07-11T15:22:36.714286+08:00",
         "positive": 0,
         "neutral": 1,
-        "negative": 0
+        "negative": 1
       },
       {
         "bucket_start": "2026-07-11T15:22:36.714286+08:00",
         "bucket_end": "2026-07-11T15:56:53.857143+08:00",
-        "positive": 0,
+        "positive": 1,
         "neutral": 0,
         "negative": 1
       },
       {
         "bucket_start": "2026-07-11T15:56:53.857143+08:00",
         "bucket_end": "2026-07-11T16:31:11+08:00",
-        "positive": 1,
+        "positive": 2,
         "neutral": 0,
         "negative": 0
       }
@@ -181,90 +195,102 @@
     "coverage_focus_ranking": [
       {
         "handle": "dylan522p",
-        "top_topic_id": 0,
-        "top_topic_label": "chips / apple / use / fab",
+        "top_topic_id": 1,
+        "top_topic_label": "cluster-1",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "SemiAnalysis_",
         "top_topic_id": 0,
-        "top_topic_label": "chips / apple / use / fab",
+        "top_topic_label": "use / ll / fab / company",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "tengyanAI",
-        "top_topic_id": 3,
+        "top_topic_id": 6,
         "top_topic_label": "dram / 南亞科 / ll",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "chips / apple / use / fab",
-        "focus_share": 0.875,
-        "post_count": 8
-      },
-      {
-        "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "chips / apple / use / fab",
-        "focus_share": 0.667,
-        "post_count": 3
+        "top_topic_id": 1,
+        "top_topic_label": "cluster-1",
+        "focus_share": 0.929,
+        "post_count": 14
       },
       {
         "handle": "technews_tw",
-        "top_topic_id": 0,
-        "top_topic_label": "chips / apple / use / fab",
+        "top_topic_id": 1,
+        "top_topic_label": "cluster-1",
         "focus_share": 0.538,
         "post_count": 13
       },
       {
+        "handle": "jukan05",
+        "top_topic_id": 1,
+        "top_topic_label": "cluster-1",
+        "focus_share": 0.333,
+        "post_count": 3
+      },
+      {
         "handle": "QQ_Timmy",
-        "top_topic_id": 0,
-        "top_topic_label": "chips / apple / use / fab",
+        "top_topic_id": 1,
+        "top_topic_label": "cluster-1",
         "focus_share": 0.286,
         "post_count": 7
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "chips / apple / use / fab",
-        "total_engagement": 2581,
-        "post_count": 20
+        "topic_id": 1,
+        "label": "cluster-1",
+        "total_engagement": 1675,
+        "post_count": 24
       },
       {
-        "topic_id": 4,
+        "topic_id": 5,
         "label": "sk / ceo / company",
         "total_engagement": 1421,
         "post_count": 2
       },
       {
-        "topic_id": 3,
+        "topic_id": 7,
+        "label": "apple / ai / chips / use",
+        "total_engagement": 584,
+        "post_count": 2
+      },
+      {
+        "topic_id": 0,
+        "label": "use / ll / fab / company",
+        "total_engagement": 453,
+        "post_count": 1
+      },
+      {
+        "topic_id": 6,
         "label": "dram / 南亞科 / ll",
         "total_engagement": 65,
         "post_count": 2
       },
       {
-        "topic_id": 1,
+        "topic_id": 3,
         "label": "日宣布",
         "total_engagement": 42,
         "post_count": 2
       },
       {
-        "topic_id": 2,
-        "label": "ai / 南亞科 / apple",
-        "total_engagement": 9,
-        "post_count": 5
-      },
-      {
-        "topic_id": 5,
+        "topic_id": 4,
         "label": "sk海力士 / hbm / sk / ai",
         "total_engagement": 7,
         "post_count": 3
+      },
+      {
+        "topic_id": 2,
+        "label": "ai / 南亞科",
+        "total_engagement": 5,
+        "post_count": 4
       }
     ],
     "posting_timeslot_analysis": {
