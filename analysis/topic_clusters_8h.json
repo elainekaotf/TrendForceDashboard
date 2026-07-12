@@ -1,83 +1,68 @@
 {
   "clusters": [
     {
-      "id": 0,
-      "label": "ai / memory / 台積電 / hbm",
-      "size": 27,
+      "id": 2,
+      "label": "ai / memory / chip / openai",
+      "size": 7,
       "accounts": {
-        "technews_tw": 8,
         "SemiAnalysis_": 3,
-        "QQ_Timmy": 2,
-        "tphuang": 3,
+        "tphuang": 2,
         "tengyanAI": 1,
-        "ctee.fans": 9,
         "yutinghaosfinance": 1
       },
       "engagement_by_account": {
-        "technews_tw": 25,
-        "SemiAnalysis_": 184,
-        "QQ_Timmy": 91,
-        "tphuang": 90,
-        "tengyanAI": 14,
-        "ctee.fans": 164,
+        "SemiAnalysis_": 142,
+        "tphuang": 51,
+        "tengyanAI": 7,
         "yutinghaosfinance": 0
       }
     },
     {
-      "id": 17,
-      "label": "nvidia / ai / amd / rubin",
-      "size": 3,
-      "accounts": {
-        "technews_tw": 1,
-        "SemiAnalysis_": 1,
-        "jukan05": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 3,
-        "SemiAnalysis_": 61,
-        "jukan05": 643
-      }
-    },
-    {
-      "id": 3,
-      "label": "ai / 中國 / pcb / physical",
-      "size": 2,
-      "accounts": {
-        "technews_tw": 2
-      },
-      "engagement_by_account": {
-        "technews_tw": 0
-      }
-    },
-    {
-      "id": 1,
-      "label": "iphone / 蘋果 / pro / apple",
+      "id": 16,
+      "label": "nvidia / ai / amd / gpu",
       "size": 1,
       "accounts": {
-        "TrendForce": 1
+        "SemiAnalysis_": 1
       },
       "engagement_by_account": {
-        "TrendForce": 4
-      }
-    },
-    {
-      "id": 13,
-      "label": "spacex / ipo / 馬斯克 / ai",
-      "size": 1,
-      "accounts": {
-        "technews_tw": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 0
+        "SemiAnalysis_": 163
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 2,
+      "label": "ai / memory / chip / openai",
+      "own_count": 0,
+      "competitor_count": 7,
+      "competitor_engagement": 200,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "tphuang",
+        "tengyanAI",
+        "yutinghaosfinance"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 2,
+      "label": "ai / memory / chip / openai",
+      "own_count": 0,
+      "competitor_count": 7,
+      "competitor_engagement": 200,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "tphuang",
+        "tengyanAI",
+        "yutinghaosfinance"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-11T10:02:56.590316+00:00",
-    "end_utc": "2026-07-11T18:02:56.590316+00:00",
-    "start_tw": "Jul 11, 18:02",
-    "end_tw": "Jul 12, 02:02"
+    "start_utc": "2026-07-12T00:16:01+08:00",
+    "end_utc": "2026-07-12T08:16:01+08:00",
+    "start_tw": "Jul 12, 00:16",
+    "end_tw": "Jul 12, 08:16"
   }
 }

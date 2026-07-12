@@ -1,53 +1,53 @@
 {
   "clusters": [
     {
-      "id": 0,
-      "label": "ai / memory / 台積電 / hbm",
-      "size": 7,
+      "id": 2,
+      "label": "ai / memory / chip / openai",
+      "size": 6,
       "accounts": {
-        "technews_tw": 2,
-        "tphuang": 3,
-        "ctee.fans": 1,
-        "yutinghaosfinance": 1
+        "SemiAnalysis_": 3,
+        "tphuang": 2,
+        "tengyanAI": 1
       },
       "engagement_by_account": {
-        "technews_tw": 4,
-        "tphuang": 90,
-        "ctee.fans": 13,
-        "yutinghaosfinance": 0
-      }
-    },
-    {
-      "id": 17,
-      "label": "nvidia / ai / amd / rubin",
-      "size": 2,
-      "accounts": {
-        "technews_tw": 1,
-        "SemiAnalysis_": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 3,
-        "SemiAnalysis_": 61
-      }
-    },
-    {
-      "id": 1,
-      "label": "iphone / 蘋果 / pro / apple",
-      "size": 1,
-      "accounts": {
-        "TrendForce": 1
-      },
-      "engagement_by_account": {
-        "TrendForce": 4
+        "SemiAnalysis_": 142,
+        "tphuang": 51,
+        "tengyanAI": 7
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 2,
+      "label": "ai / memory / chip / openai",
+      "own_count": 0,
+      "competitor_count": 6,
+      "competitor_engagement": 200,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "tphuang",
+        "tengyanAI"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 2,
+      "label": "ai / memory / chip / openai",
+      "own_count": 0,
+      "competitor_count": 6,
+      "competitor_engagement": 200,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "tphuang",
+        "tengyanAI"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-11T14:02:56.590316+00:00",
-    "end_utc": "2026-07-11T18:02:56.590316+00:00",
-    "start_tw": "Jul 11, 22:02",
-    "end_tw": "Jul 12, 02:02"
+    "start_utc": "2026-07-12T04:16:01+08:00",
+    "end_utc": "2026-07-12T08:16:01+08:00",
+    "start_tw": "Jul 12, 04:16",
+    "end_tw": "Jul 12, 08:16"
   }
 }
