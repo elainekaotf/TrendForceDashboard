@@ -146,6 +146,17 @@ def fmt_dt(iso_str):
         return esc(iso_str)
 
 
+def account_profile_url(platform, handle):
+    """Handles are stored bare (no leading @, per accounts_config.json) -
+    X and Facebook both resolve a bare handle path to the account's own
+    profile page directly, no lookup needed."""
+    if platform == 'X':
+        return f'https://x.com/{handle}'
+    if platform == 'Facebook':
+        return f'https://www.facebook.com/{handle}'
+    return None
+
+
 def panel(body_html, title=None, eyebrow=None):
     """Consistent card wrapper for a titled block of content - every major
     piece of content (a table, a stat row, a chart) sits inside one of
@@ -359,7 +370,7 @@ def render_accounts(data):
         return '<p class="empty">No FR-05 data yet — run account_comment_management.py build.</p>'
     rows = ''.join(f"""
       <tr>
-        <td class="cell-primary">{esc(a['handle'])}{' <span class="badge own">own</span>' if a['is_own'] else ''}</td>
+        <td class="cell-primary"><a href="{esc(account_profile_url(a['platform'], a['handle']))}" target="_blank" rel="noopener noreferrer">{esc(a['handle'])}</a>{' <span class="badge own">own</span>' if a['is_own'] else ''}</td>
         <td>{esc(a['platform'])}</td>
         <td><span class="badge status-{esc(a['status'])}">{esc(a['status'])}</span></td>
         <td class="num">{fmt_int(a['follower_count']) if a['follower_count'] else '—'}</td>
