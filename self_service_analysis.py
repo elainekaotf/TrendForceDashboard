@@ -7,10 +7,17 @@ pipeline.
 
 Format scope (SRS Open Issue #5, still TBC): CSV and Excel (.xlsx) input are
 both supported (openpyxl), matching the browser-based upload tool on the
-dashboard, which already accepted both. True binary PDF export still needs
-reportlab/fpdf, not installed - export defaults to CSV plus a self-contained,
-print-to-PDF-ready HTML report; add reportlab and extend export_pdf below
-once the format is confirmed.
+dashboard, which already accepted both.
+
+PDF export: rather than add reportlab/fpdf (neither renders CJK without
+also bundling a font - Traditional Chinese text is a real input case here,
+not an edge case, per NFR-07), this shells out to a locally installed
+Chrome/Chromium's own headless print-to-PDF against the self-contained
+HTML report - it already renders CJK correctly via whatever fonts are on
+the machine, no font bundling or licensing question needed. If no
+Chrome/Chromium binary is found (see find_chrome_binary), export falls
+back to just the HTML report, exactly as before this existed - printing
+that to PDF from a browser still works, it's just not automatic.
 
 Processing (mandatory time-zone conversion, NFR-01):
   - Auto-detect the source timestamp's UTC offset when the timestamp string
@@ -31,6 +38,8 @@ import argparse
 import csv
 import json
 import os
+import shutil
+import subprocess
 from collections import Counter
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
@@ -208,9 +217,58 @@ def export_csv(rows, fieldnames, out_path):
             writer.writerow(r['raw'])
 
 
+CHROME_CANDIDATES = [
+    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    '/Applications/Chromium.app/Contents/MacOS/Chromium',
+    '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge',
+]
+CHROME_PATH_NAMES = ['google-chrome', 'google-chrome-stable', 'chromium', 'chromium-browser', 'microsoft-edge']
+
+
+def find_chrome_binary():
+    """A Chrome/Chromium/Edge binary to shell out to for headless
+    print-to-PDF (see export_pdf_report). Checks the usual macOS app
+    bundles first, then falls back to whatever's on PATH for Linux/CI."""
+    env_path = os.environ.get('CHROME_PATH') or os.environ.get('CHROME_BIN')
+    if env_path and os.path.exists(env_path):
+        return env_path
+    for path in CHROME_CANDIDATES:
+        if os.path.exists(path):
+            return path
+    for name in CHROME_PATH_NAMES:
+        found = shutil.which(name)
+        if found:
+            return found
+    return None
+
+
+def export_pdf_report(html_path, pdf_path):
+    """Converts the self-contained HTML report to a real binary PDF via a
+    local Chrome/Chromium's own headless print-to-PDF - it already renders
+    CJK correctly using whatever fonts are on the machine, without this
+    script needing to bundle a font or a PDF-rendering library itself (see
+    module docstring). Returns True on success, False if no browser binary
+    was found or the conversion failed - the caller falls back to just the
+    HTML report either way, so this is never fatal."""
+    chrome = find_chrome_binary()
+    if not chrome:
+        return False
+    try:
+        subprocess.run(
+            [chrome, '--headless=new', '--disable-gpu', '--no-pdf-header-footer',
+             f'--print-to-pdf={pdf_path}', f'file://{os.path.abspath(html_path)}'],
+            capture_output=True, timeout=60, check=True,
+        )
+        return os.path.exists(pdf_path)
+    except (subprocess.SubprocessError, OSError):
+        return False
+
+
 def export_html_report(summary, meta, out_path):
-    """Self-contained, print-to-PDF-ready report - stands in for a binary
-    PDF export until a PDF library is added (see module docstring)."""
+    """Self-contained, print-to-PDF-ready report - export_pdf_report()
+    converts this to a real PDF when a Chrome/Chromium binary is
+    available; otherwise this HTML file is itself the deliverable
+    (printable to PDF manually from a browser, as before)."""
     rows_html = ''.join(
         f'<tr><td>{k}</td><td>{v}</td></tr>' for k, v in summary.items() if k != 'posts_by_day_utc8'
     )
@@ -273,6 +331,7 @@ def main():
     base_name = os.path.splitext(os.path.basename(args.upload_path))[0]
     csv_path = os.path.join(args.out_dir, f'{base_name}_analyzed.csv')
     html_path = os.path.join(args.out_dir, f'{base_name}_report.html')
+    pdf_path = os.path.join(args.out_dir, f'{base_name}_report.pdf')
     json_path = os.path.join(args.out_dir, f'{base_name}_summary.json')
 
     export_csv(rows, fieldnames, csv_path)
@@ -280,7 +339,14 @@ def main():
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump({'meta': meta, 'summary': summary}, f, ensure_ascii=False, indent=2)
 
-    print(f"\nDownloads ready:\n  {csv_path}\n  {html_path} (print to PDF from a browser)\n  {json_path}")
+    downloads = [csv_path, html_path]
+    if export_pdf_report(html_path, pdf_path):
+        downloads.append(pdf_path)
+    else:
+        downloads[-1] += ' (print to PDF from a browser - no Chrome/Chromium binary found for automatic export)'
+    downloads.append(json_path)
+
+    print("\nDownloads ready:\n  " + "\n  ".join(downloads))
 
 
 if __name__ == '__main__':
