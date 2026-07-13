@@ -103,14 +103,20 @@ for h in "${FB_HANDLES[@]}"; do
 done
 
 # Optional: real reply/comment text for our own flagged posts (FR-05),
-# from scrape_own_comments.js - a separate, deliberately narrow scrape run
-# on demand, not on this schedule, so it won't exist every cycle. Absence
-# isn't a failure; the reply queue works fine with just reply_count.
+# from each platform's scrape_own_comments.js - a separate, deliberately
+# narrow scrape run on demand, not on this schedule, so it won't exist
+# every cycle. Absence isn't a failure; the reply queue works fine with
+# just reply_count.
 mkdir -p analysis
 if [ -f "$TWITTER_SRC/own_comments.json" ]; then
   tmp="analysis/own_comments.json.tmp.$$"
   cp "$TWITTER_SRC/own_comments.json" "$tmp"
   mv "$tmp" "analysis/own_comments.json"
+fi
+if [ -f "$FACEBOOK_SRC/own_comments_facebook.json" ]; then
+  tmp="analysis/own_comments_facebook.json.tmp.$$"
+  cp "$FACEBOOK_SRC/own_comments_facebook.json" "$tmp"
+  mv "$tmp" "analysis/own_comments_facebook.json"
 fi
 
 echo "sync_data: synced $synced account file(s), $missing missing"

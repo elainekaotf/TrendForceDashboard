@@ -48,13 +48,20 @@ BASE = os.path.dirname(__file__)
 STATUS_FILE = os.path.join(BASE, 'analysis', 'account_status.json')
 REPLY_QUEUE_FILE = os.path.join(BASE, 'analysis', 'reply_queue.json')
 FOLLOWER_CACHE_FILE = os.path.join(BASE, 'follower_cache.json')
-# Populated by TrendforceTwitterScraper's scrape_own_comments.js (a
-# separate, deliberately narrow scrape of just our own flagged posts'
-# actual reply text - see that script's docstring), synced in by
-# sync_data.sh. Keyed by post URL: {url: [{author, text, timestamp,
-# likes}, ...]}. Optional - the reply queue works fine without it,
-# just with reply_count instead of real comment content.
-OWN_COMMENTS_FILE = os.path.join(BASE, 'analysis', 'own_comments.json')
+# Populated by each platform's own scrape_own_comments.js (a separate,
+# deliberately narrow scrape of just our own flagged posts' actual reply
+# text - see those scripts' docstrings, in TrendforceTwitterScraper and
+# TrendforceFacebookScraper respectively), synced in by sync_data.sh.
+# Both keyed by post URL: {url: [{author, text, ...}, ...]} - X comments
+# carry a timestamp/likes field, Facebook comments carry relativeTime
+# instead (no reliable absolute-time signal was available there without
+# a much slower hover-per-comment pass). Optional - the reply queue works
+# fine without either, just with reply_count instead of real comment
+# content.
+OWN_COMMENTS_FILES = [
+    os.path.join(BASE, 'analysis', 'own_comments.json'),
+    os.path.join(BASE, 'analysis', 'own_comments_facebook.json'),
+]
 
 NEEDS_RESPONSE_THRESHOLD = 5  # replies on a post before it's queued for a draft
 STALE_AFTER_DAYS = 3
@@ -199,10 +206,13 @@ def load_reply_queue():
 
 
 def load_own_comments():
-    if not os.path.exists(OWN_COMMENTS_FILE):
-        return {}
-    with open(OWN_COMMENTS_FILE, encoding='utf-8') as f:
-        return json.load(f)
+    merged = {}
+    for path in OWN_COMMENTS_FILES:
+        if not os.path.exists(path):
+            continue
+        with open(path, encoding='utf-8') as f:
+            merged.update(json.load(f))
+    return merged
 
 
 def save_reply_queue(queue):
