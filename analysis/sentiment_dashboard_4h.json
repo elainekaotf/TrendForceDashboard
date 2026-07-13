@@ -1,58 +1,68 @@
 {
-  "generated_at": "2026-07-13T08:40:00+00:00",
+  "generated_at": "2026-07-13T09:02:34.192765+00:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-13T04:40:00+00:00",
-    "end_utc": "2026-07-13T08:40:00+00:00",
-    "start_tw": "Jul 13, 12:40",
-    "end_tw": "Jul 13, 16:40"
+    "start_utc": "2026-07-13T05:02:34.192765+00:00",
+    "end_utc": "2026-07-13T09:02:34.192765+00:00",
+    "start_tw": "Jul 13, 13:02",
+    "end_tw": "Jul 13, 17:02"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 61,
+      "total_posts": 57,
       "sentiment_counts": {
-        "positive": 17,
-        "neutral": 26,
-        "negative": 18
+        "positive": 12,
+        "neutral": 24,
+        "negative": 21
       },
       "sentiment_share": {
-        "positive": 0.279,
-        "neutral": 0.426,
-        "negative": 0.295
+        "positive": 0.211,
+        "neutral": 0.421,
+        "negative": 0.368
       },
       "top_terms": [
         "See",
         "more",
-        "#記憶體",
         "#台積電",
+        "#記憶體",
         "#半導體",
         "tsmc",
         "台積電",
         "the",
         "超越豐田與鎧俠",
-        "http"
+        "SLC"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 1,
-        "label": "ai / 大立光亮燈漲停 / 記憶體 / dram",
+        "label": "ai / 南亞科預期記憶體續吃緊 / 傳輝達暫棄台積電coupe光學方案 / slc",
         "heat": 90.0,
-        "volume": 36,
-        "engagement": 556,
+        "volume": 33,
+        "engagement": 1091,
         "entities": [
-          "台北",
           "台積電",
+          "台北",
           "安川",
-          "三菱",
-          "日本"
+          "南亞科",
+          "三菱"
         ]
       },
       {
-        "topic_id": 5,
+        "topic_id": 2,
+        "label": "台積電 / 半導體 / 最新 / ai",
+        "heat": 14.1,
+        "volume": 4,
+        "engagement": 318,
+        "entities": [
+          "台積電"
+        ]
+      },
+      {
+        "topic_id": 6,
         "label": "tsmc / june / nt / yoy",
-        "heat": 46.0,
+        "heat": 12.3,
         "volume": 3,
         "engagement": 509,
         "entities": [
@@ -62,18 +72,22 @@
         ]
       },
       {
-        "topic_id": 4,
-        "label": "台積電 / 半導體 / 最新 / ai",
-        "heat": 25.9,
-        "volume": 4,
-        "engagement": 318,
+        "topic_id": 3,
+        "label": "anthropic / claude / claudefable / 再延推廣期",
+        "heat": 10.2,
+        "volume": 3,
+        "engagement": 7,
         "entities": [
-          "台積電"
+          "Claude Fable",
+          "ClaudeFable",
+          "ai模型  fab  anthropic",
+          "再延推廣期",
+          "AI蒸餾"
         ]
       },
       {
-        "topic_id": 9,
-        "label": "先進封裝 / 英特爾 / 川普政府力推英特爾擴大先進封裝 / 盼將更多晶片製造轉回本土",
+        "topic_id": 0,
+        "label": "英特爾 / 先進封裝 / 川普政府力推英特爾擴大先進封裝 / 盼將更多晶片製造轉回本土",
         "heat": 10.0,
         "volume": 2,
         "engagement": 8,
@@ -84,7 +98,7 @@
         ]
       },
       {
-        "topic_id": 10,
+        "topic_id": 9,
         "label": "韓國車廠 / 現代 / 起亞及通用韓國工會相繼醞釀罷工 / 現代汽車",
         "heat": 10.0,
         "volume": 2,
@@ -95,8 +109,18 @@
         ]
       },
       {
-        "topic_id": 6,
-        "label": "火山監測 / 盼提高預測火山噴發能力 / 德國團隊在義大利伏卡諾島測試新技術 / 無人機",
+        "topic_id": 8,
+        "label": "再獲美國專利 / 抗癌新藥 / 專利 / 共信ky",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 9,
+        "entities": [
+          "美國"
+        ]
+      },
+      {
+        "topic_id": 5,
+        "label": "火山監測 / 盼提高預測火山噴發能力 / 無人機 / 無人機監測火山氣體",
         "heat": 10.0,
         "volume": 2,
         "engagement": 5,
@@ -106,18 +130,7 @@
         ]
       },
       {
-        "topic_id": 3,
-        "label": "無害 / ai資安 / 提示注入 / 程式碼助理攻擊入口",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 7,
-        "entities": [
-          "曝光",
-          "入口"
-        ]
-      },
-      {
-        "topic_id": 8,
+        "topic_id": 10,
         "label": "uap / 科學諮詢架構 / 勒布 / 白宮",
         "heat": 10.0,
         "volume": 2,
@@ -127,32 +140,22 @@
         ]
       },
       {
+        "topic_id": 4,
+        "label": "fcc / 太空反射鏡 / reflectorbital / 測試把陽光反射回地表",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 13,
+        "entities": [
+          "FCC",
+          "Reflect Orbital",
+          "太空反射鏡",
+          "fcc  太空反射鏡",
+          "將送衛星入軌 測試把陽光反射回地表"
+        ]
+      },
+      {
         "topic_id": 7,
-        "label": "anthropic / fable / 再延推廣期 / claude",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 6,
-        "entities": [
-          "Claude Fable",
-          "ClaudeFable",
-          "ai模型  fab  anthropic",
-          "再延推廣期",
-          "AI模型"
-        ]
-      },
-      {
-        "topic_id": 0,
-        "label": "南亞科預期記憶體續吃緊 / ai",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 95,
-        "entities": [
-          "南亞科"
-        ]
-      },
-      {
-        "topic_id": 11,
-        "label": "維持亞洲鄰近國家最低水準 / 中油 / 柴油價格皆不調整 / 油價凍漲",
+        "label": "柴油價格皆不調整 / 中油 / 維持亞洲鄰近國家最低水準 / 台灣中油油價凍漲",
         "heat": 10.0,
         "volume": 2,
         "engagement": 7,
@@ -160,27 +163,12 @@
           "亞洲",
           "台灣"
         ]
-      },
-      {
-        "topic_id": 2,
-        "label": "openai / anthropic / ai蒸餾 / google",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 12,
-        "entities": [
-          "AI蒸餾",
-          "OpenAI"
-        ]
       }
     ],
     "named_entities": [
       {
         "entity": "台積電",
-        "count": 27
-      },
-      {
-        "entity": "南亞科",
-        "count": 14
+        "count": 28
       },
       {
         "entity": "韓國",
@@ -196,6 +184,10 @@
       },
       {
         "entity": "安川",
+        "count": 8
+      },
+      {
+        "entity": "南亞科",
         "count": 8
       },
       {
@@ -219,6 +211,10 @@
         "count": 5
       },
       {
+        "entity": "台灣",
+        "count": 5
+      },
+      {
         "entity": "豐田",
         "count": 4
       },
@@ -229,123 +225,119 @@
       {
         "entity": "中山",
         "count": 4
-      },
-      {
-        "entity": "亞及",
-        "count": 4
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-13T04:39:59.999994+00:00",
-        "bucket_end": "2026-07-13T04:57:08.571423+00:00",
-        "positive": 4,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-13T04:57:08.571423+00:00",
-        "bucket_end": "2026-07-13T05:14:17.142852+00:00",
-        "positive": 1,
-        "neutral": 3,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-13T05:14:17.142852+00:00",
-        "bucket_end": "2026-07-13T05:31:25.714281+00:00",
+        "bucket_start": "2026-07-13T05:02:34.192759+00:00",
+        "bucket_end": "2026-07-13T05:19:42.764188+00:00",
         "positive": 0,
         "neutral": 1,
-        "negative": 3
+        "negative": 2
       },
       {
-        "bucket_start": "2026-07-13T05:31:25.714281+00:00",
-        "bucket_end": "2026-07-13T05:48:34.285710+00:00",
+        "bucket_start": "2026-07-13T05:19:42.764188+00:00",
+        "bucket_end": "2026-07-13T05:36:51.335617+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-13T05:36:51.335617+00:00",
+        "bucket_end": "2026-07-13T05:53:59.907046+00:00",
         "positive": 1,
         "neutral": 3,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-13T05:48:34.285710+00:00",
-        "bucket_end": "2026-07-13T06:05:42.857139+00:00",
-        "positive": 1,
-        "neutral": 2,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-13T06:05:42.857139+00:00",
-        "bucket_end": "2026-07-13T06:22:51.428568+00:00",
+        "bucket_start": "2026-07-13T05:53:59.907046+00:00",
+        "bucket_end": "2026-07-13T06:11:08.478475+00:00",
         "positive": 2,
         "neutral": 3,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-13T06:22:51.428568+00:00",
-        "bucket_end": "2026-07-13T06:39:59.999997+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 2
+        "bucket_start": "2026-07-13T06:11:08.478475+00:00",
+        "bucket_end": "2026-07-13T06:28:17.049904+00:00",
+        "positive": 1,
+        "neutral": 2,
+        "negative": 0
       },
       {
-        "bucket_start": "2026-07-13T06:39:59.999997+00:00",
-        "bucket_end": "2026-07-13T06:57:08.571426+00:00",
-        "positive": 3,
+        "bucket_start": "2026-07-13T06:28:17.049904+00:00",
+        "bucket_end": "2026-07-13T06:45:25.621333+00:00",
+        "positive": 2,
         "neutral": 0,
-        "negative": 1
+        "negative": 3
       },
       {
-        "bucket_start": "2026-07-13T06:57:08.571426+00:00",
-        "bucket_end": "2026-07-13T07:14:17.142855+00:00",
-        "positive": 3,
+        "bucket_start": "2026-07-13T06:45:25.621333+00:00",
+        "bucket_end": "2026-07-13T07:02:34.192762+00:00",
+        "positive": 2,
         "neutral": 2,
         "negative": 3
       },
       {
-        "bucket_start": "2026-07-13T07:14:17.142855+00:00",
-        "bucket_end": "2026-07-13T07:31:25.714284+00:00",
-        "positive": 1,
-        "neutral": 3,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-13T07:31:25.714284+00:00",
-        "bucket_end": "2026-07-13T07:48:34.285713+00:00",
-        "positive": 1,
-        "neutral": 1,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-13T07:48:34.285713+00:00",
-        "bucket_end": "2026-07-13T08:05:42.857142+00:00",
-        "positive": 0,
+        "bucket_start": "2026-07-13T07:02:34.192762+00:00",
+        "bucket_end": "2026-07-13T07:19:42.764191+00:00",
+        "positive": 2,
         "neutral": 2,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-13T08:05:42.857142+00:00",
-        "bucket_end": "2026-07-13T08:22:51.428571+00:00",
-        "positive": 0,
-        "neutral": 3,
+        "bucket_start": "2026-07-13T07:19:42.764191+00:00",
+        "bucket_end": "2026-07-13T07:36:51.335620+00:00",
+        "positive": 1,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-13T07:36:51.335620+00:00",
+        "bucket_end": "2026-07-13T07:53:59.907049+00:00",
+        "positive": 1,
+        "neutral": 0,
         "negative": 2
       },
       {
-        "bucket_start": "2026-07-13T08:22:51.428571+00:00",
-        "bucket_end": "2026-07-13T08:40:00+00:00",
+        "bucket_start": "2026-07-13T07:53:59.907049+00:00",
+        "bucket_end": "2026-07-13T08:11:08.478478+00:00",
         "positive": 0,
-        "neutral": 3,
+        "neutral": 4,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-13T08:11:08.478478+00:00",
+        "bucket_end": "2026-07-13T08:28:17.049907+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 3
+      },
+      {
+        "bucket_start": "2026-07-13T08:28:17.049907+00:00",
+        "bucket_end": "2026-07-13T08:45:25.621336+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 3
+      },
+      {
+        "bucket_start": "2026-07-13T08:45:25.621336+00:00",
+        "bucket_end": "2026-07-13T09:02:34.192765+00:00",
+        "positive": 0,
+        "neutral": 0,
         "negative": 2
       }
     ],
     "coverage_focus_ranking": [
       {
         "handle": "TrendForce",
-        "top_topic_id": 5,
+        "top_topic_id": 6,
         "top_topic_label": "tsmc / june / nt / yoy",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "jukan05",
-        "top_topic_id": 5,
+        "top_topic_id": 6,
         "top_topic_label": "tsmc / june / nt / yoy",
         "focus_share": 1.0,
         "post_count": 1
@@ -353,101 +345,102 @@
       {
         "handle": "QQ_Timmy",
         "top_topic_id": 1,
-        "top_topic_label": "ai / 大立光亮燈漲停 / 記憶體 / dram",
+        "top_topic_label": "ai / 南亞科預期記憶體續吃緊 / 傳輝達暫棄台積電coupe光學方案 / slc",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "ctee.fans",
         "top_topic_id": 1,
-        "top_topic_label": "ai / 大立光亮燈漲停 / 記憶體 / dram",
+        "top_topic_label": "ai / 南亞科預期記憶體續吃緊 / 傳輝達暫棄台積電coupe光學方案 / slc",
         "focus_share": 1.0,
-        "post_count": 11
+        "post_count": 10
+      },
+      {
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 南亞科預期記憶體續吃緊 / 傳輝達暫棄台積電coupe光學方案 / slc",
+        "focus_share": 1.0,
+        "post_count": 3
       },
       {
         "handle": "technewsinside",
         "top_topic_id": 1,
-        "top_topic_label": "ai / 大立光亮燈漲停 / 記憶體 / dram",
-        "focus_share": 0.522,
-        "post_count": 23
+        "top_topic_label": "ai / 南亞科預期記憶體續吃緊 / 傳輝達暫棄台積電coupe光學方案 / slc",
+        "focus_share": 0.5,
+        "post_count": 20
       },
       {
         "handle": "technews_tw",
         "top_topic_id": 1,
-        "top_topic_label": "ai / 大立光亮燈漲停 / 記憶體 / dram",
-        "focus_share": 0.5,
-        "post_count": 24
+        "top_topic_label": "ai / 南亞科預期記憶體續吃緊 / 傳輝達暫棄台積電coupe光學方案 / slc",
+        "focus_share": 0.429,
+        "post_count": 21
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 1,
-        "label": "ai / 大立光亮燈漲停 / 記憶體 / dram",
-        "total_engagement": 556,
-        "post_count": 36
+        "label": "ai / 南亞科預期記憶體續吃緊 / 傳輝達暫棄台積電coupe光學方案 / slc",
+        "total_engagement": 1091,
+        "post_count": 33
       },
       {
-        "topic_id": 5,
+        "topic_id": 6,
         "label": "tsmc / june / nt / yoy",
         "total_engagement": 509,
         "post_count": 3
       },
       {
-        "topic_id": 4,
+        "topic_id": 2,
         "label": "台積電 / 半導體 / 最新 / ai",
         "total_engagement": 318,
         "post_count": 4
       },
       {
+        "topic_id": 4,
+        "label": "fcc / 太空反射鏡 / reflectorbital / 測試把陽光反射回地表",
+        "total_engagement": 13,
+        "post_count": 2
+      },
+      {
+        "topic_id": 8,
+        "label": "再獲美國專利 / 抗癌新藥 / 專利 / 共信ky",
+        "total_engagement": 9,
+        "post_count": 2
+      },
+      {
         "topic_id": 0,
-        "label": "南亞科預期記憶體續吃緊 / ai",
-        "total_engagement": 95,
-        "post_count": 2
-      },
-      {
-        "topic_id": 2,
-        "label": "openai / anthropic / ai蒸餾 / google",
-        "total_engagement": 12,
-        "post_count": 2
-      },
-      {
-        "topic_id": 9,
-        "label": "先進封裝 / 英特爾 / 川普政府力推英特爾擴大先進封裝 / 盼將更多晶片製造轉回本土",
+        "label": "英特爾 / 先進封裝 / 川普政府力推英特爾擴大先進封裝 / 盼將更多晶片製造轉回本土",
         "total_engagement": 8,
         "post_count": 2
       },
       {
         "topic_id": 3,
-        "label": "無害 / ai資安 / 提示注入 / 程式碼助理攻擊入口",
+        "label": "anthropic / claude / claudefable / 再延推廣期",
+        "total_engagement": 7,
+        "post_count": 3
+      },
+      {
+        "topic_id": 7,
+        "label": "柴油價格皆不調整 / 中油 / 維持亞洲鄰近國家最低水準 / 台灣中油油價凍漲",
         "total_engagement": 7,
         "post_count": 2
       },
       {
-        "topic_id": 11,
-        "label": "維持亞洲鄰近國家最低水準 / 中油 / 柴油價格皆不調整 / 油價凍漲",
-        "total_engagement": 7,
-        "post_count": 2
-      },
-      {
-        "topic_id": 10,
+        "topic_id": 9,
         "label": "韓國車廠 / 現代 / 起亞及通用韓國工會相繼醞釀罷工 / 現代汽車",
         "total_engagement": 6,
         "post_count": 2
       },
       {
-        "topic_id": 7,
-        "label": "anthropic / fable / 再延推廣期 / claude",
-        "total_engagement": 6,
-        "post_count": 2
-      },
-      {
-        "topic_id": 6,
-        "label": "火山監測 / 盼提高預測火山噴發能力 / 德國團隊在義大利伏卡諾島測試新技術 / 無人機",
+        "topic_id": 5,
+        "label": "火山監測 / 盼提高預測火山噴發能力 / 無人機 / 無人機監測火山氣體",
         "total_engagement": 5,
         "post_count": 2
       },
       {
-        "topic_id": 8,
+        "topic_id": 10,
         "label": "uap / 科學諮詢架構 / 勒布 / 白宮",
         "total_engagement": 4,
         "post_count": 2
@@ -462,10 +455,10 @@
           "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 61,
-          "likes": 1425,
-          "engagement": 1533,
-          "avg_engagement": 25.1
+          "post_count": 57,
+          "likes": 1870,
+          "engagement": 1977,
+          "avg_engagement": 34.7
         },
         "evening": {
           "post_count": 0,
