@@ -1,0 +1,44 @@
+# Custom jieba user dictionary for FR-03 NER (nlp_sentiment.py's extract_entities).
+#
+# jieba's default dictionary either mis-segments these company/person names
+# (e.g. "台積電" splits into "台積" + "電") or segments them correctly but
+# tags them with a non-proper-noun POS (e.g. "輝達" comes back as an
+# adjective 'a', "微軟" too) - extract_entities only keeps tokens tagged
+# nr/ns/nt/nz, so a wrong tag silently drops a real company name from NER
+# results. Forcing pos=nz (proper noun) here fixes both problems for
+# TrendForce's actual semiconductor/tech beat, at a high frequency so
+# jieba's segmenter prefers the whole word over any shorter split.
+#
+# Format: word [frequency] [pos] - see jieba's load_userdict() docs.
+
+台積電 100000 nz
+鴻海 100000 nz
+日月光 100000 nz
+南亞科 100000 nz
+華邦電 100000 nz
+和碩 100000 nz
+台達電 100000 nz
+遠傳電信 100000 nz
+美光科技 100000 nz
+英特爾 100000 nz
+魏哲家 100000 nz
+輝達 100000 nz
+友達 100000 nz
+微軟 100000 nz
+矽力 100000 nz
+群聯 100000 nz
+群創 100000 nz
+創見 100000 nz
+緯創 100000 nz
+超微 100000 nz
+力積電 100000 nz
+世界先進 100000 nz
+穩懋 100000 nz
+環球晶 100000 nz
+西部數據 100000 nz
+SK海力士 100000 nz
+台灣積體電路 100000 nz
+台灣大哥大 100000 nz
+中華電信 100000 nz
+聯發科 100000 nz
+谷歌 100000 nz

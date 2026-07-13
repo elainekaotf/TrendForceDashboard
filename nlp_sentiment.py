@@ -67,6 +67,7 @@ from datetime import datetime, timedelta, timezone
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from cnsenti import Sentiment as ChineseSentiment
 from opencc import OpenCC
+import jieba
 import jieba.posseg as pseg
 
 from cluster_topics import N_CLUSTERS, load_posts, label_cluster, cluster_posts, OWN_HANDLES
@@ -84,6 +85,14 @@ except Exception:
 # nz=other proper noun.
 CHINESE_ENTITY_POS_TAGS = {'nr', 'ns', 'nt', 'nz'}
 EN_ENTITY_LABELS = {'PERSON', 'ORG', 'GPE', 'PRODUCT', 'NORP', 'FAC', 'LOC'}
+
+# jieba's default dictionary either splits known company names apart
+# (e.g. "台積電" -> "台積" + "電") or tags them with a non-proper-noun POS
+# (e.g. "輝達" comes back as an adjective) - either way extract_entities
+# silently drops them, since it only keeps CHINESE_ENTITY_POS_TAGS. Loading
+# this covers TrendForce's actual semiconductor/tech beat; see the file
+# itself for the reasoning on the forced pos=nz.
+jieba.load_userdict(os.path.join(os.path.dirname(__file__), 'jieba_userdict.txt'))
 
 BASE = os.path.dirname(__file__)
 OUT_FILE = os.path.join(BASE, 'analysis', 'sentiment_dashboard.json')

@@ -10,25 +10,25 @@
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 36,
+      "total_posts": 44,
       "sentiment_counts": {
-        "positive": 22,
-        "negative": 6,
-        "neutral": 8
+        "positive": 25,
+        "negative": 7,
+        "neutral": 12
       },
       "sentiment_share": {
-        "positive": 0.611,
-        "negative": 0.167,
-        "neutral": 0.222
+        "positive": 0.568,
+        "negative": 0.159,
+        "neutral": 0.273
       },
       "top_terms": [
+        "See",
+        "more",
         "the",
         "ABF",
         "#大摩",
         "hynix",
         "BYD",
-        "See",
-        "more",
         "載板恐成",
         "台積電",
         "cowos"
@@ -36,26 +36,27 @@
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "ai / dram / openai / hynix",
+        "topic_id": 3,
+        "label": "dram / ai / abf / hynix",
         "heat": 90.0,
-        "volume": 22,
-        "engagement": 1134,
+        "volume": 28,
+        "engagement": 1296,
         "entities": [
-          "三星",
-          "BYD",
           "伺服器",
+          "三星",
           "大立光",
+          "BYD",
           "韋伯望"
         ]
       },
       {
-        "topic_id": 3,
-        "label": "cowos / 台積電 / ai供應鏈 / ai",
+        "topic_id": 2,
+        "label": "cowos / 台積電 / ai / ai供應鏈",
         "heat": 11.1,
         "volume": 4,
         "engagement": 19,
         "entities": [
+          "台積電",
           "大摩",
           "HBM",
           "AI",
@@ -63,7 +64,15 @@
         ]
       },
       {
-        "topic_id": 6,
+        "topic_id": 0,
+        "label": "meta / 競爭焦點轉向成本 / openai / spacexai",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 1,
+        "entities": []
+      },
+      {
+        "topic_id": 7,
         "label": "創辦人揭矛盾 / ai疲勞 / 程式設計師用 / midjourney",
         "heat": 10.0,
         "volume": 2,
@@ -71,18 +80,19 @@
         "entities": []
       },
       {
-        "topic_id": 1,
+        "topic_id": 4,
         "label": "黃仁勳等高層展現高度信心 / 輝達 / 強調成長正加速且多元化 / 大摩重申輝達買進評等",
         "heat": 10.0,
         "volume": 2,
         "engagement": 17,
         "entities": [
           "大摩",
+          "輝達",
           "黃仁勳"
         ]
       },
       {
-        "topic_id": 4,
+        "topic_id": 6,
         "label": "spacex / 可重複使用火箭 / 中國航太 / 爭奪衛星產業主導權更近一步",
         "heat": 10.0,
         "volume": 2,
@@ -92,23 +102,23 @@
         ]
       },
       {
-        "topic_id": 5,
-        "label": "ai伺服器 / abf載板 / 南電 / 最高上看",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 19,
-        "entities": [
-          "伺服器"
-        ]
-      },
-      {
-        "topic_id": 2,
+        "topic_id": 1,
         "label": "成希望設立 / ai主權基金 / 科技業裁員 / 讓企業負更多責任",
         "heat": 10.0,
         "volume": 2,
         "engagement": 11,
         "entities": [
           "美國"
+        ]
+      },
+      {
+        "topic_id": 5,
+        "label": "epic / 生成式ai / 稱原可幫 / 辯論兩極化",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 8,
+        "entities": [
+          "天命"
         ]
       }
     ],
@@ -119,6 +129,10 @@
       },
       {
         "entity": "伺服器",
+        "count": 8
+      },
+      {
+        "entity": "輝達",
         "count": 8
       },
       {
@@ -134,12 +148,16 @@
         "count": 7
       },
       {
-        "entity": "BYD",
-        "count": 5
+        "entity": "台積電",
+        "count": 7
       },
       {
         "entity": "大立光",
-        "count": 4
+        "count": 5
+      },
+      {
+        "entity": "BYD",
+        "count": 5
       },
       {
         "entity": "韋伯望",
@@ -164,14 +182,6 @@
       {
         "entity": "UK",
         "count": 3
-      },
-      {
-        "entity": "HBM",
-        "count": 2
-      },
-      {
-        "entity": "QoQ",
-        "count": 2
       }
     ],
     "sentiment_trend_curve": [
@@ -199,14 +209,14 @@
       {
         "bucket_start": "2026-07-13T01:32:25.714281+00:00",
         "bucket_end": "2026-07-13T01:49:34.285710+00:00",
-        "positive": 2,
+        "positive": 3,
         "neutral": 2,
         "negative": 0
       },
       {
         "bucket_start": "2026-07-13T01:49:34.285710+00:00",
         "bucket_end": "2026-07-13T02:06:42.857139+00:00",
-        "positive": 0,
+        "positive": 1,
         "neutral": 2,
         "negative": 0
       },
@@ -214,14 +224,14 @@
         "bucket_start": "2026-07-13T02:06:42.857139+00:00",
         "bucket_end": "2026-07-13T02:23:51.428568+00:00",
         "positive": 2,
-        "neutral": 0,
+        "neutral": 1,
         "negative": 0
       },
       {
         "bucket_start": "2026-07-13T02:23:51.428568+00:00",
         "bucket_end": "2026-07-13T02:40:59.999997+00:00",
         "positive": 2,
-        "neutral": 0,
+        "neutral": 1,
         "negative": 0
       },
       {
@@ -235,7 +245,7 @@
         "bucket_start": "2026-07-13T02:58:08.571426+00:00",
         "bucket_end": "2026-07-13T03:15:17.142855+00:00",
         "positive": 3,
-        "neutral": 0,
+        "neutral": 2,
         "negative": 0
       },
       {
@@ -243,7 +253,7 @@
         "bucket_end": "2026-07-13T03:32:25.714284+00:00",
         "positive": 4,
         "neutral": 1,
-        "negative": 0
+        "negative": 1
       },
       {
         "bucket_start": "2026-07-13T03:32:25.714284+00:00",
@@ -255,7 +265,7 @@
       {
         "bucket_start": "2026-07-13T03:49:34.285713+00:00",
         "bucket_end": "2026-07-13T04:06:42.857142+00:00",
-        "positive": 0,
+        "positive": 1,
         "neutral": 1,
         "negative": 1
       },
@@ -277,97 +287,110 @@
     "coverage_focus_ranking": [
       {
         "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / dram / openai / hynix",
+        "top_topic_id": 3,
+        "top_topic_label": "dram / ai / abf / hynix",
         "focus_share": 1.0,
         "post_count": 3
       },
       {
         "handle": "tphuang",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / dram / openai / hynix",
+        "top_topic_id": 3,
+        "top_topic_label": "dram / ai / abf / hynix",
         "focus_share": 1.0,
         "post_count": 2
       },
       {
         "handle": "tengyanAI",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / dram / openai / hynix",
+        "top_topic_id": 3,
+        "top_topic_label": "dram / ai / abf / hynix",
         "focus_share": 1.0,
         "post_count": 2
       },
       {
+        "handle": "ctee.fans",
+        "top_topic_id": 3,
+        "top_topic_label": "dram / ai / abf / hynix",
+        "focus_share": 1.0,
+        "post_count": 8
+      },
+      {
         "handle": "technewsinside",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / dram / openai / hynix",
-        "focus_share": 0.533,
+        "top_topic_id": 3,
+        "top_topic_label": "dram / ai / abf / hynix",
+        "focus_share": 0.467,
         "post_count": 15
       },
       {
         "handle": "technews_tw",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / dram / openai / hynix",
-        "focus_share": 0.5,
+        "top_topic_id": 3,
+        "top_topic_label": "dram / ai / abf / hynix",
+        "focus_share": 0.429,
         "post_count": 14
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "ai / dram / openai / hynix",
-        "total_engagement": 1134,
-        "post_count": 22
-      },
-      {
-        "topic_id": 5,
-        "label": "ai伺服器 / abf載板 / 南電 / 最高上看",
-        "total_engagement": 19,
-        "post_count": 2
-      },
-      {
         "topic_id": 3,
-        "label": "cowos / 台積電 / ai供應鏈 / ai",
+        "label": "dram / ai / abf / hynix",
+        "total_engagement": 1296,
+        "post_count": 28
+      },
+      {
+        "topic_id": 2,
+        "label": "cowos / 台積電 / ai / ai供應鏈",
         "total_engagement": 19,
         "post_count": 4
       },
       {
-        "topic_id": 1,
+        "topic_id": 4,
         "label": "黃仁勳等高層展現高度信心 / 輝達 / 強調成長正加速且多元化 / 大摩重申輝達買進評等",
         "total_engagement": 17,
         "post_count": 2
       },
       {
-        "topic_id": 4,
+        "topic_id": 6,
         "label": "spacex / 可重複使用火箭 / 中國航太 / 爭奪衛星產業主導權更近一步",
         "total_engagement": 17,
         "post_count": 2
       },
       {
-        "topic_id": 2,
+        "topic_id": 1,
         "label": "成希望設立 / ai主權基金 / 科技業裁員 / 讓企業負更多責任",
         "total_engagement": 11,
         "post_count": 2
       },
       {
-        "topic_id": 6,
+        "topic_id": 5,
+        "label": "epic / 生成式ai / 稱原可幫 / 辯論兩極化",
+        "total_engagement": 8,
+        "post_count": 2
+      },
+      {
+        "topic_id": 7,
         "label": "創辦人揭矛盾 / ai疲勞 / 程式設計師用 / midjourney",
         "total_engagement": 2,
+        "post_count": 2
+      },
+      {
+        "topic_id": 0,
+        "label": "meta / 競爭焦點轉向成本 / openai / spacexai",
+        "total_engagement": 1,
         "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 29,
-          "likes": 1011,
-          "engagement": 1192,
-          "avg_engagement": 41.1
+          "post_count": 36,
+          "likes": 1152,
+          "engagement": 1333,
+          "avg_engagement": 37.0
         },
         "afternoon": {
-          "post_count": 7,
-          "likes": 22,
-          "engagement": 27,
-          "avg_engagement": 3.9
+          "post_count": 8,
+          "likes": 33,
+          "engagement": 38,
+          "avg_engagement": 4.8
         },
         "evening": {
           "post_count": 0,

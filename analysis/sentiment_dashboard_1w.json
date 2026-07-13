@@ -10,15 +10,15 @@
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 1251,
+      "total_posts": 1260,
       "sentiment_counts": {
-        "positive": 518,
-        "neutral": 408,
-        "negative": 325
+        "positive": 521,
+        "neutral": 412,
+        "negative": 327
       },
       "sentiment_share": {
-        "positive": 0.414,
-        "neutral": 0.326,
+        "positive": 0.413,
+        "neutral": 0.327,
         "negative": 0.26
       },
       "top_terms": [
@@ -36,81 +36,39 @@
     },
     "temperature_bar": [
       {
-        "topic_id": 3,
-        "label": "ai / nvidia / openai / dram",
+        "topic_id": 1,
+        "label": "ai / nvidia / openai / 台積電",
         "heat": 90.0,
-        "volume": 1121,
-        "engagement": 128002,
+        "volume": 1133,
+        "engagement": 129381,
         "entities": [
+          "台積電",
           "美國",
+          "輝達",
+          "三星",
+          "中國"
+        ]
+      },
+      {
+        "topic_id": 13,
+        "label": "dram / trendforce / server / 記憶體",
+        "heat": 11.3,
+        "volume": 31,
+        "engagement": 2336,
+        "entities": [
+          "DRAM",
+          "南亞科",
+          "TrendForce",
           "中國",
-          "台灣",
-          "日本",
-          "AI"
+          "台積電"
         ]
       },
       {
-        "topic_id": 0,
-        "label": "meta / iris / training / ai",
-        "heat": 10.5,
-        "volume": 9,
-        "engagement": 2950,
-        "entities": [
-          "智慧",
-          "Meta",
-          "於懷",
-          "俄明州",
-          "曝光"
-        ]
-      },
-      {
-        "topic_id": 6,
-        "label": "美元 / amd / 高盛看好代理型 / 需求",
-        "heat": 10.4,
-        "volume": 7,
-        "engagement": 727,
-        "entities": [
-          "英特",
-          "華爾街憂",
-          "平倉",
-          "伺服器",
-          "高盛"
-        ]
-      },
-      {
-        "topic_id": 5,
-        "label": "三星 / sk海力士 / hbm / sk",
+        "topic_id": 4,
+        "label": "ai / agent / 台積電 / 馬斯克",
         "heat": 10.2,
-        "volume": 27,
-        "engagement": 280,
-        "entities": [
-          "三星",
-          "美國",
-          "上市",
-          "韓國",
-          "韓國豪"
-        ]
-      },
-      {
-        "topic_id": 11,
-        "label": "台積電 / 英特爾 / cowos / intel",
-        "heat": 10.2,
-        "volume": 20,
-        "engagement": 330,
-        "entities": [
-          "英特",
-          "中研院",
-          "三星",
-          "張忠謀",
-          "亞利"
-        ]
-      },
-      {
-        "topic_id": 7,
-        "label": "ai / agent / 馬斯克 / ai伺服器",
-        "heat": 10.2,
-        "volume": 21,
-        "engagement": 285,
+        "volume": 22,
+        "engagement": 328,
         "entities": [
           "全美",
           "摩根",
@@ -120,36 +78,88 @@
         ]
       },
       {
-        "topic_id": 4,
-        "label": "南亞科 / dram / 記憶體 / 工商財經網",
-        "heat": 10.1,
-        "volume": 10,
-        "engagement": 189,
+        "topic_id": 3,
+        "label": "不過 / 台股 / pcb / 並於",
+        "heat": 10.2,
+        "volume": 5,
+        "engagement": 382,
         "entities": [
-          "南亞",
-          "伺服器",
-          "高峰",
-          "季增",
-          "南亞科             https"
+          "寶座",
+          "摩根",
+          "大通",
+          "權王",
+          "台積電"
+        ]
+      },
+      {
+        "topic_id": 11,
+        "label": "萬人 / 日公布 / 已連續 / 個月",
+        "heat": 10.2,
+        "volume": 4,
+        "engagement": 514,
+        "entities": [
+          "美國",
+          "日本",
+          "內政部",
+          "全國總"
+        ]
+      },
+      {
+        "topic_id": 16,
+        "label": "hbm / sk海力士 / dram / nand",
+        "heat": 10.1,
+        "volume": 12,
+        "engagement": 162,
+        "entities": [
+          "SK海力士",
+          "三星",
+          "南亞科",
+          "英特爾",
+          "輝達"
         ]
       },
       {
         "topic_id": 2,
-        "label": "datatrack / 看詳情 / 美國 / 中國",
-        "heat": 10.0,
-        "volume": 6,
-        "engagement": 48,
+        "label": "spacex / 馬斯克 / starlink / 星鏈在軌衛星突破萬顆",
+        "heat": 10.1,
+        "volume": 14,
+        "engagement": 187,
         "entities": [
-          "台韓",
-          "BOJ",
-          "https    ",
+          "馬斯克",
           "中國",
-          "高於榮"
+          "那斯",
+          "那斯達克",
+          "上市"
+        ]
+      },
+      {
+        "topic_id": 15,
+        "label": "川普 / 甚至自爆正擴建白宮宴會廳來迎接 / 美中外交將迎來重頭戲 / 接受專訪拋出重磅發言",
+        "heat": 10.1,
+        "volume": 12,
+        "engagement": 175,
+        "entities": [
+          "川普",
+          "土耳其",
+          "美國",
+          "交易所",
+          "高喊"
+        ]
+      },
+      {
+        "topic_id": 9,
+        "label": "openai / 的十分之一 / 年研發支出約 / 而中國的",
+        "heat": 10.1,
+        "volume": 2,
+        "engagement": 251,
+        "entities": [
+          "中國",
+          "美國"
         ]
       },
       {
         "topic_id": 8,
-        "label": "nasa / 星系 / 星系最細緻影像 / 韋伯望遠鏡",
+        "label": "nasa / 星系最細緻影像 / 星系 / 韋伯望遠鏡",
         "heat": 10.0,
         "volume": 4,
         "engagement": 18,
@@ -161,108 +171,84 @@
         ]
       },
       {
+        "topic_id": 7,
+        "label": "cosmicwatch / 宇宙射線 / 美元就能探測宇宙射線 / 人人都能當粒子物理學家",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 18,
+        "entities": []
+      },
+      {
         "topic_id": 17,
-        "label": "股市強勁卻頻傳裁員 / ai裁員 / 藉此降低人事成本 / 削減人力",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 30,
-        "entities": [
-          "美國",
-          "藉此"
-        ]
-      },
-      {
-        "topic_id": 16,
-        "label": "超導體 / 量子物理 / 加速尋找超導體 / 機器學習",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 28,
-        "entities": [
-          "國際團隊"
-        ]
-      },
-      {
-        "topic_id": 15,
-        "label": "google / anthropic / ai / openai",
-        "heat": 10.0,
-        "volume": 4,
-        "engagement": 7,
-        "entities": [
-          "阿根廷",
-          "google",
-          "梅西",
-          "Android",
-          "史詩逆"
-        ]
-      },
-      {
-        "topic_id": 9,
-        "label": "台股 / 不過 / 需求 / hbm",
+        "label": "職場 / 白領就業 / ai衝擊 / 從抽象預言轉為具體生存壓力",
         "heat": 10.0,
         "volume": 5,
-        "engagement": 69,
+        "engagement": 37,
         "entities": [
-          "餘威",
-          "寶座",
-          "摩根",
-          "大通"
+          "白領"
         ]
       },
       {
         "topic_id": 10,
-        "label": "鐵林傑 / 高劑量鐵注射劑 / csl / 泰宗取得國際大廠",
+        "label": "季價格看漲 / 旺宏 / 隨新一代 / flash",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 23,
+        "engagement": 25,
         "entities": [
-          "鐵林傑",
-          "泰宗",
-          "國際大廠"
+          "旺宏"
+        ]
+      },
+      {
+        "topic_id": 6,
+        "label": "高達 / 學生準備投入市場 / 人力銀行調查 / 暑假打工潮創",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 9,
+        "entities": [
+          "高達"
         ]
       },
       {
         "topic_id": 12,
-        "label": "gdp / 若進口完全停滯恐讓日本 / 中國擴大斷供軍工關鍵材料 / 下降",
+        "label": "聯電",
+        "heat": 10.0,
+        "volume": 3,
+        "engagement": 79,
+        "entities": [
+          "聯電",
+          "新加坡"
+        ]
+      },
+      {
+        "topic_id": 0,
+        "label": "dram / channel / lead / extended",
+        "heat": 10.0,
+        "volume": 1,
+        "engagement": 253,
+        "entities": [
+          "Evercore"
+        ]
+      },
+      {
+        "topic_id": 5,
+        "label": "read",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 40,
-        "entities": [
-          "中國",
-          "日本"
-        ]
+        "engagement": 7,
+        "entities": []
       },
       {
         "topic_id": 14,
-        "label": "名家評論 / market / ai",
+        "label": "盤前 / 這家 / 台股高檔震盪",
         "heat": 10.0,
-        "volume": 5,
-        "engagement": 19,
+        "volume": 4,
+        "engagement": 64,
         "entities": [
-          "台灣",
-          "新河",
-          "智慧"
-        ]
-      },
-      {
-        "topic_id": 1,
-        "label": "openai / 億與 / 年研發支出約 / 而中國的",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 251,
-        "entities": [
-          "中國",
-          "美國"
-        ]
-      },
-      {
-        "topic_id": 13,
-        "label": "美中科技競爭持續升溫 / 將有 / 位來自軟體 / 中國企業正加快以國產ai晶片",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 504,
-        "entities": [
-          "中國",
-          "彭博"
+          "台積電",
+          "輝達",
+          "矽晶圓",
+          "三雄訊",
+          "國際大廠"
         ]
       }
     ],
@@ -272,8 +258,16 @@
         "count": 145
       },
       {
+        "entity": "台積電",
+        "count": 140
+      },
+      {
         "entity": "中國",
         "count": 110
+      },
+      {
+        "entity": "輝達",
+        "count": 108
       },
       {
         "entity": "三星",
@@ -296,7 +290,7 @@
         "count": 56
       },
       {
-        "entity": "英特",
+        "entity": "英特爾",
         "count": 44
       },
       {
@@ -318,14 +312,6 @@
       {
         "entity": "馬斯克",
         "count": 35
-      },
-      {
-        "entity": "智慧",
-        "count": 30
-      },
-      {
-        "entity": "南亞",
-        "count": 28
       }
     ],
     "sentiment_trend_curve": [
@@ -423,220 +409,220 @@
       {
         "bucket_start": "2026-07-12T16:41:00+00:00",
         "bucket_end": "2026-07-13T04:41:00+00:00",
-        "positive": 30,
-        "neutral": 15,
-        "negative": 14
+        "positive": 33,
+        "neutral": 19,
+        "negative": 16
       }
     ],
     "coverage_focus_ranking": [
       {
         "handle": "dylan522p",
-        "top_topic_id": 3,
-        "top_topic_label": "ai / nvidia / openai / dram",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / nvidia / openai / 台積電",
         "focus_share": 1.0,
         "post_count": 3
       },
       {
         "handle": "SemiAnalysis_",
-        "top_topic_id": 3,
-        "top_topic_label": "ai / nvidia / openai / dram",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / nvidia / openai / 台積電",
         "focus_share": 1.0,
         "post_count": 62
       },
       {
         "handle": "tphuang",
-        "top_topic_id": 3,
-        "top_topic_label": "ai / nvidia / openai / dram",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / nvidia / openai / 台積電",
         "focus_share": 1.0,
         "post_count": 68
       },
       {
-        "handle": "tengyanAI",
-        "top_topic_id": 3,
-        "top_topic_label": "ai / nvidia / openai / dram",
-        "focus_share": 1.0,
-        "post_count": 44
-      },
-      {
-        "handle": "TrendForce",
-        "top_topic_id": 3,
-        "top_topic_label": "ai / nvidia / openai / dram",
-        "focus_share": 0.971,
-        "post_count": 34
-      },
-      {
         "handle": "jukan05",
-        "top_topic_id": 3,
-        "top_topic_label": "ai / nvidia / openai / dram",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / nvidia / openai / 台積電",
         "focus_share": 0.967,
         "post_count": 60
       },
       {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 3,
-        "top_topic_label": "ai / nvidia / openai / dram",
-        "focus_share": 0.952,
-        "post_count": 105
+        "handle": "ctee.fans",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / nvidia / openai / 台積電",
+        "focus_share": 0.939,
+        "post_count": 231
       },
       {
-        "handle": "ctee.fans",
-        "top_topic_id": 3,
-        "top_topic_label": "ai / nvidia / openai / dram",
-        "focus_share": 0.933,
-        "post_count": 223
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / nvidia / openai / 台積電",
+        "focus_share": 0.934,
+        "post_count": 106
       },
       {
         "handle": "QQ_Timmy",
-        "top_topic_id": 3,
-        "top_topic_label": "ai / nvidia / openai / dram",
-        "focus_share": 0.93,
+        "top_topic_id": 1,
+        "top_topic_label": "ai / nvidia / openai / 台積電",
+        "focus_share": 0.915,
         "post_count": 71
       },
       {
+        "handle": "tengyanAI",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / nvidia / openai / 台積電",
+        "focus_share": 0.886,
+        "post_count": 44
+      },
+      {
+        "handle": "TrendForce",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / nvidia / openai / 台積電",
+        "focus_share": 0.882,
+        "post_count": 34
+      },
+      {
         "handle": "technewsinside",
-        "top_topic_id": 3,
-        "top_topic_label": "ai / nvidia / openai / dram",
-        "focus_share": 0.867,
+        "top_topic_id": 1,
+        "top_topic_label": "ai / nvidia / openai / 台積電",
+        "focus_share": 0.882,
         "post_count": 211
       },
       {
         "handle": "technews_tw",
-        "top_topic_id": 3,
-        "top_topic_label": "ai / nvidia / openai / dram",
-        "focus_share": 0.801,
+        "top_topic_id": 1,
+        "top_topic_label": "ai / nvidia / openai / 台積電",
+        "focus_share": 0.842,
         "post_count": 341
       },
       {
         "handle": "TrendForce.tw",
-        "top_topic_id": 3,
-        "top_topic_label": "ai / nvidia / openai / dram",
-        "focus_share": 0.793,
+        "top_topic_id": 1,
+        "top_topic_label": "ai / nvidia / openai / 台積電",
+        "focus_share": 0.655,
         "post_count": 29
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 3,
-        "label": "ai / nvidia / openai / dram",
-        "total_engagement": 128002,
-        "post_count": 1121
-      },
-      {
-        "topic_id": 0,
-        "label": "meta / iris / training / ai",
-        "total_engagement": 2950,
-        "post_count": 9
-      },
-      {
-        "topic_id": 6,
-        "label": "美元 / amd / 高盛看好代理型 / 需求",
-        "total_engagement": 727,
-        "post_count": 7
+        "topic_id": 1,
+        "label": "ai / nvidia / openai / 台積電",
+        "total_engagement": 129381,
+        "post_count": 1133
       },
       {
         "topic_id": 13,
-        "label": "美中科技競爭持續升溫 / 將有 / 位來自軟體 / 中國企業正加快以國產ai晶片",
-        "total_engagement": 504,
-        "post_count": 2
+        "label": "dram / trendforce / server / 記憶體",
+        "total_engagement": 2336,
+        "post_count": 31
       },
       {
         "topic_id": 11,
-        "label": "台積電 / 英特爾 / cowos / intel",
-        "total_engagement": 330,
-        "post_count": 20
+        "label": "萬人 / 日公布 / 已連續 / 個月",
+        "total_engagement": 514,
+        "post_count": 4
       },
       {
-        "topic_id": 7,
-        "label": "ai / agent / 馬斯克 / ai伺服器",
-        "total_engagement": 285,
-        "post_count": 21
+        "topic_id": 3,
+        "label": "不過 / 台股 / pcb / 並於",
+        "total_engagement": 382,
+        "post_count": 5
       },
       {
-        "topic_id": 5,
-        "label": "三星 / sk海力士 / hbm / sk",
-        "total_engagement": 280,
-        "post_count": 27
+        "topic_id": 4,
+        "label": "ai / agent / 台積電 / 馬斯克",
+        "total_engagement": 328,
+        "post_count": 22
       },
       {
-        "topic_id": 1,
-        "label": "openai / 億與 / 年研發支出約 / 而中國的",
+        "topic_id": 0,
+        "label": "dram / channel / lead / extended",
+        "total_engagement": 253,
+        "post_count": 1
+      },
+      {
+        "topic_id": 9,
+        "label": "openai / 的十分之一 / 年研發支出約 / 而中國的",
         "total_engagement": 251,
         "post_count": 2
       },
       {
-        "topic_id": 4,
-        "label": "南亞科 / dram / 記憶體 / 工商財經網",
-        "total_engagement": 189,
-        "post_count": 10
-      },
-      {
-        "topic_id": 9,
-        "label": "台股 / 不過 / 需求 / hbm",
-        "total_engagement": 69,
-        "post_count": 5
-      },
-      {
         "topic_id": 2,
-        "label": "datatrack / 看詳情 / 美國 / 中國",
-        "total_engagement": 48,
-        "post_count": 6
+        "label": "spacex / 馬斯克 / starlink / 星鏈在軌衛星突破萬顆",
+        "total_engagement": 187,
+        "post_count": 14
       },
       {
-        "topic_id": 12,
-        "label": "gdp / 若進口完全停滯恐讓日本 / 中國擴大斷供軍工關鍵材料 / 下降",
-        "total_engagement": 40,
-        "post_count": 2
-      },
-      {
-        "topic_id": 17,
-        "label": "股市強勁卻頻傳裁員 / ai裁員 / 藉此降低人事成本 / 削減人力",
-        "total_engagement": 30,
-        "post_count": 2
+        "topic_id": 15,
+        "label": "川普 / 甚至自爆正擴建白宮宴會廳來迎接 / 美中外交將迎來重頭戲 / 接受專訪拋出重磅發言",
+        "total_engagement": 175,
+        "post_count": 12
       },
       {
         "topic_id": 16,
-        "label": "超導體 / 量子物理 / 加速尋找超導體 / 機器學習",
-        "total_engagement": 28,
-        "post_count": 2
+        "label": "hbm / sk海力士 / dram / nand",
+        "total_engagement": 162,
+        "post_count": 12
       },
       {
-        "topic_id": 10,
-        "label": "鐵林傑 / 高劑量鐵注射劑 / csl / 泰宗取得國際大廠",
-        "total_engagement": 23,
-        "post_count": 2
+        "topic_id": 12,
+        "label": "聯電",
+        "total_engagement": 79,
+        "post_count": 3
       },
       {
         "topic_id": 14,
-        "label": "名家評論 / market / ai",
-        "total_engagement": 19,
+        "label": "盤前 / 這家 / 台股高檔震盪",
+        "total_engagement": 64,
+        "post_count": 4
+      },
+      {
+        "topic_id": 17,
+        "label": "職場 / 白領就業 / ai衝擊 / 從抽象預言轉為具體生存壓力",
+        "total_engagement": 37,
         "post_count": 5
       },
       {
+        "topic_id": 10,
+        "label": "季價格看漲 / 旺宏 / 隨新一代 / flash",
+        "total_engagement": 25,
+        "post_count": 2
+      },
+      {
         "topic_id": 8,
-        "label": "nasa / 星系 / 星系最細緻影像 / 韋伯望遠鏡",
+        "label": "nasa / 星系最細緻影像 / 星系 / 韋伯望遠鏡",
         "total_engagement": 18,
         "post_count": 4
       },
       {
-        "topic_id": 15,
-        "label": "google / anthropic / ai / openai",
+        "topic_id": 7,
+        "label": "cosmicwatch / 宇宙射線 / 美元就能探測宇宙射線 / 人人都能當粒子物理學家",
+        "total_engagement": 18,
+        "post_count": 2
+      },
+      {
+        "topic_id": 6,
+        "label": "高達 / 學生準備投入市場 / 人力銀行調查 / 暑假打工潮創",
+        "total_engagement": 9,
+        "post_count": 2
+      },
+      {
+        "topic_id": 5,
+        "label": "read",
         "total_engagement": 7,
-        "post_count": 4
+        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 252,
-          "likes": 31082,
-          "engagement": 34486,
-          "avg_engagement": 136.8
+          "post_count": 260,
+          "likes": 31497,
+          "engagement": 34901,
+          "avg_engagement": 134.2
         },
         "afternoon": {
-          "post_count": 387,
-          "likes": 23217,
-          "engagement": 24749,
-          "avg_engagement": 64.0
+          "post_count": 388,
+          "likes": 23228,
+          "engagement": 24760,
+          "avg_engagement": 63.8
         },
         "evening": {
           "post_count": 306,
