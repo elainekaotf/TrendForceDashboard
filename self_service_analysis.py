@@ -5,13 +5,12 @@ Lets a user upload their own platform export, instantly analyzes it, and
 produces downloadable results - no need to wait for the scheduled FR-01/02/03
 pipeline.
 
-Format scope (SRS Open Issue #5, still TBC): implemented for CSV, the only
-concretely-specified format so far. Excel input/output is not implemented -
-this environment has no openpyxl/pandas installed - and true binary PDF
-export needs reportlab/fpdf, also not installed. Rather than hand-roll a
-brittle XLSX/PDF writer, export defaults to CSV (zero dependencies) plus a
-self-contained, print-to-PDF-ready HTML report; add openpyxl/reportlab and
-extend export_excel/export_pdf below once the format is confirmed.
+Format scope (SRS Open Issue #5, still TBC): CSV and Excel (.xlsx) input are
+both supported (openpyxl), matching the browser-based upload tool on the
+dashboard, which already accepted both. True binary PDF export still needs
+reportlab/fpdf, not installed - export defaults to CSV plus a self-contained,
+print-to-PDF-ready HTML report; add reportlab and extend export_pdf below
+once the format is confirmed.
 
 Processing (mandatory time-zone conversion, NFR-01):
   - Auto-detect the source timestamp's UTC offset when the timestamp string
@@ -25,7 +24,7 @@ Instant analysis reuses FR-03's sentiment engine (VADER) over an
 auto-detected text column, plus basic volume/keyword/engagement stats.
 
 CLI:
-  python3 self_service_analysis.py <uploaded.csv> [--source-tz TZ]
+  python3 self_service_analysis.py <uploaded.csv|uploaded.xlsx> [--source-tz TZ]
       [--text-column NAME] [--timestamp-column NAME] [--out-dir DIR]
 """
 import argparse
@@ -35,6 +34,8 @@ import os
 from collections import Counter
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
+
+from openpyxl import load_workbook
 
 from cluster_topics import clean_text, parse_count
 from nlp_sentiment import score_sentiment
@@ -113,37 +114,62 @@ def parse_and_convert_timestamp(raw, source_tz):
     return dt.astimezone(TARGET_TZ).isoformat(), had_offset
 
 
-def load_uploaded_rows(path, source_tz, text_column=None, timestamp_column=None):
+def load_rows_from_file(path):
+    """Returns (fieldnames, rows) as plain dicts of strings, for either a CSV
+    or an Excel (.xlsx/.xlsm) upload - the rest of the pipeline (column
+    detection, timestamp parsing, sentiment scoring) works the same either
+    way once the shape matches csv.DictReader's."""
+    if path.lower().endswith(('.xlsx', '.xlsm')):
+        wb = load_workbook(path, data_only=True)
+        ws = wb.active
+        rows_iter = ws.iter_rows(values_only=True)
+        try:
+            header = [str(h).strip() if h is not None else '' for h in next(rows_iter)]
+        except StopIteration:
+            return [], []
+        rows = []
+        for values in rows_iter:
+            if all(v is None for v in values):
+                continue
+            # str(datetime) formats as "YYYY-MM-DD HH:MM:SS", which
+            # datetime.fromisoformat accepts (any single separator char) -
+            # no extra format needed in parse_naive_timestamp for this case.
+            rows.append({h: ('' if v is None else str(v)) for h, v in zip(header, values)})
+        return header, rows
     with open(path, newline='', encoding='utf-8-sig') as f:
         reader = csv.DictReader(f)
-        fieldnames = reader.fieldnames or []
-        text_col = detect_column(fieldnames, TEXT_COLUMN_CANDIDATES, text_column)
-        ts_col = detect_column(fieldnames, TIMESTAMP_COLUMN_CANDIDATES, timestamp_column)
-        engagement_cols = [c for c in ENGAGEMENT_COLUMN_CANDIDATES if c in fieldnames]
+        return reader.fieldnames or [], list(reader)
 
-        if not text_col:
-            raise ValueError(f"Couldn't find a text column. Pass --text-column. Columns: {fieldnames}")
 
-        rows = []
-        offset_seen = 0
-        for row in reader:
-            raw_ts = row.get(ts_col) if ts_col else None
-            converted_ts, had_offset = parse_and_convert_timestamp(raw_ts, source_tz)
-            offset_seen += had_offset
+def load_uploaded_rows(path, source_tz, text_column=None, timestamp_column=None):
+    fieldnames, raw_rows = load_rows_from_file(path)
+    text_col = detect_column(fieldnames, TEXT_COLUMN_CANDIDATES, text_column)
+    ts_col = detect_column(fieldnames, TIMESTAMP_COLUMN_CANDIDATES, timestamp_column)
+    engagement_cols = [c for c in ENGAGEMENT_COLUMN_CANDIDATES if c in fieldnames]
 
-            text = clean_text(row.get(text_col, ''))
-            engagement = sum(parse_count(row.get(c)) for c in engagement_cols)
-            sentiment, sentiment_score = score_sentiment(row.get(text_col, ''))
+    if not text_col:
+        raise ValueError(f"Couldn't find a text column. Pass --text-column. Columns: {fieldnames}")
 
-            enriched = dict(row)
-            enriched['converted_timestamp_utc8'] = converted_ts
-            enriched['sentiment'] = sentiment
-            enriched['sentiment_score'] = round(sentiment_score, 4)
-            rows.append({'raw': enriched, 'text': text, 'engagement': engagement,
-                        'sentiment': sentiment, 'sentiment_score': sentiment_score,
-                        'timestamp': converted_ts})
+    rows = []
+    offset_seen = 0
+    for row in raw_rows:
+        raw_ts = row.get(ts_col) if ts_col else None
+        converted_ts, had_offset = parse_and_convert_timestamp(raw_ts, source_tz)
+        offset_seen += had_offset
 
-        return rows, fieldnames, text_col, ts_col, offset_seen
+        text = clean_text(row.get(text_col, ''))
+        engagement = sum(parse_count(row.get(c)) for c in engagement_cols)
+        sentiment, sentiment_score = score_sentiment(row.get(text_col, ''))
+
+        enriched = dict(row)
+        enriched['converted_timestamp_utc8'] = converted_ts
+        enriched['sentiment'] = sentiment
+        enriched['sentiment_score'] = round(sentiment_score, 4)
+        rows.append({'raw': enriched, 'text': text, 'engagement': engagement,
+                    'sentiment': sentiment, 'sentiment_score': sentiment_score,
+                    'timestamp': converted_ts})
+
+    return rows, fieldnames, text_col, ts_col, offset_seen
 
 
 def analyze(rows):
@@ -222,8 +248,8 @@ def main():
     parser.add_argument('--out-dir', default=DEFAULT_OUT_DIR)
     args = parser.parse_args()
 
-    if not args.upload_path.lower().endswith('.csv'):
-        raise SystemExit("Only CSV uploads are supported today (Excel needs openpyxl - see module docstring / SRS Open Issue #5).")
+    if not args.upload_path.lower().endswith(('.csv', '.xlsx', '.xlsm')):
+        raise SystemExit("Only CSV or Excel (.xlsx/.xlsm) uploads are supported.")
 
     rows, fieldnames, text_col, ts_col, offset_seen = load_uploaded_rows(
         args.upload_path, args.source_tz, args.text_column, args.timestamp_column)
