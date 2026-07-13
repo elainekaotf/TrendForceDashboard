@@ -15,7 +15,11 @@ Processing:
     where available), last-post recency, computed status (active/stale/
     inactive) for every account load_posts() tracks (own + competitors).
   - Comment aggregation: for OUR OWN posts only, flag ones with a reply
-    count at or above NEEDS_RESPONSE_THRESHOLD as needing a response.
+    count at or above NEEDS_RESPONSE_THRESHOLD as needing a response. The
+    count used is max(scraper's CSV reply metadata, actual scraped comment
+    count) - the metadata can undercount/go stale, and once a real scrape
+    exists it's ground truth and should never be overridden downward by
+    that staler number (see build_comment_queue's docstring).
   - Reply-draft suggestions: informed by that post's FR-01 topic and FR-03
     sentiment. When scrape_own_comments.js has actually found comments for
     a post (own_comments.json is nonempty for that URL), select_top_comments()
@@ -282,21 +286,31 @@ def build_comment_queue(posts, topic_labels_by_cluster, cluster_id_by_post, now,
     something when scrape_own_comments.js found at least one comment within
     the recency window, so a post with zero scraped comments (not scraped
     yet, or the scrape genuinely found none) falls back to the generic
-    topic-based draft_reply exactly as before."""
+    topic-based draft_reply exactly as before.
+
+    reply_count sanity check: the scraper's own CSV-reported reply/comment
+    count (p['replies']) is metadata scraped at a different time than
+    scrape_own_comments.js's actual comment scrape, and can undercount
+    (staleness, a metadata-scraping quirk). Once we've genuinely scraped a
+    post's comments, that direct count is ground truth for "how many
+    comments exist" and should never be overridden by a smaller, staler
+    metadata number - so the effective count is whichever is higher. It's
+    a max(), not a replace(): an empty/absent scrape (not scraped yet)
+    must not zero out a real metadata count and wrongly exclude the post."""
     flagged = []
     for p, cid in zip(posts, cluster_id_by_post):
         if p['handle'] not in OWN_HANDLES:
             continue
         if not p.get('ts') or (now - p['ts']).days >= RECENT_WITHIN_DAYS:
             continue
-        replies = p.get('replies', 0)
+        comments = own_comments.get(p.get('url', ''), [])
+        replies = max(p.get('replies', 0), len(comments))
         if replies < NEEDS_RESPONSE_THRESHOLD:
             continue
         rid = record_id('reply', p['platform'], p['handle'], p['timestamp'], p['text'][:80])
         text_excerpt = p['text'][:200]
         topic_label = topic_labels_by_cluster[cid]
         sentiment_score = p.get('sentiment_score', 0.0)
-        comments = own_comments.get(p.get('url', ''), [])
         top_comments = select_top_comments(comments, now)
         flagged.append({
             'id': rid,
