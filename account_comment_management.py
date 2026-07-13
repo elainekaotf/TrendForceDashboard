@@ -11,9 +11,12 @@ auto-replies through competitor or third-party accounts; those are
 monitoring-only, matching FR-01/02/03's scope.
 
 Processing:
-  - Account status: platform, follower count (from follower_cache.json,
-    where available), last-post recency, computed status (active/stale/
-    inactive) for every account load_posts() tracks (own + competitors).
+  - Account status: platform, last-post recency, computed status
+    (active/stale/inactive) for every account load_posts() tracks (own +
+    competitors). Follower count isn't part of FR-05's spec (Processing
+    row: "Account status management, comment aggregation, reply-draft
+    suggestions, response tracking" - no follower metric named anywhere
+    in the SRS), so it isn't collected or shown here.
   - Comment aggregation: for OUR OWN posts only, flag ones with a reply
     count at or above NEEDS_RESPONSE_THRESHOLD as needing a response. The
     count used is max(scraper's CSV reply metadata, actual scraped comment
@@ -56,7 +59,6 @@ from nlp_sentiment import load_dashboard_posts
 BASE = os.path.dirname(__file__)
 STATUS_FILE = os.path.join(BASE, 'analysis', 'account_status.json')
 REPLY_QUEUE_FILE = os.path.join(BASE, 'analysis', 'reply_queue.json')
-FOLLOWER_CACHE_FILE = os.path.join(BASE, 'follower_cache.json')
 # Populated by each platform's own scrape_own_comments.js (a separate,
 # deliberately narrow scrape of just our own flagged posts' actual reply
 # text - see those scripts' docstrings, in TrendforceTwitterScraper and
@@ -220,13 +222,6 @@ def record_id(*parts):
     return hashlib.sha1('|'.join(str(p) for p in parts).encode('utf-8')).hexdigest()[:16]
 
 
-def load_follower_cache():
-    if not os.path.exists(FOLLOWER_CACHE_FILE):
-        return {}
-    with open(FOLLOWER_CACHE_FILE, encoding='utf-8') as f:
-        return json.load(f)
-
-
 def parse_ts(ts):
     if not ts:
         return None
@@ -237,7 +232,6 @@ def parse_ts(ts):
 
 
 def build_account_status(posts, now):
-    follower_cache = load_follower_cache()
     by_handle = defaultdict(list)
     for p in posts:
         by_handle[p['handle']].append(p)
@@ -260,12 +254,10 @@ def build_account_status(posts, now):
             else:
                 status = 'inactive'
 
-            follower_raw = follower_cache.get(handle, {}).get('followers')
             accounts.append({
                 'handle': handle,
                 'platform': platform,
                 'is_own': handle in OWN_HANDLES,
-                'follower_count': parse_count(follower_raw) if follower_raw else None,
                 'post_count': len(handle_posts),
                 'last_post_at': last_post_at.isoformat() if last_post_at else None,
                 'days_since_last_post': days_since,

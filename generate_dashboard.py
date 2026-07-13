@@ -373,12 +373,11 @@ def render_accounts(data):
         <td class="cell-primary"><a href="{esc(account_profile_url(a['platform'], a['handle']))}" target="_blank" rel="noopener noreferrer">{esc(a['handle'])}</a>{' <span class="badge own">own</span>' if a['is_own'] else ''}</td>
         <td>{esc(a['platform'])}</td>
         <td><span class="badge status-{esc(a['status'])}">{esc(a['status'])}</span></td>
-        <td class="num">{fmt_int(a['follower_count']) if a['follower_count'] else '—'}</td>
         <td class="num">{fmt_int(a['post_count'])}</td>
         <td>{fmt_dt(a['last_post_at'])}</td>
         <td><button class="remove-account-btn" data-platform="{esc(a['platform'])}" data-handle="{esc(a['handle'])}">Remove</button></td>
       </tr>""" for a in data.get('accounts', []))
-    body = table(['Handle', 'Platform', 'Status', '#Followers', '#Posts', 'Last post (TWN time)', ''], rows)
+    body = table(['Handle', 'Platform', 'Status', '#Posts', 'Last post (TWN time)', ''], rows)
     body += '<p class="muted add-account-hint">"Remove" opens a GitHub issue for review - tracking stops once it\'s approved and run locally.</p>'
     accounts_panel = panel(body, 'Tracked accounts', f"{len(data.get('accounts', []))} accounts")
 
