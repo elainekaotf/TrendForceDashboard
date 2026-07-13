@@ -21,6 +21,12 @@ window.
   - gaps: topics with strong competitor presence but weak/no own-account coverage
   - suggested_entry_points: gap topics ranked by competitor engagement
 
+NER lives in FR-03 (nlp_sentiment.py), not here - the SRS lists NER under
+FR-03's Processing row, alongside tokenization/sentiment/keyword-stats, not
+under FR-01's Method row (which specifies cross-lingual embeddings +
+clustering, see the Method note above). An earlier version of this file
+added entity extraction here instead; moved to match the spec.
+
 The K-Means tree itself is fit ONCE on all available posts (clustering needs
 enough documents to be stable - a 4h window rarely has enough). Each range
 just filters which posts count toward cluster sizes/gaps using that same

@@ -5,11 +5,15 @@ Analyzes audience preferences via NLP (tokenization already done upstream by
 the scrapers into `translated_text`/`keywords`) + sentiment analysis + a
 fuzzy decision layer that fuses volume/engagement into heat & focus scores.
 
-Gap vs. spec: FR-03's Processing row also names NER (named entity
-recognition) alongside tokenization/sentiment/keyword-stats - not
-implemented anywhere in this pipeline. Nothing here extracts entities
-(people/orgs/products) from post text; keyword-based widgets rely on the
-scrapers' own `keywords` field and clustering's TF-IDF terms instead.
+NER (named entity recognition), per FR-03's Processing row: each post's
+entities (people/orgs/products/places) are extracted alongside sentiment
+scoring. Chinese-majority text is tagged with jieba's POS tagger
+(proper-noun tags nr/ns/nt/nz - jieba has no dedicated Chinese NER model,
+so this is a lightweight proxy, not true NER); English/translated text uses
+spaCy's en_core_web_sm NER model (PERSON/ORG/GPE/PRODUCT/NORP/FAC/LOC),
+routed by the same CJK-vs-Latin character count used for sentiment routing
+below. Surfaced as a new `named_entities` widget (top entities overall) and
+as an `entities` field per topic in `temperature_bar`.
 
 Sentiment is bilingual per NFR-07: VADER (same engine as
 TrendforceTwitterScraper/sentiment.py) scores English/Latin-majority text
@@ -26,9 +30,11 @@ with FR-01/FR-02 so all three line up); all widgets recompute over the
 selected range. Reuses FR-01's topic clusters (cluster_topics.py) for
 topic-shaped widgets.
 
-Widgets (FR-03-01..09):
+Widgets (FR-03-01..09), plus named_entities (NER, not one of the numbered
+09 - see the NER note above):
   01 sentiment_overview        - real-time snapshot of volume/sentiment/topics
-  02 temperature_bar           - heat score per topic (hot -> cold)
+  02 temperature_bar           - heat score per topic (hot -> cold), now also
+                                  carries each topic's top named entities
   03 sentiment_trend_curve     - positive/neutral/negative counts over time
   04 competitor_mentions       - mention counts of a keyword across accounts
   05 platform_share_bar        - share-of-voice of a keyword across platforms
@@ -36,6 +42,7 @@ Widgets (FR-03-01..09):
   07 coverage_focus_ranking    - each account's top-covered topic
   08 top_engagement_ranking    - highest-engagement topics
   09 posting_timeslot_analysis - Mon-Fri by time slot: volume/likes/engagement
+  -- named_entities            - top mentioned entities window-wide (NER)
 
 Platforms are derived from whatever FR-01's load_posts() returns (currently
 X and Facebook; LinkedIn - one of the SRS's three named target platforms,
@@ -60,9 +67,23 @@ from datetime import datetime, timedelta, timezone
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from cnsenti import Sentiment as ChineseSentiment
 from opencc import OpenCC
+import jieba.posseg as pseg
 
 from cluster_topics import N_CLUSTERS, load_posts, label_cluster, cluster_posts, OWN_HANDLES
 from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, window_dict, TAIWAN_TZ
+
+try:
+    import spacy
+    _NLP_EN = spacy.load('en_core_web_sm', disable=['parser', 'lemmatizer'])
+except Exception:
+    # Missing/unavailable model - degrade to Chinese-only entity extraction
+    # rather than failing the whole pipeline over an optional enrichment.
+    _NLP_EN = None
+
+# Proper-noun POS tags jieba can assign: nr=person, ns=place, nt=organization,
+# nz=other proper noun.
+CHINESE_ENTITY_POS_TAGS = {'nr', 'ns', 'nt', 'nz'}
+EN_ENTITY_LABELS = {'PERSON', 'ORG', 'GPE', 'PRODUCT', 'NORP', 'FAC', 'LOC'}
 
 BASE = os.path.dirname(__file__)
 OUT_FILE = os.path.join(BASE, 'analysis', 'sentiment_dashboard.json')
@@ -89,6 +110,22 @@ _zh_analyzer = ChineseSentiment()
 _tw2sp = OpenCC('tw2sp')  # Traditional (Taiwan) -> Simplified, for cnsenti's dictionary
 CJK_RE = re.compile(r'[一-鿿]')
 LATIN_RE = re.compile(r'[A-Za-z]')
+
+
+def extract_entities(text):
+    """Named-entity-like terms for one post's text, routed by script: mostly
+    Chinese text goes through jieba's POS tagger (proper-noun tags), mostly
+    English/translated text through spaCy's NER model. Same CJK-vs-Latin
+    routing signal as score_sentiment, reused here rather than duplicated."""
+    text = text or ''
+    if not text:
+        return []
+    if len(CJK_RE.findall(text)) > len(LATIN_RE.findall(text)):
+        return [w for w, flag in pseg.cut(text) if flag in CHINESE_ENTITY_POS_TAGS and len(w) > 1]
+    if _NLP_EN is not None:
+        doc = _NLP_EN(text[:2000])  # cap input length - entity extraction, not full-doc NLP
+        return [ent.text for ent in doc.ents if ent.label_ in EN_ENTITY_LABELS]
+    return []
 
 
 def parse_ts(ts):
@@ -156,6 +193,7 @@ def load_dashboard_posts():
     for p in posts:
         p['ts'] = parse_ts(p['timestamp'])
         p['sentiment'], p['sentiment_score'] = score_sentiment(p['text'])
+        p['entities'] = extract_entities(p['text'])
     return posts
 
 
@@ -224,12 +262,21 @@ def widget_temperature_bar(posts_by_topic, topic_labels):
     raw_engagement = {cid: sum(p['interaction'] for p in ps) for cid, ps in posts_by_topic.items()}
     norm_v, norm_e = normalize(raw_volume), normalize(raw_engagement)
     bars = []
-    for cid in posts_by_topic:
+    for cid, ps in posts_by_topic.items():
         heat = fuzzy_fuse(norm_v.get(cid, 0), norm_e.get(cid, 0))
+        entity_counts = Counter(e for p in ps for e in p.get('entities', []))
         bars.append({'topic_id': cid, 'label': topic_labels[cid], 'heat': heat,
-                     'volume': raw_volume[cid], 'engagement': raw_engagement[cid]})
+                     'volume': raw_volume[cid], 'engagement': raw_engagement[cid],
+                     'entities': [e for e, _ in entity_counts.most_common(5)]})
     bars.sort(key=lambda b: b['heat'], reverse=True)
     return bars
+
+
+def widget_named_entities(posts, top_n=15):
+    """FR-03 NER widget: most-mentioned entities across the window's posts,
+    paired with keyword statistics per the Processing row's grouping."""
+    counts = Counter(e for p in posts for e in p.get('entities', []))
+    return [{'entity': e, 'count': c} for e, c in counts.most_common(top_n)]
 
 
 def widget_sentiment_trend_curve(posts, now, span, buckets=14):
@@ -379,6 +426,7 @@ def build_dashboard(all_posts, time_range, now, keyword=None):
         'widgets': {
             'sentiment_overview': widget_sentiment_overview(posts),
             'temperature_bar': widget_temperature_bar(posts_by_topic, topic_labels),
+            'named_entities': widget_named_entities(posts),
             'sentiment_trend_curve': widget_sentiment_trend_curve(posts, now, span),
             'coverage_focus_ranking': widget_coverage_focus_ranking(posts_by_topic, topic_labels),
             'top_engagement_ranking': widget_top_engagement_ranking(posts_by_topic, topic_labels),

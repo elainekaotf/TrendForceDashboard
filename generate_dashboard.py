@@ -220,8 +220,13 @@ def render_sentiment(data):
 
     heat_rows = ''.join(f"""
       <tr><td class="cell-primary">{esc(b['label'])}</td><td class="num heat-{('hot' if b['heat']>=70 else 'warm' if b['heat']>=40 else 'cold')}">{b['heat']}</td>
-      <td class="num">{fmt_int(b['volume'])}</td><td class="num">{fmt_int(b['engagement'])}</td></tr>"""
+      <td class="num">{fmt_int(b['volume'])}</td><td class="num">{fmt_int(b['engagement'])}</td>
+      <td>{esc(', '.join(b.get('entities', [])[:4])) or '<span class="muted">—</span>'}</td></tr>"""
       for b in w['temperature_bar'][:10])
+
+    entity_rows = ''.join(f"""
+      <tr><td class="cell-primary">{esc(e['entity'])}</td><td class="num">{fmt_int(e['count'])}</td></tr>"""
+      for e in w.get('named_entities', [])[:15])
 
     engagement_rows = ''.join(f"""
       <tr><td class="cell-primary">{esc(r['label'])}</td><td class="num">{fmt_int(r['total_engagement'])}</td><td class="num">{r['post_count']}</td></tr>"""
@@ -253,9 +258,10 @@ def render_sentiment(data):
     {panel(trend_html, 'Sentiment trend curve', 'Positive / neutral / negative over time')}
     {keyword_search_html}
     <div class="col-2">
-      {panel(table(['Topic', '#Heat', '#Volume', '#Engagement'], heat_rows), 'Temperature bar')}
+      {panel(table(['Topic', '#Heat', '#Volume', '#Engagement', 'Top entities'], heat_rows), 'Temperature bar')}
       {panel(table(['Topic', '#Engagement', '#Posts'], engagement_rows), 'Top engagement')}
     </div>
+    {panel(table(['Entity', '#Mentions'], entity_rows), 'Named entities', 'NER — most-mentioned people/orgs/products')}
     {panel(table(['Account', 'Top topic', '#Focus share', '#Posts'], focus_rows), 'Coverage focus ranking', "Each account's dominant topic")}
     {panel(table(['Time slot', '#Posts', '#Likes', '#Engagement'], slot_rows), 'Posting time-slot analysis', 'Mon–Fri, peak highlighted')}
     """
