@@ -42,8 +42,9 @@ import argparse
 import hashlib
 import json
 import os
+import re
 from collections import defaultdict
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 from cluster_topics import PLATFORM_ACCOUNTS, OWN_HANDLES, N_CLUSTERS, parse_count, cluster_posts, label_cluster
 from nlp_sentiment import load_dashboard_posts
@@ -57,15 +58,67 @@ FOLLOWER_CACHE_FILE = os.path.join(BASE, 'follower_cache.json')
 # text - see those scripts' docstrings, in TrendforceTwitterScraper and
 # TrendforceFacebookScraper respectively), synced in by sync_data.sh.
 # Both keyed by post URL: {url: [{author, text, ...}, ...]} - X comments
-# carry a timestamp/likes field, Facebook comments carry relativeTime
-# instead (no reliable absolute-time signal was available there without
-# a much slower hover-per-comment pass). Optional - the reply queue works
-# fine without either, just with reply_count instead of real comment
-# content.
+# carry a real timestamp/likes field; Facebook comments carry relativeTime
+# + scrapedAt instead (no absolute-time signal was available there without
+# a much slower hover-per-comment pass) - load_own_comments() approximates
+# an absolute 'timestamp' for those from the two (see
+# normalize_comment_timestamps below) so select_top_comments' recency
+# filter applies to both platforms the same way. Optional either way - the
+# reply queue works fine without either, just with reply_count instead of
+# real comment content.
 OWN_COMMENTS_FILES = [
     os.path.join(BASE, 'analysis', 'own_comments.json'),
     os.path.join(BASE, 'analysis', 'own_comments_facebook.json'),
 ]
+
+# Facebook's relative-time strings ("5 days ago", "3 hrs", "Just now") -
+# both the full and Facebook's own abbreviated units observed in practice.
+# Deliberately approximate (30-day months, 365-day years); good enough for
+# a 3-day recency filter, not for anything needing real precision.
+RELATIVE_TIME_RE = re.compile(
+    r'^(\d+)\s*(second|sec|s|minute|min|m|hour|hr|h|day|d|week|wk|w|month|mo|year|yr|y)s?\b', re.IGNORECASE)
+RELATIVE_UNIT_SECONDS = {
+    'second': 1, 'sec': 1, 's': 1,
+    'minute': 60, 'min': 60, 'm': 60,
+    'hour': 3600, 'hr': 3600, 'h': 3600,
+    'day': 86400, 'd': 86400,
+    'week': 604800, 'wk': 604800, 'w': 604800,
+    'month': 2592000, 'mo': 2592000,
+    'year': 31536000, 'yr': 31536000, 'y': 31536000,
+}
+
+
+def parse_relative_time(relative_str):
+    """"5 days ago" / "3 hrs" / "Just now" -> a timedelta offset before
+    scrapedAt. Returns None if unparseable (leaves the comment's absolute
+    timestamp unset, same as before this existed)."""
+    if not relative_str:
+        return None
+    s = relative_str.strip().lower()
+    if 'just now' in s or s in ('now', 'moments ago'):
+        return timedelta(0)
+    m = RELATIVE_TIME_RE.match(s)
+    if not m:
+        return None
+    seconds = RELATIVE_UNIT_SECONDS.get(m.group(2))
+    if seconds is None:
+        return None
+    return timedelta(seconds=int(m.group(1)) * seconds)
+
+
+def normalize_comment_timestamps(comments_by_url):
+    """Fill in an approximate absolute 'timestamp' for comments that only
+    have Facebook's relativeTime + scrapedAt (X comments already have a
+    real 'timestamp' and are left untouched)."""
+    for comments in comments_by_url.values():
+        for c in comments:
+            if c.get('timestamp'):
+                continue
+            scraped_at = parse_ts(c.get('scrapedAt'))
+            offset = parse_relative_time(c.get('relativeTime'))
+            if scraped_at is not None and offset is not None:
+                c['timestamp'] = (scraped_at - offset).isoformat()
+    return comments_by_url
 
 NEEDS_RESPONSE_THRESHOLD = 5  # replies on a post before it's queued for a draft
 STALE_AFTER_DAYS = 3
@@ -277,7 +330,7 @@ def load_own_comments():
             continue
         with open(path, encoding='utf-8') as f:
             merged.update(json.load(f))
-    return merged
+    return normalize_comment_timestamps(merged)
 
 
 def save_reply_queue(queue):
