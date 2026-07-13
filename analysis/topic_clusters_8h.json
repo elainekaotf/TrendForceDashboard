@@ -1,31 +1,31 @@
 {
   "clusters": [
     {
-      "id": 5,
-      "label": "ai / nvidia / trendforce / 台積電",
-      "size": 44,
+      "id": 1,
+      "label": "ai / nvidia / memory / chip",
+      "size": 50,
       "accounts": {
-        "technews_tw": 14,
+        "technews_tw": 12,
         "jukan05": 2,
         "QQ_Timmy": 1,
         "tphuang": 5,
-        "technewsinside": 14,
-        "ctee.fans": 7,
-        "yutinghaosfinance": 1
+        "tengyanAI": 2,
+        "technewsinside": 13,
+        "ctee.fans": 15
       },
       "engagement_by_account": {
-        "technews_tw": 31,
+        "technews_tw": 27,
         "jukan05": 400,
         "QQ_Timmy": 37,
         "tphuang": 119,
-        "technewsinside": 429,
-        "ctee.fans": 183,
-        "yutinghaosfinance": 246
+        "tengyanAI": 23,
+        "technewsinside": 401,
+        "ctee.fans": 335
       }
     },
     {
-      "id": 2,
-      "label": "ai / trendforce / 中國 / physical",
+      "id": 13,
+      "label": "ai / 中國 / pcb / physical",
       "size": 4,
       "accounts": {
         "technews_tw": 2,
@@ -37,23 +37,21 @@
       }
     },
     {
-      "id": 12,
-      "label": "openai / ai / anthropic / gpt",
+      "id": 7,
+      "label": "台積電 / cowos / 英特爾 / 魏哲家",
       "size": 3,
       "accounts": {
         "technews_tw": 1,
-        "tengyanAI": 1,
-        "technewsinside": 1
+        "technewsinside": 2
       },
       "engagement_by_account": {
-        "technews_tw": 0,
-        "tengyanAI": 11,
-        "technewsinside": 1
+        "technews_tw": 1,
+        "technewsinside": 16
       }
     },
     {
-      "id": 13,
-      "label": "hynix / sk / samsung / memory",
+      "id": 11,
+      "label": "sk / hynix / samsung / hbm",
       "size": 3,
       "accounts": {
         "jukan05": 3
@@ -63,8 +61,19 @@
       }
     },
     {
-      "id": 0,
-      "label": "科技早報 / ai / macbook / 國際團隊結合機器學習與量子物理",
+      "id": 3,
+      "label": "早晨財經速解讀 / 美中科技戰 / 魏哲家",
+      "size": 2,
+      "accounts": {
+        "yutinghaosfinance": 2
+      },
+      "engagement_by_account": {
+        "yutinghaosfinance": 520
+      }
+    },
+    {
+      "id": 6,
+      "label": "spacex / 馬斯克 / ipo / starlink",
       "size": 2,
       "accounts": {
         "technews_tw": 1,
@@ -72,38 +81,49 @@
       },
       "engagement_by_account": {
         "technews_tw": 1,
-        "technewsinside": 6
+        "technewsinside": 16
       }
     },
     {
       "id": 8,
-      "label": "dram / nand / ddr / trendforce",
+      "label": "ai伺服器 / ai / mlcc / abf",
       "size": 2,
       "accounts": {
-        "tengyanAI": 1,
+        "technews_tw": 1,
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "tengyanAI": 12,
-        "technewsinside": 1
+        "technews_tw": 1,
+        "technewsinside": 18
       }
     },
     {
-      "id": 4,
-      "label": "hbm / memory / dram / samsung",
+      "id": 5,
+      "label": "trendforce / dram / nand / ai",
       "size": 1,
       "accounts": {
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "technewsinside": 15
+        "technewsinside": 1
+      }
+    },
+    {
+      "id": 17,
+      "label": "三星 / sk海力士 / hbm / 新聞來源",
+      "size": 1,
+      "accounts": {
+        "technews_tw": 1
+      },
+      "engagement_by_account": {
+        "technews_tw": 2
       }
     }
   ],
   "gaps": [
     {
-      "cluster_id": 13,
-      "label": "hynix / sk / samsung / memory",
+      "cluster_id": 11,
+      "label": "sk / hynix / samsung / hbm",
       "own_count": 0,
       "competitor_count": 3,
       "competitor_engagement": 1587,
@@ -114,8 +134,8 @@
   ],
   "suggested_entry_points": [
     {
-      "cluster_id": 13,
-      "label": "hynix / sk / samsung / memory",
+      "cluster_id": 11,
+      "label": "sk / hynix / samsung / hbm",
       "own_count": 0,
       "competitor_count": 3,
       "competitor_engagement": 1587,

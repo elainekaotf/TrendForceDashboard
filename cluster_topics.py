@@ -50,6 +50,7 @@ import csv
 import json
 import os
 import re
+import warnings
 from collections import defaultdict
 from datetime import datetime, timezone
 
@@ -286,7 +287,15 @@ def cluster_posts(posts, n_clusters=N_CLUSTERS, min_docs_per_cluster=5):
 
     k = max(1, min(n_clusters, len(posts) // min_docs_per_cluster))
     km = KMeans(n_clusters=k, n_init=10, random_state=42)
-    labels = km.fit_predict(X)
+    # k-means++ init's cumulative-distance computation overflows float64 on
+    # this TF-IDF matrix's value range (a handful of documents can have
+    # scores that, once squared and summed across thousands of features,
+    # overflow) - harmless (numpy still produces a usable result via inf/nan
+    # handling internally) but prints on every single pipeline run. Silence
+    # just this call rather than a rewrite of sklearn's own init routine.
+    with warnings.catch_warnings():
+        warnings.filterwarnings('ignore', category=RuntimeWarning, module='sklearn')
+        labels = km.fit_predict(X)
     return vectorizer, X, km, labels
 
 
