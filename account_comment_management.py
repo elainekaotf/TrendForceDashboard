@@ -48,6 +48,13 @@ BASE = os.path.dirname(__file__)
 STATUS_FILE = os.path.join(BASE, 'analysis', 'account_status.json')
 REPLY_QUEUE_FILE = os.path.join(BASE, 'analysis', 'reply_queue.json')
 FOLLOWER_CACHE_FILE = os.path.join(BASE, 'follower_cache.json')
+# Populated by TrendforceTwitterScraper's scrape_own_comments.js (a
+# separate, deliberately narrow scrape of just our own flagged posts'
+# actual reply text - see that script's docstring), synced in by
+# sync_data.sh. Keyed by post URL: {url: [{author, text, timestamp,
+# likes}, ...]}. Optional - the reply queue works fine without it,
+# just with reply_count instead of real comment content.
+OWN_COMMENTS_FILE = os.path.join(BASE, 'analysis', 'own_comments.json')
 
 NEEDS_RESPONSE_THRESHOLD = 5  # replies on a post before it's queued for a draft
 STALE_AFTER_DAYS = 3
@@ -191,6 +198,13 @@ def load_reply_queue():
         return json.load(f)
 
 
+def load_own_comments():
+    if not os.path.exists(OWN_COMMENTS_FILE):
+        return {}
+    with open(OWN_COMMENTS_FILE, encoding='utf-8') as f:
+        return json.load(f)
+
+
 def save_reply_queue(queue):
     os.makedirs(os.path.dirname(REPLY_QUEUE_FILE), exist_ok=True)
     with open(REPLY_QUEUE_FILE, 'w', encoding='utf-8') as f:
@@ -216,16 +230,21 @@ def build():
     topic_labels = {int(cid): ' / '.join(label_cluster(vectorizer, km.cluster_centers_[cid])) or f'cluster-{cid}'
                     for cid in set(labels)}
     flagged = build_comment_queue(posts, topic_labels, [int(l) for l in labels], now)
+    own_comments = load_own_comments()
 
     queue = load_reply_queue()
     added, refreshed = 0, 0
     for rec in flagged:
         rid = rec['id']
+        rec['comments'] = own_comments.get(rec['url'], [])
         if rid in queue:
             queue[rid]['reply_count'] = rec['reply_count']
             queue[rid]['url'] = queue[rid].get('url') or rec['url']
             queue[rid]['topic_label'] = rec['topic_label']  # re-clustering (e.g. a noise-filter fix) should refresh stale labels
             queue[rid]['sentiment_score'] = rec['sentiment_score']
+            # Always refresh - a later scrape_own_comments.js run naturally
+            # supersedes an earlier, thinner comment list for the same post.
+            queue[rid]['comments'] = rec['comments']
             # Regenerate the draft while it's still just a suggestion nobody
             # has acted on yet (e.g. picking up a template wording change) -
             # but never touch it once a human has approved or sent it, since
@@ -323,6 +342,10 @@ def main():
     p_dismiss.add_argument('--reviewer', required=True)
     p_dismiss.add_argument('--notes')
 
+    p_urls = sub.add_parser('urls-needing-comments',
+        help='Prints X post URLs currently queued (drafted/approved) that scrape_own_comments.js should scrape.')
+    p_urls.add_argument('--platform', default='X', choices=['X', 'Facebook'])
+
     args = parser.parse_args()
     if args.command == 'build':
         build()
@@ -338,6 +361,12 @@ def main():
         transition(args.record_id, 'sent', args.reviewer, allowed_from={'approved'})
     elif args.command == 'dismiss':
         transition(args.record_id, 'dismissed', args.reviewer, args.notes, allowed_from={'drafted', 'approved'})
+    elif args.command == 'urls-needing-comments':
+        queue = load_reply_queue()
+        urls = [r['url'] for r in queue.values()
+                if r['platform'] == args.platform and r['status'] in ('drafted', 'approved') and r.get('url')]
+        for url in urls:
+            print(url)
 
 
 if __name__ == '__main__':
