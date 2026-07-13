@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-07-13T16:33:21+08:00",
+  "generated_at": "2026-07-13T08:40:00+00:00",
   "time_range": "1d",
   "window": {
-    "start_utc": "2026-07-12T16:33:21+08:00",
-    "end_utc": "2026-07-13T16:33:21+08:00",
-    "start_tw": "Jul 12, 16:33",
-    "end_tw": "Jul 13, 16:33"
+    "start_utc": "2026-07-12T08:40:00+00:00",
+    "end_utc": "2026-07-13T08:40:00+00:00",
+    "start_tw": "Jul 12, 16:40",
+    "end_tw": "Jul 13, 16:40"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 152,
+      "total_posts": 185,
       "sentiment_counts": {
-        "positive": 67,
-        "neutral": 57,
-        "negative": 28
+        "positive": 74,
+        "neutral": 72,
+        "negative": 39
       },
       "sentiment_share": {
-        "positive": 0.441,
-        "neutral": 0.375,
-        "negative": 0.184
+        "positive": 0.4,
+        "neutral": 0.389,
+        "negative": 0.211
       },
       "top_terms": [
         "more",
@@ -29,55 +29,40 @@
         "sales",
         "台積電",
         "dlvr",
-        "BYD",
-        "http",
-        "#先進封裝"
+        "#記憶體",
+        "#先進封裝",
+        "#半導體"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 1,
-        "label": "ai / openai / sales / hynix",
+        "topic_id": 4,
+        "label": "ai / openai / dram / sales",
         "heat": 90.0,
-        "volume": 102,
-        "engagement": 9020,
+        "volume": 144,
+        "engagement": 7795,
         "entities": [
+          "台積電",
           "美國",
-          "中國",
-          "馬斯克",
           "日本",
-          "韓國"
+          "馬斯克",
+          "英特爾"
         ]
       },
       {
-        "topic_id": 5,
-        "label": "ai",
-        "heat": 12.2,
-        "volume": 6,
-        "engagement": 282,
+        "topic_id": 14,
+        "label": "台積電 / 半導體 / 最新 / ai",
+        "heat": 11.1,
+        "volume": 4,
+        "engagement": 318,
         "entities": [
-          "南亞科",
-          "美國",
-          "曝光",
-          "入口",
-          "AI"
+          "台積電"
         ]
       },
       {
-        "topic_id": 2,
-        "label": "dram / 記憶體 / 需求與記憶體吃緊支撐成長 / 南亞科法說會後三外資看好",
-        "heat": 10.9,
-        "volume": 5,
-        "engagement": 112,
-        "entities": [
-          "南亞科",
-          "DRAM"
-        ]
-      },
-      {
-        "topic_id": 8,
+        "topic_id": 3,
         "label": "tsmc / nt / june / revenue",
-        "heat": 10.8,
+        "heat": 10.5,
         "volume": 3,
         "engagement": 509,
         "entities": [
@@ -87,58 +72,99 @@
         ]
       },
       {
-        "topic_id": 14,
-        "label": "台積電法說會 / 日登場",
-        "heat": 10.8,
+        "topic_id": 7,
+        "label": "ai",
+        "heat": 10.5,
         "volume": 3,
-        "engagement": 102,
+        "engagement": 268,
         "entities": [
-          "台積電",
-          "華許國會",
-          "首秀",
-          "高度集中",
-          "美國"
+          "AI"
         ]
       },
       {
-        "topic_id": 3,
-        "label": "cpo / 光纖陣列 / 大立光 / 看好",
+        "topic_id": 1,
+        "label": "hynix / sk / consensus / tn",
+        "heat": 10.5,
+        "volume": 3,
+        "engagement": 2105,
+        "entities": [
+          "QoQ",
+          "ASP",
+          "KRW",
+          "KIS KR Tech",
+          "KIS Semicon"
+        ]
+      },
+      {
+        "topic_id": 0,
+        "label": "cowos / 台積電 / ai / ai供應鏈",
         "heat": 10.2,
         "volume": 4,
-        "engagement": 24,
+        "engagement": 22,
         "entities": [
-          "大立光",
           "台積電",
-          "輝達",
-          "智慧",
-          "花旗"
+          "大摩",
+          "HBM",
+          "AI",
+          "ai供應鏈"
+        ]
+      },
+      {
+        "topic_id": 9,
+        "label": "韓國車廠 / 現代 / 現代汽車 / 起亞及通用韓國工會相繼醞釀罷工",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 6,
+        "entities": [
+          "韓國",
+          "亞及"
+        ]
+      },
+      {
+        "topic_id": 6,
+        "label": "南亞科預期記憶體續吃緊 / ai",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 95,
+        "entities": [
+          "南亞科"
+        ]
+      },
+      {
+        "topic_id": 15,
+        "label": "中油 / 維持亞洲鄰近國家最低水準 / 柴油價格皆不調整 / 台灣中油油價凍漲",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 7,
+        "entities": [
+          "亞洲",
+          "台灣"
+        ]
+      },
+      {
+        "topic_id": 16,
+        "label": "anthropic / openai / ai蒸餾 / 巨頭面臨網路反噬",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 12,
+        "entities": [
+          "AI蒸餾",
+          "OpenAI"
         ]
       },
       {
         "topic_id": 11,
-        "label": "台積電 / cowos / 先進封裝 / ai",
-        "heat": 10.2,
-        "volume": 7,
-        "engagement": 25,
-        "entities": [
-          "台積電",
-          "英特爾",
-          "川普",
-          "大摩",
-          "HBM"
-        ]
-      },
-      {
-        "topic_id": 17,
-        "label": "euv / 家登精密 / 半導體 / 先進製程載具出貨比重高",
+        "label": "dram / 南亞科法說會後三外資看好 / 需求與記憶體吃緊支撐成長 / 南亞科",
         "heat": 10.0,
         "volume": 2,
         "engagement": 4,
-        "entities": []
+        "entities": [
+          "南亞科"
+        ]
       },
       {
-        "topic_id": 13,
-        "label": "黃仁勳等高層展現高度信心 / 大摩重申輝達買進評等 / 輝達 / 強調成長正加速且多元化",
+        "topic_id": 10,
+        "label": "黃仁勳等高層展現高度信心 / 黃仁勳 / 輝達 / 大摩重申輝達買進評等",
         "heat": 10.0,
         "volume": 2,
         "engagement": 17,
@@ -149,28 +175,18 @@
         ]
       },
       {
-        "topic_id": 4,
-        "label": "指高度重視考試競爭的東亞地區成 / cnn / 教育 / 作弊亂象引關注",
+        "topic_id": 2,
+        "label": "spacex / 可重複使用火箭 / 中國航太 / 爭奪衛星產業主導權更近一步",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 13,
+        "engagement": 17,
         "entities": [
-          "東亞"
+          "中國"
         ]
       },
       {
-        "topic_id": 9,
-        "label": "海葵 / 科學家在麗色海葵免疫系統發現前所未知蛋白質 / 免疫系統 / 抗病毒",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 7,
-        "entities": [
-          "麗色"
-        ]
-      },
-      {
-        "topic_id": 10,
-        "label": "海底火山 / 科學家用多顆衛星監測 / 新島嶼 / 可能幫地球創造一座新島嶼",
+        "topic_id": 8,
+        "label": "海底火山 / 可能幫地球創造一座新島嶼 / 新島嶼 / 科學家用多顆衛星監測",
         "heat": 10.0,
         "volume": 2,
         "engagement": 32,
@@ -179,16 +195,16 @@
         ]
       },
       {
-        "topic_id": 12,
-        "label": "麒麟 / 華為 / 堆疊架構 / 混合鍵合",
+        "topic_id": 17,
+        "label": "cosmicwatch / 宇宙射線 / 人人都能當粒子物理學家 / 美元就能探測宇宙射線",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 36,
+        "engagement": 18,
         "entities": []
       },
       {
-        "topic_id": 16,
-        "label": "嘉義科學園區二期基地正式啟動 / 嘉義科學園區 / 由台積電領軍打造先進封裝產業聚落 / 帶領嘉義邁向科技重鎮新里程",
+        "topic_id": 13,
+        "label": "嘉義科學園區 / 由台積電領軍打造先進封裝產業聚落 / 帶領嘉義邁向科技重鎮新里程 / 嘉義科學園區二期基地正式啟動",
         "heat": 10.0,
         "volume": 2,
         "engagement": 43,
@@ -200,20 +216,8 @@
         ]
       },
       {
-        "topic_id": 6,
-        "label": "文化挪用 / 麻將 / 美國 / 麻將旋風席捲西方",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 29,
-        "entities": [
-          "美國",
-          "麻將旋風席",
-          "全美"
-        ]
-      },
-      {
-        "topic_id": 15,
-        "label": "spacex / 馬斯克 / 那斯達克 / 種投資商品追蹤",
+        "topic_id": 12,
+        "label": "spacex / 馬斯克 / 那斯達克 / 正式納入那斯達克",
         "heat": 10.0,
         "volume": 2,
         "engagement": 24,
@@ -225,32 +229,27 @@
         ]
       },
       {
-        "topic_id": 7,
-        "label": "pchome / 駭客宣稱取得 / 資安事件 / gb",
+        "topic_id": 5,
+        "label": "ubimytherapist / ai心理健康 / 穿戴裝置 / 用智慧手錶",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 29,
-        "entities": []
-      },
-      {
-        "topic_id": 0,
-        "label": "比爾蓋茲 / 大部分事情 / 比爾蓋茲語出驚人 / 職業",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 48,
+        "engagement": 14,
         "entities": [
-          "比爾蓋"
+          "AI",
+          "穿戴裝置",
+          "用智慧手錶 手機即時偵測情緒變化",
+          "用智慧手錶  "
         ]
       }
     ],
     "named_entities": [
       {
         "entity": "台積電",
-        "count": 48
+        "count": 55
       },
       {
         "entity": "美國",
-        "count": 20
+        "count": 21
       },
       {
         "entity": "馬斯克",
@@ -258,18 +257,26 @@
       },
       {
         "entity": "南亞科",
-        "count": 14
+        "count": 16
       },
       {
         "entity": "輝達",
+        "count": 14
+      },
+      {
+        "entity": "韓國",
         "count": 13
       },
       {
         "entity": "中國",
-        "count": 11
+        "count": 13
       },
       {
         "entity": "日本",
+        "count": 12
+      },
+      {
+        "entity": "英特爾",
         "count": 10
       },
       {
@@ -277,7 +284,7 @@
         "count": 10
       },
       {
-        "entity": "韓國",
+        "entity": "台北",
         "count": 9
       },
       {
@@ -285,7 +292,7 @@
         "count": 9
       },
       {
-        "entity": "英特爾",
+        "entity": "安川",
         "count": 8
       },
       {
@@ -295,294 +302,286 @@
       {
         "entity": "伺服器",
         "count": 8
-      },
-      {
-        "entity": "新島",
-        "count": 8
-      },
-      {
-        "entity": "嘉義",
-        "count": 8
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-12T16:33:21.000006+08:00",
-        "bucket_end": "2026-07-12T18:16:12.428577+08:00",
+        "bucket_start": "2026-07-12T08:40:00.000006+00:00",
+        "bucket_end": "2026-07-12T10:22:51.428577+00:00",
         "positive": 7,
-        "neutral": 13,
+        "neutral": 12,
         "negative": 2
       },
       {
-        "bucket_start": "2026-07-12T18:16:12.428577+08:00",
-        "bucket_end": "2026-07-12T19:59:03.857148+08:00",
-        "positive": 7,
+        "bucket_start": "2026-07-12T10:22:51.428577+00:00",
+        "bucket_end": "2026-07-12T12:05:42.857148+00:00",
+        "positive": 9,
         "neutral": 5,
         "negative": 2
       },
       {
-        "bucket_start": "2026-07-12T19:59:03.857148+08:00",
-        "bucket_end": "2026-07-12T21:41:55.285719+08:00",
-        "positive": 5,
+        "bucket_start": "2026-07-12T12:05:42.857148+00:00",
+        "bucket_end": "2026-07-12T13:48:34.285719+00:00",
+        "positive": 3,
         "neutral": 4,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-12T21:41:55.285719+08:00",
-        "bucket_end": "2026-07-12T23:24:46.714290+08:00",
+        "bucket_start": "2026-07-12T13:48:34.285719+00:00",
+        "bucket_end": "2026-07-12T15:31:25.714290+00:00",
         "positive": 4,
         "neutral": 5,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-12T23:24:46.714290+08:00",
-        "bucket_end": "2026-07-13T01:07:38.142861+08:00",
+        "bucket_start": "2026-07-12T15:31:25.714290+00:00",
+        "bucket_end": "2026-07-12T17:14:17.142861+00:00",
         "positive": 2,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-13T01:07:38.142861+08:00",
-        "bucket_end": "2026-07-13T02:50:29.571432+08:00",
+        "bucket_start": "2026-07-12T17:14:17.142861+00:00",
+        "bucket_end": "2026-07-12T18:57:08.571432+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-13T02:50:29.571432+08:00",
-        "bucket_end": "2026-07-13T04:33:21.000003+08:00",
+        "bucket_start": "2026-07-12T18:57:08.571432+00:00",
+        "bucket_end": "2026-07-12T20:40:00.000003+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-13T04:33:21.000003+08:00",
-        "bucket_end": "2026-07-13T06:16:12.428574+08:00",
+        "bucket_start": "2026-07-12T20:40:00.000003+00:00",
+        "bucket_end": "2026-07-12T22:22:51.428574+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-13T06:16:12.428574+08:00",
-        "bucket_end": "2026-07-13T07:59:03.857145+08:00",
+        "bucket_start": "2026-07-12T22:22:51.428574+00:00",
+        "bucket_end": "2026-07-13T00:05:42.857145+00:00",
         "positive": 4,
-        "neutral": 2,
+        "neutral": 5,
         "negative": 6
       },
       {
-        "bucket_start": "2026-07-13T07:59:03.857145+08:00",
-        "bucket_end": "2026-07-13T09:41:55.285716+08:00",
+        "bucket_start": "2026-07-13T00:05:42.857145+00:00",
+        "bucket_end": "2026-07-13T01:48:34.285716+00:00",
         "positive": 7,
-        "neutral": 9,
+        "neutral": 6,
         "negative": 5
       },
       {
-        "bucket_start": "2026-07-13T09:41:55.285716+08:00",
-        "bucket_end": "2026-07-13T11:24:46.714287+08:00",
-        "positive": 12,
+        "bucket_start": "2026-07-13T01:48:34.285716+00:00",
+        "bucket_end": "2026-07-13T03:31:25.714287+00:00",
+        "positive": 14,
         "neutral": 6,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-13T11:24:46.714287+08:00",
-        "bucket_end": "2026-07-13T13:07:38.142858+08:00",
-        "positive": 12,
-        "neutral": 2,
+        "bucket_start": "2026-07-13T03:31:25.714287+00:00",
+        "bucket_end": "2026-07-13T05:14:17.142858+00:00",
+        "positive": 11,
+        "neutral": 5,
         "negative": 4
       },
       {
-        "bucket_start": "2026-07-13T13:07:38.142858+08:00",
-        "bucket_end": "2026-07-13T14:50:29.571429+08:00",
-        "positive": 3,
-        "neutral": 4,
-        "negative": 3
+        "bucket_start": "2026-07-13T05:14:17.142858+00:00",
+        "bucket_end": "2026-07-13T06:57:08.571429+00:00",
+        "positive": 7,
+        "neutral": 9,
+        "negative": 7
       },
       {
-        "bucket_start": "2026-07-13T14:50:29.571429+08:00",
-        "bucket_end": "2026-07-13T16:33:21+08:00",
-        "positive": 3,
-        "neutral": 6,
-        "negative": 4
+        "bucket_start": "2026-07-13T06:57:08.571429+00:00",
+        "bucket_end": "2026-07-13T08:40:00+00:00",
+        "positive": 5,
+        "neutral": 14,
+        "negative": 9
       }
     ],
     "coverage_focus_ranking": [
       {
         "handle": "tphuang",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sales / hynix",
+        "top_topic_id": 4,
+        "top_topic_label": "ai / openai / dram / sales",
         "focus_share": 1.0,
         "post_count": 9
       },
       {
+        "handle": "tengyanAI",
+        "top_topic_id": 4,
+        "top_topic_label": "ai / openai / dram / sales",
+        "focus_share": 1.0,
+        "post_count": 2
+      },
+      {
+        "handle": "ctee.fans",
+        "top_topic_id": 4,
+        "top_topic_label": "ai / openai / dram / sales",
+        "focus_share": 1.0,
+        "post_count": 36
+      },
+      {
         "handle": "yutinghaosfinance",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sales / hynix",
+        "top_topic_id": 4,
+        "top_topic_label": "ai / openai / dram / sales",
         "focus_share": 1.0,
         "post_count": 12
       },
       {
         "handle": "SemiAnalysis_",
-        "top_topic_id": 5,
+        "top_topic_id": 7,
         "top_topic_label": "ai",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "ctee.fans",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sales / hynix",
-        "focus_share": 0.88,
-        "post_count": 25
-      },
-      {
-        "handle": "jukan05",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sales / hynix",
-        "focus_share": 0.857,
-        "post_count": 7
-      },
-      {
-        "handle": "technews_tw",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sales / hynix",
-        "focus_share": 0.545,
-        "post_count": 55
+        "handle": "QQ_Timmy",
+        "top_topic_id": 4,
+        "top_topic_label": "ai / openai / dram / sales",
+        "focus_share": 0.75,
+        "post_count": 4
       },
       {
         "handle": "technewsinside",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sales / hynix",
-        "focus_share": 0.543,
-        "post_count": 35
+        "top_topic_id": 4,
+        "top_topic_label": "ai / openai / dram / sales",
+        "focus_share": 0.702,
+        "post_count": 57
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 4,
+        "top_topic_label": "ai / openai / dram / sales",
+        "focus_share": 0.691,
+        "post_count": 55
       },
       {
         "handle": "TrendForce",
-        "top_topic_id": 8,
+        "top_topic_id": 3,
         "top_topic_label": "tsmc / nt / june / revenue",
         "focus_share": 0.5,
         "post_count": 2
       },
       {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sales / hynix",
-        "focus_share": 0.5,
-        "post_count": 4
-      },
-      {
-        "handle": "tengyanAI",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sales / hynix",
-        "focus_share": 0.5,
-        "post_count": 2
+        "handle": "jukan05",
+        "top_topic_id": 4,
+        "top_topic_label": "ai / openai / dram / sales",
+        "focus_share": 0.429,
+        "post_count": 7
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 1,
-        "label": "ai / openai / sales / hynix",
-        "total_engagement": 9020,
-        "post_count": 102
+        "topic_id": 4,
+        "label": "ai / openai / dram / sales",
+        "total_engagement": 7795,
+        "post_count": 144
       },
       {
-        "topic_id": 8,
+        "topic_id": 1,
+        "label": "hynix / sk / consensus / tn",
+        "total_engagement": 2105,
+        "post_count": 3
+      },
+      {
+        "topic_id": 3,
         "label": "tsmc / nt / june / revenue",
         "total_engagement": 509,
         "post_count": 3
       },
       {
-        "topic_id": 5,
-        "label": "ai",
-        "total_engagement": 282,
-        "post_count": 6
-      },
-      {
-        "topic_id": 2,
-        "label": "dram / 記憶體 / 需求與記憶體吃緊支撐成長 / 南亞科法說會後三外資看好",
-        "total_engagement": 112,
-        "post_count": 5
-      },
-      {
         "topic_id": 14,
-        "label": "台積電法說會 / 日登場",
-        "total_engagement": 102,
-        "post_count": 3
-      },
-      {
-        "topic_id": 0,
-        "label": "比爾蓋茲 / 大部分事情 / 比爾蓋茲語出驚人 / 職業",
-        "total_engagement": 48,
-        "post_count": 2
-      },
-      {
-        "topic_id": 16,
-        "label": "嘉義科學園區二期基地正式啟動 / 嘉義科學園區 / 由台積電領軍打造先進封裝產業聚落 / 帶領嘉義邁向科技重鎮新里程",
-        "total_engagement": 43,
-        "post_count": 2
-      },
-      {
-        "topic_id": 12,
-        "label": "麒麟 / 華為 / 堆疊架構 / 混合鍵合",
-        "total_engagement": 36,
-        "post_count": 2
-      },
-      {
-        "topic_id": 10,
-        "label": "海底火山 / 科學家用多顆衛星監測 / 新島嶼 / 可能幫地球創造一座新島嶼",
-        "total_engagement": 32,
-        "post_count": 2
-      },
-      {
-        "topic_id": 6,
-        "label": "文化挪用 / 麻將 / 美國 / 麻將旋風席捲西方",
-        "total_engagement": 29,
-        "post_count": 2
-      },
-      {
-        "topic_id": 7,
-        "label": "pchome / 駭客宣稱取得 / 資安事件 / gb",
-        "total_engagement": 29,
-        "post_count": 2
-      },
-      {
-        "topic_id": 11,
-        "label": "台積電 / cowos / 先進封裝 / ai",
-        "total_engagement": 25,
-        "post_count": 7
-      },
-      {
-        "topic_id": 3,
-        "label": "cpo / 光纖陣列 / 大立光 / 看好",
-        "total_engagement": 24,
+        "label": "台積電 / 半導體 / 最新 / ai",
+        "total_engagement": 318,
         "post_count": 4
       },
       {
-        "topic_id": 15,
-        "label": "spacex / 馬斯克 / 那斯達克 / 種投資商品追蹤",
-        "total_engagement": 24,
+        "topic_id": 7,
+        "label": "ai",
+        "total_engagement": 268,
+        "post_count": 3
+      },
+      {
+        "topic_id": 6,
+        "label": "南亞科預期記憶體續吃緊 / ai",
+        "total_engagement": 95,
         "post_count": 2
       },
       {
         "topic_id": 13,
-        "label": "黃仁勳等高層展現高度信心 / 大摩重申輝達買進評等 / 輝達 / 強調成長正加速且多元化",
+        "label": "嘉義科學園區 / 由台積電領軍打造先進封裝產業聚落 / 帶領嘉義邁向科技重鎮新里程 / 嘉義科學園區二期基地正式啟動",
+        "total_engagement": 43,
+        "post_count": 2
+      },
+      {
+        "topic_id": 8,
+        "label": "海底火山 / 可能幫地球創造一座新島嶼 / 新島嶼 / 科學家用多顆衛星監測",
+        "total_engagement": 32,
+        "post_count": 2
+      },
+      {
+        "topic_id": 12,
+        "label": "spacex / 馬斯克 / 那斯達克 / 正式納入那斯達克",
+        "total_engagement": 24,
+        "post_count": 2
+      },
+      {
+        "topic_id": 0,
+        "label": "cowos / 台積電 / ai / ai供應鏈",
+        "total_engagement": 22,
+        "post_count": 4
+      },
+      {
+        "topic_id": 17,
+        "label": "cosmicwatch / 宇宙射線 / 人人都能當粒子物理學家 / 美元就能探測宇宙射線",
+        "total_engagement": 18,
+        "post_count": 2
+      },
+      {
+        "topic_id": 10,
+        "label": "黃仁勳等高層展現高度信心 / 黃仁勳 / 輝達 / 大摩重申輝達買進評等",
         "total_engagement": 17,
         "post_count": 2
       },
       {
-        "topic_id": 4,
-        "label": "指高度重視考試競爭的東亞地區成 / cnn / 教育 / 作弊亂象引關注",
-        "total_engagement": 13,
+        "topic_id": 2,
+        "label": "spacex / 可重複使用火箭 / 中國航太 / 爭奪衛星產業主導權更近一步",
+        "total_engagement": 17,
         "post_count": 2
       },
       {
-        "topic_id": 9,
-        "label": "海葵 / 科學家在麗色海葵免疫系統發現前所未知蛋白質 / 免疫系統 / 抗病毒",
+        "topic_id": 5,
+        "label": "ubimytherapist / ai心理健康 / 穿戴裝置 / 用智慧手錶",
+        "total_engagement": 14,
+        "post_count": 2
+      },
+      {
+        "topic_id": 16,
+        "label": "anthropic / openai / ai蒸餾 / 巨頭面臨網路反噬",
+        "total_engagement": 12,
+        "post_count": 2
+      },
+      {
+        "topic_id": 15,
+        "label": "中油 / 維持亞洲鄰近國家最低水準 / 柴油價格皆不調整 / 台灣中油油價凍漲",
         "total_engagement": 7,
         "post_count": 2
       },
       {
-        "topic_id": 17,
-        "label": "euv / 家登精密 / 半導體 / 先進製程載具出貨比重高",
+        "topic_id": 9,
+        "label": "韓國車廠 / 現代 / 現代汽車 / 起亞及通用韓國工會相繼醞釀罷工",
+        "total_engagement": 6,
+        "post_count": 2
+      },
+      {
+        "topic_id": 11,
+        "label": "dram / 南亞科法說會後三外資看好 / 需求與記憶體吃緊支撐成長 / 南亞科",
         "total_engagement": 4,
         "post_count": 2
       }
@@ -596,10 +595,10 @@
           "avg_engagement": 70.4
         },
         "afternoon": {
-          "post_count": 35,
-          "likes": 514,
-          "engagement": 629,
-          "avg_engagement": 18.0
+          "post_count": 68,
+          "likes": 1464,
+          "engagement": 1579,
+          "avg_engagement": 23.2
         },
         "evening": {
           "post_count": 0,
@@ -614,7 +613,7 @@
           "avg_engagement": 87.0
         }
       },
-      "peak_slot": "morning"
+      "peak_slot": "afternoon"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,

@@ -148,6 +148,30 @@ def is_chinese_noise_token(token):
     return bool(CHINESE_UNIT_TOKEN_RE.match(token)) or bool(CHINESE_NOISE_RE.search(token))
 
 
+# English-language counterpart to CHINESE_NOISE_SUBSTRINGS: internet-slang/
+# conversational filler and generic reporting-verb noise that sklearn's
+# built-in 'english' stopword list doesn't catch (it's ordinary vocabulary,
+# not textbook stopwords like "the"/"and"). A cluster of casual social-media
+# commentary (e.g. a competitor account's chattier posting style) lets these
+# dominate frequency and crowd out the actual product/company names that
+# should label the topic - seen in practice as a cluster labeled
+# "image / bruh / buy / told" instead of anything industry-specific.
+# English tokens are already whole words after tokenization (unlike Chinese,
+# which needs substring matching since there's no word-boundary signal), so
+# an exact-match set is sufficient here.
+EN_NOISE_WORDS = {
+    'bruh', 'lol', 'lmao', 'rofl', 'omg', 'smh', 'tbh', 'imo', 'imho', 'fyi', 'btw',
+    'yeah', 'yep', 'nah', 'gonna', 'wanna', 'kinda', 'sorta', 'gotta',
+    'dude', 'bro', 'guys', 'guy', 'weebs', 'weeb',
+    'image', 'images', 'img', 'photo', 'photos', 'pic', 'pics', 'picture', 'pictures',
+    'video', 'videos', 'gif', 'gifs', 'thread', 'threads',
+    'said', 'says', 'saying', 'told', 'telling', 'according', 'reportedly', 'reported',
+    'claims', 'claimed', 'believe', 'believes', 'believed', 'think', 'thinks', 'thought', 'thoughts',
+    'wow', 'damn', 'literally', 'actually', 'basically', 'honestly', 'seriously',
+    'totally', 'definitely', 'probably', 'maybe', 'buy', 'buying', 'bought',
+}
+
+
 def parse_count(val):
     if not val:
         return 0
@@ -265,7 +289,7 @@ def cluster_posts(posts, n_clusters=N_CLUSTERS, min_docs_per_cluster=5):
     documents, which raises instead of degrading gracefully. Retry with a
     looser min_df, then without stop-word filtering, before giving up."""
     docs = [p['text'] for p in posts]
-    stop_words = list(TfidfVectorizer(stop_words='english').get_stop_words()) + list(LINK_NOISE)
+    stop_words = list(TfidfVectorizer(stop_words='english').get_stop_words()) + list(LINK_NOISE) + list(EN_NOISE_WORDS)
     # Default analyzer (lowercasing + tokenizing + stop-word removal) plus the
     # Chinese noise-pattern filter, which stop_words alone can't express
     # since it only matches whole tokens exactly.
