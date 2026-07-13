@@ -1543,6 +1543,27 @@ def main():
     '國際','國內','本地','地區','區域','公司','企業','商業','市場','產業','行業','經濟','政府','國家','國家隊',
     '集團','廠商','業者','今天','今年','昨天','明天','目前','最近','報導','新聞','指出','表示']);
 
+  // Ported from cluster_topics.py's CHINESE_NOISE_SUBSTRINGS/CHINESE_UNIT_TOKEN_RE
+  // (kept in sync by hand - no shared module between Python and this
+  // embedded page's JS). An exact-match stopword set alone can't catch a
+  // combinatorial family like [億|萬|千|兆][元|日圓|美元|韓元] - same gap
+  // that motivated the server-side pattern version in the first place, and
+  // this client-side extractor had the same fixed-list-only version of the
+  // problem until now.
+  const ZH_NOISE_RE = new RegExp([
+    '年增','年減','月增','月減','季增','季減','去年','今年','明年',
+    '本季','上季','下季','本月','上月','下月','同期','同比',
+    '目前','近期','日前','日起','報導','指出','表示','預估','預計','據悉',
+    '營收','獲利','毛利率','目標價','股價','創新高','創下','新高','新低',
+    '百分點','歷史新高','央行','因此','經濟日報','導讀','reurl',
+    '年的','年至','年間','年以來','過去',
+  ].join('|'));
+  const ZH_UNIT_TOKEN_RE = /^[0-9億萬千兆]+[元日圓韓美歐]{0,2}$/;
+
+  function isChineseNoiseTerm(term) {{
+    return ZH_UNIT_TOKEN_RE.test(term) || ZH_NOISE_RE.test(term);
+  }}
+
   function extractTopics(rows, textCol, topN) {{
     const counts = new Map();
     const bump = (term) => counts.set(term, (counts.get(term) || 0) + 1);
@@ -1558,7 +1579,7 @@ def main():
         for (let len = 2; len <= 4 && len <= run.length; len++) {{
           for (let i = 0; i + len <= run.length; i++) {{
             const term = run.slice(i, i + len);
-            if (seenInRow.has(term) || ZH_TOPIC_STOPWORDS.has(term)) continue;
+            if (seenInRow.has(term) || ZH_TOPIC_STOPWORDS.has(term) || isChineseNoiseTerm(term)) continue;
             seenInRow.add(term);
             bump(term);
           }}
