@@ -1,91 +1,161 @@
 {
   "clusters": [
     {
-      "id": 0,
-      "label": "ai / nvidia / memory / hbm",
-      "size": 115,
+      "id": 5,
+      "label": "ai / nvidia / trendforce / 台積電",
+      "size": 127,
       "accounts": {
         "TrendForce": 1,
-        "technews_tw": 24,
+        "technews_tw": 35,
         "dylan522p": 1,
-        "SemiAnalysis_": 2,
-        "jukan05": 6,
+        "SemiAnalysis_": 1,
+        "jukan05": 4,
         "QQ_Timmy": 4,
-        "tphuang": 8,
-        "technewsinside": 30,
-        "ctee.fans": 28,
+        "tphuang": 9,
+        "technewsinside": 37,
+        "ctee.fans": 24,
         "yutinghaosfinance": 11
       },
       "engagement_by_account": {
-        "TrendForce": 10,
-        "technews_tw": 85,
-        "dylan522p": 1541,
-        "SemiAnalysis_": 1191,
-        "jukan05": 2880,
-        "QQ_Timmy": 206,
-        "tphuang": 498,
-        "technewsinside": 1885,
-        "ctee.fans": 2077,
+        "TrendForce": 11,
+        "technews_tw": 110,
+        "dylan522p": 1647,
+        "SemiAnalysis_": 145,
+        "jukan05": 2158,
+        "QQ_Timmy": 209,
+        "tphuang": 594,
+        "technewsinside": 1613,
+        "ctee.fans": 2016,
         "yutinghaosfinance": 3824
       }
     },
     {
-      "id": 11,
-      "label": "ai / 中國 / physical / pcb",
-      "size": 6,
+      "id": 2,
+      "label": "ai / trendforce / 中國 / physical",
+      "size": 7,
       "accounts": {
-        "technews_tw": 1,
-        "technewsinside": 5
+        "technews_tw": 3,
+        "technewsinside": 4
       },
       "engagement_by_account": {
-        "technews_tw": 0,
-        "technewsinside": 132
+        "technews_tw": 2,
+        "technewsinside": 99
       }
     },
     {
-      "id": 1,
-      "label": "台積電 / 英特爾 / 魏哲家 / 奈米",
-      "size": 3,
+      "id": 12,
+      "label": "openai / ai / anthropic / gpt",
+      "size": 5,
       "accounts": {
-        "technews_tw": 1,
+        "technews_tw": 2,
+        "tengyanAI": 1,
         "technewsinside": 2
       },
       "engagement_by_account": {
         "technews_tw": 2,
-        "technewsinside": 41
+        "tengyanAI": 11,
+        "technewsinside": 36
       }
     },
     {
-      "id": 14,
-      "label": "spacex / ipo / 馬斯克 / ai",
+      "id": 13,
+      "label": "hynix / sk / samsung / memory",
+      "size": 3,
+      "accounts": {
+        "jukan05": 3
+      },
+      "engagement_by_account": {
+        "jukan05": 1587
+      }
+    },
+    {
+      "id": 0,
+      "label": "科技早報 / ai / macbook / 國際團隊結合機器學習與量子物理",
       "size": 2,
       "accounts": {
         "technews_tw": 1,
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "technews_tw": 4,
-        "technewsinside": 19
+        "technews_tw": 1,
+        "technewsinside": 6
       }
     },
     {
-      "id": 10,
-      "label": "google / tpu / ai / anthropic",
+      "id": 8,
+      "label": "dram / nand / ddr / trendforce",
+      "size": 2,
+      "accounts": {
+        "tengyanAI": 1,
+        "technewsinside": 1
+      },
+      "engagement_by_account": {
+        "tengyanAI": 12,
+        "technewsinside": 1
+      }
+    },
+    {
+      "id": 4,
+      "label": "hbm / memory / dram / samsung",
       "size": 1,
       "accounts": {
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "technewsinside": 24
+        "technewsinside": 15
+      }
+    },
+    {
+      "id": 7,
+      "label": "pcb / ai / kyber / nvidia",
+      "size": 1,
+      "accounts": {
+        "jukan05": 1
+      },
+      "engagement_by_account": {
+        "jukan05": 364
+      }
+    },
+    {
+      "id": 14,
+      "label": "台股 / 台積電 / etf / 台股逐洞賽",
+      "size": 1,
+      "accounts": {
+        "ctee.fans": 1
+      },
+      "engagement_by_account": {
+        "ctee.fans": 23
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 13,
+      "label": "hynix / sk / samsung / memory",
+      "own_count": 0,
+      "competitor_count": 3,
+      "competitor_engagement": 1587,
+      "competitors_covering": [
+        "jukan05"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 13,
+      "label": "hynix / sk / samsung / memory",
+      "own_count": 0,
+      "competitor_count": 3,
+      "competitor_engagement": 1587,
+      "competitors_covering": [
+        "jukan05"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-12T01:20:00+00:00",
-    "end_utc": "2026-07-13T01:20:00+00:00",
-    "start_tw": "Jul 12, 09:20",
-    "end_tw": "Jul 13, 09:20"
+    "start_utc": "2026-07-12T04:41:00+00:00",
+    "end_utc": "2026-07-13T04:41:00+00:00",
+    "start_tw": "Jul 12, 12:41",
+    "end_tw": "Jul 13, 12:41"
   }
 }
