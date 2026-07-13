@@ -1,150 +1,157 @@
 {
-  "generated_at": "2026-07-12T13:36:37+08:00",
+  "generated_at": "2026-07-13T01:20:00+00:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-12T09:36:37+08:00",
-    "end_utc": "2026-07-12T13:36:37+08:00",
-    "start_tw": "Jul 12, 09:36",
-    "end_tw": "Jul 12, 13:36"
+    "start_utc": "2026-07-12T21:20:00+00:00",
+    "end_utc": "2026-07-13T01:20:00+00:00",
+    "start_tw": "Jul 13, 05:20",
+    "end_tw": "Jul 13, 09:20"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 11,
+      "total_posts": 19,
       "sentiment_counts": {
-        "negative": 4,
-        "neutral": 4,
-        "positive": 3
+        "positive": 6,
+        "neutral": 6,
+        "negative": 7
       },
       "sentiment_share": {
-        "negative": 0.364,
-        "neutral": 0.364,
-        "positive": 0.273
+        "positive": 0.316,
+        "neutral": 0.316,
+        "negative": 0.368
       },
       "top_terms": [
-        "the",
-        "for",
-        "fab",
-        "同時遭政治攻擊",
-        "股市強勁卻頻傳裁員",
-        "年以來漲跌幅",
-        "嘉義小公司立大功",
-        "坤暐科技無人機成烏克蘭突襲俄羅斯利器",
-        "初階員工工作被資深員工吸收",
-        "打造物理限制小方塊"
+        "more",
+        "See",
+        "sales",
+        "feel",
+        "favorable",
+        "anime",
+        "June",
+        "sale",
+        "MoM",
+        "down"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "cluster-0",
+        "topic_id": 1,
+        "label": "sales / market / june",
         "heat": 90.0,
-        "volume": 8,
-        "engagement": 1136
+        "volume": 13,
+        "engagement": 699
       },
       {
-        "topic_id": 1,
+        "topic_id": 2,
         "label": "ai",
         "heat": 10.0,
-        "volume": 3,
-        "engagement": 4
+        "volume": 4,
+        "engagement": 46
+      },
+      {
+        "topic_id": 0,
+        "label": "台積電法說會",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 53
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-12T09:36:36.999994+08:00",
-        "bucket_end": "2026-07-12T09:53:45.571423+08:00",
+        "bucket_start": "2026-07-12T21:19:59.999994+00:00",
+        "bucket_end": "2026-07-12T21:37:08.571423+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-12T21:37:08.571423+00:00",
+        "bucket_end": "2026-07-12T21:54:17.142852+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-12T21:54:17.142852+00:00",
+        "bucket_end": "2026-07-12T22:11:25.714281+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-12T09:53:45.571423+08:00",
-        "bucket_end": "2026-07-12T10:10:54.142852+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-12T10:10:54.142852+08:00",
-        "bucket_end": "2026-07-12T10:28:02.714281+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-12T10:28:02.714281+08:00",
-        "bucket_end": "2026-07-12T10:45:11.285710+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-12T10:45:11.285710+08:00",
-        "bucket_end": "2026-07-12T11:02:19.857139+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-12T11:02:19.857139+08:00",
-        "bucket_end": "2026-07-12T11:19:28.428568+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-12T11:19:28.428568+08:00",
-        "bucket_end": "2026-07-12T11:36:36.999997+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-12T11:36:36.999997+08:00",
-        "bucket_end": "2026-07-12T11:53:45.571426+08:00",
+        "bucket_start": "2026-07-12T22:11:25.714281+00:00",
+        "bucket_end": "2026-07-12T22:28:34.285710+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-12T11:53:45.571426+08:00",
-        "bucket_end": "2026-07-12T12:10:54.142855+08:00",
+        "bucket_start": "2026-07-12T22:28:34.285710+00:00",
+        "bucket_end": "2026-07-12T22:45:42.857139+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-12T12:10:54.142855+08:00",
-        "bucket_end": "2026-07-12T12:28:02.714284+08:00",
+        "bucket_start": "2026-07-12T22:45:42.857139+00:00",
+        "bucket_end": "2026-07-12T23:02:51.428568+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-12T23:02:51.428568+00:00",
+        "bucket_end": "2026-07-12T23:19:59.999997+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-12T12:28:02.714284+08:00",
-        "bucket_end": "2026-07-12T12:45:11.285713+08:00",
-        "positive": 0,
+        "bucket_start": "2026-07-12T23:19:59.999997+00:00",
+        "bucket_end": "2026-07-12T23:37:08.571426+00:00",
+        "positive": 1,
         "neutral": 1,
-        "negative": 0
+        "negative": 1
       },
       {
-        "bucket_start": "2026-07-12T12:45:11.285713+08:00",
-        "bucket_end": "2026-07-12T13:02:19.857142+08:00",
+        "bucket_start": "2026-07-12T23:37:08.571426+00:00",
+        "bucket_end": "2026-07-12T23:54:17.142855+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-12T13:02:19.857142+08:00",
-        "bucket_end": "2026-07-12T13:19:28.428571+08:00",
+        "bucket_start": "2026-07-12T23:54:17.142855+00:00",
+        "bucket_end": "2026-07-13T00:11:25.714284+00:00",
         "positive": 0,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-13T00:11:25.714284+00:00",
+        "bucket_end": "2026-07-13T00:28:34.285713+00:00",
+        "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-12T13:19:28.428571+08:00",
-        "bucket_end": "2026-07-12T13:36:37+08:00",
+        "bucket_start": "2026-07-13T00:28:34.285713+00:00",
+        "bucket_end": "2026-07-13T00:45:42.857142+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-13T00:45:42.857142+00:00",
+        "bucket_end": "2026-07-13T01:02:51.428571+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-13T01:02:51.428571+00:00",
+        "bucket_end": "2026-07-13T01:20:00+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
@@ -152,62 +159,68 @@
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 0,
-        "top_topic_label": "cluster-0",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
         "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "cluster-0",
-        "focus_share": 1.0,
-        "post_count": 2
-      },
-      {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 0,
-        "top_topic_label": "cluster-0",
+        "top_topic_id": 1,
+        "top_topic_label": "sales / market / june",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "tphuang",
-        "top_topic_id": 0,
-        "top_topic_label": "cluster-0",
+        "top_topic_id": 1,
+        "top_topic_label": "sales / market / june",
+        "focus_share": 1.0,
+        "post_count": 3
+      },
+      {
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 1,
+        "top_topic_label": "sales / market / june",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "technews_tw",
+        "handle": "ctee.fans",
         "top_topic_id": 1,
+        "top_topic_label": "sales / market / june",
+        "focus_share": 0.714,
+        "post_count": 7
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 2,
         "top_topic_label": "ai",
-        "focus_share": 0.5,
-        "post_count": 6
+        "focus_share": 0.571,
+        "post_count": 7
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "cluster-0",
-        "total_engagement": 1136,
-        "post_count": 8
+        "topic_id": 1,
+        "label": "sales / market / june",
+        "total_engagement": 699,
+        "post_count": 13
       },
       {
-        "topic_id": 1,
+        "topic_id": 0,
+        "label": "台積電法說會",
+        "total_engagement": 53,
+        "post_count": 2
+      },
+      {
+        "topic_id": 2,
         "label": "ai",
-        "total_engagement": 4,
-        "post_count": 3
+        "total_engagement": 46,
+        "post_count": 4
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 19,
+          "likes": 743,
+          "engagement": 798,
+          "avg_engagement": 42.0
         },
         "afternoon": {
           "post_count": 0,
@@ -228,7 +241,7 @@
           "avg_engagement": 0.0
         }
       },
-      "peak_slot": null
+      "peak_slot": "morning"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,
