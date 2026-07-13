@@ -2,43 +2,54 @@
   "clusters": [
     {
       "id": 1,
-      "label": "ai / nvidia / memory / samsung",
-      "size": 19,
+      "label": "ai / memory / 台積電 / spacex",
+      "size": 6,
       "accounts": {
-        "technews_tw": 6,
-        "SemiAnalysis_": 4,
-        "jukan05": 3,
-        "QQ_Timmy": 3,
-        "tphuang": 2,
-        "tengyanAI": 1
+        "TrendForce": 1,
+        "SemiAnalysis_": 1,
+        "jukan05": 1,
+        "tphuang": 3
       },
       "engagement_by_account": {
-        "technews_tw": 14,
-        "SemiAnalysis_": 920,
-        "jukan05": 651,
-        "QQ_Timmy": 90,
-        "tphuang": 53,
-        "tengyanAI": 20
-      }
-    },
-    {
-      "id": 11,
-      "label": "ai / 中國 / pcb / physical",
-      "size": 2,
-      "accounts": {
-        "technews_tw": 2
-      },
-      "engagement_by_account": {
-        "technews_tw": 1
+        "TrendForce": 10,
+        "SemiAnalysis_": 122,
+        "jukan05": 106,
+        "tphuang": 38
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 1,
+      "label": "ai / memory / 台積電 / spacex",
+      "own_count": 1,
+      "competitor_count": 5,
+      "competitor_engagement": 266,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "jukan05",
+        "tphuang"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 1,
+      "label": "ai / memory / 台積電 / spacex",
+      "own_count": 1,
+      "competitor_count": 5,
+      "competitor_engagement": 266,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "jukan05",
+        "tphuang"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-12T05:36:37+08:00",
-    "end_utc": "2026-07-12T13:36:37+08:00",
-    "start_tw": "Jul 12, 05:36",
-    "end_tw": "Jul 12, 13:36"
+    "start_utc": "2026-07-12T23:20:59+08:00",
+    "end_utc": "2026-07-13T07:20:59+08:00",
+    "start_tw": "Jul 12, 23:20",
+    "end_tw": "Jul 13, 07:20"
   }
 }

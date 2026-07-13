@@ -8,7 +8,7 @@
     "start_tw": "Jul 13, 03:20",
     "end_tw": "Jul 13, 07:20"
   },
-  "scan_only": true,
+  "scan_only": false,
   "platforms": {
     "X": {
       "top_rising_topics": [
@@ -20,7 +20,40 @@
           "rationale": "volume +100% vs prior 4h, engagement rate -45%, 2 account(s) posting",
           "topic_id": 1,
           "label": "ai / memory / 台積電 / spacex",
-          "rising_kols": [],
+          "rising_kols": [
+            {
+              "rising_score": 90.0,
+              "volume_growth_rate": 1.0,
+              "engagement_acceleration": 106.0,
+              "active_accounts": 1,
+              "rationale": "posts +100%, engagement +10600% vs prior 4h",
+              "handle": "jukan05"
+            },
+            {
+              "rising_score": 90.0,
+              "volume_growth_rate": 3.0,
+              "engagement_acceleration": 12.667,
+              "active_accounts": 1,
+              "rationale": "posts +300%, engagement +1267% vs prior 4h",
+              "handle": "tphuang"
+            },
+            {
+              "rising_score": 10.0,
+              "volume_growth_rate": -1.0,
+              "engagement_acceleration": -1.0,
+              "active_accounts": 0,
+              "rationale": "posts -100%, engagement -100% vs prior 4h",
+              "handle": "TrendForce"
+            },
+            {
+              "rising_score": 10.0,
+              "volume_growth_rate": -1.0,
+              "engagement_acceleration": -1.0,
+              "active_accounts": 0,
+              "rationale": "posts -100%, engagement -100% vs prior 4h",
+              "handle": "SemiAnalysis_"
+            }
+          ],
           "sub_topics": []
         }
       ]
