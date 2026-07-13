@@ -15,12 +15,16 @@ Processing:
     where available), last-post recency, computed status (active/stale/
     inactive) for every account load_posts() tracks (own + competitors).
   - Comment aggregation: for OUR OWN posts only, flag ones with a reply
-    count at or above NEEDS_RESPONSE_THRESHOLD as needing a response
-    (actual comment/reply text isn't scraped today - only reply counts -
-    so aggregation happens at the post level, not per individual comment).
-  - Reply-draft suggestions: a template reply per flagged post, informed
-    by that post's FR-01 topic and FR-03 sentiment, queued for human
-    approval in analysis/reply_queue.json.
+    count at or above NEEDS_RESPONSE_THRESHOLD as needing a response.
+  - Reply-draft suggestions: informed by that post's FR-01 topic and FR-03
+    sentiment. When scrape_own_comments.js has actually found comments for
+    a post (own_comments.json is nonempty for that URL), select_top_comments()
+    picks the top (most-liked) comments still within RECENT_WITHIN_DAYS and
+    craft_comment_reply() addresses the top one by name, quoting what they
+    said - a real response, not a generic one. A post with zero scraped
+    comments (not scraped yet, or genuinely none) falls back to the
+    original generic topic-based draft_reply. Queued for human approval in
+    analysis/reply_queue.json.
   - Response tracking: status lifecycle drafted -> approved -> sent, or
     dismissed, persisted across runs like FR-04's review queue.
 
@@ -79,6 +83,57 @@ def focus_phrase(topic_label, text_excerpt):
         if term and term.lower() in text_lower:
             return term
     return terms[0] if terms else ''
+
+
+TOP_COMMENTS_PER_POST = 3  # how many top comments a crafted reply can reference
+
+
+def select_top_comments(comments, now, within_days=RECENT_WITHIN_DAYS, top_n=TOP_COMMENTS_PER_POST):
+    """Comments worth crafting a response around: recent (within
+    `within_days`) and ranked by likes. X comments carry a 'timestamp'
+    (from scrape_own_comments.js's toTaiwanISOString) so recency is checked
+    directly; Facebook comments only carry a relative-time string with no
+    reliable absolute timestamp (see that scraper's own docstring), so a
+    comment with no parseable timestamp is treated as still-eligible rather
+    than silently excluded - excluding every Facebook comment by default
+    would be wrong more often than including a stale one."""
+    if not comments:
+        return []
+    eligible = []
+    for c in comments:
+        ts = parse_ts(c.get('timestamp')) if c.get('timestamp') else None
+        if ts is not None and (now - ts).days >= within_days:
+            continue
+        eligible.append(c)
+    eligible.sort(key=lambda c: parse_count(c.get('likes')) if c.get('likes') is not None else 0, reverse=True)
+    return eligible[:top_n]
+
+
+def craft_comment_reply(sentiment, topic_label, text_excerpt, top_comments):
+    """Like draft_reply, but addresses the top (most-liked, recent) comment
+    directly by name and references what they actually said - only called
+    when select_top_comments() found at least one qualifying comment;
+    falls back to the generic topic-based draft_reply otherwise."""
+    if not top_comments:
+        return draft_reply(sentiment, topic_label, text_excerpt)
+
+    top = top_comments[0]
+    topic = focus_phrase(topic_label, text_excerpt)
+    about = f" about {topic}" if topic else ""
+    commenter = (top.get('author') or '').strip()
+    who = commenter if commenter else "everyone"
+    comment_excerpt = (top.get('text') or '').strip()[:80]
+    quoted = f' — you mentioned "{comment_excerpt}"' if comment_excerpt else ''
+
+    if sentiment == 'positive':
+        return (f"Thank you so much, {who}, for the kind words on our post{about}{quoted}! "
+                 "We're so glad this resonated with you, and we'll keep the great content coming.")
+    elif sentiment == 'negative':
+        return (f"Thank you, {who}, for taking the time to share your thoughts on our post{about}{quoted}. "
+                 "We really do appreciate the feedback, and we'd love to hear more so we can make things better.")
+    else:
+        return (f"Thanks so much, {who}, for reading our post{about} and sharing your thoughts{quoted}! "
+                 "We'd love to hear what you'd like us to cover next.")
 
 
 def draft_reply(sentiment, topic_label='', text_excerpt=''):
@@ -162,12 +217,19 @@ def build_account_status(posts, now):
     return accounts
 
 
-def build_comment_queue(posts, topic_labels_by_cluster, cluster_id_by_post, now):
+def build_comment_queue(posts, topic_labels_by_cluster, cluster_id_by_post, now, own_comments):
     """Flag our own high-reply *recent* posts and draft a suggested response
     for each. A reply is only worth drafting while it's still timely - a
     3-day-old post getting a reply today reads as stale/random to whoever
     sees it, so posts older than RECENT_WITHIN_DAYS are skipped even if
-    they'd otherwise qualify on reply count."""
+    they'd otherwise qualify on reply count.
+
+    The draft itself is crafted around the post's top (most-liked, recent)
+    actual comment when we have one - select_top_comments() only returns
+    something when scrape_own_comments.js found at least one comment within
+    the recency window, so a post with zero scraped comments (not scraped
+    yet, or the scrape genuinely found none) falls back to the generic
+    topic-based draft_reply exactly as before."""
     flagged = []
     for p, cid in zip(posts, cluster_id_by_post):
         if p['handle'] not in OWN_HANDLES:
@@ -181,6 +243,8 @@ def build_comment_queue(posts, topic_labels_by_cluster, cluster_id_by_post, now)
         text_excerpt = p['text'][:200]
         topic_label = topic_labels_by_cluster[cid]
         sentiment_score = p.get('sentiment_score', 0.0)
+        comments = own_comments.get(p.get('url', ''), [])
+        top_comments = select_top_comments(comments, now)
         flagged.append({
             'id': rid,
             'platform': p['platform'],
@@ -192,7 +256,8 @@ def build_comment_queue(posts, topic_labels_by_cluster, cluster_id_by_post, now)
             'topic_label': topic_label,
             'sentiment': p['sentiment'],
             'sentiment_score': sentiment_score,
-            'draft_reply': draft_reply(p['sentiment'], topic_label, text_excerpt),
+            'comments': comments,
+            'draft_reply': craft_comment_reply(p['sentiment'], topic_label, text_excerpt, top_comments),
         })
     flagged.sort(key=lambda r: r['reply_count'], reverse=True)
     return flagged
@@ -239,14 +304,13 @@ def build():
     vectorizer, X, km, labels = cluster_posts(posts, N_CLUSTERS)
     topic_labels = {int(cid): ' / '.join(label_cluster(vectorizer, km.cluster_centers_[cid])) or f'cluster-{cid}'
                     for cid in set(labels)}
-    flagged = build_comment_queue(posts, topic_labels, [int(l) for l in labels], now)
     own_comments = load_own_comments()
+    flagged = build_comment_queue(posts, topic_labels, [int(l) for l in labels], now, own_comments)
 
     queue = load_reply_queue()
     added, refreshed = 0, 0
     for rec in flagged:
         rid = rec['id']
-        rec['comments'] = own_comments.get(rec['url'], [])
         if rid in queue:
             queue[rid]['reply_count'] = rec['reply_count']
             queue[rid]['url'] = queue[rid].get('url') or rec['url']
