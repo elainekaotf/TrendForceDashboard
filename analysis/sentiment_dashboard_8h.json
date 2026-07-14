@@ -1,73 +1,112 @@
 {
-  "generated_at": "2026-07-14T08:54:16.949766+00:00",
+  "generated_at": "2026-07-14T13:32:35.257116+00:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-14T00:54:16.949766+00:00",
-    "end_utc": "2026-07-14T08:54:16.949766+00:00",
-    "start_tw": "Jul 14, 08:54",
-    "end_tw": "Jul 14, 16:54"
+    "start_utc": "2026-07-14T05:32:35.257116+00:00",
+    "end_utc": "2026-07-14T13:32:35.257116+00:00",
+    "start_tw": "Jul 14, 13:32",
+    "end_tw": "Jul 14, 21:32"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 102,
+      "total_posts": 85,
       "sentiment_counts": {
-        "positive": 43,
-        "neutral": 30,
-        "negative": 29
+        "positive": 28,
+        "neutral": 29,
+        "negative": 28
       },
       "sentiment_share": {
-        "positive": 0.422,
-        "neutral": 0.294,
-        "negative": 0.284
+        "positive": 0.329,
+        "neutral": 0.341,
+        "negative": 0.329
       },
       "top_terms": [
         "記憶",
         "憶體",
         "記憶體",
-        "半導",
-        "導體",
-        "半導體",
-        "衝擊",
-        "伊朗",
+        "重挫",
+        "散戶",
         "韓股",
-        "蘋果"
+        "體漲",
+        "漲價",
+        "憶體漲",
+        "體漲價"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "ai / meta / samsung / hynix",
+        "topic_id": 3,
+        "label": "fab / 輝達 / samsung / ai",
         "heat": 90.0,
-        "volume": 62,
-        "engagement": 3630,
+        "volume": 43,
+        "engagement": 1703,
         "entities": [
-          "貝林",
-          "漢姆",
-          "微軟",
-          "諾貝爾獎",
-          "中華電信"
+          "貝萊德",
+          "輝達",
+          "台積電",
+          "日本",
+          "韓國"
         ]
       },
       {
-        "topic_id": 11,
-        "label": "ai / 分析看好擴大市占與 / 蘋果 / models",
-        "heat": 13.3,
+        "topic_id": 5,
+        "label": "每股稅後純益 / eps / 月稅後純益",
+        "heat": 11.8,
+        "volume": 3,
+        "engagement": 94,
+        "entities": [
+          "台新",
+          "力積電",
+          "國泰",
+          "金控"
+        ]
+      },
+      {
+        "topic_id": 4,
+        "label": "spacex / 科技雙生對照競賽 / 亞馬遜與 / 押注相似領域",
+        "heat": 11.4,
+        "volume": 3,
+        "engagement": 32,
+        "entities": [
+          "亞馬遜",
+          "馬斯克",
+          "上市"
+        ]
+      },
+      {
+        "topic_id": 2,
+        "label": "ai / expansion / 記憶體漲價",
+        "heat": 11.1,
         "volume": 5,
-        "engagement": 588,
+        "engagement": 26,
         "entities": [
-          "microsoft",
-          "AI",
-          "Satya",
-          "伺服器"
+          "摩根",
+          "AI CapEx",
+          "浮上",
+          "南韓",
+          "美國"
         ]
       },
       {
-        "topic_id": 6,
-        "label": "adr / sk海力士 / 記憶體 / 韓國公債",
-        "heat": 10.4,
+        "topic_id": 0,
+        "label": "記憶體漲價 / 二手手機 / 新機價格揚升帶動",
+        "heat": 11.1,
         "volume": 4,
-        "engagement": 18,
+        "engagement": 25,
+        "entities": [
+          "日本",
+          "智慧",
+          "三星",
+          "中國"
+        ]
+      },
+      {
+        "topic_id": 7,
+        "label": "adr / sk海力士 / 記憶體 / sk",
+        "heat": 11.0,
+        "volume": 5,
+        "engagement": 24,
         "entities": [
           "SK海力士",
           "韓國",
@@ -75,22 +114,8 @@
         ]
       },
       {
-        "topic_id": 10,
-        "label": "川普 / 將對通過荷莫茲海峽貨物徵收 / 荷莫茲海峽 / 油價",
-        "heat": 10.3,
-        "volume": 3,
-        "engagement": 13,
-        "entities": [
-          "川普",
-          "荷莫茲海峽",
-          "徵收",
-          "伊朗",
-          "封鎖"
-        ]
-      },
-      {
-        "topic_id": 8,
-        "label": "出口管制 / 出口管制成地緣政治工具 / 稀土 / 家日本實體列出口管制對象",
+        "topic_id": 13,
+        "label": "稀土 / 家日本實體列出口管制對象 / 出口管制成地緣政治工具 / 出口管制",
         "heat": 10.0,
         "volume": 2,
         "engagement": 1,
@@ -100,8 +125,20 @@
         ]
       },
       {
-        "topic_id": 12,
-        "label": "已成為企業更重視的關鍵 / 逐漸走向現場部署 / 長期穩定 / 比起規格",
+        "topic_id": 11,
+        "label": "starlink / 低軌衛星 / 中華電信 / 登台",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 8,
+        "entities": [
+          "中華電信",
+          "修正",
+          "攸關"
+        ]
+      },
+      {
+        "topic_id": 9,
+        "label": "長期穩定 / 逐漸走向現場部署 / 已成為企業更重視的關鍵 / 比起規格",
         "heat": 10.0,
         "volume": 2,
         "engagement": 23,
@@ -110,157 +147,107 @@
         ]
       },
       {
-        "topic_id": 17,
-        "label": "貝萊德 / ai供應鏈 / 台股 / 投資人不需過度恐慌",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 22,
-        "entities": [
-          "貝萊德"
-        ]
-      },
-      {
-        "topic_id": 16,
-        "label": "歐盟擬限制幼童用社群媒體 / 社群媒體 / 歐盟 / 歲以下兒童須在成人監督下限時使用",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 5,
-        "entities": []
-      },
-      {
-        "topic_id": 13,
-        "label": "二手手機 / 新機價格揚升帶動 / 記憶體漲價",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 7,
-        "entities": [
-          "日本",
-          "智慧"
-        ]
-      },
-      {
-        "topic_id": 3,
-        "label": "spacex / 亞馬遜與 / 科技雙生對照競賽 / 押注相似領域",
+        "topic_id": 1,
+        "label": "meta / ai / hyperion / 投資金額提高至逾",
         "heat": 10.0,
         "volume": 2,
         "engagement": 13,
         "entities": [
-          "亞馬遜"
-        ]
-      },
-      {
-        "topic_id": 7,
-        "label": "汽車產業正從 / 自動駕駛 / ai定義車輛 / 輝達預言汽車新趨勢",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 18,
-        "entities": [
-          "輝達"
+          "Meta 加碼 AI Hyperion"
         ]
       },
       {
         "topic_id": 15,
-        "label": "dram / 中國半導體 / 華為 / 傳華為將切入",
+        "label": "英格蘭 / 貝林漢姆 / 世界盃 / 挪威堅稱貝林漢姆上半場追平球擊中蜘蛛攝影機",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 11,
+        "entities": [
+          "貝林",
+          "漢姆",
+          "英格蘭",
+          "挪威"
+        ]
+      },
+      {
+        "topic_id": 10,
+        "label": "社群媒體 / 歐盟擬限制幼童用社群媒體 / 歐盟 / 歲以下兒童須在成人監督下限時使用",
         "heat": 10.0,
         "volume": 2,
         "engagement": 5,
+        "entities": []
+      },
+      {
+        "topic_id": 16,
+        "label": "windows / 微軟 / 搜尋功能 / 移除令人困擾的宣傳內容和廣告",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 12,
         "entities": [
-          "中國",
-          "傳華",
-          "晉華"
+          "微軟"
+        ]
+      },
+      {
+        "topic_id": 12,
+        "label": "天文",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 12,
+        "entities": [
+          "天文",
+          "太陽",
+          "古老"
+        ]
+      },
+      {
+        "topic_id": 8,
+        "label": "烏克蘭",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 65,
+        "entities": [
+          "烏克蘭",
+          "台灣",
+          "澤倫斯",
+          "歐洲",
+          "歐洲國防"
         ]
       },
       {
         "topic_id": 14,
-        "label": "kospi / 韓股 / 韓股斷頭大屠殺 / 盤中重挫近",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 18,
-        "entities": []
-      },
-      {
-        "topic_id": 2,
-        "label": "天期限 / 川普 / 主張重啟 / 軍事行動",
+        "label": "川普",
         "heat": 10.0,
         "volume": 2,
         "engagement": 33,
         "entities": [
-          "伊朗",
           "川普",
-          "普通",
-          "經國會"
+          "美國",
+          "最高法院",
+          "加密",
+          "聯邦"
         ]
       },
       {
-        "topic_id": 1,
-        "label": "法說會 / 台積電法說會將登場 / 台積電 / 最高上看",
+        "topic_id": 6,
+        "label": "台股",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 26,
+        "engagement": 14,
         "entities": [
-          "台積電"
-        ]
-      },
-      {
-        "topic_id": 5,
-        "label": "英特爾 / 愛爾蘭 / 為愛爾蘭製造廠區挹注 / 半導體",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 16,
-        "entities": [
-          "英特爾",
-          "愛爾",
-          "愛爾蘭",
-          "歐元"
-        ]
-      },
-      {
-        "topic_id": 4,
-        "label": "麵包 / 食物浪費 / 推出置物櫃型自動販賣機 / 日本創意減少食物浪費",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 5,
-        "entities": [
-          "日本",
-          "完的"
-        ]
-      },
-      {
-        "topic_id": 9,
-        "label": "新北市 / 新竹縣 / 其中有 / 臺中",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 45,
-        "entities": [
-          "米其林",
-          "新北市",
-          "新竹"
+          "日台",
+          "中美",
+          "南亞科",
+          "修正"
         ]
       }
     ],
     "named_entities": [
       {
         "entity": "日本",
-        "count": 20
+        "count": 15
       },
       {
         "entity": "中國",
-        "count": 16
-      },
-      {
-        "entity": "川普",
-        "count": 14
-      },
-      {
-        "entity": "伊朗",
-        "count": 13
-      },
-      {
-        "entity": "智慧",
-        "count": 11
-      },
-      {
-        "entity": "荷莫茲海峽",
         "count": 10
       },
       {
@@ -276,308 +263,290 @@
         "count": 9
       },
       {
-        "entity": "台積電",
-        "count": 9
-      },
-      {
         "entity": "微軟",
-        "count": 8
-      },
-      {
-        "entity": "伺服器",
-        "count": 8
-      },
-      {
-        "entity": "英特爾",
-        "count": 8
-      },
-      {
-        "entity": "諾貝爾獎",
         "count": 8
       },
       {
         "entity": "中華電信",
         "count": 7
+      },
+      {
+        "entity": "韓國",
+        "count": 7
+      },
+      {
+        "entity": "SK海力士",
+        "count": 5
+      },
+      {
+        "entity": "英格蘭",
+        "count": 5
+      },
+      {
+        "entity": "智慧",
+        "count": 5
+      },
+      {
+        "entity": "美國",
+        "count": 5
+      },
+      {
+        "entity": "中東",
+        "count": 4
+      },
+      {
+        "entity": "修正",
+        "count": 4
+      },
+      {
+        "entity": "挪威",
+        "count": 4
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-14T00:54:16.949768+00:00",
-        "bucket_end": "2026-07-14T01:28:34.092625+00:00",
-        "positive": 3,
-        "neutral": 4,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-14T01:28:34.092625+00:00",
-        "bucket_end": "2026-07-14T02:02:51.235482+00:00",
+        "bucket_start": "2026-07-14T05:32:35.257118+00:00",
+        "bucket_end": "2026-07-14T06:06:52.399975+00:00",
         "positive": 6,
         "neutral": 0,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-14T02:02:51.235482+00:00",
-        "bucket_end": "2026-07-14T02:37:08.378339+00:00",
-        "positive": 0,
-        "neutral": 7,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-14T02:37:08.378339+00:00",
-        "bucket_end": "2026-07-14T03:11:25.521196+00:00",
-        "positive": 4,
-        "neutral": 1,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-14T03:11:25.521196+00:00",
-        "bucket_end": "2026-07-14T03:45:42.664053+00:00",
-        "positive": 3,
-        "neutral": 1,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-14T03:45:42.664053+00:00",
-        "bucket_end": "2026-07-14T04:19:59.806910+00:00",
-        "positive": 4,
-        "neutral": 2,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-14T04:19:59.806910+00:00",
-        "bucket_end": "2026-07-14T04:54:16.949767+00:00",
-        "positive": 3,
-        "neutral": 2,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-14T04:54:16.949767+00:00",
-        "bucket_end": "2026-07-14T05:28:34.092624+00:00",
-        "positive": 5,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-14T05:28:34.092624+00:00",
-        "bucket_end": "2026-07-14T06:02:51.235481+00:00",
-        "positive": 5,
-        "neutral": 2,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-14T06:02:51.235481+00:00",
-        "bucket_end": "2026-07-14T06:37:08.378338+00:00",
-        "positive": 2,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-14T06:37:08.378338+00:00",
-        "bucket_end": "2026-07-14T07:11:25.521195+00:00",
-        "positive": 0,
-        "neutral": 2,
-        "negative": 6
-      },
-      {
-        "bucket_start": "2026-07-14T07:11:25.521195+00:00",
-        "bucket_end": "2026-07-14T07:45:42.664052+00:00",
-        "positive": 2,
-        "neutral": 2,
-        "negative": 5
-      },
-      {
-        "bucket_start": "2026-07-14T07:45:42.664052+00:00",
-        "bucket_end": "2026-07-14T08:19:59.806909+00:00",
-        "positive": 4,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-14T08:19:59.806909+00:00",
-        "bucket_end": "2026-07-14T08:54:16.949766+00:00",
+        "bucket_start": "2026-07-14T06:06:52.399975+00:00",
+        "bucket_end": "2026-07-14T06:41:09.542832+00:00",
         "positive": 2,
         "neutral": 3,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-14T06:41:09.542832+00:00",
+        "bucket_end": "2026-07-14T07:15:26.685689+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 7
+      },
+      {
+        "bucket_start": "2026-07-14T07:15:26.685689+00:00",
+        "bucket_end": "2026-07-14T07:49:43.828546+00:00",
+        "positive": 1,
+        "neutral": 3,
+        "negative": 4
+      },
+      {
+        "bucket_start": "2026-07-14T07:49:43.828546+00:00",
+        "bucket_end": "2026-07-14T08:24:00.971403+00:00",
+        "positive": 4,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-14T08:24:00.971403+00:00",
+        "bucket_end": "2026-07-14T08:58:18.114260+00:00",
+        "positive": 3,
+        "neutral": 4,
         "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-14T08:58:18.114260+00:00",
+        "bucket_end": "2026-07-14T09:32:35.257117+00:00",
+        "positive": 1,
+        "neutral": 3,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-14T09:32:35.257117+00:00",
+        "bucket_end": "2026-07-14T10:06:52.399974+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 3
+      },
+      {
+        "bucket_start": "2026-07-14T10:06:52.399974+00:00",
+        "bucket_end": "2026-07-14T10:41:09.542831+00:00",
+        "positive": 1,
+        "neutral": 3,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-14T10:41:09.542831+00:00",
+        "bucket_end": "2026-07-14T11:15:26.685688+00:00",
+        "positive": 2,
+        "neutral": 2,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-14T11:15:26.685688+00:00",
+        "bucket_end": "2026-07-14T11:49:43.828545+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-14T11:49:43.828545+00:00",
+        "bucket_end": "2026-07-14T12:24:00.971402+00:00",
+        "positive": 2,
+        "neutral": 2,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-14T12:24:00.971402+00:00",
+        "bucket_end": "2026-07-14T12:58:18.114259+00:00",
+        "positive": 2,
+        "neutral": 2,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-14T12:58:18.114259+00:00",
+        "bucket_end": "2026-07-14T13:32:35.257116+00:00",
+        "positive": 2,
+        "neutral": 2,
+        "negative": 1
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "TrendForce",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / meta / samsung / hynix",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
         "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / meta / samsung / hynix",
+        "top_topic_id": 3,
+        "top_topic_label": "fab / 輝達 / samsung / ai",
         "focus_share": 1.0,
-        "post_count": 5
-      },
-      {
-        "handle": "tphuang",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / meta / samsung / hynix",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / meta / samsung / hynix",
-        "focus_share": 1.0,
-        "post_count": 1
+        "post_count": 2
       },
       {
         "handle": "TrendForce.tw",
-        "top_topic_id": 11,
-        "top_topic_label": "ai / 分析看好擴大市占與 / 蘋果 / models",
+        "top_topic_id": 3,
+        "top_topic_label": "fab / 輝達 / samsung / ai",
         "focus_share": 1.0,
-        "post_count": 1
+        "post_count": 2
       },
       {
-        "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / meta / samsung / hynix",
-        "focus_share": 0.895,
-        "post_count": 19
-      },
-      {
-        "handle": "tengyanAI",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / meta / samsung / hynix",
+        "handle": "TrendForce",
+        "top_topic_id": 3,
+        "top_topic_label": "fab / 輝達 / samsung / ai",
         "focus_share": 0.75,
         "post_count": 4
       },
       {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / meta / samsung / hynix",
-        "focus_share": 0.5,
-        "post_count": 2
+        "handle": "ctee.fans",
+        "top_topic_id": 3,
+        "top_topic_label": "fab / 輝達 / samsung / ai",
+        "focus_share": 0.75,
+        "post_count": 20
       },
       {
         "handle": "technewsinside",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / meta / samsung / hynix",
-        "focus_share": 0.5,
-        "post_count": 36
+        "top_topic_id": 3,
+        "top_topic_label": "fab / 輝達 / samsung / ai",
+        "focus_share": 0.419,
+        "post_count": 43
       },
       {
         "handle": "technews_tw",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / meta / samsung / hynix",
-        "focus_share": 0.469,
-        "post_count": 32
+        "top_topic_id": 3,
+        "top_topic_label": "fab / 輝達 / samsung / ai",
+        "focus_share": 0.214,
+        "post_count": 14
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "ai / meta / samsung / hynix",
-        "total_engagement": 3630,
-        "post_count": 62
+        "topic_id": 3,
+        "label": "fab / 輝達 / samsung / ai",
+        "total_engagement": 1703,
+        "post_count": 43
       },
       {
-        "topic_id": 11,
-        "label": "ai / 分析看好擴大市占與 / 蘋果 / models",
-        "total_engagement": 588,
-        "post_count": 5
+        "topic_id": 5,
+        "label": "每股稅後純益 / eps / 月稅後純益",
+        "total_engagement": 94,
+        "post_count": 3
       },
       {
-        "topic_id": 9,
-        "label": "新北市 / 新竹縣 / 其中有 / 臺中",
-        "total_engagement": 45,
-        "post_count": 2
-      },
-      {
-        "topic_id": 2,
-        "label": "天期限 / 川普 / 主張重啟 / 軍事行動",
-        "total_engagement": 33,
-        "post_count": 2
-      },
-      {
-        "topic_id": 1,
-        "label": "法說會 / 台積電法說會將登場 / 台積電 / 最高上看",
-        "total_engagement": 26,
-        "post_count": 2
-      },
-      {
-        "topic_id": 12,
-        "label": "已成為企業更重視的關鍵 / 逐漸走向現場部署 / 長期穩定 / 比起規格",
-        "total_engagement": 23,
-        "post_count": 2
-      },
-      {
-        "topic_id": 17,
-        "label": "貝萊德 / ai供應鏈 / 台股 / 投資人不需過度恐慌",
-        "total_engagement": 22,
-        "post_count": 2
-      },
-      {
-        "topic_id": 6,
-        "label": "adr / sk海力士 / 記憶體 / 韓國公債",
-        "total_engagement": 18,
-        "post_count": 4
-      },
-      {
-        "topic_id": 7,
-        "label": "汽車產業正從 / 自動駕駛 / ai定義車輛 / 輝達預言汽車新趨勢",
-        "total_engagement": 18,
+        "topic_id": 8,
+        "label": "烏克蘭",
+        "total_engagement": 65,
         "post_count": 2
       },
       {
         "topic_id": 14,
-        "label": "kospi / 韓股 / 韓股斷頭大屠殺 / 盤中重挫近",
-        "total_engagement": 18,
-        "post_count": 2
-      },
-      {
-        "topic_id": 5,
-        "label": "英特爾 / 愛爾蘭 / 為愛爾蘭製造廠區挹注 / 半導體",
-        "total_engagement": 16,
-        "post_count": 2
-      },
-      {
-        "topic_id": 3,
-        "label": "spacex / 亞馬遜與 / 科技雙生對照競賽 / 押注相似領域",
-        "total_engagement": 13,
-        "post_count": 2
-      },
-      {
-        "topic_id": 10,
-        "label": "川普 / 將對通過荷莫茲海峽貨物徵收 / 荷莫茲海峽 / 油價",
-        "total_engagement": 13,
-        "post_count": 3
-      },
-      {
-        "topic_id": 13,
-        "label": "二手手機 / 新機價格揚升帶動 / 記憶體漲價",
-        "total_engagement": 7,
-        "post_count": 2
-      },
-      {
-        "topic_id": 16,
-        "label": "歐盟擬限制幼童用社群媒體 / 社群媒體 / 歐盟 / 歲以下兒童須在成人監督下限時使用",
-        "total_engagement": 5,
-        "post_count": 2
-      },
-      {
-        "topic_id": 15,
-        "label": "dram / 中國半導體 / 華為 / 傳華為將切入",
-        "total_engagement": 5,
+        "label": "川普",
+        "total_engagement": 33,
         "post_count": 2
       },
       {
         "topic_id": 4,
-        "label": "麵包 / 食物浪費 / 推出置物櫃型自動販賣機 / 日本創意減少食物浪費",
+        "label": "spacex / 科技雙生對照競賽 / 亞馬遜與 / 押注相似領域",
+        "total_engagement": 32,
+        "post_count": 3
+      },
+      {
+        "topic_id": 2,
+        "label": "ai / expansion / 記憶體漲價",
+        "total_engagement": 26,
+        "post_count": 5
+      },
+      {
+        "topic_id": 0,
+        "label": "記憶體漲價 / 二手手機 / 新機價格揚升帶動",
+        "total_engagement": 25,
+        "post_count": 4
+      },
+      {
+        "topic_id": 7,
+        "label": "adr / sk海力士 / 記憶體 / sk",
+        "total_engagement": 24,
+        "post_count": 5
+      },
+      {
+        "topic_id": 9,
+        "label": "長期穩定 / 逐漸走向現場部署 / 已成為企業更重視的關鍵 / 比起規格",
+        "total_engagement": 23,
+        "post_count": 2
+      },
+      {
+        "topic_id": 6,
+        "label": "台股",
+        "total_engagement": 14,
+        "post_count": 2
+      },
+      {
+        "topic_id": 1,
+        "label": "meta / ai / hyperion / 投資金額提高至逾",
+        "total_engagement": 13,
+        "post_count": 2
+      },
+      {
+        "topic_id": 16,
+        "label": "windows / 微軟 / 搜尋功能 / 移除令人困擾的宣傳內容和廣告",
+        "total_engagement": 12,
+        "post_count": 2
+      },
+      {
+        "topic_id": 12,
+        "label": "天文",
+        "total_engagement": 12,
+        "post_count": 2
+      },
+      {
+        "topic_id": 15,
+        "label": "英格蘭 / 貝林漢姆 / 世界盃 / 挪威堅稱貝林漢姆上半場追平球擊中蜘蛛攝影機",
+        "total_engagement": 11,
+        "post_count": 2
+      },
+      {
+        "topic_id": 11,
+        "label": "starlink / 低軌衛星 / 中華電信 / 登台",
+        "total_engagement": 8,
+        "post_count": 2
+      },
+      {
+        "topic_id": 10,
+        "label": "社群媒體 / 歐盟擬限制幼童用社群媒體 / 歐盟 / 歲以下兒童須在成人監督下限時使用",
         "total_engagement": 5,
         "post_count": 2
       },
       {
-        "topic_id": 8,
-        "label": "出口管制 / 出口管制成地緣政治工具 / 稀土 / 家日本實體列出口管制對象",
+        "topic_id": 13,
+        "label": "稀土 / 家日本實體列出口管制對象 / 出口管制成地緣政治工具 / 出口管制",
         "total_engagement": 1,
         "post_count": 2
       }
@@ -585,22 +554,22 @@
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 41,
-          "likes": 2268,
-          "engagement": 2575,
-          "avg_engagement": 62.8
-        },
-        "afternoon": {
-          "post_count": 61,
-          "likes": 1611,
-          "engagement": 1911,
-          "avg_engagement": 31.3
-        },
-        "evening": {
           "post_count": 0,
           "likes": 0,
           "engagement": 0,
           "avg_engagement": 0.0
+        },
+        "afternoon": {
+          "post_count": 52,
+          "likes": 1386,
+          "engagement": 1635,
+          "avg_engagement": 31.4
+        },
+        "evening": {
+          "post_count": 33,
+          "likes": 462,
+          "engagement": 466,
+          "avg_engagement": 14.1
         },
         "late_night": {
           "post_count": 0,
