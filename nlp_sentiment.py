@@ -67,10 +67,12 @@ from datetime import datetime, timedelta, timezone
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 from cnsenti import Sentiment as ChineseSentiment
 from opencc import OpenCC
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 import jieba
 import jieba.posseg as pseg
 
-from cluster_topics import N_CLUSTERS, load_posts, label_cluster, cluster_posts, OWN_HANDLES
+from cluster_topics import (N_CLUSTERS, load_posts, label_cluster, cluster_posts, OWN_HANDLES,
+                             EN_NOISE_WORDS, LINK_NOISE, is_chinese_noise_token)
 from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, window_dict, TAIWAN_TZ
 
 try:
@@ -252,17 +254,48 @@ def normalize(values):
 
 
 # --- Widgets ----------------------------------------------------------------
+EN_TOKEN_RE = re.compile(r"[a-zA-Z']+")
+_TOP_TERMS_STOP_WORDS = ENGLISH_STOP_WORDS | LINK_NOISE | EN_NOISE_WORDS
+
+
+def top_keyword_terms(posts, top_n=10):
+    """Same noise filtering as cluster_topics.py's TF-IDF pipeline (sklearn's
+    English stopwords + LINK_NOISE + EN_NOISE_WORDS + the Chinese noise
+    pattern), applied to plain word-frequency counting instead of TF-IDF -
+    this widget just needs "what terms come up most," not a vectorizer.
+    A prior version used raw text.split() with no filtering at all, which is
+    how generic words like "according"/"pro"/"color"/"already"/"expected"
+    were showing up here despite already being filtered out of FR-01's
+    cluster labels."""
+    counts = Counter()
+    for p in posts:
+        text = p.get('text', '')
+        seen_in_post = set()
+        for w in EN_TOKEN_RE.findall(text.lower()):
+            if len(w) > 2 and w not in _TOP_TERMS_STOP_WORDS and w not in seen_in_post:
+                seen_in_post.add(w)
+                counts[w] += 1
+        for run in re.findall(r'[一-鿿]{2,}', text):
+            for length in (2, 3, 4):
+                if length > len(run):
+                    break
+                for i in range(len(run) - length + 1):
+                    term = run[i:i + length]
+                    if term in seen_in_post or is_chinese_noise_token(term):
+                        continue
+                    seen_in_post.add(term)
+                    counts[term] += 1
+    return [t for t, _ in counts.most_common(top_n)]
+
+
 def widget_sentiment_overview(posts):
     counts = Counter(p['sentiment'] for p in posts)
     total = len(posts)
-    top_keywords = Counter()
-    for p in posts:
-        top_keywords.update(k.strip() for k in p.get('text', '').split() if len(k.strip()) > 2)
     return {
         'total_posts': total,
         'sentiment_counts': dict(counts),
         'sentiment_share': {k: round(v / total, 3) for k, v in counts.items()} if total else {},
-        'top_terms': [t for t, _ in top_keywords.most_common(10)],
+        'top_terms': top_keyword_terms(posts),
     }
 
 

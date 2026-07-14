@@ -169,6 +169,11 @@ EN_NOISE_WORDS = {
     'claims', 'claimed', 'believe', 'believes', 'believed', 'think', 'thinks', 'thought', 'thoughts',
     'wow', 'damn', 'literally', 'actually', 'basically', 'honestly', 'seriously',
     'totally', 'definitely', 'probably', 'maybe', 'buy', 'buying', 'bought',
+    # Generic descriptive/hedging words that show up across nearly every
+    # industry, not just semiconductors/tech - carry no topic identity on
+    # their own (e.g. "pro"/"color" are usually a product-variant suffix,
+    # not a subject; "already"/"expected" are hedging/temporal filler).
+    'pro', 'color', 'colors', 'colour', 'colours', 'already', 'expected', 'expects', 'expect',
 }
 
 
