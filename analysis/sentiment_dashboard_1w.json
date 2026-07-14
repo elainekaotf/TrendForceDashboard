@@ -37,24 +37,24 @@
     "temperature_bar": [
       {
         "topic_id": 1,
-        "label": "ai / openai / 台積電 / nvidia",
+        "label": "ai / openai / meta / hbm",
         "heat": 90.0,
-        "volume": 1161,
-        "engagement": 122312,
+        "volume": 1096,
+        "engagement": 109767,
         "entities": [
-          "台積電",
           "美國",
           "中國",
+          "台積電",
           "輝達",
           "日本"
         ]
       },
       {
-        "topic_id": 17,
-        "label": "dram / trendforce / 南亞科 / 記憶體",
-        "heat": 11.9,
-        "volume": 32,
-        "engagement": 3150,
+        "topic_id": 9,
+        "label": "dram / trendforce / nand / hbm",
+        "heat": 12.2,
+        "volume": 41,
+        "engagement": 3408,
         "entities": [
           "南亞科",
           "DRAM",
@@ -64,11 +64,39 @@
         ]
       },
       {
-        "topic_id": 3,
+        "topic_id": 7,
+        "label": "nvidia / amd / rubin / ndr",
+        "heat": 11.8,
+        "volume": 29,
+        "engagement": 8419,
+        "entities": [
+          "輝達",
+          "黃仁勳",
+          "東京",
+          "中國",
+          "Rubin"
+        ]
+      },
+      {
+        "topic_id": 14,
+        "label": "tsmc / ip / intel / nt",
+        "heat": 10.8,
+        "volume": 14,
+        "engagement": 3043,
+        "entities": [
+          "TSMC",
+          "Intel",
+          "intel",
+          "samsung",
+          "EDA IP"
+        ]
+      },
+      {
+        "topic_id": 2,
         "label": "ai / 中國 / 分析看好擴大市占與 / cpu",
-        "heat": 10.3,
-        "volume": 32,
-        "engagement": 455,
+        "heat": 10.7,
+        "volume": 36,
+        "engagement": 1046,
         "entities": [
           "中國",
           "全美",
@@ -78,49 +106,77 @@
         ]
       },
       {
-        "topic_id": 16,
-        "label": "nand / slc / trendforce / mlc",
-        "heat": 10.1,
+        "topic_id": 17,
+        "label": "google / ai / 算力危機 / 發展絆腳石",
+        "heat": 10.4,
         "volume": 7,
-        "engagement": 230,
+        "engagement": 617,
         "entities": [
-          "群聯",
-          "利基",
-          "slc",
-          "SLC",
-          "MLC"
+          "google",
+          "阿根廷",
+          "梅西",
+          "AI",
+          "Android"
+        ]
+      },
+      {
+        "topic_id": 5,
+        "label": "台積電 / 英特爾 / 最新 / 半導體",
+        "heat": 10.4,
+        "volume": 17,
+        "engagement": 541,
+        "entities": [
+          "台積電",
+          "英特爾",
+          "中研院",
+          "張忠謀",
+          "川普"
         ]
       },
       {
         "topic_id": 12,
-        "label": "sk海力士 / hbm / sk / 那斯達克",
-        "heat": 10.1,
+        "label": "cpo / 大立光 / coupe / 光纖陣列",
+        "heat": 10.3,
         "volume": 14,
-        "engagement": 154,
+        "engagement": 427,
         "entities": [
-          "SK海力士",
-          "三星",
-          "那斯",
+          "大立光",
+          "台積電",
+          "輝達",
+          "CPO",
+          "高塔"
+        ]
+      },
+      {
+        "topic_id": 11,
+        "label": "美元 / amd / 高盛看好代理型 / 需求",
+        "heat": 10.3,
+        "volume": 6,
+        "engagement": 931,
+        "entities": [
           "美國",
-          "上市"
+          "華爾街憂",
+          "平倉",
+          "高盛",
+          "SK海力士"
+        ]
+      },
+      {
+        "topic_id": 0,
+        "label": "datatrack / 看詳情 / rack / yen",
+        "heat": 10.1,
+        "volume": 13,
+        "engagement": 87,
+        "entities": [
+          "DataTrack",
+          "buff",
+          "台韓",
+          "India",
+          "Middle East"
         ]
       },
       {
         "topic_id": 13,
-        "label": "川普 / 荷莫茲海峽 / 將對通過荷莫茲海峽貨物徵收 / 川普宣布重啟伊朗封鎖",
-        "heat": 10.1,
-        "volume": 9,
-        "engagement": 109,
-        "entities": [
-          "川普",
-          "荷莫茲海峽",
-          "土耳其",
-          "徵收",
-          "伊朗"
-        ]
-      },
-      {
-        "topic_id": 7,
         "label": "spacex / 馬斯克 / starlink / 衛星",
         "heat": 10.1,
         "volume": 12,
@@ -134,11 +190,11 @@
         ]
       },
       {
-        "topic_id": 9,
-        "label": "台達電 / hvdc / ai資料中心 / rack",
+        "topic_id": 8,
+        "label": "台達電 / hvdc / ai資料中心 / ai",
         "heat": 10.1,
-        "volume": 6,
-        "engagement": 147,
+        "volume": 4,
+        "engagement": 135,
         "entities": [
           "台達電",
           "輝達",
@@ -148,123 +204,69 @@
         ]
       },
       {
-        "topic_id": 0,
-        "label": "datatrack / 看詳情 / 中國 / 美國",
+        "topic_id": 16,
+        "label": "ap / 批准西屋提前申請 / nrc / 核反應爐設計認證延長",
         "heat": 10.0,
-        "volume": 7,
-        "engagement": 52,
+        "volume": 2,
+        "engagement": 17,
         "entities": [
-          "台韓",
-          "BOJ",
-          "https    ",
-          "中國",
-          "高於榮"
+          "西屋",
+          "美國"
+        ]
+      },
+      {
+        "topic_id": 3,
+        "label": "vr / 史密森尼 / 天文 / 天文導覽",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 14,
+        "entities": [
+          "史密森",
+          "天文",
+          "太陽",
+          "黑洞"
+        ]
+      },
+      {
+        "topic_id": 6,
+        "label": "職場 / 白領就業 / ai衝擊 / 衝擊白領就業",
+        "heat": 10.0,
+        "volume": 4,
+        "engagement": 36,
+        "entities": [
+          "白領"
         ]
       },
       {
         "topic_id": 10,
-        "label": "google / ai / 發展絆腳石 / 算力危機",
+        "label": "加速尋找超導體 / 量子物理 / 超導體 / 國際團隊結合機器學習與量子物理",
         "heat": 10.0,
-        "volume": 6,
-        "engagement": 26,
+        "volume": 2,
+        "engagement": 28,
         "entities": [
-          "阿根廷",
-          "google",
-          "梅西",
-          "Android",
-          "史詩逆"
+          "國際團隊"
         ]
       },
       {
         "topic_id": 15,
-        "label": "youtube / 廣告攔截 / duckduckgo / 槓上",
+        "label": "tlc晶圓價格下跌 / 消費需求疲弱拖累nand現貨市場 / gb",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 22,
-        "entities": [
-          "Google",
-          "iPhone",
-          "google",
-          "YouTube"
-        ]
-      },
-      {
-        "topic_id": 5,
-        "label": "anthropic / claudefable / 再延推廣期 / claude",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 6,
-        "entities": [
-          "Claude Fable",
-          "ClaudeFable",
-          "ai模型  fab  anthropic",
-          "再延推廣期",
-          "AI模型"
-        ]
-      },
-      {
-        "topic_id": 2,
-        "label": "輝達 / 阿聯 / 軍事設備更易出口 / 美國放寬對阿聯出口管制",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 16,
-        "entities": [
-          "阿聯",
-          "美國",
-          "輝達"
-        ]
-      },
-      {
-        "topic_id": 14,
-        "label": "chatgpt / atlas / ai / ai心理健康",
-        "heat": 10.0,
-        "volume": 3,
-        "engagement": 8,
-        "entities": [
-          "鋸戰",
-          "OpenAI",
-          "Atlas"
-        ]
-      },
-      {
-        "topic_id": 11,
-        "label": "專家",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 5,
-        "entities": [
-          "青安"
-        ]
-      },
-      {
-        "topic_id": 4,
-        "label": "read",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 7,
+        "engagement": 34,
         "entities": []
       },
       {
-        "topic_id": 6,
-        "label": "億美元的軍民兩用 / 深水港與交通走廊 / 中越角力升溫 / 興建全國最長跨海大橋",
+        "topic_id": 4,
+        "label": "指控人工智慧 / 日向美國加州北區聯邦地方法院提起訴訟 / 公司openai涉嫌竊取商業機密 / apple",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 1335,
+        "engagement": 4,
         "entities": [
-          "越南",
-          "金甌",
-          "大橋",
-          "深水港"
-        ]
-      },
-      {
-        "topic_id": 8,
-        "label": "海力士掛牌大漲 / 油價再升溫 / 幾乎沒有人看空 / 華爾街為何",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 520,
-        "entities": [
-          "華爾街"
+          "美國",
+          "加州",
+          "北區",
+          "聯邦",
+          "地方法院"
         ]
       }
     ],
@@ -434,195 +436,195 @@
       {
         "handle": "dylan522p",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / 台積電 / nvidia",
+        "top_topic_label": "ai / openai / meta / hbm",
         "focus_share": 1.0,
         "post_count": 2
       },
       {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / 台積電 / nvidia",
-        "focus_share": 1.0,
-        "post_count": 58
-      },
-      {
         "handle": "tphuang",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / 台積電 / nvidia",
-        "focus_share": 1.0,
+        "top_topic_label": "ai / openai / meta / hbm",
+        "focus_share": 0.984,
         "post_count": 63
-      },
-      {
-        "handle": "ctee.fans",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / 台積電 / nvidia",
-        "focus_share": 0.979,
-        "post_count": 234
       },
       {
         "handle": "yutinghaosfinance",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / 台積電 / nvidia",
-        "focus_share": 0.956,
+        "top_topic_label": "ai / openai / meta / hbm",
+        "focus_share": 0.974,
         "post_count": 114
       },
       {
-        "handle": "jukan05",
+        "handle": "ctee.fans",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / 台積電 / nvidia",
-        "focus_share": 0.935,
-        "post_count": 62
-      },
-      {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / 台積電 / nvidia",
-        "focus_share": 0.881,
-        "post_count": 67
-      },
-      {
-        "handle": "technewsinside",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / 台積電 / nvidia",
-        "focus_share": 0.88,
-        "post_count": 233
+        "top_topic_label": "ai / openai / meta / hbm",
+        "focus_share": 0.966,
+        "post_count": 234
       },
       {
         "handle": "tengyanAI",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / 台積電 / nvidia",
-        "focus_share": 0.878,
+        "top_topic_label": "ai / openai / meta / hbm",
+        "focus_share": 0.857,
         "post_count": 49
       },
       {
-        "handle": "TrendForce",
+        "handle": "technewsinside",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / 台積電 / nvidia",
-        "focus_share": 0.853,
-        "post_count": 34
+        "top_topic_label": "ai / openai / meta / hbm",
+        "focus_share": 0.854,
+        "post_count": 233
+      },
+      {
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / openai / meta / hbm",
+        "focus_share": 0.793,
+        "post_count": 58
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / openai / meta / hbm",
+        "focus_share": 0.776,
+        "post_count": 67
       },
       {
         "handle": "technews_tw",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / 台積電 / nvidia",
-        "focus_share": 0.807,
+        "top_topic_label": "ai / openai / meta / hbm",
+        "focus_share": 0.768,
         "post_count": 357
+      },
+      {
+        "handle": "jukan05",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / openai / meta / hbm",
+        "focus_share": 0.758,
+        "post_count": 62
+      },
+      {
+        "handle": "TrendForce",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / openai / meta / hbm",
+        "focus_share": 0.588,
+        "post_count": 34
       },
       {
         "handle": "TrendForce.tw",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / 台積電 / nvidia",
-        "focus_share": 0.6,
+        "top_topic_label": "ai / openai / meta / hbm",
+        "focus_share": 0.5,
         "post_count": 30
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 1,
-        "label": "ai / openai / 台積電 / nvidia",
-        "total_engagement": 122312,
-        "post_count": 1161
-      },
-      {
-        "topic_id": 17,
-        "label": "dram / trendforce / 南亞科 / 記憶體",
-        "total_engagement": 3150,
-        "post_count": 32
-      },
-      {
-        "topic_id": 6,
-        "label": "億美元的軍民兩用 / 深水港與交通走廊 / 中越角力升溫 / 興建全國最長跨海大橋",
-        "total_engagement": 1335,
-        "post_count": 2
-      },
-      {
-        "topic_id": 8,
-        "label": "海力士掛牌大漲 / 油價再升溫 / 幾乎沒有人看空 / 華爾街為何",
-        "total_engagement": 520,
-        "post_count": 2
-      },
-      {
-        "topic_id": 3,
-        "label": "ai / 中國 / 分析看好擴大市占與 / cpu",
-        "total_engagement": 455,
-        "post_count": 32
-      },
-      {
-        "topic_id": 16,
-        "label": "nand / slc / trendforce / mlc",
-        "total_engagement": 230,
-        "post_count": 7
-      },
-      {
-        "topic_id": 12,
-        "label": "sk海力士 / hbm / sk / 那斯達克",
-        "total_engagement": 154,
-        "post_count": 14
-      },
-      {
-        "topic_id": 9,
-        "label": "台達電 / hvdc / ai資料中心 / rack",
-        "total_engagement": 147,
-        "post_count": 6
+        "label": "ai / openai / meta / hbm",
+        "total_engagement": 109767,
+        "post_count": 1096
       },
       {
         "topic_id": 7,
+        "label": "nvidia / amd / rubin / ndr",
+        "total_engagement": 8419,
+        "post_count": 29
+      },
+      {
+        "topic_id": 9,
+        "label": "dram / trendforce / nand / hbm",
+        "total_engagement": 3408,
+        "post_count": 41
+      },
+      {
+        "topic_id": 14,
+        "label": "tsmc / ip / intel / nt",
+        "total_engagement": 3043,
+        "post_count": 14
+      },
+      {
+        "topic_id": 2,
+        "label": "ai / 中國 / 分析看好擴大市占與 / cpu",
+        "total_engagement": 1046,
+        "post_count": 36
+      },
+      {
+        "topic_id": 11,
+        "label": "美元 / amd / 高盛看好代理型 / 需求",
+        "total_engagement": 931,
+        "post_count": 6
+      },
+      {
+        "topic_id": 17,
+        "label": "google / ai / 算力危機 / 發展絆腳石",
+        "total_engagement": 617,
+        "post_count": 7
+      },
+      {
+        "topic_id": 5,
+        "label": "台積電 / 英特爾 / 最新 / 半導體",
+        "total_engagement": 541,
+        "post_count": 17
+      },
+      {
+        "topic_id": 12,
+        "label": "cpo / 大立光 / coupe / 光纖陣列",
+        "total_engagement": 427,
+        "post_count": 14
+      },
+      {
+        "topic_id": 8,
+        "label": "台達電 / hvdc / ai資料中心 / ai",
+        "total_engagement": 135,
+        "post_count": 4
+      },
+      {
+        "topic_id": 13,
         "label": "spacex / 馬斯克 / starlink / 衛星",
         "total_engagement": 128,
         "post_count": 12
       },
       {
-        "topic_id": 13,
-        "label": "川普 / 荷莫茲海峽 / 將對通過荷莫茲海峽貨物徵收 / 川普宣布重啟伊朗封鎖",
-        "total_engagement": 109,
-        "post_count": 9
-      },
-      {
         "topic_id": 0,
-        "label": "datatrack / 看詳情 / 中國 / 美國",
-        "total_engagement": 52,
-        "post_count": 7
+        "label": "datatrack / 看詳情 / rack / yen",
+        "total_engagement": 87,
+        "post_count": 13
       },
       {
-        "topic_id": 10,
-        "label": "google / ai / 發展絆腳石 / 算力危機",
-        "total_engagement": 26,
-        "post_count": 6
+        "topic_id": 6,
+        "label": "職場 / 白領就業 / ai衝擊 / 衝擊白領就業",
+        "total_engagement": 36,
+        "post_count": 4
       },
       {
         "topic_id": 15,
-        "label": "youtube / 廣告攔截 / duckduckgo / 槓上",
-        "total_engagement": 22,
+        "label": "tlc晶圓價格下跌 / 消費需求疲弱拖累nand現貨市場 / gb",
+        "total_engagement": 34,
         "post_count": 2
       },
       {
-        "topic_id": 2,
-        "label": "輝達 / 阿聯 / 軍事設備更易出口 / 美國放寬對阿聯出口管制",
-        "total_engagement": 16,
+        "topic_id": 10,
+        "label": "加速尋找超導體 / 量子物理 / 超導體 / 國際團隊結合機器學習與量子物理",
+        "total_engagement": 28,
         "post_count": 2
       },
       {
-        "topic_id": 14,
-        "label": "chatgpt / atlas / ai / ai心理健康",
-        "total_engagement": 8,
-        "post_count": 3
+        "topic_id": 16,
+        "label": "ap / 批准西屋提前申請 / nrc / 核反應爐設計認證延長",
+        "total_engagement": 17,
+        "post_count": 2
+      },
+      {
+        "topic_id": 3,
+        "label": "vr / 史密森尼 / 天文 / 天文導覽",
+        "total_engagement": 14,
+        "post_count": 2
       },
       {
         "topic_id": 4,
-        "label": "read",
-        "total_engagement": 7,
-        "post_count": 2
-      },
-      {
-        "topic_id": 5,
-        "label": "anthropic / claudefable / 再延推廣期 / claude",
-        "total_engagement": 6,
-        "post_count": 2
-      },
-      {
-        "topic_id": 11,
-        "label": "專家",
-        "total_engagement": 5,
+        "label": "指控人工智慧 / 日向美國加州北區聯邦地方法院提起訴訟 / 公司openai涉嫌竊取商業機密 / apple",
+        "total_engagement": 4,
         "post_count": 2
       }
     ],

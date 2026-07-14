@@ -56,6 +56,7 @@ from datetime import datetime, timezone
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
+from wordfreq import zipf_frequency
 
 from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, parse_ts, window_bounds, window_dict, TAIWAN_TZ
 
@@ -148,10 +149,32 @@ def is_chinese_noise_token(token):
     return bool(CHINESE_UNIT_TOKEN_RE.match(token)) or bool(CHINESE_NOISE_RE.search(token))
 
 
+# General-purpose sweep for ordinary English words (not industry jargon) -
+# a hand-picked EN_NOISE_WORDS list below keeps missing words one at a time
+# ("lol", then "true", then "new", ...) because a fixed list can only ever
+# catch what's already been noticed. zipf_frequency scores how common a word
+# is in everyday English (higher = more common); 5.0 was picked by checking
+# where ordinary filler words ("lol"=5.05, "true"=5.40, "new"=6.25,
+# "thanks"=5.43, "like"=6.41) separate cleanly from real industry terms this
+# pipeline actually cares about (max observed: "apple"=4.76, with
+# "chip"=4.31, "samsung"=4.12, "tsmc"=2.09, "nvidia"=3.25 well below that) -
+# every industry term checked stayed under the cutoff, nothing on the noise
+# side got close to it. This alone doesn't replace EN_NOISE_WORDS: slang
+# like "bruh" scores 3.51 (below the cutoff, since general-English corpora
+# barely register it) and still needs a hand-picked entry.
+COMMON_ENGLISH_ZIPF_THRESHOLD = 5.0
+
+
+def is_common_english_word(token):
+    return token.isalpha() and zipf_frequency(token, 'en') >= COMMON_ENGLISH_ZIPF_THRESHOLD
+
+
 # English-language counterpart to CHINESE_NOISE_SUBSTRINGS: internet-slang/
 # conversational filler and generic reporting-verb noise that sklearn's
 # built-in 'english' stopword list doesn't catch (it's ordinary vocabulary,
-# not textbook stopwords like "the"/"and"). A cluster of casual social-media
+# not textbook stopwords like "the"/"and") AND that is_common_english_word()
+# above can't catch either (too slang-y/niche to register as "common" in a
+# general-English frequency corpus). A cluster of casual social-media
 # commentary (e.g. a competitor account's chattier posting style) lets these
 # dominate frequency and crowd out the actual product/company names that
 # should label the topic - seen in practice as a cluster labeled
@@ -303,7 +326,8 @@ def cluster_posts(posts, n_clusters=N_CLUSTERS, min_docs_per_cluster=5):
     # Chinese noise-pattern filter, which stop_words alone can't express
     # since it only matches whole tokens exactly.
     base_analyzer = TfidfVectorizer(stop_words=stop_words).build_analyzer()
-    noise_filtered_analyzer = lambda doc: [t for t in base_analyzer(doc) if not is_chinese_noise_token(t)]
+    noise_filtered_analyzer = lambda doc: [t for t in base_analyzer(doc)
+                                            if not is_chinese_noise_token(t) and not is_common_english_word(t)]
 
     X = vectorizer = None
     for kwargs in ({'min_df': 2, 'analyzer': noise_filtered_analyzer},

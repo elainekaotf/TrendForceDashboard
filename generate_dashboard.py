@@ -1566,6 +1566,99 @@ def main():
     'economic','government','country','countries','nation','national','region','regional','sector',
     'firm','firms','corporate','corporation','group','groups']);
 
+  // General-purpose sweep for ordinary English words, mirroring
+  // is_common_english_word() on the server side (cluster_topics.py) - every
+  // word from the `wordfreq` package's English frequency list scoring
+  // zipf_frequency >= 5.0 (common enough in everyday English that it's
+  // filler, not industry signal), generated once and pasted here since
+  // wordfreq's data isn't available client-side. A hand-picked stopword
+  // list above keeps missing words one at a time ("lol", then "true", then
+  // "new", ...) - this catches hundreds of them in one shot instead.
+  // Doesn't replace EN_STOPWORDS above: some jargon ("contract", "pro",
+  // "color") is generic/non-industry-specific for THIS use case but not
+  // common enough in general English to score above the threshold, so it
+  // still needs a hand-picked entry.
+  const EN_COMMON_WORDS = new Set(['a','able','about','above','access','according','account','across','act','action','actually','add','added',
+    'addition','after','again','against','age','ago','ahead','air','al','album','all','allow','allowed','almost',
+    'alone','along','already','also','although','always','am','amazing','america','american','among','amount','an',
+    'and','another','answer','anti','any','anyone','anything','april','are','area','areas','army','around','art',
+    'article','as','ask','asked','ass','association','at','attack','attention','august','australia','available',
+    'average','away','b','baby','back','bad','ball','bank','base','based','be','beat','beautiful','became','because',
+    'become','bed','been','before','began','beginning','behind','being','believe','below','best','better','between',
+    'big','bill','bit','black','blood','blue','board','body','book','books','born','both','box','boy','boys','break',
+    'bring','british','brother','brought','brown','build','building','built','business','but','buy','by','c',
+    'california','call','called','came','campaign','can','cannot','capital','car','card','care','career','case',
+    'cases','cause','center','central','century','certain','certainly','chance','change','changed','changes',
+    'character','charge','check','chief','child','children','china','chinese','choice','church','city','class',
+    'clear','close','club','co','code','cold','college','come','comes','coming','committee','common','community',
+    'companies','company','complete','completely','conference','considered','content','continue','control','cool',
+    'cost','could','council','countries','country','county','couple','course','court','cover','crazy','create',
+    'created','credit','cross','culture','cup','current','currently','cut','d','daily','damn','dark','data','date',
+    'daughter','david','day','days','de','dead','deal','death','december','decided','decision','deep','department',
+    'described','design','despite','development','did','die','died','difference','different','difficult','director',
+    'district','do','does','dog','doing','done','door','double','down','dr','drive','due','during','e','each','early',
+    'earth','east','easy','eat','economic','education','effect','eight','either','election','else','end','energy',
+    'england','english','enjoy','enough','entire','especially','etc','europe','european','even','event','events',
+    'ever','every','everyone','everything','evidence','exactly','example','except','expect','experience','eye','eyes',
+    'f','face','fact','fall','family','fans','far','fast','father','february','federal','feel','feeling','felt',
+    'female','few','field','fight','figure','film','final','finally','financial','find','fine','fire','first','five',
+    'focus','follow','followed','following','food','football','for','force','foreign','forget','form','former',
+    'forward','found','four','free','french','friend','friends','from','front','fuck','fucking','full','fun','funny',
+    'further','future','g','game','games','gas','gave','general','george','get','gets','getting','girl','girls',
+    'give','given','gives','giving','go','goal','god','goes','going','gold','gone','gonna','good','got','government',
+    'great','green','ground','group','groups','growth','guess','guy','guys','h','had','hair','half','hand','hands',
+    'happen','happened','happy','hard','has','hate','have','having','he','head','health','hear','heard','heart',
+    'held','hell','help','her','here','hey','hi','high','higher','him','himself','his','history','hit','hold','home',
+    'hope','hospital','hot','hour','hours','house','how','however','huge','human','husband','i','ice','idea','if',
+    'ii','important','in','include','included','including','increase','india','individual','industry','information',
+    'inside','instead','interest','interesting','international','internet','into','involved','is','island','issue',
+    'issues','it','its','itself','j','james','january','job','john','join','july','june','just','keep','kept','key',
+    'kids','kill','killed','kind','king','knew','know','known','knows','l','la','land','language','large','last',
+    'late','later','law','lead','leading','league','learn','least','leave','led','left','legal','less','let','level',
+    'life','light','like','likely','limited','line','list','listen','little','live','lives','living','local','lol',
+    'london','long','longer','look','looked','looking','looks','lord','lose','loss','lost','lot','love','loved','low',
+    'lower','m','made','main','major','make','makes','making','man','management','many','march','mark','market',
+    'married','match','matter','may','maybe','me','mean','means','media','medical','meet','meeting','member',
+    'members','men','message','met','michael','middle','might','miles','military','million','mind','mine','minister',
+    'minutes','miss','missing','model','modern','mom','moment','money','month','months','more','morning','most',
+    'mother','move','moved','movie','moving','mr','much','music','must','my','myself','n','name','national','natural',
+    'near','nearly','need','needed','needs','network','never','new','news','next','nice','night','no','non','normal',
+    'north','not','note','nothing','november','now','number','o','october','of','off','offer','office','officer',
+    'official','often','oh','oil','ok','okay','old','on','once','one','ones','online','only','open','or','order',
+    'original','other','others','our','out','outside','over','own','p','page','paid','pain','paper','parents','park',
+    'part','particular','parts','party','pass','past','paul','pay','peace','people','per','percent','perfect',
+    'performance','perhaps','period','person','personal','phone','pick','picture','piece','place','places','plan',
+    'plans','play','played','player','players','playing','please','point','points','police','policy','political',
+    'poor','popular','population','position','possible','post','potential','power','practice','present','president',
+    'press','pressure','pretty','previous','price','private','probably','problem','problems','process','production',
+    'products','professional','program','project','property','provide','provided','public','published','put',
+    'quality','question','questions','quickly','quite','r','race','radio','range','rate','rather','re','read',
+    'reading','ready','real','really','reason','received','recent','recently','record','red','region','related',
+    'relationship','release','released','remember','report','reported','required','research','respect','response',
+    'rest','result','results','return','review','right','rights','risk','river','road','rock','role','room','round',
+    'rules','run','running','russian','s','safe','said','sales','same','save','saw','say','saying','says','school',
+    'schools','science','sea','season','second','section','security','see','seeing','seem','seems','seen','self',
+    'send','sense','sent','september','series','serious','service','services','set','seven','several','sex','shall',
+    'share','she','shit','short','shot','should','show','shows','side','sign','similar','simple','simply','since',
+    'single','sir','site','situation','six','size','sleep','small','so','social','society','some','someone',
+    'something','sometimes','son','song','soon','sorry','sort','sound','source','south','space','speak','special',
+    'specific','speed','spent','st','staff','stage','stand','standard','star','start','started','starting','state',
+    'states','station','stay','step','still','stop','store','story','straight','street','strong','student','students',
+    'study','stuff','style','success','such','summer','super','support','sure','system','systems','t','table','take',
+    'taken','takes','taking','talk','talking','tax','team','technology','tell','ten','term','terms','test','text',
+    'than','thank','thanks','that','the','their','them','themselves','then','there','these','they','thing','things',
+    'think','thinking','third','this','those','though','thought','three','through','time','times','title','to',
+    'today','together','told','tomorrow','tonight','too','took','top','total','towards','town','track','trade',
+    'training','travel','treatment','tried','true','trust','truth','try','trying','turn','turned','tv','two','type',
+    'u','uk','under','understand','union','united','university','until','up','upon','us','use','used','using',
+    'usually','v','value','various','version','very','via','video','view','visit','voice','vote','w','wait','waiting',
+    'walk','wall','wanna','want','wanted','wants','war','was','washington','watch','watching','water','way','ways',
+    'we','website','week','weeks','weight','well','went','were','west','western','what','whatever','when','where',
+    'whether','which','while','white','who','whole','whose','why','wife','will','win','wish','with','within',
+    'without','woman','women','won','word','words','work','worked','working','works','world','worth','would','write',
+    'writing','written','wrong','wrote','x','y','yeah','year','years','yes','yet','york','you','young','your',
+    'yourself']);
+
   function esc(s) {{ const d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }}
 
   // Lightweight client-side topic extraction - not the server-side pipeline's
@@ -1609,7 +1702,7 @@ def main():
       const text = String(r[textCol] || '');
       const seenInRow = new Set();
       for (const w of text.toLowerCase().match(/[a-z]{{3,}}/g) || []) {{
-        if (EN_STOPWORDS.has(w) || seenInRow.has(w)) continue;
+        if (EN_STOPWORDS.has(w) || EN_COMMON_WORDS.has(w) || seenInRow.has(w)) continue;
         seenInRow.add(w);
         bump(w);
       }}

@@ -36,22 +36,36 @@
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "ai / openai / 日本 / china",
+        "topic_id": 3,
+        "label": "ai / openai / cpo / google",
         "heat": 90.0,
-        "volume": 219,
-        "engagement": 17946,
+        "volume": 215,
+        "engagement": 16743,
         "entities": [
-          "台積電",
-          "日本",
           "美國",
-          "輝達",
-          "英特爾"
+          "日本",
+          "台積電",
+          "台灣",
+          "輝達"
+        ]
+      },
+      {
+        "topic_id": 0,
+        "label": "dram / gb / cxmt / 車用記憶體",
+        "heat": 11.4,
+        "volume": 6,
+        "engagement": 828,
+        "entities": [
+          "智慧",
+          "CXMT",
+          "China",
+          "中國",
+          "West"
         ]
       },
       {
         "topic_id": 4,
-        "label": "tsmc / nt / june / yoy",
+        "label": "tsmc / nt / yoy / revenue",
         "heat": 10.7,
         "volume": 4,
         "engagement": 867,
@@ -62,7 +76,7 @@
         ]
       },
       {
-        "topic_id": 7,
+        "topic_id": 6,
         "label": "台積電 / 最新 / 半導體 / ai",
         "heat": 10.7,
         "volume": 4,
@@ -72,9 +86,9 @@
         ]
       },
       {
-        "topic_id": 2,
+        "topic_id": 9,
         "label": "slc / nand / trendforce / mlc",
-        "heat": 10.5,
+        "heat": 10.6,
         "volume": 5,
         "engagement": 132,
         "entities": [
@@ -86,56 +100,22 @@
         ]
       },
       {
-        "topic_id": 11,
-        "label": "dram / gb / 車用記憶體 / 記憶體缺貨",
-        "heat": 10.2,
+        "topic_id": 5,
+        "label": "models / ai / cluster / dc",
+        "heat": 10.4,
         "volume": 3,
-        "engagement": 44,
+        "engagement": 480,
         "entities": [
-          "智慧",
-          "中國",
-          "傳華",
-          "晉華"
+          "Zuck",
+          "zuck",
+          "Inner Mongolia",
+          "DC",
+          "HW  Tencent  Alibaba"
         ]
       },
       {
-        "topic_id": 15,
-        "label": "天期限 / 川普 / 可不經國會批准動武 / 主張重啟",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 30,
-        "entities": [
-          "伊朗",
-          "川普",
-          "普通",
-          "經國會"
-        ]
-      },
-      {
-        "topic_id": 1,
-        "label": "尋求阻止派拉蒙天舞 / 州提訴 / 億美元收購華納兄弟探索 / 派拉蒙",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 8,
-        "entities": [
-          "華納",
-          "加州"
-        ]
-      },
-      {
-        "topic_id": 9,
-        "label": "長鑫存儲 / 長江存儲 / 中國記憶體雙雄大擴產 / 億元採購半導體設備",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 17,
-        "entities": [
-          "長江",
-          "中國"
-        ]
-      },
-      {
-        "topic_id": 6,
-        "label": "川普 / 將對通過荷莫茲海峽貨物徵收 / 荷莫茲海峽 / 川普宣布重啟伊朗封鎖",
+        "topic_id": 11,
+        "label": "川普 / 荷莫茲海峽 / 將對通過荷莫茲海峽貨物徵收 / 川普宣布重啟伊朗封鎖",
         "heat": 10.0,
         "volume": 3,
         "engagement": 13,
@@ -148,29 +128,41 @@
         ]
       },
       {
-        "topic_id": 16,
-        "label": "google / 算力危機 / 導致人才流失並被迫向競爭對手求助 / 發展絆腳石",
+        "topic_id": 7,
+        "label": "麵包 / 食物浪費 / 推出置物櫃型自動販賣機 / 日本",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 19,
-        "entities": []
-      },
-      {
-        "topic_id": 13,
-        "label": "youtube / 廣告攔截 / duckduckgo / iphone",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 22,
+        "engagement": 5,
         "entities": [
-          "Google",
-          "iPhone",
-          "google",
-          "YouTube"
+          "日本",
+          "完的"
         ]
       },
       {
-        "topic_id": 5,
-        "label": "川普帳戶 / 理財教育 / 投資 / 政府為新生兒投入",
+        "topic_id": 8,
+        "label": "因應未來基金 / ai半導體 / 韓國 / 李在明將額外稅收作為",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 25,
+        "entities": [
+          "韓國",
+          "李在明"
+        ]
+      },
+      {
+        "topic_id": 13,
+        "label": "ap / 核反應爐設計認證延長 / nrc / 批准西屋提前申請",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 17,
+        "entities": [
+          "西屋",
+          "美國"
+        ]
+      },
+      {
+        "topic_id": 17,
+        "label": "川普帳戶 / 理財教育 / 投資 / 上線",
         "heat": 10.0,
         "volume": 2,
         "engagement": 12,
@@ -179,18 +171,18 @@
         ]
       },
       {
-        "topic_id": 17,
-        "label": "ai出口 / 台灣經濟 / 台灣下半年經濟主旋律仍是 / 經濟成長",
+        "topic_id": 15,
+        "label": "原集微啟用全球首條 / 吋二維半導體中試生產線 / 中國晶片 / 二維半導體",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 9,
+        "engagement": 15,
         "entities": [
-          "台灣"
+          "中國"
         ]
       },
       {
-        "topic_id": 10,
-        "label": "anthropic / ai禁令 / 美軍 / 空軍研究實驗室要求",
+        "topic_id": 12,
+        "label": "anthropic / ai禁令 / 美軍 / 美軍封殺",
         "heat": 10.0,
         "volume": 2,
         "engagement": 29,
@@ -199,48 +191,62 @@
         ]
       },
       {
-        "topic_id": 14,
-        "label": "三星 / 記憶體晶片激增需求 / 龍仁市晶圓廠運作時間提前至 / 晶圓廠",
+        "topic_id": 2,
+        "label": "英特爾 / 先進封裝 / 川普政府力推英特爾擴大先進封裝 / 盼將更多晶片製造轉回本土",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 9,
+        "engagement": 17,
         "entities": [
-          "三星",
-          "龍仁"
+          "英特爾",
+          "台積電",
+          "川普"
         ]
       },
       {
-        "topic_id": 3,
-        "label": "韓國車廠 / 現代 / 現代汽車 / 起亞及通用韓國工會相繼醞釀罷工",
+        "topic_id": 16,
+        "label": "anthropic / claude / fable / 再延推廣期",
         "heat": 10.0,
         "volume": 2,
         "engagement": 6,
         "entities": [
-          "韓國",
-          "亞及"
+          "Claude Fable",
+          "ClaudeFable",
+          "ai模型  fab  anthropic",
+          "再延推廣期",
+          "AI模型"
         ]
       },
       {
-        "topic_id": 12,
-        "label": "fcc / 太空反射鏡 / reflectorbital / 測試把陽光反射回地表",
+        "topic_id": 1,
+        "label": "vs / ai / heading",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 14,
+        "engagement": 45,
         "entities": [
-          "FCC",
-          "Reflect Orbital",
-          "太空反射鏡",
-          "fcc  太空反射鏡",
-          "將送衛星入軌 測試把陽光反射回地表"
+          "microsoft",
+          "AI",
+          "Satya"
         ]
       },
       {
-        "topic_id": 8,
-        "label": "結果現在保護費要付兩次",
+        "topic_id": 14,
+        "label": "已默默爬回全球第六名 / 台積電市值 / 隨著巨頭們紛紛中箭落馬",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 1476,
-        "entities": []
+        "engagement": 760,
+        "entities": [
+          "台積電"
+        ]
+      },
+      {
+        "topic_id": 10,
+        "label": "熔斷變日常 / 海峽又封鎖 / 早晨財經速解讀 / 記憶體殺盤來了",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 659,
+        "entities": [
+          "海峽"
+        ]
       }
     ],
     "named_entities": [
@@ -407,190 +413,190 @@
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / openai / 日本 / china",
-        "focus_share": 1.0,
-        "post_count": 7
-      },
-      {
-        "handle": "tphuang",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / openai / 日本 / china",
-        "focus_share": 1.0,
-        "post_count": 9
-      },
-      {
-        "handle": "tengyanAI",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / openai / 日本 / china",
-        "focus_share": 1.0,
-        "post_count": 8
-      },
-      {
         "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / openai / 日本 / china",
+        "top_topic_id": 3,
+        "top_topic_label": "ai / openai / cpo / google",
         "focus_share": 1.0,
         "post_count": 40
       },
       {
-        "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / openai / 日本 / china",
-        "focus_share": 0.923,
-        "post_count": 13
+        "handle": "tengyanAI",
+        "top_topic_id": 3,
+        "top_topic_label": "ai / openai / cpo / google",
+        "focus_share": 0.875,
+        "post_count": 8
       },
       {
         "handle": "yutinghaosfinance",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / openai / 日本 / china",
-        "focus_share": 0.913,
+        "top_topic_id": 3,
+        "top_topic_label": "ai / openai / cpo / google",
+        "focus_share": 0.826,
         "post_count": 23
       },
       {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / openai / 日本 / china",
-        "focus_share": 0.778,
-        "post_count": 9
-      },
-      {
         "handle": "technews_tw",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / openai / 日本 / china",
-        "focus_share": 0.761,
+        "top_topic_id": 3,
+        "top_topic_label": "ai / openai / cpo / google",
+        "focus_share": 0.803,
         "post_count": 71
       },
       {
         "handle": "technewsinside",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / openai / 日本 / china",
-        "focus_share": 0.753,
+        "top_topic_id": 3,
+        "top_topic_label": "ai / openai / cpo / google",
+        "focus_share": 0.795,
         "post_count": 73
       },
       {
+        "handle": "tphuang",
+        "top_topic_id": 3,
+        "top_topic_label": "ai / openai / cpo / google",
+        "focus_share": 0.778,
+        "post_count": 9
+      },
+      {
+        "handle": "jukan05",
+        "top_topic_id": 3,
+        "top_topic_label": "ai / openai / cpo / google",
+        "focus_share": 0.769,
+        "post_count": 13
+      },
+      {
         "handle": "TrendForce",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / openai / 日本 / china",
+        "top_topic_id": 3,
+        "top_topic_label": "ai / openai / cpo / google",
         "focus_share": 0.714,
         "post_count": 7
       },
       {
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 3,
+        "top_topic_label": "ai / openai / cpo / google",
+        "focus_share": 0.714,
+        "post_count": 7
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 3,
+        "top_topic_label": "ai / openai / cpo / google",
+        "focus_share": 0.667,
+        "post_count": 9
+      },
+      {
         "handle": "TrendForce.tw",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / openai / 日本 / china",
+        "top_topic_id": 3,
+        "top_topic_label": "ai / openai / cpo / google",
         "focus_share": 0.5,
         "post_count": 2
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "ai / openai / 日本 / china",
-        "total_engagement": 17946,
-        "post_count": 219
-      },
-      {
-        "topic_id": 8,
-        "label": "結果現在保護費要付兩次",
-        "total_engagement": 1476,
-        "post_count": 2
+        "topic_id": 3,
+        "label": "ai / openai / cpo / google",
+        "total_engagement": 16743,
+        "post_count": 215
       },
       {
         "topic_id": 4,
-        "label": "tsmc / nt / june / yoy",
+        "label": "tsmc / nt / yoy / revenue",
         "total_engagement": 867,
         "post_count": 4
       },
       {
-        "topic_id": 7,
+        "topic_id": 0,
+        "label": "dram / gb / cxmt / 車用記憶體",
+        "total_engagement": 828,
+        "post_count": 6
+      },
+      {
+        "topic_id": 14,
+        "label": "已默默爬回全球第六名 / 台積電市值 / 隨著巨頭們紛紛中箭落馬",
+        "total_engagement": 760,
+        "post_count": 2
+      },
+      {
+        "topic_id": 10,
+        "label": "熔斷變日常 / 海峽又封鎖 / 早晨財經速解讀 / 記憶體殺盤來了",
+        "total_engagement": 659,
+        "post_count": 2
+      },
+      {
+        "topic_id": 5,
+        "label": "models / ai / cluster / dc",
+        "total_engagement": 480,
+        "post_count": 3
+      },
+      {
+        "topic_id": 6,
         "label": "台積電 / 最新 / 半導體 / ai",
         "total_engagement": 326,
         "post_count": 4
       },
       {
-        "topic_id": 2,
+        "topic_id": 9,
         "label": "slc / nand / trendforce / mlc",
         "total_engagement": 132,
         "post_count": 5
       },
       {
-        "topic_id": 11,
-        "label": "dram / gb / 車用記憶體 / 記憶體缺貨",
-        "total_engagement": 44,
-        "post_count": 3
-      },
-      {
-        "topic_id": 15,
-        "label": "天期限 / 川普 / 可不經國會批准動武 / 主張重啟",
-        "total_engagement": 30,
-        "post_count": 2
-      },
-      {
-        "topic_id": 10,
-        "label": "anthropic / ai禁令 / 美軍 / 空軍研究實驗室要求",
-        "total_engagement": 29,
-        "post_count": 2
-      },
-      {
-        "topic_id": 13,
-        "label": "youtube / 廣告攔截 / duckduckgo / iphone",
-        "total_engagement": 22,
-        "post_count": 2
-      },
-      {
-        "topic_id": 16,
-        "label": "google / 算力危機 / 導致人才流失並被迫向競爭對手求助 / 發展絆腳石",
-        "total_engagement": 19,
-        "post_count": 2
-      },
-      {
-        "topic_id": 9,
-        "label": "長鑫存儲 / 長江存儲 / 中國記憶體雙雄大擴產 / 億元採購半導體設備",
-        "total_engagement": 17,
+        "topic_id": 1,
+        "label": "vs / ai / heading",
+        "total_engagement": 45,
         "post_count": 2
       },
       {
         "topic_id": 12,
-        "label": "fcc / 太空反射鏡 / reflectorbital / 測試把陽光反射回地表",
-        "total_engagement": 14,
+        "label": "anthropic / ai禁令 / 美軍 / 美軍封殺",
+        "total_engagement": 29,
         "post_count": 2
       },
       {
-        "topic_id": 6,
-        "label": "川普 / 將對通過荷莫茲海峽貨物徵收 / 荷莫茲海峽 / 川普宣布重啟伊朗封鎖",
+        "topic_id": 8,
+        "label": "因應未來基金 / ai半導體 / 韓國 / 李在明將額外稅收作為",
+        "total_engagement": 25,
+        "post_count": 2
+      },
+      {
+        "topic_id": 13,
+        "label": "ap / 核反應爐設計認證延長 / nrc / 批准西屋提前申請",
+        "total_engagement": 17,
+        "post_count": 2
+      },
+      {
+        "topic_id": 2,
+        "label": "英特爾 / 先進封裝 / 川普政府力推英特爾擴大先進封裝 / 盼將更多晶片製造轉回本土",
+        "total_engagement": 17,
+        "post_count": 2
+      },
+      {
+        "topic_id": 15,
+        "label": "原集微啟用全球首條 / 吋二維半導體中試生產線 / 中國晶片 / 二維半導體",
+        "total_engagement": 15,
+        "post_count": 2
+      },
+      {
+        "topic_id": 11,
+        "label": "川普 / 荷莫茲海峽 / 將對通過荷莫茲海峽貨物徵收 / 川普宣布重啟伊朗封鎖",
         "total_engagement": 13,
         "post_count": 3
       },
       {
-        "topic_id": 5,
-        "label": "川普帳戶 / 理財教育 / 投資 / 政府為新生兒投入",
+        "topic_id": 17,
+        "label": "川普帳戶 / 理財教育 / 投資 / 上線",
         "total_engagement": 12,
         "post_count": 2
       },
       {
-        "topic_id": 17,
-        "label": "ai出口 / 台灣經濟 / 台灣下半年經濟主旋律仍是 / 經濟成長",
-        "total_engagement": 9,
-        "post_count": 2
-      },
-      {
-        "topic_id": 14,
-        "label": "三星 / 記憶體晶片激增需求 / 龍仁市晶圓廠運作時間提前至 / 晶圓廠",
-        "total_engagement": 9,
-        "post_count": 2
-      },
-      {
-        "topic_id": 1,
-        "label": "尋求阻止派拉蒙天舞 / 州提訴 / 億美元收購華納兄弟探索 / 派拉蒙",
-        "total_engagement": 8,
-        "post_count": 2
-      },
-      {
-        "topic_id": 3,
-        "label": "韓國車廠 / 現代 / 現代汽車 / 起亞及通用韓國工會相繼醞釀罷工",
+        "topic_id": 16,
+        "label": "anthropic / claude / fable / 再延推廣期",
         "total_engagement": 6,
+        "post_count": 2
+      },
+      {
+        "topic_id": 7,
+        "label": "麵包 / 食物浪費 / 推出置物櫃型自動販賣機 / 日本",
+        "total_engagement": 5,
         "post_count": 2
       }
     ],

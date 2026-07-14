@@ -72,7 +72,7 @@ import jieba
 import jieba.posseg as pseg
 
 from cluster_topics import (N_CLUSTERS, load_posts, label_cluster, cluster_posts, OWN_HANDLES,
-                             EN_NOISE_WORDS, LINK_NOISE, is_chinese_noise_token)
+                             EN_NOISE_WORDS, LINK_NOISE, is_chinese_noise_token, is_common_english_word)
 from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, window_dict, TAIWAN_TZ
 
 try:
@@ -260,19 +260,20 @@ _TOP_TERMS_STOP_WORDS = ENGLISH_STOP_WORDS | LINK_NOISE | EN_NOISE_WORDS
 
 def top_keyword_terms(posts, top_n=10):
     """Same noise filtering as cluster_topics.py's TF-IDF pipeline (sklearn's
-    English stopwords + LINK_NOISE + EN_NOISE_WORDS + the Chinese noise
-    pattern), applied to plain word-frequency counting instead of TF-IDF -
-    this widget just needs "what terms come up most," not a vectorizer.
-    A prior version used raw text.split() with no filtering at all, which is
-    how generic words like "according"/"pro"/"color"/"already"/"expected"
-    were showing up here despite already being filtered out of FR-01's
-    cluster labels."""
+    English stopwords + LINK_NOISE + EN_NOISE_WORDS + is_common_english_word's
+    general-frequency sweep + the Chinese noise pattern), applied to plain
+    word-frequency counting instead of TF-IDF - this widget just needs "what
+    terms come up most," not a vectorizer. A prior version used raw
+    text.split() with no filtering at all, which is how generic words like
+    "according"/"pro"/"color"/"already"/"expected" were showing up here
+    despite already being filtered out of FR-01's cluster labels."""
     counts = Counter()
     for p in posts:
         text = p.get('text', '')
         seen_in_post = set()
         for w in EN_TOKEN_RE.findall(text.lower()):
-            if len(w) > 2 and w not in _TOP_TERMS_STOP_WORDS and w not in seen_in_post:
+            if (len(w) > 2 and w not in _TOP_TERMS_STOP_WORDS and w not in seen_in_post
+                    and not is_common_english_word(w)):
                 seen_in_post.add(w)
                 counts[w] += 1
         for run in re.findall(r'[一-鿿]{2,}', text):
