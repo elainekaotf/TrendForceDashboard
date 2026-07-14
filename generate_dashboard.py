@@ -1515,19 +1515,47 @@ def main():
   let uploadPage = 1;
   let uploadSearchTerm = '';
 
-  // English stopwords (reused from a small fixed list - full server-side
-  // clustering pulls sklearn's, out of reach client-side) plus a length
-  // floor, so "the/and/for" don't dominate every upload's topic list.
-  const EN_STOPWORDS = new Set(['the','and','for','are','but','not','you','all','can','her','was','one','our','out',
-    'day','get','has','him','his','how','man','new','now','old','see','two','way','who','boy','did','its','let',
-    'put','say','she','too','use','with','this','that','from','have','more','will','your','about','which','their',
-    'said','there','been','would','could','should','into','than','them','then','when','what','were','are',
-    // Generic filler/sentiment-adjacent words - not stopwords in the
-    // traditional sense, but redundant with the Sentiment column and
-    // common enough to otherwise crowd out actual entities/topics in a
-    // frequency-only extraction with no TF-IDF corpus to weight against.
+  // Standard English stopwords - the full sklearn ENGLISH_STOP_WORDS list
+  // (318 words), copy-pasted rather than a small hand-picked subset, since
+  // the hand-picked version kept missing ordinary stopwords ("they",
+  // "these", "like", "year", "thanks" all leaked through as "topics"
+  // before this). Kept in sync by hand - no shared module between the
+  // Python pipeline and this embedded page's JS.
+  const EN_STOPWORDS = new Set(['a','about','above','across','after','afterwards','again','against','all','almost',
+    'alone','along','already','also','although','always','am','among','amongst','amoungst','amount','an','and',
+    'another','any','anyhow','anyone','anything','anyway','anywhere','are','around','as','at','back','be','became',
+    'because','become','becomes','becoming','been','before','beforehand','behind','being','below','beside',
+    'besides','between','beyond','bill','both','bottom','but','by','call','can','cannot','cant','co','con','could',
+    'couldnt','cry','de','describe','detail','do','done','down','due','during','each','eg','eight','either','eleven',
+    'else','elsewhere','empty','enough','etc','even','ever','every','everyone','everything','everywhere','except',
+    'few','fifteen','fifty','fill','find','fire','first','five','for','former','formerly','forty','found','four',
+    'from','front','full','further','get','give','go','had','has','hasnt','have','he','hence','her','here',
+    'hereafter','hereby','herein','hereupon','hers','herself','him','himself','his','how','however','hundred','i',
+    'ie','if','in','inc','indeed','interest','into','is','it','its','itself','keep','last','latter','latterly',
+    'least','less','ltd','made','many','may','me','meanwhile','might','mill','mine','more','moreover','most',
+    'mostly','move','much','must','my','myself','name','namely','neither','never','nevertheless','next','nine','no',
+    'nobody','none','noone','nor','not','nothing','now','nowhere','of','off','often','on','once','one','only',
+    'onto','or','other','others','otherwise','our','ours','ourselves','out','over','own','part','per','perhaps',
+    'please','put','rather','re','same','see','seem','seemed','seeming','seems','serious','several','she','should',
+    'show','side','since','sincere','six','sixty','so','some','somehow','someone','something','sometime',
+    'sometimes','somewhere','still','such','system','take','ten','than','that','the','their','them','themselves',
+    'then','thence','there','thereafter','thereby','therefore','therein','thereupon','these','they','thick','thin',
+    'third','this','those','though','three','through','throughout','thru','thus','to','together','too','top',
+    'toward','towards','twelve','twenty','two','un','under','until','up','upon','us','very','via','was','we','well',
+    'were','what','whatever','when','whence','whenever','where','whereafter','whereas','whereby','wherein',
+    'whereupon','wherever','whether','which','while','whither','who','whoever','whole','whom','whose','why','will',
+    'with','within','without','would','yet','you','your','yours','yourself','yourselves',
+    // Generic filler/sentiment-adjacent/reporting words - not textbook
+    // stopwords, but redundant with the Sentiment column and common enough
+    // to otherwise crowd out actual entities/topics in a frequency-only
+    // extraction with no TF-IDF corpus to weight against. Mirrors
+    // EN_NOISE_WORDS on the server side (cluster_topics.py).
     'just','today','regarding','really','very','also','some','amazing','great','good','bad','terrible',
-    'awesome','disappointing','news','update','report','story','article',
+    'awesome','disappointing','news','update','report','story','article','like','likes','year','years','thanks',
+    'thank','pro','color','colors','colour','colours','expected','expects','expect',
+    'progress','contract','contracts','published','publish','publishes','publishing',
+    'reportedly','reported','according','says','saying','told','telling',
+    'claims','claimed','believe','believes','believed','think','thinks','thought','thoughts',
     // Geography and generic non-technical business words - "topics" here
     // are meant to read as industry/technical subject matter (chip names,
     // companies, products), not country names or generic corporate filler
@@ -1536,16 +1564,7 @@ def main():
     'korea','korean','europe','european','global','world','worldwide','international','domestic','local',
     'company','companies','business','businesses','market','markets','industry','industries','economy',
     'economic','government','country','countries','nation','national','region','regional','sector',
-    'firm','firms','corporate','corporation','group','groups',
-    // Same reasoning as EN_NOISE_WORDS on the server side (cluster_topics.py) -
-    // generic descriptive/hedging/reporting words that show up across nearly
-    // every industry, not just semiconductors/tech, and were slipping through
-    // this list's shorter English-stopword coverage (sklearn's own list is
-    // out of reach client-side, so this list is smaller than the server's).
-    'while','over','pro','color','colors','colour','colours','already','expected','expects','expect',
-    'progress','contract','contracts','published','publish','publishes','publishing',
-    'reportedly','reported','according','says','saying','told','telling',
-    'claims','claimed','believe','believes','believed','think','thinks','thought','thoughts']);
+    'firm','firms','corporate','corporation','group','groups']);
 
   function esc(s) {{ const d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }}
 

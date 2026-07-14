@@ -175,6 +175,9 @@ EN_NOISE_WORDS = {
     # not a subject; "already"/"expected" are hedging/temporal filler).
     'pro', 'color', 'colors', 'colour', 'colours', 'already', 'expected', 'expects', 'expect',
     'progress', 'contract', 'contracts', 'published', 'publish', 'publishes', 'publishing',
+    # Not in sklearn's built-in English stopword list either, despite being
+    # just as generic/non-industry-specific.
+    'like', 'likes', 'liked', 'year', 'years', 'thanks', 'thank',
 }
 
 
