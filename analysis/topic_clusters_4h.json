@@ -1,34 +1,25 @@
 {
   "clusters": [
     {
-      "id": 1,
-      "label": "ai / nvidia / memory / chip",
-      "size": 22,
+      "id": 0,
+      "label": "ai / trendforce / dram / memory",
+      "size": 36,
       "accounts": {
-        "TrendForce": 3,
-        "technewsinside": 14,
-        "ctee.fans": 5
+        "TrendForce": 2,
+        "technewsinside": 16,
+        "ctee.fans": 9,
+        "yutinghaosfinance": 9
       },
       "engagement_by_account": {
-        "TrendForce": 9,
-        "technewsinside": 170,
-        "ctee.fans": 101
+        "TrendForce": 6,
+        "technewsinside": 205,
+        "ctee.fans": 198,
+        "yutinghaosfinance": 1840
       }
     },
     {
-      "id": 16,
-      "label": "eps / 每股稅後純益 / 聯電 / 環球晶",
-      "size": 3,
-      "accounts": {
-        "ctee.fans": 3
-      },
-      "engagement_by_account": {
-        "ctee.fans": 94
-      }
-    },
-    {
-      "id": 9,
-      "label": "ai / pcb / physical / token",
+      "id": 6,
+      "label": "ai / trendforce / pcb / physical",
       "size": 2,
       "accounts": {
         "technewsinside": 2
@@ -38,52 +29,30 @@
       }
     },
     {
+      "id": 8,
+      "label": "台積電 / 英特爾 / 奈米 / ai",
+      "size": 1,
+      "accounts": {
+        "technewsinside": 1
+      },
+      "engagement_by_account": {
+        "technewsinside": 9
+      }
+    },
+    {
+      "id": 9,
+      "label": "ipo / spacex / openai / ai",
+      "size": 1,
+      "accounts": {
+        "ctee.fans": 1
+      },
+      "engagement_by_account": {
+        "ctee.fans": 11
+      }
+    },
+    {
       "id": 10,
-      "label": "川普 / 荷莫茲海峽 / 加密貨幣 / 油價",
-      "size": 2,
-      "accounts": {
-        "technewsinside": 2
-      },
-      "engagement_by_account": {
-        "technewsinside": 33
-      }
-    },
-    {
-      "id": 12,
-      "label": "台股 / 台股逐洞賽 / 台股雷達 / 萬點大關",
-      "size": 2,
-      "accounts": {
-        "ctee.fans": 2
-      },
-      "engagement_by_account": {
-        "ctee.fans": 14
-      }
-    },
-    {
-      "id": 2,
-      "label": "trendforce / dram / nand / hbm",
-      "size": 1,
-      "accounts": {
-        "technewsinside": 1
-      },
-      "engagement_by_account": {
-        "technewsinside": 29
-      }
-    },
-    {
-      "id": 6,
-      "label": "sk海力士 / 三星 / sk / hbm",
-      "size": 1,
-      "accounts": {
-        "technewsinside": 1
-      },
-      "engagement_by_account": {
-        "technewsinside": 6
-      }
-    },
-    {
-      "id": 7,
-      "label": "spacex / ipo / 馬斯克 / starlink",
+      "label": "spacex / 馬斯克 / ipo / starlink",
       "size": 1,
       "accounts": {
         "technewsinside": 1
@@ -93,45 +62,34 @@
       }
     },
     {
-      "id": 13,
-      "label": "台積電 / 英特爾 / 先進封裝 / cowos",
+      "id": 11,
+      "label": "川普 / 荷莫茲海峽 / 加密貨幣 / 伊朗",
       "size": 1,
       "accounts": {
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "technewsinside": 9
+        "technewsinside": 21
+      }
+    },
+    {
+      "id": 13,
+      "label": "nvidia / ai / amd / rubin",
+      "size": 1,
+      "accounts": {
+        "TrendForce": 1
+      },
+      "engagement_by_account": {
+        "TrendForce": 3
       }
     }
   ],
-  "gaps": [
-    {
-      "cluster_id": 16,
-      "label": "eps / 每股稅後純益 / 聯電 / 環球晶",
-      "own_count": 0,
-      "competitor_count": 3,
-      "competitor_engagement": 94,
-      "competitors_covering": [
-        "ctee.fans"
-      ]
-    }
-  ],
-  "suggested_entry_points": [
-    {
-      "cluster_id": 16,
-      "label": "eps / 每股稅後純益 / 聯電 / 環球晶",
-      "own_count": 0,
-      "competitor_count": 3,
-      "competitor_engagement": 94,
-      "competitors_covering": [
-        "ctee.fans"
-      ]
-    }
-  ],
+  "gaps": [],
+  "suggested_entry_points": [],
   "window": {
-    "start_utc": "2026-07-14T09:32:35.257116+00:00",
-    "end_utc": "2026-07-14T13:32:35.257116+00:00",
-    "start_tw": "Jul 14, 17:32",
-    "end_tw": "Jul 14, 21:32"
+    "start_utc": "2026-07-14T09:40:50.544372+00:00",
+    "end_utc": "2026-07-14T13:40:50.544372+00:00",
+    "start_tw": "Jul 14, 17:40",
+    "end_tw": "Jul 14, 21:40"
   }
 }

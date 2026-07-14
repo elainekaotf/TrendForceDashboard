@@ -1,27 +1,31 @@
 {
   "clusters": [
     {
-      "id": 1,
-      "label": "ai / nvidia / memory / chip",
-      "size": 57,
+      "id": 0,
+      "label": "ai / trendforce / dram / memory",
+      "size": 79,
       "accounts": {
-        "TrendForce": 4,
-        "technews_tw": 8,
-        "jukan05": 2,
-        "technewsinside": 28,
-        "ctee.fans": 15
+        "TrendForce": 3,
+        "technews_tw": 11,
+        "jukan05": 1,
+        "TrendForce.tw": 2,
+        "technewsinside": 34,
+        "ctee.fans": 18,
+        "yutinghaosfinance": 10
       },
       "engagement_by_account": {
-        "TrendForce": 39,
-        "technews_tw": 11,
-        "jukan05": 905,
-        "technewsinside": 517,
-        "ctee.fans": 286
+        "TrendForce": 36,
+        "technews_tw": 16,
+        "jukan05": 334,
+        "TrendForce.tw": 33,
+        "technewsinside": 597,
+        "ctee.fans": 354,
+        "yutinghaosfinance": 2137
       }
     },
     {
-      "id": 9,
-      "label": "ai / pcb / physical / token",
+      "id": 6,
+      "label": "ai / trendforce / pcb / physical",
       "size": 4,
       "accounts": {
         "technews_tw": 1,
@@ -33,82 +37,23 @@
       }
     },
     {
-      "id": 11,
-      "label": "meta / ai / compute / openai",
+      "id": 10,
+      "label": "spacex / 馬斯克 / ipo / starlink",
       "size": 4,
-      "accounts": {
-        "technews_tw": 2,
-        "technewsinside": 2
-      },
-      "engagement_by_account": {
-        "technews_tw": 3,
-        "technewsinside": 21
-      }
-    },
-    {
-      "id": 15,
-      "label": "adr / sk海力士 / sk / 記憶體",
-      "size": 4,
-      "accounts": {
-        "technews_tw": 2,
-        "technewsinside": 2
-      },
-      "engagement_by_account": {
-        "technews_tw": 4,
-        "technewsinside": 14
-      }
-    },
-    {
-      "id": 7,
-      "label": "spacex / ipo / 馬斯克 / starlink",
-      "size": 3,
       "accounts": {
         "technews_tw": 1,
-        "technewsinside": 2
+        "technewsinside": 2,
+        "yutinghaosfinance": 1
       },
       "engagement_by_account": {
         "technews_tw": 3,
-        "technewsinside": 29
+        "technewsinside": 29,
+        "yutinghaosfinance": 586
       }
     },
     {
-      "id": 12,
-      "label": "台股 / 台股逐洞賽 / 台股雷達 / 萬點大關",
-      "size": 3,
-      "accounts": {
-        "technewsinside": 1,
-        "ctee.fans": 2
-      },
-      "engagement_by_account": {
-        "technewsinside": 19,
-        "ctee.fans": 14
-      }
-    },
-    {
-      "id": 16,
-      "label": "eps / 每股稅後純益 / 聯電 / 環球晶",
-      "size": 3,
-      "accounts": {
-        "ctee.fans": 3
-      },
-      "engagement_by_account": {
-        "ctee.fans": 94
-      }
-    },
-    {
-      "id": 3,
-      "label": "mlcc / ai / mlc / trendforce",
-      "size": 2,
-      "accounts": {
-        "TrendForce.tw": 2
-      },
-      "engagement_by_account": {
-        "TrendForce.tw": 33
-      }
-    },
-    {
-      "id": 10,
-      "label": "川普 / 荷莫茲海峽 / 加密貨幣 / 油價",
+      "id": 11,
+      "label": "川普 / 荷莫茲海峽 / 加密貨幣 / 伊朗",
       "size": 2,
       "accounts": {
         "technewsinside": 2
@@ -118,30 +63,32 @@
       }
     },
     {
-      "id": 2,
-      "label": "trendforce / dram / nand / hbm",
-      "size": 1,
+      "id": 16,
+      "label": "蘋果 / iphone / apple / 英特爾",
+      "size": 2,
       "accounts": {
+        "technews_tw": 1,
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "technewsinside": 29
+        "technews_tw": 2,
+        "technewsinside": 9
       }
     },
     {
-      "id": 6,
-      "label": "sk海力士 / 三星 / sk / hbm",
+      "id": 4,
+      "label": "anthropic / openai / claude / google",
       "size": 1,
       "accounts": {
-        "technewsinside": 1
+        "jukan05": 1
       },
       "engagement_by_account": {
-        "technewsinside": 6
+        "jukan05": 571
       }
     },
     {
-      "id": 13,
-      "label": "台積電 / 英特爾 / 先進封裝 / cowos",
+      "id": 8,
+      "label": "台積電 / 英特爾 / 奈米 / ai",
       "size": 1,
       "accounts": {
         "technewsinside": 1
@@ -149,36 +96,36 @@
       "engagement_by_account": {
         "technewsinside": 9
       }
-    }
-  ],
-  "gaps": [
+    },
     {
-      "cluster_id": 16,
-      "label": "eps / 每股稅後純益 / 聯電 / 環球晶",
-      "own_count": 0,
-      "competitor_count": 3,
-      "competitor_engagement": 94,
-      "competitors_covering": [
-        "ctee.fans"
-      ]
-    }
-  ],
-  "suggested_entry_points": [
+      "id": 9,
+      "label": "ipo / spacex / openai / ai",
+      "size": 1,
+      "accounts": {
+        "ctee.fans": 1
+      },
+      "engagement_by_account": {
+        "ctee.fans": 11
+      }
+    },
     {
-      "cluster_id": 16,
-      "label": "eps / 每股稅後純益 / 聯電 / 環球晶",
-      "own_count": 0,
-      "competitor_count": 3,
-      "competitor_engagement": 94,
-      "competitors_covering": [
-        "ctee.fans"
-      ]
+      "id": 13,
+      "label": "nvidia / ai / amd / rubin",
+      "size": 1,
+      "accounts": {
+        "TrendForce": 1
+      },
+      "engagement_by_account": {
+        "TrendForce": 3
+      }
     }
   ],
+  "gaps": [],
+  "suggested_entry_points": [],
   "window": {
-    "start_utc": "2026-07-14T05:32:35.257116+00:00",
-    "end_utc": "2026-07-14T13:32:35.257116+00:00",
-    "start_tw": "Jul 14, 13:32",
-    "end_tw": "Jul 14, 21:32"
+    "start_utc": "2026-07-14T05:40:50.544372+00:00",
+    "end_utc": "2026-07-14T13:40:50.544372+00:00",
+    "start_tw": "Jul 14, 13:40",
+    "end_tw": "Jul 14, 21:40"
   }
 }
