@@ -144,9 +144,31 @@ CHINESE_NOISE_RE = re.compile('|'.join(re.escape(w) for w in CHINESE_NOISE_SUBST
 # identity on their own - they're units, not subjects.
 CHINESE_UNIT_TOKEN_RE = re.compile(r'^[0-9億萬千兆]+[元日圓韓美歐]{0,2}$')
 
+# General-purpose sweep for ordinary Chinese words, same idea as
+# is_common_english_word() below: CHINESE_NOISE_SUBSTRINGS only catches
+# financial-report boilerplate that's specifically been noticed and listed
+# (營收, 股價, 創新高, ...) - it does nothing for ordinary connective/hedging
+# words (雖然, 但是, 根據, 認為, 進行, 相關, 影響, ...) that would otherwise
+# need listing one at a time too. zipf_frequency('zh') scores how common a
+# word is in everyday Chinese; 5.1 was picked by checking where genuine
+# connectives (指出=5.32, 表示=5.62, 目前=5.62, 因此=5.66, 雖然=5.66,
+# 但是=5.85, 根據=5.68, 進行=5.97, 相關=5.56, 有關=5.56, 影響=5.74) clear the
+# highest real industry/company term found (蘋果=5.00 - it's also the
+# ordinary word for "apple", so it registers as fairly common too;
+# 三星=4.45, 半導體=4.01, 台積電=2.14, 輝達=2.59 all sit well below). Financial
+# jargon (營收=3.69, 股價=4.21, 創新高=4.05) still scores as uncommon in a
+# general corpus, same as English "contract"/"progress" did, so
+# CHINESE_NOISE_SUBSTRINGS above still does the work for that category.
+COMMON_CHINESE_ZIPF_THRESHOLD = 5.1
+
+
+def is_common_chinese_word(token):
+    return zipf_frequency(token, 'zh') >= COMMON_CHINESE_ZIPF_THRESHOLD
+
 
 def is_chinese_noise_token(token):
-    return bool(CHINESE_UNIT_TOKEN_RE.match(token)) or bool(CHINESE_NOISE_RE.search(token))
+    return (bool(CHINESE_UNIT_TOKEN_RE.match(token)) or bool(CHINESE_NOISE_RE.search(token))
+            or is_common_chinese_word(token))
 
 
 # General-purpose sweep for ordinary English words (not industry jargon) -

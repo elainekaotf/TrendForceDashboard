@@ -109,17 +109,32 @@ def load_chinese_sentiment_data():
 
     import opencc
     opencc_dict_dir = os.path.join(os.path.dirname(opencc.__file__), 'dictionary')
-    t2s_map = {}
-    # Taiwan-specific character variants first, then the general
-    # Traditional->Simplified table - same override order as tw2sp's own
-    # conversion_chain, so e.g. 啟 resolves through TWVariantsRev before
-    # falling through to TSCharacters.
-    for fname in ('TWVariantsRev.txt', 'TSCharacters.txt'):
+
+    def load_table(fname):
+        table = {}
         with open(os.path.join(opencc_dict_dir, fname), encoding='utf-8') as f:
             for line in f:
                 parts = line.rstrip('\n').split('\t')
-                if len(parts) == 2 and parts[0] not in t2s_map:
-                    t2s_map[parts[0]] = parts[1].split(' ')[0]  # first candidate only
+                if len(parts) == 2:
+                    table[parts[0]] = parts[1].split(' ')[0]  # first candidate only
+        return table
+
+    # Taiwan-specific character variants, THEN the general Traditional->
+    # Simplified table, chained - same conversion_chain order as tw2sp
+    # (e.g. 啟 resolves through TWVariantsRev before falling through to
+    # TSCharacters). Chained, not merged with first-file-wins priority: a
+    # flat merge left 為 mapped to 爲 (TWVariantsRev's Taiwan-variant
+    # normalization, itself still Traditional) since that entry came first
+    # and blocked TSCharacters' own 為->為 entry from ever being read -
+    # running each character through BOTH tables in sequence (為->爲->为)
+    # gives the actual Simplified form.
+    tw_variants = load_table('TWVariantsRev.txt')
+    ts_chars = load_table('TSCharacters.txt')
+    t2s_map = {}
+    for ch in set(tw_variants) | set(ts_chars):
+        simplified = ts_chars.get(tw_variants.get(ch, ch), tw_variants.get(ch, ch))
+        if simplified != ch:
+            t2s_map[ch] = simplified
     return pos_words, neg_words, t2s_map
 
 
@@ -1691,8 +1706,55 @@ def main():
   ].join('|'));
   const ZH_UNIT_TOKEN_RE = /^[0-9億萬千兆]+[元日圓韓美歐]{0,2}$/;
 
+  // General-purpose sweep for ordinary Chinese words, mirroring
+  // is_common_chinese_word() on the server side (cluster_topics.py) - every
+  // 2-4 character word from wordfreq's Chinese frequency list scoring
+  // zipf_frequency >= 5.1, generated once and pasted here since wordfreq's
+  // data isn't available client-side. Catches generic connectives (雖然,
+  // 但是, 根據, 認為, 進行, 相關, 影響, ...) that a hand-picked list would
+  // otherwise keep missing one at a time - same reasoning as
+  // EN_COMMON_WORDS above. wordfreq's Chinese wordlist is Simplified, so
+  // each candidate term is converted via the existing toSimplified() (see
+  // above, built for the Chinese sentiment scorer) before checking
+  // membership here, rather than maintaining a second, Traditional copy of
+  // this list by hand.
+  const ZH_COMMON_WORDS = new Set(['一下','一个','一些','一位','一切','一名','一场','一天','一定','一年','一是','一条','一样','一次','一点','一直','一种','一般','一起','三个','上年','上海',
+    '下来','不上','不了','不仅','不会','不再','不到','不同','不少','不想','不断','不是','不能','不要','不说','不过','不错','与会','专业','专家','世界','世纪',
+    '业务','东西','两个','严重','个人','中共','中国','中央','中年','中心','中是','中有','中说','为了','为什么','主任','主席','主要','举办','举行','之一','之前',
+    '之后','之间','也许','了解','事件','事实','事情','亚洲','交易','交流','交通','产业','产品','产生','人中','人们','人到','人口','人员','人士','人数','人有',
+    '人来','人民','人物','人类','人要','什么','今天','今年','今日','介绍','仍然','他于','他们','代表','以上','以下','以为','以前','以及','以后','以来','价值',
+    '价格','任何','任务','企业','会为','会后','会议','传统','但是','位于','体系','体育','作为','作品','作用','作者','你们','使用','例如','俄罗斯','保护','保持',
+    '保证','信息','健康','儿子','儿童','允许','先生','免费','全国','全球','全部','全面','公司','公布','公开','公民','共同','关于','关注','关系','其中','其他',
+    '其实','具有','内容','内部','军事','军队','农业','农村','农民','决定','准备','减少','几个','几乎','出来','出版','出现','分享','分别','分析','分钟','创新',
+    '创造','利用','利益','别人','到底','制作','制度','制造','力量','办法','功能','加入','加强','加拿大','动物','努力','包括','北京','区域','医疗','医院','十分',
+    '协会','协议','单位','印度','即使','历史','压力','原则','原因','原来','参与','参加','双方','反对','反应','发展','发布','发现','发生','发表','取得','受到',
+    '变化','变成','另外','只是','只有','只能','只要','可以','可是','可能','台湾','各种','合作','同志','同意','同时','同样','名字','后人','后来','告诉','和平',
+    '哪里','唯一','喜欢','回到','回来','因为','因此','团体','困难','国内','国务院','国家','国际','图片','土地','在于','地区','地方','坚持','城市','基本','基础',
+    '增加','增长','声音','处理','外国','多少','大为','大学','大家','大有','大量','大陆','失去','失败','女人','女儿','女孩','女性','她们','好像','如何','如果',
+    '如此','妈妈','委员','委员会','媒体','存在','学习','学校','学生','学院','孩子','它们','安全','完全','完成','宗教','官员','官方','实施','实现','实行','实际',
+    '宣传','宣布','宪法','家庭','容易','对于','导致','小时','小说','尤其','就是','尽管','居民','属于','工业','工作','工具','工程','已经','市场','希望','带来',
+    '帮助','平台','年代','年会','并且','广告','应用','应该','建立','建筑','建议','建设','开发','开始','开放','引起','强调','当地','当时','当然','形式','形成',
+    '影响','很多','得到','德国','必须','快乐','态度','怎么','怎么样','怎样','思想','总是','总理','总统','情况','想要','意义','意思','意见','意识','感到','感觉',
+    '愿意','成为','成功','成员','成立','我们','我国','我来','或者','战争','战略','所以','所有','所谓','手机','才能','执行','找到','承认','技术','投资','报告',
+    '报道','担心','拥有','持续','指出','接受','控制','推动','提供','提出','提高','支持','改变','改革','攻击','政府','政权','政治','政策','故事','教师','教授',
+    '教育','数字','数据','整个','文化','文章','新闻','方向','方式','方案','方法','方面','旅游','无法','无论','日本','时代','时候','时期','时间','明显','明白',
+    '是不是','是否','显示','晚上','更加','曾经','最后','最大','最好','最终','最近','最高','有些','有人','有关','有效','有没有','有点','朋友','服务','期间','未来',
+    '机会','机关','机场','机构','权利','权力','条件','来个','来源','来自','来说','标准','根据','根本','检查','模式','欢迎','欧洲','正在','正常','正式','正确',
+    '此外','武器','死亡','母亲','每个','每天','每年','比赛','比较','民主','民族','水平','永远','汽车','没有','法国','法律','注意','活动','消息','清楚','游戏',
+    '然后','然而','照片','父亲','版本','特别','状况','状态','独立','环境','现代','现在','现场','现象','理解','理论','甚至','生产','生命','生活','用户','由于',
+    '申请','电子','电影','电脑','电视','电话','男人','的话','目前','目标','目的','直接','相信','相关','相当','看到','看来','看看','看见','真实','真是','真正',
+    '真的','知识','知道','研究','破坏','确定','确实','社会','社区','离开','科学','科技','积极','程度','稳定','空间','突然','第一','第一次','第二','简单','管理',
+    '类似','精神','系列','系统','组成','组织','终于','经历','经常','经济','经营','经过','经验','结合','结束','结构','结果','绝对','统一','继续','综合','编辑',
+    '网站','网络','美元','美国','群众','老师','考虑','而且','而是','职业','联合','联盟','联系','肯定','能为','能力','能够','自己','自然','自由','至少','艺术',
+    '节目','苏联','英国','范围','获得','虽然','行业','行为','行动','行政','表现','表示','西方','要求','观点','规定','规律','规模','视频','觉得','解决','解释',
+    '警察','计划','认为','认识','讨论','训练','记录','记者','许多','设备','设立','设计','证明','语言','说明','说来','说话','调整','调查','谢谢','负责','责任',
+    '质量','购买','资料','资本','资源','资金','起来','超过','足球','身上','身体','达到','过去','过程','运动','还是','还有','还要','这个','这么','这些','这会',
+    '这是','这有','这样','这次','这种','这里','进一步','进入','进行','选举','选择','逐渐','通过','造成','那个','那么','那些','那样','那里','部分','部长','部门',
+    '采取','采用','里面','重新','重点','重要','金融','银行','销售','错误','长期','问题','阅读','阶段','附近','限制','除了','集团','需求','需要','青年','非常',
+    '面积','革命','韩国','音乐','项目','领域','领导','飞机','首先','香港']);
+
   function isChineseNoiseTerm(term) {{
-    return ZH_UNIT_TOKEN_RE.test(term) || ZH_NOISE_RE.test(term);
+    return ZH_UNIT_TOKEN_RE.test(term) || ZH_NOISE_RE.test(term) || ZH_COMMON_WORDS.has(toSimplified(term));
   }}
 
   function extractTopics(rows, textCol, topN) {{
