@@ -1536,7 +1536,16 @@ def main():
     'korea','korean','europe','european','global','world','worldwide','international','domestic','local',
     'company','companies','business','businesses','market','markets','industry','industries','economy',
     'economic','government','country','countries','nation','national','region','regional','sector',
-    'firm','firms','corporate','corporation','group','groups']);
+    'firm','firms','corporate','corporation','group','groups',
+    // Same reasoning as EN_NOISE_WORDS on the server side (cluster_topics.py) -
+    // generic descriptive/hedging/reporting words that show up across nearly
+    // every industry, not just semiconductors/tech, and were slipping through
+    // this list's shorter English-stopword coverage (sklearn's own list is
+    // out of reach client-side, so this list is smaller than the server's).
+    'while','over','pro','color','colors','colour','colours','already','expected','expects','expect',
+    'progress','contract','contracts','published','publish','publishes','publishing',
+    'reportedly','reported','according','says','saying','told','telling',
+    'claims','claimed','believe','believes','believed','think','thinks','thought','thoughts']);
 
   function esc(s) {{ const d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }}
 

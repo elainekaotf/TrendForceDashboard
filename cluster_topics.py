@@ -174,6 +174,7 @@ EN_NOISE_WORDS = {
     # their own (e.g. "pro"/"color" are usually a product-variant suffix,
     # not a subject; "already"/"expected" are hedging/temporal filler).
     'pro', 'color', 'colors', 'colour', 'colours', 'already', 'expected', 'expects', 'expect',
+    'progress', 'contract', 'contracts', 'published', 'publish', 'publishes', 'publishing',
 }
 
 

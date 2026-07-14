@@ -47,7 +47,7 @@ from zoneinfo import ZoneInfo
 from openpyxl import load_workbook
 
 from cluster_topics import clean_text, parse_count
-from nlp_sentiment import score_sentiment
+from nlp_sentiment import score_sentiment, top_keyword_terms
 
 BASE = os.path.dirname(__file__)
 DEFAULT_OUT_DIR = os.path.join(BASE, 'analysis', 'self_service')
@@ -186,10 +186,6 @@ def analyze(rows):
     sentiment_counts = Counter(r['sentiment'] for r in rows)
     total_engagement = sum(r['engagement'] for r in rows)
 
-    term_counts = Counter()
-    for r in rows:
-        term_counts.update(w for w in r['text'].split() if len(w) > 2)
-
     by_day = Counter()
     for r in rows:
         if r['timestamp']:
@@ -201,7 +197,7 @@ def analyze(rows):
         'sentiment_share': {k: round(v / total, 3) for k, v in sentiment_counts.items()} if total else {},
         'total_engagement': total_engagement,
         'avg_engagement': round(total_engagement / total, 1) if total else 0,
-        'top_terms': [t for t, _ in term_counts.most_common(15)],
+        'top_terms': top_keyword_terms(rows, top_n=15),
         'posts_by_day_utc8': dict(sorted(by_day.items())),
     }
 
