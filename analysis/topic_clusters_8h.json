@@ -2,130 +2,147 @@
   "clusters": [
     {
       "id": 0,
-      "label": "ai / trendforce / dram / memory",
-      "size": 79,
+      "label": "ai / nvidia / memory / spacex",
+      "size": 87,
       "accounts": {
         "TrendForce": 3,
-        "technews_tw": 11,
+        "technews_tw": 27,
+        "dylan522p": 1,
+        "SemiAnalysis_": 6,
         "jukan05": 1,
-        "TrendForce.tw": 2,
-        "technewsinside": 34,
-        "ctee.fans": 18,
+        "QQ_Timmy": 7,
+        "tphuang": 5,
+        "technewsinside": 17,
+        "ctee.fans": 10,
         "yutinghaosfinance": 10
       },
       "engagement_by_account": {
-        "TrendForce": 36,
-        "technews_tw": 16,
-        "jukan05": 334,
-        "TrendForce.tw": 33,
-        "technewsinside": 597,
-        "ctee.fans": 354,
-        "yutinghaosfinance": 2137
+        "TrendForce": 14,
+        "technews_tw": 71,
+        "dylan522p": 574,
+        "SemiAnalysis_": 469,
+        "jukan05": 301,
+        "QQ_Timmy": 246,
+        "tphuang": 175,
+        "technewsinside": 227,
+        "ctee.fans": 209,
+        "yutinghaosfinance": 2723
       }
     },
     {
       "id": 6,
-      "label": "ai / trendforce / pcb / physical",
+      "label": "川普 / 荷莫茲海峽 / 加密貨幣 / 油價",
       "size": 4,
       "accounts": {
-        "technews_tw": 1,
-        "technewsinside": 3
-      },
-      "engagement_by_account": {
-        "technews_tw": 1,
-        "technewsinside": 31
-      }
-    },
-    {
-      "id": 10,
-      "label": "spacex / 馬斯克 / ipo / starlink",
-      "size": 4,
-      "accounts": {
-        "technews_tw": 1,
-        "technewsinside": 2,
-        "yutinghaosfinance": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 3,
-        "technewsinside": 29,
-        "yutinghaosfinance": 586
-      }
-    },
-    {
-      "id": 11,
-      "label": "川普 / 荷莫茲海峽 / 加密貨幣 / 伊朗",
-      "size": 2,
-      "accounts": {
+        "technews_tw": 2,
         "technewsinside": 2
       },
       "engagement_by_account": {
+        "technews_tw": 6,
         "technewsinside": 33
       }
     },
     {
-      "id": 16,
-      "label": "蘋果 / iphone / apple / 英特爾",
-      "size": 2,
+      "id": 5,
+      "label": "ai / pcb / physical / claude",
+      "size": 3,
       "accounts": {
         "technews_tw": 1,
+        "technewsinside": 2
+      },
+      "engagement_by_account": {
+        "technews_tw": 1,
+        "technewsinside": 9
+      }
+    },
+    {
+      "id": 11,
+      "label": "asml / euv / na / tool",
+      "size": 3,
+      "accounts": {
+        "tengyanAI": 3
+      },
+      "engagement_by_account": {
+        "tengyanAI": 12
+      }
+    },
+    {
+      "id": 17,
+      "label": "hynix / sk / hbm / samsung",
+      "size": 3,
+      "accounts": {
+        "technews_tw": 2,
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "technews_tw": 2,
-        "technewsinside": 9
+        "technews_tw": 4,
+        "technewsinside": 6
+      }
+    },
+    {
+      "id": 7,
+      "label": "dram / hbm / nand / trendforce",
+      "size": 2,
+      "accounts": {
+        "QQ_Timmy": 1,
+        "tphuang": 1
+      },
+      "engagement_by_account": {
+        "QQ_Timmy": 24,
+        "tphuang": 129
       }
     },
     {
       "id": 4,
-      "label": "anthropic / openai / claude / google",
+      "label": "meta / ai / alphabet / compute",
       "size": 1,
       "accounts": {
-        "jukan05": 1
+        "yutinghaosfinance": 1
       },
       "engagement_by_account": {
-        "jukan05": 571
+        "yutinghaosfinance": 0
       }
     },
     {
-      "id": 8,
-      "label": "台積電 / 英特爾 / 奈米 / ai",
+      "id": 15,
+      "label": "etf / 台股etf / spacex / 大賣空",
       "size": 1,
       "accounts": {
-        "technewsinside": 1
+        "QQ_Timmy": 1
       },
       "engagement_by_account": {
-        "technewsinside": 9
-      }
-    },
-    {
-      "id": 9,
-      "label": "ipo / spacex / openai / ai",
-      "size": 1,
-      "accounts": {
-        "ctee.fans": 1
-      },
-      "engagement_by_account": {
-        "ctee.fans": 11
-      }
-    },
-    {
-      "id": 13,
-      "label": "nvidia / ai / amd / rubin",
-      "size": 1,
-      "accounts": {
-        "TrendForce": 1
-      },
-      "engagement_by_account": {
-        "TrendForce": 3
+        "QQ_Timmy": 47
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 11,
+      "label": "asml / euv / na / tool",
+      "own_count": 0,
+      "competitor_count": 3,
+      "competitor_engagement": 12,
+      "competitors_covering": [
+        "tengyanAI"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 11,
+      "label": "asml / euv / na / tool",
+      "own_count": 0,
+      "competitor_count": 3,
+      "competitor_engagement": 12,
+      "competitors_covering": [
+        "tengyanAI"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-14T05:40:50.544372+00:00",
-    "end_utc": "2026-07-14T13:40:50.544372+00:00",
-    "start_tw": "Jul 14, 13:40",
-    "end_tw": "Jul 14, 21:40"
+    "start_utc": "2026-07-14T17:32:59+08:00",
+    "end_utc": "2026-07-15T01:32:59+08:00",
+    "start_tw": "Jul 14, 17:32",
+    "end_tw": "Jul 15, 01:32"
   }
 }

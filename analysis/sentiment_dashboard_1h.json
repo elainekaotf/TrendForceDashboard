@@ -1,59 +1,73 @@
 {
-  "generated_at": "2026-07-14T13:32:35.257116+00:00",
+  "generated_at": "2026-07-14T13:40:50.544372+00:00",
   "time_range": "1h",
   "window": {
-    "start_utc": "2026-07-14T12:32:35.257116+00:00",
-    "end_utc": "2026-07-14T13:32:35.257116+00:00",
-    "start_tw": "Jul 14, 20:32",
-    "end_tw": "Jul 14, 21:32"
+    "start_utc": "2026-07-14T12:40:50.544372+00:00",
+    "end_utc": "2026-07-14T13:40:50.544372+00:00",
+    "start_tw": "Jul 14, 20:40",
+    "end_tw": "Jul 14, 21:40"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 9,
+      "total_posts": 12,
       "sentiment_counts": {
-        "positive": 3,
+        "positive": 4,
         "negative": 2,
-        "neutral": 4
+        "neutral": 6
       },
       "sentiment_share": {
         "positive": 0.333,
-        "negative": 0.222,
-        "neutral": 0.444
+        "negative": 0.167,
+        "neutral": 0.5
       },
       "top_terms": [
-        "雲端",
-        "上半",
         "半年",
-        "上半年",
         "累計",
         "大幅",
-        "dongfang",
-        "suanxin",
-        "betting",
-        "rival"
+        "nvidia",
+        "雲端",
+        "太空",
+        "上半",
+        "上半年",
+        "成長",
+        "升溫"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 0,
-        "label": "ai",
-        "heat": 50.0,
-        "volume": 9,
-        "engagement": 106,
+        "label": "年前",
+        "heat": 90.0,
+        "volume": 10,
+        "engagement": 584,
         "entities": [
           "台灣",
           "輝達",
           "天文",
           "烏克蘭",
-          "西班牙"
+          "台新"
+        ]
+      },
+      {
+        "topic_id": 1,
+        "label": "ai",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 7,
+        "entities": [
+          "China",
+          "Dongfang Suanxin",
+          "HBM",
+          "AI",
+          "TB"
         ]
       }
     ],
     "named_entities": [
       {
         "entity": "台灣",
-        "count": 3
+        "count": 4
       },
       {
         "entity": "輝達",
@@ -65,10 +79,6 @@
       },
       {
         "entity": "烏克蘭",
-        "count": 2
-      },
-      {
-        "entity": "西班牙",
         "count": 2
       },
       {
@@ -110,103 +120,107 @@
       {
         "entity": "hbm",
         "count": 1
+      },
+      {
+        "entity": "node",
+        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-14T12:32:35.257118+00:00",
-        "bucket_end": "2026-07-14T12:36:52.399975+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-14T12:36:52.399975+00:00",
-        "bucket_end": "2026-07-14T12:41:09.542832+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-14T12:41:09.542832+00:00",
-        "bucket_end": "2026-07-14T12:45:26.685689+00:00",
+        "bucket_start": "2026-07-14T12:40:50.544374+00:00",
+        "bucket_end": "2026-07-14T12:45:07.687231+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-14T12:45:26.685689+00:00",
-        "bucket_end": "2026-07-14T12:49:43.828546+00:00",
+        "bucket_start": "2026-07-14T12:45:07.687231+00:00",
+        "bucket_end": "2026-07-14T12:49:24.830088+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-14T12:49:43.828546+00:00",
-        "bucket_end": "2026-07-14T12:54:00.971403+00:00",
+        "bucket_start": "2026-07-14T12:49:24.830088+00:00",
+        "bucket_end": "2026-07-14T12:53:41.972945+00:00",
         "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-14T12:54:00.971403+00:00",
-        "bucket_end": "2026-07-14T12:58:18.114260+00:00",
+        "bucket_start": "2026-07-14T12:53:41.972945+00:00",
+        "bucket_end": "2026-07-14T12:57:59.115802+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-14T12:58:18.114260+00:00",
-        "bucket_end": "2026-07-14T13:02:35.257117+00:00",
+        "bucket_start": "2026-07-14T12:57:59.115802+00:00",
+        "bucket_end": "2026-07-14T13:02:16.258659+00:00",
         "positive": 2,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-14T13:02:35.257117+00:00",
-        "bucket_end": "2026-07-14T13:06:52.399974+00:00",
+        "bucket_start": "2026-07-14T13:02:16.258659+00:00",
+        "bucket_end": "2026-07-14T13:06:33.401516+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-14T13:06:52.399974+00:00",
-        "bucket_end": "2026-07-14T13:11:09.542831+00:00",
+        "bucket_start": "2026-07-14T13:06:33.401516+00:00",
+        "bucket_end": "2026-07-14T13:10:50.544373+00:00",
         "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-14T13:11:09.542831+00:00",
-        "bucket_end": "2026-07-14T13:15:26.685688+00:00",
+        "bucket_start": "2026-07-14T13:10:50.544373+00:00",
+        "bucket_end": "2026-07-14T13:15:07.687230+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-14T13:15:26.685688+00:00",
-        "bucket_end": "2026-07-14T13:19:43.828545+00:00",
+        "bucket_start": "2026-07-14T13:15:07.687230+00:00",
+        "bucket_end": "2026-07-14T13:19:24.830087+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-14T13:19:43.828545+00:00",
-        "bucket_end": "2026-07-14T13:24:00.971402+00:00",
+        "bucket_start": "2026-07-14T13:19:24.830087+00:00",
+        "bucket_end": "2026-07-14T13:23:41.972944+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-14T13:24:00.971402+00:00",
-        "bucket_end": "2026-07-14T13:28:18.114259+00:00",
+        "bucket_start": "2026-07-14T13:23:41.972944+00:00",
+        "bucket_end": "2026-07-14T13:27:59.115801+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-14T13:28:18.114259+00:00",
-        "bucket_end": "2026-07-14T13:32:35.257116+00:00",
+        "bucket_start": "2026-07-14T13:27:59.115801+00:00",
+        "bucket_end": "2026-07-14T13:32:16.258658+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-14T13:32:16.258658+00:00",
+        "bucket_end": "2026-07-14T13:36:33.401515+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-14T13:36:33.401515+00:00",
+        "bucket_end": "2026-07-14T13:40:50.544372+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
@@ -215,32 +229,45 @@
     "coverage_focus_ranking": [
       {
         "handle": "TrendForce",
-        "top_topic_id": 0,
+        "top_topic_id": 1,
         "top_topic_label": "ai",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "technewsinside",
-        "top_topic_id": 0,
-        "top_topic_label": "ai",
-        "focus_share": 1.0,
-        "post_count": 6
-      },
-      {
         "handle": "ctee.fans",
         "top_topic_id": 0,
-        "top_topic_label": "ai",
+        "top_topic_label": "年前",
         "focus_share": 1.0,
         "post_count": 2
+      },
+      {
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 0,
+        "top_topic_label": "年前",
+        "focus_share": 1.0,
+        "post_count": 4
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 0,
+        "top_topic_label": "年前",
+        "focus_share": 0.8,
+        "post_count": 5
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 0,
+        "label": "年前",
+        "total_engagement": 584,
+        "post_count": 10
+      },
+      {
+        "topic_id": 1,
         "label": "ai",
-        "total_engagement": 106,
-        "post_count": 9
+        "total_engagement": 7,
+        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
@@ -258,10 +285,10 @@
           "avg_engagement": 0.0
         },
         "evening": {
-          "post_count": 9,
-          "likes": 104,
-          "engagement": 106,
-          "avg_engagement": 11.8
+          "post_count": 12,
+          "likes": 589,
+          "engagement": 591,
+          "avg_engagement": 49.2
         },
         "late_night": {
           "post_count": 0,
