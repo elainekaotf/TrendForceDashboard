@@ -1,28 +1,29 @@
 {
-  "generated_at": "2026-07-15T16:31:00+08:00",
+  "generated_at": "2026-07-15T08:45:00+00:00",
   "time_range": "1h",
   "window": {
-    "start_utc": "2026-07-15T15:31:00+08:00",
-    "end_utc": "2026-07-15T16:31:00+08:00",
-    "start_tw": "Jul 15, 15:31",
-    "end_tw": "Jul 15, 16:31"
+    "start_utc": "2026-07-15T07:45:00+00:00",
+    "end_utc": "2026-07-15T08:45:00+00:00",
+    "start_tw": "Jul 15, 15:45",
+    "end_tw": "Jul 15, 16:45"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 5,
+      "total_posts": 11,
       "sentiment_counts": {
-        "positive": 3,
-        "negative": 1,
-        "neutral": 1
+        "positive": 5,
+        "negative": 3,
+        "neutral": 3
       },
       "sentiment_share": {
-        "positive": 0.6,
-        "negative": 0.2,
-        "neutral": 0.2
+        "positive": 0.455,
+        "negative": 0.273,
+        "neutral": 0.273
       },
       "top_terms": [
         "雙雙",
+        "openai",
         "保瑞",
         "聯手",
         "英矽",
@@ -30,151 +31,164 @@
         "智能",
         "英矽智",
         "矽智能",
-        "英矽智能",
-        "略合"
+        "英矽智能"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "iphone / openai / 英矽智能 / asml",
-        "heat": 50.0,
-        "volume": 5,
-        "engagement": 5,
+        "topic_id": 1,
+        "label": "openai / iphone / 順德 / 長科",
+        "heat": 90.0,
+        "volume": 9,
+        "engagement": 66,
         "entities": [
           "長科",
-          "保瑞",
           "伺服器",
           "大摩",
-          "花旗"
+          "花旗",
+          "智慧"
+        ]
+      },
+      {
+        "topic_id": 0,
+        "label": "英矽智能 / 聯手 / 戰略合作潛在價值高達 / 保瑞",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 6,
+        "entities": [
+          "保瑞"
         ]
       }
     ],
     "named_entities": [
       {
         "entity": "長科",
-        "count": 4
+        "count": 5
       },
       {
         "entity": "保瑞",
-        "count": 3
+        "count": 4
       },
       {
         "entity": "伺服器",
-        "count": 2
+        "count": 3
       },
       {
         "entity": "大摩",
-        "count": 2
+        "count": 3
       },
       {
         "entity": "花旗",
-        "count": 2
+        "count": 3
       },
       {
         "entity": "智慧",
-        "count": 2
+        "count": 3
       },
       {
-        "entity": "英特爾",
-        "count": 2
+        "entity": "富邦",
+        "count": 1
+      },
+      {
+        "entity": "福利",
+        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-15T15:31:00.000002+08:00",
-        "bucket_end": "2026-07-15T15:35:17.142859+08:00",
+        "bucket_start": "2026-07-15T07:45:00.000002+00:00",
+        "bucket_end": "2026-07-15T07:49:17.142859+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-15T15:35:17.142859+08:00",
-        "bucket_end": "2026-07-15T15:39:34.285716+08:00",
+        "bucket_start": "2026-07-15T07:49:17.142859+00:00",
+        "bucket_end": "2026-07-15T07:53:34.285716+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-15T15:39:34.285716+08:00",
-        "bucket_end": "2026-07-15T15:43:51.428573+08:00",
+        "bucket_start": "2026-07-15T07:53:34.285716+00:00",
+        "bucket_end": "2026-07-15T07:57:51.428573+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-15T15:43:51.428573+08:00",
-        "bucket_end": "2026-07-15T15:48:08.571430+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-15T15:48:08.571430+08:00",
-        "bucket_end": "2026-07-15T15:52:25.714287+08:00",
+        "bucket_start": "2026-07-15T07:57:51.428573+00:00",
+        "bucket_end": "2026-07-15T08:02:08.571430+00:00",
         "positive": 0,
-        "neutral": 0,
+        "neutral": 2,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-15T15:52:25.714287+08:00",
-        "bucket_end": "2026-07-15T15:56:42.857144+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-15T15:56:42.857144+08:00",
-        "bucket_end": "2026-07-15T16:01:00.000001+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-15T16:01:00.000001+08:00",
-        "bucket_end": "2026-07-15T16:05:17.142858+08:00",
+        "bucket_start": "2026-07-15T08:02:08.571430+00:00",
+        "bucket_end": "2026-07-15T08:06:25.714287+00:00",
         "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-15T16:05:17.142858+08:00",
-        "bucket_end": "2026-07-15T16:09:34.285715+08:00",
+        "bucket_start": "2026-07-15T08:06:25.714287+00:00",
+        "bucket_end": "2026-07-15T08:10:42.857144+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-15T16:09:34.285715+08:00",
-        "bucket_end": "2026-07-15T16:13:51.428572+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-15T16:13:51.428572+08:00",
-        "bucket_end": "2026-07-15T16:18:08.571429+08:00",
+        "bucket_start": "2026-07-15T08:10:42.857144+00:00",
+        "bucket_end": "2026-07-15T08:15:00.000001+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-15T16:18:08.571429+08:00",
-        "bucket_end": "2026-07-15T16:22:25.714286+08:00",
+        "bucket_start": "2026-07-15T08:15:00.000001+00:00",
+        "bucket_end": "2026-07-15T08:19:17.142858+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-15T08:19:17.142858+00:00",
+        "bucket_end": "2026-07-15T08:23:34.285715+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-15T16:22:25.714286+08:00",
-        "bucket_end": "2026-07-15T16:26:42.857143+08:00",
+        "bucket_start": "2026-07-15T08:23:34.285715+00:00",
+        "bucket_end": "2026-07-15T08:27:51.428572+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-15T16:26:42.857143+08:00",
-        "bucket_end": "2026-07-15T16:31:00+08:00",
+        "bucket_start": "2026-07-15T08:27:51.428572+00:00",
+        "bucket_end": "2026-07-15T08:32:08.571429+00:00",
+        "positive": 3,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-15T08:32:08.571429+00:00",
+        "bucket_end": "2026-07-15T08:36:25.714286+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-15T08:36:25.714286+00:00",
+        "bucket_end": "2026-07-15T08:40:42.857143+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-15T08:40:42.857143+00:00",
+        "bucket_end": "2026-07-15T08:45:00+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
@@ -182,19 +196,39 @@
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "technews_tw",
-        "top_topic_id": 0,
-        "top_topic_label": "iphone / openai / 英矽智能 / asml",
+        "handle": "ctee.fans",
+        "top_topic_id": 1,
+        "top_topic_label": "openai / iphone / 順德 / 長科",
         "focus_share": 1.0,
+        "post_count": 2
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 1,
+        "top_topic_label": "openai / iphone / 順德 / 長科",
+        "focus_share": 0.8,
         "post_count": 5
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 1,
+        "top_topic_label": "openai / iphone / 順德 / 長科",
+        "focus_share": 0.75,
+        "post_count": 4
       }
     ],
     "top_engagement_ranking": [
       {
+        "topic_id": 1,
+        "label": "openai / iphone / 順德 / 長科",
+        "total_engagement": 66,
+        "post_count": 9
+      },
+      {
         "topic_id": 0,
-        "label": "iphone / openai / 英矽智能 / asml",
-        "total_engagement": 5,
-        "post_count": 5
+        "label": "英矽智能 / 聯手 / 戰略合作潛在價值高達 / 保瑞",
+        "total_engagement": 6,
+        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
@@ -206,10 +240,10 @@
           "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 5,
-          "likes": 0,
-          "engagement": 5,
-          "avg_engagement": 1.0
+          "post_count": 11,
+          "likes": 68,
+          "engagement": 72,
+          "avg_engagement": 6.5
         },
         "evening": {
           "post_count": 0,
