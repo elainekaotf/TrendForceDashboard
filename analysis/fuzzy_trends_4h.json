@@ -8,7 +8,7 @@
     "start_tw": "Jul 15, 23:39",
     "end_tw": "Jul 16, 03:39"
   },
-  "scan_only": true,
+  "scan_only": false,
   "platforms": {
     "Facebook": {
       "top_rising_topics": [
@@ -20,8 +20,123 @@
           "rationale": "volume -90% vs prior 4h, engagement rate +36%, 2 account(s) posting",
           "topic_id": 3,
           "label": "ai / nvidia / 台積電 / openai",
-          "rising_kols": [],
-          "sub_topics": []
+          "rising_kols": [
+            {
+              "rising_score": 90.0,
+              "volume_growth_rate": -0.75,
+              "engagement_acceleration": 0.738,
+              "active_accounts": 1,
+              "rationale": "posts -75%, engagement +74% vs prior 4h",
+              "handle": "technewsinside"
+            },
+            {
+              "rising_score": 82.0,
+              "volume_growth_rate": -0.917,
+              "engagement_acceleration": 0.288,
+              "active_accounts": 1,
+              "rationale": "posts -92%, engagement +29% vs prior 4h",
+              "handle": "yutinghaosfinance"
+            },
+            {
+              "rising_score": 10.0,
+              "volume_growth_rate": -1.0,
+              "engagement_acceleration": -1.0,
+              "active_accounts": 0,
+              "rationale": "posts -100%, engagement -100% vs prior 4h",
+              "handle": "ctee.fans"
+            }
+          ],
+          "sub_topics": [
+            {
+              "rising_score": 90.0,
+              "volume_growth_rate": -0.882,
+              "engagement_acceleration": 0.256,
+              "active_accounts": 2,
+              "rationale": "volume -88% vs prior 4h, engagement rate +26%, 2 account(s) posting",
+              "sub_topic_id": 1,
+              "label": "subcluster-1",
+              "rising_kols": [
+                {
+                  "rising_score": 90.0,
+                  "volume_growth_rate": -0.667,
+                  "engagement_acceleration": 0.398,
+                  "active_accounts": 1,
+                  "rationale": "posts -67%, engagement +40% vs prior 4h",
+                  "handle": "technewsinside"
+                },
+                {
+                  "rising_score": 83.4,
+                  "volume_growth_rate": -0.9,
+                  "engagement_acceleration": 0.226,
+                  "active_accounts": 1,
+                  "rationale": "posts -90%, engagement +23% vs prior 4h",
+                  "handle": "yutinghaosfinance"
+                },
+                {
+                  "rising_score": 10.0,
+                  "volume_growth_rate": -1.0,
+                  "engagement_acceleration": -1.0,
+                  "active_accounts": 0,
+                  "rationale": "posts -100%, engagement -100% vs prior 4h",
+                  "handle": "ctee.fans"
+                }
+              ]
+            },
+            {
+              "rising_score": 10.0,
+              "volume_growth_rate": -1.0,
+              "engagement_acceleration": -1.0,
+              "active_accounts": 0,
+              "rationale": "volume -100% vs prior 4h, engagement rate -100%, 0 account(s) posting",
+              "sub_topic_id": 2,
+              "label": "ai",
+              "rising_kols": [
+                {
+                  "rising_score": 50.0,
+                  "volume_growth_rate": -1.0,
+                  "engagement_acceleration": -1.0,
+                  "active_accounts": 0,
+                  "rationale": "posts -100%, engagement -100% vs prior 4h",
+                  "handle": "technewsinside"
+                },
+                {
+                  "rising_score": 50.0,
+                  "volume_growth_rate": -1.0,
+                  "engagement_acceleration": -1.0,
+                  "active_accounts": 0,
+                  "rationale": "posts -100%, engagement -100% vs prior 4h",
+                  "handle": "yutinghaosfinance"
+                }
+              ]
+            },
+            {
+              "rising_score": 10.0,
+              "volume_growth_rate": -1.0,
+              "engagement_acceleration": -1.0,
+              "active_accounts": 0,
+              "rationale": "volume -100% vs prior 4h, engagement rate -100%, 0 account(s) posting",
+              "sub_topic_id": 0,
+              "label": "約新台幣",
+              "rising_kols": [
+                {
+                  "rising_score": 50.0,
+                  "volume_growth_rate": -1.0,
+                  "engagement_acceleration": -1.0,
+                  "active_accounts": 0,
+                  "rationale": "posts -100%, engagement -100% vs prior 4h",
+                  "handle": "ctee.fans"
+                },
+                {
+                  "rising_score": 50.0,
+                  "volume_growth_rate": -1.0,
+                  "engagement_acceleration": -1.0,
+                  "active_accounts": 0,
+                  "rationale": "posts -100%, engagement -100% vs prior 4h",
+                  "handle": "yutinghaosfinance"
+                }
+              ]
+            }
+          ]
         },
         {
           "rising_score": 10.0,
@@ -31,7 +146,16 @@
           "rationale": "volume -100% vs prior 4h, engagement rate -100%, 0 account(s) posting",
           "topic_id": 2,
           "label": "dram / nand / hbm / trendforce",
-          "rising_kols": [],
+          "rising_kols": [
+            {
+              "rising_score": 50.0,
+              "volume_growth_rate": -1.0,
+              "engagement_acceleration": -1.0,
+              "active_accounts": 0,
+              "rationale": "posts -100%, engagement -100% vs prior 4h",
+              "handle": "technewsinside"
+            }
+          ],
           "sub_topics": []
         }
       ]
