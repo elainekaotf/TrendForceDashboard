@@ -1,62 +1,98 @@
 {
-  "generated_at": "2026-07-16T12:33:05+08:00",
+  "generated_at": "2026-07-16T04:45:00+00:00",
   "time_range": "1h",
   "window": {
-    "start_utc": "2026-07-16T11:33:05+08:00",
-    "end_utc": "2026-07-16T12:33:05+08:00",
-    "start_tw": "Jul 16, 11:33",
-    "end_tw": "Jul 16, 12:33"
+    "start_utc": "2026-07-16T03:45:00+00:00",
+    "end_utc": "2026-07-16T04:45:00+00:00",
+    "start_tw": "Jul 16, 11:45",
+    "end_tw": "Jul 16, 12:45"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 6,
+      "total_posts": 11,
       "sentiment_counts": {
-        "positive": 2,
-        "neutral": 3,
+        "positive": 5,
+        "neutral": 5,
         "negative": 1
       },
       "sentiment_share": {
-        "positive": 0.333,
-        "neutral": 0.5,
-        "negative": 0.167
+        "positive": 0.455,
+        "neutral": 0.455,
+        "negative": 0.091
       },
       "top_terms": [
-        "prices",
-        "tower",
-        "announced",
-        "billion",
-        "investment",
-        "japan",
-        "centers",
-        "inch",
-        "panasonic",
-        "semiconductor"
+        "spacex",
+        "蜜月",
+        "月行",
+        "行情",
+        "情告",
+        "告終",
+        "蜜月行",
+        "月行情",
+        "行情告",
+        "情告終"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 0,
-        "label": "prices",
-        "heat": 50.0,
-        "volume": 6,
-        "engagement": 120,
+        "label": "巴菲特 / 而是信任三名子女已能接手財富分配 / 並非因蓋茲的醜聞爭議 / dram",
+        "heat": 90.0,
+        "volume": 9,
+        "engagement": 143,
         "entities": [
           "超微",
           "蓋茲",
-          "Tower",
-          "Panasonic Semiconductor",
-          "japan"
+          "美國",
+          "全明星",
+          "三星"
+        ]
+      },
+      {
+        "topic_id": 1,
+        "label": "spacex / 蜜月行情告終",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 1,
+        "entities": [
+          "SpaceX 蜜月行情告終",
+          "蜜月行情告終  蜜月行情告終  spacex",
+          "SpaceX\n 蜜月行情告終"
         ]
       }
     ],
     "named_entities": [
       {
         "entity": "超微",
-        "count": 3
+        "count": 4
       },
       {
         "entity": "蓋茲",
+        "count": 4
+      },
+      {
+        "entity": "美國",
+        "count": 3
+      },
+      {
+        "entity": "全明星",
+        "count": 3
+      },
+      {
+        "entity": "三星",
+        "count": 3
+      },
+      {
+        "entity": "輝達",
+        "count": 3
+      },
+      {
+        "entity": "博通",
+        "count": 3
+      },
+      {
+        "entity": "向蓋茲",
         "count": 3
       },
       {
@@ -76,27 +112,7 @@
         "count": 2
       },
       {
-        "entity": "美國",
-        "count": 2
-      },
-      {
-        "entity": "全明星",
-        "count": 2
-      },
-      {
-        "entity": "三星",
-        "count": 2
-      },
-      {
-        "entity": "輝達",
-        "count": 2
-      },
-      {
-        "entity": "博通",
-        "count": 2
-      },
-      {
-        "entity": "向蓋茲",
+        "entity": "黃仁勳",
         "count": 2
       },
       {
@@ -106,108 +122,104 @@
       {
         "entity": "Nuvoton",
         "count": 1
-      },
-      {
-        "entity": "panasonic semiconductor",
-        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-16T11:33:05.000002+08:00",
-        "bucket_end": "2026-07-16T11:37:22.142859+08:00",
+        "bucket_start": "2026-07-16T03:45:00.000002+00:00",
+        "bucket_end": "2026-07-16T03:49:17.142859+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-16T11:37:22.142859+08:00",
-        "bucket_end": "2026-07-16T11:41:39.285716+08:00",
+        "bucket_start": "2026-07-16T03:49:17.142859+00:00",
+        "bucket_end": "2026-07-16T03:53:34.285716+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T03:53:34.285716+00:00",
+        "bucket_end": "2026-07-16T03:57:51.428573+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T03:57:51.428573+00:00",
+        "bucket_end": "2026-07-16T04:02:08.571430+00:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T04:02:08.571430+00:00",
+        "bucket_end": "2026-07-16T04:06:25.714287+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T04:06:25.714287+00:00",
+        "bucket_end": "2026-07-16T04:10:42.857144+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T04:10:42.857144+00:00",
+        "bucket_end": "2026-07-16T04:15:00.000001+00:00",
         "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-16T11:41:39.285716+08:00",
-        "bucket_end": "2026-07-16T11:45:56.428573+08:00",
+        "bucket_start": "2026-07-16T04:15:00.000001+00:00",
+        "bucket_end": "2026-07-16T04:19:17.142858+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-16T11:45:56.428573+08:00",
-        "bucket_end": "2026-07-16T11:50:13.571430+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T11:50:13.571430+08:00",
-        "bucket_end": "2026-07-16T11:54:30.714287+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T11:54:30.714287+08:00",
-        "bucket_end": "2026-07-16T11:58:47.857144+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T11:58:47.857144+08:00",
-        "bucket_end": "2026-07-16T12:03:05.000001+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T12:03:05.000001+08:00",
-        "bucket_end": "2026-07-16T12:07:22.142858+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T12:07:22.142858+08:00",
-        "bucket_end": "2026-07-16T12:11:39.285715+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T12:11:39.285715+08:00",
-        "bucket_end": "2026-07-16T12:15:56.428572+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T12:15:56.428572+08:00",
-        "bucket_end": "2026-07-16T12:20:13.571429+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T12:20:13.571429+08:00",
-        "bucket_end": "2026-07-16T12:24:30.714286+08:00",
+        "bucket_start": "2026-07-16T04:19:17.142858+00:00",
+        "bucket_end": "2026-07-16T04:23:34.285715+00:00",
         "positive": 0,
         "neutral": 1,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-16T12:24:30.714286+08:00",
-        "bucket_end": "2026-07-16T12:28:47.857143+08:00",
+        "bucket_start": "2026-07-16T04:23:34.285715+00:00",
+        "bucket_end": "2026-07-16T04:27:51.428572+00:00",
         "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T04:27:51.428572+00:00",
+        "bucket_end": "2026-07-16T04:32:08.571429+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T04:32:08.571429+00:00",
+        "bucket_end": "2026-07-16T04:36:25.714286+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T04:36:25.714286+00:00",
+        "bucket_end": "2026-07-16T04:40:42.857143+00:00",
+        "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-16T12:28:47.857143+08:00",
-        "bucket_end": "2026-07-16T12:33:05+08:00",
-        "positive": 1,
+        "bucket_start": "2026-07-16T04:40:42.857143+00:00",
+        "bucket_end": "2026-07-16T04:45:00+00:00",
+        "positive": 0,
         "neutral": 0,
         "negative": 0
       }
@@ -216,46 +228,66 @@
       {
         "handle": "TrendForce",
         "top_topic_id": 0,
-        "top_topic_label": "prices",
+        "top_topic_label": "巴菲特 / 而是信任三名子女已能接手財富分配 / 並非因蓋茲的醜聞爭議 / dram",
         "focus_share": 1.0,
-        "post_count": 2
-      },
-      {
-        "handle": "technews_tw",
-        "top_topic_id": 0,
-        "top_topic_label": "prices",
-        "focus_share": 1.0,
-        "post_count": 3
+        "post_count": 1
       },
       {
         "handle": "jukan05",
         "top_topic_id": 0,
-        "top_topic_label": "prices",
+        "top_topic_label": "巴菲特 / 而是信任三名子女已能接手財富分配 / 並非因蓋茲的醜聞爭議 / dram",
         "focus_share": 1.0,
         "post_count": 1
+      },
+      {
+        "handle": "ctee.fans",
+        "top_topic_id": 0,
+        "top_topic_label": "巴菲特 / 而是信任三名子女已能接手財富分配 / 並非因蓋茲的醜聞爭議 / dram",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 0,
+        "top_topic_label": "巴菲特 / 而是信任三名子女已能接手財富分配 / 並非因蓋茲的醜聞爭議 / dram",
+        "focus_share": 0.8,
+        "post_count": 5
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 0,
+        "top_topic_label": "巴菲特 / 而是信任三名子女已能接手財富分配 / 並非因蓋茲的醜聞爭議 / dram",
+        "focus_share": 0.667,
+        "post_count": 3
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 0,
-        "label": "prices",
-        "total_engagement": 120,
-        "post_count": 6
+        "label": "巴菲特 / 而是信任三名子女已能接手財富分配 / 並非因蓋茲的醜聞爭議 / dram",
+        "total_engagement": 143,
+        "post_count": 9
+      },
+      {
+        "topic_id": 1,
+        "label": "spacex / 蜜月行情告終",
+        "total_engagement": 1,
+        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 1,
-          "likes": 6,
-          "engagement": 7,
-          "avg_engagement": 7.0
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 5,
-          "likes": 86,
-          "engagement": 113,
-          "avg_engagement": 22.6
+          "post_count": 11,
+          "likes": 117,
+          "engagement": 144,
+          "avg_engagement": 13.1
         },
         "evening": {
           "post_count": 0,
