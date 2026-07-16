@@ -44,6 +44,34 @@ set -u
 export PATH="/usr/local/bin:/usr/bin:/bin:/Library/Frameworks/Python.framework/Versions/3.10/bin:$PATH"
 cd "$(dirname "$0")"
 
+# Locking: scan/core/accounts/daily all regenerate the SAME docs/index.html
+# and do their own git commit+push (publish.sh) at the end - with no lock,
+# overlapping invocations (multiple scheduled launchd jobs, plus the
+# scraper-triggered chains added 2026-07-14/15) raced each other's pushes.
+# In practice this showed up as GitHub Pages deployments getting cancelled
+# (superseded by the next push landing seconds later) and a growing
+# backlog where "pipeline run complete" timestamps were hours after
+# "Starting" - not because the actual work was slow, but because the run
+# was queued behind other overlapping invocations the whole time. mkdir is
+# atomic on POSIX filesystems, so use a lock directory as a mutex - same
+# pattern as sync_data.sh's own lock, just with a much longer stale
+# timeout since a legitimate run here can genuinely take an hour or more
+# (sync_data.sh's own steps are short by comparison).
+LOCKDIR=".run_pipeline.lock"
+STALE_AFTER=7200  # 2h - generously above any observed legitimate run time
+waited=0
+while ! mkdir "$LOCKDIR" 2>/dev/null; do
+  if [ "$waited" -ge "$STALE_AFTER" ]; then
+    echo "[WARN] run_pipeline: lock held for ${STALE_AFTER}s - assuming a crashed run left it behind, taking over"
+    rmdir "$LOCKDIR" 2>/dev/null
+    mkdir "$LOCKDIR" 2>/dev/null
+    break
+  fi
+  sleep 5
+  waited=$((waited + 5))
+done
+trap 'rmdir "$LOCKDIR" 2>/dev/null' EXIT
+
 JOB="${1:-}"
 if [[ -z "$JOB" ]]; then
   echo "Usage: $0 <scan|core|accounts|daily>" >&2
