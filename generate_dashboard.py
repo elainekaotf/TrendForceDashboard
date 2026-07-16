@@ -1566,11 +1566,22 @@ def main():
     // extraction with no TF-IDF corpus to weight against. Mirrors
     // EN_NOISE_WORDS on the server side (cluster_topics.py).
     'just','today','regarding','really','very','also','some','amazing','great','good','bad','terrible',
-    'awesome','disappointing','news','update','report','story','article','like','likes','year','years','thanks',
+    'awesome','disappointing','news','update','report','story','article','like','likes','liked','year','years','thanks',
     'thank','pro','color','colors','colour','colours','expected','expects','expect',
     'progress','contract','contracts','published','publish','publishes','publishing',
-    'reportedly','reported','according','says','saying','told','telling',
+    'reportedly','reported','according','says','saying','said','told','telling',
     'claims','claimed','believe','believes','believed','think','thinks','thought','thoughts',
+    // Internet-slang/conversational filler and media placeholders - the
+    // original EN_NOISE_WORDS entries (added for the very first "image /
+    // bruh / buy / told" cluster-label fix) that this list never carried
+    // over until check_js_python_sync.py caught the gap.
+    'bruh','lol','lmao','rofl','omg','smh','tbh','imo','imho','fyi','btw',
+    'yeah','yep','nah','gonna','wanna','kinda','sorta','gotta',
+    'dude','bro','guys','guy','weebs','weeb',
+    'image','images','img','photo','photos','pic','pics','picture','pictures',
+    'video','videos','gif','gifs','thread','threads',
+    'wow','damn','literally','actually','basically','honestly','seriously',
+    'totally','definitely','probably','maybe','buy','buying','bought',
     // Geography and generic non-technical business words - "topics" here
     // are meant to read as industry/technical subject matter (chip names,
     // companies, products), not country names or generic corporate filler

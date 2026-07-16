@@ -1,29 +1,38 @@
 {
   "clusters": [
     {
-      "id": 6,
-      "label": "ai / nvidia / spacex / memory",
-      "size": 9,
+      "id": 1,
+      "label": "ai / memory / dram / hbm",
+      "size": 7,
       "accounts": {
-        "TrendForce": 1,
-        "technews_tw": 2,
         "jukan05": 2,
         "QQ_Timmy": 2,
-        "technewsinside": 1,
-        "ctee.fans": 1
+        "ctee.fans": 2,
+        "yutinghaosfinance": 1
       },
       "engagement_by_account": {
-        "TrendForce": 0,
-        "technews_tw": 2,
         "jukan05": 54,
         "QQ_Timmy": 33,
-        "technewsinside": 15,
-        "ctee.fans": 0
+        "ctee.fans": 22,
+        "yutinghaosfinance": 180
       }
     },
     {
-      "id": 14,
-      "label": "三星 / sk海力士 / galaxy / 台積電",
+      "id": 3,
+      "label": "tsmc / intel / packaging / foundry",
+      "size": 2,
+      "accounts": {
+        "TrendForce": 1,
+        "technews_tw": 1
+      },
+      "engagement_by_account": {
+        "TrendForce": 0,
+        "technews_tw": 0
+      }
+    },
+    {
+      "id": 7,
+      "label": "三星 / sk海力士 / hbm / 新聞來源",
       "size": 2,
       "accounts": {
         "technews_tw": 1,
@@ -35,19 +44,49 @@
       }
     },
     {
-      "id": 11,
-      "label": "hynix / sk / samsung / memory",
-      "size": 1,
+      "id": 17,
+      "label": "輝達 / ai / 黃仁勳 / ai晶片",
+      "size": 2,
       "accounts": {
-        "ctee.fans": 1
+        "technews_tw": 1,
+        "technewsinside": 1
       },
       "engagement_by_account": {
-        "ctee.fans": 22
+        "technews_tw": 2,
+        "technewsinside": 15
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 1,
+      "label": "ai / memory / dram / hbm",
+      "own_count": 0,
+      "competitor_count": 7,
+      "competitor_engagement": 289,
+      "competitors_covering": [
+        "jukan05",
+        "QQ_Timmy",
+        "ctee.fans",
+        "yutinghaosfinance"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 1,
+      "label": "ai / memory / dram / hbm",
+      "own_count": 0,
+      "competitor_count": 7,
+      "competitor_engagement": 289,
+      "competitors_covering": [
+        "jukan05",
+        "QQ_Timmy",
+        "ctee.fans",
+        "yutinghaosfinance"
+      ]
+    }
+  ],
   "window": {
     "start_utc": "2026-07-16T15:41:27+08:00",
     "end_utc": "2026-07-16T16:41:27+08:00",
