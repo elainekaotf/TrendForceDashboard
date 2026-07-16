@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-07-16T02:00:00+00:00",
+  "generated_at": "2026-07-16T12:33:05+08:00",
   "time_range": "1w",
   "window": {
-    "start_utc": "2026-07-09T02:00:00+00:00",
-    "end_utc": "2026-07-16T02:00:00+00:00",
-    "start_tw": "Jul 09, 10:00",
-    "end_tw": "Jul 16, 10:00"
+    "start_utc": "2026-07-09T12:33:05+08:00",
+    "end_utc": "2026-07-16T12:33:05+08:00",
+    "start_tw": "Jul 09, 12:33",
+    "end_tw": "Jul 16, 12:33"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 1281,
+      "total_posts": 1335,
       "sentiment_counts": {
-        "positive": 539,
-        "negative": 304,
-        "neutral": 438
+        "positive": 563,
+        "neutral": 460,
+        "negative": 312
       },
       "sentiment_share": {
-        "positive": 0.421,
-        "negative": 0.237,
-        "neutral": 0.342
+        "positive": 0.422,
+        "neutral": 0.345,
+        "negative": 0.234
       },
       "top_terms": [
         "記憶",
@@ -29,151 +29,164 @@
         "積電",
         "台積電",
         "導體",
-        "晶片",
         "半導",
-        "半導體"
+        "半導體",
+        "晶片"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 1,
-        "label": "ai / openai / sk / nvidia",
+        "label": "ai / asml / nvidia / iphone",
         "heat": 90.0,
-        "volume": 1054,
-        "engagement": 106877,
+        "volume": 1098,
+        "engagement": 111414,
         "entities": [
+          "台積電",
           "美國",
           "中國",
           "日本",
-          "台積電",
           "輝達"
         ]
       },
       {
         "topic_id": 10,
-        "label": "ai / meta / 生成式ai / cpu",
-        "heat": 14.2,
-        "volume": 100,
-        "engagement": 7009,
+        "label": "ai / meta / 輝達 / 生成式ai",
+        "heat": 13.9,
+        "volume": 101,
+        "engagement": 6864,
         "entities": [
           "輝達",
-          "AI",
-          "美國",
+          "台積電",
+          "日本",
           "中國",
-          "摩根"
+          "美國"
         ]
       },
       {
-        "topic_id": 9,
-        "label": "dram / hbm / trendforce / 記憶體",
+        "topic_id": 6,
+        "label": "dram / trendforce / hbm / 記憶體",
         "heat": 11.5,
-        "volume": 30,
-        "engagement": 2249,
+        "volume": 33,
+        "engagement": 2351,
         "entities": [
           "DRAM",
           "南亞科",
           "中國",
           "TrendForce",
-          "上市"
+          "美光"
         ]
       },
       {
-        "topic_id": 14,
+        "topic_id": 3,
+        "label": "openai / 蘋果 / chatgpt / gpt",
+        "heat": 11.0,
+        "volume": 23,
+        "engagement": 1463,
+        "entities": [
+          "馬斯克",
+          "OpenAI",
+          "曝光",
+          "智慧",
+          "白宮"
+        ]
+      },
+      {
+        "topic_id": 9,
         "label": "spacex / 馬斯克 / starlink / 衛星",
         "heat": 10.5,
-        "volume": 15,
-        "engagement": 734,
+        "volume": 16,
+        "engagement": 758,
         "entities": [
           "馬斯克",
           "上市",
           "中國",
-          "那斯",
-          "那斯達克"
+          "亞馬遜",
+          "那斯"
         ]
       },
       {
-        "topic_id": 12,
-        "label": "台積電 / 英特爾 / ai / 半導體",
+        "topic_id": 7,
+        "label": "cowos / emib / 先進封裝 / 英特爾",
         "heat": 10.3,
-        "volume": 20,
-        "engagement": 477,
+        "volume": 9,
+        "engagement": 414,
         "entities": [
           "台積電",
           "英特爾",
-          "三星",
-          "輝達",
-          "中研院"
-        ]
-      },
-      {
-        "topic_id": 15,
-        "label": "nand / trendforce / slc / flash",
-        "heat": 10.2,
-        "volume": 11,
-        "engagement": 253,
-        "entities": [
-          "NAND",
-          "日本",
-          "寶座",
-          "群聯",
-          "利基"
-        ]
-      },
-      {
-        "topic_id": 6,
-        "label": "萬人 / 日止 / 已連續 / 個月",
-        "heat": 10.2,
-        "volume": 4,
-        "engagement": 562,
-        "entities": [
-          "美國",
-          "日本",
-          "華盛頓",
-          "內政部",
-          "全國總"
-        ]
-      },
-      {
-        "topic_id": 13,
-        "label": "iphone / 蘋果 / 記憶體漲價 / 但分析師看好果粉黏著度高",
-        "heat": 10.1,
-        "volume": 16,
-        "engagement": 183,
-        "entities": [
-          "印度",
-          "內建",
-          "大摩",
-          "花旗",
-          "摩根士丹利"
+          "萬潤",
+          "高盛",
+          "大摩"
         ]
       },
       {
         "topic_id": 16,
-        "label": "每股稅後純益 / eps / 日召開法說會 / 月稅後純益",
+        "label": "slc / nand / trendforce / mlc",
         "heat": 10.1,
-        "volume": 3,
-        "engagement": 94,
+        "volume": 5,
+        "engagement": 152,
         "entities": [
-          "台新",
-          "力積電",
-          "國泰",
-          "金控"
+          "利基",
+          "slc",
+          "SLC",
+          "MLC",
+          "NAND"
+        ]
+      },
+      {
+        "topic_id": 4,
+        "label": "sk海力士 / sk / adr / 記憶體",
+        "heat": 10.1,
+        "volume": 20,
+        "engagement": 114,
+        "entities": [
+          "SK海力士",
+          "韓國",
+          "那斯",
+          "美國",
+          "三星"
         ]
       },
       {
         "topic_id": 5,
-        "label": "iatlas / 年齡恐比太陽還古老 / 星際彗星 / 天文",
+        "label": "nand / flash / trendforce / 執行長強勢宣示",
         "heat": 10.0,
-        "volume": 2,
-        "engagement": 10,
+        "volume": 5,
+        "engagement": 81,
         "entities": [
-          "太陽",
-          "古老",
-          "天文"
+          "日本",
+          "寶座",
+          "群聯",
+          "TrendForce",
+          "buff"
         ]
       },
       {
-        "topic_id": 17,
+        "topic_id": 15,
+        "label": "西班牙 / 七成人寧可還房貸也不要付租金 / 西班牙住房心理結構性轉變 / 住房危機",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 14,
+        "entities": [
+          "西班牙",
+          "人寧"
+        ]
+      },
+      {
+        "topic_id": 11,
+        "label": "天期限 / 主張重啟 / 伊朗 / 川普通知國會恢復對伊朗軍事行動",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 33,
+        "entities": [
+          "伊朗",
+          "川普",
+          "普通",
+          "經國會"
+        ]
+      },
+      {
+        "topic_id": 14,
         "label": "法說會 / 台積電法說會將登場 / 最高上看 / 台積電",
         "heat": 10.0,
         "volume": 2,
@@ -183,82 +196,53 @@
         ]
       },
       {
-        "topic_id": 3,
-        "label": "abf / 載板需求 / 伺服器展現韌性 / 南電",
+        "topic_id": 17,
+        "label": "研究發現大型地震前 / 地震 / 解密地震前兆 / 地震預報",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 16,
+        "engagement": 22,
         "entities": [
-          "伺服器"
+          "解密",
+          "於小"
         ]
       },
       {
-        "topic_id": 2,
-        "label": "荷莫茲海峽 / 將對通過荷莫茲海峽貨物徵收 / 川普 / 川普宣布重啟伊朗封鎖",
+        "topic_id": 13,
+        "label": "川普帳戶 / 理財教育 / 政府為新生兒投入 / 只能投資追蹤美國股市的指數基金",
         "heat": 10.0,
-        "volume": 3,
-        "engagement": 13,
+        "volume": 2,
+        "engagement": 12,
         "entities": [
-          "川普",
-          "荷莫茲海峽",
-          "徵收",
-          "伊朗",
-          "封鎖"
+          "川普"
         ]
       },
       {
         "topic_id": 8,
-        "label": "由台積電領軍打造先進封裝產業聚落 / 嘉義科學園區二期基地正式啟動 / 嘉義科學園區 / 帶領嘉義邁向科技重鎮新里程",
+        "label": "gaia / ai加速器 / 三星 / pc",
         "heat": 10.0,
-        "volume": 2,
-        "engagement": 43,
+        "volume": 3,
+        "engagement": 14,
         "entities": [
-          "嘉義",
-          "台積電",
-          "嘉義邁",
-          "重鎮"
+          "三星",
+          "高通",
+          "輝達"
+        ]
+      },
+      {
+        "topic_id": 2,
+        "label": "nasa / 韋伯望遠鏡 / 星系 / 星系最細緻影像",
+        "heat": 10.0,
+        "volume": 4,
+        "engagement": 18,
+        "entities": [
+          "韋伯望",
+          "雨燕",
+          "天文台",
+          "古柏"
         ]
       },
       {
         "topic_id": 0,
-        "label": "台灣供應鏈 / 坤暐科技無人機成烏克蘭突襲俄羅斯利器 / 嘉義小公司立大功 / 國防",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 228,
-        "entities": [
-          "嘉義",
-          "立大功",
-          "坤暐",
-          "烏克蘭",
-          "俄羅斯"
-        ]
-      },
-      {
-        "topic_id": 11,
-        "label": "加速尋找超導體 / 量子物理 / 超導體 / 找出兩種新超導材料",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 28,
-        "entities": [
-          "國際團隊"
-        ]
-      },
-      {
-        "topic_id": 4,
-        "label": "台股 / 台股逐洞賽 / 台股雷達 / 檔熱門股",
-        "heat": 10.0,
-        "volume": 7,
-        "engagement": 60,
-        "entities": [
-          "修正",
-          "南亞科",
-          "英業達",
-          "永豐",
-          "環球晶"
-        ]
-      },
-      {
-        "topic_id": 7,
         "label": "名家評論 / 川普",
         "heat": 10.0,
         "volume": 6,
@@ -270,28 +254,39 @@
           "亞洲",
           "普惠"
         ]
+      },
+      {
+        "topic_id": 12,
+        "label": "月開心果進口值 / 與核桃 / 已成為成長最快的進口堅果 / 僅次於杏仁",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 845,
+        "entities": [
+          "台灣",
+          "財政部"
+        ]
       }
     ],
     "named_entities": [
       {
         "entity": "台積電",
-        "count": 174
+        "count": 188
       },
       {
         "entity": "美國",
-        "count": 160
+        "count": 159
       },
       {
         "entity": "中國",
-        "count": 133
+        "count": 128
       },
       {
         "entity": "輝達",
-        "count": 104
+        "count": 116
       },
       {
         "entity": "日本",
-        "count": 101
+        "count": 108
       },
       {
         "entity": "台灣",
@@ -299,223 +294,223 @@
       },
       {
         "entity": "三星",
-        "count": 66
+        "count": 68
       },
       {
         "entity": "川普",
         "count": 61
       },
       {
-        "entity": "韓國",
+        "entity": "AI",
         "count": 51
       },
       {
-        "entity": "AI",
-        "count": 48
+        "entity": "英特爾",
+        "count": 49
+      },
+      {
+        "entity": "韓國",
+        "count": 49
       },
       {
         "entity": "智慧",
-        "count": 48
-      },
-      {
-        "entity": "英特爾",
-        "count": 44
-      },
-      {
-        "entity": "馬斯克",
-        "count": 44
+        "count": 45
       },
       {
         "entity": "伺服器",
+        "count": 45
+      },
+      {
+        "entity": "馬斯克",
         "count": 41
       },
       {
-        "entity": "上市",
-        "count": 33
+        "entity": "黃仁勳",
+        "count": 36
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-09T02:00:00+00:00",
-        "bucket_end": "2026-07-09T14:00:00+00:00",
-        "positive": 64,
-        "neutral": 45,
-        "negative": 23
+        "bucket_start": "2026-07-09T12:33:05+08:00",
+        "bucket_end": "2026-07-10T00:33:05+08:00",
+        "positive": 69,
+        "neutral": 43,
+        "negative": 24
       },
       {
-        "bucket_start": "2026-07-09T14:00:00+00:00",
-        "bucket_end": "2026-07-10T02:00:00+00:00",
-        "positive": 22,
-        "neutral": 22,
-        "negative": 10
+        "bucket_start": "2026-07-10T00:33:05+08:00",
+        "bucket_end": "2026-07-10T12:33:05+08:00",
+        "positive": 21,
+        "neutral": 21,
+        "negative": 7
       },
       {
-        "bucket_start": "2026-07-10T02:00:00+00:00",
-        "bucket_end": "2026-07-10T14:00:00+00:00",
-        "positive": 51,
+        "bucket_start": "2026-07-10T12:33:05+08:00",
+        "bucket_end": "2026-07-11T00:33:05+08:00",
+        "positive": 48,
         "neutral": 31,
         "negative": 28
       },
       {
-        "bucket_start": "2026-07-10T14:00:00+00:00",
-        "bucket_end": "2026-07-11T02:00:00+00:00",
-        "positive": 20,
-        "neutral": 13,
-        "negative": 6
-      },
-      {
-        "bucket_start": "2026-07-11T02:00:00+00:00",
-        "bucket_end": "2026-07-11T14:00:00+00:00",
-        "positive": 34,
-        "neutral": 27,
-        "negative": 27
-      },
-      {
-        "bucket_start": "2026-07-11T14:00:00+00:00",
-        "bucket_end": "2026-07-12T02:00:00+00:00",
-        "positive": 16,
-        "neutral": 9,
-        "negative": 12
-      },
-      {
-        "bucket_start": "2026-07-12T02:00:00+00:00",
-        "bucket_end": "2026-07-12T14:00:00+00:00",
-        "positive": 31,
-        "neutral": 45,
-        "negative": 23
-      },
-      {
-        "bucket_start": "2026-07-12T14:00:00+00:00",
-        "bucket_end": "2026-07-13T02:00:00+00:00",
+        "bucket_start": "2026-07-11T00:33:05+08:00",
+        "bucket_end": "2026-07-11T12:33:05+08:00",
         "positive": 19,
-        "neutral": 15,
-        "negative": 11
+        "neutral": 10,
+        "negative": 5
       },
       {
-        "bucket_start": "2026-07-13T02:00:00+00:00",
-        "bucket_end": "2026-07-13T14:00:00+00:00",
-        "positive": 77,
-        "neutral": 65,
+        "bucket_start": "2026-07-11T12:33:05+08:00",
+        "bucket_end": "2026-07-12T00:33:05+08:00",
+        "positive": 35,
+        "neutral": 30,
+        "negative": 29
+      },
+      {
+        "bucket_start": "2026-07-12T00:33:05+08:00",
+        "bucket_end": "2026-07-12T12:33:05+08:00",
+        "positive": 14,
+        "neutral": 14,
+        "negative": 14
+      },
+      {
+        "bucket_start": "2026-07-12T12:33:05+08:00",
+        "bucket_end": "2026-07-13T00:33:05+08:00",
+        "positive": 32,
+        "neutral": 40,
+        "negative": 18
+      },
+      {
+        "bucket_start": "2026-07-13T00:33:05+08:00",
+        "bucket_end": "2026-07-13T12:33:05+08:00",
+        "positive": 33,
+        "neutral": 19,
+        "negative": 16
+      },
+      {
+        "bucket_start": "2026-07-13T12:33:05+08:00",
+        "bucket_end": "2026-07-14T00:33:05+08:00",
+        "positive": 70,
+        "neutral": 63,
         "negative": 52
       },
       {
-        "bucket_start": "2026-07-13T14:00:00+00:00",
-        "bucket_end": "2026-07-14T02:00:00+00:00",
-        "positive": 34,
-        "neutral": 19,
-        "negative": 17
+        "bucket_start": "2026-07-14T00:33:05+08:00",
+        "bucket_end": "2026-07-14T12:33:05+08:00",
+        "positive": 38,
+        "neutral": 25,
+        "negative": 20
       },
       {
-        "bucket_start": "2026-07-14T02:00:00+00:00",
-        "bucket_end": "2026-07-14T14:00:00+00:00",
-        "positive": 74,
-        "neutral": 65,
+        "bucket_start": "2026-07-14T12:33:05+08:00",
+        "bucket_end": "2026-07-15T00:33:05+08:00",
+        "positive": 72,
+        "neutral": 59,
         "negative": 53
       },
       {
-        "bucket_start": "2026-07-14T14:00:00+00:00",
-        "bucket_end": "2026-07-15T02:00:00+00:00",
-        "positive": 36,
-        "neutral": 22,
+        "bucket_start": "2026-07-15T00:33:05+08:00",
+        "bucket_end": "2026-07-15T12:33:05+08:00",
+        "positive": 34,
+        "neutral": 34,
+        "negative": 20
+      },
+      {
+        "bucket_start": "2026-07-15T12:33:05+08:00",
+        "bucket_end": "2026-07-16T00:33:05+08:00",
+        "positive": 57,
+        "neutral": 54,
         "negative": 17
       },
       {
-        "bucket_start": "2026-07-15T02:00:00+00:00",
-        "bucket_end": "2026-07-15T14:00:00+00:00",
-        "positive": 48,
-        "neutral": 50,
-        "negative": 21
-      },
-      {
-        "bucket_start": "2026-07-15T14:00:00+00:00",
-        "bucket_end": "2026-07-16T02:00:00+00:00",
-        "positive": 12,
-        "neutral": 10,
-        "negative": 4
+        "bucket_start": "2026-07-16T00:33:05+08:00",
+        "bucket_end": "2026-07-16T12:33:05+08:00",
+        "positive": 21,
+        "neutral": 16,
+        "negative": 9
       }
     ],
     "coverage_focus_ranking": [
       {
         "handle": "dylan522p",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sk / nvidia",
+        "top_topic_label": "ai / asml / nvidia / iphone",
         "focus_share": 1.0,
         "post_count": 3
       },
       {
         "handle": "tphuang",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sk / nvidia",
-        "focus_share": 0.963,
-        "post_count": 54
+        "top_topic_label": "ai / asml / nvidia / iphone",
+        "focus_share": 0.968,
+        "post_count": 62
+      },
+      {
+        "handle": "ctee.fans",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / asml / nvidia / iphone",
+        "focus_share": 0.954,
+        "post_count": 240
       },
       {
         "handle": "yutinghaosfinance",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sk / nvidia",
-        "focus_share": 0.92,
+        "top_topic_label": "ai / asml / nvidia / iphone",
+        "focus_share": 0.912,
         "post_count": 113
       },
       {
         "handle": "tengyanAI",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sk / nvidia",
-        "focus_share": 0.905,
-        "post_count": 42
-      },
-      {
-        "handle": "ctee.fans",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sk / nvidia",
-        "focus_share": 0.902,
-        "post_count": 246
-      },
-      {
-        "handle": "jukan05",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sk / nvidia",
-        "focus_share": 0.871,
-        "post_count": 62
+        "top_topic_label": "ai / asml / nvidia / iphone",
+        "focus_share": 0.884,
+        "post_count": 43
       },
       {
         "handle": "SemiAnalysis_",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sk / nvidia",
-        "focus_share": 0.867,
-        "post_count": 45
+        "top_topic_label": "ai / asml / nvidia / iphone",
+        "focus_share": 0.882,
+        "post_count": 51
       },
       {
-        "handle": "QQ_Timmy",
+        "handle": "jukan05",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sk / nvidia",
-        "focus_share": 0.804,
-        "post_count": 56
-      },
-      {
-        "handle": "technewsinside",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sk / nvidia",
-        "focus_share": 0.778,
-        "post_count": 252
+        "top_topic_label": "ai / asml / nvidia / iphone",
+        "focus_share": 0.868,
+        "post_count": 68
       },
       {
         "handle": "TrendForce",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sk / nvidia",
-        "focus_share": 0.757,
-        "post_count": 37
+        "top_topic_label": "ai / asml / nvidia / iphone",
+        "focus_share": 0.846,
+        "post_count": 39
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / asml / nvidia / iphone",
+        "focus_share": 0.833,
+        "post_count": 66
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / asml / nvidia / iphone",
+        "focus_share": 0.762,
+        "post_count": 252
       },
       {
         "handle": "technews_tw",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sk / nvidia",
-        "focus_share": 0.739,
-        "post_count": 364
+        "top_topic_label": "ai / asml / nvidia / iphone",
+        "focus_share": 0.708,
+        "post_count": 391
       },
       {
         "handle": "TrendForce.tw",
         "top_topic_id": 1,
-        "top_topic_label": "ai / openai / sk / nvidia",
+        "top_topic_label": "ai / asml / nvidia / iphone",
         "focus_share": 0.571,
         "post_count": 7
       }
@@ -523,138 +518,138 @@
     "top_engagement_ranking": [
       {
         "topic_id": 1,
-        "label": "ai / openai / sk / nvidia",
-        "total_engagement": 106877,
-        "post_count": 1054
+        "label": "ai / asml / nvidia / iphone",
+        "total_engagement": 111414,
+        "post_count": 1098
       },
       {
         "topic_id": 10,
-        "label": "ai / meta / 生成式ai / cpu",
-        "total_engagement": 7009,
-        "post_count": 100
-      },
-      {
-        "topic_id": 9,
-        "label": "dram / hbm / trendforce / 記憶體",
-        "total_engagement": 2249,
-        "post_count": 30
-      },
-      {
-        "topic_id": 14,
-        "label": "spacex / 馬斯克 / starlink / 衛星",
-        "total_engagement": 734,
-        "post_count": 15
+        "label": "ai / meta / 輝達 / 生成式ai",
+        "total_engagement": 6864,
+        "post_count": 101
       },
       {
         "topic_id": 6,
-        "label": "萬人 / 日止 / 已連續 / 個月",
-        "total_engagement": 562,
-        "post_count": 4
+        "label": "dram / trendforce / hbm / 記憶體",
+        "total_engagement": 2351,
+        "post_count": 33
+      },
+      {
+        "topic_id": 3,
+        "label": "openai / 蘋果 / chatgpt / gpt",
+        "total_engagement": 1463,
+        "post_count": 23
       },
       {
         "topic_id": 12,
-        "label": "台積電 / 英特爾 / ai / 半導體",
-        "total_engagement": 477,
-        "post_count": 20
-      },
-      {
-        "topic_id": 15,
-        "label": "nand / trendforce / slc / flash",
-        "total_engagement": 253,
-        "post_count": 11
-      },
-      {
-        "topic_id": 0,
-        "label": "台灣供應鏈 / 坤暐科技無人機成烏克蘭突襲俄羅斯利器 / 嘉義小公司立大功 / 國防",
-        "total_engagement": 228,
+        "label": "月開心果進口值 / 與核桃 / 已成為成長最快的進口堅果 / 僅次於杏仁",
+        "total_engagement": 845,
         "post_count": 2
       },
       {
-        "topic_id": 13,
-        "label": "iphone / 蘋果 / 記憶體漲價 / 但分析師看好果粉黏著度高",
-        "total_engagement": 183,
+        "topic_id": 9,
+        "label": "spacex / 馬斯克 / starlink / 衛星",
+        "total_engagement": 758,
         "post_count": 16
       },
       {
+        "topic_id": 7,
+        "label": "cowos / emib / 先進封裝 / 英特爾",
+        "total_engagement": 414,
+        "post_count": 9
+      },
+      {
         "topic_id": 16,
-        "label": "每股稅後純益 / eps / 日召開法說會 / 月稅後純益",
-        "total_engagement": 94,
-        "post_count": 3
+        "label": "slc / nand / trendforce / mlc",
+        "total_engagement": 152,
+        "post_count": 5
       },
       {
         "topic_id": 4,
-        "label": "台股 / 台股逐洞賽 / 台股雷達 / 檔熱門股",
-        "total_engagement": 60,
-        "post_count": 7
+        "label": "sk海力士 / sk / adr / 記憶體",
+        "total_engagement": 114,
+        "post_count": 20
       },
       {
-        "topic_id": 8,
-        "label": "由台積電領軍打造先進封裝產業聚落 / 嘉義科學園區二期基地正式啟動 / 嘉義科學園區 / 帶領嘉義邁向科技重鎮新里程",
-        "total_engagement": 43,
-        "post_count": 2
+        "topic_id": 5,
+        "label": "nand / flash / trendforce / 執行長強勢宣示",
+        "total_engagement": 81,
+        "post_count": 5
       },
       {
         "topic_id": 11,
-        "label": "加速尋找超導體 / 量子物理 / 超導體 / 找出兩種新超導材料",
-        "total_engagement": 28,
+        "label": "天期限 / 主張重啟 / 伊朗 / 川普通知國會恢復對伊朗軍事行動",
+        "total_engagement": 33,
         "post_count": 2
       },
       {
-        "topic_id": 17,
+        "topic_id": 14,
         "label": "法說會 / 台積電法說會將登場 / 最高上看 / 台積電",
         "total_engagement": 27,
         "post_count": 2
       },
       {
-        "topic_id": 7,
+        "topic_id": 0,
         "label": "名家評論 / 川普",
         "total_engagement": 25,
         "post_count": 6
       },
       {
-        "topic_id": 3,
-        "label": "abf / 載板需求 / 伺服器展現韌性 / 南電",
-        "total_engagement": 16,
+        "topic_id": 17,
+        "label": "研究發現大型地震前 / 地震 / 解密地震前兆 / 地震預報",
+        "total_engagement": 22,
         "post_count": 2
       },
       {
         "topic_id": 2,
-        "label": "荷莫茲海峽 / 將對通過荷莫茲海峽貨物徵收 / 川普 / 川普宣布重啟伊朗封鎖",
-        "total_engagement": 13,
+        "label": "nasa / 韋伯望遠鏡 / 星系 / 星系最細緻影像",
+        "total_engagement": 18,
+        "post_count": 4
+      },
+      {
+        "topic_id": 15,
+        "label": "西班牙 / 七成人寧可還房貸也不要付租金 / 西班牙住房心理結構性轉變 / 住房危機",
+        "total_engagement": 14,
+        "post_count": 2
+      },
+      {
+        "topic_id": 8,
+        "label": "gaia / ai加速器 / 三星 / pc",
+        "total_engagement": 14,
         "post_count": 3
       },
       {
-        "topic_id": 5,
-        "label": "iatlas / 年齡恐比太陽還古老 / 星際彗星 / 天文",
-        "total_engagement": 10,
+        "topic_id": 13,
+        "label": "川普帳戶 / 理財教育 / 政府為新生兒投入 / 只能投資追蹤美國股市的指數基金",
+        "total_engagement": 12,
         "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 248,
-          "likes": 22322,
-          "engagement": 25076,
-          "avg_engagement": 101.1
+          "post_count": 263,
+          "likes": 23654,
+          "engagement": 26631,
+          "avg_engagement": 101.3
         },
         "afternoon": {
-          "post_count": 374,
-          "likes": 18766,
-          "engagement": 20453,
-          "avg_engagement": 54.7
+          "post_count": 384,
+          "likes": 20441,
+          "engagement": 22414,
+          "avg_engagement": 58.4
         },
         "evening": {
-          "post_count": 357,
-          "likes": 26960,
-          "engagement": 28667,
-          "avg_engagement": 80.3
+          "post_count": 379,
+          "likes": 28155,
+          "engagement": 30106,
+          "avg_engagement": 79.4
         },
         "late_night": {
-          "post_count": 45,
-          "likes": 6539,
-          "engagement": 7285,
-          "avg_engagement": 161.9
+          "post_count": 50,
+          "likes": 7186,
+          "engagement": 8001,
+          "avg_engagement": 160.0
         }
       },
       "peak_slot": "afternoon"

@@ -1,268 +1,450 @@
 {
-  "generated_at": "2026-07-16T02:00:00+00:00",
+  "generated_at": "2026-07-16T12:33:05+08:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-15T18:00:00+00:00",
-    "end_utc": "2026-07-16T02:00:00+00:00",
-    "start_tw": "Jul 16, 02:00",
-    "end_tw": "Jul 16, 10:00"
+    "start_utc": "2026-07-16T04:33:05+08:00",
+    "end_utc": "2026-07-16T12:33:05+08:00",
+    "start_tw": "Jul 16, 04:33",
+    "end_tw": "Jul 16, 12:33"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 10,
+      "total_posts": 45,
       "sentiment_counts": {
-        "positive": 5,
-        "neutral": 4,
-        "negative": 1
+        "positive": 20,
+        "neutral": 17,
+        "negative": 8
       },
       "sentiment_share": {
-        "positive": 0.5,
-        "neutral": 0.4,
-        "negative": 0.1
+        "positive": 0.444,
+        "neutral": 0.378,
+        "negative": 0.178
       },
       "top_terms": [
-        "不只",
-        "台積",
-        "這項",
-        "項重",
-        "市值",
         "輝達",
-        "登場",
-        "外資",
-        "alphabet",
-        "巴菲"
+        "台積",
+        "積電",
+        "台積電",
+        "asml",
+        "標價",
+        "chip",
+        "nvidia",
+        "台達",
+        "達電"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 0,
-        "label": "台塑九寶市值飆 / 外資高喊eps季季高 / 台積法說今登場 / 各項重點搶先曝光",
+        "label": "tpu / 台積電 / memory / 輝達",
         "heat": 90.0,
-        "volume": 9,
-        "engagement": 407,
+        "volume": 21,
+        "engagement": 568,
         "entities": [
+          "台積電",
+          "高盛",
           "台灣",
-          "輝達",
-          "波克夏",
-          "海瑟威",
-          "阿貝爾"
+          "修正",
+          "艾司摩爾"
+        ]
+      },
+      {
+        "topic_id": 7,
+        "label": "asml / tsmc / chip / equipment",
+        "heat": 24.2,
+        "volume": 4,
+        "engagement": 303,
+        "entities": [
+          "台積電",
+          "雙方衝",
+          "ASML",
+          "Daily News Recap  The Information  ASML",
+          "EUV"
         ]
       },
       {
         "topic_id": 1,
-        "label": "外資空軍示弱 / 台股返月線戰 / 台積等重量級財報登場",
+        "label": "nvidia / sega / 輝達 / memory",
+        "heat": 15.9,
+        "volume": 4,
+        "engagement": 61,
+        "entities": [
+          "黃仁勳",
+          "輝達",
+          "台達電",
+          "鈴木裕",
+          "瑞銀"
+        ]
+      },
+      {
+        "topic_id": 4,
+        "label": "ai / 攜手 / 輝達 / chip",
+        "heat": 14.7,
+        "volume": 4,
+        "engagement": 46,
+        "entities": [
+          "輝達",
+          "黃仁勳",
+          "川崎",
+          "鴻海",
+          "拉開"
+        ]
+      },
+      {
+        "topic_id": 8,
+        "label": "台達電 / ai / rubin / 輝達",
+        "heat": 13.5,
+        "volume": 3,
+        "engagement": 34,
+        "entities": [
+          "台達電",
+          "大革命",
+          "輝達"
+        ]
+      },
+      {
+        "topic_id": 3,
+        "label": "長鑫存儲 / dram / 億人民幣",
+        "heat": 10.3,
+        "volume": 3,
+        "engagement": 4,
+        "entities": [
+          "美光",
+          "上海",
+          "中國"
+        ]
+      },
+      {
+        "topic_id": 2,
+        "label": "semiconductor / investment / equipment",
         "heat": 10.0,
-        "volume": 1,
-        "engagement": 21,
-        "entities": []
+        "volume": 2,
+        "engagement": 200,
+        "entities": [
+          "Tower",
+          "Panasonic Semiconductor",
+          "japan",
+          "nuvoton",
+          "samsung"
+        ]
+      },
+      {
+        "topic_id": 6,
+        "label": "google / dram / 輝達",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 3,
+        "entities": [
+          "超微",
+          "美國",
+          "全明星",
+          "三星",
+          "輝達"
+        ]
+      },
+      {
+        "topic_id": 5,
+        "label": "巴菲特",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 2,
+        "entities": [
+          "波克夏",
+          "蓋茲",
+          "向蓋茲"
+        ]
       }
     ],
     "named_entities": [
+      {
+        "entity": "輝達",
+        "count": 16
+      },
+      {
+        "entity": "台積電",
+        "count": 14
+      },
+      {
+        "entity": "黃仁勳",
+        "count": 11
+      },
+      {
+        "entity": "台達電",
+        "count": 10
+      },
+      {
+        "entity": "波克夏",
+        "count": 5
+      },
+      {
+        "entity": "高盛",
+        "count": 4
+      },
       {
         "entity": "台灣",
         "count": 4
       },
       {
-        "entity": "輝達",
-        "count": 2
+        "entity": "超微",
+        "count": 3
       },
       {
-        "entity": "波克夏",
-        "count": 1
+        "entity": "蓋茲",
+        "count": 3
       },
       {
-        "entity": "海瑟威",
-        "count": 1
+        "entity": "川崎",
+        "count": 3
       },
       {
-        "entity": "阿貝爾",
-        "count": 1
+        "entity": "鴻海",
+        "count": 3
       },
       {
-        "entity": "青安",
-        "count": 1
-      },
-      {
-        "entity": "曝光",
-        "count": 1
-      },
-      {
-        "entity": "國際政經",
-        "count": 1
-      },
-      {
-        "entity": "九寶",
-        "count": 1
-      },
-      {
-        "entity": "摩通",
-        "count": 1
-      },
-      {
-        "entity": "南亞",
-        "count": 1
+        "entity": "美光",
+        "count": 3
       },
       {
         "entity": "中國",
-        "count": 1
+        "count": 3
+      },
+      {
+        "entity": "修正",
+        "count": 3
       },
       {
         "entity": "艾司摩爾",
-        "count": 1
-      },
-      {
-        "entity": "紫外光",
-        "count": 1
-      },
-      {
-        "entity": "台積電",
-        "count": 1
+        "count": 3
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-15T18:00:00.000002+00:00",
-        "bucket_end": "2026-07-15T18:34:17.142859+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-15T18:34:17.142859+00:00",
-        "bucket_end": "2026-07-15T19:08:34.285716+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-15T19:08:34.285716+00:00",
-        "bucket_end": "2026-07-15T19:42:51.428573+00:00",
+        "bucket_start": "2026-07-16T04:33:05.000002+08:00",
+        "bucket_end": "2026-07-16T05:07:22.142859+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-15T19:42:51.428573+00:00",
-        "bucket_end": "2026-07-15T20:17:08.571430+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-15T20:17:08.571430+00:00",
-        "bucket_end": "2026-07-15T20:51:25.714287+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-15T20:51:25.714287+00:00",
-        "bucket_end": "2026-07-15T21:25:42.857144+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-15T21:25:42.857144+00:00",
-        "bucket_end": "2026-07-15T22:00:00.000001+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-15T22:00:00.000001+00:00",
-        "bucket_end": "2026-07-15T22:34:17.142858+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-15T22:34:17.142858+00:00",
-        "bucket_end": "2026-07-15T23:08:34.285715+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-15T23:08:34.285715+00:00",
-        "bucket_end": "2026-07-15T23:42:51.428572+00:00",
-        "positive": 0,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-15T23:42:51.428572+00:00",
-        "bucket_end": "2026-07-16T00:17:08.571429+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T00:17:08.571429+00:00",
-        "bucket_end": "2026-07-16T00:51:25.714286+00:00",
-        "positive": 3,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T00:51:25.714286+00:00",
-        "bucket_end": "2026-07-16T01:25:42.857143+00:00",
+        "bucket_start": "2026-07-16T05:07:22.142859+08:00",
+        "bucket_end": "2026-07-16T05:41:39.285716+08:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-16T01:25:42.857143+00:00",
-        "bucket_end": "2026-07-16T02:00:00+00:00",
+        "bucket_start": "2026-07-16T05:41:39.285716+08:00",
+        "bucket_end": "2026-07-16T06:15:56.428573+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T06:15:56.428573+08:00",
+        "bucket_end": "2026-07-16T06:50:13.571430+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T06:50:13.571430+08:00",
+        "bucket_end": "2026-07-16T07:24:30.714287+08:00",
         "positive": 0,
         "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-16T07:24:30.714287+08:00",
+        "bucket_end": "2026-07-16T07:58:47.857144+08:00",
+        "positive": 0,
+        "neutral": 4,
         "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T07:58:47.857144+08:00",
+        "bucket_end": "2026-07-16T08:33:05.000001+08:00",
+        "positive": 6,
+        "neutral": 2,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-16T08:33:05.000001+08:00",
+        "bucket_end": "2026-07-16T09:07:22.142858+08:00",
+        "positive": 2,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-16T09:07:22.142858+08:00",
+        "bucket_end": "2026-07-16T09:41:39.285715+08:00",
+        "positive": 2,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-16T09:41:39.285715+08:00",
+        "bucket_end": "2026-07-16T10:15:56.428572+08:00",
+        "positive": 4,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T10:15:56.428572+08:00",
+        "bucket_end": "2026-07-16T10:50:13.571429+08:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-16T10:50:13.571429+08:00",
+        "bucket_end": "2026-07-16T11:24:30.714286+08:00",
+        "positive": 2,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T11:24:30.714286+08:00",
+        "bucket_end": "2026-07-16T11:58:47.857143+08:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T11:58:47.857143+08:00",
+        "bucket_end": "2026-07-16T12:33:05+08:00",
+        "positive": 2,
+        "neutral": 1,
+        "negative": 1
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "yutinghaosfinance",
+        "handle": "SemiAnalysis_",
         "top_topic_id": 0,
-        "top_topic_label": "台塑九寶市值飆 / 外資高喊eps季季高 / 台積法說今登場 / 各項重點搶先曝光",
+        "top_topic_label": "tpu / 台積電 / memory / 輝達",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 0,
+        "top_topic_label": "tpu / 台積電 / memory / 輝達",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "ctee.fans",
         "top_topic_id": 0,
-        "top_topic_label": "台塑九寶市值飆 / 外資高喊eps季季高 / 台積法說今登場 / 各項重點搶先曝光",
-        "focus_share": 0.889,
+        "top_topic_label": "tpu / 台積電 / memory / 輝達",
+        "focus_share": 1.0,
         "post_count": 9
+      },
+      {
+        "handle": "tphuang",
+        "top_topic_id": 0,
+        "top_topic_label": "tpu / 台積電 / memory / 輝達",
+        "focus_share": 0.667,
+        "post_count": 3
+      },
+      {
+        "handle": "TrendForce",
+        "top_topic_id": 2,
+        "top_topic_label": "semiconductor / investment / equipment",
+        "focus_share": 0.5,
+        "post_count": 2
+      },
+      {
+        "handle": "jukan05",
+        "top_topic_id": 0,
+        "top_topic_label": "tpu / 台積電 / memory / 輝達",
+        "focus_share": 0.5,
+        "post_count": 4
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 7,
+        "top_topic_label": "asml / tsmc / chip / equipment",
+        "focus_share": 0.25,
+        "post_count": 4
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 0,
+        "top_topic_label": "tpu / 台積電 / memory / 輝達",
+        "focus_share": 0.238,
+        "post_count": 21
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 0,
-        "label": "台塑九寶市值飆 / 外資高喊eps季季高 / 台積法說今登場 / 各項重點搶先曝光",
-        "total_engagement": 407,
-        "post_count": 9
+        "label": "tpu / 台積電 / memory / 輝達",
+        "total_engagement": 568,
+        "post_count": 21
+      },
+      {
+        "topic_id": 7,
+        "label": "asml / tsmc / chip / equipment",
+        "total_engagement": 303,
+        "post_count": 4
+      },
+      {
+        "topic_id": 2,
+        "label": "semiconductor / investment / equipment",
+        "total_engagement": 200,
+        "post_count": 2
       },
       {
         "topic_id": 1,
-        "label": "外資空軍示弱 / 台股返月線戰 / 台積等重量級財報登場",
-        "total_engagement": 21,
-        "post_count": 1
+        "label": "nvidia / sega / 輝達 / memory",
+        "total_engagement": 61,
+        "post_count": 4
+      },
+      {
+        "topic_id": 4,
+        "label": "ai / 攜手 / 輝達 / chip",
+        "total_engagement": 46,
+        "post_count": 4
+      },
+      {
+        "topic_id": 8,
+        "label": "台達電 / ai / rubin / 輝達",
+        "total_engagement": 34,
+        "post_count": 3
+      },
+      {
+        "topic_id": 3,
+        "label": "長鑫存儲 / dram / 億人民幣",
+        "total_engagement": 4,
+        "post_count": 3
+      },
+      {
+        "topic_id": 6,
+        "label": "google / dram / 輝達",
+        "total_engagement": 3,
+        "post_count": 2
+      },
+      {
+        "topic_id": 5,
+        "label": "巴菲特",
+        "total_engagement": 2,
+        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 9,
-          "likes": 180,
-          "engagement": 180,
-          "avg_engagement": 20.0
+          "post_count": 38,
+          "likes": 830,
+          "engagement": 946,
+          "avg_engagement": 24.9
         },
         "afternoon": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 5,
+          "likes": 86,
+          "engagement": 113,
+          "avg_engagement": 22.6
         },
         "evening": {
           "post_count": 0,
@@ -271,10 +453,10 @@
           "avg_engagement": 0.0
         },
         "late_night": {
-          "post_count": 1,
-          "likes": 248,
-          "engagement": 248,
-          "avg_engagement": 248.0
+          "post_count": 2,
+          "likes": 145,
+          "engagement": 162,
+          "avg_engagement": 81.0
         }
       },
       "peak_slot": "morning"
