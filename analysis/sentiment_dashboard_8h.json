@@ -1,175 +1,73 @@
 {
-  "generated_at": "2026-07-17T03:27:37+08:00",
+  "generated_at": "2026-07-17T01:00:00+00:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-16T19:27:37+08:00",
-    "end_utc": "2026-07-17T03:27:37+08:00",
-    "start_tw": "Jul 16, 19:27",
-    "end_tw": "Jul 17, 03:27"
+    "start_utc": "2026-07-16T17:00:00+00:00",
+    "end_utc": "2026-07-17T01:00:00+00:00",
+    "start_tw": "Jul 17, 01:00",
+    "end_tw": "Jul 17, 09:00"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 36,
+      "total_posts": 12,
       "sentiment_counts": {
-        "positive": 20,
-        "neutral": 11,
-        "negative": 5
+        "positive": 6,
+        "neutral": 4,
+        "negative": 2
       },
       "sentiment_share": {
-        "positive": 0.556,
-        "neutral": 0.306,
-        "negative": 0.139
+        "positive": 0.5,
+        "neutral": 0.333,
+        "negative": 0.167
       },
       "top_terms": [
-        "kimi",
-        "供應",
-        "台積",
-        "進口",
-        "積電",
-        "台積電",
         "gpt",
-        "魏哲",
-        "哲家",
-        "魏哲家"
+        "台積",
+        "gpu",
+        "src",
+        "kimi",
+        "glm",
+        "供應",
+        "應鏈",
+        "供應鏈",
+        "台股"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 0,
-        "label": "gpu / supports / src / target",
+        "label": "gpt / src / kimi / glm",
         "heat": 90.0,
-        "volume": 21,
-        "engagement": 3610,
+        "volume": 10,
+        "engagement": 224,
         "entities": [
-          "美國",
-          "中國",
-          "gpu",
-          "新加坡",
-          "Nvidia"
+          "聯準會",
+          "聯準銀行",
+          "K      T",
+          "s  st",
+          "Fable    GPT"
         ]
       },
       {
         "topic_id": 1,
-        "label": "kimi / internal / gpt",
-        "heat": 14.9,
-        "volume": 4,
-        "engagement": 303,
-        "entities": [
-          "Kimi K   image",
-          "GPT",
-          "gpt",
-          "Kimi K  structure",
-          "kimi k   details kimi"
-        ]
-      },
-      {
-        "topic_id": 4,
-        "label": "台積電 / ai",
-        "heat": 13.5,
-        "volume": 3,
-        "engagement": 422,
-        "entities": [
-          "台積電",
-          "魏哲家",
-          "英特爾",
-          "三星"
-        ]
-      },
-      {
-        "topic_id": 5,
-        "label": "晶片與伺服器實力 / 正式超越中國 / 躍升為美國第三大進口來源國 / 台灣憑藉強大的",
+        "label": "gpu / kimi / glm / gpt",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 13,
+        "engagement": 141,
         "entities": [
-          "美國",
-          "伺服器",
-          "台灣",
-          "中國"
-        ]
-      },
-      {
-        "topic_id": 6,
-        "label": "toyota / edge / jetson / 宣布擴大與",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 18,
-        "entities": [
-          "toyota",
-          "Toyota",
-          "合作 發表搭載",
-          "Blackwell",
-          "Jetson Thor"
-        ]
-      },
-      {
-        "topic_id": 3,
-        "label": "arm",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 52,
-        "entities": [
-          "micron",
-          "Micron Technology",
-          "Hyundai",
-          "Tier   供應商與生態系統夥伴",
-          "hyundai"
-        ]
-      },
-      {
-        "topic_id": 2,
-        "label": "接受安樂死 / 不反對父母體罰孩子 / 認為避孕可以接受 / 認為同性戀沒有道德問題",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 293,
-        "entities": [
-          "道德",
-          "美國",
-          "安樂"
+          "gpu",
+          "Nvidia",
+          "GPU",
+          "Jensen",
+          "Tokyo"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "美國",
-        "count": 18
-      },
-      {
-        "entity": "中國",
-        "count": 7
-      },
-      {
-        "entity": "台積電",
-        "count": 7
-      },
-      {
-        "entity": "道德",
-        "count": 6
-      },
-      {
-        "entity": "伺服器",
-        "count": 4
-      },
-      {
-        "entity": "台灣",
-        "count": 3
-      },
-      {
         "entity": "gpu",
         "count": 3
-      },
-      {
-        "entity": "新加坡",
-        "count": 3
-      },
-      {
-        "entity": "魏哲家",
-        "count": 3
-      },
-      {
-        "entity": "toyota",
-        "count": 2
       },
       {
         "entity": "Nvidia",
@@ -180,234 +78,198 @@
         "count": 2
       },
       {
-        "entity": "micron",
-        "count": 2
-      },
-      {
         "entity": "GPT",
         "count": 2
       },
       {
-        "entity": "安樂",
+        "entity": "聯準會",
         "count": 2
+      },
+      {
+        "entity": "聯準銀行",
+        "count": 2
+      },
+      {
+        "entity": "Jensen",
+        "count": 1
+      },
+      {
+        "entity": "Tokyo",
+        "count": 1
+      },
+      {
+        "entity": "Sega Corporation",
+        "count": 1
+      },
+      {
+        "entity": "gpu sega  jensen",
+        "count": 1
+      },
+      {
+        "entity": "K      T",
+        "count": 1
+      },
+      {
+        "entity": "s  st",
+        "count": 1
+      },
+      {
+        "entity": "Fable    GPT",
+        "count": 1
+      },
+      {
+        "entity": "fab  gpt k   moonshot",
+        "count": 1
+      },
+      {
+        "entity": "gpt",
+        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-16T19:27:37.000002+08:00",
-        "bucket_end": "2026-07-16T20:01:54.142859+08:00",
+        "bucket_start": "2026-07-16T17:00:00.000002+00:00",
+        "bucket_end": "2026-07-16T17:34:17.142859+00:00",
         "positive": 1,
-        "neutral": 3,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-16T20:01:54.142859+08:00",
-        "bucket_end": "2026-07-16T20:36:11.285716+08:00",
-        "positive": 4,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-16T20:36:11.285716+08:00",
-        "bucket_end": "2026-07-16T21:10:28.428573+08:00",
+        "bucket_start": "2026-07-16T17:34:17.142859+00:00",
+        "bucket_end": "2026-07-16T18:08:34.285716+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T18:08:34.285716+00:00",
+        "bucket_end": "2026-07-16T18:42:51.428573+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T18:42:51.428573+00:00",
+        "bucket_end": "2026-07-16T19:17:08.571430+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T19:17:08.571430+00:00",
+        "bucket_end": "2026-07-16T19:51:25.714287+00:00",
         "positive": 3,
-        "neutral": 3,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-16T21:10:28.428573+08:00",
-        "bucket_end": "2026-07-16T21:44:45.571430+08:00",
-        "positive": 3,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T21:44:45.571430+08:00",
-        "bucket_end": "2026-07-16T22:19:02.714287+08:00",
-        "positive": 2,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T22:19:02.714287+08:00",
-        "bucket_end": "2026-07-16T22:53:19.857144+08:00",
-        "positive": 2,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-16T22:53:19.857144+08:00",
-        "bucket_end": "2026-07-16T23:27:37.000001+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T23:27:37.000001+08:00",
-        "bucket_end": "2026-07-17T00:01:54.142858+08:00",
+        "bucket_start": "2026-07-16T19:51:25.714287+00:00",
+        "bucket_end": "2026-07-16T20:25:42.857144+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T00:01:54.142858+08:00",
-        "bucket_end": "2026-07-17T00:36:11.285715+08:00",
+        "bucket_start": "2026-07-16T20:25:42.857144+00:00",
+        "bucket_end": "2026-07-16T21:00:00.000001+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T21:00:00.000001+00:00",
+        "bucket_end": "2026-07-16T21:34:17.142858+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T21:34:17.142858+00:00",
+        "bucket_end": "2026-07-16T22:08:34.285715+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T22:08:34.285715+00:00",
+        "bucket_end": "2026-07-16T22:42:51.428572+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T22:42:51.428572+00:00",
+        "bucket_end": "2026-07-16T23:17:08.571429+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T23:17:08.571429+00:00",
+        "bucket_end": "2026-07-16T23:51:25.714286+00:00",
         "positive": 1,
-        "neutral": 0,
+        "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T00:36:11.285715+08:00",
-        "bucket_end": "2026-07-17T01:10:28.428572+08:00",
+        "bucket_start": "2026-07-16T23:51:25.714286+00:00",
+        "bucket_end": "2026-07-17T00:25:42.857143+00:00",
         "positive": 1,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T01:10:28.428572+08:00",
-        "bucket_end": "2026-07-17T01:44:45.571429+08:00",
+        "bucket_start": "2026-07-17T00:25:42.857143+00:00",
+        "bucket_end": "2026-07-17T01:00:00+00:00",
         "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T01:44:45.571429+08:00",
-        "bucket_end": "2026-07-17T02:19:02.714286+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T02:19:02.714286+08:00",
-        "bucket_end": "2026-07-17T02:53:19.857143+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T02:53:19.857143+08:00",
-        "bucket_end": "2026-07-17T03:27:37+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
+        "neutral": 1,
+        "negative": 1
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "TrendForce",
-        "top_topic_id": 0,
-        "top_topic_label": "gpu / supports / src / target",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
         "handle": "SemiAnalysis_",
-        "top_topic_id": 0,
-        "top_topic_label": "gpu / supports / src / target",
+        "top_topic_id": 1,
+        "top_topic_label": "gpu / kimi / glm / gpt",
         "focus_share": 1.0,
         "post_count": 1
-      },
-      {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 0,
-        "top_topic_label": "gpu / supports / src / target",
-        "focus_share": 0.778,
-        "post_count": 9
       },
       {
         "handle": "ctee.fans",
         "top_topic_id": 0,
-        "top_topic_label": "gpu / supports / src / target",
-        "focus_share": 0.75,
-        "post_count": 4
+        "top_topic_label": "gpt / src / kimi / glm",
+        "focus_share": 1.0,
+        "post_count": 7
       },
       {
         "handle": "tphuang",
         "top_topic_id": 0,
-        "top_topic_label": "gpu / supports / src / target",
-        "focus_share": 0.6,
-        "post_count": 10
-      },
-      {
-        "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "gpu / supports / src / target",
-        "focus_share": 0.5,
-        "post_count": 2
-      },
-      {
-        "handle": "technews_tw",
-        "top_topic_id": 5,
-        "top_topic_label": "晶片與伺服器實力 / 正式超越中國 / 躍升為美國第三大進口來源國 / 台灣憑藉強大的",
-        "focus_share": 0.5,
-        "post_count": 2
-      },
-      {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 0,
-        "top_topic_label": "gpu / supports / src / target",
-        "focus_share": 0.333,
-        "post_count": 3
-      },
-      {
-        "handle": "technewsinside",
-        "top_topic_id": 0,
-        "top_topic_label": "gpu / supports / src / target",
-        "focus_share": 0.25,
+        "top_topic_label": "gpt / src / kimi / glm",
+        "focus_share": 0.75,
         "post_count": 4
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 0,
-        "label": "gpu / supports / src / target",
-        "total_engagement": 3610,
-        "post_count": 21
-      },
-      {
-        "topic_id": 4,
-        "label": "台積電 / ai",
-        "total_engagement": 422,
-        "post_count": 3
+        "label": "gpt / src / kimi / glm",
+        "total_engagement": 224,
+        "post_count": 10
       },
       {
         "topic_id": 1,
-        "label": "kimi / internal / gpt",
-        "total_engagement": 303,
-        "post_count": 4
-      },
-      {
-        "topic_id": 2,
-        "label": "接受安樂死 / 不反對父母體罰孩子 / 認為避孕可以接受 / 認為同性戀沒有道德問題",
-        "total_engagement": 293,
-        "post_count": 2
-      },
-      {
-        "topic_id": 3,
-        "label": "arm",
-        "total_engagement": 52,
-        "post_count": 2
-      },
-      {
-        "topic_id": 6,
-        "label": "toyota / edge / jetson / 宣布擴大與",
-        "total_engagement": 18,
-        "post_count": 2
-      },
-      {
-        "topic_id": 5,
-        "label": "晶片與伺服器實力 / 正式超越中國 / 躍升為美國第三大進口來源國 / 台灣憑藉強大的",
-        "total_engagement": 13,
+        "label": "gpu / kimi / glm / gpt",
+        "total_engagement": 141,
         "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 7,
+          "likes": 199,
+          "engagement": 199,
+          "avg_engagement": 28.4
         },
         "afternoon": {
           "post_count": 0,
@@ -416,19 +278,19 @@
           "avg_engagement": 0.0
         },
         "evening": {
-          "post_count": 30,
-          "likes": 4380,
-          "engagement": 4539,
-          "avg_engagement": 151.3
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         },
         "late_night": {
-          "post_count": 6,
-          "likes": 138,
-          "engagement": 172,
-          "avg_engagement": 28.7
+          "post_count": 5,
+          "likes": 133,
+          "engagement": 166,
+          "avg_engagement": 33.2
         }
       },
-      "peak_slot": "evening"
+      "peak_slot": "morning"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,
