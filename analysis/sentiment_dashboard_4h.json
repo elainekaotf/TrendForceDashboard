@@ -10,16 +10,16 @@
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 52,
+      "total_posts": 59,
       "sentiment_counts": {
-        "negative": 14,
-        "positive": 14,
-        "neutral": 24
+        "negative": 16,
+        "positive": 18,
+        "neutral": 25
       },
       "sentiment_share": {
-        "negative": 0.269,
-        "positive": 0.269,
-        "neutral": 0.462
+        "negative": 0.271,
+        "positive": 0.305,
+        "neutral": 0.424
       },
       "top_terms": [
         "半導",
@@ -36,23 +36,23 @@
     },
     "temperature_bar": [
       {
-        "topic_id": 1,
-        "label": "ai / 美國公債 / deepseek / adidas",
+        "topic_id": 2,
+        "label": "ai / flash / models / viasat",
         "heat": 90.0,
-        "volume": 32,
-        "engagement": 869,
+        "volume": 38,
+        "engagement": 1087,
         "entities": [
-          "美國",
+          "波克夏",
+          "庫藏",
+          "中國",
           "日本",
-          "城河",
-          "黃仁勳",
-          "中國"
+          "伊朗"
         ]
       },
       {
-        "topic_id": 2,
-        "label": "外資單日提款台積電破千億 / 玉山金 / 外資買超群創 / 其中外資單日賣超",
-        "heat": 12.4,
+        "topic_id": 7,
+        "label": "外資單日提款台積電破千億 / 玉山金 / 外資買超群創 / 盤中及收盤跌點雙雙改寫歷史紀錄",
+        "heat": 12.0,
         "volume": 3,
         "engagement": 141,
         "entities": [
@@ -63,17 +63,16 @@
         ]
       },
       {
-        "topic_id": 9,
-        "label": "viasat / 日本記憶體大廠鎧俠侵犯 / 須賠償約 / 美陪審團裁定",
-        "heat": 11.1,
-        "volume": 3,
-        "engagement": 17,
+        "topic_id": 4,
+        "label": "黃仁勳日本行戰略全解析 / 生態系成形 / 日本主權 / ai",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 6,
         "entities": [
           "日本",
-          "Texas",
-          "Kioxia",
-          "US",
-          "Viasat"
+          "黃仁勳",
+          "輝達",
+          "商務會晤"
         ]
       },
       {
@@ -85,7 +84,7 @@
         "entities": []
       },
       {
-        "topic_id": 3,
+        "topic_id": 10,
         "label": "風暴戰士 / 在挫折後正式宣布啟動全新協同作戰飛機計畫 / 無人機 / 英國重返無人機主戰場",
         "heat": 10.0,
         "volume": 2,
@@ -95,27 +94,36 @@
         ]
       },
       {
-        "topic_id": 5,
-        "label": "triso / 核燃料 / 核燃料製造園區 / trisox",
+        "topic_id": 8,
+        "label": "adidas / nike / 兩隊皆由其贊助 / 世界盃",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 7,
+        "entities": [
+          "阿根廷",
+          "西班牙"
+        ]
+      },
+      {
+        "topic_id": 1,
+        "label": "護城河 / ai / 大賣空 / 巨頭可能缺乏證明其龐大支出合理的關鍵要素",
         "heat": 10.0,
         "volume": 2,
         "engagement": 6,
         "entities": [
-          "美國",
-          "田納",
-          "西州"
+          "城河"
         ]
       },
       {
-        "topic_id": 4,
-        "label": "mlb / ai / 祭出新規 / 棒球",
+        "topic_id": 5,
+        "label": "mlb / ai / 祭出新規 / 明令禁止各球團使用生成式",
         "heat": 10.0,
         "volume": 2,
         "engagement": 12,
         "entities": []
       },
       {
-        "topic_id": 8,
+        "topic_id": 3,
         "label": "eps / 第二季單季 / 財報 / 昇陽半導體",
         "heat": 10.0,
         "volume": 2,
@@ -123,22 +131,21 @@
         "entities": []
       },
       {
-        "topic_id": 7,
-        "label": "iphone / 均熱板 / 蘋果 / 傳大幅增加均熱板採購量",
+        "topic_id": 9,
+        "label": "保證金門檻大增三倍 / 政府急凍單一股票槓桿 / 槓桿etf / 韓股",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 18,
+        "engagement": 5,
         "entities": []
       },
       {
         "topic_id": 6,
-        "label": "波克夏 / 巴菲特出手 / 波克夏第二季似乎加快庫藏股執行速度 / 回購金額估達數十億美元",
+        "label": "美國公債 / 牛市 / 最堅定支持者之一首度轉向唱衰 / 年牛市終結",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 5,
+        "engagement": 1,
         "entities": [
-          "波克夏",
-          "庫藏"
+          "美國"
         ]
       }
     ],
@@ -192,15 +199,15 @@
         "count": 4
       },
       {
+        "entity": "US",
+        "count": 3
+      },
+      {
         "entity": "阿根廷",
         "count": 3
       },
       {
         "entity": "西班牙",
-        "count": 3
-      },
-      {
-        "entity": "準衛星",
         "count": 3
       }
     ],
@@ -215,7 +222,7 @@
       {
         "bucket_start": "2026-07-17T10:26:10.955745+00:00",
         "bucket_end": "2026-07-17T10:43:19.527174+00:00",
-        "positive": 2,
+        "positive": 3,
         "neutral": 2,
         "negative": 2
       },
@@ -229,14 +236,14 @@
       {
         "bucket_start": "2026-07-17T11:00:28.098603+00:00",
         "bucket_end": "2026-07-17T11:17:36.670032+00:00",
-        "positive": 1,
+        "positive": 2,
         "neutral": 0,
         "negative": 2
       },
       {
         "bucket_start": "2026-07-17T11:17:36.670032+00:00",
         "bucket_end": "2026-07-17T11:34:45.241461+00:00",
-        "positive": 3,
+        "positive": 4,
         "neutral": 3,
         "negative": 0
       },
@@ -245,7 +252,7 @@
         "bucket_end": "2026-07-17T11:51:53.812890+00:00",
         "positive": 2,
         "neutral": 1,
-        "negative": 0
+        "negative": 1
       },
       {
         "bucket_start": "2026-07-17T11:51:53.812890+00:00",
@@ -272,13 +279,13 @@
         "bucket_start": "2026-07-17T12:43:19.527177+00:00",
         "bucket_end": "2026-07-17T13:00:28.098606+00:00",
         "positive": 0,
-        "neutral": 2,
-        "negative": 3
+        "neutral": 3,
+        "negative": 4
       },
       {
         "bucket_start": "2026-07-17T13:00:28.098606+00:00",
         "bucket_end": "2026-07-17T13:17:36.670035+00:00",
-        "positive": 1,
+        "positive": 2,
         "neutral": 1,
         "negative": 0
       },
@@ -306,95 +313,109 @@
     ],
     "coverage_focus_ranking": [
       {
+        "handle": "TrendForce",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / flash / models / viasat",
+        "focus_share": 1.0,
+        "post_count": 2
+      },
+      {
         "handle": "jukan05",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / 美國公債 / deepseek / adidas",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / flash / models / viasat",
         "focus_share": 1.0,
         "post_count": 2
       },
       {
         "handle": "QQ_Timmy",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / 美國公債 / deepseek / adidas",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / flash / models / viasat",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
+        "handle": "tphuang",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / flash / models / viasat",
+        "focus_share": 1.0,
+        "post_count": 4
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / flash / models / viasat",
+        "focus_share": 1.0,
+        "post_count": 3
+      },
+      {
         "handle": "ctee.fans",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / 美國公債 / deepseek / adidas",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / flash / models / viasat",
         "focus_share": 1.0,
         "post_count": 5
       },
       {
         "handle": "yutinghaosfinance",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / 美國公債 / deepseek / adidas",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / flash / models / viasat",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "technewsinside",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / 美國公債 / deepseek / adidas",
-        "focus_share": 0.55,
+        "top_topic_id": 2,
+        "top_topic_label": "ai / flash / models / viasat",
+        "focus_share": 0.5,
         "post_count": 20
       },
       {
         "handle": "technews_tw",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / 美國公債 / deepseek / adidas",
-        "focus_share": 0.524,
+        "top_topic_id": 2,
+        "top_topic_label": "ai / flash / models / viasat",
+        "focus_share": 0.476,
         "post_count": 21
-      },
-      {
-        "handle": "TrendForce",
-        "top_topic_id": 9,
-        "top_topic_label": "viasat / 日本記憶體大廠鎧俠侵犯 / 須賠償約 / 美陪審團裁定",
-        "focus_share": 0.5,
-        "post_count": 2
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 1,
-        "label": "ai / 美國公債 / deepseek / adidas",
-        "total_engagement": 869,
-        "post_count": 32
+        "topic_id": 2,
+        "label": "ai / flash / models / viasat",
+        "total_engagement": 1087,
+        "post_count": 38
       },
       {
-        "topic_id": 2,
-        "label": "外資單日提款台積電破千億 / 玉山金 / 外資買超群創 / 其中外資單日賣超",
+        "topic_id": 7,
+        "label": "外資單日提款台積電破千億 / 玉山金 / 外資買超群創 / 盤中及收盤跌點雙雙改寫歷史紀錄",
         "total_engagement": 141,
         "post_count": 3
       },
       {
-        "topic_id": 7,
-        "label": "iphone / 均熱板 / 蘋果 / 傳大幅增加均熱板採購量",
-        "total_engagement": 18,
-        "post_count": 2
-      },
-      {
-        "topic_id": 9,
-        "label": "viasat / 日本記憶體大廠鎧俠侵犯 / 須賠償約 / 美陪審團裁定",
-        "total_engagement": 17,
-        "post_count": 3
-      },
-      {
-        "topic_id": 4,
-        "label": "mlb / ai / 祭出新規 / 棒球",
+        "topic_id": 5,
+        "label": "mlb / ai / 祭出新規 / 明令禁止各球團使用生成式",
         "total_engagement": 12,
         "post_count": 2
       },
       {
-        "topic_id": 3,
+        "topic_id": 10,
         "label": "風暴戰士 / 在挫折後正式宣布啟動全新協同作戰飛機計畫 / 無人機 / 英國重返無人機主戰場",
         "total_engagement": 10,
         "post_count": 2
       },
       {
-        "topic_id": 5,
-        "label": "triso / 核燃料 / 核燃料製造園區 / trisox",
+        "topic_id": 8,
+        "label": "adidas / nike / 兩隊皆由其贊助 / 世界盃",
+        "total_engagement": 7,
+        "post_count": 2
+      },
+      {
+        "topic_id": 4,
+        "label": "黃仁勳日本行戰略全解析 / 生態系成形 / 日本主權 / ai",
+        "total_engagement": 6,
+        "post_count": 2
+      },
+      {
+        "topic_id": 1,
+        "label": "護城河 / ai / 大賣空 / 巨頭可能缺乏證明其龐大支出合理的關鍵要素",
         "total_engagement": 6,
         "post_count": 2
       },
@@ -405,15 +426,21 @@
         "post_count": 2
       },
       {
-        "topic_id": 8,
+        "topic_id": 3,
         "label": "eps / 第二季單季 / 財報 / 昇陽半導體",
         "total_engagement": 5,
         "post_count": 2
       },
       {
-        "topic_id": 6,
-        "label": "波克夏 / 巴菲特出手 / 波克夏第二季似乎加快庫藏股執行速度 / 回購金額估達數十億美元",
+        "topic_id": 9,
+        "label": "保證金門檻大增三倍 / 政府急凍單一股票槓桿 / 槓桿etf / 韓股",
         "total_engagement": 5,
+        "post_count": 2
+      },
+      {
+        "topic_id": 6,
+        "label": "美國公債 / 牛市 / 最堅定支持者之一首度轉向唱衰 / 年牛市終結",
+        "total_engagement": 1,
         "post_count": 2
       }
     ],
@@ -432,10 +459,10 @@
           "avg_engagement": 0.0
         },
         "evening": {
-          "post_count": 52,
-          "likes": 912,
-          "engagement": 1088,
-          "avg_engagement": 20.9
+          "post_count": 59,
+          "likes": 1070,
+          "engagement": 1285,
+          "avg_engagement": 21.8
         },
         "late_night": {
           "post_count": 0,
