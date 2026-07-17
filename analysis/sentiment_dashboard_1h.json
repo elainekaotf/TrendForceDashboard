@@ -1,232 +1,190 @@
 {
-  "generated_at": "2026-07-17T04:45:00+00:00",
+  "generated_at": "2026-07-17T16:31:37+08:00",
   "time_range": "1h",
   "window": {
-    "start_utc": "2026-07-17T03:45:00+00:00",
-    "end_utc": "2026-07-17T04:45:00+00:00",
-    "start_tw": "Jul 17, 11:45",
-    "end_tw": "Jul 17, 12:45"
+    "start_utc": "2026-07-17T15:31:37+08:00",
+    "end_utc": "2026-07-17T16:31:37+08:00",
+    "start_tw": "Jul 17, 15:31",
+    "end_tw": "Jul 17, 16:31"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 16,
+      "total_posts": 6,
       "sentiment_counts": {
-        "positive": 7,
-        "neutral": 8,
-        "negative": 1
+        "negative": 4,
+        "neutral": 2
       },
       "sentiment_share": {
-        "positive": 0.438,
-        "neutral": 0.5,
-        "negative": 0.062
+        "negative": 0.667,
+        "neutral": 0.333
       },
       "top_terms": [
-        "月底",
-        "台股",
-        "加碼",
-        "caml",
-        "美軍",
-        "軍加",
-        "加速",
-        "速裝",
-        "裝備",
-        "備自"
+        "google",
+        "裁員",
+        "員工",
+        "工上",
+        "上街",
+        "街抗",
+        "抗議",
+        "員工上",
+        "工上街",
+        "上街抗"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 0,
-        "label": "ai / 台股 / 與高通 / 確保",
-        "heat": 90.0,
-        "volume": 12,
-        "engagement": 244,
+        "label": "ai / google / 裁員",
+        "heat": 50.0,
+        "volume": 6,
+        "engagement": 4,
         "entities": [
-          "美光",
-          "高通",
-          "亞洲",
-          "TTZVQ",
-          "GPU"
-        ]
-      },
-      {
-        "topic_id": 1,
-        "label": "caml / 美軍 / 計畫合約 / 自主化",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 6,
-        "entities": [
-          "美軍"
-        ]
-      },
-      {
-        "topic_id": 2,
-        "label": "crt模擬器 / 任天堂 / 復古 / 老電視的經典操作",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 9,
-        "entities": [
-          "任天堂"
+          "福斯",
+          "馬斯克",
+          "美軍",
+          "上街",
+          "抗議"
         ]
       }
     ],
     "named_entities": [
       {
+        "entity": "福斯",
+        "count": 5
+      },
+      {
+        "entity": "馬斯克",
+        "count": 5
+      },
+      {
         "entity": "美軍",
-        "count": 8
+        "count": 3
       },
       {
-        "entity": "美光",
-        "count": 7
-      },
-      {
-        "entity": "任天堂",
-        "count": 4
-      },
-      {
-        "entity": "高通",
-        "count": 4
-      },
-      {
-        "entity": "亞洲",
+        "entity": "上街",
         "count": 2
       },
       {
-        "entity": "TTZVQ",
+        "entity": "抗議",
+        "count": 2
+      },
+      {
+        "entity": "Google AI",
         "count": 1
       },
       {
-        "entity": "GPU",
+        "entity": "Canva Instacart",
         "count": 1
       },
       {
-        "entity": "Kimi K  fit",
+        "entity": "google",
         "count": 1
       },
       {
-        "entity": "node",
+        "entity": "instacart 等應用  模式再進化",
         "count": 1
       },
       {
-        "entity": "gpu",
-        "count": 1
-      },
-      {
-        "entity": "kimi k   fit",
-        "count": 1
-      },
-      {
-        "entity": "CHINESE",
-        "count": 1
-      },
-      {
-        "entity": "川普",
-        "count": 1
-      },
-      {
-        "entity": "Gemini",
-        "count": 1
-      },
-      {
-        "entity": "台灣",
+        "entity": "從回答問題推向直接辦事  canva",
         "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-17T03:45:00.000002+00:00",
-        "bucket_end": "2026-07-17T03:49:17.142859+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T03:49:17.142859+00:00",
-        "bucket_end": "2026-07-17T03:53:34.285716+00:00",
-        "positive": 1,
+        "bucket_start": "2026-07-17T15:31:37.000002+08:00",
+        "bucket_end": "2026-07-17T15:35:54.142859+08:00",
+        "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T03:53:34.285716+00:00",
-        "bucket_end": "2026-07-17T03:57:51.428573+00:00",
+        "bucket_start": "2026-07-17T15:35:54.142859+08:00",
+        "bucket_end": "2026-07-17T15:40:11.285716+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T03:57:51.428573+00:00",
-        "bucket_end": "2026-07-17T04:02:08.571430+00:00",
-        "positive": 1,
+        "bucket_start": "2026-07-17T15:40:11.285716+08:00",
+        "bucket_end": "2026-07-17T15:44:28.428573+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T15:44:28.428573+08:00",
+        "bucket_end": "2026-07-17T15:48:45.571430+08:00",
+        "positive": 0,
         "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T15:48:45.571430+08:00",
+        "bucket_end": "2026-07-17T15:53:02.714287+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T15:53:02.714287+08:00",
+        "bucket_end": "2026-07-17T15:57:19.857144+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T15:57:19.857144+08:00",
+        "bucket_end": "2026-07-17T16:01:37.000001+08:00",
+        "positive": 0,
+        "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-17T04:02:08.571430+00:00",
-        "bucket_end": "2026-07-17T04:06:25.714287+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T04:06:25.714287+00:00",
-        "bucket_end": "2026-07-17T04:10:42.857144+00:00",
+        "bucket_start": "2026-07-17T16:01:37.000001+08:00",
+        "bucket_end": "2026-07-17T16:05:54.142858+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T04:10:42.857144+00:00",
-        "bucket_end": "2026-07-17T04:15:00.000001+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T04:15:00.000001+00:00",
-        "bucket_end": "2026-07-17T04:19:17.142858+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T04:19:17.142858+00:00",
-        "bucket_end": "2026-07-17T04:23:34.285715+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T04:23:34.285715+00:00",
-        "bucket_end": "2026-07-17T04:27:51.428572+00:00",
+        "bucket_start": "2026-07-17T16:05:54.142858+08:00",
+        "bucket_end": "2026-07-17T16:10:11.285715+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T04:27:51.428572+00:00",
-        "bucket_end": "2026-07-17T04:32:08.571429+00:00",
+        "bucket_start": "2026-07-17T16:10:11.285715+08:00",
+        "bucket_end": "2026-07-17T16:14:28.428572+08:00",
         "positive": 0,
-        "neutral": 1,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-17T16:14:28.428572+08:00",
+        "bucket_end": "2026-07-17T16:18:45.571429+08:00",
+        "positive": 0,
+        "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T04:32:08.571429+00:00",
-        "bucket_end": "2026-07-17T04:36:25.714286+00:00",
+        "bucket_start": "2026-07-17T16:18:45.571429+08:00",
+        "bucket_end": "2026-07-17T16:23:02.714286+08:00",
         "positive": 0,
-        "neutral": 2,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-17T16:23:02.714286+08:00",
+        "bucket_end": "2026-07-17T16:27:19.857143+08:00",
+        "positive": 0,
+        "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T04:36:25.714286+00:00",
-        "bucket_end": "2026-07-17T04:40:42.857143+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T04:40:42.857143+00:00",
-        "bucket_end": "2026-07-17T04:45:00+00:00",
+        "bucket_start": "2026-07-17T16:27:19.857143+08:00",
+        "bucket_end": "2026-07-17T16:31:37+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
@@ -234,74 +192,34 @@
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / 台股 / 與高通 / 確保",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / 台股 / 與高通 / 確保",
-        "focus_share": 1.0,
-        "post_count": 2
-      },
-      {
-        "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / 台股 / 與高通 / 確保",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "technewsinside",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / 台股 / 與高通 / 確保",
-        "focus_share": 0.75,
-        "post_count": 8
-      },
-      {
         "handle": "technews_tw",
         "top_topic_id": 0,
-        "top_topic_label": "ai / 台股 / 與高通 / 確保",
-        "focus_share": 0.5,
-        "post_count": 4
+        "top_topic_label": "ai / google / 裁員",
+        "focus_share": 1.0,
+        "post_count": 6
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 0,
-        "label": "ai / 台股 / 與高通 / 確保",
-        "total_engagement": 244,
-        "post_count": 12
-      },
-      {
-        "topic_id": 2,
-        "label": "crt模擬器 / 任天堂 / 復古 / 老電視的經典操作",
-        "total_engagement": 9,
-        "post_count": 2
-      },
-      {
-        "topic_id": 1,
-        "label": "caml / 美軍 / 計畫合約 / 自主化",
-        "total_engagement": 6,
-        "post_count": 2
+        "label": "ai / google / 裁員",
+        "total_engagement": 4,
+        "post_count": 6
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 4,
-          "likes": 7,
-          "engagement": 7,
-          "avg_engagement": 1.8
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 12,
-          "likes": 219,
-          "engagement": 252,
-          "avg_engagement": 21.0
+          "post_count": 6,
+          "likes": 2,
+          "engagement": 4,
+          "avg_engagement": 0.7
         },
         "evening": {
           "post_count": 0,
