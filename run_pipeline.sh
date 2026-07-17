@@ -59,16 +59,24 @@ cd "$(dirname "$0")"
 # (sync_data.sh's own steps are short by comparison).
 LOCKDIR=".run_pipeline.lock"
 STALE_AFTER=7200  # 2h - generously above any observed legitimate run time
-waited=0
+# Staleness must be judged by the lock DIRECTORY's own age (its mtime from
+# when mkdir created it), not by how long THIS waiter has been polling -
+# observed 2026-07-17: a waiter queued behind several back-to-back
+# legitimate holders accumulated over 7200s of ITS OWN wait time and then
+# stole the lock from a still-actively-running job (mid-scan, not crashed),
+# defeating the mutex for ~2 minutes. A per-waiter counter conflates "how
+# long have I waited" with "how long has the current holder had it" -
+# under sustained backlog those are completely different numbers.
 while ! mkdir "$LOCKDIR" 2>/dev/null; do
-  if [ "$waited" -ge "$STALE_AFTER" ]; then
-    echo "[WARN] run_pipeline: lock held for ${STALE_AFTER}s - assuming a crashed run left it behind, taking over"
+  lock_mtime=$(stat -f%m "$LOCKDIR" 2>/dev/null || stat -c%Y "$LOCKDIR" 2>/dev/null)
+  lock_age=$(( $(date +%s) - ${lock_mtime:-0} ))
+  if [ "$lock_age" -ge "$STALE_AFTER" ]; then
+    echo "[WARN] run_pipeline: lock directory is ${lock_age}s old - assuming a crashed run left it behind, taking over"
     rmdir "$LOCKDIR" 2>/dev/null
     mkdir "$LOCKDIR" 2>/dev/null
     break
   fi
   sleep 5
-  waited=$((waited + 5))
 done
 trap 'rmdir "$LOCKDIR" 2>/dev/null' EXIT
 
