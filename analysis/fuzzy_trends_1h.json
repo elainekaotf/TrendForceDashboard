@@ -1,33 +1,61 @@
 {
-  "generated_at": "2026-07-17T14:09:02.384322+00:00",
+  "generated_at": "2026-07-18T00:04:30+08:00",
   "range": "1h",
   "window_hours": 1,
   "window": {
-    "start_utc": "2026-07-17T13:09:02.384322+00:00",
-    "end_utc": "2026-07-17T14:09:02.384322+00:00",
-    "start_tw": "Jul 17, 21:09",
-    "end_tw": "Jul 17, 22:09"
+    "start_utc": "2026-07-17T23:04:30+08:00",
+    "end_utc": "2026-07-18T00:04:30+08:00",
+    "start_tw": "Jul 17, 23:04",
+    "end_tw": "Jul 18, 00:04"
   },
   "scan_only": false,
   "platforms": {
-    "Facebook": {
+    "X": {
       "top_rising_topics": [
         {
           "rising_score": 90.0,
-          "volume_growth_rate": -0.833,
-          "engagement_acceleration": -1.0,
+          "volume_growth_rate": 1.0,
+          "engagement_acceleration": 1.0,
           "active_accounts": 1,
-          "rationale": "volume -83% vs prior 1h, engagement rate -100%, 1 account(s) posting",
-          "topic_id": 2,
+          "rationale": "volume +100% vs prior 1h, engagement rate +100%, 1 account(s) posting",
+          "topic_id": 14,
+          "label": "ai / trendforce / pcb / physical",
+          "rising_kols": [
+            {
+              "rising_score": 50.0,
+              "volume_growth_rate": 1.0,
+              "engagement_acceleration": 1.0,
+              "active_accounts": 1,
+              "rationale": "posts +100%, engagement +100% vs prior 1h",
+              "handle": "technews_tw"
+            }
+          ],
+          "sub_topics": []
+        },
+        {
+          "rising_score": 81.8,
+          "volume_growth_rate": -0.25,
+          "engagement_acceleration": 0.111,
+          "active_accounts": 2,
+          "rationale": "volume -25% vs prior 1h, engagement rate +11%, 2 account(s) posting",
+          "topic_id": 0,
           "label": "ai / 台積電 / trendforce / memory",
           "rising_kols": [
             {
               "rising_score": 90.0,
               "volume_growth_rate": 1.0,
-              "engagement_acceleration": 0.0,
+              "engagement_acceleration": 18.0,
               "active_accounts": 1,
-              "rationale": "posts +100%, engagement +0% vs prior 1h",
-              "handle": "yutinghaosfinance"
+              "rationale": "posts +100%, engagement +1800% vs prior 1h",
+              "handle": "tengyanAI"
+            },
+            {
+              "rising_score": 52.7,
+              "volume_growth_rate": -0.333,
+              "engagement_acceleration": -0.25,
+              "active_accounts": 1,
+              "rationale": "posts -33%, engagement -25% vs prior 1h",
+              "handle": "technews_tw"
             },
             {
               "rising_score": 10.0,
@@ -35,7 +63,7 @@
               "engagement_acceleration": -1.0,
               "active_accounts": 0,
               "rationale": "posts -100%, engagement -100% vs prior 1h",
-              "handle": "technewsinside"
+              "handle": "tphuang"
             }
           ],
           "sub_topics": []
@@ -47,7 +75,7 @@
           "active_accounts": 0,
           "rationale": "volume -100% vs prior 1h, engagement rate -100%, 0 account(s) posting",
           "topic_id": 15,
-          "label": "ai / trendforce / pcb / token",
+          "label": "openai / anthropic / ai / gpt",
           "rising_kols": [
             {
               "rising_score": 50.0,
@@ -55,75 +83,7 @@
               "engagement_acceleration": -1.0,
               "active_accounts": 0,
               "rationale": "posts -100%, engagement -100% vs prior 1h",
-              "handle": "technewsinside"
-            }
-          ],
-          "sub_topics": []
-        }
-      ]
-    },
-    "X": {
-      "top_rising_topics": [
-        {
-          "rising_score": 50.0,
-          "volume_growth_rate": -1.0,
-          "engagement_acceleration": -1.0,
-          "active_accounts": 0,
-          "rationale": "volume -100% vs prior 1h, engagement rate -100%, 0 account(s) posting",
-          "topic_id": 2,
-          "label": "ai / 台積電 / trendforce / memory",
-          "rising_kols": [
-            {
-              "rising_score": 90.0,
-              "volume_growth_rate": -1.0,
-              "engagement_acceleration": -0.857,
-              "active_accounts": 0,
-              "rationale": "posts -100%, engagement -86% vs prior 1h",
               "handle": "technews_tw"
-            },
-            {
-              "rising_score": 10.0,
-              "volume_growth_rate": -1.0,
-              "engagement_acceleration": -1.0,
-              "active_accounts": 0,
-              "rationale": "posts -100%, engagement -100% vs prior 1h",
-              "handle": "jukan05"
-            },
-            {
-              "rising_score": 10.0,
-              "volume_growth_rate": -1.0,
-              "engagement_acceleration": -1.0,
-              "active_accounts": 0,
-              "rationale": "posts -100%, engagement -100% vs prior 1h",
-              "handle": "tphuang"
-            },
-            {
-              "rising_score": 10.0,
-              "volume_growth_rate": -1.0,
-              "engagement_acceleration": -1.0,
-              "active_accounts": 0,
-              "rationale": "posts -100%, engagement -100% vs prior 1h",
-              "handle": "tengyanAI"
-            }
-          ],
-          "sub_topics": []
-        },
-        {
-          "rising_score": 50.0,
-          "volume_growth_rate": -1.0,
-          "engagement_acceleration": -1.0,
-          "active_accounts": 0,
-          "rationale": "volume -100% vs prior 1h, engagement rate -100%, 0 account(s) posting",
-          "topic_id": 16,
-          "label": "nvidia / ai / amd / rubin",
-          "rising_kols": [
-            {
-              "rising_score": 50.0,
-              "volume_growth_rate": -1.0,
-              "engagement_acceleration": -1.0,
-              "active_accounts": 0,
-              "rationale": "posts -100%, engagement -100% vs prior 1h",
-              "handle": "tengyanAI"
             }
           ],
           "sub_topics": []
