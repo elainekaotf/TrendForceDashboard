@@ -1,98 +1,87 @@
 {
-  "generated_at": "2026-07-16T22:23:00+08:00",
+  "generated_at": "2026-07-17T03:27:37+08:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-16T14:23:00+08:00",
-    "end_utc": "2026-07-16T22:23:00+08:00",
-    "start_tw": "Jul 16, 14:23",
-    "end_tw": "Jul 16, 22:23"
+    "start_utc": "2026-07-16T19:27:37+08:00",
+    "end_utc": "2026-07-17T03:27:37+08:00",
+    "start_tw": "Jul 16, 19:27",
+    "end_tw": "Jul 17, 03:27"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 87,
+      "total_posts": 36,
       "sentiment_counts": {
-        "positive": 42,
-        "negative": 17,
-        "neutral": 28
+        "positive": 20,
+        "neutral": 11,
+        "negative": 5
       },
       "sentiment_share": {
-        "positive": 0.483,
-        "negative": 0.195,
-        "neutral": 0.322
+        "positive": 0.556,
+        "neutral": 0.306,
+        "negative": 0.139
       },
       "top_terms": [
+        "kimi",
+        "供應",
         "台積",
+        "進口",
         "積電",
         "台積電",
-        "奈米",
+        "gpt",
         "魏哲",
         "哲家",
-        "魏哲家",
-        "先進",
-        "tsmc",
-        "法說"
+        "魏哲家"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 1,
-        "label": "packaging / semi / sk / cxmt",
+        "topic_id": 0,
+        "label": "gpu / supports / src / target",
         "heat": 90.0,
-        "volume": 45,
-        "engagement": 5968,
+        "volume": 21,
+        "engagement": 3610,
         "entities": [
-          "三星",
           "美國",
-          "台積電",
-          "黃仁勳",
-          "輝達"
+          "中國",
+          "gpu",
+          "新加坡",
+          "Nvidia"
         ]
       },
       {
-        "topic_id": 10,
-        "label": "台積電 / 台積電第二季每天淨賺近 / 沒那麼簡單 / 魏哲家",
-        "heat": 14.6,
-        "volume": 6,
-        "engagement": 444,
+        "topic_id": 1,
+        "label": "kimi / internal / gpt",
+        "heat": 14.9,
+        "volume": 4,
+        "engagement": 303,
         "entities": [
-          "台積電",
-          "魏哲家",
-          "貢獻營",
-          "益高"
+          "Kimi K   image",
+          "GPT",
+          "gpt",
+          "Kimi K  structure",
+          "kimi k   details kimi"
         ]
       },
       {
         "topic_id": 4,
-        "label": "tsmc / capex / revenue / margin",
-        "heat": 12.2,
-        "volume": 7,
-        "engagement": 190,
-        "entities": [
-          "TSMC",
-          "AI",
-          "buff",
-          "qsf Wog",
-          "node"
-        ]
-      },
-      {
-        "topic_id": 2,
-        "label": "kimi",
-        "heat": 11.7,
+        "label": "台積電 / ai",
+        "heat": 13.5,
         "volume": 3,
-        "engagement": 1286,
+        "engagement": 422,
         "entities": [
-          "Kimi K   image",
-          "kimi k   "
+          "台積電",
+          "魏哲家",
+          "英特爾",
+          "三星"
         ]
       },
       {
-        "topic_id": 13,
-        "label": "晶片與伺服器實力 / 正式超越中國 / 台灣憑藉強大的 / 月貿易數據出爐",
+        "topic_id": 5,
+        "label": "晶片與伺服器實力 / 正式超越中國 / 躍升為美國第三大進口來源國 / 台灣憑藉強大的",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 11,
+        "engagement": 13,
         "entities": [
           "美國",
           "伺服器",
@@ -101,121 +90,25 @@
         ]
       },
       {
-        "topic_id": 5,
-        "label": "星展 / 高成長 / 成長率達 / 第三季維持",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 15,
-        "entities": [
-          "星展",
-          "台灣"
-        ]
-      },
-      {
         "topic_id": 6,
-        "label": "青安 / 歲以下 / 限定 / 搶先看",
+        "label": "toyota / edge / jetson / 宣布擴大與",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 7,
+        "engagement": 18,
         "entities": [
-          "青安"
-        ]
-      },
-      {
-        "topic_id": 8,
-        "label": "anthropic / aws / openai / 靠安全核心使市占衝上",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 9,
-        "entities": [
-          "OpenAI",
-          "靠安全核心使市占衝上  ai 不僅是協作",
-          "攜手  anthropic"
+          "toyota",
+          "Toyota",
+          "合作 發表搭載",
+          "Blackwell",
+          "Jetson Thor"
         ]
       },
       {
         "topic_id": 3,
-        "label": "歐巴撐住呀",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 902,
-        "entities": [
-          "歐巴",
-          "韓國",
-          "通貨委員會"
-        ]
-      },
-      {
-        "topic_id": 16,
-        "label": "奈米與 / 產能缺口極大 / 已調升 / 並透露正在研發玻璃基板",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 87,
-        "entities": [
-          "魏哲家"
-        ]
-      },
-      {
-        "topic_id": 15,
-        "label": "農曆七月將至 / 貼心推出線上普度祈福服務 / 中華電信 / 攜手全台",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 4,
-        "entities": [
-          "中華電信",
-          "祈福"
-        ]
-      },
-      {
-        "topic_id": 14,
-        "label": "奈米片製程確認於 / 法說會釋出先進製程時程 / 且晶片密度大增 / 年量產",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 25,
-        "entities": [
-          "台積電",
-          "米片"
-        ]
-      },
-      {
-        "topic_id": 11,
-        "label": "三星 / 倍且摺痕更不明顯 / titanium / 技術導入雙層鈦金屬",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 2,
-        "entities": [
-          "三星"
-        ]
-      },
-      {
-        "topic_id": 7,
-        "label": "台積電 / 奈米廠 / 儘管消費性市場面臨挑戰 / 董事長",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 47,
-        "entities": [
-          "台積電",
-          "魏哲家",
-          "台灣興建",
-          "於台"
-        ]
-      },
-      {
-        "topic_id": 0,
-        "label": "資本支出 / 億至 / 再度上調財測 / 宣布將",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 245,
-        "entities": [
-          "台積電"
-        ]
-      },
-      {
-        "topic_id": 9,
         "label": "arm",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 19,
+        "engagement": 52,
         "entities": [
           "micron",
           "Micron Technology",
@@ -225,354 +118,286 @@
         ]
       },
       {
-        "topic_id": 12,
-        "label": "青安",
+        "topic_id": 2,
+        "label": "接受安樂死 / 不反對父母體罰孩子 / 認為避孕可以接受 / 認為同性戀沒有道德問題",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 3,
+        "engagement": 293,
         "entities": [
-          "青安",
-          "財政部",
-          "卓榮泰",
-          "新青安"
+          "道德",
+          "美國",
+          "安樂"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "台積電",
-        "count": 39
-      },
-      {
         "entity": "美國",
-        "count": 17
-      },
-      {
-        "entity": "三星",
-        "count": 16
-      },
-      {
-        "entity": "魏哲家",
-        "count": 15
-      },
-      {
-        "entity": "韓國",
-        "count": 9
-      },
-      {
-        "entity": "青安",
-        "count": 8
+        "count": 18
       },
       {
         "entity": "中國",
         "count": 7
       },
       {
-        "entity": "黃仁勳",
+        "entity": "台積電",
         "count": 7
       },
       {
-        "entity": "輝達",
-        "count": 7
-      },
-      {
-        "entity": "台灣",
+        "entity": "道德",
         "count": 6
-      },
-      {
-        "entity": "TSMC",
-        "count": 5
-      },
-      {
-        "entity": "上市",
-        "count": 5
       },
       {
         "entity": "伺服器",
         "count": 4
       },
       {
-        "entity": "星展",
-        "count": 4
+        "entity": "台灣",
+        "count": 3
       },
       {
-        "entity": "富士通",
-        "count": 4
+        "entity": "gpu",
+        "count": 3
+      },
+      {
+        "entity": "新加坡",
+        "count": 3
+      },
+      {
+        "entity": "魏哲家",
+        "count": 3
+      },
+      {
+        "entity": "toyota",
+        "count": 2
+      },
+      {
+        "entity": "Nvidia",
+        "count": 2
+      },
+      {
+        "entity": "GPU",
+        "count": 2
+      },
+      {
+        "entity": "micron",
+        "count": 2
+      },
+      {
+        "entity": "GPT",
+        "count": 2
+      },
+      {
+        "entity": "安樂",
+        "count": 2
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-16T14:23:00.000002+08:00",
-        "bucket_end": "2026-07-16T14:57:17.142859+08:00",
-        "positive": 5,
-        "neutral": 4,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T14:57:17.142859+08:00",
-        "bucket_end": "2026-07-16T15:31:34.285716+08:00",
-        "positive": 2,
-        "neutral": 4,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-16T15:31:34.285716+08:00",
-        "bucket_end": "2026-07-16T16:05:51.428573+08:00",
-        "positive": 5,
-        "neutral": 2,
-        "negative": 4
-      },
-      {
-        "bucket_start": "2026-07-16T16:05:51.428573+08:00",
-        "bucket_end": "2026-07-16T16:40:08.571430+08:00",
-        "positive": 4,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-16T16:40:08.571430+08:00",
-        "bucket_end": "2026-07-16T17:14:25.714287+08:00",
-        "positive": 2,
-        "neutral": 3,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-16T17:14:25.714287+08:00",
-        "bucket_end": "2026-07-16T17:48:42.857144+08:00",
-        "positive": 3,
-        "neutral": 2,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-16T17:48:42.857144+08:00",
-        "bucket_end": "2026-07-16T18:23:00.000001+08:00",
-        "positive": 3,
-        "neutral": 3,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-16T18:23:00.000001+08:00",
-        "bucket_end": "2026-07-16T18:57:17.142858+08:00",
-        "positive": 2,
-        "neutral": 2,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-16T18:57:17.142858+08:00",
-        "bucket_end": "2026-07-16T19:31:34.285715+08:00",
-        "positive": 2,
-        "neutral": 1,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-16T19:31:34.285715+08:00",
-        "bucket_end": "2026-07-16T20:05:51.428572+08:00",
+        "bucket_start": "2026-07-16T19:27:37.000002+08:00",
+        "bucket_end": "2026-07-16T20:01:54.142859+08:00",
         "positive": 1,
-        "neutral": 2,
+        "neutral": 3,
         "negative": 2
       },
       {
-        "bucket_start": "2026-07-16T20:05:51.428572+08:00",
-        "bucket_end": "2026-07-16T20:40:08.571429+08:00",
+        "bucket_start": "2026-07-16T20:01:54.142859+08:00",
+        "bucket_end": "2026-07-16T20:36:11.285716+08:00",
         "positive": 4,
         "neutral": 1,
-        "negative": 1
+        "negative": 0
       },
       {
-        "bucket_start": "2026-07-16T20:40:08.571429+08:00",
-        "bucket_end": "2026-07-16T21:14:25.714286+08:00",
+        "bucket_start": "2026-07-16T20:36:11.285716+08:00",
+        "bucket_end": "2026-07-16T21:10:28.428573+08:00",
         "positive": 3,
-        "neutral": 2,
-        "negative": 2
+        "neutral": 3,
+        "negative": 3
       },
       {
-        "bucket_start": "2026-07-16T21:14:25.714286+08:00",
-        "bucket_end": "2026-07-16T21:48:42.857143+08:00",
+        "bucket_start": "2026-07-16T21:10:28.428573+08:00",
+        "bucket_end": "2026-07-16T21:44:45.571430+08:00",
         "positive": 3,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-16T21:48:42.857143+08:00",
-        "bucket_end": "2026-07-16T22:23:00+08:00",
+        "bucket_start": "2026-07-16T21:44:45.571430+08:00",
+        "bucket_end": "2026-07-16T22:19:02.714287+08:00",
         "positive": 2,
         "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T22:19:02.714287+08:00",
+        "bucket_end": "2026-07-16T22:53:19.857144+08:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T22:53:19.857144+08:00",
+        "bucket_end": "2026-07-16T23:27:37.000001+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-16T23:27:37.000001+08:00",
+        "bucket_end": "2026-07-17T00:01:54.142858+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T00:01:54.142858+08:00",
+        "bucket_end": "2026-07-17T00:36:11.285715+08:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T00:36:11.285715+08:00",
+        "bucket_end": "2026-07-17T01:10:28.428572+08:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T01:10:28.428572+08:00",
+        "bucket_end": "2026-07-17T01:44:45.571429+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T01:44:45.571429+08:00",
+        "bucket_end": "2026-07-17T02:19:02.714286+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T02:19:02.714286+08:00",
+        "bucket_end": "2026-07-17T02:53:19.857143+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T02:53:19.857143+08:00",
+        "bucket_end": "2026-07-17T03:27:37+08:00",
+        "positive": 1,
+        "neutral": 0,
         "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 1,
-        "top_topic_label": "packaging / semi / sk / cxmt",
-        "focus_share": 1.0,
-        "post_count": 9
-      },
-      {
-        "handle": "TrendForce.tw",
-        "top_topic_id": 10,
-        "top_topic_label": "台積電 / 台積電第二季每天淨賺近 / 沒那麼簡單 / 魏哲家",
+        "handle": "TrendForce",
+        "top_topic_id": 0,
+        "top_topic_label": "gpu / supports / src / target",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "TrendForce",
-        "top_topic_id": 4,
-        "top_topic_label": "tsmc / capex / revenue / margin",
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 0,
+        "top_topic_label": "gpu / supports / src / target",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 0,
+        "top_topic_label": "gpu / supports / src / target",
+        "focus_share": 0.778,
+        "post_count": 9
+      },
+      {
+        "handle": "ctee.fans",
+        "top_topic_id": 0,
+        "top_topic_label": "gpu / supports / src / target",
         "focus_share": 0.75,
         "post_count": 4
       },
       {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 1,
-        "top_topic_label": "packaging / semi / sk / cxmt",
-        "focus_share": 0.75,
-        "post_count": 8
+        "handle": "tphuang",
+        "top_topic_id": 0,
+        "top_topic_label": "gpu / supports / src / target",
+        "focus_share": 0.6,
+        "post_count": 10
       },
       {
         "handle": "jukan05",
-        "top_topic_id": 1,
-        "top_topic_label": "packaging / semi / sk / cxmt",
-        "focus_share": 0.75,
-        "post_count": 8
-      },
-      {
-        "handle": "ctee.fans",
-        "top_topic_id": 1,
-        "top_topic_label": "packaging / semi / sk / cxmt",
-        "focus_share": 0.727,
-        "post_count": 11
-      },
-      {
-        "handle": "tengyanAI",
-        "top_topic_id": 4,
-        "top_topic_label": "tsmc / capex / revenue / margin",
-        "focus_share": 0.667,
-        "post_count": 3
-      },
-      {
-        "handle": "tphuang",
-        "top_topic_id": 1,
-        "top_topic_label": "packaging / semi / sk / cxmt",
-        "focus_share": 0.6,
-        "post_count": 5
-      },
-      {
-        "handle": "technewsinside",
-        "top_topic_id": 1,
-        "top_topic_label": "packaging / semi / sk / cxmt",
-        "focus_share": 0.35,
-        "post_count": 20
+        "top_topic_id": 0,
+        "top_topic_label": "gpu / supports / src / target",
+        "focus_share": 0.5,
+        "post_count": 2
       },
       {
         "handle": "technews_tw",
-        "top_topic_id": 1,
-        "top_topic_label": "packaging / semi / sk / cxmt",
-        "focus_share": 0.222,
-        "post_count": 18
+        "top_topic_id": 5,
+        "top_topic_label": "晶片與伺服器實力 / 正式超越中國 / 躍升為美國第三大進口來源國 / 台灣憑藉強大的",
+        "focus_share": 0.5,
+        "post_count": 2
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 0,
+        "top_topic_label": "gpu / supports / src / target",
+        "focus_share": 0.333,
+        "post_count": 3
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 0,
+        "top_topic_label": "gpu / supports / src / target",
+        "focus_share": 0.25,
+        "post_count": 4
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 1,
-        "label": "packaging / semi / sk / cxmt",
-        "total_engagement": 5968,
-        "post_count": 45
-      },
-      {
-        "topic_id": 2,
-        "label": "kimi",
-        "total_engagement": 1286,
-        "post_count": 3
-      },
-      {
-        "topic_id": 3,
-        "label": "歐巴撐住呀",
-        "total_engagement": 902,
-        "post_count": 2
-      },
-      {
-        "topic_id": 10,
-        "label": "台積電 / 台積電第二季每天淨賺近 / 沒那麼簡單 / 魏哲家",
-        "total_engagement": 444,
-        "post_count": 6
-      },
-      {
         "topic_id": 0,
-        "label": "資本支出 / 億至 / 再度上調財測 / 宣布將",
-        "total_engagement": 245,
-        "post_count": 2
+        "label": "gpu / supports / src / target",
+        "total_engagement": 3610,
+        "post_count": 21
       },
       {
         "topic_id": 4,
-        "label": "tsmc / capex / revenue / margin",
-        "total_engagement": 190,
-        "post_count": 7
+        "label": "台積電 / ai",
+        "total_engagement": 422,
+        "post_count": 3
       },
       {
-        "topic_id": 16,
-        "label": "奈米與 / 產能缺口極大 / 已調升 / 並透露正在研發玻璃基板",
-        "total_engagement": 87,
+        "topic_id": 1,
+        "label": "kimi / internal / gpt",
+        "total_engagement": 303,
+        "post_count": 4
+      },
+      {
+        "topic_id": 2,
+        "label": "接受安樂死 / 不反對父母體罰孩子 / 認為避孕可以接受 / 認為同性戀沒有道德問題",
+        "total_engagement": 293,
         "post_count": 2
       },
       {
-        "topic_id": 7,
-        "label": "台積電 / 奈米廠 / 儘管消費性市場面臨挑戰 / 董事長",
-        "total_engagement": 47,
-        "post_count": 2
-      },
-      {
-        "topic_id": 14,
-        "label": "奈米片製程確認於 / 法說會釋出先進製程時程 / 且晶片密度大增 / 年量產",
-        "total_engagement": 25,
-        "post_count": 2
-      },
-      {
-        "topic_id": 9,
+        "topic_id": 3,
         "label": "arm",
-        "total_engagement": 19,
-        "post_count": 2
-      },
-      {
-        "topic_id": 5,
-        "label": "星展 / 高成長 / 成長率達 / 第三季維持",
-        "total_engagement": 15,
-        "post_count": 2
-      },
-      {
-        "topic_id": 13,
-        "label": "晶片與伺服器實力 / 正式超越中國 / 台灣憑藉強大的 / 月貿易數據出爐",
-        "total_engagement": 11,
-        "post_count": 2
-      },
-      {
-        "topic_id": 8,
-        "label": "anthropic / aws / openai / 靠安全核心使市占衝上",
-        "total_engagement": 9,
+        "total_engagement": 52,
         "post_count": 2
       },
       {
         "topic_id": 6,
-        "label": "青安 / 歲以下 / 限定 / 搶先看",
-        "total_engagement": 7,
+        "label": "toyota / edge / jetson / 宣布擴大與",
+        "total_engagement": 18,
         "post_count": 2
       },
       {
-        "topic_id": 15,
-        "label": "農曆七月將至 / 貼心推出線上普度祈福服務 / 中華電信 / 攜手全台",
-        "total_engagement": 4,
-        "post_count": 2
-      },
-      {
-        "topic_id": 12,
-        "label": "青安",
-        "total_engagement": 3,
-        "post_count": 2
-      },
-      {
-        "topic_id": 11,
-        "label": "三星 / 倍且摺痕更不明顯 / titanium / 技術導入雙層鈦金屬",
-        "total_engagement": 2,
+        "topic_id": 5,
+        "label": "晶片與伺服器實力 / 正式超越中國 / 躍升為美國第三大進口來源國 / 台灣憑藉強大的",
+        "total_engagement": 13,
         "post_count": 2
       }
     ],
@@ -585,25 +410,25 @@
           "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 46,
-          "likes": 2871,
-          "engagement": 3167,
-          "avg_engagement": 68.8
-        },
-        "evening": {
-          "post_count": 41,
-          "likes": 5792,
-          "engagement": 6097,
-          "avg_engagement": 148.7
-        },
-        "late_night": {
           "post_count": 0,
           "likes": 0,
           "engagement": 0,
           "avg_engagement": 0.0
+        },
+        "evening": {
+          "post_count": 30,
+          "likes": 4380,
+          "engagement": 4539,
+          "avg_engagement": 151.3
+        },
+        "late_night": {
+          "post_count": 6,
+          "likes": 138,
+          "engagement": 172,
+          "avg_engagement": 28.7
         }
       },
-      "peak_slot": "afternoon"
+      "peak_slot": "evening"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,
