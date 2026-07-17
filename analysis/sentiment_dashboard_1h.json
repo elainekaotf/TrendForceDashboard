@@ -1,190 +1,244 @@
 {
-  "generated_at": "2026-07-17T16:31:37+08:00",
+  "generated_at": "2026-07-17T08:58:08.901511+00:00",
   "time_range": "1h",
   "window": {
-    "start_utc": "2026-07-17T15:31:37+08:00",
-    "end_utc": "2026-07-17T16:31:37+08:00",
-    "start_tw": "Jul 17, 15:31",
-    "end_tw": "Jul 17, 16:31"
+    "start_utc": "2026-07-17T07:58:08.901511+00:00",
+    "end_utc": "2026-07-17T08:58:08.901511+00:00",
+    "start_tw": "Jul 17, 15:58",
+    "end_tw": "Jul 17, 16:58"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 6,
+      "total_posts": 23,
       "sentiment_counts": {
-        "negative": 4,
-        "neutral": 2
+        "negative": 15,
+        "neutral": 4,
+        "positive": 4
       },
       "sentiment_share": {
-        "negative": 0.667,
-        "neutral": 0.333
+        "negative": 0.652,
+        "neutral": 0.174,
+        "positive": 0.174
       },
       "top_terms": [
-        "google",
         "裁員",
+        "球首",
+        "全球首",
+        "兩年",
+        "政院",
+        "行政院",
+        "google",
         "員工",
         "工上",
-        "上街",
-        "街抗",
-        "抗議",
-        "員工上",
-        "工上街",
-        "上街抗"
+        "上街"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "ai / google / 裁員",
-        "heat": 50.0,
-        "volume": 6,
-        "engagement": 4,
+        "topic_id": 1,
+        "label": "電動車 / 福斯 / 萬壓縮到 / 大砍產能",
+        "heat": 90.0,
+        "volume": 16,
+        "engagement": 1005,
         "entities": [
           "福斯",
-          "馬斯克",
-          "美軍",
-          "上街",
-          "抗議"
+          "美國",
+          "韓國",
+          "中國",
+          "青安"
         ]
+      },
+      {
+        "topic_id": 2,
+        "label": "ai / google / 裁員 / 轉型壓力下",
+        "heat": 13.6,
+        "volume": 3,
+        "engagement": 67,
+        "entities": [
+          "上街",
+          "抗議",
+          "中國",
+          "北京政府",
+          "聊天"
+        ]
+      },
+      {
+        "topic_id": 3,
+        "label": "企業號 / 航空母艦 / 美軍 / 將拆解",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 15,
+        "entities": [
+          "美軍"
+        ]
+      },
+      {
+        "topic_id": 0,
+        "label": "iphone / 摺疊手機 / 將集中火力衝刺高規機種 / 蘋果秋季發表會傳變陣",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 13,
+        "entities": []
       }
     ],
     "named_entities": [
       {
         "entity": "福斯",
-        "count": 5
+        "count": 7
       },
       {
-        "entity": "馬斯克",
+        "entity": "美國",
         "count": 5
       },
       {
         "entity": "美軍",
-        "count": 3
+        "count": 4
+      },
+      {
+        "entity": "中國",
+        "count": 4
       },
       {
         "entity": "上街",
-        "count": 2
+        "count": 3
       },
       {
         "entity": "抗議",
+        "count": 3
+      },
+      {
+        "entity": "韓國",
+        "count": 3
+      },
+      {
+        "entity": "青安",
         "count": 2
       },
       {
-        "entity": "Google AI",
+        "entity": "中聯",
+        "count": 2
+      },
+      {
+        "entity": "英國",
+        "count": 2
+      },
+      {
+        "entity": "上市",
+        "count": 2
+      },
+      {
+        "entity": "台積電",
+        "count": 2
+      },
+      {
+        "entity": "馬斯克",
         "count": 1
       },
       {
-        "entity": "Canva Instacart",
+        "entity": "蓬勃",
         "count": 1
       },
       {
-        "entity": "google",
-        "count": 1
-      },
-      {
-        "entity": "instacart 等應用  模式再進化",
-        "count": 1
-      },
-      {
-        "entity": "從回答問題推向直接辦事  canva",
+        "entity": "三星",
         "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-17T15:31:37.000002+08:00",
-        "bucket_end": "2026-07-17T15:35:54.142859+08:00",
+        "bucket_start": "2026-07-17T07:58:08.901513+00:00",
+        "bucket_end": "2026-07-17T08:02:26.044370+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-17T08:02:26.044370+00:00",
+        "bucket_end": "2026-07-17T08:06:43.187227+00:00",
         "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T08:06:43.187227+00:00",
+        "bucket_end": "2026-07-17T08:11:00.330084+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-17T08:11:00.330084+00:00",
+        "bucket_end": "2026-07-17T08:15:17.472941+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-17T08:15:17.472941+00:00",
+        "bucket_end": "2026-07-17T08:19:34.615798+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-17T08:19:34.615798+00:00",
+        "bucket_end": "2026-07-17T08:23:51.758655+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-17T08:23:51.758655+00:00",
+        "bucket_end": "2026-07-17T08:28:08.901512+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-17T08:28:08.901512+00:00",
+        "bucket_end": "2026-07-17T08:32:26.044369+00:00",
+        "positive": 1,
+        "neutral": 2,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-17T08:32:26.044369+00:00",
+        "bucket_end": "2026-07-17T08:36:43.187226+00:00",
+        "positive": 1,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T15:35:54.142859+08:00",
-        "bucket_end": "2026-07-17T15:40:11.285716+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T15:40:11.285716+08:00",
-        "bucket_end": "2026-07-17T15:44:28.428573+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T15:44:28.428573+08:00",
-        "bucket_end": "2026-07-17T15:48:45.571430+08:00",
+        "bucket_start": "2026-07-17T08:36:43.187226+00:00",
+        "bucket_end": "2026-07-17T08:41:00.330083+00:00",
         "positive": 0,
         "neutral": 1,
-        "negative": 0
+        "negative": 3
       },
       {
-        "bucket_start": "2026-07-17T15:48:45.571430+08:00",
-        "bucket_end": "2026-07-17T15:53:02.714287+08:00",
+        "bucket_start": "2026-07-17T08:41:00.330083+00:00",
+        "bucket_end": "2026-07-17T08:45:17.472940+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T15:53:02.714287+08:00",
-        "bucket_end": "2026-07-17T15:57:19.857144+08:00",
+        "bucket_start": "2026-07-17T08:45:17.472940+00:00",
+        "bucket_end": "2026-07-17T08:49:34.615797+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T15:57:19.857144+08:00",
-        "bucket_end": "2026-07-17T16:01:37.000001+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-17T16:01:37.000001+08:00",
-        "bucket_end": "2026-07-17T16:05:54.142858+08:00",
+        "bucket_start": "2026-07-17T08:49:34.615797+00:00",
+        "bucket_end": "2026-07-17T08:53:51.758654+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T16:05:54.142858+08:00",
-        "bucket_end": "2026-07-17T16:10:11.285715+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T16:10:11.285715+08:00",
-        "bucket_end": "2026-07-17T16:14:28.428572+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-17T16:14:28.428572+08:00",
-        "bucket_end": "2026-07-17T16:18:45.571429+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T16:18:45.571429+08:00",
-        "bucket_end": "2026-07-17T16:23:02.714286+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-17T16:23:02.714286+08:00",
-        "bucket_end": "2026-07-17T16:27:19.857143+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T16:27:19.857143+08:00",
-        "bucket_end": "2026-07-17T16:31:37+08:00",
+        "bucket_start": "2026-07-17T08:53:51.758654+00:00",
+        "bucket_end": "2026-07-17T08:58:08.901511+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
@@ -192,19 +246,58 @@
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "technews_tw",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / google / 裁員",
+        "handle": "ctee.fans",
+        "top_topic_id": 1,
+        "top_topic_label": "電動車 / 福斯 / 萬壓縮到 / 大砍產能",
         "focus_share": 1.0,
+        "post_count": 4
+      },
+      {
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 1,
+        "top_topic_label": "電動車 / 福斯 / 萬壓縮到 / 大砍產能",
+        "focus_share": 0.889,
+        "post_count": 9
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 1,
+        "top_topic_label": "電動車 / 福斯 / 萬壓縮到 / 大砍產能",
+        "focus_share": 0.5,
         "post_count": 6
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / google / 裁員 / 轉型壓力下",
+        "focus_share": 0.25,
+        "post_count": 4
       }
     ],
     "top_engagement_ranking": [
       {
+        "topic_id": 1,
+        "label": "電動車 / 福斯 / 萬壓縮到 / 大砍產能",
+        "total_engagement": 1005,
+        "post_count": 16
+      },
+      {
+        "topic_id": 2,
+        "label": "ai / google / 裁員 / 轉型壓力下",
+        "total_engagement": 67,
+        "post_count": 3
+      },
+      {
+        "topic_id": 3,
+        "label": "企業號 / 航空母艦 / 美軍 / 將拆解",
+        "total_engagement": 15,
+        "post_count": 2
+      },
+      {
         "topic_id": 0,
-        "label": "ai / google / 裁員",
-        "total_engagement": 4,
-        "post_count": 6
+        "label": "iphone / 摺疊手機 / 將集中火力衝刺高規機種 / 蘋果秋季發表會傳變陣",
+        "total_engagement": 13,
+        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
@@ -216,10 +309,10 @@
           "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 6,
-          "likes": 2,
-          "engagement": 4,
-          "avg_engagement": 0.7
+          "post_count": 23,
+          "likes": 1098,
+          "engagement": 1100,
+          "avg_engagement": 47.8
         },
         "evening": {
           "post_count": 0,

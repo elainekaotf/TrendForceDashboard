@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-07-17T16:31:37+08:00",
+  "generated_at": "2026-07-17T08:58:08.901511+00:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-17T08:31:37+08:00",
-    "end_utc": "2026-07-17T16:31:37+08:00",
-    "start_tw": "Jul 17, 08:31",
-    "end_tw": "Jul 17, 16:31"
+    "start_utc": "2026-07-17T00:58:08.901511+00:00",
+    "end_utc": "2026-07-17T08:58:08.901511+00:00",
+    "start_tw": "Jul 17, 08:58",
+    "end_tw": "Jul 17, 16:58"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 81,
+      "total_posts": 106,
       "sentiment_counts": {
-        "negative": 17,
-        "neutral": 39,
-        "positive": 25
+        "negative": 28,
+        "neutral": 49,
+        "positive": 29
       },
       "sentiment_share": {
-        "negative": 0.21,
-        "neutral": 0.481,
-        "positive": 0.309
+        "negative": 0.264,
+        "neutral": 0.462,
+        "positive": 0.274
       },
       "top_terms": [
         "台積",
@@ -27,48 +27,34 @@
         "台積電",
         "供應",
         "加碼",
-        "成長",
         "google",
-        "元收",
         "收購",
+        "成長",
+        "元收",
         "元收購"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 5,
-        "label": "ai / tsmc / 法說會數據超好還是變法會 / 馬斯克",
+        "topic_id": 1,
+        "label": "ai / 法說會數據超好還是變法會 / google / 川普貼文付費搶先看",
         "heat": 90.0,
-        "volume": 41,
-        "engagement": 2400,
+        "volume": 63,
+        "engagement": 2984,
         "entities": [
           "台積電",
-          "馬斯克",
           "川普",
+          "美國",
           "白宮",
-          "福斯"
+          "美軍"
         ]
       },
       {
-        "topic_id": 8,
-        "label": "ai / arr",
-        "heat": 14.7,
+        "topic_id": 14,
+        "label": "gpu / 摩爾線程 / 廠摩爾線程業績亮眼 / funds",
+        "heat": 13.3,
         "volume": 5,
-        "engagement": 409,
-        "entities": [
-          "亞洲",
-          "the Model Race",
-          "Coding",
-          "AI",
-          "台灣"
-        ]
-      },
-      {
-        "topic_id": 7,
-        "label": "gpu / funds / taiwan / hbm",
-        "heat": 13.4,
-        "volume": 4,
-        "engagement": 919,
+        "engagement": 923,
         "entities": [
           "中國",
           "摩爾線",
@@ -79,89 +65,119 @@
       },
       {
         "topic_id": 2,
-        "label": "google / gemini / ai / aicoding",
-        "heat": 10.1,
-        "volume": 6,
-        "engagement": 5,
+        "label": "ai",
+        "heat": 12.3,
+        "volume": 4,
+        "engagement": 470,
         "entities": [
-          "上街",
-          "抗議",
-          "google",
-          "Google AI",
-          "Canva Instacart"
+          "亞洲",
+          "the Model Race",
+          "Coding",
+          "AI",
+          "台灣"
         ]
       },
       {
-        "topic_id": 11,
-        "label": "美光 / 與高通 / 美光加碼車用市場 / 確保",
-        "heat": 10.1,
-        "volume": 3,
+        "topic_id": 6,
+        "label": "馬斯克 / spacex / 空軍大舉壓境 / 放空",
+        "heat": 11.0,
+        "volume": 4,
+        "engagement": 42,
+        "entities": [
+          "馬斯克"
+        ]
+      },
+      {
+        "topic_id": 15,
+        "label": "gemini / google / aicoding / gemininotebook",
+        "heat": 10.6,
+        "volume": 4,
+        "engagement": 27,
+        "entities": [
+          "Google 更名 由 Gemini",
+          "Gemini Notebook",
+          "google 更名",
+          "google",
+          "Gemini"
+        ]
+      },
+      {
+        "topic_id": 0,
+        "label": "google / ai / 裁員 / 員工上街抗議",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 2,
+        "entities": [
+          "上街",
+          "抗議"
+        ]
+      },
+      {
+        "topic_id": 13,
+        "label": "企業號 / 航空母艦 / 將拆解 / 美軍",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 15,
+        "entities": [
+          "美軍"
+        ]
+      },
+      {
+        "topic_id": 8,
+        "label": "iphone / 摺疊手機 / 蘋果秋季發表會傳變陣 / 基本款恐缺席",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 13,
+        "entities": []
+      },
+      {
+        "topic_id": 12,
+        "label": "paypal / stripe / 收購 / 與私募股權公司聯合提案",
+        "heat": 10.0,
+        "volume": 2,
         "engagement": 4,
+        "entities": [
+          "PayPal",
+          "聯合"
+        ]
+      },
+      {
+        "topic_id": 9,
+        "label": "美光 / 車用記憶體 / 高通 / 電裝等多家頂尖汽車一級供應商簽署策略性協議",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 7,
         "entities": [
           "美光",
           "高通"
         ]
       },
       {
-        "topic_id": 6,
-        "label": "摺疊手機",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 3,
-        "entities": []
-      },
-      {
-        "topic_id": 15,
-        "label": "境內基金 / etf / 單月成長逾 / 台股",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 2,
-        "entities": []
-      },
-      {
-        "topic_id": 12,
-        "label": "川普 / truthapi / api / 向客戶傳送最具影響力帳號的貼文",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 1,
-        "entities": [
-          "川普"
-        ]
-      },
-      {
         "topic_id": 3,
-        "label": "caml / 美軍 / 美軍加速裝備自主化 / 自主化",
+        "label": "關鍵零組件依賴中國 / 禁止美企採購長鑫 / 美中科技戰 / 長江存儲晶片",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 8,
+        "engagement": 15,
         "entities": [
-          "美軍"
+          "長江",
+          "中國",
+          "美中特別委員會",
+          "美中"
         ]
       },
       {
-        "topic_id": 13,
-        "label": "與感測器 / ic / ai / 重塑成熟製程需求",
+        "topic_id": 16,
+        "label": "crt模擬器 / 任天堂 / 復古 / 工程師神還原",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 20,
+        "engagement": 9,
         "entities": [
-          "台積電",
-          "魏哲家"
+          "任天堂"
         ]
       },
       {
-        "topic_id": 0,
-        "label": "ai資料中心 / 太赫茲 / 昇達科出手 / 億元收購高頻高速互連方案供應商達諺科技逾",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 11,
-        "entities": [
-          "太赫茲"
-        ]
-      },
-      {
-        "topic_id": 1,
-        "label": "法說會 / 台積電法說會超預期 / 並加碼投資美國 / 台積電",
+        "topic_id": 17,
+        "label": "法說會 / 並加碼投資美國 / 台積電法說會超預期 / 台積電",
         "heat": 10.0,
         "volume": 2,
         "engagement": 16,
@@ -171,7 +187,18 @@
         ]
       },
       {
-        "topic_id": 4,
+        "topic_id": 5,
+        "label": "財報 / 卻引發市場多空交戰 / 台積電 / ai",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 12,
+        "entities": [
+          "台積電",
+          "毛利"
+        ]
+      },
+      {
+        "topic_id": 11,
         "label": "uber / foodpanda / 外送 / hero",
         "heat": 10.0,
         "volume": 2,
@@ -182,8 +209,8 @@
         ]
       },
       {
-        "topic_id": 9,
-        "label": "晶圓代工 / 台積電傲人財報揭真相 / 英特爾 / 英特爾代工轉型競爭指標",
+        "topic_id": 10,
+        "label": "台積電傲人財報揭真相 / 英特爾 / 晶圓代工 / 英特爾代工轉型競爭指標",
         "heat": 10.0,
         "volume": 2,
         "engagement": 26,
@@ -193,8 +220,8 @@
         ]
       },
       {
-        "topic_id": 14,
-        "label": "在美投資總額達 / 半導體 / 美國投資 / 台積電加碼投資美國",
+        "topic_id": 4,
+        "label": "在美投資總額達 / 台積電加碼投資美國 / 半導體 / 美國投資",
         "heat": 10.0,
         "volume": 2,
         "engagement": 10,
@@ -204,48 +231,51 @@
         ]
       },
       {
-        "topic_id": 10,
-        "label": "openai已成為全球ai投資浪潮的核心象徵 / chatgpt帶動生成式ai熱潮後 / ipo / 由長期關注科技產業的評論人ed",
+        "topic_id": 7,
+        "label": "青安",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 9,
+        "engagement": 85,
         "entities": [
-          "上市",
-          "長達約"
+          "青安"
         ]
       }
     ],
     "named_entities": [
       {
         "entity": "台積電",
-        "count": 47
+        "count": 50
       },
       {
         "entity": "美國",
-        "count": 14
-      },
-      {
-        "entity": "美光",
-        "count": 13
-      },
-      {
-        "entity": "美軍",
-        "count": 11
-      },
-      {
-        "entity": "川普",
-        "count": 11
+        "count": 20
       },
       {
         "entity": "馬斯克",
-        "count": 10
-      },
-      {
-        "entity": "高通",
-        "count": 10
+        "count": 16
       },
       {
         "entity": "中國",
+        "count": 15
+      },
+      {
+        "entity": "美光",
+        "count": 15
+      },
+      {
+        "entity": "美軍",
+        "count": 12
+      },
+      {
+        "entity": "川普",
+        "count": 12
+      },
+      {
+        "entity": "高通",
+        "count": 12
+      },
+      {
+        "entity": "白宮",
         "count": 8
       },
       {
@@ -253,306 +283,314 @@
         "count": 8
       },
       {
+        "entity": "福斯",
+        "count": 7
+      },
+      {
+        "entity": "摩爾線",
+        "count": 7
+      },
+      {
         "entity": "魏哲家",
         "count": 7
       },
       {
-        "entity": "白宮",
-        "count": 6
+        "entity": "長江",
+        "count": 4
       },
       {
-        "entity": "AI",
-        "count": 6
-      },
-      {
-        "entity": "福斯",
-        "count": 5
-      },
-      {
-        "entity": "摩爾線",
-        "count": 5
-      },
-      {
-        "entity": "任天堂",
+        "entity": "博通",
         "count": 4
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-17T08:31:37.000002+08:00",
-        "bucket_end": "2026-07-17T09:05:54.142859+08:00",
-        "positive": 4,
-        "neutral": 8,
-        "negative": 4
+        "bucket_start": "2026-07-17T00:58:08.901513+00:00",
+        "bucket_end": "2026-07-17T01:32:26.044370+00:00",
+        "positive": 0,
+        "neutral": 5,
+        "negative": 3
       },
       {
-        "bucket_start": "2026-07-17T09:05:54.142859+08:00",
-        "bucket_end": "2026-07-17T09:40:11.285716+08:00",
-        "positive": 1,
-        "neutral": 2,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-17T09:40:11.285716+08:00",
-        "bucket_end": "2026-07-17T10:14:28.428573+08:00",
-        "positive": 1,
+        "bucket_start": "2026-07-17T01:32:26.044370+00:00",
+        "bucket_end": "2026-07-17T02:06:43.187227+00:00",
+        "positive": 2,
         "neutral": 3,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T10:14:28.428573+08:00",
-        "bucket_end": "2026-07-17T10:48:45.571430+08:00",
-        "positive": 4,
-        "neutral": 2,
+        "bucket_start": "2026-07-17T02:06:43.187227+00:00",
+        "bucket_end": "2026-07-17T02:41:00.330084+00:00",
+        "positive": 3,
+        "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-17T10:48:45.571430+08:00",
-        "bucket_end": "2026-07-17T11:23:02.714287+08:00",
-        "positive": 1,
-        "neutral": 3,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-17T11:23:02.714287+08:00",
-        "bucket_end": "2026-07-17T11:57:19.857144+08:00",
-        "positive": 5,
+        "bucket_start": "2026-07-17T02:41:00.330084+00:00",
+        "bucket_end": "2026-07-17T03:15:17.472941+00:00",
+        "positive": 2,
         "neutral": 4,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T11:57:19.857144+08:00",
-        "bucket_end": "2026-07-17T12:31:37.000001+08:00",
-        "positive": 4,
-        "neutral": 3,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-17T12:31:37.000001+08:00",
-        "bucket_end": "2026-07-17T13:05:54.142858+08:00",
+        "bucket_start": "2026-07-17T03:15:17.472941+00:00",
+        "bucket_end": "2026-07-17T03:49:34.615798+00:00",
+        "positive": 4,
+        "neutral": 5,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T03:49:34.615798+00:00",
+        "bucket_end": "2026-07-17T04:23:51.758655+00:00",
+        "positive": 5,
+        "neutral": 2,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-17T04:23:51.758655+00:00",
+        "bucket_end": "2026-07-17T04:58:08.901512+00:00",
         "positive": 2,
         "neutral": 6,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T13:05:54.142858+08:00",
-        "bucket_end": "2026-07-17T13:40:11.285715+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T13:40:11.285715+08:00",
-        "bucket_end": "2026-07-17T14:14:28.428572+08:00",
+        "bucket_start": "2026-07-17T04:58:08.901512+00:00",
+        "bucket_end": "2026-07-17T05:32:26.044369+00:00",
         "positive": 2,
-        "neutral": 1,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-17T14:14:28.428572+08:00",
-        "bucket_end": "2026-07-17T14:48:45.571429+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-17T14:48:45.571429+08:00",
-        "bucket_end": "2026-07-17T15:23:02.714286+08:00",
-        "positive": 1,
-        "neutral": 2,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-17T15:23:02.714286+08:00",
-        "bucket_end": "2026-07-17T15:57:19.857143+08:00",
-        "positive": 0,
         "neutral": 3,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-17T15:57:19.857143+08:00",
-        "bucket_end": "2026-07-17T16:31:37+08:00",
+        "bucket_start": "2026-07-17T05:32:26.044369+00:00",
+        "bucket_end": "2026-07-17T06:06:43.187226+00:00",
+        "positive": 3,
+        "neutral": 4,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-17T06:06:43.187226+00:00",
+        "bucket_end": "2026-07-17T06:41:00.330083+00:00",
         "positive": 0,
-        "neutral": 0,
+        "neutral": 3,
         "negative": 3
+      },
+      {
+        "bucket_start": "2026-07-17T06:41:00.330083+00:00",
+        "bucket_end": "2026-07-17T07:15:17.472940+00:00",
+        "positive": 2,
+        "neutral": 4,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-17T07:15:17.472940+00:00",
+        "bucket_end": "2026-07-17T07:49:34.615797+00:00",
+        "positive": 0,
+        "neutral": 6,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T07:49:34.615797+00:00",
+        "bucket_end": "2026-07-17T08:23:51.758654+00:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 7
+      },
+      {
+        "bucket_start": "2026-07-17T08:23:51.758654+00:00",
+        "bucket_end": "2026-07-17T08:58:08.901511+00:00",
+        "positive": 2,
+        "neutral": 4,
+        "negative": 6
       }
     ],
     "coverage_focus_ranking": [
       {
         "handle": "tphuang",
-        "top_topic_id": 5,
-        "top_topic_label": "ai / tsmc / 法說會數據超好還是變法會 / 馬斯克",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 法說會數據超好還是變法會 / google / 川普貼文付費搶先看",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "yutinghaosfinance",
-        "top_topic_id": 5,
-        "top_topic_label": "ai / tsmc / 法說會數據超好還是變法會 / 馬斯克",
-        "focus_share": 1.0,
-        "post_count": 1
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 法說會數據超好還是變法會 / google / 川普貼文付費搶先看",
+        "focus_share": 0.778,
+        "post_count": 9
       },
       {
-        "handle": "tengyanAI",
-        "top_topic_id": 5,
-        "top_topic_label": "ai / tsmc / 法說會數據超好還是變法會 / 馬斯克",
-        "focus_share": 0.857,
-        "post_count": 7
+        "handle": "ctee.fans",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 法說會數據超好還是變法會 / google / 川普貼文付費搶先看",
+        "focus_share": 0.692,
+        "post_count": 13
       },
       {
         "handle": "jukan05",
-        "top_topic_id": 5,
-        "top_topic_label": "ai / tsmc / 法說會數據超好還是變法會 / 馬斯克",
-        "focus_share": 0.75,
-        "post_count": 4
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 法說會數據超好還是變法會 / google / 川普貼文付費搶先看",
+        "focus_share": 0.667,
+        "post_count": 3
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 法說會數據超好還是變法會 / google / 川普貼文付費搶先看",
+        "focus_share": 0.564,
+        "post_count": 39
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 法說會數據超好還是變法會 / google / 川普貼文付費搶先看",
+        "focus_share": 0.543,
+        "post_count": 35
       },
       {
         "handle": "SemiAnalysis_",
-        "top_topic_id": 5,
-        "top_topic_label": "ai / tsmc / 法說會數據超好還是變法會 / 馬斯克",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 法說會數據超好還是變法會 / google / 川普貼文付費搶先看",
         "focus_share": 0.5,
         "post_count": 2
       },
       {
         "handle": "QQ_Timmy",
-        "top_topic_id": 5,
-        "top_topic_label": "ai / tsmc / 法說會數據超好還是變法會 / 馬斯克",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 法說會數據超好還是變法會 / google / 川普貼文付費搶先看",
         "focus_share": 0.5,
         "post_count": 2
       },
       {
-        "handle": "ctee.fans",
-        "top_topic_id": 5,
-        "top_topic_label": "ai / tsmc / 法說會數據超好還是變法會 / 馬斯克",
+        "handle": "tengyanAI",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 法說會數據超好還是變法會 / google / 川普貼文付費搶先看",
         "focus_share": 0.5,
-        "post_count": 8
-      },
-      {
-        "handle": "technews_tw",
-        "top_topic_id": 5,
-        "top_topic_label": "ai / tsmc / 法說會數據超好還是變法會 / 馬斯克",
-        "focus_share": 0.432,
-        "post_count": 37
-      },
-      {
-        "handle": "technewsinside",
-        "top_topic_id": 5,
-        "top_topic_label": "ai / tsmc / 法說會數據超好還是變法會 / 馬斯克",
-        "focus_share": 0.421,
-        "post_count": 19
+        "post_count": 2
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 5,
-        "label": "ai / tsmc / 法說會數據超好還是變法會 / 馬斯克",
-        "total_engagement": 2400,
-        "post_count": 41
+        "topic_id": 1,
+        "label": "ai / 法說會數據超好還是變法會 / google / 川普貼文付費搶先看",
+        "total_engagement": 2984,
+        "post_count": 63
       },
       {
-        "topic_id": 7,
-        "label": "gpu / funds / taiwan / hbm",
-        "total_engagement": 919,
-        "post_count": 4
-      },
-      {
-        "topic_id": 8,
-        "label": "ai / arr",
-        "total_engagement": 409,
+        "topic_id": 14,
+        "label": "gpu / 摩爾線程 / 廠摩爾線程業績亮眼 / funds",
+        "total_engagement": 923,
         "post_count": 5
       },
       {
-        "topic_id": 9,
-        "label": "晶圓代工 / 台積電傲人財報揭真相 / 英特爾 / 英特爾代工轉型競爭指標",
+        "topic_id": 2,
+        "label": "ai",
+        "total_engagement": 470,
+        "post_count": 4
+      },
+      {
+        "topic_id": 7,
+        "label": "青安",
+        "total_engagement": 85,
+        "post_count": 2
+      },
+      {
+        "topic_id": 6,
+        "label": "馬斯克 / spacex / 空軍大舉壓境 / 放空",
+        "total_engagement": 42,
+        "post_count": 4
+      },
+      {
+        "topic_id": 15,
+        "label": "gemini / google / aicoding / gemininotebook",
+        "total_engagement": 27,
+        "post_count": 4
+      },
+      {
+        "topic_id": 10,
+        "label": "台積電傲人財報揭真相 / 英特爾 / 晶圓代工 / 英特爾代工轉型競爭指標",
         "total_engagement": 26,
         "post_count": 2
       },
       {
-        "topic_id": 13,
-        "label": "與感測器 / ic / ai / 重塑成熟製程需求",
-        "total_engagement": 20,
-        "post_count": 2
-      },
-      {
-        "topic_id": 1,
-        "label": "法說會 / 台積電法說會超預期 / 並加碼投資美國 / 台積電",
+        "topic_id": 17,
+        "label": "法說會 / 並加碼投資美國 / 台積電法說會超預期 / 台積電",
         "total_engagement": 16,
         "post_count": 2
       },
       {
-        "topic_id": 0,
-        "label": "ai資料中心 / 太赫茲 / 昇達科出手 / 億元收購高頻高速互連方案供應商達諺科技逾",
-        "total_engagement": 11,
+        "topic_id": 13,
+        "label": "企業號 / 航空母艦 / 將拆解 / 美軍",
+        "total_engagement": 15,
         "post_count": 2
       },
       {
-        "topic_id": 4,
+        "topic_id": 3,
+        "label": "關鍵零組件依賴中國 / 禁止美企採購長鑫 / 美中科技戰 / 長江存儲晶片",
+        "total_engagement": 15,
+        "post_count": 2
+      },
+      {
+        "topic_id": 8,
+        "label": "iphone / 摺疊手機 / 蘋果秋季發表會傳變陣 / 基本款恐缺席",
+        "total_engagement": 13,
+        "post_count": 2
+      },
+      {
+        "topic_id": 5,
+        "label": "財報 / 卻引發市場多空交戰 / 台積電 / ai",
+        "total_engagement": 12,
+        "post_count": 2
+      },
+      {
+        "topic_id": 11,
         "label": "uber / foodpanda / 外送 / hero",
         "total_engagement": 10,
         "post_count": 2
       },
       {
-        "topic_id": 14,
-        "label": "在美投資總額達 / 半導體 / 美國投資 / 台積電加碼投資美國",
+        "topic_id": 4,
+        "label": "在美投資總額達 / 台積電加碼投資美國 / 半導體 / 美國投資",
         "total_engagement": 10,
         "post_count": 2
       },
       {
-        "topic_id": 10,
-        "label": "openai已成為全球ai投資浪潮的核心象徵 / chatgpt帶動生成式ai熱潮後 / ipo / 由長期關注科技產業的評論人ed",
+        "topic_id": 16,
+        "label": "crt模擬器 / 任天堂 / 復古 / 工程師神還原",
         "total_engagement": 9,
         "post_count": 2
       },
       {
-        "topic_id": 3,
-        "label": "caml / 美軍 / 美軍加速裝備自主化 / 自主化",
-        "total_engagement": 8,
-        "post_count": 2
-      },
-      {
-        "topic_id": 2,
-        "label": "google / gemini / ai / aicoding",
-        "total_engagement": 5,
-        "post_count": 6
-      },
-      {
-        "topic_id": 11,
-        "label": "美光 / 與高通 / 美光加碼車用市場 / 確保",
-        "total_engagement": 4,
-        "post_count": 3
-      },
-      {
-        "topic_id": 6,
-        "label": "摺疊手機",
-        "total_engagement": 3,
-        "post_count": 2
-      },
-      {
-        "topic_id": 15,
-        "label": "境內基金 / etf / 單月成長逾 / 台股",
-        "total_engagement": 2,
+        "topic_id": 9,
+        "label": "美光 / 車用記憶體 / 高通 / 電裝等多家頂尖汽車一級供應商簽署策略性協議",
+        "total_engagement": 7,
         "post_count": 2
       },
       {
         "topic_id": 12,
-        "label": "川普 / truthapi / api / 向客戶傳送最具影響力帳號的貼文",
-        "total_engagement": 1,
+        "label": "paypal / stripe / 收購 / 與私募股權公司聯合提案",
+        "total_engagement": 4,
+        "post_count": 2
+      },
+      {
+        "topic_id": 0,
+        "label": "google / ai / 裁員 / 員工上街抗議",
+        "total_engagement": 2,
         "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 46,
-          "likes": 2388,
-          "engagement": 2682,
-          "avg_engagement": 58.3
+          "post_count": 34,
+          "likes": 1100,
+          "engagement": 1241,
+          "avg_engagement": 36.5
         },
         "afternoon": {
-          "post_count": 35,
-          "likes": 1030,
-          "engagement": 1171,
-          "avg_engagement": 33.5
+          "post_count": 72,
+          "likes": 3288,
+          "engagement": 3429,
+          "avg_engagement": 47.6
         },
         "evening": {
           "post_count": 0,
@@ -567,7 +605,7 @@
           "avg_engagement": 0.0
         }
       },
-      "peak_slot": "morning"
+      "peak_slot": "afternoon"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,
