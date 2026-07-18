@@ -1,46 +1,31 @@
 {
   "clusters": [
     {
-      "id": 6,
-      "label": "ai / 台積電 / memory / tsmc",
-      "size": 50,
+      "id": 2,
+      "label": "ai / nvidia / memory / chip",
+      "size": 45,
       "accounts": {
-        "technews_tw": 11,
+        "technews_tw": 13,
         "SemiAnalysis_": 1,
         "jukan05": 2,
-        "QQ_Timmy": 2,
         "tphuang": 4,
-        "tengyanAI": 4,
-        "technewsinside": 14,
-        "ctee.fans": 12
+        "tengyanAI": 3,
+        "technewsinside": 11,
+        "ctee.fans": 11
       },
       "engagement_by_account": {
-        "technews_tw": 14,
+        "technews_tw": 30,
         "SemiAnalysis_": 277,
         "jukan05": 617,
-        "QQ_Timmy": 108,
         "tphuang": 121,
-        "tengyanAI": 16,
-        "technewsinside": 539,
-        "ctee.fans": 129
+        "tengyanAI": 12,
+        "technewsinside": 509,
+        "ctee.fans": 111
       }
     },
     {
-      "id": 14,
-      "label": "nvidia / ai / amd / rubin",
-      "size": 3,
-      "accounts": {
-        "QQ_Timmy": 1,
-        "ctee.fans": 2
-      },
-      "engagement_by_account": {
-        "QQ_Timmy": 29,
-        "ctee.fans": 13
-      }
-    },
-    {
-      "id": 17,
-      "label": "trendforce / ai / csp / nand",
+      "id": 7,
+      "label": "trendforce / ai / csp / nvidia",
       "size": 2,
       "accounts": {
         "technews_tw": 1,
@@ -52,58 +37,25 @@
       }
     },
     {
-      "id": 3,
-      "label": "meta / ai / alphabet / compute",
-      "size": 1,
+      "id": 13,
+      "label": "ai / pcb / physical / nvidia",
+      "size": 2,
       "accounts": {
+        "technews_tw": 1,
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "technewsinside": 7
-      }
-    },
-    {
-      "id": 8,
-      "label": "physical / ai / platform / narrative",
-      "size": 1,
-      "accounts": {
-        "ctee.fans": 1
-      },
-      "engagement_by_account": {
-        "ctee.fans": 22
+        "technews_tw": 1,
+        "technewsinside": 2
       }
     }
   ],
-  "gaps": [
-    {
-      "cluster_id": 14,
-      "label": "nvidia / ai / amd / rubin",
-      "own_count": 0,
-      "competitor_count": 3,
-      "competitor_engagement": 42,
-      "competitors_covering": [
-        "QQ_Timmy",
-        "ctee.fans"
-      ]
-    }
-  ],
-  "suggested_entry_points": [
-    {
-      "cluster_id": 14,
-      "label": "nvidia / ai / amd / rubin",
-      "own_count": 0,
-      "competitor_count": 3,
-      "competitor_engagement": 42,
-      "competitors_covering": [
-        "QQ_Timmy",
-        "ctee.fans"
-      ]
-    }
-  ],
+  "gaps": [],
+  "suggested_entry_points": [],
   "window": {
-    "start_utc": "2026-07-18T12:50:03+08:00",
-    "end_utc": "2026-07-18T20:50:03+08:00",
-    "start_tw": "Jul 18, 12:50",
-    "end_tw": "Jul 18, 20:50"
+    "start_utc": "2026-07-18T15:04:58+08:00",
+    "end_utc": "2026-07-18T23:04:58+08:00",
+    "start_tw": "Jul 18, 15:04",
+    "end_tw": "Jul 18, 23:04"
   }
 }
