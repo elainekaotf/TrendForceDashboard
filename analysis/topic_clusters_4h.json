@@ -1,96 +1,75 @@
 {
   "clusters": [
     {
-      "id": 0,
-      "label": "ai / 台積電 / trendforce / memory",
-      "size": 26,
-      "accounts": {
-        "TrendForce": 1,
-        "technews_tw": 14,
-        "jukan05": 1,
-        "tphuang": 2,
-        "tengyanAI": 2,
-        "technewsinside": 5,
-        "yutinghaosfinance": 1
-      },
-      "engagement_by_account": {
-        "TrendForce": 3,
-        "technews_tw": 23,
-        "jukan05": 1116,
-        "tphuang": 26,
-        "tengyanAI": 20,
-        "technewsinside": 26,
-        "yutinghaosfinance": 0
-      }
-    },
-    {
-      "id": 14,
-      "label": "ai / trendforce / pcb / physical",
+      "id": 4,
+      "label": "ai / 台積電 / memory / tsmc",
       "size": 5,
       "accounts": {
-        "technews_tw": 4,
-        "technewsinside": 1
+        "SemiAnalysis_": 1,
+        "tphuang": 3,
+        "tengyanAI": 1
       },
       "engagement_by_account": {
-        "technews_tw": 9,
-        "technewsinside": 5
-      }
-    },
-    {
-      "id": 9,
-      "label": "護城河 / 大賣空 / ai",
-      "size": 2,
-      "accounts": {
-        "technews_tw": 1,
-        "technewsinside": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 3,
-        "technewsinside": 5
-      }
-    },
-    {
-      "id": 15,
-      "label": "openai / anthropic / ai / gpt",
-      "size": 2,
-      "accounts": {
-        "technews_tw": 1,
-        "jukan05": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 2,
-        "jukan05": 1035
+        "SemiAnalysis_": 709,
+        "tphuang": 42,
+        "tengyanAI": 67
       }
     },
     {
       "id": 3,
-      "label": "tsmc / intel / packaging / foundry",
+      "label": "nvidia / ai / amd / rubin",
       "size": 1,
       "accounts": {
-        "SemiAnalysis_": 1
+        "tphuang": 1
       },
       "engagement_by_account": {
-        "SemiAnalysis_": 411
+        "tphuang": 8
       }
     },
     {
-      "id": 6,
-      "label": "nvidia / ai / amd / gpu",
+      "id": 8,
+      "label": "hynix / sk / hbm / samsung",
       "size": 1,
       "accounts": {
         "tengyanAI": 1
       },
       "engagement_by_account": {
-        "tengyanAI": 15
+        "tengyanAI": 16
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 4,
+      "label": "ai / 台積電 / memory / tsmc",
+      "own_count": 0,
+      "competitor_count": 5,
+      "competitor_engagement": 818,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "tphuang",
+        "tengyanAI"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 4,
+      "label": "ai / 台積電 / memory / tsmc",
+      "own_count": 0,
+      "competitor_count": 5,
+      "competitor_engagement": 818,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "tphuang",
+        "tengyanAI"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-17T20:04:30+08:00",
-    "end_utc": "2026-07-18T00:04:30+08:00",
-    "start_tw": "Jul 17, 20:04",
-    "end_tw": "Jul 18, 00:04"
+    "start_utc": "2026-07-18T01:58:00+08:00",
+    "end_utc": "2026-07-18T05:58:00+08:00",
+    "start_tw": "Jul 18, 01:58",
+    "end_tw": "Jul 18, 05:58"
   }
 }
