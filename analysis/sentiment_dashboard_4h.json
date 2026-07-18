@@ -1,309 +1,378 @@
 {
-  "generated_at": "2026-07-18T09:34:45.443296+00:00",
+  "generated_at": "2026-07-18T20:50:03+08:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-18T05:34:45.443296+00:00",
-    "end_utc": "2026-07-18T09:34:45.443296+00:00",
-    "start_tw": "Jul 18, 13:34",
-    "end_tw": "Jul 18, 17:34"
+    "start_utc": "2026-07-18T16:50:03+08:00",
+    "end_utc": "2026-07-18T20:50:03+08:00",
+    "start_tw": "Jul 18, 16:50",
+    "end_tw": "Jul 18, 20:50"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 23,
+      "total_posts": 35,
       "sentiment_counts": {
-        "negative": 11,
-        "positive": 7,
-        "neutral": 5
+        "neutral": 12,
+        "negative": 8,
+        "positive": 15
       },
       "sentiment_share": {
-        "negative": 0.478,
-        "positive": 0.304,
-        "neutral": 0.217
+        "neutral": 0.343,
+        "negative": 0.229,
+        "positive": 0.429
       },
       "top_terms": [
+        "kimi",
+        "生態",
+        "半導",
+        "導體",
+        "半導體",
         "料中",
         "資料中",
         "料中心",
         "資料中心",
-        "新創",
-        "機大",
-        "矽光",
-        "光子",
-        "矽光子",
         "國新"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 1,
-        "label": "ai / moonshot / ai資料中心 / 靜奢",
+        "topic_id": 0,
+        "label": "ai / completed / moonshot / kimi",
         "heat": 90.0,
-        "volume": 17,
-        "engagement": 422,
+        "volume": 21,
+        "engagement": 871,
         "entities": [
           "靜奢",
           "新富",
-          "中國",
-          "美學",
-          "Project Jupiter"
+          "日本",
+          "神山",
+          "牽線"
         ]
       },
       {
-        "topic_id": 2,
-        "label": "glass",
-        "heat": 15.0,
-        "volume": 2,
-        "engagement": 241,
-        "entities": []
+        "topic_id": 1,
+        "label": "ai / faster / networking",
+        "heat": 12.5,
+        "volume": 4,
+        "engagement": 34,
+        "entities": [
+          "AI",
+          "Topoint",
+          "HBM",
+          "Tessara"
+        ]
       },
       {
-        "topic_id": 0,
-        "label": "brick / 專注力 / 美國新創 / 手機成癮",
+        "topic_id": 5,
+        "label": "大黑磚 / 筆電充電 / 氮化鎵技術如何改變筆電充電生態 / 氮化鎵",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 8,
+        "engagement": 11,
         "entities": [
-          "美國"
+          "大黑"
+        ]
+      },
+      {
+        "topic_id": 6,
+        "label": "kimik / ai模型 / 最新模型 / 月之暗面",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 36,
+        "entities": [
+          "中國"
         ]
       },
       {
         "topic_id": 3,
-        "label": "nvidia",
+        "label": "z世代 / 跨世代共居新解方 / 跨世代共居 / 舊金山",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 22,
+        "engagement": 8,
         "entities": [
-          "AMD",
-          "Intel",
-          "Silicon Motion",
-          "Nelson Duann",
-          "Duann"
+          "金山",
+          "美國"
+        ]
+      },
+      {
+        "topic_id": 4,
+        "label": "中國收緊稀土出口管制 / 出口管制 / 承受新一波供應鏈壓力 / 全球高科技與國防產業",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 3,
+        "entities": [
+          "中國",
+          "高科技",
+          "國防產業",
+          "新一波"
+        ]
+      },
+      {
+        "topic_id": 2,
+        "label": "ford黑色皮夾克 / 執行長黃仁勳訪台出席電腦展 / 頂著大太陽穿著一襲tom / 還記得",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 13,
+        "entities": [
+          "輝達",
+          "黃仁勳",
+          "太陽"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "美國",
-        "count": 6
+        "entity": "中國",
+        "count": 8
+      },
+      {
+        "entity": "金山",
+        "count": 7
       },
       {
         "entity": "靜奢",
         "count": 6
       },
       {
+        "entity": "大黑",
+        "count": 5
+      },
+      {
+        "entity": "美國",
+        "count": 4
+      },
+      {
+        "entity": "高科技",
+        "count": 4
+      },
+      {
+        "entity": "國防產業",
+        "count": 4
+      },
+      {
+        "entity": "新一波",
+        "count": 4
+      },
+      {
         "entity": "新富",
         "count": 4
       },
       {
-        "entity": "中國",
-        "count": 4
+        "entity": "日本",
+        "count": 3
+      },
+      {
+        "entity": "神山",
+        "count": 3
+      },
+      {
+        "entity": "牽線",
+        "count": 3
       },
       {
         "entity": "美學",
         "count": 3
       },
       {
-        "entity": "AMD",
+        "entity": "AI",
+        "count": 3
+      },
+      {
+        "entity": "China",
         "count": 2
-      },
-      {
-        "entity": "Intel",
-        "count": 2
-      },
-      {
-        "entity": "Project Jupiter",
-        "count": 2
-      },
-      {
-        "entity": "魏哲家",
-        "count": 2
-      },
-      {
-        "entity": "Silicon Motion",
-        "count": 1
-      },
-      {
-        "entity": "Nelson Duann",
-        "count": 1
-      },
-      {
-        "entity": "Duann",
-        "count": 1
-      },
-      {
-        "entity": "Tom s Hardware",
-        "count": 1
-      },
-      {
-        "entity": "intel",
-        "count": 1
-      },
-      {
-        "entity": "Stargate 專案與 Bloom Energy",
-        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-18T05:34:45.443290+00:00",
-        "bucket_end": "2026-07-18T05:51:54.014719+00:00",
+        "bucket_start": "2026-07-18T16:50:02.999994+08:00",
+        "bucket_end": "2026-07-18T17:07:11.571423+08:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-18T17:07:11.571423+08:00",
+        "bucket_end": "2026-07-18T17:24:20.142852+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T05:51:54.014719+00:00",
-        "bucket_end": "2026-07-18T06:09:02.586148+00:00",
-        "positive": 1,
+        "bucket_start": "2026-07-18T17:24:20.142852+08:00",
+        "bucket_end": "2026-07-18T17:41:28.714281+08:00",
+        "positive": 2,
+        "neutral": 1,
+        "negative": 3
+      },
+      {
+        "bucket_start": "2026-07-18T17:41:28.714281+08:00",
+        "bucket_end": "2026-07-18T17:58:37.285710+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-18T17:58:37.285710+08:00",
+        "bucket_end": "2026-07-18T18:15:45.857139+08:00",
+        "positive": 3,
         "neutral": 2,
-        "negative": 2
+        "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T06:09:02.586148+00:00",
-        "bucket_end": "2026-07-18T06:26:11.157577+00:00",
-        "positive": 0,
+        "bucket_start": "2026-07-18T18:15:45.857139+08:00",
+        "bucket_end": "2026-07-18T18:32:54.428568+08:00",
+        "positive": 3,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T06:26:11.157577+00:00",
-        "bucket_end": "2026-07-18T06:43:19.729006+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T06:43:19.729006+00:00",
-        "bucket_end": "2026-07-18T07:00:28.300435+00:00",
+        "bucket_start": "2026-07-18T18:32:54.428568+08:00",
+        "bucket_end": "2026-07-18T18:50:02.999997+08:00",
         "positive": 1,
         "neutral": 1,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-18T07:00:28.300435+00:00",
-        "bucket_end": "2026-07-18T07:17:36.871864+00:00",
-        "positive": 0,
-        "neutral": 0,
+        "bucket_start": "2026-07-18T18:50:02.999997+08:00",
+        "bucket_end": "2026-07-18T19:07:11.571426+08:00",
+        "positive": 2,
+        "neutral": 2,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-18T07:17:36.871864+00:00",
-        "bucket_end": "2026-07-18T07:34:45.443293+00:00",
-        "positive": 1,
+        "bucket_start": "2026-07-18T19:07:11.571426+08:00",
+        "bucket_end": "2026-07-18T19:24:20.142855+08:00",
+        "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T07:34:45.443293+00:00",
-        "bucket_end": "2026-07-18T07:51:54.014722+00:00",
-        "positive": 1,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T07:51:54.014722+00:00",
-        "bucket_end": "2026-07-18T08:09:02.586151+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-18T08:09:02.586151+00:00",
-        "bucket_end": "2026-07-18T08:26:11.157580+00:00",
-        "positive": 0,
+        "bucket_start": "2026-07-18T19:24:20.142855+08:00",
+        "bucket_end": "2026-07-18T19:41:28.714284+08:00",
+        "positive": 2,
         "neutral": 1,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-18T08:26:11.157580+00:00",
-        "bucket_end": "2026-07-18T08:43:19.729009+00:00",
+        "bucket_start": "2026-07-18T19:41:28.714284+08:00",
+        "bucket_end": "2026-07-18T19:58:37.285713+08:00",
         "positive": 0,
-        "neutral": 0,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-18T08:43:19.729009+00:00",
-        "bucket_end": "2026-07-18T09:00:28.300438+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-18T09:00:28.300438+00:00",
-        "bucket_end": "2026-07-18T09:17:36.871867+00:00",
-        "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T09:17:36.871867+00:00",
-        "bucket_end": "2026-07-18T09:34:45.443296+00:00",
-        "positive": 1,
-        "neutral": 0,
+        "bucket_start": "2026-07-18T19:58:37.285713+08:00",
+        "bucket_end": "2026-07-18T20:15:45.857142+08:00",
+        "positive": 0,
+        "neutral": 2,
         "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-18T20:15:45.857142+08:00",
+        "bucket_end": "2026-07-18T20:32:54.428571+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-18T20:32:54.428571+08:00",
+        "bucket_end": "2026-07-18T20:50:03+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "jukan05",
-        "top_topic_id": 2,
-        "top_topic_label": "glass",
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / completed / moonshot / kimi",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "technewsinside",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / moonshot / ai資料中心 / 靜奢",
-        "focus_share": 0.875,
-        "post_count": 8
+        "handle": "jukan05",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / completed / moonshot / kimi",
+        "focus_share": 1.0,
+        "post_count": 1
       },
       {
-        "handle": "ctee.fans",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / moonshot / ai資料中心 / 靜奢",
-        "focus_share": 0.857,
-        "post_count": 7
-      },
-      {
-        "handle": "technews_tw",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / moonshot / ai資料中心 / 靜奢",
-        "focus_share": 0.75,
+        "handle": "tphuang",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / completed / moonshot / kimi",
+        "focus_share": 1.0,
         "post_count": 4
       },
       {
-        "handle": "QQ_Timmy",
+        "handle": "tengyanAI",
         "top_topic_id": 1,
-        "top_topic_label": "ai / moonshot / ai資料中心 / 靜奢",
-        "focus_share": 0.333,
+        "top_topic_label": "ai / faster / networking",
+        "focus_share": 0.667,
         "post_count": 3
+      },
+      {
+        "handle": "ctee.fans",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / completed / moonshot / kimi",
+        "focus_share": 0.625,
+        "post_count": 8
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / completed / moonshot / kimi",
+        "focus_share": 0.5,
+        "post_count": 8
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / completed / moonshot / kimi",
+        "focus_share": 0.5,
+        "post_count": 10
       }
     ],
     "top_engagement_ranking": [
       {
+        "topic_id": 0,
+        "label": "ai / completed / moonshot / kimi",
+        "total_engagement": 871,
+        "post_count": 21
+      },
+      {
+        "topic_id": 6,
+        "label": "kimik / ai模型 / 最新模型 / 月之暗面",
+        "total_engagement": 36,
+        "post_count": 2
+      },
+      {
         "topic_id": 1,
-        "label": "ai / moonshot / ai資料中心 / 靜奢",
-        "total_engagement": 422,
-        "post_count": 17
+        "label": "ai / faster / networking",
+        "total_engagement": 34,
+        "post_count": 4
       },
       {
         "topic_id": 2,
-        "label": "glass",
-        "total_engagement": 241,
+        "label": "ford黑色皮夾克 / 執行長黃仁勳訪台出席電腦展 / 頂著大太陽穿著一襲tom / 還記得",
+        "total_engagement": 13,
+        "post_count": 2
+      },
+      {
+        "topic_id": 5,
+        "label": "大黑磚 / 筆電充電 / 氮化鎵技術如何改變筆電充電生態 / 氮化鎵",
+        "total_engagement": 11,
         "post_count": 2
       },
       {
         "topic_id": 3,
-        "label": "nvidia",
-        "total_engagement": 22,
+        "label": "z世代 / 跨世代共居新解方 / 跨世代共居 / 舊金山",
+        "total_engagement": 8,
         "post_count": 2
       },
       {
-        "topic_id": 0,
-        "label": "brick / 專注力 / 美國新創 / 手機成癮",
-        "total_engagement": 8,
+        "topic_id": 4,
+        "label": "中國收緊稀土出口管制 / 出口管制 / 承受新一波供應鏈壓力 / 全球高科技與國防產業",
+        "total_engagement": 3,
         "post_count": 2
       }
     ],
