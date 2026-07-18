@@ -10,16 +10,16 @@
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 55,
+      "total_posts": 64,
       "sentiment_counts": {
-        "negative": 15,
-        "positive": 27,
-        "neutral": 13
+        "negative": 16,
+        "positive": 34,
+        "neutral": 14
       },
       "sentiment_share": {
-        "negative": 0.273,
-        "positive": 0.491,
-        "neutral": 0.236
+        "negative": 0.25,
+        "positive": 0.531,
+        "neutral": 0.219
       },
       "top_terms": [
         "半導",
@@ -36,23 +36,34 @@
     },
     "temperature_bar": [
       {
-        "topic_id": 1,
-        "label": "completed / kimi / ai / wd",
+        "topic_id": 0,
+        "label": "kimi / completed / moonshot / 月之暗面",
         "heat": 90.0,
-        "volume": 31,
-        "engagement": 1745,
+        "volume": 38,
+        "engagement": 3859,
         "entities": [
-          "中國",
           "金山",
-          "靜奢",
           "美國",
-          "高科技"
+          "靜奢",
+          "大黑",
+          "中國"
+        ]
+      },
+      {
+        "topic_id": 6,
+        "label": "跑分逼近美國兩大模型 / kimi / kimik / 嚇倒美半導體類股",
+        "heat": 12.0,
+        "volume": 3,
+        "engagement": 127,
+        "entities": [
+          "美國",
+          "中國"
         ]
       },
       {
         "topic_id": 5,
         "label": "memory / analysis / argument / supply",
-        "heat": 37.6,
+        "heat": 12.0,
         "volume": 3,
         "engagement": 1379,
         "entities": [
@@ -62,7 +73,7 @@
       {
         "topic_id": 3,
         "label": "ai / faster / networking",
-        "heat": 12.5,
+        "heat": 11.4,
         "volume": 4,
         "engagement": 73,
         "entities": [
@@ -70,17 +81,6 @@
           "Topoint",
           "HBM",
           "Tessara"
-        ]
-      },
-      {
-        "topic_id": 6,
-        "label": "跑分逼近美國兩大模型 / kimi / kimik / 嚇倒美半導體類股",
-        "heat": 12.4,
-        "volume": 3,
-        "engagement": 127,
-        "entities": [
-          "美國",
-          "中國"
         ]
       },
       {
@@ -93,6 +93,14 @@
           "英特爾",
           "台灣"
         ]
+      },
+      {
+        "topic_id": 11,
+        "label": "wd / 半導體股並非唯一贏家 / 公司財報出色 / 財報",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 37,
+        "entities": []
       },
       {
         "topic_id": 8,
@@ -113,16 +121,6 @@
         "entities": []
       },
       {
-        "topic_id": 10,
-        "label": "大黑磚 / 筆電充電 / 氮化鎵技術如何改變筆電充電生態 / 氮化鎵",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 12,
-        "entities": [
-          "大黑"
-        ]
-      },
-      {
         "topic_id": 4,
         "label": "成功切入 / ic設計 / 由護國神山牽線 / 併購",
         "heat": 10.0,
@@ -134,7 +132,20 @@
         ]
       },
       {
-        "topic_id": 0,
+        "topic_id": 1,
+        "label": "中國收緊稀土出口管制 / 出口管制 / 承受新一波供應鏈壓力 / 全球高科技與國防產業",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 3,
+        "entities": [
+          "中國",
+          "高科技",
+          "國防產業",
+          "新一波"
+        ]
+      },
+      {
+        "topic_id": 10,
         "label": "byd",
         "heat": 10.0,
         "volume": 2,
@@ -163,23 +174,23 @@
     "named_entities": [
       {
         "entity": "美國",
-        "count": 15
+        "count": 17
       },
       {
         "entity": "中國",
-        "count": 14
+        "count": 15
       },
       {
         "entity": "英特爾",
         "count": 7
       },
       {
-        "entity": "金山",
+        "entity": "台灣",
         "count": 7
       },
       {
-        "entity": "台灣",
-        "count": 6
+        "entity": "金山",
+        "count": 7
       },
       {
         "entity": "靜奢",
@@ -206,6 +217,10 @@
         "count": 4
       },
       {
+        "entity": "川普",
+        "count": 4
+      },
+      {
         "entity": "日本",
         "count": 3
       },
@@ -215,10 +230,6 @@
       },
       {
         "entity": "牽線",
-        "count": 3
-      },
-      {
-        "entity": "美學",
         "count": 3
       }
     ],
@@ -303,16 +314,16 @@
       {
         "bucket_start": "2026-07-18T15:15:30.214467+00:00",
         "bucket_end": "2026-07-18T15:49:47.357324+00:00",
-        "positive": 0,
-        "neutral": 0,
+        "positive": 3,
+        "neutral": 1,
         "negative": 0
       },
       {
         "bucket_start": "2026-07-18T15:49:47.357324+00:00",
         "bucket_end": "2026-07-18T16:24:04.500181+00:00",
-        "positive": 1,
+        "positive": 5,
         "neutral": 1,
-        "negative": 0
+        "negative": 1
       },
       {
         "bucket_start": "2026-07-18T16:24:04.500181+00:00",
@@ -325,22 +336,29 @@
     "coverage_focus_ranking": [
       {
         "handle": "SemiAnalysis_",
-        "top_topic_id": 1,
-        "top_topic_label": "completed / kimi / ai / wd",
+        "top_topic_id": 0,
+        "top_topic_label": "kimi / completed / moonshot / 月之暗面",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 0,
+        "top_topic_label": "kimi / completed / moonshot / 月之暗面",
+        "focus_share": 1.0,
+        "post_count": 9
+      },
+      {
         "handle": "ctee.fans",
-        "top_topic_id": 1,
-        "top_topic_label": "completed / kimi / ai / wd",
+        "top_topic_id": 0,
+        "top_topic_label": "kimi / completed / moonshot / 月之暗面",
         "focus_share": 0.7,
         "post_count": 10
       },
       {
         "handle": "tphuang",
-        "top_topic_id": 1,
-        "top_topic_label": "completed / kimi / ai / wd",
+        "top_topic_id": 0,
+        "top_topic_label": "kimi / completed / moonshot / 月之暗面",
         "focus_share": 0.667,
         "post_count": 6
       },
@@ -360,25 +378,25 @@
       },
       {
         "handle": "technewsinside",
-        "top_topic_id": 1,
-        "top_topic_label": "completed / kimi / ai / wd",
-        "focus_share": 0.562,
+        "top_topic_id": 0,
+        "top_topic_label": "kimi / completed / moonshot / 月之暗面",
+        "focus_share": 0.5,
         "post_count": 16
       },
       {
         "handle": "technews_tw",
-        "top_topic_id": 1,
-        "top_topic_label": "completed / kimi / ai / wd",
-        "focus_share": 0.5,
+        "top_topic_id": 0,
+        "top_topic_label": "kimi / completed / moonshot / 月之暗面",
+        "focus_share": 0.429,
         "post_count": 14
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 1,
-        "label": "completed / kimi / ai / wd",
-        "total_engagement": 1745,
-        "post_count": 31
+        "topic_id": 0,
+        "label": "kimi / completed / moonshot / 月之暗面",
+        "total_engagement": 3859,
+        "post_count": 38
       },
       {
         "topic_id": 5,
@@ -399,9 +417,15 @@
         "post_count": 4
       },
       {
-        "topic_id": 0,
+        "topic_id": 10,
         "label": "byd",
         "total_engagement": 71,
+        "post_count": 2
+      },
+      {
+        "topic_id": 11,
+        "label": "wd / 半導體股並非唯一贏家 / 公司財報出色 / 財報",
+        "total_engagement": 37,
         "post_count": 2
       },
       {
@@ -429,15 +453,15 @@
         "post_count": 2
       },
       {
-        "topic_id": 10,
-        "label": "大黑磚 / 筆電充電 / 氮化鎵技術如何改變筆電充電生態 / 氮化鎵",
-        "total_engagement": 12,
-        "post_count": 2
-      },
-      {
         "topic_id": 4,
         "label": "成功切入 / ic設計 / 由護國神山牽線 / 併購",
         "total_engagement": 11,
+        "post_count": 2
+      },
+      {
+        "topic_id": 1,
+        "label": "中國收緊稀土出口管制 / 出口管制 / 承受新一波供應鏈壓力 / 全球高科技與國防產業",
+        "total_engagement": 3,
         "post_count": 2
       }
     ],

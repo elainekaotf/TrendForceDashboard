@@ -10,16 +10,16 @@
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 16,
+      "total_posts": 25,
       "sentiment_counts": {
-        "negative": 3,
-        "positive": 12,
-        "neutral": 1
+        "negative": 4,
+        "positive": 19,
+        "neutral": 2
       },
       "sentiment_share": {
-        "negative": 0.188,
-        "positive": 0.75,
-        "neutral": 0.062
+        "negative": 0.16,
+        "positive": 0.76,
+        "neutral": 0.08
       },
       "top_terms": [
         "半導",
@@ -36,37 +36,56 @@
     },
     "temperature_bar": [
       {
-        "topic_id": 1,
-        "label": "wd / pixel / ai / 英特爾",
+        "topic_id": 0,
+        "label": "wd / 財報 / 傳產出頭天 / 傳產股",
         "heat": 90.0,
-        "volume": 12,
-        "engagement": 440,
+        "volume": 17,
+        "engagement": 2531,
         "entities": [
-          "英特爾",
-          "台灣",
-          "BYD",
-          "Denza Z S",
-          "mm"
+          "川普",
+          "美國",
+          "歐洲",
+          "西班牙",
+          "BYD"
         ]
       },
       {
         "topic_id": 2,
-        "label": "memory",
-        "heat": 50.0,
+        "label": "英特爾 / 經濟大蕭條 / 半導體 / 衝擊將超越",
+        "heat": 10.0,
         "volume": 2,
-        "engagement": 535,
+        "engagement": 33,
         "entities": [
-          "Samsung Electronics"
+          "英特爾",
+          "台灣"
         ]
       },
       {
-        "topic_id": 0,
+        "topic_id": 4,
         "label": "非侵入式新突破 / 美國研究團隊開發生物電子貼片 / 生物電子 / 睡眠",
         "heat": 10.0,
         "volume": 2,
         "engagement": 24,
         "entities": [
           "美國"
+        ]
+      },
+      {
+        "topic_id": 3,
+        "label": "pixel / google / ai / 反潮流的克制感",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 18,
+        "entities": []
+      },
+      {
+        "topic_id": 1,
+        "label": "memory",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 535,
+        "entities": [
+          "Samsung Electronics"
         ]
       }
     ],
@@ -77,11 +96,23 @@
       },
       {
         "entity": "台灣",
-        "count": 6
+        "count": 7
       },
       {
         "entity": "美國",
+        "count": 6
+      },
+      {
+        "entity": "川普",
         "count": 4
+      },
+      {
+        "entity": "歐洲",
+        "count": 2
+      },
+      {
+        "entity": "西班牙",
+        "count": 2
       },
       {
         "entity": "Samsung Electronics",
@@ -117,18 +148,6 @@
       },
       {
         "entity": "shanghai",
-        "count": 1
-      },
-      {
-        "entity": "GLM",
-        "count": 1
-      },
-      {
-        "entity": "Flash",
-        "count": 1
-      },
-      {
-        "entity": "BPO",
         "count": 1
       }
     ],
@@ -199,21 +218,21 @@
       {
         "bucket_start": "2026-07-18T15:32:38.785893+00:00",
         "bucket_end": "2026-07-18T15:49:47.357322+00:00",
-        "positive": 0,
-        "neutral": 0,
+        "positive": 3,
+        "neutral": 1,
         "negative": 0
       },
       {
         "bucket_start": "2026-07-18T15:49:47.357322+00:00",
         "bucket_end": "2026-07-18T16:06:55.928751+00:00",
-        "positive": 1,
+        "positive": 4,
         "neutral": 1,
-        "negative": 0
+        "negative": 1
       },
       {
         "bucket_start": "2026-07-18T16:06:55.928751+00:00",
         "bucket_end": "2026-07-18T16:24:04.500180+00:00",
-        "positive": 0,
+        "positive": 1,
         "neutral": 0,
         "negative": 0
       },
@@ -235,57 +254,76 @@
     "coverage_focus_ranking": [
       {
         "handle": "tphuang",
-        "top_topic_id": 1,
-        "top_topic_label": "wd / pixel / ai / 英特爾",
+        "top_topic_id": 0,
+        "top_topic_label": "wd / 財報 / 傳產出頭天 / 傳產股",
         "focus_share": 1.0,
         "post_count": 2
       },
       {
         "handle": "ctee.fans",
-        "top_topic_id": 1,
-        "top_topic_label": "wd / pixel / ai / 英特爾",
+        "top_topic_id": 0,
+        "top_topic_label": "wd / 財報 / 傳產出頭天 / 傳產股",
         "focus_share": 1.0,
         "post_count": 2
       },
       {
-        "handle": "technewsinside",
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 0,
+        "top_topic_label": "wd / 財報 / 傳產出頭天 / 傳產股",
+        "focus_share": 1.0,
+        "post_count": 9
+      },
+      {
+        "handle": "jukan05",
         "top_topic_id": 1,
-        "top_topic_label": "wd / pixel / ai / 英特爾",
-        "focus_share": 0.8,
+        "top_topic_label": "memory",
+        "focus_share": 0.667,
+        "post_count": 3
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 0,
+        "top_topic_label": "wd / 財報 / 傳產出頭天 / 傳產股",
+        "focus_share": 0.4,
         "post_count": 5
       },
       {
         "handle": "technews_tw",
-        "top_topic_id": 1,
-        "top_topic_label": "wd / pixel / ai / 英特爾",
-        "focus_share": 0.75,
-        "post_count": 4
-      },
-      {
-        "handle": "jukan05",
         "top_topic_id": 2,
-        "top_topic_label": "memory",
-        "focus_share": 0.667,
-        "post_count": 3
+        "top_topic_label": "英特爾 / 經濟大蕭條 / 半導體 / 衝擊將超越",
+        "focus_share": 0.25,
+        "post_count": 4
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 2,
+        "topic_id": 0,
+        "label": "wd / 財報 / 傳產出頭天 / 傳產股",
+        "total_engagement": 2531,
+        "post_count": 17
+      },
+      {
+        "topic_id": 1,
         "label": "memory",
         "total_engagement": 535,
         "post_count": 2
       },
       {
-        "topic_id": 1,
-        "label": "wd / pixel / ai / 英特爾",
-        "total_engagement": 440,
-        "post_count": 12
+        "topic_id": 2,
+        "label": "英特爾 / 經濟大蕭條 / 半導體 / 衝擊將超越",
+        "total_engagement": 33,
+        "post_count": 2
       },
       {
-        "topic_id": 0,
+        "topic_id": 4,
         "label": "非侵入式新突破 / 美國研究團隊開發生物電子貼片 / 生物電子 / 睡眠",
         "total_engagement": 24,
+        "post_count": 2
+      },
+      {
+        "topic_id": 3,
+        "label": "pixel / google / ai / 反潮流的克制感",
+        "total_engagement": 18,
         "post_count": 2
       }
     ],

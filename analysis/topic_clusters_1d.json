@@ -1,48 +1,50 @@
 {
   "clusters": [
     {
-      "id": 2,
-      "label": "ai / nvidia / trendforce / memory",
-      "size": 107,
+      "id": 0,
+      "label": "ai / nvidia / memory / tsmc",
+      "size": 124,
       "accounts": {
-        "technews_tw": 18,
+        "technews_tw": 20,
         "SemiAnalysis_": 6,
         "jukan05": 10,
         "QQ_Timmy": 7,
         "tphuang": 12,
-        "tengyanAI": 5,
-        "technewsinside": 23,
-        "ctee.fans": 26
+        "tengyanAI": 7,
+        "technewsinside": 26,
+        "ctee.fans": 27,
+        "yutinghaosfinance": 9
       },
       "engagement_by_account": {
-        "technews_tw": 35,
+        "technews_tw": 42,
         "SemiAnalysis_": 4336,
         "jukan05": 5022,
-        "QQ_Timmy": 392,
+        "QQ_Timmy": 404,
         "tphuang": 601,
-        "tengyanAI": 4900,
-        "technewsinside": 970,
-        "ctee.fans": 503
+        "tengyanAI": 5068,
+        "technewsinside": 1027,
+        "ctee.fans": 671,
+        "yutinghaosfinance": 2142
       }
     },
     {
-      "id": 16,
-      "label": "dram / hbm / memory / trendforce",
-      "size": 6,
+      "id": 4,
+      "label": "dram / hbm / nand / trendforce",
+      "size": 4,
       "accounts": {
         "SemiAnalysis_": 2,
         "QQ_Timmy": 1,
-        "tengyanAI": 3
+        "tengyanAI": 1
       },
       "engagement_by_account": {
         "SemiAnalysis_": 3442,
         "QQ_Timmy": 113,
-        "tengyanAI": 177
+        "tengyanAI": 9
       }
     },
     {
-      "id": 0,
-      "label": "ai / trendforce / pcb / physical",
+      "id": 9,
+      "label": "ai / pcb / physical / nvidia",
       "size": 4,
       "accounts": {
         "technews_tw": 3,
@@ -54,47 +56,23 @@
       }
     },
     {
-      "id": 9,
-      "label": "半導體 / 英特爾 / ai / 三星",
-      "size": 4,
-      "accounts": {
-        "technews_tw": 2,
-        "technewsinside": 2
-      },
-      "engagement_by_account": {
-        "technews_tw": 5,
-        "technewsinside": 40
-      }
-    },
-    {
-      "id": 12,
-      "label": "輝達 / ai / 黃仁勳 / nvidia",
+      "id": 16,
+      "label": "google / tpu / ai / gemini",
       "size": 3,
       "accounts": {
         "technews_tw": 1,
-        "technewsinside": 2
+        "QQ_Timmy": 1,
+        "technewsinside": 1
       },
       "engagement_by_account": {
         "technews_tw": 2,
-        "technewsinside": 24
+        "QQ_Timmy": 68,
+        "technewsinside": 16
       }
     },
     {
-      "id": 17,
-      "label": "meta / ai / alphabet / compute",
-      "size": 3,
-      "accounts": {
-        "technews_tw": 1,
-        "technewsinside": 2
-      },
-      "engagement_by_account": {
-        "technews_tw": 3,
-        "technewsinside": 20
-      }
-    },
-    {
-      "id": 8,
-      "label": "spacex / ipo / 馬斯克 / starlink",
+      "id": 3,
+      "label": "黃仁勳 / 輝達 / 執行長 / ai",
       "size": 2,
       "accounts": {
         "technews_tw": 1,
@@ -102,41 +80,52 @@
       },
       "engagement_by_account": {
         "technews_tw": 2,
-        "technewsinside": 20
+        "technewsinside": 16
       }
     },
     {
-      "id": 14,
-      "label": "cpo / 大立光 / nvidia / ai",
+      "id": 15,
+      "label": "trendforce / ai / csp / nand",
       "size": 2,
       "accounts": {
-        "QQ_Timmy": 1,
-        "ctee.fans": 1
+        "technews_tw": 1,
+        "technewsinside": 1
       },
       "engagement_by_account": {
-        "QQ_Timmy": 80,
-        "ctee.fans": 24
+        "technews_tw": 1,
+        "technewsinside": 7
       }
     },
     {
-      "id": 10,
-      "label": "台股 / etf / 台股逐洞賽 / 台積電",
+      "id": 1,
+      "label": "輝達 / ai / nvidia / ai晶片",
+      "size": 1,
+      "accounts": {
+        "technewsinside": 1
+      },
+      "engagement_by_account": {
+        "technewsinside": 8
+      }
+    },
+    {
+      "id": 13,
+      "label": "約新台幣 / 萬人民幣 / 兆韓圜 / ipo",
       "size": 1,
       "accounts": {
         "ctee.fans": 1
       },
       "engagement_by_account": {
-        "ctee.fans": 166
+        "ctee.fans": 22
       }
     }
   ],
   "gaps": [
     {
-      "cluster_id": 16,
-      "label": "dram / hbm / memory / trendforce",
+      "cluster_id": 4,
+      "label": "dram / hbm / nand / trendforce",
       "own_count": 0,
-      "competitor_count": 6,
-      "competitor_engagement": 3732,
+      "competitor_count": 4,
+      "competitor_engagement": 3564,
       "competitors_covering": [
         "SemiAnalysis_",
         "QQ_Timmy",
@@ -146,11 +135,11 @@
   ],
   "suggested_entry_points": [
     {
-      "cluster_id": 16,
-      "label": "dram / hbm / memory / trendforce",
+      "cluster_id": 4,
+      "label": "dram / hbm / nand / trendforce",
       "own_count": 0,
-      "competitor_count": 6,
-      "competitor_engagement": 3732,
+      "competitor_count": 4,
+      "competitor_engagement": 3564,
       "competitors_covering": [
         "SemiAnalysis_",
         "QQ_Timmy",
