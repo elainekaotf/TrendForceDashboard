@@ -1,245 +1,310 @@
 {
-  "generated_at": "2026-07-18T17:01:32+08:00",
+  "generated_at": "2026-07-18T09:34:45.443296+00:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-18T13:01:32+08:00",
-    "end_utc": "2026-07-18T17:01:32+08:00",
-    "start_tw": "Jul 18, 13:01",
-    "end_tw": "Jul 18, 17:01"
+    "start_utc": "2026-07-18T05:34:45.443296+00:00",
+    "end_utc": "2026-07-18T09:34:45.443296+00:00",
+    "start_tw": "Jul 18, 13:34",
+    "end_tw": "Jul 18, 17:34"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 10,
+      "total_posts": 23,
       "sentiment_counts": {
-        "negative": 6,
-        "positive": 2,
-        "neutral": 2
+        "negative": 11,
+        "positive": 7,
+        "neutral": 5
       },
       "sentiment_share": {
-        "negative": 0.6,
-        "positive": 0.2,
-        "neutral": 0.2
+        "negative": 0.478,
+        "positive": 0.304,
+        "neutral": 0.217
       },
       "top_terms": [
-        "brick",
-        "塑膠",
-        "膠磚",
-        "磚如",
-        "何治",
-        "治手",
-        "機成",
-        "成癮",
-        "塑膠磚",
-        "膠磚如"
+        "料中",
+        "資料中",
+        "料中心",
+        "資料中心",
+        "新創",
+        "機大",
+        "矽光",
+        "光子",
+        "矽光子",
+        "國新"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "brick / 美國新創 / 手機成癮 / 專注力",
-        "heat": 90.0,
-        "volume": 7,
-        "engagement": 233,
-        "entities": [
-          "美國",
-          "西北",
-          "台北",
-          "台積電"
-        ]
-      },
-      {
         "topic_id": 1,
-        "label": "ai",
-        "heat": 10.0,
-        "volume": 3,
-        "engagement": 4,
+        "label": "ai / moonshot / ai資料中心 / 靜奢",
+        "heat": 90.0,
+        "volume": 17,
+        "engagement": 422,
         "entities": [
           "靜奢",
           "新富",
-          "美學"
+          "中國",
+          "美學",
+          "Project Jupiter"
+        ]
+      },
+      {
+        "topic_id": 2,
+        "label": "glass",
+        "heat": 15.0,
+        "volume": 2,
+        "engagement": 241,
+        "entities": []
+      },
+      {
+        "topic_id": 0,
+        "label": "brick / 專注力 / 美國新創 / 手機成癮",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 8,
+        "entities": [
+          "美國"
+        ]
+      },
+      {
+        "topic_id": 3,
+        "label": "nvidia",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 22,
+        "entities": [
+          "AMD",
+          "Intel",
+          "Silicon Motion",
+          "Nelson Duann",
+          "Duann"
         ]
       }
     ],
     "named_entities": [
       {
         "entity": "美國",
-        "count": 4
+        "count": 6
       },
       {
         "entity": "靜奢",
-        "count": 4
-      },
-      {
-        "entity": "西北",
-        "count": 3
+        "count": 6
       },
       {
         "entity": "新富",
-        "count": 3
+        "count": 4
+      },
+      {
+        "entity": "中國",
+        "count": 4
       },
       {
         "entity": "美學",
+        "count": 3
+      },
+      {
+        "entity": "AMD",
         "count": 2
       },
       {
-        "entity": "台北",
+        "entity": "Intel",
+        "count": 2
+      },
+      {
+        "entity": "Project Jupiter",
+        "count": 2
+      },
+      {
+        "entity": "魏哲家",
+        "count": 2
+      },
+      {
+        "entity": "Silicon Motion",
         "count": 1
       },
       {
-        "entity": "台積電",
+        "entity": "Nelson Duann",
+        "count": 1
+      },
+      {
+        "entity": "Duann",
+        "count": 1
+      },
+      {
+        "entity": "Tom s Hardware",
+        "count": 1
+      },
+      {
+        "entity": "intel",
+        "count": 1
+      },
+      {
+        "entity": "Stargate 專案與 Bloom Energy",
         "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-18T13:01:31.999994+08:00",
-        "bucket_end": "2026-07-18T13:18:40.571423+08:00",
+        "bucket_start": "2026-07-18T05:34:45.443290+00:00",
+        "bucket_end": "2026-07-18T05:51:54.014719+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-18T05:51:54.014719+00:00",
+        "bucket_end": "2026-07-18T06:09:02.586148+00:00",
+        "positive": 1,
+        "neutral": 2,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-18T06:09:02.586148+00:00",
+        "bucket_end": "2026-07-18T06:26:11.157577+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-18T06:26:11.157577+00:00",
+        "bucket_end": "2026-07-18T06:43:19.729006+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-18T06:43:19.729006+00:00",
+        "bucket_end": "2026-07-18T07:00:28.300435+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-18T07:00:28.300435+00:00",
+        "bucket_end": "2026-07-18T07:17:36.871864+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-18T13:18:40.571423+08:00",
-        "bucket_end": "2026-07-18T13:35:49.142852+08:00",
+        "bucket_start": "2026-07-18T07:17:36.871864+00:00",
+        "bucket_end": "2026-07-18T07:34:45.443293+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-18T07:34:45.443293+00:00",
+        "bucket_end": "2026-07-18T07:51:54.014722+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-18T07:51:54.014722+00:00",
+        "bucket_end": "2026-07-18T08:09:02.586151+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-18T08:09:02.586151+00:00",
+        "bucket_end": "2026-07-18T08:26:11.157580+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-18T08:26:11.157580+00:00",
+        "bucket_end": "2026-07-18T08:43:19.729009+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-18T08:43:19.729009+00:00",
+        "bucket_end": "2026-07-18T09:00:28.300438+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-18T13:35:49.142852+08:00",
-        "bucket_end": "2026-07-18T13:52:57.714281+08:00",
-        "positive": 0,
+        "bucket_start": "2026-07-18T09:00:28.300438+00:00",
+        "bucket_end": "2026-07-18T09:17:36.871867+00:00",
+        "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T13:52:57.714281+08:00",
-        "bucket_end": "2026-07-18T14:10:06.285710+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-18T14:10:06.285710+08:00",
-        "bucket_end": "2026-07-18T14:27:14.857139+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T14:27:14.857139+08:00",
-        "bucket_end": "2026-07-18T14:44:23.428568+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T14:44:23.428568+08:00",
-        "bucket_end": "2026-07-18T15:01:31.999997+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T15:01:31.999997+08:00",
-        "bucket_end": "2026-07-18T15:18:40.571426+08:00",
-        "positive": 0,
+        "bucket_start": "2026-07-18T09:17:36.871867+00:00",
+        "bucket_end": "2026-07-18T09:34:45.443296+00:00",
+        "positive": 1,
         "neutral": 0,
         "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-18T15:18:40.571426+08:00",
-        "bucket_end": "2026-07-18T15:35:49.142855+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T15:35:49.142855+08:00",
-        "bucket_end": "2026-07-18T15:52:57.714284+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T15:52:57.714284+08:00",
-        "bucket_end": "2026-07-18T16:10:06.285713+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T16:10:06.285713+08:00",
-        "bucket_end": "2026-07-18T16:27:14.857142+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-18T16:27:14.857142+08:00",
-        "bucket_end": "2026-07-18T16:44:23.428571+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T16:44:23.428571+08:00",
-        "bucket_end": "2026-07-18T17:01:32+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "tengyanAI",
-        "top_topic_id": 1,
-        "top_topic_label": "ai",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
         "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "brick / 美國新創 / 手機成癮 / 專注力",
+        "top_topic_id": 2,
+        "top_topic_label": "glass",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "technewsinside",
-        "top_topic_id": 0,
-        "top_topic_label": "brick / 美國新創 / 手機成癮 / 專注力",
-        "focus_share": 1.0,
-        "post_count": 1
+        "top_topic_id": 1,
+        "top_topic_label": "ai / moonshot / ai資料中心 / 靜奢",
+        "focus_share": 0.875,
+        "post_count": 8
       },
       {
         "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "brick / 美國新創 / 手機成癮 / 專注力",
-        "focus_share": 1.0,
-        "post_count": 2
+        "top_topic_id": 1,
+        "top_topic_label": "ai / moonshot / ai資料中心 / 靜奢",
+        "focus_share": 0.857,
+        "post_count": 7
       },
       {
         "handle": "technews_tw",
-        "top_topic_id": 0,
-        "top_topic_label": "brick / 美國新創 / 手機成癮 / 專注力",
-        "focus_share": 0.6,
-        "post_count": 5
+        "top_topic_id": 1,
+        "top_topic_label": "ai / moonshot / ai資料中心 / 靜奢",
+        "focus_share": 0.75,
+        "post_count": 4
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / moonshot / ai資料中心 / 靜奢",
+        "focus_share": 0.333,
+        "post_count": 3
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "brick / 美國新創 / 手機成癮 / 專注力",
-        "total_engagement": 233,
-        "post_count": 7
+        "topic_id": 1,
+        "label": "ai / moonshot / ai資料中心 / 靜奢",
+        "total_engagement": 422,
+        "post_count": 17
       },
       {
-        "topic_id": 1,
-        "label": "ai",
-        "total_engagement": 4,
-        "post_count": 3
+        "topic_id": 2,
+        "label": "glass",
+        "total_engagement": 241,
+        "post_count": 2
+      },
+      {
+        "topic_id": 3,
+        "label": "nvidia",
+        "total_engagement": 22,
+        "post_count": 2
+      },
+      {
+        "topic_id": 0,
+        "label": "brick / 專注力 / 美國新創 / 手機成癮",
+        "total_engagement": 8,
+        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
