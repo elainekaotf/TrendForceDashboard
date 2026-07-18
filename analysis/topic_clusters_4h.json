@@ -1,75 +1,81 @@
 {
   "clusters": [
     {
-      "id": 4,
-      "label": "ai / 台積電 / memory / tsmc",
-      "size": 5,
-      "accounts": {
-        "SemiAnalysis_": 1,
-        "tphuang": 3,
-        "tengyanAI": 1
-      },
-      "engagement_by_account": {
-        "SemiAnalysis_": 709,
-        "tphuang": 42,
-        "tengyanAI": 67
-      }
-    },
-    {
       "id": 3,
-      "label": "nvidia / ai / amd / rubin",
-      "size": 1,
+      "label": "ai / 台積電 / memory / spacex",
+      "size": 16,
       "accounts": {
-        "tphuang": 1
+        "technews_tw": 2,
+        "SemiAnalysis_": 3,
+        "jukan05": 2,
+        "QQ_Timmy": 2,
+        "tengyanAI": 2,
+        "technewsinside": 5
       },
       "engagement_by_account": {
-        "tphuang": 8
+        "technews_tw": 4,
+        "SemiAnalysis_": 714,
+        "jukan05": 610,
+        "QQ_Timmy": 30,
+        "tengyanAI": 41,
+        "technewsinside": 216
       }
     },
     {
-      "id": 8,
-      "label": "hynix / sk / hbm / samsung",
-      "size": 1,
+      "id": 17,
+      "label": "輝達 / 黃仁勳 / ai / ai晶片",
+      "size": 3,
       "accounts": {
-        "tengyanAI": 1
+        "technews_tw": 1,
+        "technewsinside": 2
       },
       "engagement_by_account": {
-        "tengyanAI": 16
+        "technews_tw": 0,
+        "technewsinside": 24
+      }
+    },
+    {
+      "id": 1,
+      "label": "ai / pcb / physical / token",
+      "size": 2,
+      "accounts": {
+        "technews_tw": 2
+      },
+      "engagement_by_account": {
+        "technews_tw": 5
+      }
+    },
+    {
+      "id": 13,
+      "label": "meta / ai / compute / openai",
+      "size": 2,
+      "accounts": {
+        "technews_tw": 1,
+        "technewsinside": 1
+      },
+      "engagement_by_account": {
+        "technews_tw": 3,
+        "technewsinside": 13
+      }
+    },
+    {
+      "id": 2,
+      "label": "nvidia / ai / amd / gpu",
+      "size": 1,
+      "accounts": {
+        "QQ_Timmy": 1
+      },
+      "engagement_by_account": {
+        "QQ_Timmy": 26
       }
     }
   ],
-  "gaps": [
-    {
-      "cluster_id": 4,
-      "label": "ai / 台積電 / memory / tsmc",
-      "own_count": 0,
-      "competitor_count": 5,
-      "competitor_engagement": 818,
-      "competitors_covering": [
-        "SemiAnalysis_",
-        "tphuang",
-        "tengyanAI"
-      ]
-    }
-  ],
-  "suggested_entry_points": [
-    {
-      "cluster_id": 4,
-      "label": "ai / 台積電 / memory / tsmc",
-      "own_count": 0,
-      "competitor_count": 5,
-      "competitor_engagement": 818,
-      "competitors_covering": [
-        "SemiAnalysis_",
-        "tphuang",
-        "tengyanAI"
-      ]
-    }
-  ],
+  "gaps": [],
+  "suggested_entry_points": [],
   "window": {
-    "start_utc": "2026-07-18T01:58:00+08:00",
-    "end_utc": "2026-07-18T05:58:00+08:00",
-    "start_tw": "Jul 18, 01:58",
-    "end_tw": "Jul 18, 05:58"
+    "start_utc": "2026-07-18T02:00:00+00:00",
+    "end_utc": "2026-07-18T06:00:00+00:00",
+    "start_tw": "Jul 18, 10:00",
+    "end_tw": "Jul 18, 14:00"
   }
 }
