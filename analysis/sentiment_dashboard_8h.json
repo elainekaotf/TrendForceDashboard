@@ -1,116 +1,159 @@
 {
-  "generated_at": "2026-07-18T05:58:00+08:00",
+  "generated_at": "2026-07-18T06:00:00+00:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-17T21:58:00+08:00",
-    "end_utc": "2026-07-18T05:58:00+08:00",
-    "start_tw": "Jul 17, 21:58",
-    "end_tw": "Jul 18, 05:58"
+    "start_utc": "2026-07-17T22:00:00+00:00",
+    "end_utc": "2026-07-18T06:00:00+00:00",
+    "start_tw": "Jul 18, 06:00",
+    "end_tw": "Jul 18, 14:00"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 20,
+      "total_posts": 39,
       "sentiment_counts": {
-        "positive": 14,
-        "negative": 6
+        "neutral": 12,
+        "positive": 20,
+        "negative": 7
       },
       "sentiment_share": {
-        "positive": 0.7,
-        "negative": 0.3
+        "neutral": 0.308,
+        "positive": 0.513,
+        "negative": 0.179
       },
       "top_terms": [
-        "domestic",
-        "inference",
-        "memory",
-        "compute",
-        "software",
-        "最新",
-        "州政",
-        "州政府",
-        "機器",
-        "器人"
+        "輝達",
+        "新評",
+        "評估",
+        "重新評",
+        "新評估",
+        "重新評估",
+        "學家",
+        "洽談",
+        "算力",
+        "蘋果"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 3,
-        "label": "solutions / domestic / inference / pricing",
-        "heat": 90.0,
-        "volume": 9,
-        "engagement": 550,
-        "entities": [
-          "Broadcom",
-          "node",
-          "HBM",
-          "Smarter Systems",
-          "Chinese"
-        ]
-      },
-      {
-        "topic_id": 2,
-        "label": "models / kimi",
-        "heat": 50.0,
-        "volume": 3,
-        "engagement": 738,
-        "entities": [
-          "CHINA S KIMI K  HAS SURPASSED",
-          "Kimi Moonshot",
-          "kimi k   ",
-          "american",
-          "china"
-        ]
-      },
-      {
         "topic_id": 0,
-        "label": "ai",
-        "heat": 10.0,
-        "volume": 5,
-        "engagement": 10,
+        "label": "ai / kimi / dram / 蘋果一度超車輝達重登全球市值王",
+        "heat": 90.0,
+        "volume": 26,
+        "engagement": 4308,
         "entities": [
+          "輝達",
+          "DRAM",
           "美國",
-          "聊天",
-          "無意間"
+          "日本",
+          "凱俠"
         ]
       },
       {
         "topic_id": 1,
-        "label": "memory / compute / wk / demand",
-        "heat": 10.0,
+        "label": "anthropic / meta / 洽談租算力 / 潛在合作案規模最高可達",
+        "heat": 10.8,
         "volume": 3,
-        "engagement": 122,
+        "engagement": 55,
         "entities": [
-          "AI",
-          "WAIC      ",
-          "TB",
-          "RTT",
-          "DDR"
+          "Meta"
+        ]
+      },
+      {
+        "topic_id": 4,
+        "label": "黃仁勳 / 輝達黃仁勳赴日本 / 輝達 / 居酒屋峰會",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 16,
+        "entities": [
+          "輝達",
+          "黃仁勳",
+          "日本"
+        ]
+      },
+      {
+        "topic_id": 2,
+        "label": "spacex / 洽談出售算力 / 美國國防部 / 提供價值數十億美元的資料中心算力",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 22,
+        "entities": [
+          "美國國"
+        ]
+      },
+      {
+        "topic_id": 3,
+        "label": "銀河系 / 銀河系比想像更廣闊 / 重新評估銀河系結構 / 天文學家透過宇宙最劇烈爆炸的光線",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 10,
+        "entities": [
+          "天文"
+        ]
+      },
+      {
+        "topic_id": 6,
+        "label": "roblox / ai創作 / 透過文字提示快速生成基礎遊戲 / app",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 9,
+        "entities": []
+      },
+      {
+        "topic_id": 5,
+        "label": "substack / streetsignal",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 129,
+        "entities": [
+          "Substack    StreetSignal     ",
+          "https streetsignal"
         ]
       }
     ],
     "named_entities": [
       {
+        "entity": "輝達",
+        "count": 20
+      },
+      {
+        "entity": "日本",
+        "count": 11
+      },
+      {
+        "entity": "黃仁勳",
+        "count": 8
+      },
+      {
+        "entity": "天文",
+        "count": 8
+      },
+      {
+        "entity": "美國國",
+        "count": 7
+      },
+      {
+        "entity": "DRAM",
+        "count": 4
+      },
+      {
         "entity": "美國",
-        "count": 5
-      },
-      {
-        "entity": "聊天",
         "count": 3
       },
       {
-        "entity": "AI",
+        "entity": "凱俠",
         "count": 3
       },
       {
-        "entity": "無意間",
+        "entity": "Meta",
         "count": 2
       },
       {
-        "entity": "Broadcom",
+        "entity": "Bloom Energy",
         "count": 2
       },
       {
-        "entity": "node",
+        "entity": "DeepSeek",
         "count": 2
       },
       {
@@ -118,133 +161,113 @@
         "count": 2
       },
       {
-        "entity": "Smarter Systems",
-        "count": 1
+        "entity": "德州",
+        "count": 2
       },
       {
-        "entity": "Chinese",
-        "count": 1
+        "entity": "韋科",
+        "count": 2
       },
       {
-        "entity": "chinese",
-        "count": 1
-      },
-      {
-        "entity": "SK海力士",
-        "count": 1
-      },
-      {
-        "entity": "CHINA S KIMI K  HAS SURPASSED",
-        "count": 1
-      },
-      {
-        "entity": "Kimi Moonshot",
-        "count": 1
-      },
-      {
-        "entity": "kimi k   ",
-        "count": 1
-      },
-      {
-        "entity": "american",
-        "count": 1
+        "entity": "美國衛星通訊",
+        "count": 2
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-17T21:58:00.000002+08:00",
-        "bucket_end": "2026-07-17T22:32:17.142859+08:00",
+        "bucket_start": "2026-07-17T22:00:00.000002+00:00",
+        "bucket_end": "2026-07-17T22:34:17.142859+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T22:34:17.142859+00:00",
+        "bucket_end": "2026-07-17T23:08:34.285716+00:00",
+        "positive": 3,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-17T23:08:34.285716+00:00",
+        "bucket_end": "2026-07-17T23:42:51.428573+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-17T23:42:51.428573+00:00",
+        "bucket_end": "2026-07-18T00:17:08.571430+00:00",
+        "positive": 1,
+        "neutral": 3,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-18T00:17:08.571430+00:00",
+        "bucket_end": "2026-07-18T00:51:25.714287+00:00",
+        "positive": 2,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-18T00:51:25.714287+00:00",
+        "bucket_end": "2026-07-18T01:25:42.857144+00:00",
+        "positive": 3,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-18T01:25:42.857144+00:00",
+        "bucket_end": "2026-07-18T02:00:00.000001+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-18T02:00:00.000001+00:00",
+        "bucket_end": "2026-07-18T02:34:17.142858+00:00",
+        "positive": 3,
+        "neutral": 2,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-18T02:34:17.142858+00:00",
+        "bucket_end": "2026-07-18T03:08:34.285715+00:00",
+        "positive": 2,
+        "neutral": 2,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-18T03:08:34.285715+00:00",
+        "bucket_end": "2026-07-18T03:42:51.428572+00:00",
         "positive": 4,
         "neutral": 0,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-17T22:32:17.142859+08:00",
-        "bucket_end": "2026-07-17T23:06:34.285716+08:00",
-        "positive": 3,
-        "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-17T23:06:34.285716+08:00",
-        "bucket_end": "2026-07-17T23:40:51.428573+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-17T23:40:51.428573+08:00",
-        "bucket_end": "2026-07-18T00:15:08.571430+08:00",
-        "positive": 1,
-        "neutral": 0,
+        "bucket_start": "2026-07-18T03:42:51.428572+00:00",
+        "bucket_end": "2026-07-18T04:17:08.571429+00:00",
+        "positive": 0,
+        "neutral": 2,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-18T00:15:08.571430+08:00",
-        "bucket_end": "2026-07-18T00:49:25.714287+08:00",
+        "bucket_start": "2026-07-18T04:17:08.571429+00:00",
+        "bucket_end": "2026-07-18T04:51:25.714286+00:00",
         "positive": 0,
-        "neutral": 0,
+        "neutral": 2,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T00:49:25.714287+08:00",
-        "bucket_end": "2026-07-18T01:23:42.857144+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T01:23:42.857144+08:00",
-        "bucket_end": "2026-07-18T01:58:00.000001+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T01:58:00.000001+08:00",
-        "bucket_end": "2026-07-18T02:32:17.142858+08:00",
+        "bucket_start": "2026-07-18T04:51:25.714286+00:00",
+        "bucket_end": "2026-07-18T05:25:42.857143+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-18T02:32:17.142858+08:00",
-        "bucket_end": "2026-07-18T03:06:34.285715+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T03:06:34.285715+08:00",
-        "bucket_end": "2026-07-18T03:40:51.428572+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T03:40:51.428572+08:00",
-        "bucket_end": "2026-07-18T04:15:08.571429+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T04:15:08.571429+08:00",
-        "bucket_end": "2026-07-18T04:49:25.714286+08:00",
-        "positive": 3,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-18T04:49:25.714286+08:00",
-        "bucket_end": "2026-07-18T05:23:42.857143+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T05:23:42.857143+08:00",
-        "bucket_end": "2026-07-18T05:58:00+08:00",
+        "bucket_start": "2026-07-18T05:25:42.857143+00:00",
+        "bucket_end": "2026-07-18T06:00:00+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
@@ -252,72 +275,97 @@
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "TrendForce",
-        "top_topic_id": 3,
-        "top_topic_label": "solutions / domestic / inference / pricing",
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / kimi / dram / 蘋果一度超車輝達重登全球市值王",
         "focus_share": 1.0,
-        "post_count": 1
+        "post_count": 6
       },
       {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 3,
-        "top_topic_label": "solutions / domestic / inference / pricing",
+        "handle": "QQ_Timmy",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / kimi / dram / 蘋果一度超車輝達重登全球市值王",
         "focus_share": 1.0,
-        "post_count": 1
+        "post_count": 6
+      },
+      {
+        "handle": "tphuang",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / kimi / dram / 蘋果一度超車輝達重登全球市值王",
+        "focus_share": 1.0,
+        "post_count": 2
       },
       {
         "handle": "tengyanAI",
-        "top_topic_id": 1,
-        "top_topic_label": "memory / compute / wk / demand",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / kimi / dram / 蘋果一度超車輝達重登全球市值王",
         "focus_share": 0.667,
         "post_count": 3
       },
       {
+        "handle": "technewsinside",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / kimi / dram / 蘋果一度超車輝達重登全球市值王",
+        "focus_share": 0.5,
+        "post_count": 10
+      },
+      {
+        "handle": "jukan05",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / kimi / dram / 蘋果一度超車輝達重登全球市值王",
+        "focus_share": 0.5,
+        "post_count": 4
+      },
+      {
         "handle": "technews_tw",
         "top_topic_id": 0,
-        "top_topic_label": "ai",
-        "focus_share": 0.625,
+        "top_topic_label": "ai / kimi / dram / 蘋果一度超車輝達重登全球市值王",
+        "focus_share": 0.375,
         "post_count": 8
-      },
-      {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 3,
-        "top_topic_label": "solutions / domestic / inference / pricing",
-        "focus_share": 0.5,
-        "post_count": 2
-      },
-      {
-        "handle": "tphuang",
-        "top_topic_id": 3,
-        "top_topic_label": "solutions / domestic / inference / pricing",
-        "focus_share": 0.4,
-        "post_count": 5
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 2,
-        "label": "models / kimi",
-        "total_engagement": 738,
-        "post_count": 3
+        "topic_id": 0,
+        "label": "ai / kimi / dram / 蘋果一度超車輝達重登全球市值王",
+        "total_engagement": 4308,
+        "post_count": 26
       },
       {
-        "topic_id": 3,
-        "label": "solutions / domestic / inference / pricing",
-        "total_engagement": 550,
-        "post_count": 9
+        "topic_id": 5,
+        "label": "substack / streetsignal",
+        "total_engagement": 129,
+        "post_count": 2
       },
       {
         "topic_id": 1,
-        "label": "memory / compute / wk / demand",
-        "total_engagement": 122,
+        "label": "anthropic / meta / 洽談租算力 / 潛在合作案規模最高可達",
+        "total_engagement": 55,
         "post_count": 3
       },
       {
-        "topic_id": 0,
-        "label": "ai",
+        "topic_id": 2,
+        "label": "spacex / 洽談出售算力 / 美國國防部 / 提供價值數十億美元的資料中心算力",
+        "total_engagement": 22,
+        "post_count": 2
+      },
+      {
+        "topic_id": 4,
+        "label": "黃仁勳 / 輝達黃仁勳赴日本 / 輝達 / 居酒屋峰會",
+        "total_engagement": 16,
+        "post_count": 2
+      },
+      {
+        "topic_id": 3,
+        "label": "銀河系 / 銀河系比想像更廣闊 / 重新評估銀河系結構 / 天文學家透過宇宙最劇烈爆炸的光線",
         "total_engagement": 10,
-        "post_count": 5
+        "post_count": 2
+      },
+      {
+        "topic_id": 6,
+        "label": "roblox / ai創作 / 透過文字提示快速生成基礎遊戲 / app",
+        "total_engagement": 9,
+        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
@@ -335,10 +383,10 @@
           "avg_engagement": 0.0
         },
         "evening": {
-          "post_count": 12,
-          "likes": 484,
-          "engagement": 576,
-          "avg_engagement": 48.0
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         },
         "late_night": {
           "post_count": 0,
@@ -347,7 +395,7 @@
           "avg_engagement": 0.0
         }
       },
-      "peak_slot": "evening"
+      "peak_slot": null
     },
     "competitor_mentions": null,
     "platform_share_bar": null,

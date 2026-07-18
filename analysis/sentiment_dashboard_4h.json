@@ -1,211 +1,243 @@
 {
-  "generated_at": "2026-07-18T05:58:00+08:00",
+  "generated_at": "2026-07-18T06:00:00+00:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-18T01:58:00+08:00",
-    "end_utc": "2026-07-18T05:58:00+08:00",
-    "start_tw": "Jul 18, 01:58",
-    "end_tw": "Jul 18, 05:58"
+    "start_utc": "2026-07-18T02:00:00+00:00",
+    "end_utc": "2026-07-18T06:00:00+00:00",
+    "start_tw": "Jul 18, 10:00",
+    "end_tw": "Jul 18, 14:00"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 7,
+      "total_posts": 24,
       "sentiment_counts": {
-        "positive": 5,
-        "negative": 2
+        "neutral": 8,
+        "positive": 10,
+        "negative": 6
       },
       "sentiment_share": {
-        "positive": 0.714,
-        "negative": 0.286
+        "neutral": 0.333,
+        "positive": 0.417,
+        "negative": 0.25
       },
       "top_terms": [
-        "kimi",
-        "memory",
-        "fully",
-        "domestic",
-        "supply",
-        "node",
-        "pricing",
-        "surpassed",
-        "models",
-        "coding"
+        "輝達",
+        "新評",
+        "評估",
+        "重新評",
+        "新評估",
+        "重新評估",
+        "洽談",
+        "算力",
+        "蘋果",
+        "市值"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 0,
-        "label": "kimi / memory / ai / pricing",
-        "heat": 50.0,
-        "volume": 7,
-        "engagement": 842,
+        "label": "蘋果一度超車輝達重登全球市值王 / fuel / pipeline / 蘋果市值逼近",
+        "heat": 90.0,
+        "volume": 15,
+        "engagement": 1576,
         "entities": [
-          "node",
-          "AI",
-          "HBM",
-          "CHINA S KIMI K  HAS SURPASSED",
-          "Kimi Moonshot"
+          "輝達",
+          "日本",
+          "黃仁勳",
+          "天文",
+          "美國"
+        ]
+      },
+      {
+        "topic_id": 1,
+        "label": "anthropic / meta / 洽談租算力 / 潛在合作案規模最高可達",
+        "heat": 11.6,
+        "volume": 3,
+        "engagement": 55,
+        "entities": [
+          "Meta"
+        ]
+      },
+      {
+        "topic_id": 2,
+        "label": "ai / 反映投資人重新評估 / 蘋果超越輝達 / 蘋果",
+        "heat": 10.6,
+        "volume": 4,
+        "engagement": 33,
+        "entities": [
+          "輝達"
+        ]
+      },
+      {
+        "topic_id": 3,
+        "label": "spacex / 洽談出售算力 / 美國國防部 / 提供價值數十億美元的資料中心算力",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 22,
+        "entities": [
+          "美國國"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "node",
+        "entity": "輝達",
+        "count": 20
+      },
+      {
+        "entity": "日本",
+        "count": 11
+      },
+      {
+        "entity": "黃仁勳",
+        "count": 8
+      },
+      {
+        "entity": "天文",
+        "count": 8
+      },
+      {
+        "entity": "美國國",
+        "count": 7
+      },
+      {
+        "entity": "美國",
+        "count": 3
+      },
+      {
+        "entity": "凱俠",
+        "count": 3
+      },
+      {
+        "entity": "Meta",
         "count": 2
       },
       {
-        "entity": "AI",
+        "entity": "Bloom Energy",
         "count": 2
       },
       {
-        "entity": "HBM",
+        "entity": "德州",
         "count": 2
       },
       {
-        "entity": "CHINA S KIMI K  HAS SURPASSED",
+        "entity": "韋科",
+        "count": 2
+      },
+      {
+        "entity": "美國衛星通訊",
+        "count": 2
+      },
+      {
+        "entity": "ORACLE S STARGATE SITE AND BLOOM ENERGY",
         "count": 1
       },
       {
-        "entity": "Kimi Moonshot",
+        "entity": "Project Jupiter",
         "count": 1
       },
       {
-        "entity": "kimi k   ",
-        "count": 1
-      },
-      {
-        "entity": "american",
-        "count": 1
-      },
-      {
-        "entity": "china",
-        "count": 1
-      },
-      {
-        "entity": "Kimi K    GLM",
-        "count": 1
-      },
-      {
-        "entity": "WAIC      ",
-        "count": 1
-      },
-      {
-        "entity": "TB",
-        "count": 1
-      },
-      {
-        "entity": "RTT",
-        "count": 1
-      },
-      {
-        "entity": "GPU",
-        "count": 1
-      },
-      {
-        "entity": "gpu",
-        "count": 1
-      },
-      {
-        "entity": "SuperNodes",
+        "entity": "New Mexico",
         "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-18T01:57:59.999994+08:00",
-        "bucket_end": "2026-07-18T02:15:08.571423+08:00",
-        "positive": 0,
+        "bucket_start": "2026-07-18T01:59:59.999994+00:00",
+        "bucket_end": "2026-07-18T02:17:08.571423+00:00",
+        "positive": 2,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T02:15:08.571423+08:00",
-        "bucket_end": "2026-07-18T02:32:17.142852+08:00",
-        "positive": 0,
-        "neutral": 0,
+        "bucket_start": "2026-07-18T02:17:08.571423+00:00",
+        "bucket_end": "2026-07-18T02:34:17.142852+00:00",
+        "positive": 1,
+        "neutral": 2,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-18T02:32:17.142852+08:00",
-        "bucket_end": "2026-07-18T02:49:25.714281+08:00",
+        "bucket_start": "2026-07-18T02:34:17.142852+00:00",
+        "bucket_end": "2026-07-18T02:51:25.714281+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T02:49:25.714281+08:00",
-        "bucket_end": "2026-07-18T03:06:34.285710+08:00",
-        "positive": 0,
+        "bucket_start": "2026-07-18T02:51:25.714281+00:00",
+        "bucket_end": "2026-07-18T03:08:34.285710+00:00",
+        "positive": 2,
+        "neutral": 2,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-18T03:08:34.285710+00:00",
+        "bucket_end": "2026-07-18T03:25:42.857139+00:00",
+        "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T03:06:34.285710+08:00",
-        "bucket_end": "2026-07-18T03:23:42.857139+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T03:23:42.857139+08:00",
-        "bucket_end": "2026-07-18T03:40:51.428568+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T03:40:51.428568+08:00",
-        "bucket_end": "2026-07-18T03:57:59.999997+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T03:57:59.999997+08:00",
-        "bucket_end": "2026-07-18T04:15:08.571426+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T04:15:08.571426+08:00",
-        "bucket_end": "2026-07-18T04:32:17.142855+08:00",
+        "bucket_start": "2026-07-18T03:25:42.857139+00:00",
+        "bucket_end": "2026-07-18T03:42:51.428568+00:00",
         "positive": 3,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-18T04:32:17.142855+08:00",
-        "bucket_end": "2026-07-18T04:49:25.714284+08:00",
+        "bucket_start": "2026-07-18T03:42:51.428568+00:00",
+        "bucket_end": "2026-07-18T03:59:59.999997+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T04:49:25.714284+08:00",
-        "bucket_end": "2026-07-18T05:06:34.285713+08:00",
+        "bucket_start": "2026-07-18T03:59:59.999997+00:00",
+        "bucket_end": "2026-07-18T04:17:08.571426+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-18T04:17:08.571426+00:00",
+        "bucket_end": "2026-07-18T04:34:17.142855+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-18T04:34:17.142855+00:00",
+        "bucket_end": "2026-07-18T04:51:25.714284+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T05:06:34.285713+08:00",
-        "bucket_end": "2026-07-18T05:23:42.857142+08:00",
+        "bucket_start": "2026-07-18T04:51:25.714284+00:00",
+        "bucket_end": "2026-07-18T05:08:34.285713+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-18T05:08:34.285713+00:00",
+        "bucket_end": "2026-07-18T05:25:42.857142+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T05:23:42.857142+08:00",
-        "bucket_end": "2026-07-18T05:40:51.428571+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T05:40:51.428571+08:00",
-        "bucket_end": "2026-07-18T05:58:00+08:00",
+        "bucket_start": "2026-07-18T05:25:42.857142+00:00",
+        "bucket_end": "2026-07-18T05:42:51.428571+00:00",
         "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-18T05:42:51.428571+00:00",
+        "bucket_end": "2026-07-18T06:00:00+00:00",
+        "positive": 0,
         "neutral": 0,
         "negative": 0
       }
@@ -214,31 +246,70 @@
       {
         "handle": "SemiAnalysis_",
         "top_topic_id": 0,
-        "top_topic_label": "kimi / memory / ai / pricing",
+        "top_topic_label": "蘋果一度超車輝達重登全球市值王 / fuel / pipeline / 蘋果市值逼近",
         "focus_share": 1.0,
-        "post_count": 1
+        "post_count": 3
       },
       {
-        "handle": "tphuang",
+        "handle": "jukan05",
         "top_topic_id": 0,
-        "top_topic_label": "kimi / memory / ai / pricing",
+        "top_topic_label": "蘋果一度超車輝達重登全球市值王 / fuel / pipeline / 蘋果市值逼近",
         "focus_share": 1.0,
-        "post_count": 4
+        "post_count": 2
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 0,
+        "top_topic_label": "蘋果一度超車輝達重登全球市值王 / fuel / pipeline / 蘋果市值逼近",
+        "focus_share": 0.667,
+        "post_count": 3
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 0,
+        "top_topic_label": "蘋果一度超車輝達重登全球市值王 / fuel / pipeline / 蘋果市值逼近",
+        "focus_share": 0.625,
+        "post_count": 8
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 0,
+        "top_topic_label": "蘋果一度超車輝達重登全球市值王 / fuel / pipeline / 蘋果市值逼近",
+        "focus_share": 0.5,
+        "post_count": 6
       },
       {
         "handle": "tengyanAI",
-        "top_topic_id": 0,
-        "top_topic_label": "kimi / memory / ai / pricing",
-        "focus_share": 1.0,
+        "top_topic_id": 1,
+        "top_topic_label": "anthropic / meta / 洽談租算力 / 潛在合作案規模最高可達",
+        "focus_share": 0.5,
         "post_count": 2
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 0,
-        "label": "kimi / memory / ai / pricing",
-        "total_engagement": 842,
-        "post_count": 7
+        "label": "蘋果一度超車輝達重登全球市值王 / fuel / pipeline / 蘋果市值逼近",
+        "total_engagement": 1576,
+        "post_count": 15
+      },
+      {
+        "topic_id": 1,
+        "label": "anthropic / meta / 洽談租算力 / 潛在合作案規模最高可達",
+        "total_engagement": 55,
+        "post_count": 3
+      },
+      {
+        "topic_id": 2,
+        "label": "ai / 反映投資人重新評估 / 蘋果超越輝達 / 蘋果",
+        "total_engagement": 33,
+        "post_count": 4
+      },
+      {
+        "topic_id": 3,
+        "label": "spacex / 洽談出售算力 / 美國國防部 / 提供價值數十億美元的資料中心算力",
+        "total_engagement": 22,
+        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
