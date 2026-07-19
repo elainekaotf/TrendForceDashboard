@@ -1,38 +1,49 @@
 {
   "clusters": [
     {
-      "id": 4,
-      "label": "ai / nvidia / 台積電 / trendforce",
-      "size": 4,
+      "id": 1,
+      "label": "ai / 台積電 / spacex / memory",
+      "size": 6,
       "accounts": {
-        "technews_tw": 2,
-        "SemiAnalysis_": 1,
-        "ctee.fans": 1
+        "tphuang": 4,
+        "ctee.fans": 2
       },
       "engagement_by_account": {
-        "technews_tw": 0,
-        "SemiAnalysis_": 40,
-        "ctee.fans": 89
-      }
-    },
-    {
-      "id": 12,
-      "label": "ai / trendforce / pcb / nvidia",
-      "size": 1,
-      "accounts": {
-        "technews_tw": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 0
+        "tphuang": 21,
+        "ctee.fans": 3
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 1,
+      "label": "ai / 台積電 / spacex / memory",
+      "own_count": 0,
+      "competitor_count": 6,
+      "competitor_engagement": 24,
+      "competitors_covering": [
+        "tphuang",
+        "ctee.fans"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 1,
+      "label": "ai / 台積電 / spacex / memory",
+      "own_count": 0,
+      "competitor_count": 6,
+      "competitor_engagement": 24,
+      "competitors_covering": [
+        "tphuang",
+        "ctee.fans"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-19T11:30:21+08:00",
-    "end_utc": "2026-07-19T12:30:21+08:00",
-    "start_tw": "Jul 19, 11:30",
-    "end_tw": "Jul 19, 12:30"
+    "start_utc": "2026-07-19T10:00:00+00:00",
+    "end_utc": "2026-07-19T11:00:00+00:00",
+    "start_tw": "Jul 19, 18:00",
+    "end_tw": "Jul 19, 19:00"
   }
 }
