@@ -1,78 +1,119 @@
 {
-  "generated_at": "2026-07-19T09:19:30+08:00",
+  "generated_at": "2026-07-19T12:30:21+08:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-19T01:19:30+08:00",
-    "end_utc": "2026-07-19T09:19:30+08:00",
-    "start_tw": "Jul 19, 01:19",
-    "end_tw": "Jul 19, 09:19"
+    "start_utc": "2026-07-19T04:30:21+08:00",
+    "end_utc": "2026-07-19T12:30:21+08:00",
+    "start_tw": "Jul 19, 04:30",
+    "end_tw": "Jul 19, 12:30"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 13,
+      "total_posts": 29,
       "sentiment_counts": {
-        "positive": 12,
-        "neutral": 1
+        "positive": 19,
+        "negative": 3,
+        "neutral": 7
       },
       "sentiment_share": {
-        "positive": 0.923,
-        "neutral": 0.077
+        "positive": 0.655,
+        "negative": 0.103,
+        "neutral": 0.241
       },
       "top_terms": [
+        "最新",
         "networking",
-        "uses",
-        "kda",
-        "transfer",
-        "bandwidth",
-        "hbm",
-        "details",
-        "zhenwu",
-        "supports",
-        "adas"
+        "核心",
+        "超越",
+        "維持",
+        "躍升",
+        "升至",
+        "宣明",
+        "明智",
+        "驚傳"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 1,
-        "label": "hbm / micron / zhenwu / inference",
-        "heat": 50.0,
-        "volume": 10,
-        "engagement": 392,
+        "label": "continues / adas",
+        "heat": 90.0,
+        "volume": 20,
+        "engagement": 958,
         "entities": [
           "群創",
           "台積電",
           "新報",
           "矽晶片",
-          "華麗"
+          "台灣"
         ]
       },
       {
         "topic_id": 0,
-        "label": "networking / kv / ai / transfer",
-        "heat": 50.0,
-        "volume": 3,
-        "engagement": 616,
+        "label": "kv / networking / transfer / kda",
+        "heat": 30.7,
+        "volume": 2,
+        "engagement": 727,
         "entities": [
-          "AI",
           "Panicans",
+          "AI",
           "TAM",
           "Kimi K",
           "KDA Attention"
         ]
+      },
+      {
+        "topic_id": 2,
+        "label": "ai / networking",
+        "heat": 13.6,
+        "volume": 3,
+        "engagement": 62,
+        "entities": [
+          "Jevons",
+          "AI"
+        ]
+      },
+      {
+        "topic_id": 4,
+        "label": "宣明智",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 1,
+        "entities": [
+          "明智",
+          "宣昶",
+          "新竹",
+          "寶山",
+          "竹北"
+        ]
+      },
+      {
+        "topic_id": 3,
+        "label": "zhenwu / inference / ai / supports",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 71,
+        "entities": [
+          "AI Infrastructure  Zhenwu M    ",
+          "FP  FP   Used",
+          "AI",
+          "Zhenwu    E   Each",
+          "MoE"
+        ]
       }
     ],
     "named_entities": [
+      {
+        "entity": "明智",
+        "count": 11
+      },
       {
         "entity": "群創",
         "count": 6
       },
       {
         "entity": "台積電",
-        "count": 4
-      },
-      {
-        "entity": "AI",
         "count": 4
       },
       {
@@ -84,195 +125,220 @@
         "count": 3
       },
       {
+        "entity": "AI",
+        "count": 3
+      },
+      {
+        "entity": "台灣",
+        "count": 2
+      },
+      {
+        "entity": "揚秦",
+        "count": 2
+      },
+      {
+        "entity": "宣昶",
+        "count": 2
+      },
+      {
+        "entity": "新竹",
+        "count": 2
+      },
+      {
+        "entity": "寶山",
+        "count": 2
+      },
+      {
+        "entity": "竹北",
+        "count": 2
+      },
+      {
+        "entity": "東元",
+        "count": 2
+      },
+      {
+        "entity": "聯電",
+        "count": 2
+      },
+      {
         "entity": "華麗",
         "count": 2
-      },
-      {
-        "entity": "QoQ",
-        "count": 2
-      },
-      {
-        "entity": "HBM",
-        "count": 2
-      },
-      {
-        "entity": "Panicans",
-        "count": 1
-      },
-      {
-        "entity": "TAM",
-        "count": 1
-      },
-      {
-        "entity": "Kimi K",
-        "count": 1
-      },
-      {
-        "entity": "KDA Attention",
-        "count": 1
-      },
-      {
-        "entity": "kimi k   reduces",
-        "count": 1
-      },
-      {
-        "entity": "KDA",
-        "count": 1
-      },
-      {
-        "entity": "Jevons",
-        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-19T01:19:30.000002+08:00",
-        "bucket_end": "2026-07-19T01:53:47.142859+08:00",
+        "bucket_start": "2026-07-19T04:30:21.000002+08:00",
+        "bucket_end": "2026-07-19T05:04:38.142859+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T01:53:47.142859+08:00",
-        "bucket_end": "2026-07-19T02:28:04.285716+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T02:28:04.285716+08:00",
-        "bucket_end": "2026-07-19T03:02:21.428573+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T03:02:21.428573+08:00",
-        "bucket_end": "2026-07-19T03:36:38.571430+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T03:36:38.571430+08:00",
-        "bucket_end": "2026-07-19T04:10:55.714287+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T04:10:55.714287+08:00",
-        "bucket_end": "2026-07-19T04:45:12.857144+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T04:45:12.857144+08:00",
-        "bucket_end": "2026-07-19T05:19:30.000001+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T05:19:30.000001+08:00",
-        "bucket_end": "2026-07-19T05:53:47.142858+08:00",
+        "bucket_start": "2026-07-19T05:04:38.142859+08:00",
+        "bucket_end": "2026-07-19T05:38:55.285716+08:00",
         "positive": 3,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T05:53:47.142858+08:00",
-        "bucket_end": "2026-07-19T06:28:04.285715+08:00",
+        "bucket_start": "2026-07-19T05:38:55.285716+08:00",
+        "bucket_end": "2026-07-19T06:13:12.428573+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-19T06:13:12.428573+08:00",
+        "bucket_end": "2026-07-19T06:47:29.571430+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T06:28:04.285715+08:00",
-        "bucket_end": "2026-07-19T07:02:21.428572+08:00",
+        "bucket_start": "2026-07-19T06:47:29.571430+08:00",
+        "bucket_end": "2026-07-19T07:21:46.714287+08:00",
         "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T07:21:46.714287+08:00",
+        "bucket_end": "2026-07-19T07:56:03.857144+08:00",
+        "positive": 2,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T07:02:21.428572+08:00",
-        "bucket_end": "2026-07-19T07:36:38.571429+08:00",
-        "positive": 0,
-        "neutral": 0,
+        "bucket_start": "2026-07-19T07:56:03.857144+08:00",
+        "bucket_end": "2026-07-19T08:30:21.000001+08:00",
+        "positive": 3,
+        "neutral": 2,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T07:36:38.571429+08:00",
-        "bucket_end": "2026-07-19T08:10:55.714286+08:00",
+        "bucket_start": "2026-07-19T08:30:21.000001+08:00",
+        "bucket_end": "2026-07-19T09:04:38.142858+08:00",
         "positive": 3,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T08:10:55.714286+08:00",
-        "bucket_end": "2026-07-19T08:45:12.857143+08:00",
+        "bucket_start": "2026-07-19T09:04:38.142858+08:00",
+        "bucket_end": "2026-07-19T09:38:55.285715+08:00",
+        "positive": 3,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T09:38:55.285715+08:00",
+        "bucket_end": "2026-07-19T10:13:12.428572+08:00",
         "positive": 1,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T08:45:12.857143+08:00",
-        "bucket_end": "2026-07-19T09:19:30+08:00",
+        "bucket_start": "2026-07-19T10:13:12.428572+08:00",
+        "bucket_end": "2026-07-19T10:47:29.571429+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T10:47:29.571429+08:00",
+        "bucket_end": "2026-07-19T11:21:46.714286+08:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T11:21:46.714286+08:00",
+        "bucket_end": "2026-07-19T11:56:03.857143+08:00",
         "positive": 2,
         "neutral": 0,
-        "negative": 0
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-19T11:56:03.857143+08:00",
+        "bucket_end": "2026-07-19T12:30:21+08:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 1
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "technews_tw",
-        "top_topic_id": 1,
-        "top_topic_label": "hbm / micron / zhenwu / inference",
-        "focus_share": 1.0,
-        "post_count": 2
-      },
-      {
         "handle": "jukan05",
         "top_topic_id": 1,
-        "top_topic_label": "hbm / micron / zhenwu / inference",
+        "top_topic_label": "continues / adas",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "tphuang",
-        "top_topic_id": 1,
-        "top_topic_label": "hbm / micron / zhenwu / inference",
-        "focus_share": 1.0,
-        "post_count": 4
-      },
-      {
         "handle": "tengyanAI",
         "top_topic_id": 1,
-        "top_topic_label": "hbm / micron / zhenwu / inference",
+        "top_topic_label": "continues / adas",
         "focus_share": 1.0,
-        "post_count": 3
+        "post_count": 2
+      },
+      {
+        "handle": "ctee.fans",
+        "top_topic_id": 1,
+        "top_topic_label": "continues / adas",
+        "focus_share": 1.0,
+        "post_count": 10
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 1,
+        "top_topic_label": "continues / adas",
+        "focus_share": 0.5,
+        "post_count": 8
       },
       {
         "handle": "SemiAnalysis_",
         "top_topic_id": 0,
-        "top_topic_label": "networking / kv / ai / transfer",
-        "focus_share": 1.0,
-        "post_count": 3
+        "top_topic_label": "kv / networking / transfer / kda",
+        "focus_share": 0.5,
+        "post_count": 4
+      },
+      {
+        "handle": "tphuang",
+        "top_topic_id": 1,
+        "top_topic_label": "continues / adas",
+        "focus_share": 0.5,
+        "post_count": 4
       }
     ],
     "top_engagement_ranking": [
       {
+        "topic_id": 1,
+        "label": "continues / adas",
+        "total_engagement": 958,
+        "post_count": 20
+      },
+      {
         "topic_id": 0,
-        "label": "networking / kv / ai / transfer",
-        "total_engagement": 616,
+        "label": "kv / networking / transfer / kda",
+        "total_engagement": 727,
+        "post_count": 2
+      },
+      {
+        "topic_id": 3,
+        "label": "zhenwu / inference / ai / supports",
+        "total_engagement": 71,
+        "post_count": 2
+      },
+      {
+        "topic_id": 2,
+        "label": "ai / networking",
+        "total_engagement": 62,
         "post_count": 3
       },
       {
-        "topic_id": 1,
-        "label": "hbm / micron / zhenwu / inference",
-        "total_engagement": 392,
-        "post_count": 10
+        "topic_id": 4,
+        "label": "宣明智",
+        "total_engagement": 1,
+        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
