@@ -1,124 +1,111 @@
 {
   "clusters": [
     {
-      "id": 0,
-      "label": "ai / memory / spacex / dram",
-      "size": 102,
+      "id": 2,
+      "label": "ai / memory / openai / google",
+      "size": 110,
       "accounts": {
-        "technews_tw": 20,
+        "technews_tw": 23,
         "SemiAnalysis_": 4,
         "jukan05": 7,
-        "QQ_Timmy": 5,
+        "QQ_Timmy": 3,
         "tphuang": 10,
-        "tengyanAI": 4,
-        "technewsinside": 18,
-        "ctee.fans": 24,
+        "tengyanAI": 2,
+        "technewsinside": 26,
+        "ctee.fans": 25,
         "yutinghaosfinance": 10
       },
       "engagement_by_account": {
-        "technews_tw": 65,
+        "technews_tw": 69,
         "SemiAnalysis_": 1171,
-        "jukan05": 3535,
-        "QQ_Timmy": 189,
+        "jukan05": 2486,
+        "QQ_Timmy": 108,
         "tphuang": 409,
-        "tengyanAI": 53,
-        "technewsinside": 374,
-        "ctee.fans": 746,
+        "tengyanAI": 36,
+        "technewsinside": 470,
+        "ctee.fans": 752,
         "yutinghaosfinance": 2543
       }
     },
     {
-      "id": 9,
-      "label": "kimik / kimi / 月之暗面 / ai模型",
-      "size": 5,
-      "accounts": {
-        "technews_tw": 3,
-        "technewsinside": 2
-      },
-      "engagement_by_account": {
-        "technews_tw": 8,
-        "technewsinside": 133
-      }
-    },
-    {
-      "id": 13,
-      "label": "ai / physical / token / 科技早報",
-      "size": 5,
+      "id": 0,
+      "label": "ai / pcb / physical / token",
+      "size": 6,
       "accounts": {
         "technews_tw": 2,
-        "technewsinside": 3
+        "technewsinside": 4
       },
       "engagement_by_account": {
         "technews_tw": 1,
-        "technewsinside": 10
+        "technewsinside": 99
       }
     },
     {
-      "id": 3,
-      "label": "samsung / hynix / sk / hbm",
-      "size": 2,
+      "id": 9,
+      "label": "dram / hbm / trendforce / ddr",
+      "size": 3,
       "accounts": {
         "jukan05": 1,
-        "tengyanAI": 1
+        "QQ_Timmy": 2
       },
       "engagement_by_account": {
-        "jukan05": 382,
-        "tengyanAI": 127
+        "jukan05": 707,
+        "QQ_Timmy": 81
       }
     },
     {
-      "id": 6,
-      "label": "anthropic / claude / fable / mythos",
+      "id": 7,
+      "label": "台積電 / ai / 英特爾 / 魏哲家",
       "size": 2,
       "accounts": {
         "technews_tw": 1,
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "technews_tw": 1,
-        "technewsinside": 5
+        "technews_tw": 0,
+        "technewsinside": 17
       }
     },
     {
-      "id": 10,
-      "label": "聯電 / 晶圓代工 / 英特爾 / silith",
+      "id": 8,
+      "label": "nasa / 韋伯望遠鏡 / 天文發現 / 太空救援",
       "size": 2,
       "accounts": {
         "technews_tw": 1,
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "technews_tw": 3,
-        "technewsinside": 27
+        "technews_tw": 2,
+        "technewsinside": 6
+      }
+    },
+    {
+      "id": 12,
+      "label": "半導體 / 英特爾 / ai / 三星",
+      "size": 2,
+      "accounts": {
+        "technews_tw": 1,
+        "technewsinside": 1
+      },
+      "engagement_by_account": {
+        "technews_tw": 7,
+        "technewsinside": 30
       }
     },
     {
       "id": 15,
-      "label": "無人機 / 國防 / 烏克蘭 / google",
+      "label": "買進 / 評等 / ai伺服器 / 昇達科",
       "size": 2,
       "accounts": {
-        "technews_tw": 1,
-        "technewsinside": 1
+        "ctee.fans": 2
       },
       "engagement_by_account": {
-        "technews_tw": 5,
-        "technewsinside": 50
+        "ctee.fans": 47
       }
     },
     {
-      "id": 1,
-      "label": "trendforce / dram / ai / nand",
-      "size": 1,
-      "accounts": {
-        "jukan05": 1
-      },
-      "engagement_by_account": {
-        "jukan05": 707
-      }
-    },
-    {
-      "id": 2,
-      "label": "nvidia / ai / amd / gpu",
+      "id": 4,
+      "label": "nvidia / ai / amd / rubin",
       "size": 1,
       "accounts": {
         "technews_tw": 1
@@ -128,23 +115,47 @@
       }
     },
     {
-      "id": 4,
-      "label": "台積電 / 英特爾 / ai / 魏哲家",
+      "id": 5,
+      "label": "sk / hynix / hbm / samsung",
       "size": 1,
       "accounts": {
-        "technews_tw": 1
+        "tengyanAI": 1
       },
       "engagement_by_account": {
-        "technews_tw": 0
+        "tengyanAI": 127
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 9,
+      "label": "dram / hbm / trendforce / ddr",
+      "own_count": 0,
+      "competitor_count": 3,
+      "competitor_engagement": 788,
+      "competitors_covering": [
+        "jukan05",
+        "QQ_Timmy"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 9,
+      "label": "dram / hbm / trendforce / ddr",
+      "own_count": 0,
+      "competitor_count": 3,
+      "competitor_engagement": 788,
+      "competitors_covering": [
+        "jukan05",
+        "QQ_Timmy"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-18T20:16:24+08:00",
-    "end_utc": "2026-07-19T20:16:24+08:00",
-    "start_tw": "Jul 18, 20:16",
-    "end_tw": "Jul 19, 20:16"
+    "start_utc": "2026-07-18T12:54:11.874197+00:00",
+    "end_utc": "2026-07-19T12:54:11.874197+00:00",
+    "start_tw": "Jul 18, 20:54",
+    "end_tw": "Jul 19, 20:54"
   }
 }
