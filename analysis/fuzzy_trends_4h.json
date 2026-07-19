@@ -1,32 +1,80 @@
 {
-  "generated_at": "2026-07-19T12:30:21+08:00",
+  "generated_at": "2026-07-19T05:57:53.417507+00:00",
   "range": "4h",
   "window_hours": 4,
   "window": {
-    "start_utc": "2026-07-19T08:30:21+08:00",
-    "end_utc": "2026-07-19T12:30:21+08:00",
-    "start_tw": "Jul 19, 08:30",
-    "end_tw": "Jul 19, 12:30"
+    "start_utc": "2026-07-19T01:57:53.417507+00:00",
+    "end_utc": "2026-07-19T05:57:53.417507+00:00",
+    "start_tw": "Jul 19, 09:57",
+    "end_tw": "Jul 19, 13:57"
   },
   "scan_only": false,
   "platforms": {
     "Facebook": {
       "top_rising_topics": [
         {
-          "rising_score": 50.0,
-          "volume_growth_rate": 0.5,
-          "engagement_acceleration": 0.082,
+          "rising_score": 90.0,
+          "volume_growth_rate": 2.0,
+          "engagement_acceleration": 3.0,
           "active_accounts": 1,
-          "rationale": "volume +50% vs prior 4h, engagement rate +8%, 1 account(s) posting",
-          "topic_id": 4,
-          "label": "ai / nvidia / 台積電 / trendforce",
+          "rationale": "volume +200% vs prior 4h, engagement rate +300%, 1 account(s) posting",
+          "topic_id": 12,
+          "label": "ai / pcb / nvidia / physical",
           "rising_kols": [
             {
               "rising_score": 50.0,
-              "volume_growth_rate": 0.5,
-              "engagement_acceleration": 0.082,
+              "volume_growth_rate": 2.0,
+              "engagement_acceleration": 3.0,
               "active_accounts": 1,
-              "rationale": "posts +50%, engagement +8% vs prior 4h",
+              "rationale": "posts +200%, engagement +300% vs prior 4h",
+              "handle": "technewsinside"
+            }
+          ],
+          "sub_topics": []
+        },
+        {
+          "rising_score": 74.6,
+          "volume_growth_rate": 0.571,
+          "engagement_acceleration": 0.156,
+          "active_accounts": 2,
+          "rationale": "volume +57% vs prior 4h, engagement rate +16%, 2 account(s) posting",
+          "topic_id": 0,
+          "label": "ai / nvidia / memory / openai",
+          "rising_kols": [
+            {
+              "rising_score": 50.0,
+              "volume_growth_rate": 2.5,
+              "engagement_acceleration": 0.194,
+              "active_accounts": 1,
+              "rationale": "posts +250%, engagement +19% vs prior 4h",
+              "handle": "technewsinside"
+            },
+            {
+              "rising_score": 50.0,
+              "volume_growth_rate": -0.2,
+              "engagement_acceleration": 0.425,
+              "active_accounts": 1,
+              "rationale": "posts -20%, engagement +43% vs prior 4h",
+              "handle": "ctee.fans"
+            }
+          ],
+          "sub_topics": []
+        },
+        {
+          "rising_score": 10.0,
+          "volume_growth_rate": -1.0,
+          "engagement_acceleration": -1.0,
+          "active_accounts": 0,
+          "rationale": "volume -100% vs prior 4h, engagement rate -100%, 0 account(s) posting",
+          "topic_id": 11,
+          "label": "名家評論 / ai / 針對 / 人工智慧",
+          "rising_kols": [
+            {
+              "rising_score": 50.0,
+              "volume_growth_rate": -1.0,
+              "engagement_acceleration": -1.0,
+              "active_accounts": 0,
+              "rationale": "posts -100%, engagement -100% vs prior 4h",
               "handle": "ctee.fans"
             }
           ],
@@ -37,37 +85,57 @@
     "X": {
       "top_rising_topics": [
         {
-          "rising_score": 50.0,
-          "volume_growth_rate": 0.125,
-          "engagement_acceleration": -0.881,
-          "active_accounts": 3,
-          "rationale": "volume +12% vs prior 4h, engagement rate -88%, 3 account(s) posting",
-          "topic_id": 4,
-          "label": "ai / nvidia / 台積電 / trendforce",
+          "rising_score": 90.0,
+          "volume_growth_rate": 1.0,
+          "engagement_acceleration": 0.0,
+          "active_accounts": 1,
+          "rationale": "volume +100% vs prior 4h, engagement rate +0%, 1 account(s) posting",
+          "topic_id": 12,
+          "label": "ai / pcb / nvidia / physical",
+          "rising_kols": [
+            {
+              "rising_score": 50.0,
+              "volume_growth_rate": 1.0,
+              "engagement_acceleration": 0.0,
+              "active_accounts": 1,
+              "rationale": "posts +100%, engagement +0% vs prior 4h",
+              "handle": "technews_tw"
+            }
+          ],
+          "sub_topics": []
+        },
+        {
+          "rising_score": 67.5,
+          "volume_growth_rate": -0.25,
+          "engagement_acceleration": -0.672,
+          "active_accounts": 2,
+          "rationale": "volume -25% vs prior 4h, engagement rate -67%, 2 account(s) posting",
+          "topic_id": 0,
+          "label": "ai / nvidia / memory / openai",
           "rising_kols": [
             {
               "rising_score": 90.0,
-              "volume_growth_rate": 5.0,
-              "engagement_acceleration": -0.556,
+              "volume_growth_rate": 1.5,
+              "engagement_acceleration": -0.85,
               "active_accounts": 1,
-              "rationale": "posts +500%, engagement -56% vs prior 4h",
+              "rationale": "posts +150%, engagement -85% vs prior 4h",
               "handle": "technews_tw"
             },
             {
               "rising_score": 90.0,
-              "volume_growth_rate": 0.0,
-              "engagement_acceleration": 0.109,
+              "volume_growth_rate": 1.0,
+              "engagement_acceleration": 40.0,
               "active_accounts": 1,
-              "rationale": "posts +0%, engagement +11% vs prior 4h",
-              "handle": "tphuang"
+              "rationale": "posts +100%, engagement +4000% vs prior 4h",
+              "handle": "SemiAnalysis_"
             },
             {
-              "rising_score": 53.6,
-              "volume_growth_rate": -0.667,
-              "engagement_acceleration": -0.848,
-              "active_accounts": 1,
-              "rationale": "posts -67%, engagement -85% vs prior 4h",
-              "handle": "SemiAnalysis_"
+              "rising_score": 10.0,
+              "volume_growth_rate": -1.0,
+              "engagement_acceleration": -1.0,
+              "active_accounts": 0,
+              "rationale": "posts -100%, engagement -100% vs prior 4h",
+              "handle": "tphuang"
             },
             {
               "rising_score": 10.0,
@@ -81,41 +149,21 @@
           "sub_topics": []
         },
         {
-          "rising_score": 50.0,
-          "volume_growth_rate": 1.0,
-          "engagement_acceleration": 473.0,
-          "active_accounts": 1,
-          "rationale": "volume +100% vs prior 4h, engagement rate +47300%, 1 account(s) posting",
-          "topic_id": 14,
-          "label": "dram / hbm / trendforce / memory",
+          "rising_score": 10.0,
+          "volume_growth_rate": -1.0,
+          "engagement_acceleration": -1.0,
+          "active_accounts": 0,
+          "rationale": "volume -100% vs prior 4h, engagement rate -100%, 0 account(s) posting",
+          "topic_id": 4,
+          "label": "trendforce / dram / nand / ai",
           "rising_kols": [
             {
               "rising_score": 50.0,
-              "volume_growth_rate": 1.0,
-              "engagement_acceleration": 473.0,
-              "active_accounts": 1,
-              "rationale": "posts +100%, engagement +47300% vs prior 4h",
+              "volume_growth_rate": -1.0,
+              "engagement_acceleration": -1.0,
+              "active_accounts": 0,
+              "rationale": "posts -100%, engagement -100% vs prior 4h",
               "handle": "jukan05"
-            }
-          ],
-          "sub_topics": []
-        },
-        {
-          "rising_score": 10.1,
-          "volume_growth_rate": 1.0,
-          "engagement_acceleration": 0.0,
-          "active_accounts": 1,
-          "rationale": "volume +100% vs prior 4h, engagement rate +0%, 1 account(s) posting",
-          "topic_id": 12,
-          "label": "ai / trendforce / pcb / nvidia",
-          "rising_kols": [
-            {
-              "rising_score": 50.0,
-              "volume_growth_rate": 1.0,
-              "engagement_acceleration": 0.0,
-              "active_accounts": 1,
-              "rationale": "posts +100%, engagement +0% vs prior 4h",
-              "handle": "technews_tw"
             }
           ],
           "sub_topics": []

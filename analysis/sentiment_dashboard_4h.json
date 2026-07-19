@@ -1,74 +1,46 @@
 {
-  "generated_at": "2026-07-19T12:30:21+08:00",
+  "generated_at": "2026-07-19T05:57:53.417507+00:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-19T08:30:21+08:00",
-    "end_utc": "2026-07-19T12:30:21+08:00",
-    "start_tw": "Jul 19, 08:30",
-    "end_tw": "Jul 19, 12:30"
+    "start_utc": "2026-07-19T01:57:53.417507+00:00",
+    "end_utc": "2026-07-19T05:57:53.417507+00:00",
+    "start_tw": "Jul 19, 09:57",
+    "end_tw": "Jul 19, 13:57"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 17,
+      "total_posts": 20,
       "sentiment_counts": {
-        "positive": 11,
-        "negative": 2,
-        "neutral": 4
+        "positive": 9,
+        "negative": 3,
+        "neutral": 8
       },
       "sentiment_share": {
-        "positive": 0.647,
-        "negative": 0.118,
-        "neutral": 0.235
+        "positive": 0.45,
+        "negative": 0.15,
+        "neutral": 0.4
       },
       "top_terms": [
-        "核心",
         "超越",
-        "維持",
-        "躍升",
-        "升至",
         "宣明",
         "明智",
         "驚傳",
         "識不",
-        "不清"
+        "不清",
+        "緊急",
+        "急送",
+        "送醫",
+        "宣明智"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 0,
-        "label": "zhenwu / inference / supports / details",
+        "label": "ai / 宣明智驚傳意識不清緊急送醫 / 兒子宣昶有發文 / 一起為宣爸集氣",
         "heat": 90.0,
-        "volume": 12,
-        "engagement": 741,
-        "entities": [
-          "群創",
-          "台積電",
-          "台灣",
-          "揚秦",
-          "華麗"
-        ]
-      },
-      {
-        "topic_id": 1,
-        "label": "ai / zhenwu / inference / supports",
-        "heat": 14.9,
-        "volume": 3,
-        "engagement": 61,
-        "entities": [
-          "AI Infrastructure  Zhenwu M    ",
-          "FP  FP   Used",
-          "AI",
-          "Zhenwu    E   Each",
-          "MoE"
-        ]
-      },
-      {
-        "topic_id": 2,
-        "label": "宣明智",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 1,
+        "volume": 14,
+        "engagement": 375,
         "entities": [
           "明智",
           "宣昶",
@@ -76,32 +48,60 @@
           "寶山",
           "竹北"
         ]
+      },
+      {
+        "topic_id": 2,
+        "label": "麥味登 / 月成功突破千店規模 / 早餐店 / 一舉超越同業躍升至全台品牌店數第二",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 8,
+        "entities": [
+          "台灣",
+          "揚秦"
+        ]
+      },
+      {
+        "topic_id": 3,
+        "label": "claude / ai模型 / anthropic / fable",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 5,
+        "entities": [
+          "Claude Fable"
+        ]
+      },
+      {
+        "topic_id": 1,
+        "label": "最新 / 聯電榮譽副董驚傳送醫 / 歲宣明智因不明原因意識不清 / 緊急送醫急救",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 28,
+        "entities": [
+          "明智",
+          "聯電"
+        ]
       }
     ],
     "named_entities": [
       {
         "entity": "明智",
-        "count": 11
-      },
-      {
-        "entity": "群創",
-        "count": 6
-      },
-      {
-        "entity": "台積電",
-        "count": 4
+        "count": 14
       },
       {
         "entity": "台灣",
-        "count": 2
+        "count": 3
       },
       {
         "entity": "揚秦",
-        "count": 2
+        "count": 3
       },
       {
         "entity": "宣昶",
-        "count": 2
+        "count": 3
+      },
+      {
+        "entity": "聯電",
+        "count": 3
       },
       {
         "entity": "新竹",
@@ -120,121 +120,125 @@
         "count": 2
       },
       {
-        "entity": "聯電",
-        "count": 2
-      },
-      {
-        "entity": "華麗",
-        "count": 2
-      },
-      {
-        "entity": "QoQ",
-        "count": 2
-      },
-      {
         "entity": "Claude Fable",
         "count": 1
       },
       {
-        "entity": "DRAM ASP",
+        "entity": "吉卜力",
+        "count": 1
+      },
+      {
+        "entity": "日本",
+        "count": 1
+      },
+      {
+        "entity": "塔星雲",
+        "count": 1
+      },
+      {
+        "entity": "內脈",
+        "count": 1
+      },
+      {
+        "entity": "天文",
         "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-19T08:30:20.999994+08:00",
-        "bucket_end": "2026-07-19T08:47:29.571423+08:00",
+        "bucket_start": "2026-07-19T01:57:53.417501+00:00",
+        "bucket_end": "2026-07-19T02:15:01.988930+00:00",
+        "positive": 1,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T02:15:01.988930+00:00",
+        "bucket_end": "2026-07-19T02:32:10.560359+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T02:32:10.560359+00:00",
+        "bucket_end": "2026-07-19T02:49:19.131788+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T08:47:29.571423+08:00",
-        "bucket_end": "2026-07-19T09:04:38.142852+08:00",
-        "positive": 3,
+        "bucket_start": "2026-07-19T02:49:19.131788+00:00",
+        "bucket_end": "2026-07-19T03:06:27.703217+00:00",
+        "positive": 0,
+        "neutral": 3,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T03:06:27.703217+00:00",
+        "bucket_end": "2026-07-19T03:23:36.274646+00:00",
+        "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T09:04:38.142852+08:00",
-        "bucket_end": "2026-07-19T09:21:46.714281+08:00",
+        "bucket_start": "2026-07-19T03:23:36.274646+00:00",
+        "bucket_end": "2026-07-19T03:40:44.846075+00:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-19T03:40:44.846075+00:00",
+        "bucket_end": "2026-07-19T03:57:53.417504+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T03:57:53.417504+00:00",
+        "bucket_end": "2026-07-19T04:15:01.988933+00:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-19T04:15:01.988933+00:00",
+        "bucket_end": "2026-07-19T04:32:10.560362+00:00",
         "positive": 2,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T09:21:46.714281+08:00",
-        "bucket_end": "2026-07-19T09:38:55.285710+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T09:38:55.285710+08:00",
-        "bucket_end": "2026-07-19T09:56:03.857139+08:00",
+        "bucket_start": "2026-07-19T04:32:10.560362+00:00",
+        "bucket_end": "2026-07-19T04:49:19.131791+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T09:56:03.857139+08:00",
-        "bucket_end": "2026-07-19T10:13:12.428568+08:00",
+        "bucket_start": "2026-07-19T04:49:19.131791+00:00",
+        "bucket_end": "2026-07-19T05:06:27.703220+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T05:06:27.703220+00:00",
+        "bucket_end": "2026-07-19T05:23:36.274649+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T05:23:36.274649+00:00",
+        "bucket_end": "2026-07-19T05:40:44.846078+00:00",
         "positive": 1,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T10:13:12.428568+08:00",
-        "bucket_end": "2026-07-19T10:30:20.999997+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T10:30:20.999997+08:00",
-        "bucket_end": "2026-07-19T10:47:29.571426+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T10:47:29.571426+08:00",
-        "bucket_end": "2026-07-19T11:04:38.142855+08:00",
-        "positive": 0,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T11:04:38.142855+08:00",
-        "bucket_end": "2026-07-19T11:21:46.714284+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T11:21:46.714284+08:00",
-        "bucket_end": "2026-07-19T11:38:55.285713+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-19T11:38:55.285713+08:00",
-        "bucket_end": "2026-07-19T11:56:03.857142+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T11:56:03.857142+08:00",
-        "bucket_end": "2026-07-19T12:13:12.428571+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-19T12:13:12.428571+08:00",
-        "bucket_end": "2026-07-19T12:30:21+08:00",
+        "bucket_start": "2026-07-19T05:40:44.846078+00:00",
+        "bucket_end": "2026-07-19T05:57:53.417507+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
@@ -244,56 +248,55 @@
       {
         "handle": "SemiAnalysis_",
         "top_topic_id": 0,
-        "top_topic_label": "zhenwu / inference / supports / details",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "zhenwu / inference / supports / details",
+        "top_topic_label": "ai / 宣明智驚傳意識不清緊急送醫 / 兒子宣昶有發文 / 一起為宣爸集氣",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "ctee.fans",
         "top_topic_id": 0,
-        "top_topic_label": "zhenwu / inference / supports / details",
+        "top_topic_label": "ai / 宣明智驚傳意識不清緊急送醫 / 兒子宣昶有發文 / 一起為宣爸集氣",
         "focus_share": 1.0,
-        "post_count": 6
+        "post_count": 4
       },
       {
-        "handle": "tphuang",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / zhenwu / inference / supports",
-        "focus_share": 0.5,
-        "post_count": 2
+        "handle": "technewsinside",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / 宣明智驚傳意識不清緊急送醫 / 兒子宣昶有發文 / 一起為宣爸集氣",
+        "focus_share": 0.667,
+        "post_count": 9
       },
       {
         "handle": "technews_tw",
         "top_topic_id": 0,
-        "top_topic_label": "zhenwu / inference / supports / details",
-        "focus_share": 0.429,
-        "post_count": 7
+        "top_topic_label": "ai / 宣明智驚傳意識不清緊急送醫 / 兒子宣昶有發文 / 一起為宣爸集氣",
+        "focus_share": 0.5,
+        "post_count": 6
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 0,
-        "label": "zhenwu / inference / supports / details",
-        "total_engagement": 741,
-        "post_count": 12
+        "label": "ai / 宣明智驚傳意識不清緊急送醫 / 兒子宣昶有發文 / 一起為宣爸集氣",
+        "total_engagement": 375,
+        "post_count": 14
       },
       {
         "topic_id": 1,
-        "label": "ai / zhenwu / inference / supports",
-        "total_engagement": 61,
-        "post_count": 3
+        "label": "最新 / 聯電榮譽副董驚傳送醫 / 歲宣明智因不明原因意識不清 / 緊急送醫急救",
+        "total_engagement": 28,
+        "post_count": 2
       },
       {
         "topic_id": 2,
-        "label": "宣明智",
-        "total_engagement": 1,
+        "label": "麥味登 / 月成功突破千店規模 / 早餐店 / 一舉超越同業躍升至全台品牌店數第二",
+        "total_engagement": 8,
+        "post_count": 2
+      },
+      {
+        "topic_id": 3,
+        "label": "claude / ai模型 / anthropic / fable",
+        "total_engagement": 5,
         "post_count": 2
       }
     ],
