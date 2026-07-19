@@ -1,79 +1,58 @@
 {
-  "generated_at": "2026-07-19T05:35:11+08:00",
+  "generated_at": "2026-07-19T09:19:30+08:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-18T21:35:11+08:00",
-    "end_utc": "2026-07-19T05:35:11+08:00",
-    "start_tw": "Jul 18, 21:35",
-    "end_tw": "Jul 19, 05:35"
+    "start_utc": "2026-07-19T01:19:30+08:00",
+    "end_utc": "2026-07-19T09:19:30+08:00",
+    "start_tw": "Jul 19, 01:19",
+    "end_tw": "Jul 19, 09:19"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 21,
+      "total_posts": 13,
       "sentiment_counts": {
-        "negative": 3,
-        "positive": 16,
-        "neutral": 2
+        "positive": 12,
+        "neutral": 1
       },
       "sentiment_share": {
-        "negative": 0.143,
-        "positive": 0.762,
-        "neutral": 0.095
+        "positive": 0.923,
+        "neutral": 0.077
       },
       "top_terms": [
-        "半導",
-        "導體",
-        "半導體",
         "networking",
-        "英特",
-        "特爾",
-        "爾前",
-        "前執",
-        "行長",
-        "長嚴"
+        "uses",
+        "kda",
+        "transfer",
+        "bandwidth",
+        "hbm",
+        "details",
+        "zhenwu",
+        "supports",
+        "adas"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "ai / deepseek",
-        "heat": 90.0,
-        "volume": 14,
-        "engagement": 2395,
-        "entities": [
-          "川普",
-          "美國",
-          "歐洲",
-          "西班牙",
-          "BYD"
-        ]
-      },
-      {
-        "topic_id": 3,
-        "label": "英特爾 / 經濟大蕭條 / 英特爾前執行長嚴厲警告 / 若台灣晶片供應中斷",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 35,
-        "entities": [
-          "英特爾",
-          "台灣"
-        ]
-      },
-      {
         "topic_id": 1,
-        "label": "wd / 財報 / 半導體股並非唯一贏家 / 傳產出頭天",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 37,
-        "entities": []
+        "label": "hbm / micron / zhenwu / inference",
+        "heat": 50.0,
+        "volume": 10,
+        "engagement": 392,
+        "entities": [
+          "群創",
+          "台積電",
+          "新報",
+          "矽晶片",
+          "華麗"
+        ]
       },
       {
-        "topic_id": 2,
-        "label": "networking / kv / ai / bandwidth",
-        "heat": 10.0,
+        "topic_id": 0,
+        "label": "networking / kv / ai / transfer",
+        "heat": 50.0,
         "volume": 3,
-        "engagement": 19,
+        "engagement": 616,
         "entities": [
           "AI",
           "Panicans",
@@ -85,31 +64,35 @@
     ],
     "named_entities": [
       {
-        "entity": "英特爾",
-        "count": 7
+        "entity": "群創",
+        "count": 6
       },
       {
-        "entity": "台灣",
-        "count": 7
-      },
-      {
-        "entity": "川普",
+        "entity": "台積電",
         "count": 4
       },
       {
         "entity": "AI",
+        "count": 4
+      },
+      {
+        "entity": "新報",
         "count": 3
       },
       {
-        "entity": "美國",
+        "entity": "矽晶片",
+        "count": 3
+      },
+      {
+        "entity": "華麗",
         "count": 2
       },
       {
-        "entity": "歐洲",
+        "entity": "QoQ",
         "count": 2
       },
       {
-        "entity": "西班牙",
+        "entity": "HBM",
         "count": 2
       },
       {
@@ -139,187 +122,157 @@
       {
         "entity": "Jevons",
         "count": 1
-      },
-      {
-        "entity": "BYD",
-        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-18T21:35:11.000002+08:00",
-        "bucket_end": "2026-07-18T22:09:28.142859+08:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-18T22:09:28.142859+08:00",
-        "bucket_end": "2026-07-18T22:43:45.285716+08:00",
+        "bucket_start": "2026-07-19T01:19:30.000002+08:00",
+        "bucket_end": "2026-07-19T01:53:47.142859+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T22:43:45.285716+08:00",
-        "bucket_end": "2026-07-18T23:18:02.428573+08:00",
+        "bucket_start": "2026-07-19T01:53:47.142859+08:00",
+        "bucket_end": "2026-07-19T02:28:04.285716+08:00",
         "positive": 1,
         "neutral": 0,
-        "negative": 2
+        "negative": 0
       },
       {
-        "bucket_start": "2026-07-18T23:18:02.428573+08:00",
-        "bucket_end": "2026-07-18T23:52:19.571430+08:00",
+        "bucket_start": "2026-07-19T02:28:04.285716+08:00",
+        "bucket_end": "2026-07-19T03:02:21.428573+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T03:02:21.428573+08:00",
+        "bucket_end": "2026-07-19T03:36:38.571430+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T03:36:38.571430+08:00",
+        "bucket_end": "2026-07-19T04:10:55.714287+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T04:10:55.714287+08:00",
+        "bucket_end": "2026-07-19T04:45:12.857144+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T04:45:12.857144+08:00",
+        "bucket_end": "2026-07-19T05:19:30.000001+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T05:19:30.000001+08:00",
+        "bucket_end": "2026-07-19T05:53:47.142858+08:00",
         "positive": 3,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T05:53:47.142858+08:00",
+        "bucket_end": "2026-07-19T06:28:04.285715+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T06:28:04.285715+08:00",
+        "bucket_end": "2026-07-19T07:02:21.428572+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T07:02:21.428572+08:00",
+        "bucket_end": "2026-07-19T07:36:38.571429+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T07:36:38.571429+08:00",
+        "bucket_end": "2026-07-19T08:10:55.714286+08:00",
+        "positive": 3,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T08:10:55.714286+08:00",
+        "bucket_end": "2026-07-19T08:45:12.857143+08:00",
+        "positive": 1,
         "neutral": 1,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-18T23:52:19.571430+08:00",
-        "bucket_end": "2026-07-19T00:26:36.714287+08:00",
-        "positive": 5,
-        "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T00:26:36.714287+08:00",
-        "bucket_end": "2026-07-19T01:00:53.857144+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T01:00:53.857144+08:00",
-        "bucket_end": "2026-07-19T01:35:11.000001+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T01:35:11.000001+08:00",
-        "bucket_end": "2026-07-19T02:09:28.142858+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T02:09:28.142858+08:00",
-        "bucket_end": "2026-07-19T02:43:45.285715+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T02:43:45.285715+08:00",
-        "bucket_end": "2026-07-19T03:18:02.428572+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T03:18:02.428572+08:00",
-        "bucket_end": "2026-07-19T03:52:19.571429+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T03:52:19.571429+08:00",
-        "bucket_end": "2026-07-19T04:26:36.714286+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T04:26:36.714286+08:00",
-        "bucket_end": "2026-07-19T05:00:53.857143+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T05:00:53.857143+08:00",
-        "bucket_end": "2026-07-19T05:35:11+08:00",
-        "positive": 1,
+        "bucket_start": "2026-07-19T08:45:12.857143+08:00",
+        "bucket_end": "2026-07-19T09:19:30+08:00",
+        "positive": 2,
         "neutral": 0,
         "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 2,
-        "top_topic_label": "networking / kv / ai / bandwidth",
+        "handle": "technews_tw",
+        "top_topic_id": 1,
+        "top_topic_label": "hbm / micron / zhenwu / inference",
+        "focus_share": 1.0,
+        "post_count": 2
+      },
+      {
+        "handle": "jukan05",
+        "top_topic_id": 1,
+        "top_topic_label": "hbm / micron / zhenwu / inference",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "tphuang",
+        "top_topic_id": 1,
+        "top_topic_label": "hbm / micron / zhenwu / inference",
+        "focus_share": 1.0,
+        "post_count": 4
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 1,
+        "top_topic_label": "hbm / micron / zhenwu / inference",
         "focus_share": 1.0,
         "post_count": 3
       },
       {
-        "handle": "tphuang",
+        "handle": "SemiAnalysis_",
         "top_topic_id": 0,
-        "top_topic_label": "ai / deepseek",
+        "top_topic_label": "networking / kv / ai / transfer",
         "focus_share": 1.0,
-        "post_count": 2
-      },
-      {
-        "handle": "tengyanAI",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / deepseek",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / deepseek",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / deepseek",
-        "focus_share": 1.0,
-        "post_count": 9
-      },
-      {
-        "handle": "technews_tw",
-        "top_topic_id": 3,
-        "top_topic_label": "英特爾 / 經濟大蕭條 / 英特爾前執行長嚴厲警告 / 若台灣晶片供應中斷",
-        "focus_share": 0.5,
-        "post_count": 2
-      },
-      {
-        "handle": "technewsinside",
-        "top_topic_id": 3,
-        "top_topic_label": "英特爾 / 經濟大蕭條 / 英特爾前執行長嚴厲警告 / 若台灣晶片供應中斷",
-        "focus_share": 0.333,
         "post_count": 3
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 0,
-        "label": "ai / deepseek",
-        "total_engagement": 2395,
-        "post_count": 14
+        "label": "networking / kv / ai / transfer",
+        "total_engagement": 616,
+        "post_count": 3
       },
       {
         "topic_id": 1,
-        "label": "wd / 財報 / 半導體股並非唯一贏家 / 傳產出頭天",
-        "total_engagement": 37,
-        "post_count": 2
-      },
-      {
-        "topic_id": 3,
-        "label": "英特爾 / 經濟大蕭條 / 英特爾前執行長嚴厲警告 / 若台灣晶片供應中斷",
-        "total_engagement": 35,
-        "post_count": 2
-      },
-      {
-        "topic_id": 2,
-        "label": "networking / kv / ai / bandwidth",
-        "total_engagement": 19,
-        "post_count": 3
+        "label": "hbm / micron / zhenwu / inference",
+        "total_engagement": 392,
+        "post_count": 10
       }
     ],
     "posting_timeslot_analysis": {
