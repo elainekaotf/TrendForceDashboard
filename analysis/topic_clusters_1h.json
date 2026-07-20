@@ -1,66 +1,55 @@
 {
   "clusters": [
     {
-      "id": 1,
-      "label": "ai / 台積電 / trendforce / memory",
-      "size": 5,
+      "id": 0,
+      "label": "ai / memory / dram / hbm",
+      "size": 6,
       "accounts": {
         "technews_tw": 1,
         "QQ_Timmy": 1,
-        "technewsinside": 2,
-        "ctee.fans": 1
+        "tphuang": 2,
+        "tengyanAI": 2
       },
       "engagement_by_account": {
         "technews_tw": 0,
-        "QQ_Timmy": 8,
-        "technewsinside": 3,
-        "ctee.fans": 32
-      }
-    },
-    {
-      "id": 2,
-      "label": "ai / trendforce / pcb / physical",
-      "size": 2,
-      "accounts": {
-        "technews_tw": 1,
-        "technewsinside": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 2,
-        "technewsinside": 23
-      }
-    },
-    {
-      "id": 12,
-      "label": "openai / anthropic / ai / gpt",
-      "size": 2,
-      "accounts": {
-        "technews_tw": 1,
-        "technewsinside": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 1,
-        "technewsinside": 1
-      }
-    },
-    {
-      "id": 3,
-      "label": "dram / hbm / trendforce / memory",
-      "size": 1,
-      "accounts": {
-        "tengyanAI": 1
-      },
-      "engagement_by_account": {
-        "tengyanAI": 4
+        "QQ_Timmy": 16,
+        "tphuang": 49,
+        "tengyanAI": 22
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 0,
+      "label": "ai / memory / dram / hbm",
+      "own_count": 1,
+      "competitor_count": 5,
+      "competitor_engagement": 87,
+      "competitors_covering": [
+        "QQ_Timmy",
+        "tphuang",
+        "tengyanAI"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 0,
+      "label": "ai / memory / dram / hbm",
+      "own_count": 1,
+      "competitor_count": 5,
+      "competitor_engagement": 87,
+      "competitors_covering": [
+        "QQ_Timmy",
+        "tphuang",
+        "tengyanAI"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-20T07:54:09.322972+00:00",
-    "end_utc": "2026-07-20T08:54:09.322972+00:00",
-    "start_tw": "Jul 20, 15:54",
-    "end_tw": "Jul 20, 16:54"
+    "start_utc": "2026-07-20T22:02:56+08:00",
+    "end_utc": "2026-07-20T23:02:56+08:00",
+    "start_tw": "Jul 20, 22:02",
+    "end_tw": "Jul 20, 23:02"
   }
 }
