@@ -1,105 +1,144 @@
 {
-  "generated_at": "2026-07-20T12:32:54+08:00",
+  "generated_at": "2026-07-20T04:45:00+00:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-20T08:32:54+08:00",
-    "end_utc": "2026-07-20T12:32:54+08:00",
-    "start_tw": "Jul 20, 08:32",
-    "end_tw": "Jul 20, 12:32"
+    "start_utc": "2026-07-20T00:45:00+00:00",
+    "end_utc": "2026-07-20T04:45:00+00:00",
+    "start_tw": "Jul 20, 08:45",
+    "end_tw": "Jul 20, 12:45"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 30,
+      "total_posts": 51,
       "sentiment_counts": {
-        "positive": 12,
-        "negative": 12,
-        "neutral": 6
+        "positive": 18,
+        "negative": 22,
+        "neutral": 11
       },
       "sentiment_share": {
-        "positive": 0.4,
-        "negative": 0.4,
-        "neutral": 0.2
+        "positive": 0.353,
+        "negative": 0.431,
+        "neutral": 0.216
       },
       "top_terms": [
-        "迎來",
         "標價",
         "伺服",
         "服器",
         "伺服器",
         "最新",
-        "調高",
+        "引發",
         "三星",
-        "預期",
-        "看好"
+        "高達",
+        "迎來",
+        "外資"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 1,
-        "label": "yamawa / pc / 全球製造業面臨成本狂飆 / 非標準品採逐筆報價",
+        "label": "ai / pc / openai / 輝達",
         "heat": 90.0,
-        "volume": 15,
-        "engagement": 145,
+        "volume": 32,
+        "engagement": 408,
+        "entities": [
+          "伺服器",
+          "高盛",
+          "三星",
+          "美國總部",
+          "台光"
+        ]
+      },
+      {
+        "topic_id": 4,
+        "label": "ai / 半導體千金軍團強勢崛起 / 檔暴增至 / 供應鏈",
+        "heat": 10.6,
+        "volume": 3,
+        "engagement": 7,
+        "entities": [
+          "高盛",
+          "高達",
+          "光電與台",
+          "台光",
+          "台灣"
+        ]
+      },
+      {
+        "topic_id": 5,
+        "label": "iris / 投資未縮減 / 月量產 / 力證",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 7,
+        "entities": []
+      },
+      {
+        "topic_id": 7,
+        "label": "sk海力士 / ddr / 年才商業化 / 長鑫存儲",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 4,
+        "entities": [
+          "三星",
+          "大戰",
+          "韓廠海",
+          "SK海力士"
+        ]
+      },
+      {
+        "topic_id": 6,
+        "label": "英特爾 / 中國若切斷台灣能源 / 全球經濟衝擊將超越大蕭條 / 前執行長警告",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 8,
         "entities": [
           "英特爾",
           "中國",
-          "台灣",
+          "台灣"
+        ]
+      },
+      {
+        "topic_id": 2,
+        "label": "落差高達 / 最新獎金制度引發強烈反彈 / 億韓圜 / 行動部門卻僅有其百分之一",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 37,
+        "entities": [
+          "三星",
+          "高達"
+        ]
+      },
+      {
+        "topic_id": 0,
+        "label": "sk集團 / 崔泰源 / 高昂成本恐轉嫁至消費性電子 / 警告",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 8,
+        "entities": [
           "崔泰源",
           "高昂"
         ]
       },
       {
-        "topic_id": 0,
-        "label": "ai / meta / 檔暴增至 / 半導體千金軍團強勢崛起",
-        "heat": 28.6,
-        "volume": 6,
-        "engagement": 63,
-        "entities": [
-          "高盛",
-          "伺服器",
-          "高達",
-          "光電與台",
-          "台光"
-        ]
-      },
-      {
-        "topic_id": 5,
-        "label": "三星",
-        "heat": 10.6,
-        "volume": 3,
-        "engagement": 5,
-        "entities": [
-          "三星",
-          "美國總部",
-          "高達",
-          "大戰",
-          "韓廠海"
-        ]
-      },
-      {
-        "topic_id": 2,
-        "label": "spark / rtx / 輝達 / pc",
+        "topic_id": 8,
+        "label": "伺服器需求持續滾燙 / odm / 點名 / 外資",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 4,
+        "engagement": 14,
         "entities": [
-          "Windows AI"
-        ]
-      },
-      {
-        "topic_id": 4,
-        "label": "點是否迎來反攻曙光 / 台股 / 歷經史上最大跌點 / 需求與總體基本面仍具韌性",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 5,
-        "entities": [
-          "曙光"
+          "伺服器"
         ]
       },
       {
         "topic_id": 3,
-        "label": "cart細胞療法 / 最新十年追蹤研究顯示 / 淋巴瘤治療 / 淋巴瘤治療迎來重大突破",
+        "label": "億元引發恐慌去槓桿 / 點摜破季線 / 外資大舉提款逾 / 台股上周重挫",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 8,
+        "entities": []
+      },
+      {
+        "topic_id": 9,
+        "label": "最新十年追蹤研究顯示 / cart細胞療法 / 淋巴瘤治療 / 細胞療法僅需單次輸注",
         "heat": 10.0,
         "volume": 2,
         "engagement": 7,
@@ -109,30 +148,50 @@
     "named_entities": [
       {
         "entity": "三星",
-        "count": 10
-      },
-      {
-        "entity": "高盛",
-        "count": 9
+        "count": 13
       },
       {
         "entity": "伺服器",
-        "count": 7
+        "count": 13
+      },
+      {
+        "entity": "高盛",
+        "count": 12
       },
       {
         "entity": "高達",
-        "count": 6
+        "count": 7
       },
       {
         "entity": "台光",
-        "count": 5
-      },
-      {
-        "entity": "台灣",
-        "count": 5
+        "count": 6
       },
       {
         "entity": "英特爾",
+        "count": 6
+      },
+      {
+        "entity": "台灣",
+        "count": 6
+      },
+      {
+        "entity": "中國",
+        "count": 4
+      },
+      {
+        "entity": "美國總部",
+        "count": 4
+      },
+      {
+        "entity": "崔泰源",
+        "count": 4
+      },
+      {
+        "entity": "高昂",
+        "count": 4
+      },
+      {
+        "entity": "輝達",
         "count": 4
       },
       {
@@ -140,219 +199,223 @@
         "count": 4
       },
       {
-        "entity": "中國",
-        "count": 3
-      },
-      {
-        "entity": "美國總部",
-        "count": 3
-      },
-      {
-        "entity": "崔泰源",
-        "count": 3
-      },
-      {
-        "entity": "高昂",
-        "count": 3
-      },
-      {
-        "entity": "intel",
-        "count": 2
+        "entity": "鴻海",
+        "count": 4
       },
       {
         "entity": "大戰",
-        "count": 2
-      },
-      {
-        "entity": "韓廠海",
-        "count": 2
+        "count": 3
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-20T08:32:53.999994+08:00",
-        "bucket_end": "2026-07-20T08:50:02.571423+08:00",
+        "bucket_start": "2026-07-20T00:44:59.999994+00:00",
+        "bucket_end": "2026-07-20T01:02:08.571423+00:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T01:02:08.571423+00:00",
+        "bucket_end": "2026-07-20T01:19:17.142852+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T01:19:17.142852+00:00",
+        "bucket_end": "2026-07-20T01:36:25.714281+00:00",
+        "positive": 2,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T01:36:25.714281+00:00",
+        "bucket_end": "2026-07-20T01:53:34.285710+00:00",
         "positive": 1,
         "neutral": 1,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-20T01:53:34.285710+00:00",
+        "bucket_end": "2026-07-20T02:10:42.857139+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 3
+      },
+      {
+        "bucket_start": "2026-07-20T02:10:42.857139+00:00",
+        "bucket_end": "2026-07-20T02:27:51.428568+00:00",
+        "positive": 2,
+        "neutral": 2,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-20T08:50:02.571423+08:00",
-        "bucket_end": "2026-07-20T09:07:11.142852+08:00",
+        "bucket_start": "2026-07-20T02:27:51.428568+00:00",
+        "bucket_end": "2026-07-20T02:44:59.999997+00:00",
+        "positive": 2,
+        "neutral": 3,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-20T02:44:59.999997+00:00",
+        "bucket_end": "2026-07-20T03:02:08.571426+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 3
+      },
+      {
+        "bucket_start": "2026-07-20T03:02:08.571426+00:00",
+        "bucket_end": "2026-07-20T03:19:17.142855+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 3
+      },
+      {
+        "bucket_start": "2026-07-20T03:19:17.142855+00:00",
+        "bucket_end": "2026-07-20T03:36:25.714284+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-20T03:36:25.714284+00:00",
+        "bucket_end": "2026-07-20T03:53:34.285713+00:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-20T03:53:34.285713+00:00",
+        "bucket_end": "2026-07-20T04:10:42.857142+00:00",
         "positive": 3,
         "neutral": 0,
-        "negative": 0
+        "negative": 1
       },
       {
-        "bucket_start": "2026-07-20T09:07:11.142852+08:00",
-        "bucket_end": "2026-07-20T09:24:19.714281+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T09:24:19.714281+08:00",
-        "bucket_end": "2026-07-20T09:41:28.285710+08:00",
-        "positive": 1,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T09:41:28.285710+08:00",
-        "bucket_end": "2026-07-20T09:58:36.857139+08:00",
-        "positive": 1,
+        "bucket_start": "2026-07-20T04:10:42.857142+00:00",
+        "bucket_end": "2026-07-20T04:27:51.428571+00:00",
+        "positive": 2,
         "neutral": 0,
         "negative": 2
       },
       {
-        "bucket_start": "2026-07-20T09:58:36.857139+08:00",
-        "bucket_end": "2026-07-20T10:15:45.428568+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-20T10:15:45.428568+08:00",
-        "bucket_end": "2026-07-20T10:32:53.999997+08:00",
-        "positive": 2,
-        "neutral": 1,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-20T10:32:53.999997+08:00",
-        "bucket_end": "2026-07-20T10:50:02.571426+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-20T10:50:02.571426+08:00",
-        "bucket_end": "2026-07-20T11:07:11.142855+08:00",
+        "bucket_start": "2026-07-20T04:27:51.428571+00:00",
+        "bucket_end": "2026-07-20T04:45:00+00:00",
         "positive": 0,
         "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-20T11:07:11.142855+08:00",
-        "bucket_end": "2026-07-20T11:24:19.714284+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-20T11:24:19.714284+08:00",
-        "bucket_end": "2026-07-20T11:41:28.285713+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-20T11:41:28.285713+08:00",
-        "bucket_end": "2026-07-20T11:58:36.857142+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T11:58:36.857142+08:00",
-        "bucket_end": "2026-07-20T12:15:45.428571+08:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-20T12:15:45.428571+08:00",
-        "bucket_end": "2026-07-20T12:32:54+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
+        "negative": 2
       }
     ],
     "coverage_focus_ranking": [
       {
         "handle": "TrendForce",
         "top_topic_id": 1,
-        "top_topic_label": "yamawa / pc / 全球製造業面臨成本狂飆 / 非標準品採逐筆報價",
+        "top_topic_label": "ai / pc / openai / 輝達",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "jukan05",
         "top_topic_id": 1,
-        "top_topic_label": "yamawa / pc / 全球製造業面臨成本狂飆 / 非標準品採逐筆報價",
+        "top_topic_label": "ai / pc / openai / 輝達",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / pc / openai / 輝達",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "tengyanAI",
         "top_topic_id": 1,
-        "top_topic_label": "yamawa / pc / 全球製造業面臨成本狂飆 / 非標準品採逐筆報價",
+        "top_topic_label": "ai / pc / openai / 輝達",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "ctee.fans",
         "top_topic_id": 1,
-        "top_topic_label": "yamawa / pc / 全球製造業面臨成本狂飆 / 非標準品採逐筆報價",
+        "top_topic_label": "ai / pc / openai / 輝達",
         "focus_share": 1.0,
-        "post_count": 2
-      },
-      {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 1,
-        "top_topic_label": "yamawa / pc / 全球製造業面臨成本狂飆 / 非標準品採逐筆報價",
-        "focus_share": 0.667,
-        "post_count": 3
-      },
-      {
-        "handle": "technews_tw",
-        "top_topic_id": 1,
-        "top_topic_label": "yamawa / pc / 全球製造業面臨成本狂飆 / 非標準品採逐筆報價",
-        "focus_share": 0.389,
-        "post_count": 18
+        "post_count": 10
       },
       {
         "handle": "technewsinside",
         "top_topic_id": 1,
-        "top_topic_label": "yamawa / pc / 全球製造業面臨成本狂飆 / 非標準品採逐筆報價",
-        "focus_share": 0.25,
-        "post_count": 4
+        "top_topic_label": "ai / pc / openai / 輝達",
+        "focus_share": 0.526,
+        "post_count": 19
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / pc / openai / 輝達",
+        "focus_share": 0.444,
+        "post_count": 18
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 1,
-        "label": "yamawa / pc / 全球製造業面臨成本狂飆 / 非標準品採逐筆報價",
-        "total_engagement": 145,
-        "post_count": 15
+        "label": "ai / pc / openai / 輝達",
+        "total_engagement": 408,
+        "post_count": 32
+      },
+      {
+        "topic_id": 2,
+        "label": "落差高達 / 最新獎金制度引發強烈反彈 / 億韓圜 / 行動部門卻僅有其百分之一",
+        "total_engagement": 37,
+        "post_count": 2
+      },
+      {
+        "topic_id": 8,
+        "label": "伺服器需求持續滾燙 / odm / 點名 / 外資",
+        "total_engagement": 14,
+        "post_count": 2
+      },
+      {
+        "topic_id": 6,
+        "label": "英特爾 / 中國若切斷台灣能源 / 全球經濟衝擊將超越大蕭條 / 前執行長警告",
+        "total_engagement": 8,
+        "post_count": 2
       },
       {
         "topic_id": 0,
-        "label": "ai / meta / 檔暴增至 / 半導體千金軍團強勢崛起",
-        "total_engagement": 63,
-        "post_count": 6
+        "label": "sk集團 / 崔泰源 / 高昂成本恐轉嫁至消費性電子 / 警告",
+        "total_engagement": 8,
+        "post_count": 2
       },
       {
         "topic_id": 3,
-        "label": "cart細胞療法 / 最新十年追蹤研究顯示 / 淋巴瘤治療 / 淋巴瘤治療迎來重大突破",
-        "total_engagement": 7,
+        "label": "億元引發恐慌去槓桿 / 點摜破季線 / 外資大舉提款逾 / 台股上周重挫",
+        "total_engagement": 8,
         "post_count": 2
       },
       {
         "topic_id": 5,
-        "label": "三星",
-        "total_engagement": 5,
-        "post_count": 3
-      },
-      {
-        "topic_id": 4,
-        "label": "點是否迎來反攻曙光 / 台股 / 歷經史上最大跌點 / 需求與總體基本面仍具韌性",
-        "total_engagement": 5,
+        "label": "iris / 投資未縮減 / 月量產 / 力證",
+        "total_engagement": 7,
         "post_count": 2
       },
       {
-        "topic_id": 2,
-        "label": "spark / rtx / 輝達 / pc",
+        "topic_id": 4,
+        "label": "ai / 半導體千金軍團強勢崛起 / 檔暴增至 / 供應鏈",
+        "total_engagement": 7,
+        "post_count": 3
+      },
+      {
+        "topic_id": 9,
+        "label": "最新十年追蹤研究顯示 / cart細胞療法 / 淋巴瘤治療 / 細胞療法僅需單次輸注",
+        "total_engagement": 7,
+        "post_count": 2
+      },
+      {
+        "topic_id": 7,
+        "label": "sk海力士 / ddr / 年才商業化 / 長鑫存儲",
         "total_engagement": 4,
         "post_count": 2
       }
@@ -360,16 +423,16 @@
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 25,
-          "likes": 168,
-          "engagement": 200,
-          "avg_engagement": 8.0
+          "post_count": 40,
+          "likes": 357,
+          "engagement": 382,
+          "avg_engagement": 9.6
         },
         "afternoon": {
-          "post_count": 5,
-          "likes": 23,
-          "engagement": 29,
-          "avg_engagement": 5.8
+          "post_count": 11,
+          "likes": 120,
+          "engagement": 126,
+          "avg_engagement": 11.5
         },
         "evening": {
           "post_count": 0,
