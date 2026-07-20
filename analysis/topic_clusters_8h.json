@@ -1,89 +1,75 @@
 {
   "clusters": [
     {
-      "id": 3,
-      "label": "ai / trendforce / memory / dram",
-      "size": 51,
+      "id": 1,
+      "label": "ai / trendforce / google / tsmc",
+      "size": 10,
       "accounts": {
-        "TrendForce": 1,
-        "technews_tw": 9,
-        "jukan05": 3,
-        "QQ_Timmy": 3,
-        "tphuang": 7,
-        "TrendForce.tw": 1,
-        "technewsinside": 10,
-        "ctee.fans": 9,
-        "yutinghaosfinance": 8
+        "SemiAnalysis_": 3,
+        "QQ_Timmy": 2,
+        "tphuang": 5
       },
       "engagement_by_account": {
-        "TrendForce": 14,
-        "technews_tw": 6,
-        "jukan05": 2110,
-        "QQ_Timmy": 166,
-        "tphuang": 114,
-        "TrendForce.tw": 1,
-        "technewsinside": 660,
-        "ctee.fans": 80,
-        "yutinghaosfinance": 1955
+        "SemiAnalysis_": 656,
+        "QQ_Timmy": 22,
+        "tphuang": 122
       }
     },
     {
-      "id": 5,
-      "label": "nvidia / ai / gpu / amd",
-      "size": 4,
-      "accounts": {
-        "technews_tw": 2,
-        "technewsinside": 1,
-        "yutinghaosfinance": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 21,
-        "technewsinside": 20,
-        "yutinghaosfinance": 151
-      }
-    },
-    {
-      "id": 15,
-      "label": "公里 / 軍事科技 / 烏克蘭 / 嘉義科學園區",
-      "size": 4,
-      "accounts": {
-        "technews_tw": 2,
-        "technewsinside": 2
-      },
-      "engagement_by_account": {
-        "technews_tw": 1,
-        "technewsinside": 92
-      }
-    },
-    {
-      "id": 2,
-      "label": "samsung / hynix / sk / memory",
+      "id": 0,
+      "label": "memory / samsung / hbm / micron",
       "size": 1,
       "accounts": {
-        "tphuang": 1
+        "tengyanAI": 1
       },
       "engagement_by_account": {
-        "tphuang": 3
+        "tengyanAI": 6
       }
     },
     {
-      "id": 13,
-      "label": "ai / trendforce / pcb / physical",
+      "id": 16,
+      "label": "nvidia / ai / amd / rubin",
       "size": 1,
       "accounts": {
-        "technewsinside": 1
+        "jukan05": 1
       },
       "engagement_by_account": {
-        "technewsinside": 89
+        "jukan05": 565
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 1,
+      "label": "ai / trendforce / google / tsmc",
+      "own_count": 0,
+      "competitor_count": 10,
+      "competitor_engagement": 800,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "QQ_Timmy",
+        "tphuang"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 1,
+      "label": "ai / trendforce / google / tsmc",
+      "own_count": 0,
+      "competitor_count": 10,
+      "competitor_engagement": 800,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "QQ_Timmy",
+        "tphuang"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-19T17:37:53+08:00",
-    "end_utc": "2026-07-20T01:37:53+08:00",
-    "start_tw": "Jul 19, 17:37",
-    "end_tw": "Jul 20, 01:37"
+    "start_utc": "2026-07-20T00:39:00+08:00",
+    "end_utc": "2026-07-20T08:39:00+08:00",
+    "start_tw": "Jul 20, 00:39",
+    "end_tw": "Jul 20, 08:39"
   }
 }

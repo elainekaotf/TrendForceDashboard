@@ -1,72 +1,75 @@
 {
   "clusters": [
     {
-      "id": 3,
-      "label": "ai / trendforce / memory / dram",
-      "size": 22,
+      "id": 1,
+      "label": "ai / trendforce / google / tsmc",
+      "size": 9,
       "accounts": {
-        "TrendForce": 1,
-        "technews_tw": 2,
-        "jukan05": 2,
-        "tphuang": 2,
-        "TrendForce.tw": 1,
-        "technewsinside": 2,
-        "ctee.fans": 4,
-        "yutinghaosfinance": 8
+        "SemiAnalysis_": 3,
+        "QQ_Timmy": 2,
+        "tphuang": 4
       },
       "engagement_by_account": {
-        "TrendForce": 14,
-        "technews_tw": 2,
-        "jukan05": 1803,
-        "tphuang": 34,
-        "TrendForce.tw": 1,
-        "technewsinside": 351,
-        "ctee.fans": 36,
-        "yutinghaosfinance": 1955
+        "SemiAnalysis_": 656,
+        "QQ_Timmy": 22,
+        "tphuang": 84
       }
     },
     {
-      "id": 15,
-      "label": "公里 / 軍事科技 / 烏克蘭 / 嘉義科學園區",
-      "size": 2,
-      "accounts": {
-        "technews_tw": 1,
-        "technewsinside": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 1,
-        "technewsinside": 75
-      }
-    },
-    {
-      "id": 2,
-      "label": "samsung / hynix / sk / memory",
+      "id": 0,
+      "label": "memory / samsung / hbm / micron",
       "size": 1,
       "accounts": {
-        "tphuang": 1
+        "tengyanAI": 1
       },
       "engagement_by_account": {
-        "tphuang": 3
+        "tengyanAI": 6
       }
     },
     {
-      "id": 5,
-      "label": "nvidia / ai / gpu / amd",
+      "id": 16,
+      "label": "nvidia / ai / amd / rubin",
       "size": 1,
       "accounts": {
-        "yutinghaosfinance": 1
+        "jukan05": 1
       },
       "engagement_by_account": {
-        "yutinghaosfinance": 151
+        "jukan05": 565
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 1,
+      "label": "ai / trendforce / google / tsmc",
+      "own_count": 0,
+      "competitor_count": 9,
+      "competitor_engagement": 762,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "QQ_Timmy",
+        "tphuang"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 1,
+      "label": "ai / trendforce / google / tsmc",
+      "own_count": 0,
+      "competitor_count": 9,
+      "competitor_engagement": 762,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "QQ_Timmy",
+        "tphuang"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-19T21:37:53+08:00",
-    "end_utc": "2026-07-20T01:37:53+08:00",
-    "start_tw": "Jul 19, 21:37",
-    "end_tw": "Jul 20, 01:37"
+    "start_utc": "2026-07-20T04:39:00+08:00",
+    "end_utc": "2026-07-20T08:39:00+08:00",
+    "start_tw": "Jul 20, 04:39",
+    "end_tw": "Jul 20, 08:39"
   }
 }

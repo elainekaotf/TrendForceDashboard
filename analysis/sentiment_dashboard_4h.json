@@ -1,366 +1,289 @@
 {
-  "generated_at": "2026-07-20T01:37:53+08:00",
+  "generated_at": "2026-07-20T08:39:00+08:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-19T21:37:53+08:00",
-    "end_utc": "2026-07-20T01:37:53+08:00",
-    "start_tw": "Jul 19, 21:37",
-    "end_tw": "Jul 20, 01:37"
+    "start_utc": "2026-07-20T04:39:00+08:00",
+    "end_utc": "2026-07-20T08:39:00+08:00",
+    "start_tw": "Jul 20, 04:39",
+    "end_tw": "Jul 20, 08:39"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 26,
+      "total_posts": 11,
       "sentiment_counts": {
-        "positive": 9,
-        "negative": 11,
-        "neutral": 6
+        "neutral": 1,
+        "positive": 8,
+        "negative": 2
       },
       "sentiment_share": {
-        "positive": 0.346,
-        "negative": 0.423,
-        "neutral": 0.231
+        "neutral": 0.091,
+        "positive": 0.727,
+        "negative": 0.182
       },
       "top_terms": [
-        "首度",
-        "推出",
-        "kimi",
-        "deepseek",
-        "大型",
-        "tower",
-        "semiconductor",
-        "invest",
-        "billion",
-        "japan"
+        "amd",
+        "anthropic",
+        "cpu",
+        "gpu",
+        "chip",
+        "advanced",
+        "customer",
+        "github",
+        "senior",
+        "explain"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "byd / semiconductor / auto / leads",
-        "heat": 90.0,
-        "volume": 18,
-        "engagement": 2556,
-        "entities": [
-          "日本",
-          "Tower Semiconductor",
-          "Japan",
-          "BYD",
-          "China"
-        ]
-      },
-      {
-        "topic_id": 4,
-        "label": "compute / kimi",
-        "heat": 14.9,
-        "volume": 2,
-        "engagement": 1441,
-        "entities": [
-          "Alicloud",
-          "Kimi K",
-          "Kimi K  demand",
-          "Alibaba",
-          "Qoder"
-        ]
-      },
-      {
-        "topic_id": 3,
-        "label": "首度證實半人馬座 / 恆星質量黑洞 / 天文物理 / 半人馬座",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 12,
-        "entities": [
-          "黑洞",
-          "天文",
-          "恆星",
-          "終於",
-          "哈伯"
-        ]
-      },
-      {
         "topic_id": 1,
-        "label": "縣市首度演練斷網防空 / 月兩梯次分區登場",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 341,
+        "label": "ai / gpu / cpu / chip",
+        "heat": 90.0,
+        "volume": 8,
+        "engagement": 677,
         "entities": [
-          "國家通訊傳播委員會",
-          "城鎮"
+          "BYD",
+          "nvidia",
+          "foxconn  dell supermicro",
+          "摩根士丹利",
+          "Pad MatePad"
         ]
       },
       {
-        "topic_id": 2,
-        "label": "烏克蘭 / 公里 / 無人機 / 烏克蘭無人機創最遠程紀錄",
+        "topic_id": 0,
+        "label": "amd / anthropic / ai",
         "heat": 10.0,
-        "volume": 2,
-        "engagement": 76,
+        "volume": 3,
+        "engagement": 656,
         "entities": [
-          "烏克蘭",
-          "西伯",
-          "利亞煉",
-          "俄羅斯"
+          "AMD",
+          "ANTHROPIC",
+          "GitHub",
+          "doesn",
+          "Advancing AI"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "黑洞",
-        "count": 10
-      },
-      {
-        "entity": "天文",
-        "count": 7
-      },
-      {
-        "entity": "恆星",
-        "count": 7
-      },
-      {
-        "entity": "烏克蘭",
-        "count": 7
-      },
-      {
-        "entity": "終於",
-        "count": 3
-      },
-      {
-        "entity": "哈伯",
-        "count": 3
-      },
-      {
-        "entity": "韋伯望",
-        "count": 3
-      },
-      {
-        "entity": "西伯",
-        "count": 3
-      },
-      {
-        "entity": "利亞煉",
-        "count": 3
-      },
-      {
-        "entity": "俄羅斯",
-        "count": 3
-      },
-      {
-        "entity": "日本",
-        "count": 3
-      },
-      {
-        "entity": "Tower Semiconductor",
-        "count": 2
-      },
-      {
-        "entity": "Japan",
-        "count": 2
-      },
-      {
-        "entity": "國家通訊傳播委員會",
+        "entity": "AMD",
         "count": 2
       },
       {
         "entity": "BYD",
         "count": 2
+      },
+      {
+        "entity": "ANTHROPIC",
+        "count": 1
+      },
+      {
+        "entity": "GitHub",
+        "count": 1
+      },
+      {
+        "entity": "doesn",
+        "count": 1
+      },
+      {
+        "entity": "Advancing AI",
+        "count": 1
+      },
+      {
+        "entity": "ML",
+        "count": 1
+      },
+      {
+        "entity": "Kubernetes",
+        "count": 1
+      },
+      {
+        "entity": "CI",
+        "count": 1
+      },
+      {
+        "entity": "Pollara NIC  Kubernetes",
+        "count": 1
+      },
+      {
+        "entity": "ci testing",
+        "count": 1
+      },
+      {
+        "entity": "nvidia",
+        "count": 1
+      },
+      {
+        "entity": "foxconn  dell supermicro",
+        "count": 1
+      },
+      {
+        "entity": "摩根士丹利",
+        "count": 1
+      },
+      {
+        "entity": "Pad MatePad",
+        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-19T21:37:52.999994+08:00",
-        "bucket_end": "2026-07-19T21:55:01.571423+08:00",
+        "bucket_start": "2026-07-20T04:38:59.999994+08:00",
+        "bucket_end": "2026-07-20T04:56:08.571423+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T21:55:01.571423+08:00",
-        "bucket_end": "2026-07-19T22:12:10.142852+08:00",
-        "positive": 1,
-        "neutral": 2,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-19T22:12:10.142852+08:00",
-        "bucket_end": "2026-07-19T22:29:18.714281+08:00",
+        "bucket_start": "2026-07-20T04:56:08.571423+08:00",
+        "bucket_end": "2026-07-20T05:13:17.142852+08:00",
         "positive": 0,
-        "neutral": 1,
-        "negative": 4
+        "neutral": 0,
+        "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T22:29:18.714281+08:00",
-        "bucket_end": "2026-07-19T22:46:27.285710+08:00",
+        "bucket_start": "2026-07-20T05:13:17.142852+08:00",
+        "bucket_end": "2026-07-20T05:30:25.714281+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T05:30:25.714281+08:00",
+        "bucket_end": "2026-07-20T05:47:34.285710+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T05:47:34.285710+08:00",
+        "bucket_end": "2026-07-20T06:04:42.857139+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T06:04:42.857139+08:00",
+        "bucket_end": "2026-07-20T06:21:51.428568+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T06:21:51.428568+08:00",
+        "bucket_end": "2026-07-20T06:38:59.999997+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T06:38:59.999997+08:00",
+        "bucket_end": "2026-07-20T06:56:08.571426+08:00",
+        "positive": 3,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T06:56:08.571426+08:00",
+        "bucket_end": "2026-07-20T07:13:17.142855+08:00",
         "positive": 1,
-        "neutral": 3,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T07:13:17.142855+08:00",
+        "bucket_end": "2026-07-20T07:30:25.714284+08:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T07:30:25.714284+08:00",
+        "bucket_end": "2026-07-20T07:47:34.285713+08:00",
+        "positive": 2,
+        "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-19T22:46:27.285710+08:00",
-        "bucket_end": "2026-07-19T23:03:35.857139+08:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-19T23:03:35.857139+08:00",
-        "bucket_end": "2026-07-19T23:20:44.428568+08:00",
+        "bucket_start": "2026-07-20T07:47:34.285713+08:00",
+        "bucket_end": "2026-07-20T08:04:42.857142+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T23:20:44.428568+08:00",
-        "bucket_end": "2026-07-19T23:37:52.999997+08:00",
+        "bucket_start": "2026-07-20T08:04:42.857142+08:00",
+        "bucket_end": "2026-07-20T08:21:51.428571+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T23:37:52.999997+08:00",
-        "bucket_end": "2026-07-19T23:55:01.571426+08:00",
+        "bucket_start": "2026-07-20T08:21:51.428571+08:00",
+        "bucket_end": "2026-07-20T08:39:00+08:00",
         "positive": 0,
         "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T23:55:01.571426+08:00",
-        "bucket_end": "2026-07-20T00:12:10.142855+08:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T00:12:10.142855+08:00",
-        "bucket_end": "2026-07-20T00:29:18.714284+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T00:29:18.714284+08:00",
-        "bucket_end": "2026-07-20T00:46:27.285713+08:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T00:46:27.285713+08:00",
-        "bucket_end": "2026-07-20T01:03:35.857142+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T01:03:35.857142+08:00",
-        "bucket_end": "2026-07-20T01:20:44.428571+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T01:20:44.428571+08:00",
-        "bucket_end": "2026-07-20T01:37:53+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
+        "negative": 1
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "TrendForce",
+        "handle": "SemiAnalysis_",
         "top_topic_id": 0,
-        "top_topic_label": "byd / semiconductor / auto / leads",
+        "top_topic_label": "amd / anthropic / ai",
         "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "TrendForce.tw",
-        "top_topic_id": 0,
-        "top_topic_label": "byd / semiconductor / auto / leads",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "byd / semiconductor / auto / leads",
-        "focus_share": 1.0,
-        "post_count": 4
-      },
-      {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 0,
-        "top_topic_label": "byd / semiconductor / auto / leads",
-        "focus_share": 1.0,
-        "post_count": 9
-      },
-      {
-        "handle": "tphuang",
-        "top_topic_id": 0,
-        "top_topic_label": "byd / semiconductor / auto / leads",
-        "focus_share": 0.667,
         "post_count": 3
       },
       {
         "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "byd / semiconductor / auto / leads",
-        "focus_share": 0.5,
+        "top_topic_id": 1,
+        "top_topic_label": "ai / gpu / cpu / chip",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / gpu / cpu / chip",
+        "focus_share": 1.0,
         "post_count": 2
       },
       {
-        "handle": "technews_tw",
-        "top_topic_id": 3,
-        "top_topic_label": "首度證實半人馬座 / 恆星質量黑洞 / 天文物理 / 半人馬座",
-        "focus_share": 0.333,
-        "post_count": 3
+        "handle": "tphuang",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / gpu / cpu / chip",
+        "focus_share": 1.0,
+        "post_count": 4
       },
       {
-        "handle": "technewsinside",
-        "top_topic_id": 3,
-        "top_topic_label": "首度證實半人馬座 / 恆星質量黑洞 / 天文物理 / 半人馬座",
-        "focus_share": 0.333,
-        "post_count": 3
+        "handle": "tengyanAI",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / gpu / cpu / chip",
+        "focus_share": 1.0,
+        "post_count": 1
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "byd / semiconductor / auto / leads",
-        "total_engagement": 2556,
-        "post_count": 18
-      },
-      {
-        "topic_id": 4,
-        "label": "compute / kimi",
-        "total_engagement": 1441,
-        "post_count": 2
-      },
-      {
         "topic_id": 1,
-        "label": "縣市首度演練斷網防空 / 月兩梯次分區登場",
-        "total_engagement": 341,
-        "post_count": 2
+        "label": "ai / gpu / cpu / chip",
+        "total_engagement": 677,
+        "post_count": 8
       },
       {
-        "topic_id": 2,
-        "label": "烏克蘭 / 公里 / 無人機 / 烏克蘭無人機創最遠程紀錄",
-        "total_engagement": 76,
-        "post_count": 2
-      },
-      {
-        "topic_id": 3,
-        "label": "首度證實半人馬座 / 恆星質量黑洞 / 天文物理 / 半人馬座",
-        "total_engagement": 12,
-        "post_count": 2
+        "topic_id": 0,
+        "label": "amd / anthropic / ai",
+        "total_engagement": 656,
+        "post_count": 3
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 11,
+          "likes": 1177,
+          "engagement": 1333,
+          "avg_engagement": 121.2
         },
         "afternoon": {
           "post_count": 0,
@@ -375,13 +298,13 @@
           "avg_engagement": 0.0
         },
         "late_night": {
-          "post_count": 5,
-          "likes": 43,
-          "engagement": 52,
-          "avg_engagement": 10.4
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         }
       },
-      "peak_slot": "late_night"
+      "peak_slot": "morning"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,

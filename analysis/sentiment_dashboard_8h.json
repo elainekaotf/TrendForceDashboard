@@ -1,487 +1,289 @@
 {
-  "generated_at": "2026-07-20T01:37:53+08:00",
+  "generated_at": "2026-07-20T08:39:00+08:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-19T17:37:53+08:00",
-    "end_utc": "2026-07-20T01:37:53+08:00",
-    "start_tw": "Jul 19, 17:37",
-    "end_tw": "Jul 20, 01:37"
+    "start_utc": "2026-07-20T00:39:00+08:00",
+    "end_utc": "2026-07-20T08:39:00+08:00",
+    "start_tw": "Jul 20, 00:39",
+    "end_tw": "Jul 20, 08:39"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 61,
+      "total_posts": 12,
       "sentiment_counts": {
-        "positive": 23,
-        "negative": 21,
-        "neutral": 17
+        "neutral": 1,
+        "positive": 9,
+        "negative": 2
       },
       "sentiment_share": {
-        "positive": 0.377,
-        "negative": 0.344,
-        "neutral": 0.279
+        "neutral": 0.083,
+        "positive": 0.75,
+        "negative": 0.167
       },
       "top_terms": [
-        "首度",
-        "晶片",
-        "黃仁",
-        "仁勳",
-        "黃仁勳",
-        "斷網",
-        "公里",
-        "旗下",
-        "nvidia",
-        "衛星"
+        "amd",
+        "anthropic",
+        "cpu",
+        "gpu",
+        "chip",
+        "advanced",
+        "byd",
+        "customer",
+        "github",
+        "senior"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 1,
-        "label": "ai / nvidia / facebook / meta",
-        "heat": 90.0,
-        "volume": 36,
-        "engagement": 2808,
-        "entities": [
-          "日本",
-          "黑洞",
-          "天文",
-          "恆星",
-          "黃仁勳"
-        ]
-      },
-      {
-        "topic_id": 4,
-        "label": "compute / kimi / moonshot / server",
-        "heat": 19.0,
-        "volume": 4,
-        "engagement": 1464,
-        "entities": [
-          "Alicloud",
-          "Ali",
-          "Moonshot",
-          "Kimi K",
-          "Kimi K  demand"
-        ]
-      },
-      {
         "topic_id": 0,
-        "label": "byd / geely / leads / auto",
-        "heat": 11.9,
-        "volume": 3,
-        "engagement": 74,
+        "label": "ai / byd / gpu / cpu",
+        "heat": 90.0,
+        "volume": 9,
+        "engagement": 715,
         "entities": [
-          "China",
           "BYD",
+          "China",
           "china",
-          "Seagull",
-          "Chery"
+          "nvidia",
+          "foxconn  dell supermicro"
         ]
       },
       {
-        "topic_id": 11,
-        "label": "縣市首度演練斷網防空 / 月兩梯次分區登場",
+        "topic_id": 1,
+        "label": "amd / anthropic / ai",
         "heat": 10.0,
-        "volume": 2,
-        "engagement": 341,
+        "volume": 3,
+        "engagement": 656,
         "entities": [
-          "國家通訊傳播委員會",
-          "城鎮"
+          "AMD",
+          "ANTHROPIC",
+          "GitHub",
+          "doesn",
+          "Advancing AI"
         ]
-      },
-      {
-        "topic_id": 3,
-        "label": "烏克蘭 / 公里 / 烏克蘭無人機創最遠程紀錄 / 無人機",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 76,
-        "entities": [
-          "烏克蘭",
-          "西伯",
-          "利亞煉",
-          "俄羅斯"
-        ]
-      },
-      {
-        "topic_id": 6,
-        "label": "cuda / sail / 晶片的軟體堆疊 / 挑戰",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 8,
-        "entities": [
-          "真武"
-        ]
-      },
-      {
-        "topic_id": 8,
-        "label": "股神巴菲特曾談財產分配四關鍵 / 其中之一是生前就讓孩子理解分配邏輯 / 巴菲特 / 新竹爭產憾事",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 3,
-        "entities": [
-          "新竹"
-        ]
-      },
-      {
-        "topic_id": 7,
-        "label": "潛力甚至可能超越月球與火星 / 研究指其作為太空殖民資源基地 / 土星 / 太空殖民",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 12,
-        "entities": [
-          "泰坦",
-          "衛星"
-        ]
-      },
-      {
-        "topic_id": 2,
-        "label": "打破斷網死角讓飼主能零時差精準追蹤 / 太空級項圈 / 寵物追蹤器 / 低軌衛星",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 6,
-        "entities": [
-          "智慧"
-        ]
-      },
-      {
-        "topic_id": 10,
-        "label": "民間信仰 / 首度由地方七座宮廟聯合遶境祈福全程 / 台積電嘉義二期封裝廠動土 / 台積電",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 17,
-        "entities": [
-          "台積電",
-          "嘉義",
-          "宮廟",
-          "祈福"
-        ]
-      },
-      {
-        "topic_id": 9,
-        "label": "argument",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 672,
-        "entities": [
-          "DeepSeek"
-        ]
-      },
-      {
-        "topic_id": 5,
-        "label": "樂讀周報 / 四味軒 / 烹出台菜新食趣 / 酸甜苦辣演繹餐桌四季風景",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 2,
-        "entities": []
       }
     ],
     "named_entities": [
       {
-        "entity": "日本",
-        "count": 12
+        "entity": "BYD",
+        "count": 3
       },
       {
-        "entity": "黑洞",
-        "count": 10
+        "entity": "AMD",
+        "count": 2
       },
       {
-        "entity": "台積電",
-        "count": 9
+        "entity": "China",
+        "count": 2
       },
       {
-        "entity": "天文",
-        "count": 7
+        "entity": "china",
+        "count": 2
       },
       {
-        "entity": "恆星",
-        "count": 7
+        "entity": "ANTHROPIC",
+        "count": 1
       },
       {
-        "entity": "烏克蘭",
-        "count": 7
+        "entity": "GitHub",
+        "count": 1
       },
       {
-        "entity": "黃仁勳",
-        "count": 7
+        "entity": "doesn",
+        "count": 1
       },
       {
-        "entity": "嘉義",
-        "count": 7
+        "entity": "Advancing AI",
+        "count": 1
       },
       {
-        "entity": "泰坦",
-        "count": 6
+        "entity": "ML",
+        "count": 1
       },
       {
-        "entity": "智慧",
-        "count": 5
+        "entity": "Kubernetes",
+        "count": 1
       },
       {
-        "entity": "美國",
-        "count": 5
+        "entity": "CI",
+        "count": 1
       },
       {
-        "entity": "德州",
-        "count": 5
+        "entity": "Pollara NIC  Kubernetes",
+        "count": 1
       },
       {
-        "entity": "新竹",
-        "count": 4
+        "entity": "ci testing",
+        "count": 1
       },
       {
-        "entity": "輝達",
-        "count": 4
+        "entity": "nvidia",
+        "count": 1
       },
       {
-        "entity": "宮廟",
-        "count": 4
+        "entity": "foxconn  dell supermicro",
+        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-19T17:37:53.000002+08:00",
-        "bucket_end": "2026-07-19T18:12:10.142859+08:00",
+        "bucket_start": "2026-07-20T00:39:00.000002+08:00",
+        "bucket_end": "2026-07-20T01:13:17.142859+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T01:13:17.142859+08:00",
+        "bucket_end": "2026-07-20T01:47:34.285716+08:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T01:47:34.285716+08:00",
+        "bucket_end": "2026-07-20T02:21:51.428573+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T02:21:51.428573+08:00",
+        "bucket_end": "2026-07-20T02:56:08.571430+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T02:56:08.571430+08:00",
+        "bucket_end": "2026-07-20T03:30:25.714287+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T03:30:25.714287+08:00",
+        "bucket_end": "2026-07-20T04:04:42.857144+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T04:04:42.857144+08:00",
+        "bucket_end": "2026-07-20T04:39:00.000001+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T04:39:00.000001+08:00",
+        "bucket_end": "2026-07-20T05:13:17.142858+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T05:13:17.142858+08:00",
+        "bucket_end": "2026-07-20T05:47:34.285715+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T05:47:34.285715+08:00",
+        "bucket_end": "2026-07-20T06:21:51.428572+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T06:21:51.428572+08:00",
+        "bucket_end": "2026-07-20T06:56:08.571429+08:00",
+        "positive": 3,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T06:56:08.571429+08:00",
+        "bucket_end": "2026-07-20T07:30:25.714286+08:00",
         "positive": 2,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T18:12:10.142859+08:00",
-        "bucket_end": "2026-07-19T18:46:27.285716+08:00",
-        "positive": 1,
-        "neutral": 3,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T18:46:27.285716+08:00",
-        "bucket_end": "2026-07-19T19:20:44.428573+08:00",
+        "bucket_start": "2026-07-20T07:30:25.714286+08:00",
+        "bucket_end": "2026-07-20T08:04:42.857143+08:00",
         "positive": 2,
-        "neutral": 4,
+        "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-19T19:20:44.428573+08:00",
-        "bucket_end": "2026-07-19T19:55:01.571430+08:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-19T19:55:01.571430+08:00",
-        "bucket_end": "2026-07-19T20:29:18.714287+08:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-19T20:29:18.714287+08:00",
-        "bucket_end": "2026-07-19T21:03:35.857144+08:00",
-        "positive": 4,
-        "neutral": 0,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-19T21:03:35.857144+08:00",
-        "bucket_end": "2026-07-19T21:37:53.000001+08:00",
-        "positive": 1,
-        "neutral": 4,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-19T21:37:53.000001+08:00",
-        "bucket_end": "2026-07-19T22:12:10.142858+08:00",
-        "positive": 1,
-        "neutral": 2,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-19T22:12:10.142858+08:00",
-        "bucket_end": "2026-07-19T22:46:27.285715+08:00",
-        "positive": 1,
-        "neutral": 4,
-        "negative": 5
-      },
-      {
-        "bucket_start": "2026-07-19T22:46:27.285715+08:00",
-        "bucket_end": "2026-07-19T23:20:44.428572+08:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-19T23:20:44.428572+08:00",
-        "bucket_end": "2026-07-19T23:55:01.571429+08:00",
+        "bucket_start": "2026-07-20T08:04:42.857143+08:00",
+        "bucket_end": "2026-07-20T08:39:00+08:00",
         "positive": 0,
         "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T23:55:01.571429+08:00",
-        "bucket_end": "2026-07-20T00:29:18.714286+08:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T00:29:18.714286+08:00",
-        "bucket_end": "2026-07-20T01:03:35.857143+08:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T01:03:35.857143+08:00",
-        "bucket_end": "2026-07-20T01:37:53+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
+        "negative": 1
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "TrendForce",
+        "handle": "SemiAnalysis_",
         "top_topic_id": 1,
-        "top_topic_label": "ai / nvidia / facebook / meta",
+        "top_topic_label": "amd / anthropic / ai",
+        "focus_share": 1.0,
+        "post_count": 3
+      },
+      {
+        "handle": "jukan05",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / byd / gpu / cpu",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "QQ_Timmy",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / nvidia / facebook / meta",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / byd / gpu / cpu",
         "focus_share": 1.0,
-        "post_count": 3
-      },
-      {
-        "handle": "TrendForce.tw",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / nvidia / facebook / meta",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / nvidia / facebook / meta",
-        "focus_share": 1.0,
-        "post_count": 9
-      },
-      {
-        "handle": "ctee.fans",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / nvidia / facebook / meta",
-        "focus_share": 0.778,
-        "post_count": 9
-      },
-      {
-        "handle": "jukan05",
-        "top_topic_id": 9,
-        "top_topic_label": "argument",
-        "focus_share": 0.667,
-        "post_count": 3
-      },
-      {
-        "handle": "technewsinside",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / nvidia / facebook / meta",
-        "focus_share": 0.5,
-        "post_count": 14
-      },
-      {
-        "handle": "technews_tw",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / nvidia / facebook / meta",
-        "focus_share": 0.462,
-        "post_count": 13
+        "post_count": 2
       },
       {
         "handle": "tphuang",
-        "top_topic_id": 4,
-        "top_topic_label": "compute / kimi / moonshot / server",
-        "focus_share": 0.375,
-        "post_count": 8
+        "top_topic_id": 0,
+        "top_topic_label": "ai / byd / gpu / cpu",
+        "focus_share": 1.0,
+        "post_count": 5
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / byd / gpu / cpu",
+        "focus_share": 1.0,
+        "post_count": 1
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 1,
-        "label": "ai / nvidia / facebook / meta",
-        "total_engagement": 2808,
-        "post_count": 36
-      },
-      {
-        "topic_id": 4,
-        "label": "compute / kimi / moonshot / server",
-        "total_engagement": 1464,
-        "post_count": 4
-      },
-      {
-        "topic_id": 9,
-        "label": "argument",
-        "total_engagement": 672,
-        "post_count": 2
-      },
-      {
-        "topic_id": 11,
-        "label": "縣市首度演練斷網防空 / 月兩梯次分區登場",
-        "total_engagement": 341,
-        "post_count": 2
-      },
-      {
-        "topic_id": 3,
-        "label": "烏克蘭 / 公里 / 烏克蘭無人機創最遠程紀錄 / 無人機",
-        "total_engagement": 76,
-        "post_count": 2
-      },
-      {
         "topic_id": 0,
-        "label": "byd / geely / leads / auto",
-        "total_engagement": 74,
+        "label": "ai / byd / gpu / cpu",
+        "total_engagement": 715,
+        "post_count": 9
+      },
+      {
+        "topic_id": 1,
+        "label": "amd / anthropic / ai",
+        "total_engagement": 656,
         "post_count": 3
-      },
-      {
-        "topic_id": 10,
-        "label": "民間信仰 / 首度由地方七座宮廟聯合遶境祈福全程 / 台積電嘉義二期封裝廠動土 / 台積電",
-        "total_engagement": 17,
-        "post_count": 2
-      },
-      {
-        "topic_id": 7,
-        "label": "潛力甚至可能超越月球與火星 / 研究指其作為太空殖民資源基地 / 土星 / 太空殖民",
-        "total_engagement": 12,
-        "post_count": 2
-      },
-      {
-        "topic_id": 6,
-        "label": "cuda / sail / 晶片的軟體堆疊 / 挑戰",
-        "total_engagement": 8,
-        "post_count": 2
-      },
-      {
-        "topic_id": 2,
-        "label": "打破斷網死角讓飼主能零時差精準追蹤 / 太空級項圈 / 寵物追蹤器 / 低軌衛星",
-        "total_engagement": 6,
-        "post_count": 2
-      },
-      {
-        "topic_id": 8,
-        "label": "股神巴菲特曾談財產分配四關鍵 / 其中之一是生前就讓孩子理解分配邏輯 / 巴菲特 / 新竹爭產憾事",
-        "total_engagement": 3,
-        "post_count": 2
-      },
-      {
-        "topic_id": 5,
-        "label": "樂讀周報 / 四味軒 / 烹出台菜新食趣 / 酸甜苦辣演繹餐桌四季風景",
-        "total_engagement": 2,
-        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 11,
+          "likes": 1177,
+          "engagement": 1333,
+          "avg_engagement": 121.2
         },
         "afternoon": {
           "post_count": 0,
@@ -496,13 +298,13 @@
           "avg_engagement": 0.0
         },
         "late_night": {
-          "post_count": 5,
-          "likes": 43,
-          "engagement": 52,
-          "avg_engagement": 10.4
+          "post_count": 1,
+          "likes": 30,
+          "engagement": 38,
+          "avg_engagement": 38.0
         }
       },
-      "peak_slot": "late_night"
+      "peak_slot": "morning"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,
