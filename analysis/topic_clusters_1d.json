@@ -1,39 +1,39 @@
 {
   "clusters": [
     {
-      "id": 0,
-      "label": "ai / nvidia / memory / spacex",
-      "size": 108,
+      "id": 3,
+      "label": "ai / trendforce / memory / dram",
+      "size": 118,
       "accounts": {
         "TrendForce": 1,
-        "technews_tw": 26,
+        "technews_tw": 24,
         "SemiAnalysis_": 4,
         "jukan05": 6,
-        "QQ_Timmy": 4,
-        "tphuang": 8,
+        "QQ_Timmy": 5,
+        "tphuang": 11,
         "tengyanAI": 2,
         "TrendForce.tw": 1,
-        "technewsinside": 28,
-        "ctee.fans": 26,
-        "yutinghaosfinance": 2
+        "technewsinside": 26,
+        "ctee.fans": 30,
+        "yutinghaosfinance": 8
       },
       "engagement_by_account": {
         "TrendForce": 5,
-        "technews_tw": 75,
+        "technews_tw": 51,
         "SemiAnalysis_": 1334,
         "jukan05": 4007,
-        "QQ_Timmy": 213,
-        "tphuang": 251,
-        "tengyanAI": 36,
+        "QQ_Timmy": 314,
+        "tphuang": 378,
+        "tengyanAI": 38,
         "TrendForce.tw": 1,
-        "technewsinside": 1074,
-        "ctee.fans": 779,
-        "yutinghaosfinance": 557
+        "technewsinside": 969,
+        "ctee.fans": 780,
+        "yutinghaosfinance": 1955
       }
     },
     {
-      "id": 7,
-      "label": "ai / pcb / nvidia / physical",
+      "id": 13,
+      "label": "ai / trendforce / pcb / physical",
       "size": 6,
       "accounts": {
         "technews_tw": 2,
@@ -45,99 +45,88 @@
       }
     },
     {
-      "id": 1,
-      "label": "dram / trendforce / nand / ddr",
-      "size": 3,
+      "id": 5,
+      "label": "nvidia / ai / gpu / amd",
+      "size": 4,
       "accounts": {
-        "jukan05": 1,
-        "QQ_Timmy": 2
+        "technews_tw": 2,
+        "technewsinside": 1,
+        "yutinghaosfinance": 1
       },
       "engagement_by_account": {
-        "jukan05": 773,
-        "QQ_Timmy": 179
+        "technews_tw": 21,
+        "technewsinside": 20,
+        "yutinghaosfinance": 151
+      }
+    },
+    {
+      "id": 15,
+      "label": "公里 / 軍事科技 / 烏克蘭 / 嘉義科學園區",
+      "size": 4,
+      "accounts": {
+        "technews_tw": 2,
+        "technewsinside": 2
+      },
+      "engagement_by_account": {
+        "technews_tw": 1,
+        "technewsinside": 92
       }
     },
     {
       "id": 6,
-      "label": "openai / anthropic / google / ai",
-      "size": 2,
+      "label": "z世代 / ai / 職場",
+      "size": 3,
       "accounts": {
         "technews_tw": 1,
-        "technewsinside": 1
+        "technewsinside": 2
       },
       "engagement_by_account": {
-        "technews_tw": 1,
-        "technewsinside": 5
+        "technews_tw": 3,
+        "technewsinside": 23
       }
     },
     {
-      "id": 9,
-      "label": "kimik / 月之暗面 / kimi / ai模型",
+      "id": 2,
+      "label": "samsung / hynix / sk / memory",
       "size": 2,
       "accounts": {
-        "technews_tw": 1,
-        "technewsinside": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 0,
-        "technewsinside": 8
-      }
-    },
-    {
-      "id": 11,
-      "label": "台積電 / 英特爾 / ai / 魏哲家",
-      "size": 2,
-      "accounts": {
-        "technews_tw": 1,
-        "technewsinside": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 0,
-        "technewsinside": 17
-      }
-    },
-    {
-      "id": 16,
-      "label": "hynix / sk / samsung / memory",
-      "size": 1,
-      "accounts": {
+        "tphuang": 1,
         "tengyanAI": 1
       },
       "engagement_by_account": {
-        "tengyanAI": 127
+        "tphuang": 3,
+        "tengyanAI": 133
+      }
+    },
+    {
+      "id": 0,
+      "label": "amd / cpu / ai / intel",
+      "size": 1,
+      "accounts": {
+        "QQ_Timmy": 1
+      },
+      "engagement_by_account": {
+        "QQ_Timmy": 78
+      }
+    },
+    {
+      "id": 1,
+      "label": "hbm / dram / memory / ai",
+      "size": 1,
+      "accounts": {
+        "jukan05": 1
+      },
+      "engagement_by_account": {
+        "jukan05": 773
       }
     }
   ],
-  "gaps": [
-    {
-      "cluster_id": 1,
-      "label": "dram / trendforce / nand / ddr",
-      "own_count": 0,
-      "competitor_count": 3,
-      "competitor_engagement": 952,
-      "competitors_covering": [
-        "jukan05",
-        "QQ_Timmy"
-      ]
-    }
-  ],
-  "suggested_entry_points": [
-    {
-      "cluster_id": 1,
-      "label": "dram / trendforce / nand / ddr",
-      "own_count": 0,
-      "competitor_count": 3,
-      "competitor_engagement": 952,
-      "competitors_covering": [
-        "jukan05",
-        "QQ_Timmy"
-      ]
-    }
-  ],
+  "gaps": [],
+  "suggested_entry_points": [],
   "window": {
-    "start_utc": "2026-07-18T16:01:00+00:00",
-    "end_utc": "2026-07-19T16:01:00+00:00",
-    "start_tw": "Jul 19, 00:01",
-    "end_tw": "Jul 20, 00:01"
+    "start_utc": "2026-07-19T01:37:53+08:00",
+    "end_utc": "2026-07-20T01:37:53+08:00",
+    "start_tw": "Jul 19, 01:37",
+    "end_tw": "Jul 20, 01:37"
   }
 }
