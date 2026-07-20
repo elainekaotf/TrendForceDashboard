@@ -1,96 +1,70 @@
 {
-  "generated_at": "2026-07-20T04:45:00+00:00",
+  "generated_at": "2026-07-20T16:33:41+08:00",
   "time_range": "1d",
   "window": {
-    "start_utc": "2026-07-19T04:45:00+00:00",
-    "end_utc": "2026-07-20T04:45:00+00:00",
-    "start_tw": "Jul 19, 12:45",
-    "end_tw": "Jul 20, 12:45"
+    "start_utc": "2026-07-19T16:33:41+08:00",
+    "end_utc": "2026-07-20T16:33:41+08:00",
+    "start_tw": "Jul 19, 16:33",
+    "end_tw": "Jul 20, 16:33"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 178,
+      "total_posts": 179,
       "sentiment_counts": {
-        "positive": 72,
-        "negative": 57,
-        "neutral": 49
+        "positive": 71,
+        "neutral": 49,
+        "negative": 59
       },
       "sentiment_share": {
-        "positive": 0.404,
-        "negative": 0.32,
-        "neutral": 0.275
+        "positive": 0.397,
+        "neutral": 0.274,
+        "negative": 0.33
       },
       "top_terms": [
-        "最新",
-        "供應",
-        "應鏈",
-        "供應鏈",
         "伺服",
         "服器",
         "伺服器",
-        "晶片",
+        "最新",
+        "標價",
         "引發",
-        "首度"
+        "供應",
+        "台積",
+        "晶片",
+        "應鏈"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 7,
-        "label": "ai / nvidia / byd / amd",
+        "topic_id": 2,
+        "label": "ai / memory / nvidia / openai",
         "heat": 90.0,
-        "volume": 133,
-        "engagement": 7444,
+        "volume": 135,
+        "engagement": 8631,
         "entities": [
           "日本",
-          "台積電",
-          "德州",
+          "美國",
+          "緯創",
           "三星",
-          "高盛"
+          "伺服器"
         ]
       },
       {
-        "topic_id": 4,
-        "label": "memory / hbm / dram / korea",
-        "heat": 12.6,
-        "volume": 7,
-        "engagement": 2444,
+        "topic_id": 5,
+        "label": "kimi / compute / bearish / deepseek",
+        "heat": 11.7,
+        "volume": 5,
+        "engagement": 2835,
         "entities": [
-          "HBM",
-          "Korea",
-          "Taiwan",
-          "SK Group",
-          "Chey Tae"
-        ]
-      },
-      {
-        "topic_id": 6,
-        "label": "kimi / compute / demand / deepseek",
-        "heat": 11.2,
-        "volume": 4,
-        "engagement": 2704,
-        "entities": [
+          "伺服器",
           "Alicloud",
           "Kimi K",
-          "伺服器",
           "Kimi K  demand",
           "Alibaba"
         ]
       },
       {
-        "topic_id": 0,
-        "label": "yamawa / 非標準品採逐筆報價 / 全球製造業面臨成本狂飆 / 系列漲",
-        "heat": 10.6,
-        "volume": 3,
-        "engagement": 108,
-        "entities": [
-          "成本增加",
-          "烏戰爭",
-          "中東"
-        ]
-      },
-      {
-        "topic_id": 1,
+        "topic_id": 13,
         "label": "約新台幣 / gb",
         "heat": 10.6,
         "volume": 3,
@@ -104,105 +78,108 @@
         ]
       },
       {
-        "topic_id": 11,
-        "label": "z世代 / 安靜儲蓄 / 世代掀起安靜儲蓄新風潮 / 大聲預算",
-        "heat": 10.3,
-        "volume": 3,
-        "engagement": 26,
-        "entities": []
-      },
-      {
-        "topic_id": 5,
-        "label": "企業ai導入 / 卻有六成以上面臨無所適從的窘境 / 職場ai悖論 / 機器人保母",
-        "heat": 10.1,
-        "volume": 3,
-        "engagement": 8,
-        "entities": []
-      },
-      {
-        "topic_id": 2,
-        "label": "windows / arm / 輝達 / 搶先釋出預覽版驅動程式與",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 5,
+        "topic_id": 1,
+        "label": "ai / 供應鏈 / 高達 / 半導體千金軍團強勢崛起",
+        "heat": 10.5,
+        "volume": 7,
+        "engagement": 56,
         "entities": [
-          "Windows AI"
-        ]
-      },
-      {
-        "topic_id": 8,
-        "label": "英特爾 / 前執行長警告 / 全球經濟衝擊將超越大蕭條 / 中國若切斷台灣能源",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 8,
-        "entities": [
-          "英特爾",
-          "中國",
-          "台灣"
-        ]
-      },
-      {
-        "topic_id": 3,
-        "label": "落差高達 / 最新獎金制度引發強烈反彈 / 三星 / 億韓圜",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 37,
-        "entities": [
-          "三星",
-          "高達"
+          "高盛",
+          "伺服器",
+          "京瓷",
+          "高達",
+          "長崎"
         ]
       },
       {
         "topic_id": 15,
-        "label": "伺服器需求持續滾燙 / ubs / 緯穎 / 外資",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 14,
-        "entities": [
-          "伺服器"
-        ]
-      },
-      {
-        "topic_id": 17,
-        "label": "億元引發恐慌去槓桿 / 外資大舉提款逾 / 點摜破季線 / 台股上周重挫",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 8,
+        "label": "企業ai導入 / 職場ai悖論 / 機器人保母 / 卻有六成以上面臨無所適從的窘境",
+        "heat": 10.1,
+        "volume": 3,
+        "engagement": 9,
         "entities": []
       },
       {
-        "topic_id": 16,
-        "label": "人形機器人零組件供應鏈版圖 / 美中對決難有獨贏",
+        "topic_id": 3,
+        "label": "google",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 76,
+        "engagement": 3,
         "entities": [
-          "美中"
+          "柏南",
+          "施凱爾",
+          "英國",
+          "週三",
+          "谷歌"
+        ]
+      },
+      {
+        "topic_id": 14,
+        "label": "美國總部傳大變動 / 三星 / 依法申報將調整 / 個工作職位",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 7,
+        "entities": [
+          "三星",
+          "美國總部",
+          "紐澤西",
+          "德州",
+          "申報"
+        ]
+      },
+      {
+        "topic_id": 16,
+        "label": "億元引發恐慌去槓桿 / 點摜破季線 / 外資大舉提款逾 / 台股上周重挫",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 9,
+        "entities": []
+      },
+      {
+        "topic_id": 12,
+        "label": "利用公開照片合成犯罪影像 / ai犯罪 / 英國兩大組織發布安全指南 / 數位安全",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 13,
+        "entities": [
+          "英國"
+        ]
+      },
+      {
+        "topic_id": 0,
+        "label": "烏克蘭 / 公里 / 重創西伯利亞煉油廠 / 歷時",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 77,
+        "entities": [
+          "烏克蘭",
+          "西伯",
+          "利亞煉",
+          "俄羅斯"
+        ]
+      },
+      {
+        "topic_id": 11,
+        "label": "cuda / sail / 平頭哥 / 晶片的軟體堆疊",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 9,
+        "entities": [
+          "真武"
         ]
       },
       {
         "topic_id": 9,
-        "label": "新竹爭產憾事 / 股神巴菲特曾談財產分配四關鍵 / 財產分配 / 其中之一是生前就讓孩子理解分配邏輯",
+        "label": "新竹爭產憾事 / 其中之一是生前就讓孩子理解分配邏輯 / 財產分配 / 股神巴菲特曾談財產分配四關鍵",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 5,
+        "engagement": 7,
         "entities": [
           "新竹"
         ]
       },
       {
-        "topic_id": 12,
-        "label": "土星 / 太空殖民 / 潛力甚至可能超越月球與火星 / 研究指其作為太空殖民資源基地",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 14,
-        "entities": [
-          "泰坦",
-          "衛星"
-        ]
-      },
-      {
-        "topic_id": 13,
+        "topic_id": 4,
         "label": "太空級項圈 / 打破斷網死角讓飼主能零時差精準追蹤 / 低軌衛星 / fi",
         "heat": 10.0,
         "volume": 2,
@@ -212,32 +189,63 @@
         ]
       },
       {
-        "topic_id": 14,
-        "label": "國防 / 可信任 / 台灣無人機 / 台製無人機獲美烏軍大單",
+        "topic_id": 8,
+        "label": "facebook / meta / 當機 / 等平台",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 60,
+        "engagement": 13,
         "entities": [
-          "台灣",
-          "國防"
+          "Meta 旗下 Facebook Instagram",
+          "日下午故障 meta"
+        ]
+      },
+      {
+        "topic_id": 7,
+        "label": "首度由地方七座宮廟聯合遶境祈福全程 / 台積電嘉義二期封裝廠動土 / 民間信仰 / 公里",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 19,
+        "entities": [
+          "台積電",
+          "嘉義",
+          "宮廟",
+          "祈福"
         ]
       },
       {
         "topic_id": 10,
-        "label": "樂讀周報 / 四味軒 / 酸甜苦辣演繹餐桌四季風景 / 烹出台菜新食趣",
+        "label": "德州大學研究翻轉認知 / 大腦可持續進步到 / 大腦健康 / 老化",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 4,
+        "entities": [
+          "德州"
+        ]
+      },
+      {
+        "topic_id": 17,
+        "label": "烹出台菜新食趣 / 樂讀周報 / 酸甜苦辣演繹餐桌四季風景 / 四味軒",
         "heat": 10.0,
         "volume": 2,
         "engagement": 2,
+        "entities": []
+      },
+      {
+        "topic_id": 6,
+        "label": "ai時代來臨 / 科技科系吸走更多學生",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 262,
         "entities": []
       }
     ],
     "named_entities": [
       {
         "entity": "伺服器",
-        "count": 19
+        "count": 23
       },
       {
-        "entity": "台灣",
+        "entity": "台積電",
         "count": 17
       },
       {
@@ -245,15 +253,11 @@
         "count": 16
       },
       {
-        "entity": "日本",
-        "count": 16
-      },
-      {
-        "entity": "台積電",
-        "count": 15
-      },
-      {
         "entity": "德州",
+        "count": 13
+      },
+      {
+        "entity": "日本",
         "count": 13
       },
       {
@@ -261,7 +265,15 @@
         "count": 12
       },
       {
-        "entity": "天文",
+        "entity": "台灣",
+        "count": 12
+      },
+      {
+        "entity": "美國",
+        "count": 11
+      },
+      {
+        "entity": "緯創",
         "count": 11
       },
       {
@@ -269,11 +281,15 @@
         "count": 10
       },
       {
-        "entity": "美國",
-        "count": 10
+        "entity": "智慧",
+        "count": 8
       },
       {
         "entity": "輝達",
+        "count": 8
+      },
+      {
+        "entity": "鴻海",
         "count": 8
       },
       {
@@ -283,301 +299,293 @@
       {
         "entity": "中國",
         "count": 7
-      },
-      {
-        "entity": "高達",
-        "count": 7
-      },
-      {
-        "entity": "中子星",
-        "count": 7
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-19T04:45:00.000006+00:00",
-        "bucket_end": "2026-07-19T06:27:51.428577+00:00",
-        "positive": 4,
-        "neutral": 3,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-19T06:27:51.428577+00:00",
-        "bucket_end": "2026-07-19T08:10:42.857148+00:00",
-        "positive": 7,
-        "neutral": 5,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-19T08:10:42.857148+00:00",
-        "bucket_end": "2026-07-19T09:53:34.285719+00:00",
-        "positive": 7,
+        "bucket_start": "2026-07-19T16:33:41.000006+08:00",
+        "bucket_end": "2026-07-19T18:16:32.428577+08:00",
+        "positive": 8,
         "neutral": 1,
         "negative": 5
       },
       {
-        "bucket_start": "2026-07-19T09:53:34.285719+00:00",
-        "bucket_end": "2026-07-19T11:36:25.714290+00:00",
-        "positive": 7,
+        "bucket_start": "2026-07-19T18:16:32.428577+08:00",
+        "bucket_end": "2026-07-19T19:59:23.857148+08:00",
+        "positive": 5,
         "neutral": 7,
         "negative": 4
       },
       {
-        "bucket_start": "2026-07-19T11:36:25.714290+00:00",
-        "bucket_end": "2026-07-19T13:19:17.142861+00:00",
-        "positive": 6,
-        "neutral": 2,
-        "negative": 4
+        "bucket_start": "2026-07-19T19:59:23.857148+08:00",
+        "bucket_end": "2026-07-19T21:42:15.285719+08:00",
+        "positive": 7,
+        "neutral": 4,
+        "negative": 6
       },
       {
-        "bucket_start": "2026-07-19T13:19:17.142861+00:00",
-        "bucket_end": "2026-07-19T15:02:08.571432+00:00",
+        "bucket_start": "2026-07-19T21:42:15.285719+08:00",
+        "bucket_end": "2026-07-19T23:25:06.714290+08:00",
         "positive": 4,
-        "neutral": 9,
-        "negative": 12
+        "neutral": 7,
+        "negative": 11
       },
       {
-        "bucket_start": "2026-07-19T15:02:08.571432+00:00",
-        "bucket_end": "2026-07-19T16:45:00.000003+00:00",
-        "positive": 5,
+        "bucket_start": "2026-07-19T23:25:06.714290+08:00",
+        "bucket_end": "2026-07-20T01:07:58.142861+08:00",
+        "positive": 4,
         "neutral": 0,
-        "negative": 1
+        "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T16:45:00.000003+00:00",
-        "bucket_end": "2026-07-19T18:27:51.428574+00:00",
+        "bucket_start": "2026-07-20T01:07:58.142861+08:00",
+        "bucket_end": "2026-07-20T02:50:49.571432+08:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T18:27:51.428574+00:00",
-        "bucket_end": "2026-07-19T20:10:42.857145+00:00",
+        "bucket_start": "2026-07-20T02:50:49.571432+08:00",
+        "bucket_end": "2026-07-20T04:33:41.000003+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T20:10:42.857145+00:00",
-        "bucket_end": "2026-07-19T21:53:34.285716+00:00",
+        "bucket_start": "2026-07-20T04:33:41.000003+08:00",
+        "bucket_end": "2026-07-20T06:16:32.428574+08:00",
         "positive": 0,
-        "neutral": 0,
+        "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T21:53:34.285716+00:00",
-        "bucket_end": "2026-07-19T23:36:25.714287+00:00",
-        "positive": 7,
+        "bucket_start": "2026-07-20T06:16:32.428574+08:00",
+        "bucket_end": "2026-07-20T07:59:23.857145+08:00",
+        "positive": 10,
         "neutral": 6,
         "negative": 2
       },
       {
-        "bucket_start": "2026-07-19T23:36:25.714287+00:00",
-        "bucket_end": "2026-07-20T01:19:17.142858+00:00",
-        "positive": 9,
-        "neutral": 5,
+        "bucket_start": "2026-07-20T07:59:23.857145+08:00",
+        "bucket_end": "2026-07-20T09:42:15.285716+08:00",
+        "positive": 8,
+        "neutral": 6,
         "negative": 2
       },
       {
-        "bucket_start": "2026-07-20T01:19:17.142858+00:00",
-        "bucket_end": "2026-07-20T03:02:08.571429+00:00",
-        "positive": 8,
+        "bucket_start": "2026-07-20T09:42:15.285716+08:00",
+        "bucket_end": "2026-07-20T11:25:06.714287+08:00",
+        "positive": 6,
         "neutral": 9,
+        "negative": 13
+      },
+      {
+        "bucket_start": "2026-07-20T11:25:06.714287+08:00",
+        "bucket_end": "2026-07-20T13:07:58.142858+08:00",
+        "positive": 9,
+        "neutral": 0,
         "negative": 10
       },
       {
-        "bucket_start": "2026-07-20T03:02:08.571429+00:00",
-        "bucket_end": "2026-07-20T04:45:00+00:00",
-        "positive": 7,
-        "neutral": 2,
-        "negative": 11
+        "bucket_start": "2026-07-20T13:07:58.142858+08:00",
+        "bucket_end": "2026-07-20T14:50:49.571429+08:00",
+        "positive": 4,
+        "neutral": 3,
+        "negative": 4
+      },
+      {
+        "bucket_start": "2026-07-20T14:50:49.571429+08:00",
+        "bucket_end": "2026-07-20T16:33:41+08:00",
+        "positive": 5,
+        "neutral": 4,
+        "negative": 2
       }
     ],
     "coverage_focus_ranking": [
       {
         "handle": "TrendForce",
-        "top_topic_id": 7,
-        "top_topic_label": "ai / nvidia / byd / amd",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / memory / nvidia / openai",
         "focus_share": 1.0,
         "post_count": 2
       },
       {
         "handle": "SemiAnalysis_",
-        "top_topic_id": 7,
-        "top_topic_label": "ai / nvidia / byd / amd",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / memory / nvidia / openai",
+        "focus_share": 1.0,
+        "post_count": 3
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / memory / nvidia / openai",
         "focus_share": 1.0,
         "post_count": 3
       },
       {
         "handle": "TrendForce.tw",
-        "top_topic_id": 7,
-        "top_topic_label": "ai / nvidia / byd / amd",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / memory / nvidia / openai",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "tengyanAI",
-        "top_topic_id": 4,
-        "top_topic_label": "memory / hbm / dram / korea",
-        "focus_share": 1.0,
-        "post_count": 2
-      },
-      {
-        "handle": "ctee.fans",
-        "top_topic_id": 7,
-        "top_topic_label": "ai / nvidia / byd / amd",
-        "focus_share": 0.886,
-        "post_count": 35
-      },
-      {
         "handle": "tphuang",
-        "top_topic_id": 7,
-        "top_topic_label": "ai / nvidia / byd / amd",
-        "focus_share": 0.833,
+        "top_topic_id": 2,
+        "top_topic_label": "ai / memory / nvidia / openai",
+        "focus_share": 0.917,
         "post_count": 12
       },
       {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 7,
-        "top_topic_label": "ai / nvidia / byd / amd",
-        "focus_share": 0.818,
-        "post_count": 11
+        "handle": "jukan05",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / memory / nvidia / openai",
+        "focus_share": 0.9,
+        "post_count": 10
       },
       {
-        "handle": "technews_tw",
-        "top_topic_id": 7,
-        "top_topic_label": "ai / nvidia / byd / amd",
-        "focus_share": 0.711,
-        "post_count": 45
-      },
-      {
-        "handle": "technewsinside",
-        "top_topic_id": 7,
-        "top_topic_label": "ai / nvidia / byd / amd",
-        "focus_share": 0.7,
-        "post_count": 50
+        "handle": "ctee.fans",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / memory / nvidia / openai",
+        "focus_share": 0.833,
+        "post_count": 30
       },
       {
         "handle": "QQ_Timmy",
-        "top_topic_id": 7,
-        "top_topic_label": "ai / nvidia / byd / amd",
-        "focus_share": 0.667,
+        "top_topic_id": 2,
+        "top_topic_label": "ai / memory / nvidia / openai",
+        "focus_share": 0.778,
         "post_count": 9
       },
       {
-        "handle": "jukan05",
-        "top_topic_id": 7,
-        "top_topic_label": "ai / nvidia / byd / amd",
-        "focus_share": 0.5,
-        "post_count": 8
+        "handle": "technewsinside",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / memory / nvidia / openai",
+        "focus_share": 0.69,
+        "post_count": 42
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / memory / nvidia / openai",
+        "focus_share": 0.679,
+        "post_count": 56
+      },
+      {
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / memory / nvidia / openai",
+        "focus_share": 0.636,
+        "post_count": 11
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 7,
-        "label": "ai / nvidia / byd / amd",
-        "total_engagement": 7444,
-        "post_count": 133
+        "topic_id": 2,
+        "label": "ai / memory / nvidia / openai",
+        "total_engagement": 8631,
+        "post_count": 135
       },
       {
-        "topic_id": 6,
-        "label": "kimi / compute / demand / deepseek",
-        "total_engagement": 2704,
-        "post_count": 4
+        "topic_id": 5,
+        "label": "kimi / compute / bearish / deepseek",
+        "total_engagement": 2835,
+        "post_count": 5
       },
       {
-        "topic_id": 4,
-        "label": "memory / hbm / dram / korea",
-        "total_engagement": 2444,
-        "post_count": 7
-      },
-      {
-        "topic_id": 1,
+        "topic_id": 13,
         "label": "約新台幣 / gb",
         "total_engagement": 387,
         "post_count": 3
       },
       {
+        "topic_id": 6,
+        "label": "ai時代來臨 / 科技科系吸走更多學生",
+        "total_engagement": 262,
+        "post_count": 2
+      },
+      {
         "topic_id": 0,
-        "label": "yamawa / 非標準品採逐筆報價 / 全球製造業面臨成本狂飆 / 系列漲",
-        "total_engagement": 108,
-        "post_count": 3
-      },
-      {
-        "topic_id": 16,
-        "label": "人形機器人零組件供應鏈版圖 / 美中對決難有獨贏",
-        "total_engagement": 76,
+        "label": "烏克蘭 / 公里 / 重創西伯利亞煉油廠 / 歷時",
+        "total_engagement": 77,
         "post_count": 2
       },
       {
-        "topic_id": 14,
-        "label": "國防 / 可信任 / 台灣無人機 / 台製無人機獲美烏軍大單",
-        "total_engagement": 60,
-        "post_count": 2
+        "topic_id": 1,
+        "label": "ai / 供應鏈 / 高達 / 半導體千金軍團強勢崛起",
+        "total_engagement": 56,
+        "post_count": 7
       },
       {
-        "topic_id": 3,
-        "label": "落差高達 / 最新獎金制度引發強烈反彈 / 三星 / 億韓圜",
-        "total_engagement": 37,
-        "post_count": 2
-      },
-      {
-        "topic_id": 11,
-        "label": "z世代 / 安靜儲蓄 / 世代掀起安靜儲蓄新風潮 / 大聲預算",
-        "total_engagement": 26,
-        "post_count": 3
-      },
-      {
-        "topic_id": 15,
-        "label": "伺服器需求持續滾燙 / ubs / 緯穎 / 外資",
-        "total_engagement": 14,
+        "topic_id": 7,
+        "label": "首度由地方七座宮廟聯合遶境祈福全程 / 台積電嘉義二期封裝廠動土 / 民間信仰 / 公里",
+        "total_engagement": 19,
         "post_count": 2
       },
       {
         "topic_id": 12,
-        "label": "土星 / 太空殖民 / 潛力甚至可能超越月球與火星 / 研究指其作為太空殖民資源基地",
-        "total_engagement": 14,
+        "label": "利用公開照片合成犯罪影像 / ai犯罪 / 英國兩大組織發布安全指南 / 數位安全",
+        "total_engagement": 13,
         "post_count": 2
       },
       {
         "topic_id": 8,
-        "label": "英特爾 / 前執行長警告 / 全球經濟衝擊將超越大蕭條 / 中國若切斷台灣能源",
-        "total_engagement": 8,
+        "label": "facebook / meta / 當機 / 等平台",
+        "total_engagement": 13,
         "post_count": 2
       },
       {
-        "topic_id": 17,
-        "label": "億元引發恐慌去槓桿 / 外資大舉提款逾 / 點摜破季線 / 台股上周重挫",
-        "total_engagement": 8,
+        "topic_id": 16,
+        "label": "億元引發恐慌去槓桿 / 點摜破季線 / 外資大舉提款逾 / 台股上周重挫",
+        "total_engagement": 9,
         "post_count": 2
       },
       {
-        "topic_id": 5,
-        "label": "企業ai導入 / 卻有六成以上面臨無所適從的窘境 / 職場ai悖論 / 機器人保母",
-        "total_engagement": 8,
+        "topic_id": 11,
+        "label": "cuda / sail / 平頭哥 / 晶片的軟體堆疊",
+        "total_engagement": 9,
+        "post_count": 2
+      },
+      {
+        "topic_id": 15,
+        "label": "企業ai導入 / 職場ai悖論 / 機器人保母 / 卻有六成以上面臨無所適從的窘境",
+        "total_engagement": 9,
         "post_count": 3
       },
       {
-        "topic_id": 13,
+        "topic_id": 14,
+        "label": "美國總部傳大變動 / 三星 / 依法申報將調整 / 個工作職位",
+        "total_engagement": 7,
+        "post_count": 2
+      },
+      {
+        "topic_id": 9,
+        "label": "新竹爭產憾事 / 其中之一是生前就讓孩子理解分配邏輯 / 財產分配 / 股神巴菲特曾談財產分配四關鍵",
+        "total_engagement": 7,
+        "post_count": 2
+      },
+      {
+        "topic_id": 4,
         "label": "太空級項圈 / 打破斷網死角讓飼主能零時差精準追蹤 / 低軌衛星 / fi",
         "total_engagement": 7,
         "post_count": 2
       },
       {
-        "topic_id": 2,
-        "label": "windows / arm / 輝達 / 搶先釋出預覽版驅動程式與",
-        "total_engagement": 5,
-        "post_count": 2
-      },
-      {
-        "topic_id": 9,
-        "label": "新竹爭產憾事 / 股神巴菲特曾談財產分配四關鍵 / 財產分配 / 其中之一是生前就讓孩子理解分配邏輯",
-        "total_engagement": 5,
-        "post_count": 2
-      },
-      {
         "topic_id": 10,
-        "label": "樂讀周報 / 四味軒 / 酸甜苦辣演繹餐桌四季風景 / 烹出台菜新食趣",
+        "label": "德州大學研究翻轉認知 / 大腦可持續進步到 / 大腦健康 / 老化",
+        "total_engagement": 4,
+        "post_count": 2
+      },
+      {
+        "topic_id": 3,
+        "label": "google",
+        "total_engagement": 3,
+        "post_count": 2
+      },
+      {
+        "topic_id": 17,
+        "label": "烹出台菜新食趣 / 樂讀周報 / 酸甜苦辣演繹餐桌四季風景 / 四味軒",
         "total_engagement": 2,
         "post_count": 2
       }
@@ -586,15 +594,15 @@
       "slots": {
         "morning": {
           "post_count": 68,
-          "likes": 2938,
-          "engagement": 3203,
-          "avg_engagement": 47.1
+          "likes": 3369,
+          "engagement": 3694,
+          "avg_engagement": 54.3
         },
         "afternoon": {
-          "post_count": 11,
-          "likes": 120,
-          "engagement": 126,
-          "avg_engagement": 11.5
+          "post_count": 37,
+          "likes": 1077,
+          "engagement": 1277,
+          "avg_engagement": 34.5
         },
         "evening": {
           "post_count": 0,
@@ -604,9 +612,9 @@
         },
         "late_night": {
           "post_count": 5,
-          "likes": 107,
-          "engagement": 130,
-          "avg_engagement": 26.0
+          "likes": 122,
+          "engagement": 145,
+          "avg_engagement": 29.0
         }
       },
       "peak_slot": "morning"

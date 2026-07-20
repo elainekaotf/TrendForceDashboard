@@ -1,292 +1,241 @@
 {
-  "generated_at": "2026-07-20T04:45:00+00:00",
+  "generated_at": "2026-07-20T16:33:41+08:00",
   "time_range": "1h",
   "window": {
-    "start_utc": "2026-07-20T03:45:00+00:00",
-    "end_utc": "2026-07-20T04:45:00+00:00",
-    "start_tw": "Jul 20, 11:45",
-    "end_tw": "Jul 20, 12:45"
+    "start_utc": "2026-07-20T15:33:41+08:00",
+    "end_utc": "2026-07-20T16:33:41+08:00",
+    "start_tw": "Jul 20, 15:33",
+    "end_tw": "Jul 20, 16:33"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 13,
+      "total_posts": 6,
       "sentiment_counts": {
-        "positive": 7,
-        "negative": 6
+        "neutral": 3,
+        "positive": 2,
+        "negative": 1
       },
       "sentiment_share": {
-        "positive": 0.538,
-        "negative": 0.462
+        "neutral": 0.5,
+        "positive": 0.333,
+        "negative": 0.167
       },
       "top_terms": [
-        "布局",
-        "調高",
-        "meta",
-        "iris",
-        "自研",
-        "研晶",
-        "晶片",
-        "自研晶",
-        "研晶片",
-        "自研晶片"
+        "蘋果",
+        "apple",
+        "notes",
+        "genius",
+        "bar",
+        "實體",
+        "體店",
+        "店引",
+        "引進",
+        "實體店"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 0,
-        "label": "ai / windows / 月量產 / iris",
-        "heat": 90.0,
-        "volume": 11,
-        "engagement": 127,
+        "label": "ai / 蘋果",
+        "heat": 50.0,
+        "volume": 6,
+        "engagement": 15,
         "entities": [
-          "高盛",
-          "光電與台",
-          "intel",
           "伺服器",
-          "台光"
-        ]
-      },
-      {
-        "topic_id": 1,
-        "label": "三星 / sk海力士 / ddr / 提前布局",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 4,
-        "entities": [
-          "三星",
-          "大戰",
-          "韓廠海",
-          "SK海力士"
+          "AI",
+          "Apple Store",
+          "korean",
+          "japanese"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "高盛",
-        "count": 8
-      },
-      {
-        "entity": "三星",
-        "count": 4
-      },
-      {
-        "entity": "大戰",
-        "count": 3
-      },
-      {
-        "entity": "韓廠海",
-        "count": 3
-      },
-      {
-        "entity": "光電與台",
-        "count": 3
-      },
-      {
-        "entity": "intel",
-        "count": 2
-      },
-      {
-        "entity": "SK海力士",
-        "count": 2
-      },
-      {
         "entity": "伺服器",
         "count": 2
       },
       {
-        "entity": "台光",
-        "count": 2
-      },
-      {
-        "entity": "TSMC",
+        "entity": "AI",
         "count": 1
       },
       {
-        "entity": "Intel",
+        "entity": "Apple Store",
         "count": 1
       },
       {
-        "entity": "Windows AI",
+        "entity": "korean",
         "count": 1
       },
       {
-        "entity": "雷曼",
+        "entity": "japanese",
         "count": 1
       },
       {
-        "entity": "鴻海",
+        "entity": "DRAM",
         "count": 1
       },
       {
-        "entity": "日本",
+        "entity": "HBM",
+        "count": 1
+      },
+      {
+        "entity": "dram  hbm",
+        "count": 1
+      },
+      {
+        "entity": "dram hbm  polyglot",
+        "count": 1
+      },
+      {
+        "entity": "mandarin korean",
         "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-20T03:45:00.000002+00:00",
-        "bucket_end": "2026-07-20T03:49:17.142859+00:00",
+        "bucket_start": "2026-07-20T15:33:41.000002+08:00",
+        "bucket_end": "2026-07-20T15:37:58.142859+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T15:37:58.142859+08:00",
+        "bucket_end": "2026-07-20T15:42:15.285716+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T15:42:15.285716+08:00",
+        "bucket_end": "2026-07-20T15:46:32.428573+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T15:46:32.428573+08:00",
+        "bucket_end": "2026-07-20T15:50:49.571430+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T15:50:49.571430+08:00",
+        "bucket_end": "2026-07-20T15:55:06.714287+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T15:55:06.714287+08:00",
+        "bucket_end": "2026-07-20T15:59:23.857144+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T15:59:23.857144+08:00",
+        "bucket_end": "2026-07-20T16:03:41.000001+08:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-20T03:49:17.142859+00:00",
-        "bucket_end": "2026-07-20T03:53:34.285716+00:00",
+        "bucket_start": "2026-07-20T16:03:41.000001+08:00",
+        "bucket_end": "2026-07-20T16:07:58.142858+08:00",
         "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T03:53:34.285716+00:00",
-        "bucket_end": "2026-07-20T03:57:51.428573+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T03:57:51.428573+00:00",
-        "bucket_end": "2026-07-20T04:02:08.571430+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T04:02:08.571430+00:00",
-        "bucket_end": "2026-07-20T04:06:25.714287+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T04:06:25.714287+00:00",
-        "bucket_end": "2026-07-20T04:10:42.857144+00:00",
-        "positive": 3,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-20T04:10:42.857144+00:00",
-        "bucket_end": "2026-07-20T04:15:00.000001+00:00",
+        "bucket_start": "2026-07-20T16:07:58.142858+08:00",
+        "bucket_end": "2026-07-20T16:12:15.285715+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T16:12:15.285715+08:00",
+        "bucket_end": "2026-07-20T16:16:32.428572+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T16:16:32.428572+08:00",
+        "bucket_end": "2026-07-20T16:20:49.571429+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T16:20:49.571429+08:00",
+        "bucket_end": "2026-07-20T16:25:06.714286+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T16:25:06.714286+08:00",
+        "bucket_end": "2026-07-20T16:29:23.857143+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T16:29:23.857143+08:00",
+        "bucket_end": "2026-07-20T16:33:41+08:00",
         "positive": 1,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-20T04:15:00.000001+00:00",
-        "bucket_end": "2026-07-20T04:19:17.142858+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T04:19:17.142858+00:00",
-        "bucket_end": "2026-07-20T04:23:34.285715+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-20T04:23:34.285715+00:00",
-        "bucket_end": "2026-07-20T04:27:51.428572+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T04:27:51.428572+00:00",
-        "bucket_end": "2026-07-20T04:32:08.571429+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-20T04:32:08.571429+00:00",
-        "bucket_end": "2026-07-20T04:36:25.714286+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-20T04:36:25.714286+00:00",
-        "bucket_end": "2026-07-20T04:40:42.857143+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T04:40:42.857143+00:00",
-        "bucket_end": "2026-07-20T04:45:00+00:00",
-        "positive": 0,
         "neutral": 0,
         "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "TrendForce",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / windows / 月量產 / iris",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / windows / 月量產 / iris",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / windows / 月量產 / iris",
-        "focus_share": 1.0,
-        "post_count": 2
-      },
-      {
-        "handle": "technewsinside",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / windows / 月量產 / iris",
-        "focus_share": 0.8,
-        "post_count": 5
-      },
-      {
         "handle": "technews_tw",
         "top_topic_id": 0,
-        "top_topic_label": "ai / windows / 月量產 / iris",
-        "focus_share": 0.75,
+        "top_topic_label": "ai / 蘋果",
+        "focus_share": 1.0,
         "post_count": 4
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / 蘋果",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 0,
+        "top_topic_label": "ai / 蘋果",
+        "focus_share": 1.0,
+        "post_count": 1
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 0,
-        "label": "ai / windows / 月量產 / iris",
-        "total_engagement": 127,
-        "post_count": 11
-      },
-      {
-        "topic_id": 1,
-        "label": "三星 / sk海力士 / ddr / 提前布局",
-        "total_engagement": 4,
-        "post_count": 2
+        "label": "ai / 蘋果",
+        "total_engagement": 15,
+        "post_count": 6
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 2,
-          "likes": 4,
-          "engagement": 5,
-          "avg_engagement": 2.5
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 11,
-          "likes": 120,
-          "engagement": 126,
-          "avg_engagement": 11.5
+          "post_count": 6,
+          "likes": 9,
+          "engagement": 15,
+          "avg_engagement": 2.5
         },
         "evening": {
           "post_count": 0,
