@@ -10,16 +10,16 @@
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 130,
+      "total_posts": 139,
       "sentiment_counts": {
         "positive": 67,
-        "negative": 31,
-        "neutral": 32
+        "negative": 37,
+        "neutral": 35
       },
       "sentiment_share": {
-        "positive": 0.515,
-        "negative": 0.238,
-        "neutral": 0.246
+        "positive": 0.482,
+        "negative": 0.266,
+        "neutral": 0.252
       },
       "top_terms": [
         "首度",
@@ -27,8 +27,8 @@
         "應鏈",
         "供應鏈",
         "最新",
-        "世代",
         "晶片",
+        "世代",
         "導入",
         "超越",
         "台積"
@@ -36,35 +36,35 @@
     },
     "temperature_bar": [
       {
-        "topic_id": 1,
-        "label": "ai / memory / byd / 買進",
-        "heat": 90.0,
-        "volume": 93,
-        "engagement": 7522,
-        "entities": [
-          "日本",
-          "群創",
-          "德州",
-          "美國",
-          "台積電"
-        ]
-      },
-      {
-        "topic_id": 0,
-        "label": "dram / hbm / memory / asp",
-        "heat": 10.8,
-        "volume": 3,
-        "engagement": 952,
-        "entities": [
-          "伺服器",
-          "QoQ",
-          "中東",
-          "沙烏地",
-          "阿拉伯"
-        ]
-      },
-      {
         "topic_id": 2,
+        "label": "ai / byd / compute / networking",
+        "heat": 90.0,
+        "volume": 99,
+        "engagement": 8086,
+        "entities": [
+          "台積電",
+          "日本",
+          "美國",
+          "群創",
+          "德州"
+        ]
+      },
+      {
+        "topic_id": 17,
+        "label": "memory / dram / chey / sk",
+        "heat": 12.8,
+        "volume": 6,
+        "engagement": 2114,
+        "entities": [
+          "SK Group",
+          "Chey Tae",
+          "the Korea Chamber of Commerce and Industry s Jeju Forum",
+          "伺服器",
+          "季增"
+        ]
+      },
+      {
+        "topic_id": 12,
         "label": "z世代 / 大聲預算 / 安靜儲蓄 / 世代掀起安靜儲蓄新風潮",
         "heat": 10.2,
         "volume": 3,
@@ -72,15 +72,7 @@
         "entities": []
       },
       {
-        "topic_id": 11,
-        "label": "企業ai導入 / 職場ai悖論 / 卻有六成以上面臨無所適從的窘境 / 機器人保母",
-        "heat": 10.1,
-        "volume": 3,
-        "engagement": 8,
-        "entities": []
-      },
-      {
-        "topic_id": 9,
+        "topic_id": 14,
         "label": "首度證實半人馬座 / 恆星質量黑洞 / 天文物理 / 半人馬座",
         "heat": 10.0,
         "volume": 2,
@@ -94,7 +86,7 @@
         ]
       },
       {
-        "topic_id": 17,
+        "topic_id": 9,
         "label": "縣市首度演練斷網防空 / 月兩梯次分區登場",
         "heat": 10.0,
         "volume": 2,
@@ -105,8 +97,8 @@
         ]
       },
       {
-        "topic_id": 8,
-        "label": "烏克蘭 / 公里 / 重創西伯利亞煉油廠 / 烏克蘭無人機創最遠程紀錄",
+        "topic_id": 3,
+        "label": "烏克蘭 / 公里 / 烏克蘭無人機創最遠程紀錄 / 無人機",
         "heat": 10.0,
         "volume": 2,
         "engagement": 76,
@@ -118,8 +110,8 @@
         ]
       },
       {
-        "topic_id": 10,
-        "label": "cuda / sail / 阿里巴巴平頭哥將旗下真武 / ai晶片",
+        "topic_id": 1,
+        "label": "cuda / sail / 開源釋出 / 挑戰",
         "heat": 10.0,
         "volume": 2,
         "engagement": 8,
@@ -128,8 +120,22 @@
         ]
       },
       {
-        "topic_id": 7,
-        "label": "巴菲特 / 新竹爭產憾事 / 財產分配 / 其中之一是生前就讓孩子理解分配邏輯",
+        "topic_id": 6,
+        "label": "sega / nvidia / 黃仁勳 / rtx",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 24,
+        "entities": [
+          "SEGA",
+          "nvidia",
+          "sega  nvidia",
+          "sega 大作全面導入",
+          "sega     "
+        ]
+      },
+      {
+        "topic_id": 15,
+        "label": "巴菲特 / 財產分配 / 股神巴菲特曾談財產分配四關鍵 / 新竹爭產憾事",
         "heat": 10.0,
         "volume": 2,
         "engagement": 3,
@@ -138,7 +144,7 @@
         ]
       },
       {
-        "topic_id": 16,
+        "topic_id": 4,
         "label": "太空級項圈 / fi / 低軌衛星 / 寵物追蹤器",
         "heat": 10.0,
         "volume": 2,
@@ -148,31 +154,15 @@
         ]
       },
       {
-        "topic_id": 15,
-        "label": "facebook / meta / 旗下 / 等平台",
+        "topic_id": 7,
+        "label": "企業ai導入 / 職場ai悖論 / 機器人保母 / 卻有六成以上面臨無所適從的窘境",
         "heat": 10.0,
-        "volume": 2,
-        "engagement": 13,
-        "entities": [
-          "Meta 旗下 Facebook Instagram",
-          "日下午故障 meta"
-        ]
+        "volume": 3,
+        "engagement": 8,
+        "entities": []
       },
       {
-        "topic_id": 14,
-        "label": "台積電 / 首度由地方七座宮廟聯合遶境祈福全程 / 民間信仰 / 台積電嘉義二期封裝廠動土",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 17,
-        "entities": [
-          "台積電",
-          "嘉義",
-          "宮廟",
-          "祈福"
-        ]
-      },
-      {
-        "topic_id": 6,
+        "topic_id": 5,
         "label": "演算法 / 年代偶像劇與流行歌曲 / 共同文化 / 懷舊",
         "heat": 10.0,
         "volume": 2,
@@ -182,7 +172,7 @@
         ]
       },
       {
-        "topic_id": 12,
+        "topic_id": 11,
         "label": "可信任 / 台灣無人機 / 台製無人機獲美烏軍大單 / 國防",
         "heat": 10.0,
         "volume": 2,
@@ -193,28 +183,15 @@
         ]
       },
       {
+        "topic_id": 16,
+        "label": "系統如何精準掌握何時接話 / 自動語音系統 / 語音ai / 成為能否維持自然對話節奏的關鍵難題",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 4,
+        "entities": []
+      },
+      {
         "topic_id": 13,
-        "label": "月成功突破千店規模 / 麥味登 / 早餐店 / 台灣早餐店版圖大洗牌",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 9,
-        "entities": [
-          "台灣",
-          "揚秦"
-        ]
-      },
-      {
-        "topic_id": 3,
-        "label": "claude / ai模型 / anthropic / 正式納入進階訂閱方案",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 6,
-        "entities": [
-          "Claude Fable"
-        ]
-      },
-      {
-        "topic_id": 5,
         "label": "聯電榮譽副董驚傳送醫 / 緊急送醫急救 / 歲宣明智因不明原因意識不清 / 最新",
         "heat": 10.0,
         "volume": 2,
@@ -225,13 +202,37 @@
         ]
       },
       {
-        "topic_id": 4,
+        "topic_id": 10,
+        "label": "買進",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 47,
+        "entities": [
+          "伺服器",
+          "聯茂"
+        ]
+      },
+      {
+        "topic_id": 0,
         "label": "聯電榮譽副董事長宣明智 / 隨即安排腦神經外科緊急手術 / 經院方診斷為腦硬膜外出血 / 日上午驚傳因身體不適緊急送醫",
         "heat": 10.0,
         "volume": 2,
         "engagement": 35,
         "entities": [
           "明智"
+        ]
+      },
+      {
+        "topic_id": 8,
+        "label": "約新台幣",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 350,
+        "entities": [
+          "川普",
+          "智慧",
+          "美國總統川普",
+          "華爾街"
         ]
       }
     ],
@@ -245,12 +246,12 @@
         "count": 16
       },
       {
-        "entity": "台灣",
-        "count": 14
+        "entity": "日本",
+        "count": 15
       },
       {
-        "entity": "日本",
-        "count": 12
+        "entity": "台灣",
+        "count": 14
       },
       {
         "entity": "天文",
@@ -261,15 +262,15 @@
         "count": 10
       },
       {
+        "entity": "美國",
+        "count": 10
+      },
+      {
         "entity": "群創",
         "count": 10
       },
       {
         "entity": "德州",
-        "count": 9
-      },
-      {
-        "entity": "美國",
         "count": 9
       },
       {
@@ -379,15 +380,15 @@
         "bucket_start": "2026-07-19T20:29:18.714287+08:00",
         "bucket_end": "2026-07-19T22:12:10.142858+08:00",
         "positive": 6,
-        "neutral": 4,
-        "negative": 5
+        "neutral": 6,
+        "negative": 7
       },
       {
         "bucket_start": "2026-07-19T22:12:10.142858+08:00",
         "bucket_end": "2026-07-19T23:55:01.571429+08:00",
         "positive": 3,
-        "neutral": 3,
-        "negative": 4
+        "neutral": 4,
+        "negative": 8
       },
       {
         "bucket_start": "2026-07-19T23:55:01.571429+08:00",
@@ -400,181 +401,188 @@
     "coverage_focus_ranking": [
       {
         "handle": "TrendForce",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / memory / byd / 買進",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / byd / compute / networking",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "SemiAnalysis_",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / memory / byd / 買進",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / byd / compute / networking",
         "focus_share": 1.0,
         "post_count": 4
       },
       {
-        "handle": "tphuang",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / memory / byd / 買進",
-        "focus_share": 1.0,
-        "post_count": 12
-      },
-      {
-        "handle": "tengyanAI",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / memory / byd / 買進",
-        "focus_share": 1.0,
-        "post_count": 3
-      },
-      {
         "handle": "TrendForce.tw",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / memory / byd / 買進",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / byd / compute / networking",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "ctee.fans",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / memory / byd / 買進",
-        "focus_share": 0.933,
-        "post_count": 30
+        "handle": "tphuang",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / byd / compute / networking",
+        "focus_share": 0.917,
+        "post_count": 12
       },
       {
-        "handle": "jukan05",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / memory / byd / 買進",
-        "focus_share": 0.857,
-        "post_count": 7
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / byd / compute / networking",
+        "focus_share": 0.889,
+        "post_count": 9
       },
       {
         "handle": "QQ_Timmy",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / memory / byd / 買進",
-        "focus_share": 0.667,
+        "top_topic_id": 2,
+        "top_topic_label": "ai / byd / compute / networking",
+        "focus_share": 0.833,
         "post_count": 6
       },
       {
+        "handle": "ctee.fans",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / byd / compute / networking",
+        "focus_share": 0.833,
+        "post_count": 30
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / byd / compute / networking",
+        "focus_share": 0.667,
+        "post_count": 3
+      },
+      {
         "handle": "technews_tw",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / memory / byd / 買進",
-        "focus_share": 0.516,
+        "top_topic_id": 2,
+        "top_topic_label": "ai / byd / compute / networking",
+        "focus_share": 0.581,
         "post_count": 31
       },
       {
+        "handle": "jukan05",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / byd / compute / networking",
+        "focus_share": 0.571,
+        "post_count": 7
+      },
+      {
         "handle": "technewsinside",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / memory / byd / 買進",
-        "focus_share": 0.514,
+        "top_topic_id": 2,
+        "top_topic_label": "ai / byd / compute / networking",
+        "focus_share": 0.571,
         "post_count": 35
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 1,
-        "label": "ai / memory / byd / 買進",
-        "total_engagement": 7522,
-        "post_count": 93
-      },
-      {
-        "topic_id": 0,
-        "label": "dram / hbm / memory / asp",
-        "total_engagement": 952,
-        "post_count": 3
+        "topic_id": 2,
+        "label": "ai / byd / compute / networking",
+        "total_engagement": 8086,
+        "post_count": 99
       },
       {
         "topic_id": 17,
+        "label": "memory / dram / chey / sk",
+        "total_engagement": 2114,
+        "post_count": 6
+      },
+      {
+        "topic_id": 8,
+        "label": "約新台幣",
+        "total_engagement": 350,
+        "post_count": 2
+      },
+      {
+        "topic_id": 9,
         "label": "縣市首度演練斷網防空 / 月兩梯次分區登場",
         "total_engagement": 341,
         "post_count": 2
       },
       {
-        "topic_id": 8,
-        "label": "烏克蘭 / 公里 / 重創西伯利亞煉油廠 / 烏克蘭無人機創最遠程紀錄",
+        "topic_id": 3,
+        "label": "烏克蘭 / 公里 / 烏克蘭無人機創最遠程紀錄 / 無人機",
         "total_engagement": 76,
         "post_count": 2
       },
       {
-        "topic_id": 12,
+        "topic_id": 11,
         "label": "可信任 / 台灣無人機 / 台製無人機獲美烏軍大單 / 國防",
         "total_engagement": 57,
         "post_count": 2
       },
       {
-        "topic_id": 4,
+        "topic_id": 10,
+        "label": "買進",
+        "total_engagement": 47,
+        "post_count": 2
+      },
+      {
+        "topic_id": 0,
         "label": "聯電榮譽副董事長宣明智 / 隨即安排腦神經外科緊急手術 / 經院方診斷為腦硬膜外出血 / 日上午驚傳因身體不適緊急送醫",
         "total_engagement": 35,
         "post_count": 2
       },
       {
-        "topic_id": 5,
+        "topic_id": 13,
         "label": "聯電榮譽副董驚傳送醫 / 緊急送醫急救 / 歲宣明智因不明原因意識不清 / 最新",
         "total_engagement": 30,
         "post_count": 2
       },
       {
-        "topic_id": 2,
+        "topic_id": 12,
         "label": "z世代 / 大聲預算 / 安靜儲蓄 / 世代掀起安靜儲蓄新風潮",
         "total_engagement": 26,
         "post_count": 3
       },
       {
+        "topic_id": 6,
+        "label": "sega / nvidia / 黃仁勳 / rtx",
+        "total_engagement": 24,
+        "post_count": 2
+      },
+      {
         "topic_id": 14,
-        "label": "台積電 / 首度由地方七座宮廟聯合遶境祈福全程 / 民間信仰 / 台積電嘉義二期封裝廠動土",
-        "total_engagement": 17,
-        "post_count": 2
-      },
-      {
-        "topic_id": 15,
-        "label": "facebook / meta / 旗下 / 等平台",
-        "total_engagement": 13,
-        "post_count": 2
-      },
-      {
-        "topic_id": 9,
         "label": "首度證實半人馬座 / 恆星質量黑洞 / 天文物理 / 半人馬座",
         "total_engagement": 12,
         "post_count": 2
       },
       {
-        "topic_id": 13,
-        "label": "月成功突破千店規模 / 麥味登 / 早餐店 / 台灣早餐店版圖大洗牌",
-        "total_engagement": 9,
-        "post_count": 2
-      },
-      {
-        "topic_id": 10,
-        "label": "cuda / sail / 阿里巴巴平頭哥將旗下真武 / ai晶片",
+        "topic_id": 1,
+        "label": "cuda / sail / 開源釋出 / 挑戰",
         "total_engagement": 8,
         "post_count": 2
       },
       {
-        "topic_id": 11,
-        "label": "企業ai導入 / 職場ai悖論 / 卻有六成以上面臨無所適從的窘境 / 機器人保母",
+        "topic_id": 7,
+        "label": "企業ai導入 / 職場ai悖論 / 機器人保母 / 卻有六成以上面臨無所適從的窘境",
         "total_engagement": 8,
         "post_count": 3
       },
       {
-        "topic_id": 16,
+        "topic_id": 4,
         "label": "太空級項圈 / fi / 低軌衛星 / 寵物追蹤器",
         "total_engagement": 6,
         "post_count": 2
       },
       {
-        "topic_id": 3,
-        "label": "claude / ai模型 / anthropic / 正式納入進階訂閱方案",
-        "total_engagement": 6,
-        "post_count": 2
-      },
-      {
-        "topic_id": 6,
+        "topic_id": 5,
         "label": "演算法 / 年代偶像劇與流行歌曲 / 共同文化 / 懷舊",
         "total_engagement": 5,
         "post_count": 2
       },
       {
-        "topic_id": 7,
-        "label": "巴菲特 / 新竹爭產憾事 / 財產分配 / 其中之一是生前就讓孩子理解分配邏輯",
+        "topic_id": 16,
+        "label": "系統如何精準掌握何時接話 / 自動語音系統 / 語音ai / 成為能否維持自然對話節奏的關鍵難題",
+        "total_engagement": 4,
+        "post_count": 2
+      },
+      {
+        "topic_id": 15,
+        "label": "巴菲特 / 財產分配 / 股神巴菲特曾談財產分配四關鍵 / 新竹爭產憾事",
         "total_engagement": 3,
         "post_count": 2
       }

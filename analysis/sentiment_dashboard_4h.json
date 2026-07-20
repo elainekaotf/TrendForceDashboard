@@ -1,57 +1,71 @@
 {
-  "generated_at": "2026-07-19T16:01:00+00:00",
+  "generated_at": "2026-07-20T01:37:53+08:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-19T12:01:00+00:00",
-    "end_utc": "2026-07-19T16:01:00+00:00",
-    "start_tw": "Jul 19, 20:01",
-    "end_tw": "Jul 20, 00:01"
+    "start_utc": "2026-07-19T21:37:53+08:00",
+    "end_utc": "2026-07-20T01:37:53+08:00",
+    "start_tw": "Jul 19, 21:37",
+    "end_tw": "Jul 20, 01:37"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 25,
+      "total_posts": 26,
       "sentiment_counts": {
         "positive": 9,
-        "negative": 9,
-        "neutral": 7
+        "negative": 11,
+        "neutral": 6
       },
       "sentiment_share": {
-        "positive": 0.36,
-        "negative": 0.36,
-        "neutral": 0.28
+        "positive": 0.346,
+        "negative": 0.423,
+        "neutral": 0.231
       },
       "top_terms": [
         "首度",
-        "黃仁",
-        "仁勳",
-        "黃仁勳",
+        "推出",
+        "kimi",
+        "deepseek",
+        "大型",
         "tower",
         "semiconductor",
         "invest",
         "billion",
-        "japan",
-        "backed"
+        "japan"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 2,
-        "label": "ai / cuda / sega / nvidia",
+        "topic_id": 0,
+        "label": "byd / semiconductor / auto / leads",
         "heat": 90.0,
-        "volume": 17,
-        "engagement": 1987,
+        "volume": 18,
+        "engagement": 2547,
         "entities": [
-          "烏克蘭",
-          "德州",
-          "新竹",
-          "西伯",
-          "利亞煉"
+          "日本",
+          "Tower Semiconductor",
+          "Japan",
+          "BYD",
+          "China"
+        ]
+      },
+      {
+        "topic_id": 4,
+        "label": "compute / kimi",
+        "heat": 15.1,
+        "volume": 2,
+        "engagement": 1441,
+        "entities": [
+          "Alicloud",
+          "Kimi K",
+          "Kimi K  demand",
+          "Alibaba",
+          "Qoder"
         ]
       },
       {
         "topic_id": 3,
-        "label": "天文物理 / 首度證實半人馬座 / 恆星質量黑洞 / 半人馬座",
+        "label": "首度證實半人馬座 / 恆星質量黑洞 / 天文物理 / 半人馬座",
         "heat": 10.0,
         "volume": 2,
         "engagement": 12,
@@ -75,24 +89,16 @@
         ]
       },
       {
-        "topic_id": 0,
-        "label": "太空殖民 / 土星 / 研究指其作為太空殖民資源基地 / 潛力甚至可能超越月球與火星",
+        "topic_id": 2,
+        "label": "烏克蘭 / 公里 / 無人機 / 烏克蘭無人機創最遠程紀錄",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 12,
+        "engagement": 76,
         "entities": [
-          "泰坦",
-          "衛星"
-        ]
-      },
-      {
-        "topic_id": 4,
-        "label": "argument",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 672,
-        "entities": [
-          "DeepSeek"
+          "烏克蘭",
+          "西伯",
+          "利亞煉",
+          "俄羅斯"
         ]
       }
     ],
@@ -112,18 +118,6 @@
       {
         "entity": "烏克蘭",
         "count": 7
-      },
-      {
-        "entity": "泰坦",
-        "count": 6
-      },
-      {
-        "entity": "德州",
-        "count": 5
-      },
-      {
-        "entity": "新竹",
-        "count": 4
       },
       {
         "entity": "終於",
@@ -150,110 +144,122 @@
         "count": 3
       },
       {
-        "entity": "真武",
+        "entity": "日本",
         "count": 3
       },
       {
-        "entity": "SEGA",
-        "count": 3
+        "entity": "Tower Semiconductor",
+        "count": 2
+      },
+      {
+        "entity": "Japan",
+        "count": 2
+      },
+      {
+        "entity": "國家通訊傳播委員會",
+        "count": 2
+      },
+      {
+        "entity": "BYD",
+        "count": 2
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-19T12:00:59.999994+00:00",
-        "bucket_end": "2026-07-19T12:18:08.571423+00:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-19T12:18:08.571423+00:00",
-        "bucket_end": "2026-07-19T12:35:17.142852+00:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T12:35:17.142852+00:00",
-        "bucket_end": "2026-07-19T12:52:25.714281+00:00",
+        "bucket_start": "2026-07-19T21:37:52.999994+08:00",
+        "bucket_end": "2026-07-19T21:55:01.571423+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T12:52:25.714281+00:00",
-        "bucket_end": "2026-07-19T13:09:34.285710+00:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-19T13:09:34.285710+00:00",
-        "bucket_end": "2026-07-19T13:26:42.857139+00:00",
-        "positive": 0,
+        "bucket_start": "2026-07-19T21:55:01.571423+08:00",
+        "bucket_end": "2026-07-19T22:12:10.142852+08:00",
+        "positive": 1,
         "neutral": 2,
-        "negative": 0
+        "negative": 3
       },
       {
-        "bucket_start": "2026-07-19T13:26:42.857139+00:00",
-        "bucket_end": "2026-07-19T13:43:51.428568+00:00",
-        "positive": 0,
-        "neutral": 2,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-19T13:43:51.428568+00:00",
-        "bucket_end": "2026-07-19T14:00:59.999997+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-19T14:00:59.999997+00:00",
-        "bucket_end": "2026-07-19T14:18:08.571426+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-19T14:18:08.571426+00:00",
-        "bucket_end": "2026-07-19T14:35:17.142855+00:00",
+        "bucket_start": "2026-07-19T22:12:10.142852+08:00",
+        "bucket_end": "2026-07-19T22:29:18.714281+08:00",
         "positive": 0,
         "neutral": 1,
-        "negative": 0
+        "negative": 4
       },
       {
-        "bucket_start": "2026-07-19T14:35:17.142855+00:00",
-        "bucket_end": "2026-07-19T14:52:25.714284+00:00",
-        "positive": 0,
-        "neutral": 2,
+        "bucket_start": "2026-07-19T22:29:18.714281+08:00",
+        "bucket_end": "2026-07-19T22:46:27.285710+08:00",
+        "positive": 1,
+        "neutral": 3,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-19T14:52:25.714284+00:00",
-        "bucket_end": "2026-07-19T15:09:34.285713+00:00",
-        "positive": 1,
+        "bucket_start": "2026-07-19T22:46:27.285710+08:00",
+        "bucket_end": "2026-07-19T23:03:35.857139+08:00",
+        "positive": 2,
         "neutral": 0,
-        "negative": 2
+        "negative": 3
       },
       {
-        "bucket_start": "2026-07-19T15:09:34.285713+00:00",
-        "bucket_end": "2026-07-19T15:26:42.857142+00:00",
+        "bucket_start": "2026-07-19T23:03:35.857139+08:00",
+        "bucket_end": "2026-07-19T23:20:44.428568+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T15:26:42.857142+00:00",
-        "bucket_end": "2026-07-19T15:43:51.428571+00:00",
+        "bucket_start": "2026-07-19T23:20:44.428568+08:00",
+        "bucket_end": "2026-07-19T23:37:52.999997+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-19T15:43:51.428571+00:00",
-        "bucket_end": "2026-07-19T16:01:00+00:00",
-        "positive": 1,
+        "bucket_start": "2026-07-19T23:37:52.999997+08:00",
+        "bucket_end": "2026-07-19T23:55:01.571426+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-19T23:55:01.571426+08:00",
+        "bucket_end": "2026-07-20T00:12:10.142855+08:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T00:12:10.142855+08:00",
+        "bucket_end": "2026-07-20T00:29:18.714284+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T00:29:18.714284+08:00",
+        "bucket_end": "2026-07-20T00:46:27.285713+08:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T00:46:27.285713+08:00",
+        "bucket_end": "2026-07-20T01:03:35.857142+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T01:03:35.857142+08:00",
+        "bucket_end": "2026-07-20T01:20:44.428571+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T01:20:44.428571+08:00",
+        "bucket_end": "2026-07-20T01:37:53+08:00",
+        "positive": 0,
         "neutral": 0,
         "negative": 0
       }
@@ -261,58 +267,72 @@
     "coverage_focus_ranking": [
       {
         "handle": "TrendForce",
-        "top_topic_id": 2,
-        "top_topic_label": "ai / cuda / sega / nvidia",
+        "top_topic_id": 0,
+        "top_topic_label": "byd / semiconductor / auto / leads",
         "focus_share": 1.0,
         "post_count": 1
-      },
-      {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 2,
-        "top_topic_label": "ai / cuda / sega / nvidia",
-        "focus_share": 1.0,
-        "post_count": 3
       },
       {
         "handle": "TrendForce.tw",
-        "top_topic_id": 2,
-        "top_topic_label": "ai / cuda / sega / nvidia",
+        "top_topic_id": 0,
+        "top_topic_label": "byd / semiconductor / auto / leads",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "jukan05",
-        "top_topic_id": 4,
-        "top_topic_label": "argument",
+        "handle": "ctee.fans",
+        "top_topic_id": 0,
+        "top_topic_label": "byd / semiconductor / auto / leads",
+        "focus_share": 1.0,
+        "post_count": 4
+      },
+      {
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 0,
+        "top_topic_label": "byd / semiconductor / auto / leads",
+        "focus_share": 1.0,
+        "post_count": 9
+      },
+      {
+        "handle": "tphuang",
+        "top_topic_id": 0,
+        "top_topic_label": "byd / semiconductor / auto / leads",
         "focus_share": 0.667,
+        "post_count": 3
+      },
+      {
+        "handle": "jukan05",
+        "top_topic_id": 0,
+        "top_topic_label": "byd / semiconductor / auto / leads",
+        "focus_share": 0.5,
+        "post_count": 2
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 3,
+        "top_topic_label": "首度證實半人馬座 / 恆星質量黑洞 / 天文物理 / 半人馬座",
+        "focus_share": 0.333,
         "post_count": 3
       },
       {
         "handle": "technewsinside",
-        "top_topic_id": 2,
-        "top_topic_label": "ai / cuda / sega / nvidia",
-        "focus_share": 0.667,
-        "post_count": 9
-      },
-      {
-        "handle": "technews_tw",
-        "top_topic_id": 2,
-        "top_topic_label": "ai / cuda / sega / nvidia",
-        "focus_share": 0.625,
-        "post_count": 8
+        "top_topic_id": 3,
+        "top_topic_label": "首度證實半人馬座 / 恆星質量黑洞 / 天文物理 / 半人馬座",
+        "focus_share": 0.333,
+        "post_count": 3
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 2,
-        "label": "ai / cuda / sega / nvidia",
-        "total_engagement": 1987,
-        "post_count": 17
+        "topic_id": 0,
+        "label": "byd / semiconductor / auto / leads",
+        "total_engagement": 2547,
+        "post_count": 18
       },
       {
         "topic_id": 4,
-        "label": "argument",
-        "total_engagement": 672,
+        "label": "compute / kimi",
+        "total_engagement": 1441,
         "post_count": 2
       },
       {
@@ -322,14 +342,14 @@
         "post_count": 2
       },
       {
-        "topic_id": 3,
-        "label": "天文物理 / 首度證實半人馬座 / 恆星質量黑洞 / 半人馬座",
-        "total_engagement": 12,
+        "topic_id": 2,
+        "label": "烏克蘭 / 公里 / 無人機 / 烏克蘭無人機創最遠程紀錄",
+        "total_engagement": 76,
         "post_count": 2
       },
       {
-        "topic_id": 0,
-        "label": "太空殖民 / 土星 / 研究指其作為太空殖民資源基地 / 潛力甚至可能超越月球與火星",
+        "topic_id": 3,
+        "label": "首度證實半人馬座 / 恆星質量黑洞 / 天文物理 / 半人馬座",
         "total_engagement": 12,
         "post_count": 2
       }
@@ -355,10 +375,10 @@
           "avg_engagement": 0.0
         },
         "late_night": {
-          "post_count": 2,
-          "likes": 5,
-          "engagement": 6,
-          "avg_engagement": 3.0
+          "post_count": 5,
+          "likes": 34,
+          "engagement": 43,
+          "avg_engagement": 8.6
         }
       },
       "peak_slot": "late_night"
