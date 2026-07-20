@@ -1,274 +1,253 @@
 {
-  "generated_at": "2026-07-20T08:54:09.322972+00:00",
+  "generated_at": "2026-07-20T23:02:56+08:00",
   "time_range": "1h",
   "window": {
-    "start_utc": "2026-07-20T07:54:09.322972+00:00",
-    "end_utc": "2026-07-20T08:54:09.322972+00:00",
-    "start_tw": "Jul 20, 15:54",
-    "end_tw": "Jul 20, 16:54"
+    "start_utc": "2026-07-20T22:02:56+08:00",
+    "end_utc": "2026-07-20T23:02:56+08:00",
+    "start_tw": "Jul 20, 22:02",
+    "end_tw": "Jul 20, 23:02"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 10,
+      "total_posts": 6,
       "sentiment_counts": {
-        "neutral": 5,
-        "positive": 3,
-        "negative": 2
+        "negative": 2,
+        "neutral": 1,
+        "positive": 3
       },
       "sentiment_share": {
-        "neutral": 0.5,
-        "positive": 0.3,
-        "negative": 0.2
+        "negative": 0.333,
+        "neutral": 0.167,
+        "positive": 0.5
       },
       "top_terms": [
-        "蘋果",
-        "apple",
-        "notes",
-        "genius",
-        "bar",
-        "實體",
-        "體店",
-        "店引",
-        "引進",
-        "實體店"
+        "buildout",
+        "battery",
+        "年起",
+        "起受",
+        "受德",
+        "國憲",
+        "法保",
+        "護的",
+        "年起受",
+        "起受德"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 0,
-        "label": "ai / 觀望成本正持續攀升 / 再不買只會更貴 / apple",
-        "heat": 90.0,
-        "volume": 8,
-        "engagement": 72,
+        "label": "buildout / battery / ai",
+        "heat": 50.0,
+        "volume": 6,
+        "engagement": 87,
         "entities": [
-          "伺服器",
+          "德國",
           "AI",
-          "Apple Store",
-          "korean",
-          "japanese"
+          "Microsoft",
+          "AMD",
+          "gpu"
         ]
-      },
-      {
-        "topic_id": 1,
-        "label": "openai / 竊取商業機密 / 怒告 / 合作的傳奇設計師",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 2,
-        "entities": []
       }
     ],
     "named_entities": [
       {
-        "entity": "伺服器",
-        "count": 2
+        "entity": "德國",
+        "count": 3
       },
       {
         "entity": "AI",
+        "count": 3
+      },
+      {
+        "entity": "Microsoft",
+        "count": 2
+      },
+      {
+        "entity": "AMD",
+        "count": 2
+      },
+      {
+        "entity": "gpu",
+        "count": 2
+      },
+      {
+        "entity": "YoY",
+        "count": 2
+      },
+      {
+        "entity": "Helios",
         "count": 1
       },
       {
-        "entity": "Apple Store",
+        "entity": "AMD Helios",
         "count": 1
       },
       {
-        "entity": "korean",
+        "entity": "GPU",
         "count": 1
       },
       {
-        "entity": "japanese",
+        "entity": "CPU",
         "count": 1
       },
       {
-        "entity": "DRAM",
+        "entity": "MIIT",
         "count": 1
       },
       {
-        "entity": "HBM",
+        "entity": "China",
         "count": 1
       },
       {
-        "entity": "dram  hbm",
+        "entity": "BYD Blade",
         "count": 1
       },
       {
-        "entity": "dram hbm  polyglot",
+        "entity": "QC",
         "count": 1
       },
       {
-        "entity": "mandarin korean",
-        "count": 1
-      },
-      {
-        "entity": "費半",
-        "count": 1
-      },
-      {
-        "entity": "台積電",
-        "count": 1
-      },
-      {
-        "entity": "伊朗",
-        "count": 1
-      },
-      {
-        "entity": "美軍",
-        "count": 1
-      },
-      {
-        "entity": "霍文",
+        "entity": "H        YoY",
         "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-20T07:54:09.322974+00:00",
-        "bucket_end": "2026-07-20T07:58:26.465831+00:00",
+        "bucket_start": "2026-07-20T22:02:56.000002+08:00",
+        "bucket_end": "2026-07-20T22:07:13.142859+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-20T22:07:13.142859+08:00",
+        "bucket_end": "2026-07-20T22:11:30.285716+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-20T07:58:26.465831+00:00",
-        "bucket_end": "2026-07-20T08:02:43.608688+00:00",
+        "bucket_start": "2026-07-20T22:11:30.285716+08:00",
+        "bucket_end": "2026-07-20T22:15:47.428573+08:00",
         "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-20T08:02:43.608688+00:00",
-        "bucket_end": "2026-07-20T08:07:00.751545+00:00",
+        "bucket_start": "2026-07-20T22:15:47.428573+08:00",
+        "bucket_end": "2026-07-20T22:20:04.571430+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T22:20:04.571430+08:00",
+        "bucket_end": "2026-07-20T22:24:21.714287+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T22:24:21.714287+08:00",
+        "bucket_end": "2026-07-20T22:28:38.857144+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T22:28:38.857144+08:00",
+        "bucket_end": "2026-07-20T22:32:56.000001+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T22:32:56.000001+08:00",
+        "bucket_end": "2026-07-20T22:37:13.142858+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T22:37:13.142858+08:00",
+        "bucket_end": "2026-07-20T22:41:30.285715+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-20T22:41:30.285715+08:00",
+        "bucket_end": "2026-07-20T22:45:47.428572+08:00",
         "positive": 1,
         "neutral": 0,
-        "negative": 1
+        "negative": 0
       },
       {
-        "bucket_start": "2026-07-20T08:07:00.751545+00:00",
-        "bucket_end": "2026-07-20T08:11:17.894402+00:00",
+        "bucket_start": "2026-07-20T22:45:47.428572+08:00",
+        "bucket_end": "2026-07-20T22:50:04.571429+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-20T08:11:17.894402+00:00",
-        "bucket_end": "2026-07-20T08:15:35.037259+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T08:15:35.037259+00:00",
-        "bucket_end": "2026-07-20T08:19:52.180116+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T08:19:52.180116+00:00",
-        "bucket_end": "2026-07-20T08:24:09.322973+00:00",
+        "bucket_start": "2026-07-20T22:50:04.571429+08:00",
+        "bucket_end": "2026-07-20T22:54:21.714286+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-20T08:24:09.322973+00:00",
-        "bucket_end": "2026-07-20T08:28:26.465830+00:00",
+        "bucket_start": "2026-07-20T22:54:21.714286+08:00",
+        "bucket_end": "2026-07-20T22:58:38.857143+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-20T08:28:26.465830+00:00",
-        "bucket_end": "2026-07-20T08:32:43.608687+00:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T08:32:43.608687+00:00",
-        "bucket_end": "2026-07-20T08:37:00.751544+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T08:37:00.751544+00:00",
-        "bucket_end": "2026-07-20T08:41:17.894401+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T08:41:17.894401+00:00",
-        "bucket_end": "2026-07-20T08:45:35.037258+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-20T08:45:35.037258+00:00",
-        "bucket_end": "2026-07-20T08:49:52.180115+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T08:49:52.180115+00:00",
-        "bucket_end": "2026-07-20T08:54:09.322972+00:00",
-        "positive": 0,
+        "bucket_start": "2026-07-20T22:58:38.857143+08:00",
+        "bucket_end": "2026-07-20T23:02:56+08:00",
+        "positive": 1,
         "neutral": 0,
         "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "QQ_Timmy",
+        "handle": "technews_tw",
         "top_topic_id": 0,
-        "top_topic_label": "ai / 觀望成本正持續攀升 / 再不買只會更貴 / apple",
+        "top_topic_label": "buildout / battery / ai",
         "focus_share": 1.0,
         "post_count": 1
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 0,
+        "top_topic_label": "buildout / battery / ai",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "tphuang",
+        "top_topic_id": 0,
+        "top_topic_label": "buildout / battery / ai",
+        "focus_share": 1.0,
+        "post_count": 2
       },
       {
         "handle": "tengyanAI",
         "top_topic_id": 0,
-        "top_topic_label": "ai / 觀望成本正持續攀升 / 再不買只會更貴 / apple",
+        "top_topic_label": "buildout / battery / ai",
         "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / 觀望成本正持續攀升 / 再不買只會更貴 / apple",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "technewsinside",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / 觀望成本正持續攀升 / 再不買只會更貴 / apple",
-        "focus_share": 0.75,
-        "post_count": 4
-      },
-      {
-        "handle": "technews_tw",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / 觀望成本正持續攀升 / 再不買只會更貴 / apple",
-        "focus_share": 0.667,
-        "post_count": 3
+        "post_count": 2
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 0,
-        "label": "ai / 觀望成本正持續攀升 / 再不買只會更貴 / apple",
-        "total_engagement": 72,
-        "post_count": 8
-      },
-      {
-        "topic_id": 1,
-        "label": "openai / 竊取商業機密 / 怒告 / 合作的傳奇設計師",
-        "total_engagement": 2,
-        "post_count": 2
+        "label": "buildout / battery / ai",
+        "total_engagement": 87,
+        "post_count": 6
       }
     ],
     "posting_timeslot_analysis": {
@@ -280,16 +259,16 @@
           "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 10,
-          "likes": 68,
-          "engagement": 74,
-          "avg_engagement": 7.4
-        },
-        "evening": {
           "post_count": 0,
           "likes": 0,
           "engagement": 0,
           "avg_engagement": 0.0
+        },
+        "evening": {
+          "post_count": 6,
+          "likes": 69,
+          "engagement": 87,
+          "avg_engagement": 14.5
         },
         "late_night": {
           "post_count": 0,
@@ -298,7 +277,7 @@
           "avg_engagement": 0.0
         }
       },
-      "peak_slot": "afternoon"
+      "peak_slot": "evening"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,
