@@ -1,37 +1,77 @@
 {
   "clusters": [
     {
-      "id": 0,
-      "label": "ai / trendforce / dram / memory",
-      "size": 21,
+      "id": 4,
+      "label": "ai / nvidia / memory / spacex",
+      "size": 13,
       "accounts": {
-        "TrendForce": 3,
-        "technews_tw": 1,
-        "SemiAnalysis_": 5,
-        "QQ_Timmy": 1,
-        "tphuang": 7,
-        "tengyanAI": 2,
-        "technewsinside": 1,
+        "TrendForce": 1,
+        "SemiAnalysis_": 3,
+        "tphuang": 1,
+        "ctee.fans": 8
+      },
+      "engagement_by_account": {
+        "TrendForce": 0,
+        "SemiAnalysis_": 87,
+        "tphuang": 12,
+        "ctee.fans": 170
+      }
+    },
+    {
+      "id": 1,
+      "label": "deepseek / ai / kimi / inference",
+      "size": 1,
+      "accounts": {
+        "tphuang": 1
+      },
+      "engagement_by_account": {
+        "tphuang": 3
+      }
+    },
+    {
+      "id": 5,
+      "label": "名家評論 / ai / 針對 / 人工智慧",
+      "size": 1,
+      "accounts": {
         "ctee.fans": 1
       },
       "engagement_by_account": {
-        "TrendForce": 18,
-        "technews_tw": 0,
-        "SemiAnalysis_": 804,
-        "QQ_Timmy": 28,
-        "tphuang": 163,
-        "tengyanAI": 29,
-        "technewsinside": 15,
-        "ctee.fans": 14
+        "ctee.fans": 0
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 4,
+      "label": "ai / nvidia / memory / spacex",
+      "own_count": 1,
+      "competitor_count": 12,
+      "competitor_engagement": 269,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "tphuang",
+        "ctee.fans"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 4,
+      "label": "ai / nvidia / memory / spacex",
+      "own_count": 1,
+      "competitor_count": 12,
+      "competitor_engagement": 269,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "tphuang",
+        "ctee.fans"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-20T21:46:15+08:00",
-    "end_utc": "2026-07-21T05:46:15+08:00",
-    "start_tw": "Jul 20, 21:46",
-    "end_tw": "Jul 21, 05:46"
+    "start_utc": "2026-07-20T18:30:32.546682+00:00",
+    "end_utc": "2026-07-21T02:30:32.546682+00:00",
+    "start_tw": "Jul 21, 02:30",
+    "end_tw": "Jul 21, 10:30"
   }
 }

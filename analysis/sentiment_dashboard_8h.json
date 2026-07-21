@@ -1,313 +1,269 @@
 {
-  "generated_at": "2026-07-21T05:46:15+08:00",
+  "generated_at": "2026-07-21T02:30:32.546682+00:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-20T21:46:15+08:00",
-    "end_utc": "2026-07-21T05:46:15+08:00",
-    "start_tw": "Jul 20, 21:46",
-    "end_tw": "Jul 21, 05:46"
+    "start_utc": "2026-07-20T18:30:32.546682+00:00",
+    "end_utc": "2026-07-21T02:30:32.546682+00:00",
+    "start_tw": "Jul 21, 02:30",
+    "end_tw": "Jul 21, 10:30"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 21,
+      "total_posts": 15,
       "sentiment_counts": {
-        "positive": 12,
-        "negative": 6,
-        "neutral": 3
+        "positive": 7,
+        "negative": 3,
+        "neutral": 5
       },
       "sentiment_share": {
-        "positive": 0.571,
-        "negative": 0.286,
-        "neutral": 0.143
+        "positive": 0.467,
+        "negative": 0.2,
+        "neutral": 0.333
       },
       "top_terms": [
         "amd",
-        "capacity",
-        "battery",
-        "buildout",
-        "datatrack",
-        "rack",
-        "dram",
-        "makers",
-        "node",
-        "supply"
+        "gating",
+        "leadership",
+        "parity",
+        "短線",
+        "資人",
+        "槓桿",
+        "投資人",
+        "已接",
+        "接近"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 0,
-        "label": "ai / arena / 年起受德國憲法保護的 / 週日休息日",
+        "label": "cluster-0",
         "heat": 90.0,
-        "volume": 11,
-        "engagement": 837,
+        "volume": 10,
+        "engagement": 182,
         "entities": [
-          "德國",
-          "node",
-          "DDR",
-          "DRAM",
-          "Intel"
-        ]
-      },
-      {
-        "topic_id": 1,
-        "label": "battery / buildout / capacity / yr",
-        "heat": 17.1,
-        "volume": 4,
-        "engagement": 117,
-        "entities": [
-          "YoY",
-          "Yagen",
-          "Battery ESS",
-          "MIIT",
-          "China"
-        ]
-      },
-      {
-        "topic_id": 3,
-        "label": "amd / gating / leadership / parity",
-        "heat": 17.0,
-        "volume": 4,
-        "engagement": 115,
-        "entities": [
-          "AMD",
-          "Microsoft",
-          "AI",
-          "gpu",
-          "CI"
+          "中國",
+          "加拿大",
+          "白宮",
+          "台灣",
+          "French"
         ]
       },
       {
         "topic_id": 2,
-        "label": "datatrack / rack",
+        "label": "amd / gating / leadership / parity",
+        "heat": 18.9,
+        "volume": 3,
+        "engagement": 87,
+        "entities": [
+          "AMD",
+          "CI",
+          "CUDA"
+        ]
+      },
+      {
+        "topic_id": 1,
+        "label": "ai",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 2,
+        "engagement": 3,
         "entities": [
-          "DataTrack",
-          "French",
-          "France Germany",
-          "https    ",
-          "buff"
+          "China",
+          "DeepSeek",
+          "china",
+          "華爾街",
+          "瑞銀"
         ]
       }
     ],
     "named_entities": [
       {
         "entity": "AMD",
-        "count": 6
-      },
-      {
-        "entity": "德國",
         "count": 4
       },
       {
-        "entity": "AI",
-        "count": 4
-      },
-      {
-        "entity": "node",
+        "entity": "中國",
         "count": 3
       },
       {
-        "entity": "DDR",
+        "entity": "加拿大",
         "count": 3
       },
       {
         "entity": "China",
-        "count": 3
+        "count": 2
+      },
+      {
+        "entity": "白宮",
+        "count": 2
+      },
+      {
+        "entity": "台灣",
+        "count": 2
+      },
+      {
+        "entity": "French",
+        "count": 1
+      },
+      {
+        "entity": "France Germany",
+        "count": 1
+      },
+      {
+        "entity": "https    ",
+        "count": 1
+      },
+      {
+        "entity": "buff",
+        "count": 1
+      },
+      {
+        "entity": "KvDG Ml",
+        "count": 1
       },
       {
         "entity": "DataTrack",
-        "count": 2
+        "count": 1
       },
       {
-        "entity": "DRAM",
-        "count": 2
+        "entity": "germany",
+        "count": 1
       },
       {
-        "entity": "Intel",
-        "count": 2
+        "entity": "french",
+        "count": 1
       },
       {
-        "entity": "Chinese",
-        "count": 2
-      },
-      {
-        "entity": "EUV",
-        "count": 2
-      },
-      {
-        "entity": "chinese",
-        "count": 2
-      },
-      {
-        "entity": "Microsoft",
-        "count": 2
-      },
-      {
-        "entity": "gpu",
-        "count": 2
-      },
-      {
-        "entity": "Qwen",
-        "count": 2
+        "entity": "france",
+        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-20T21:46:15.000002+08:00",
-        "bucket_end": "2026-07-20T22:20:32.142859+08:00",
-        "positive": 1,
-        "neutral": 1,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-20T22:20:32.142859+08:00",
-        "bucket_end": "2026-07-20T22:54:49.285716+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-20T22:54:49.285716+08:00",
-        "bucket_end": "2026-07-20T23:29:06.428573+08:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T23:29:06.428573+08:00",
-        "bucket_end": "2026-07-21T00:03:23.571430+08:00",
+        "bucket_start": "2026-07-20T18:30:32.546684+00:00",
+        "bucket_end": "2026-07-20T19:04:49.689541+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T00:03:23.571430+08:00",
-        "bucket_end": "2026-07-21T00:37:40.714287+08:00",
+        "bucket_start": "2026-07-20T19:04:49.689541+00:00",
+        "bucket_end": "2026-07-20T19:39:06.832398+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T00:37:40.714287+08:00",
-        "bucket_end": "2026-07-21T01:11:57.857144+08:00",
-        "positive": 1,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T01:11:57.857144+08:00",
-        "bucket_end": "2026-07-21T01:46:15.000001+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T01:46:15.000001+08:00",
-        "bucket_end": "2026-07-21T02:20:32.142858+08:00",
-        "positive": 3,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-21T02:20:32.142858+08:00",
-        "bucket_end": "2026-07-21T02:54:49.285715+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T02:54:49.285715+08:00",
-        "bucket_end": "2026-07-21T03:29:06.428572+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T03:29:06.428572+08:00",
-        "bucket_end": "2026-07-21T04:03:23.571429+08:00",
+        "bucket_start": "2026-07-20T19:39:06.832398+00:00",
+        "bucket_end": "2026-07-20T20:13:23.975255+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T04:03:23.571429+08:00",
-        "bucket_end": "2026-07-21T04:37:40.714286+08:00",
+        "bucket_start": "2026-07-20T20:13:23.975255+00:00",
+        "bucket_end": "2026-07-20T20:47:41.118112+00:00",
         "positive": 2,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-21T04:37:40.714286+08:00",
-        "bucket_end": "2026-07-21T05:11:57.857143+08:00",
+        "bucket_start": "2026-07-20T20:47:41.118112+00:00",
+        "bucket_end": "2026-07-20T21:21:58.260969+00:00",
         "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T05:11:57.857143+08:00",
-        "bucket_end": "2026-07-21T05:46:15+08:00",
+        "bucket_start": "2026-07-20T21:21:58.260969+00:00",
+        "bucket_end": "2026-07-20T21:56:15.403826+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T21:56:15.403826+00:00",
+        "bucket_end": "2026-07-20T22:30:32.546683+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T22:30:32.546683+00:00",
+        "bucket_end": "2026-07-20T23:04:49.689540+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T23:04:49.689540+00:00",
+        "bucket_end": "2026-07-20T23:39:06.832397+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T23:39:06.832397+00:00",
+        "bucket_end": "2026-07-21T00:13:23.975254+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-21T00:13:23.975254+00:00",
+        "bucket_end": "2026-07-21T00:47:41.118111+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-21T00:47:41.118111+00:00",
+        "bucket_end": "2026-07-21T01:21:58.260968+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-21T01:21:58.260968+00:00",
+        "bucket_end": "2026-07-21T01:56:15.403825+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-21T01:56:15.403825+00:00",
+        "bucket_end": "2026-07-21T02:30:32.546682+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "technews_tw",
+        "handle": "TrendForce",
         "top_topic_id": 0,
-        "top_topic_label": "ai / arena / 年起受德國憲法保護的 / 週日休息日",
+        "top_topic_label": "cluster-0",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "technewsinside",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / arena / 年起受德國憲法保護的 / 週日休息日",
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 2,
+        "top_topic_label": "amd / gating / leadership / parity",
         "focus_share": 1.0,
-        "post_count": 1
+        "post_count": 3
       },
       {
         "handle": "ctee.fans",
         "top_topic_id": 0,
-        "top_topic_label": "ai / arena / 年起受德國憲法保護的 / 週日休息日",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 3,
-        "top_topic_label": "amd / gating / leadership / parity",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "TrendForce",
-        "top_topic_id": 2,
-        "top_topic_label": "datatrack / rack",
-        "focus_share": 0.667,
-        "post_count": 3
-      },
-      {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 3,
-        "top_topic_label": "amd / gating / leadership / parity",
-        "focus_share": 0.6,
-        "post_count": 5
+        "top_topic_label": "cluster-0",
+        "focus_share": 0.889,
+        "post_count": 9
       },
       {
         "handle": "tphuang",
         "top_topic_id": 0,
-        "top_topic_label": "ai / arena / 年起受德國憲法保護的 / 週日休息日",
-        "focus_share": 0.571,
-        "post_count": 7
-      },
-      {
-        "handle": "tengyanAI",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / arena / 年起受德國憲法保護的 / 週日休息日",
+        "top_topic_label": "cluster-0",
         "focus_share": 0.5,
         "post_count": 2
       }
@@ -315,36 +271,30 @@
     "top_engagement_ranking": [
       {
         "topic_id": 0,
-        "label": "ai / arena / 年起受德國憲法保護的 / 週日休息日",
-        "total_engagement": 837,
-        "post_count": 11
-      },
-      {
-        "topic_id": 1,
-        "label": "battery / buildout / capacity / yr",
-        "total_engagement": 117,
-        "post_count": 4
-      },
-      {
-        "topic_id": 3,
-        "label": "amd / gating / leadership / parity",
-        "total_engagement": 115,
-        "post_count": 4
+        "label": "cluster-0",
+        "total_engagement": 182,
+        "post_count": 10
       },
       {
         "topic_id": 2,
-        "label": "datatrack / rack",
-        "total_engagement": 2,
+        "label": "amd / gating / leadership / parity",
+        "total_engagement": 87,
+        "post_count": 3
+      },
+      {
+        "topic_id": 1,
+        "label": "ai",
+        "total_engagement": 3,
         "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 9,
+          "likes": 170,
+          "engagement": 170,
+          "avg_engagement": 18.9
         },
         "afternoon": {
           "post_count": 0,
@@ -353,19 +303,19 @@
           "avg_engagement": 0.0
         },
         "evening": {
-          "post_count": 9,
-          "likes": 168,
-          "engagement": 205,
-          "avg_engagement": 22.8
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         },
         "late_night": {
-          "post_count": 12,
-          "likes": 719,
-          "engagement": 866,
-          "avg_engagement": 72.2
+          "post_count": 6,
+          "likes": 92,
+          "engagement": 102,
+          "avg_engagement": 17.0
         }
       },
-      "peak_slot": "late_night"
+      "peak_slot": "morning"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,
