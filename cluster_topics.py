@@ -63,6 +63,7 @@ from time_ranges import RANGE_HOURS, RANGE_ORDER, MIN_WINDOW_POSTS, parse_ts, wi
 BASE = os.path.dirname(__file__)
 CSV_DIR = os.path.join(BASE, 'csv')
 FACEBOOK_CSV_DIR = os.path.join(CSV_DIR, 'facebook')
+LINKEDIN_CSV_DIR = os.path.join(CSV_DIR, 'linkedin')
 OUT_FILE = os.path.join(BASE, 'analysis', 'topic_clusters.json')
 LEGACY_RANGE = '1q'  # analysis/topic_clusters.json mirrors this range
 
@@ -79,10 +80,12 @@ ACCOUNTS_CONFIG_PATH = os.path.join(BASE, 'accounts_config.json')
 _DEFAULT_OWN = {
     'X': ['TrendForce'],
     'Facebook': ['TrendForce.tw'],
+    'LinkedIn': ['TrendForce'],
 }
 _DEFAULT_COMPETITORS = {
     'X': ['dylan522p', 'SemiAnalysis_', 'jukan05', 'QQ_Timmy', 'technews_tw'],
     'Facebook': ['ctee.fans', 'yutinghaosfinance'],
+    'LinkedIn': [],
 }
 
 
@@ -105,6 +108,11 @@ PLATFORM_ACCOUNTS = {
         'dir': FACEBOOK_CSV_DIR,
         'own': _competitors_cfg.get('Facebook', {}).get('own', _DEFAULT_OWN['Facebook']),
         'competitors': _competitors_cfg.get('Facebook', {}).get('competitors', _DEFAULT_COMPETITORS['Facebook']),
+    },
+    'LinkedIn': {
+        'dir': LINKEDIN_CSV_DIR,
+        'own': _competitors_cfg.get('LinkedIn', {}).get('own', _DEFAULT_OWN['LinkedIn']),
+        'competitors': _competitors_cfg.get('LinkedIn', {}).get('competitors', _DEFAULT_COMPETITORS['LinkedIn']),
     },
 }
 OWN_HANDLES = {h for p in PLATFORM_ACCOUNTS.values() for h in p['own']}
@@ -307,6 +315,32 @@ def load_facebook_posts(handle, path):
     return posts
 
 
+def load_linkedin_posts(handle, path):
+    posts = []
+    with open(path, newline='', encoding='utf-8') as f:
+        for row in csv.DictReader(f):
+            doc = clean_text(row.get('text', ''))
+            if doc:
+                posts.append({
+                    'handle': handle,
+                    'platform': 'LinkedIn',
+                    'text': doc,
+                    'timestamp': row.get('timestamp'),
+                    'url': row.get('postUrl') or '',
+                    'likes': parse_count(row.get('likes')),
+                    'replies': parse_count(row.get('comments')),
+                    'interaction': parse_count(row.get('likes')) + parse_count(row.get('comments')),
+                })
+    return posts
+
+
+LOADERS = {
+    'X': load_x_posts,
+    'Facebook': load_facebook_posts,
+    'LinkedIn': load_linkedin_posts,
+}
+
+
 def load_posts():
     """NFR-02 requires deduplication after collection. Nothing upstream
     guarantees it: sync_data.sh re-copies whole CSVs (a scraper re-run with
@@ -315,7 +349,7 @@ def load_posts():
     posts = []
     seen = set()
     for platform, cfg in PLATFORM_ACCOUNTS.items():
-        loader = load_x_posts if platform == 'X' else load_facebook_posts
+        loader = LOADERS[platform]
         for handle in cfg['own'] + cfg['competitors']:
             path = os.path.join(cfg['dir'], f'{handle}.csv')
             if not os.path.exists(path):

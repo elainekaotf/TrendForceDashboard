@@ -45,6 +45,7 @@ trap 'rmdir "$LOCKDIR" 2>/dev/null' EXIT
 
 TWITTER_SRC=/Users/elainekao/TrendforceTwitterScraper
 FACEBOOK_SRC=/Users/elainekao/TrendforceFacebookScraper
+LINKEDIN_SRC=/Users/elainekao/TrendforceLinkedinScraper
 
 # Pulled from cluster_topics.PLATFORM_ACCOUNTS (own + competitors merged,
 # accounts_config.json included) rather than hardcoded here - a hardcoded
@@ -53,6 +54,7 @@ FACEBOOK_SRC=/Users/elainekao/TrendforceFacebookScraper
 # this repo's own csv/: this file's list just didn't know they existed.
 X_HANDLES=($(python3 -c "from cluster_topics import PLATFORM_ACCOUNTS as P; print(' '.join(P['X']['own'] + P['X']['competitors']))"))
 FB_HANDLES=($(python3 -c "from cluster_topics import PLATFORM_ACCOUNTS as P; print(' '.join(P['Facebook']['own'] + P['Facebook']['competitors']))"))
+LI_HANDLES=($(python3 -c "from cluster_topics import PLATFORM_ACCOUNTS as P; print(' '.join(P['LinkedIn']['own'] + P['LinkedIn']['competitors']))"))
 
 synced=0
 missing=0
@@ -98,6 +100,23 @@ for h in "${FB_HANDLES[@]}"; do
     synced=$((synced + 1))
   else
     echo "[WARN] sync_data: no dated CSV found for Facebook handle $h in $FACEBOOK_SRC/csv"
+    missing=$((missing + 1))
+  fi
+done
+
+mkdir -p csv/linkedin
+for h in "${LI_HANDLES[@]}"; do
+  # Same one-file-per-handle shape as X's scraper (scrape_accounts_linkedin.js
+  # keeps writing csv/<handle>.csv in place, not dated files like Facebook's),
+  # so the same tmp+mv atomic-copy pattern as the X loop above applies here.
+  src="$LINKEDIN_SRC/csv/$h.csv"
+  if [ -f "$src" ]; then
+    tmp="csv/linkedin/$h.csv.tmp.$$"
+    cp "$src" "$tmp"
+    mv "$tmp" "csv/linkedin/$h.csv"
+    synced=$((synced + 1))
+  else
+    echo "[WARN] sync_data: missing $src"
     missing=$((missing + 1))
   fi
 done

@@ -169,7 +169,23 @@ def account_profile_url(platform, handle):
         return f'https://x.com/{handle}'
     if platform == 'Facebook':
         return f'https://www.facebook.com/{handle}'
+    if platform == 'LinkedIn':
+        # Unlike X/Facebook, LinkedIn's own scraper (scrape_accounts_linkedin.js)
+        # tracks accounts by a company-page URL slug that isn't the same
+        # string as the display handle stored here (e.g. handle "TrendForce"
+        # -> slug "trendforce-corporation") - accounts_config.json only has
+        # the handle, so resolve via the same small ACCOUNTS map the scraper
+        # itself uses rather than guessing a URL from the handle directly.
+        slug = LINKEDIN_HANDLE_TO_SLUG.get(handle)
+        return f'https://www.linkedin.com/company/{slug}/' if slug else None
     return None
+
+
+# Mirrors the ACCOUNTS list in TrendforceLinkedinScraper/scrape_accounts_linkedin.js -
+# add an entry here whenever a LinkedIn company page is added there.
+LINKEDIN_HANDLE_TO_SLUG = {
+    'TrendForce': 'trendforce-corporation',
+}
 
 
 def panel(body_html, title=None, eyebrow=None):
@@ -408,6 +424,7 @@ def render_accounts(data):
         <select id="add-account-platform">
           <option value="X">X (Twitter)</option>
           <option value="Facebook">Facebook</option>
+          <option value="LinkedIn">LinkedIn</option>
         </select>
       </label>
       <label>Handle
