@@ -1,84 +1,149 @@
 {
-  "generated_at": "2026-07-21T03:15:00+00:00",
+  "generated_at": "2026-07-21T04:45:00+00:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-20T23:15:00+00:00",
-    "end_utc": "2026-07-21T03:15:00+00:00",
-    "start_tw": "Jul 21, 07:15",
-    "end_tw": "Jul 21, 11:15"
+    "start_utc": "2026-07-21T00:45:00+00:00",
+    "end_utc": "2026-07-21T04:45:00+00:00",
+    "start_tw": "Jul 21, 08:45",
+    "end_tw": "Jul 21, 12:45"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 25,
+      "total_posts": 54,
       "sentiment_counts": {
-        "neutral": 10,
-        "positive": 8,
-        "negative": 7
+        "positive": 19,
+        "neutral": 18,
+        "negative": 17
       },
       "sentiment_share": {
-        "neutral": 0.4,
-        "positive": 0.32,
-        "negative": 0.28
+        "positive": 0.352,
+        "neutral": 0.333,
+        "negative": 0.315
       },
       "top_terms": [
-        "槓桿",
-        "外資",
-        "封裝",
-        "供應",
-        "法人",
-        "動能",
         "台積",
         "積電",
         "台積電",
-        "斷頭"
+        "槓桿",
+        "動能",
+        "輝達",
+        "晶片",
+        "打造",
+        "etf",
+        "國巨"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "cluster-0",
+        "topic_id": 1,
+        "label": "台積電 / etf / 國巨腰斬拖累主動式etf大跌 / gw",
         "heat": 90.0,
-        "volume": 16,
-        "engagement": 1257,
-        "entities": [
-          "中國",
-          "加拿大",
-          "美國",
-          "川普",
-          "韓國"
-        ]
-      },
-      {
-        "topic_id": 3,
-        "label": "台積電",
-        "heat": 11.1,
-        "volume": 2,
-        "engagement": 27,
+        "volume": 32,
+        "engagement": 1223,
         "entities": [
           "台積電",
-          "神山",
-          "美國"
+          "美國",
+          "川普",
+          "中國",
+          "清華大學"
         ]
       },
       {
         "topic_id": 2,
-        "label": "ai / 矽光子 / cpo",
-        "heat": 10.3,
-        "volume": 4,
-        "engagement": 12,
+        "label": "ai / momentum",
+        "heat": 13.0,
+        "volume": 6,
+        "engagement": 55,
         "entities": [
-          "輝達",
-          "微軟",
-          "修正",
-          "華爾街",
-          "瑞銀"
+          "CHINA S MINISTRY OF COMMERCE HAS DISCUSSED",
+          "china",
+          "AI",
+          "三星",
+          "波士"
         ]
       },
       {
-        "topic_id": 1,
-        "label": "除了融資維持率已接近 / 較有可能同步衍生多殺多賣壓 / 警戒線的個股斷頭壓力較大之外 / 補西牆",
-        "heat": 10.3,
+        "topic_id": 3,
+        "label": "tsmc",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 15,
+        "entities": [
+          "Nvidia Pauses",
+          "TSMC s COUPE Technology  Source Says  News Source   https    ",
+          "Qualcomm",
+          "TSMC",
+          "Huawei"
+        ]
+      },
+      {
+        "topic_id": 6,
+        "label": "億美元打造專屬 / 年砸下最高 / 不只賣晶片 / 暗光纖",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 5,
+        "entities": [
+          "輝達",
+          "全美"
+        ]
+      },
+      {
+        "topic_id": 0,
+        "label": "iphone / 首款雙電池 / 對應傳聞中的 / 系統支援",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 1,
+        "entities": []
+      },
+      {
+        "topic_id": 5,
+        "label": "算力飆升帶動零組件革命 / mlcc / 矽電容憑藉低電感與貼近晶片特點 / 成高密度封裝電源穩定的新寵",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 1,
+        "entities": []
+      },
+      {
+        "topic_id": 4,
+        "label": "件關鍵機密赴中國發展藍海計劃 / 台積電副理涉關鍵技術意圖外流中國",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 159,
+        "entities": [
+          "中國",
+          "台積電",
+          "藍海",
+          "台灣",
+          "丁男"
+        ]
+      },
+      {
+        "topic_id": 7,
+        "label": "馬斯克 / 震撼宣布 / 將在完成安全審查後全面開源整個程式碼庫 / 更將邀請第三方核實以展現最高透明度",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 21,
+        "entities": [
+          "馬斯克"
+        ]
+      },
+      {
+        "topic_id": 8,
+        "label": "memory",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 179,
+        "entities": [
+          "Xiaomi",
+          "Chinese",
+          "chinese"
+        ]
+      },
+      {
+        "topic_id": 9,
+        "label": "市場面臨短線急跌走勢 / 補西牆 / 除了融資維持率已接近 / 加上部分投資人先前藉由融資進行槓桿操作",
+        "heat": 10.0,
         "volume": 2,
         "engagement": 12,
         "entities": [
@@ -86,250 +151,296 @@
           "湯麒國",
           "藉由"
         ]
-      },
-      {
-        "topic_id": 4,
-        "label": "矽光子 / cpo",
-        "heat": 10.0,
-        "volume": 1,
-        "engagement": 8,
-        "entities": [
-          "中國",
-          "台灣",
-          "新一波"
-        ]
       }
     ],
     "named_entities": [
       {
+        "entity": "台積電",
+        "count": 16
+      },
+      {
         "entity": "中國",
-        "count": 6
+        "count": 13
       },
       {
         "entity": "美國",
-        "count": 3
-      },
-      {
-        "entity": "台積電",
-        "count": 3
-      },
-      {
-        "entity": "加拿大",
-        "count": 3
+        "count": 7
       },
       {
         "entity": "川普",
-        "count": 2
-      },
-      {
-        "entity": "韓國",
-        "count": 2
-      },
-      {
-        "entity": "馬斯克",
-        "count": 2
-      },
-      {
-        "entity": "玉山",
-        "count": 2
-      },
-      {
-        "entity": "湯麒國",
-        "count": 2
-      },
-      {
-        "entity": "藉由",
-        "count": 2
-      },
-      {
-        "entity": "白宮",
-        "count": 2
-      },
-      {
-        "entity": "台灣",
-        "count": 2
-      },
-      {
-        "entity": "俄羅斯",
-        "count": 1
-      },
-      {
-        "entity": "單一標",
-        "count": 1
+        "count": 5
       },
       {
         "entity": "輝達",
-        "count": 1
+        "count": 4
+      },
+      {
+        "entity": "清華大學",
+        "count": 4
+      },
+      {
+        "entity": "古柏",
+        "count": 4
+      },
+      {
+        "entity": "單一標",
+        "count": 4
+      },
+      {
+        "entity": "神山",
+        "count": 4
+      },
+      {
+        "entity": "馬斯克",
+        "count": 4
+      },
+      {
+        "entity": "全美",
+        "count": 3
+      },
+      {
+        "entity": "沙丘",
+        "count": 3
+      },
+      {
+        "entity": "拉基斯",
+        "count": 3
+      },
+      {
+        "entity": "太陽",
+        "count": 3
+      },
+      {
+        "entity": "歐元",
+        "count": 3
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-20T23:14:59.999994+00:00",
-        "bucket_end": "2026-07-20T23:32:08.571423+00:00",
-        "positive": 0,
+        "bucket_start": "2026-07-21T00:44:59.999994+00:00",
+        "bucket_end": "2026-07-21T01:02:08.571423+00:00",
+        "positive": 1,
         "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-21T01:02:08.571423+00:00",
+        "bucket_end": "2026-07-21T01:19:17.142852+00:00",
+        "positive": 1,
+        "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-20T23:32:08.571423+00:00",
-        "bucket_end": "2026-07-20T23:49:17.142852+00:00",
+        "bucket_start": "2026-07-21T01:19:17.142852+00:00",
+        "bucket_end": "2026-07-21T01:36:25.714281+00:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 3
+      },
+      {
+        "bucket_start": "2026-07-21T01:36:25.714281+00:00",
+        "bucket_end": "2026-07-21T01:53:34.285710+00:00",
         "positive": 0,
         "neutral": 3,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-20T23:49:17.142852+00:00",
-        "bucket_end": "2026-07-21T00:06:25.714281+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T00:06:25.714281+00:00",
-        "bucket_end": "2026-07-21T00:23:34.285710+00:00",
+        "bucket_start": "2026-07-21T01:53:34.285710+00:00",
+        "bucket_end": "2026-07-21T02:10:42.857139+00:00",
         "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T00:23:34.285710+00:00",
-        "bucket_end": "2026-07-21T00:40:42.857139+00:00",
-        "positive": 1,
         "neutral": 2,
-        "negative": 1
+        "negative": 3
       },
       {
-        "bucket_start": "2026-07-21T00:40:42.857139+00:00",
-        "bucket_end": "2026-07-21T00:57:51.428568+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T00:57:51.428568+00:00",
-        "bucket_end": "2026-07-21T01:14:59.999997+00:00",
+        "bucket_start": "2026-07-21T02:10:42.857139+00:00",
+        "bucket_end": "2026-07-21T02:27:51.428568+00:00",
         "positive": 1,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-21T01:14:59.999997+00:00",
-        "bucket_end": "2026-07-21T01:32:08.571426+00:00",
-        "positive": 0,
         "neutral": 1,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-21T01:32:08.571426+00:00",
-        "bucket_end": "2026-07-21T01:49:17.142855+00:00",
-        "positive": 0,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T01:49:17.142855+00:00",
-        "bucket_end": "2026-07-21T02:06:25.714284+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-21T02:06:25.714284+00:00",
-        "bucket_end": "2026-07-21T02:23:34.285713+00:00",
-        "positive": 1,
+        "bucket_start": "2026-07-21T02:27:51.428568+00:00",
+        "bucket_end": "2026-07-21T02:44:59.999997+00:00",
+        "positive": 4,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T02:23:34.285713+00:00",
-        "bucket_end": "2026-07-21T02:40:42.857142+00:00",
+        "bucket_start": "2026-07-21T02:44:59.999997+00:00",
+        "bucket_end": "2026-07-21T03:02:08.571426+00:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 4
+      },
+      {
+        "bucket_start": "2026-07-21T03:02:08.571426+00:00",
+        "bucket_end": "2026-07-21T03:19:17.142855+00:00",
+        "positive": 1,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-21T03:19:17.142855+00:00",
+        "bucket_end": "2026-07-21T03:36:25.714284+00:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-21T03:36:25.714284+00:00",
+        "bucket_end": "2026-07-21T03:53:34.285713+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-21T03:53:34.285713+00:00",
+        "bucket_end": "2026-07-21T04:10:42.857142+00:00",
+        "positive": 1,
+        "neutral": 2,
+        "negative": 3
+      },
+      {
+        "bucket_start": "2026-07-21T04:10:42.857142+00:00",
+        "bucket_end": "2026-07-21T04:27:51.428571+00:00",
+        "positive": 0,
+        "neutral": 3,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-21T04:27:51.428571+00:00",
+        "bucket_end": "2026-07-21T04:45:00+00:00",
         "positive": 3,
-        "neutral": 0,
+        "neutral": 2,
         "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T02:40:42.857142+00:00",
-        "bucket_end": "2026-07-21T02:57:51.428571+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-21T02:57:51.428571+00:00",
-        "bucket_end": "2026-07-21T03:15:00+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 1
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 0,
-        "top_topic_label": "cluster-0",
+        "handle": "TrendForce",
+        "top_topic_id": 3,
+        "top_topic_label": "tsmc",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 1,
+        "top_topic_label": "台積電 / etf / 國巨腰斬拖累主動式etf大跌 / gw",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 1,
+        "top_topic_label": "台積電 / etf / 國巨腰斬拖累主動式etf大跌 / gw",
+        "focus_share": 0.667,
+        "post_count": 15
+      },
+      {
         "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "cluster-0",
+        "top_topic_id": 1,
+        "top_topic_label": "台積電 / etf / 國巨腰斬拖累主動式etf大跌 / gw",
         "focus_share": 0.667,
         "post_count": 12
       },
       {
         "handle": "technewsinside",
-        "top_topic_id": 0,
-        "top_topic_label": "cluster-0",
-        "focus_share": 0.583,
-        "post_count": 12
+        "top_topic_id": 1,
+        "top_topic_label": "台積電 / etf / 國巨腰斬拖累主動式etf大跌 / gw",
+        "focus_share": 0.588,
+        "post_count": 17
+      },
+      {
+        "handle": "jukan05",
+        "top_topic_id": 1,
+        "top_topic_label": "台積電 / etf / 國巨腰斬拖累主動式etf大跌 / gw",
+        "focus_share": 0.5,
+        "post_count": 6
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / momentum",
+        "focus_share": 0.5,
+        "post_count": 2
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "cluster-0",
-        "total_engagement": 1257,
-        "post_count": 16
-      },
-      {
-        "topic_id": 3,
-        "label": "台積電",
-        "total_engagement": 27,
-        "post_count": 2
-      },
-      {
-        "topic_id": 2,
-        "label": "ai / 矽光子 / cpo",
-        "total_engagement": 12,
-        "post_count": 4
-      },
-      {
         "topic_id": 1,
-        "label": "除了融資維持率已接近 / 較有可能同步衍生多殺多賣壓 / 警戒線的個股斷頭壓力較大之外 / 補西牆",
-        "total_engagement": 12,
+        "label": "台積電 / etf / 國巨腰斬拖累主動式etf大跌 / gw",
+        "total_engagement": 1223,
+        "post_count": 32
+      },
+      {
+        "topic_id": 8,
+        "label": "memory",
+        "total_engagement": 179,
         "post_count": 2
       },
       {
         "topic_id": 4,
-        "label": "矽光子 / cpo",
-        "total_engagement": 8,
-        "post_count": 1
+        "label": "件關鍵機密赴中國發展藍海計劃 / 台積電副理涉關鍵技術意圖外流中國",
+        "total_engagement": 159,
+        "post_count": 2
+      },
+      {
+        "topic_id": 2,
+        "label": "ai / momentum",
+        "total_engagement": 55,
+        "post_count": 6
+      },
+      {
+        "topic_id": 7,
+        "label": "馬斯克 / 震撼宣布 / 將在完成安全審查後全面開源整個程式碼庫 / 更將邀請第三方核實以展現最高透明度",
+        "total_engagement": 21,
+        "post_count": 2
+      },
+      {
+        "topic_id": 3,
+        "label": "tsmc",
+        "total_engagement": 15,
+        "post_count": 2
+      },
+      {
+        "topic_id": 9,
+        "label": "市場面臨短線急跌走勢 / 補西牆 / 除了融資維持率已接近 / 加上部分投資人先前藉由融資進行槓桿操作",
+        "total_engagement": 12,
+        "post_count": 2
+      },
+      {
+        "topic_id": 6,
+        "label": "億美元打造專屬 / 年砸下最高 / 不只賣晶片 / 暗光纖",
+        "total_engagement": 5,
+        "post_count": 2
+      },
+      {
+        "topic_id": 0,
+        "label": "iphone / 首款雙電池 / 對應傳聞中的 / 系統支援",
+        "total_engagement": 1,
+        "post_count": 2
+      },
+      {
+        "topic_id": 5,
+        "label": "算力飆升帶動零組件革命 / mlcc / 矽電容憑藉低電感與貼近晶片特點 / 成高密度封裝電源穩定的新寵",
+        "total_engagement": 1,
+        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 25,
-          "likes": 1316,
-          "engagement": 1316,
-          "avg_engagement": 52.6
+          "post_count": 39,
+          "likes": 1222,
+          "engagement": 1432,
+          "avg_engagement": 36.7
         },
         "afternoon": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 15,
+          "likes": 217,
+          "engagement": 239,
+          "avg_engagement": 15.9
         },
         "evening": {
           "post_count": 0,
