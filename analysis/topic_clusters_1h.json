@@ -1,89 +1,60 @@
 {
   "clusters": [
     {
-      "id": 2,
-      "label": "ai / memory / dram / hbm",
-      "size": 241,
-      "accounts": {
-        "TrendForce": 241
-      },
-      "engagement_by_account": {
-        "TrendForce": 2208
-      }
-    },
-    {
       "id": 5,
-      "label": "tsmc / packaging / intel / advanced",
-      "size": 36,
+      "label": "ai / nvidia / memory / openai",
+      "size": 4,
       "accounts": {
-        "TrendForce": 36
+        "tphuang": 2,
+        "tengyanAI": 2
       },
       "engagement_by_account": {
-        "TrendForce": 319
+        "tphuang": 1,
+        "tengyanAI": 6
       }
     },
     {
-      "id": 0,
-      "label": "nvidia / ai / amd / rubin",
-      "size": 31,
+      "id": 11,
+      "label": "dram / hbm / ddr / trendforce",
+      "size": 1,
       "accounts": {
-        "TrendForce": 31
+        "tphuang": 1
       },
       "engagement_by_account": {
-        "TrendForce": 302
-      }
-    },
-    {
-      "id": 10,
-      "label": "trendforce / dram / ai / nand",
-      "size": 11,
-      "accounts": {
-        "TrendForce": 11
-      },
-      "engagement_by_account": {
-        "TrendForce": 76
-      }
-    },
-    {
-      "id": 17,
-      "label": "ddr / dram / spot / memory",
-      "size": 8,
-      "accounts": {
-        "TrendForce": 8
-      },
-      "engagement_by_account": {
-        "TrendForce": 112
-      }
-    },
-    {
-      "id": 1,
-      "label": "google / tpu / ai / gemini",
-      "size": 5,
-      "accounts": {
-        "TrendForce": 5
-      },
-      "engagement_by_account": {
-        "TrendForce": 40
-      }
-    },
-    {
-      "id": 12,
-      "label": "rapidus / nm / uksc / japan",
-      "size": 2,
-      "accounts": {
-        "TrendForce": 2
-      },
-      "engagement_by_account": {
-        "TrendForce": 16
+        "tphuang": 3
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 5,
+      "label": "ai / nvidia / memory / openai",
+      "own_count": 0,
+      "competitor_count": 4,
+      "competitor_engagement": 7,
+      "competitors_covering": [
+        "tphuang",
+        "tengyanAI"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 5,
+      "label": "ai / nvidia / memory / openai",
+      "own_count": 0,
+      "competitor_count": 4,
+      "competitor_engagement": 7,
+      "competitors_covering": [
+        "tphuang",
+        "tengyanAI"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-21T17:23:15.549000+08:00",
-    "end_utc": "2026-07-21T18:23:15.549000+08:00",
-    "start_tw": "Jul 21, 17:23",
-    "end_tw": "Jul 21, 18:23"
+    "start_utc": "2026-07-22T02:46:04+08:00",
+    "end_utc": "2026-07-22T03:46:04+08:00",
+    "start_tw": "Jul 22, 02:46",
+    "end_tw": "Jul 22, 03:46"
   }
 }
