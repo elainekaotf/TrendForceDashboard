@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-07-21T02:30:32.546682+00:00",
+  "generated_at": "2026-07-21T03:15:00+00:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-20T18:30:32.546682+00:00",
-    "end_utc": "2026-07-21T02:30:32.546682+00:00",
-    "start_tw": "Jul 21, 02:30",
-    "end_tw": "Jul 21, 10:30"
+    "start_utc": "2026-07-20T19:15:00+00:00",
+    "end_utc": "2026-07-21T03:15:00+00:00",
+    "start_tw": "Jul 21, 03:15",
+    "end_tw": "Jul 21, 11:15"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 15,
+      "total_posts": 32,
       "sentiment_counts": {
-        "positive": 7,
-        "negative": 3,
-        "neutral": 5
+        "positive": 13,
+        "negative": 8,
+        "neutral": 11
       },
       "sentiment_share": {
-        "positive": 0.467,
-        "negative": 0.2,
-        "neutral": 0.333
+        "positive": 0.406,
+        "negative": 0.25,
+        "neutral": 0.344
       },
       "top_terms": [
         "amd",
-        "gating",
-        "leadership",
-        "parity",
-        "短線",
-        "資人",
         "槓桿",
-        "投資人",
-        "已接",
-        "接近"
+        "外資",
+        "封裝",
+        "供應",
+        "法人",
+        "動能",
+        "台積",
+        "積電",
+        "台積電"
       ]
     },
     "temperature_bar": [
@@ -39,20 +39,20 @@
         "topic_id": 0,
         "label": "cluster-0",
         "heat": 90.0,
-        "volume": 10,
-        "engagement": 182,
+        "volume": 19,
+        "engagement": 1276,
         "entities": [
           "中國",
           "加拿大",
-          "白宮",
-          "台灣",
-          "French"
+          "美國",
+          "川普",
+          "韓國"
         ]
       },
       {
         "topic_id": 2,
         "label": "amd / gating / leadership / parity",
-        "heat": 18.9,
+        "heat": 13.8,
         "volume": 3,
         "engagement": 87,
         "entities": [
@@ -63,26 +63,71 @@
       },
       {
         "topic_id": 1,
-        "label": "ai",
+        "label": "ai / amd",
         "heat": 10.0,
-        "volume": 2,
-        "engagement": 3,
+        "volume": 4,
+        "engagement": 10,
         "entities": [
           "China",
           "DeepSeek",
           "china",
-          "華爾街",
-          "瑞銀"
+          "輝達",
+          "微軟"
+        ]
+      },
+      {
+        "topic_id": 5,
+        "label": "cpo / 矽光子 / ai",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 13,
+        "entities": [
+          "修正",
+          "中國",
+          "台灣",
+          "新一波"
+        ]
+      },
+      {
+        "topic_id": 3,
+        "label": "台積電",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 27,
+        "entities": [
+          "台積電",
+          "神山",
+          "美國"
+        ]
+      },
+      {
+        "topic_id": 4,
+        "label": "除了融資維持率已接近 / 挖東牆 / 加上部分投資人先前藉由融資進行槓桿操作 / 較有可能同步衍生多殺多賣壓",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 12,
+        "entities": [
+          "玉山",
+          "湯麒國",
+          "藉由"
         ]
       }
     ],
     "named_entities": [
       {
+        "entity": "中國",
+        "count": 6
+      },
+      {
         "entity": "AMD",
         "count": 4
       },
       {
-        "entity": "中國",
+        "entity": "美國",
+        "count": 3
+      },
+      {
+        "entity": "台積電",
         "count": 3
       },
       {
@@ -91,6 +136,30 @@
       },
       {
         "entity": "China",
+        "count": 2
+      },
+      {
+        "entity": "川普",
+        "count": 2
+      },
+      {
+        "entity": "韓國",
+        "count": 2
+      },
+      {
+        "entity": "馬斯克",
+        "count": 2
+      },
+      {
+        "entity": "玉山",
+        "count": 2
+      },
+      {
+        "entity": "湯麒國",
+        "count": 2
+      },
+      {
+        "entity": "藉由",
         "count": 2
       },
       {
@@ -104,143 +173,118 @@
       {
         "entity": "French",
         "count": 1
-      },
-      {
-        "entity": "France Germany",
-        "count": 1
-      },
-      {
-        "entity": "https    ",
-        "count": 1
-      },
-      {
-        "entity": "buff",
-        "count": 1
-      },
-      {
-        "entity": "KvDG Ml",
-        "count": 1
-      },
-      {
-        "entity": "DataTrack",
-        "count": 1
-      },
-      {
-        "entity": "germany",
-        "count": 1
-      },
-      {
-        "entity": "french",
-        "count": 1
-      },
-      {
-        "entity": "france",
-        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-20T18:30:32.546684+00:00",
-        "bucket_end": "2026-07-20T19:04:49.689541+00:00",
+        "bucket_start": "2026-07-20T19:15:00.000002+00:00",
+        "bucket_end": "2026-07-20T19:49:17.142859+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-20T19:04:49.689541+00:00",
-        "bucket_end": "2026-07-20T19:39:06.832398+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T19:39:06.832398+00:00",
-        "bucket_end": "2026-07-20T20:13:23.975255+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T20:13:23.975255+00:00",
-        "bucket_end": "2026-07-20T20:47:41.118112+00:00",
-        "positive": 2,
+        "bucket_start": "2026-07-20T19:49:17.142859+00:00",
+        "bucket_end": "2026-07-20T20:23:34.285716+00:00",
+        "positive": 3,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-20T20:47:41.118112+00:00",
-        "bucket_end": "2026-07-20T21:21:58.260969+00:00",
+        "bucket_start": "2026-07-20T20:23:34.285716+00:00",
+        "bucket_end": "2026-07-20T20:57:51.428573+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T20:57:51.428573+00:00",
+        "bucket_end": "2026-07-20T21:32:08.571430+00:00",
         "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-20T21:21:58.260969+00:00",
-        "bucket_end": "2026-07-20T21:56:15.403826+00:00",
+        "bucket_start": "2026-07-20T21:32:08.571430+00:00",
+        "bucket_end": "2026-07-20T22:06:25.714287+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-20T21:56:15.403826+00:00",
-        "bucket_end": "2026-07-20T22:30:32.546683+00:00",
+        "bucket_start": "2026-07-20T22:06:25.714287+00:00",
+        "bucket_end": "2026-07-20T22:40:42.857144+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-20T22:30:32.546683+00:00",
-        "bucket_end": "2026-07-20T23:04:49.689540+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T23:04:49.689540+00:00",
-        "bucket_end": "2026-07-20T23:39:06.832397+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-20T23:39:06.832397+00:00",
-        "bucket_end": "2026-07-21T00:13:23.975254+00:00",
+        "bucket_start": "2026-07-20T22:40:42.857144+00:00",
+        "bucket_end": "2026-07-20T23:15:00.000001+00:00",
         "positive": 1,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T00:13:23.975254+00:00",
-        "bucket_end": "2026-07-21T00:47:41.118111+00:00",
-        "positive": 1,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T00:47:41.118111+00:00",
-        "bucket_end": "2026-07-21T01:21:58.260968+00:00",
-        "positive": 0,
         "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T23:15:00.000001+00:00",
+        "bucket_end": "2026-07-20T23:49:17.142858+00:00",
+        "positive": 0,
+        "neutral": 3,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-20T23:49:17.142858+00:00",
+        "bucket_end": "2026-07-21T00:23:34.285715+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-21T00:23:34.285715+00:00",
+        "bucket_end": "2026-07-21T00:57:51.428572+00:00",
+        "positive": 1,
+        "neutral": 2,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-21T01:21:58.260968+00:00",
-        "bucket_end": "2026-07-21T01:56:15.403825+00:00",
-        "positive": 0,
+        "bucket_start": "2026-07-21T00:57:51.428572+00:00",
+        "bucket_end": "2026-07-21T01:32:08.571429+00:00",
+        "positive": 1,
         "neutral": 1,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-21T01:32:08.571429+00:00",
+        "bucket_end": "2026-07-21T02:06:25.714286+00:00",
+        "positive": 0,
+        "neutral": 3,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-21T02:06:25.714286+00:00",
+        "bucket_end": "2026-07-21T02:40:42.857143+00:00",
+        "positive": 4,
+        "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T01:56:15.403825+00:00",
-        "bucket_end": "2026-07-21T02:30:32.546682+00:00",
-        "positive": 0,
+        "bucket_start": "2026-07-21T02:40:42.857143+00:00",
+        "bucket_end": "2026-07-21T03:15:00+00:00",
+        "positive": 1,
         "neutral": 0,
-        "negative": 1
+        "negative": 2
       }
     ],
     "coverage_focus_ranking": [
       {
         "handle": "TrendForce",
+        "top_topic_id": 0,
+        "top_topic_label": "cluster-0",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "yutinghaosfinance",
         "top_topic_id": 0,
         "top_topic_label": "cluster-0",
         "focus_share": 1.0,
@@ -257,8 +301,15 @@
         "handle": "ctee.fans",
         "top_topic_id": 0,
         "top_topic_label": "cluster-0",
-        "focus_share": 0.889,
-        "post_count": 9
+        "focus_share": 0.667,
+        "post_count": 12
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 0,
+        "top_topic_label": "cluster-0",
+        "focus_share": 0.615,
+        "post_count": 13
       },
       {
         "handle": "tphuang",
@@ -272,8 +323,8 @@
       {
         "topic_id": 0,
         "label": "cluster-0",
-        "total_engagement": 182,
-        "post_count": 10
+        "total_engagement": 1276,
+        "post_count": 19
       },
       {
         "topic_id": 2,
@@ -282,19 +333,37 @@
         "post_count": 3
       },
       {
-        "topic_id": 1,
-        "label": "ai",
-        "total_engagement": 3,
+        "topic_id": 3,
+        "label": "台積電",
+        "total_engagement": 27,
         "post_count": 2
+      },
+      {
+        "topic_id": 5,
+        "label": "cpo / 矽光子 / ai",
+        "total_engagement": 13,
+        "post_count": 2
+      },
+      {
+        "topic_id": 4,
+        "label": "除了融資維持率已接近 / 挖東牆 / 加上部分投資人先前藉由融資進行槓桿操作 / 較有可能同步衍生多殺多賣壓",
+        "total_engagement": 12,
+        "post_count": 2
+      },
+      {
+        "topic_id": 1,
+        "label": "ai / amd",
+        "total_engagement": 10,
+        "post_count": 4
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 9,
-          "likes": 170,
-          "engagement": 170,
-          "avg_engagement": 18.9
+          "post_count": 26,
+          "likes": 1323,
+          "engagement": 1323,
+          "avg_engagement": 50.9
         },
         "afternoon": {
           "post_count": 0,

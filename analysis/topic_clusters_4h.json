@@ -1,56 +1,69 @@
 {
   "clusters": [
     {
-      "id": 4,
-      "label": "ai / nvidia / memory / spacex",
-      "size": 8,
+      "id": 0,
+      "label": "ai / nvidia / memory / openai",
+      "size": 20,
       "accounts": {
-        "ctee.fans": 8
+        "technewsinside": 8,
+        "ctee.fans": 12
       },
       "engagement_by_account": {
-        "ctee.fans": 170
+        "technewsinside": 764,
+        "ctee.fans": 200
+      }
+    },
+    {
+      "id": 10,
+      "label": "台積電 / 英特爾 / ai / 魏哲家",
+      "size": 2,
+      "accounts": {
+        "technewsinside": 2
+      },
+      "engagement_by_account": {
+        "technewsinside": 27
+      }
+    },
+    {
+      "id": 1,
+      "label": "iphone / 蘋果 / 英特爾 / ios",
+      "size": 1,
+      "accounts": {
+        "technewsinside": 1
+      },
+      "engagement_by_account": {
+        "technewsinside": 0
       }
     },
     {
       "id": 5,
-      "label": "名家評論 / ai / 針對 / 人工智慧",
+      "label": "ai / nvidia / physical / token",
       "size": 1,
       "accounts": {
-        "ctee.fans": 1
+        "technewsinside": 1
       },
       "engagement_by_account": {
-        "ctee.fans": 0
+        "technewsinside": 5
+      }
+    },
+    {
+      "id": 8,
+      "label": "早晨財經速解讀 / kimi / 美中科技戰 / 魏哲家",
+      "size": 1,
+      "accounts": {
+        "yutinghaosfinance": 1
+      },
+      "engagement_by_account": {
+        "yutinghaosfinance": 320
       }
     }
   ],
-  "gaps": [
-    {
-      "cluster_id": 4,
-      "label": "ai / nvidia / memory / spacex",
-      "own_count": 0,
-      "competitor_count": 8,
-      "competitor_engagement": 170,
-      "competitors_covering": [
-        "ctee.fans"
-      ]
-    }
-  ],
-  "suggested_entry_points": [
-    {
-      "cluster_id": 4,
-      "label": "ai / nvidia / memory / spacex",
-      "own_count": 0,
-      "competitor_count": 8,
-      "competitor_engagement": 170,
-      "competitors_covering": [
-        "ctee.fans"
-      ]
-    }
-  ],
+  "gaps": [],
+  "suggested_entry_points": [],
   "window": {
-    "start_utc": "2026-07-20T22:30:32.546682+00:00",
-    "end_utc": "2026-07-21T02:30:32.546682+00:00",
-    "start_tw": "Jul 21, 06:30",
-    "end_tw": "Jul 21, 10:30"
+    "start_utc": "2026-07-20T23:15:00+00:00",
+    "end_utc": "2026-07-21T03:15:00+00:00",
+    "start_tw": "Jul 21, 07:15",
+    "end_tw": "Jul 21, 11:15"
   }
 }
