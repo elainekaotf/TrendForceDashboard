@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-07-21T16:30:39+08:00",
+  "generated_at": "2026-07-21T08:45:00+00:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-21T08:30:39+08:00",
-    "end_utc": "2026-07-21T16:30:39+08:00",
-    "start_tw": "Jul 21, 08:30",
-    "end_tw": "Jul 21, 16:30"
+    "start_utc": "2026-07-21T00:45:00+00:00",
+    "end_utc": "2026-07-21T08:45:00+00:00",
+    "start_tw": "Jul 21, 08:45",
+    "end_tw": "Jul 21, 16:45"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 595,
+      "total_posts": 614,
       "sentiment_counts": {
-        "positive": 301,
-        "negative": 140,
-        "neutral": 154
+        "positive": 311,
+        "negative": 146,
+        "neutral": 157
       },
       "sentiment_share": {
-        "positive": 0.506,
-        "negative": 0.235,
-        "neutral": 0.259
+        "positive": 0.507,
+        "negative": 0.238,
+        "neutral": 0.256
       },
       "top_terms": [
         "hashtag",
@@ -36,109 +36,81 @@
     },
     "temperature_bar": [
       {
-        "topic_id": 5,
-        "label": "samsung / hashtag / etf / prices",
+        "topic_id": 16,
+        "label": "nand / sic / hashtag / kioxia",
         "heat": 90.0,
-        "volume": 111,
-        "engagement": 3245,
+        "volume": 114,
+        "engagement": 1961,
         "entities": [
-          "Samsung",
+          "NAND",
+          "China",
           "台積電",
-          "中國",
-          "China",
-          "TrendForce"
+          "SiC",
+          "中國"
         ]
       },
       {
-        "topic_id": 3,
-        "label": "intel / tsmc / hashtag / emib",
-        "heat": 46.7,
-        "volume": 62,
-        "engagement": 1405,
+        "topic_id": 7,
+        "label": "hashtag / trendforce / memory / prices",
+        "heat": 84.1,
+        "volume": 52,
+        "engagement": 1986,
         "entities": [
-          "Intel",
-          "TSMC",
-          "Taiwan",
-          "AMD",
-          "MediaTek"
-        ]
-      },
-      {
-        "topic_id": 1,
-        "label": "ai / hashtag / asic / chip",
-        "heat": 45.1,
-        "volume": 69,
-        "engagement": 1067,
-        "entities": [
-          "AI",
-          "China",
-          "MediaTek",
-          "CPU",
-          "輝達"
-        ]
-      },
-      {
-        "topic_id": 2,
-        "label": "nvidia / cpo / hashtag / optical",
-        "heat": 17.6,
-        "volume": 56,
-        "engagement": 382,
-        "entities": [
-          "CPO",
-          "AI",
           "TrendForce",
-          "TSMC",
-          "China"
-        ]
-      },
-      {
-        "topic_id": 9,
-        "label": "glass / substrate / hashtag / panel",
-        "heat": 17.6,
-        "volume": 31,
-        "engagement": 531,
-        "entities": [
-          "Intel",
-          "TSMC",
           "AI",
-          "Nikon",
-          "SKC"
-        ]
-      },
-      {
-        "topic_id": 6,
-        "label": "hbm / samsung / hashtag / sk",
-        "heat": 16.5,
-        "volume": 30,
-        "engagement": 428,
-        "entities": [
-          "HBM",
-          "Samsung",
-          "SKhynix",
-          "Microsoft",
-          "TrendForce"
+          "YoY",
+          "DRAM",
+          "HBM"
         ]
       },
       {
         "topic_id": 13,
-        "label": "micron / fab / memory / nm",
-        "heat": 15.9,
-        "volume": 18,
-        "engagement": 582,
+        "label": "ai / hashtag / demand / chip",
+        "heat": 68.6,
+        "volume": 88,
+        "engagement": 983,
         "entities": [
-          "Micron",
-          "TSMC",
           "AI",
-          "DRAM",
-          "NAND"
+          "China",
+          "TrendForce",
+          "輝達",
+          "TSMC"
         ]
       },
       {
-        "topic_id": 12,
-        "label": "ddr / spot / memory / prices",
-        "heat": 15.4,
-        "volume": 20,
-        "engagement": 339,
+        "topic_id": 6,
+        "label": "glass / intel / hashtag / substrate",
+        "heat": 39.1,
+        "volume": 35,
+        "engagement": 1130,
+        "entities": [
+          "Intel",
+          "TSMC",
+          "CPO",
+          "Samsung",
+          "AI"
+        ]
+      },
+      {
+        "topic_id": 9,
+        "label": "tsmc / hashtag / mediatek / nm",
+        "heat": 24.2,
+        "volume": 42,
+        "engagement": 612,
+        "entities": [
+          "TSMC",
+          "MediaTek",
+          "Samsung",
+          "TPU",
+          "Arizona"
+        ]
+      },
+      {
+        "topic_id": 1,
+        "label": "ddr / spot / prices / memory",
+        "heat": 18.8,
+        "volume": 27,
+        "engagement": 467,
         "entities": [
           "DDR",
           "US",
@@ -148,143 +120,169 @@
         ]
       },
       {
-        "topic_id": 17,
-        "label": "nm / huawei / chip / tsmc",
-        "heat": 14.8,
-        "volume": 29,
-        "engagement": 300,
+        "topic_id": 3,
+        "label": "hbm / samsung / hashtag / micron",
+        "heat": 18.5,
+        "volume": 28,
+        "engagement": 391,
         "entities": [
-          "TSMC",
-          "Huawei",
-          "Sony",
-          "AI",
-          "GPU"
-        ]
-      },
-      {
-        "topic_id": 7,
-        "label": "smic / demand / hikes / hashtag",
-        "heat": 14.4,
-        "volume": 32,
-        "engagement": 269,
-        "entities": [
-          "China",
-          "SMIC",
-          "AI",
-          "TrendForce",
-          "ABF"
-        ]
-      },
-      {
-        "topic_id": 11,
-        "label": "hynix / sk / sic / hashtag",
-        "heat": 14.3,
-        "volume": 31,
-        "engagement": 260,
-        "entities": [
-          "NAND",
-          "SiC",
+          "HBM",
+          "Samsung",
           "SKhynix",
-          "Samsung",
-          "KRW"
-        ]
-      },
-      {
-        "topic_id": 4,
-        "label": "nand / flash / hashtag / trendforce",
-        "heat": 14.2,
-        "volume": 14,
-        "engagement": 266,
-        "entities": [
-          "NAND",
-          "TrendForce",
-          "DRAM",
-          "Samsung",
-          "Kioxia"
+          "Micron",
+          "AI"
         ]
       },
       {
         "topic_id": 15,
-        "label": "kioxia / ssd / nand / japan",
-        "heat": 13.1,
-        "volume": 15,
-        "engagement": 189,
-        "entities": [
-          "Kioxia",
-          "NAND",
-          "Japan",
-          "Samsung",
-          "SanDisk"
-        ]
-      },
-      {
-        "topic_id": 8,
-        "label": "gan / sic / silicon / rf",
-        "heat": 11.8,
-        "volume": 18,
-        "engagement": 123,
-        "entities": [
-          "GaN",
-          "China",
-          "SiC",
-          "Samsung",
-          "RF"
-        ]
-      },
-      {
-        "topic_id": 16,
-        "label": "trendforce / drives / expansion / billion",
-        "heat": 11.7,
-        "volume": 18,
-        "engagement": 116,
-        "entities": [
-          "TrendForce",
-          "US",
-          "TPU",
-          "GPU",
-          "TCL CSOT s IJP"
-        ]
-      },
-      {
-        "topic_id": 14,
-        "label": "apple / iphone / foldable / samsung",
-        "heat": 10.5,
-        "volume": 23,
-        "engagement": 65,
+        "label": "apple / intel / iphone / samsung",
+        "heat": 17.5,
+        "volume": 39,
+        "engagement": 323,
         "entities": [
           "Apple",
+          "Intel",
           "Samsung",
           "TSMC",
-          "Huawei",
-          "iPhone"
-        ]
-      },
-      {
-        "topic_id": 10,
-        "label": "spot / prices / tlc / nand",
-        "heat": 10.0,
-        "volume": 7,
-        "engagement": 128,
-        "entities": [
-          "US",
-          "Downstream",
-          "TLC Wafer Down         The",
-          "MLC",
-          "Softness Likely"
+          "Huawei"
         ]
       },
       {
         "topic_id": 0,
-        "label": "chains / fell / rare / yoy",
-        "heat": 10.0,
-        "volume": 11,
-        "engagement": 44,
+        "label": "cpu / amd / nvidia / hashtag",
+        "heat": 17.1,
+        "volume": 21,
+        "engagement": 372,
         "entities": [
-          "YoY",
+          "CPU",
+          "AMD",
+          "AI",
+          "Intel",
+          "GPU"
+        ]
+      },
+      {
+        "topic_id": 12,
+        "label": "sk / hynix / memory / samsung",
+        "heat": 16.9,
+        "volume": 24,
+        "engagement": 289,
+        "entities": [
+          "SKhynix",
+          "HBM",
+          "NAND",
+          "Samsung",
+          "TSMC"
+        ]
+      },
+      {
+        "topic_id": 4,
+        "label": "materials / applied / global / semiconductor",
+        "heat": 16.1,
+        "volume": 24,
+        "engagement": 247,
+        "entities": [
           "China",
-          "Microsoft",
+          "Applied Materials",
+          "ABF",
+          "Singapore",
+          "NAND"
+        ]
+      },
+      {
+        "topic_id": 17,
+        "label": "huawei / tsmc / nvidia / pauses",
+        "heat": 15.7,
+        "volume": 19,
+        "engagement": 228,
+        "entities": [
+          "Huawei",
+          "TSMC",
+          "Taiwan",
+          "China",
+          "Nvidia Pauses"
+        ]
+      },
+      {
+        "topic_id": 10,
+        "label": "optical / cpo / hashtag / photonics",
+        "heat": 14.3,
+        "volume": 29,
+        "engagement": 165,
+        "entities": [
+          "CPO",
+          "AI",
           "TrendForce",
-          "Nexperia"
+          "Micro",
+          "TSMC"
+        ]
+      },
+      {
+        "topic_id": 5,
+        "label": "euv / asml / na / tsmc",
+        "heat": 14.2,
+        "volume": 20,
+        "engagement": 161,
+        "entities": [
+          "EUV",
+          "TSMC",
+          "Nikon",
+          "歐元",
+          "DUV"
+        ]
+      },
+      {
+        "topic_id": 11,
+        "label": "nvidia / google / rubin / hashtag",
+        "heat": 14.1,
+        "volume": 25,
+        "engagement": 159,
+        "entities": [
+          "Intel",
+          "AI",
+          "GPU",
+          "Google",
+          "Rubin"
+        ]
+      },
+      {
+        "topic_id": 8,
+        "label": "etf / 國巨腰斬拖累主動式etf大跌 / 仍擋不住炒風 / 單一標的槓桿",
+        "heat": 10.0,
+        "volume": 6,
+        "engagement": 79,
+        "entities": [
+          "單一標",
+          "韓國",
+          "國巨"
+        ]
+      },
+      {
+        "topic_id": 14,
+        "label": "pc / intel / ferrari / handheld",
+        "heat": 10.0,
+        "volume": 9,
+        "engagement": 33,
+        "entities": [
+          "Intel",
+          "COMPUTEX",
+          "Ferrari",
+          "AI",
+          "IPO"
+        ]
+      },
+      {
+        "topic_id": 2,
+        "label": "gan / micro / samsung / smart",
+        "heat": 10.0,
+        "volume": 12,
+        "engagement": 33,
+        "entities": [
+          "GaN",
+          "Samsung",
+          "China",
+          "Micro",
+          "IPO"
         ]
       }
     ],
@@ -352,292 +350,285 @@
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-21T08:30:39.000002+08:00",
-        "bucket_end": "2026-07-21T09:04:56.142859+08:00",
-        "positive": 3,
-        "neutral": 2,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-21T09:04:56.142859+08:00",
-        "bucket_end": "2026-07-21T09:39:13.285716+08:00",
+        "bucket_start": "2026-07-21T00:45:00.000002+00:00",
+        "bucket_end": "2026-07-21T01:19:17.142859+00:00",
         "positive": 4,
         "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-21T01:19:17.142859+00:00",
+        "bucket_end": "2026-07-21T01:53:34.285716+00:00",
+        "positive": 2,
+        "neutral": 3,
         "negative": 3
       },
       {
-        "bucket_start": "2026-07-21T09:39:13.285716+08:00",
-        "bucket_end": "2026-07-21T10:13:30.428573+08:00",
-        "positive": 0,
-        "neutral": 5,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-21T10:13:30.428573+08:00",
-        "bucket_end": "2026-07-21T10:47:47.571430+08:00",
-        "positive": 6,
-        "neutral": 2,
+        "bucket_start": "2026-07-21T01:53:34.285716+00:00",
+        "bucket_end": "2026-07-21T02:27:51.428573+00:00",
+        "positive": 1,
+        "neutral": 4,
         "negative": 4
       },
       {
-        "bucket_start": "2026-07-21T10:47:47.571430+08:00",
-        "bucket_end": "2026-07-21T11:22:04.714287+08:00",
-        "positive": 2,
-        "neutral": 2,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-21T11:22:04.714287+08:00",
-        "bucket_end": "2026-07-21T11:56:21.857144+08:00",
-        "positive": 2,
-        "neutral": 2,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-21T11:56:21.857144+08:00",
-        "bucket_end": "2026-07-21T12:30:39.000001+08:00",
-        "positive": 4,
-        "neutral": 7,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-21T12:30:39.000001+08:00",
-        "bucket_end": "2026-07-21T13:04:56.142858+08:00",
-        "positive": 5,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T13:04:56.142858+08:00",
-        "bucket_end": "2026-07-21T13:39:13.285715+08:00",
-        "positive": 0,
+        "bucket_start": "2026-07-21T02:27:51.428573+00:00",
+        "bucket_end": "2026-07-21T03:02:08.571430+00:00",
+        "positive": 6,
         "neutral": 0,
-        "negative": 3
+        "negative": 4
       },
       {
-        "bucket_start": "2026-07-21T13:39:13.285715+08:00",
-        "bucket_end": "2026-07-21T14:13:30.428572+08:00",
-        "positive": 0,
+        "bucket_start": "2026-07-21T03:02:08.571430+00:00",
+        "bucket_end": "2026-07-21T03:36:25.714287+00:00",
+        "positive": 3,
         "neutral": 2,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-21T03:36:25.714287+00:00",
+        "bucket_end": "2026-07-21T04:10:42.857144+00:00",
+        "positive": 1,
+        "neutral": 4,
+        "negative": 4
+      },
+      {
+        "bucket_start": "2026-07-21T04:10:42.857144+00:00",
+        "bucket_end": "2026-07-21T04:45:00.000001+00:00",
+        "positive": 7,
+        "neutral": 7,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T14:13:30.428572+08:00",
-        "bucket_end": "2026-07-21T14:47:47.571429+08:00",
+        "bucket_start": "2026-07-21T04:45:00.000001+00:00",
+        "bucket_end": "2026-07-21T05:19:17.142858+00:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 4
+      },
+      {
+        "bucket_start": "2026-07-21T05:19:17.142858+00:00",
+        "bucket_end": "2026-07-21T05:53:34.285715+00:00",
         "positive": 1,
-        "neutral": 1,
+        "neutral": 2,
         "negative": 2
       },
       {
-        "bucket_start": "2026-07-21T14:47:47.571429+08:00",
-        "bucket_end": "2026-07-21T15:22:04.714286+08:00",
+        "bucket_start": "2026-07-21T05:53:34.285715+00:00",
+        "bucket_end": "2026-07-21T06:27:51.428572+00:00",
         "positive": 0,
-        "neutral": 1,
+        "neutral": 2,
+        "negative": 5
+      },
+      {
+        "bucket_start": "2026-07-21T06:27:51.428572+00:00",
+        "bucket_end": "2026-07-21T07:02:08.571429+00:00",
+        "positive": 2,
+        "neutral": 4,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T15:22:04.714286+08:00",
-        "bucket_end": "2026-07-21T15:56:21.857143+08:00",
-        "positive": 272,
-        "neutral": 126,
-        "negative": 115
+        "bucket_start": "2026-07-21T07:02:08.571429+00:00",
+        "bucket_end": "2026-07-21T07:36:25.714286+00:00",
+        "positive": 222,
+        "neutral": 117,
+        "negative": 93
       },
       {
-        "bucket_start": "2026-07-21T15:56:21.857143+08:00",
-        "bucket_end": "2026-07-21T16:30:39+08:00",
-        "positive": 2,
+        "bucket_start": "2026-07-21T07:36:25.714286+00:00",
+        "bucket_end": "2026-07-21T08:10:42.857143+00:00",
+        "positive": 56,
+        "neutral": 10,
+        "negative": 23
+      },
+      {
+        "bucket_start": "2026-07-21T08:10:42.857143+00:00",
+        "bucket_end": "2026-07-21T08:45:00+00:00",
+        "positive": 3,
         "neutral": 1,
-        "negative": 1
+        "negative": 2
       }
     ],
     "coverage_focus_ranking": [
       {
         "handle": "SemiAnalysis_",
-        "top_topic_id": 5,
-        "top_topic_label": "samsung / hashtag / etf / prices",
+        "top_topic_id": 16,
+        "top_topic_label": "nand / sic / hashtag / kioxia",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 5,
-        "top_topic_label": "samsung / hashtag / etf / prices",
-        "focus_share": 1.0,
-        "post_count": 2
-      },
-      {
         "handle": "ctee.fans",
-        "top_topic_id": 5,
-        "top_topic_label": "samsung / hashtag / etf / prices",
-        "focus_share": 0.833,
-        "post_count": 12
-      },
-      {
-        "handle": "technews_tw",
-        "top_topic_id": 5,
-        "top_topic_label": "samsung / hashtag / etf / prices",
-        "focus_share": 0.594,
-        "post_count": 32
-      },
-      {
-        "handle": "technewsinside",
-        "top_topic_id": 5,
-        "top_topic_label": "samsung / hashtag / etf / prices",
-        "focus_share": 0.588,
-        "post_count": 17
-      },
-      {
-        "handle": "tengyanAI",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / hashtag / asic / chip",
-        "focus_share": 0.5,
-        "post_count": 2
+        "top_topic_id": 16,
+        "top_topic_label": "nand / sic / hashtag / kioxia",
+        "focus_share": 0.9,
+        "post_count": 20
       },
       {
         "handle": "jukan05",
-        "top_topic_id": 5,
-        "top_topic_label": "samsung / hashtag / etf / prices",
-        "focus_share": 0.429,
+        "top_topic_id": 16,
+        "top_topic_label": "nand / sic / hashtag / kioxia",
+        "focus_share": 0.571,
         "post_count": 7
       },
       {
         "handle": "QQ_Timmy",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / hashtag / asic / chip",
-        "focus_share": 0.333,
-        "post_count": 3
+        "top_topic_id": 16,
+        "top_topic_label": "nand / sic / hashtag / kioxia",
+        "focus_share": 0.5,
+        "post_count": 2
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 13,
+        "top_topic_label": "ai / hashtag / demand / chip",
+        "focus_share": 0.5,
+        "post_count": 2
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 16,
+        "top_topic_label": "nand / sic / hashtag / kioxia",
+        "focus_share": 0.452,
+        "post_count": 31
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 16,
+        "top_topic_label": "nand / sic / hashtag / kioxia",
+        "focus_share": 0.438,
+        "post_count": 32
       },
       {
         "handle": "TrendForce",
-        "top_topic_id": 5,
-        "top_topic_label": "samsung / hashtag / etf / prices",
-        "focus_share": 0.127,
+        "top_topic_id": 13,
+        "top_topic_label": "ai / hashtag / demand / chip",
+        "focus_share": 0.121,
         "post_count": 519
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 5,
-        "label": "samsung / hashtag / etf / prices",
-        "total_engagement": 3245,
-        "post_count": 111
-      },
-      {
-        "topic_id": 3,
-        "label": "intel / tsmc / hashtag / emib",
-        "total_engagement": 1405,
-        "post_count": 62
-      },
-      {
-        "topic_id": 1,
-        "label": "ai / hashtag / asic / chip",
-        "total_engagement": 1067,
-        "post_count": 69
-      },
-      {
-        "topic_id": 13,
-        "label": "micron / fab / memory / nm",
-        "total_engagement": 582,
-        "post_count": 18
-      },
-      {
-        "topic_id": 9,
-        "label": "glass / substrate / hashtag / panel",
-        "total_engagement": 531,
-        "post_count": 31
-      },
-      {
-        "topic_id": 6,
-        "label": "hbm / samsung / hashtag / sk",
-        "total_engagement": 428,
-        "post_count": 30
-      },
-      {
-        "topic_id": 2,
-        "label": "nvidia / cpo / hashtag / optical",
-        "total_engagement": 382,
-        "post_count": 56
-      },
-      {
-        "topic_id": 12,
-        "label": "ddr / spot / memory / prices",
-        "total_engagement": 339,
-        "post_count": 20
-      },
-      {
-        "topic_id": 17,
-        "label": "nm / huawei / chip / tsmc",
-        "total_engagement": 300,
-        "post_count": 29
-      },
-      {
         "topic_id": 7,
-        "label": "smic / demand / hikes / hashtag",
-        "total_engagement": 269,
-        "post_count": 32
-      },
-      {
-        "topic_id": 4,
-        "label": "nand / flash / hashtag / trendforce",
-        "total_engagement": 266,
-        "post_count": 14
-      },
-      {
-        "topic_id": 11,
-        "label": "hynix / sk / sic / hashtag",
-        "total_engagement": 260,
-        "post_count": 31
-      },
-      {
-        "topic_id": 15,
-        "label": "kioxia / ssd / nand / japan",
-        "total_engagement": 189,
-        "post_count": 15
-      },
-      {
-        "topic_id": 10,
-        "label": "spot / prices / tlc / nand",
-        "total_engagement": 128,
-        "post_count": 7
-      },
-      {
-        "topic_id": 8,
-        "label": "gan / sic / silicon / rf",
-        "total_engagement": 123,
-        "post_count": 18
+        "label": "hashtag / trendforce / memory / prices",
+        "total_engagement": 1986,
+        "post_count": 52
       },
       {
         "topic_id": 16,
-        "label": "trendforce / drives / expansion / billion",
-        "total_engagement": 116,
-        "post_count": 18
+        "label": "nand / sic / hashtag / kioxia",
+        "total_engagement": 1961,
+        "post_count": 114
       },
       {
-        "topic_id": 14,
-        "label": "apple / iphone / foldable / samsung",
-        "total_engagement": 65,
-        "post_count": 23
+        "topic_id": 6,
+        "label": "glass / intel / hashtag / substrate",
+        "total_engagement": 1130,
+        "post_count": 35
+      },
+      {
+        "topic_id": 13,
+        "label": "ai / hashtag / demand / chip",
+        "total_engagement": 983,
+        "post_count": 88
+      },
+      {
+        "topic_id": 9,
+        "label": "tsmc / hashtag / mediatek / nm",
+        "total_engagement": 612,
+        "post_count": 42
+      },
+      {
+        "topic_id": 1,
+        "label": "ddr / spot / prices / memory",
+        "total_engagement": 467,
+        "post_count": 27
+      },
+      {
+        "topic_id": 3,
+        "label": "hbm / samsung / hashtag / micron",
+        "total_engagement": 391,
+        "post_count": 28
       },
       {
         "topic_id": 0,
-        "label": "chains / fell / rare / yoy",
-        "total_engagement": 44,
-        "post_count": 11
+        "label": "cpu / amd / nvidia / hashtag",
+        "total_engagement": 372,
+        "post_count": 21
+      },
+      {
+        "topic_id": 15,
+        "label": "apple / intel / iphone / samsung",
+        "total_engagement": 323,
+        "post_count": 39
+      },
+      {
+        "topic_id": 12,
+        "label": "sk / hynix / memory / samsung",
+        "total_engagement": 289,
+        "post_count": 24
+      },
+      {
+        "topic_id": 4,
+        "label": "materials / applied / global / semiconductor",
+        "total_engagement": 247,
+        "post_count": 24
+      },
+      {
+        "topic_id": 17,
+        "label": "huawei / tsmc / nvidia / pauses",
+        "total_engagement": 228,
+        "post_count": 19
+      },
+      {
+        "topic_id": 10,
+        "label": "optical / cpo / hashtag / photonics",
+        "total_engagement": 165,
+        "post_count": 29
+      },
+      {
+        "topic_id": 5,
+        "label": "euv / asml / na / tsmc",
+        "total_engagement": 161,
+        "post_count": 20
+      },
+      {
+        "topic_id": 11,
+        "label": "nvidia / google / rubin / hashtag",
+        "total_engagement": 159,
+        "post_count": 25
+      },
+      {
+        "topic_id": 8,
+        "label": "etf / 國巨腰斬拖累主動式etf大跌 / 仍擋不住炒風 / 單一標的槓桿",
+        "total_engagement": 79,
+        "post_count": 6
+      },
+      {
+        "topic_id": 14,
+        "label": "pc / intel / ferrari / handheld",
+        "total_engagement": 33,
+        "post_count": 9
+      },
+      {
+        "topic_id": 2,
+        "label": "gan / micro / samsung / smart",
+        "total_engagement": 33,
+        "post_count": 12
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 46,
-          "likes": 2510,
-          "engagement": 2829,
-          "avg_engagement": 61.5
+          "post_count": 42,
+          "likes": 1823,
+          "engagement": 2135,
+          "avg_engagement": 50.8
         },
         "afternoon": {
-          "post_count": 549,
-          "likes": 6699,
-          "engagement": 6910,
-          "avg_engagement": 12.6
+          "post_count": 572,
+          "likes": 7273,
+          "engagement": 7484,
+          "avg_engagement": 13.1
         },
         "evening": {
           "post_count": 0,

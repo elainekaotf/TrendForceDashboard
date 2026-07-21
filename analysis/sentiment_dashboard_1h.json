@@ -1,591 +1,276 @@
 {
-  "generated_at": "2026-07-21T16:30:39+08:00",
+  "generated_at": "2026-07-21T08:45:00+00:00",
   "time_range": "1h",
   "window": {
-    "start_utc": "2026-07-21T15:30:39+08:00",
-    "end_utc": "2026-07-21T16:30:39+08:00",
-    "start_tw": "Jul 21, 15:30",
-    "end_tw": "Jul 21, 16:30"
+    "start_utc": "2026-07-21T07:45:00+00:00",
+    "end_utc": "2026-07-21T08:45:00+00:00",
+    "start_tw": "Jul 21, 15:45",
+    "end_tw": "Jul 21, 16:45"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 346,
+      "total_posts": 11,
       "sentiment_counts": {
-        "negative": 80,
-        "positive": 177,
-        "neutral": 89
+        "negative": 3,
+        "positive": 6,
+        "neutral": 2
       },
       "sentiment_share": {
-        "negative": 0.231,
-        "positive": 0.512,
-        "neutral": 0.257
+        "negative": 0.273,
+        "positive": 0.545,
+        "neutral": 0.182
       },
       "top_terms": [
-        "hashtag",
-        "chip",
-        "supply",
-        "tsmc",
-        "samsung",
-        "demand",
-        "trendforce",
-        "intel",
-        "nvidia",
-        "memory"
+        "前股",
+        "個月",
+        "小摩",
+        "摩執",
+        "行長",
+        "長戴",
+        "戴蒙",
+        "蒙重",
+        "重磅",
+        "磅示"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 10,
-        "label": "ai / hashtag / supply / demand",
+        "topic_id": 1,
+        "label": "nand / 抗震高股息etf出列 / 直言當前股市熱潮堪比網路泡沫初期 / 公股逆勢卡位避風港",
         "heat": 90.0,
-        "volume": 58,
-        "engagement": 551,
+        "volume": 9,
+        "engagement": 144,
         "entities": [
-          "AI",
-          "YoY",
-          "TrendForce",
-          "China",
-          "GPU"
-        ]
-      },
-      {
-        "topic_id": 6,
-        "label": "tsmc / euv / hashtag / apple",
-        "heat": 58.6,
-        "volume": 31,
-        "engagement": 326,
-        "entities": [
-          "TSMC",
-          "Intel",
-          "Apple",
-          "EUV",
-          "Sony"
-        ]
-      },
-      {
-        "topic_id": 14,
-        "label": "nand / kioxia / hashtag / layer",
-        "heat": 52.5,
-        "volume": 21,
-        "engagement": 397,
-        "entities": [
+          "小摩",
+          "長戴蒙",
           "NAND",
-          "Kioxia",
-          "Samsung",
-          "SanDisk",
-          "TrendForce"
-        ]
-      },
-      {
-        "topic_id": 17,
-        "label": "hbm / samsung / hashtag / micron",
-        "heat": 50.9,
-        "volume": 23,
-        "engagement": 359,
-        "entities": [
-          "HBM",
-          "Samsung",
-          "Micron",
-          "SKhynix",
-          "AI"
-        ]
-      },
-      {
-        "topic_id": 13,
-        "label": "glass / substrate / intel / hashtag",
-        "heat": 50.5,
-        "volume": 19,
-        "engagement": 394,
-        "entities": [
-          "Intel",
-          "TSMC",
-          "SKC",
-          "AI",
-          "Absolics"
-        ]
-      },
-      {
-        "topic_id": 11,
-        "label": "ddr / spot / dram / micron",
-        "heat": 45.0,
-        "volume": 15,
-        "engagement": 371,
-        "entities": [
-          "DDR",
-          "US",
-          "DRAM Price",
-          "Micron",
-          "DRAM"
-        ]
-      },
-      {
-        "topic_id": 5,
-        "label": "cpu / arm / agentic / hashtag",
-        "heat": 35.0,
-        "volume": 13,
-        "engagement": 319,
-        "entities": [
-          "CPU",
-          "AMD",
-          "AI",
-          "Intel",
-          "GPU"
-        ]
-      },
-      {
-        "topic_id": 3,
-        "label": "nvidia / intel / hashtag / rubin",
-        "heat": 31.7,
-        "volume": 25,
-        "engagement": 213,
-        "entities": [
-          "Intel",
-          "AI",
-          "COMPUTEX",
-          "TSMC",
-          "Rubin"
-        ]
-      },
-      {
-        "topic_id": 12,
-        "label": "emib / intel / google / hashtag",
-        "heat": 26.6,
-        "volume": 16,
-        "engagement": 256,
-        "entities": [
-          "Intel",
-          "TSMC",
-          "MediaTek",
-          "Google",
-          "TPU"
-        ]
-      },
-      {
-        "topic_id": 15,
-        "label": "cpo / optical / photonics / silicon",
-        "heat": 22.1,
-        "volume": 21,
-        "engagement": 149,
-        "entities": [
-          "CPO",
-          "AI",
-          "TrendForce",
-          "Samsung",
-          "ASE"
+          "台灣",
+          "大華"
         ]
       },
       {
         "topic_id": 0,
-        "label": "samsung / micro / hashtag / strategy",
-        "heat": 20.6,
-        "volume": 22,
-        "engagement": 127,
-        "entities": [
-          "Samsung",
-          "TrendForce",
-          "Micro",
-          "GaN",
-          "KRW"
-        ]
-      },
-      {
-        "topic_id": 1,
-        "label": "smic / nm / hashtag / nexperia",
-        "heat": 19.1,
-        "volume": 16,
-        "engagement": 127,
-        "entities": [
-          "China",
-          "SMIC",
-          "AI",
-          "Nexperia",
-          "Nexperia China"
-        ]
-      },
-      {
-        "topic_id": 2,
-        "label": "ai / inference / computing / hashtag",
-        "heat": 18.2,
-        "volume": 17,
-        "engagement": 109,
-        "entities": [
-          "AI",
-          "TrendForce",
-          "TSMC",
-          "GPU",
-          "ASIC"
-        ]
-      },
-      {
-        "topic_id": 7,
-        "label": "hbm / surge / trendforce / suppliers",
-        "heat": 16.6,
-        "volume": 13,
-        "engagement": 82,
-        "entities": [
-          "TrendForce",
-          "HBM",
-          "DRAM",
-          "HBM Contract",
-          "Global NEV Sales Fell"
-        ]
-      },
-      {
-        "topic_id": 16,
-        "label": "huawei / apple / xiaomi / prices",
-        "heat": 16.3,
-        "volume": 18,
-        "engagement": 77,
-        "entities": [
-          "Apple",
-          "Huawei",
-          "Xiaomi",
-          "Infineon",
-          "China"
-        ]
-      },
-      {
-        "topic_id": 9,
-        "label": "sic / researchers / gan / laser",
-        "heat": 15.3,
-        "volume": 11,
-        "engagement": 64,
-        "entities": [
-          "SiC",
-          "China",
-          "GaN",
-          "Onsemi",
-          "Chinese"
-        ]
-      },
-      {
-        "topic_id": 4,
-        "label": "spot / prices / nand / tlc",
-        "heat": 13.5,
-        "volume": 5,
-        "engagement": 70,
-        "entities": [
-          "US",
-          "TLC Wafer Down         The",
-          "MLC",
-          "Softness Likely"
-        ]
-      },
-      {
-        "topic_id": 8,
-        "label": "zhitai / ymtc / nand / xtacking",
+        "label": "ai / 負責評估頂尖模型安全的 / 監管重大震盪 / 標準與創新中心",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 16,
+        "engagement": 1,
         "entities": [
-          "YMTC",
-          "Chinese",
-          "ZHITAI",
-          "TiPro      TiPlus      ",
-          "TiPlus"
+          "美國",
+          "佛爾"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "AI",
-        "count": 97
+        "entity": "小摩",
+        "count": 4
       },
       {
-        "entity": "TSMC",
-        "count": 88
+        "entity": "長戴蒙",
+        "count": 4
       },
       {
-        "entity": "Intel",
-        "count": 81
+        "entity": "美國",
+        "count": 4
       },
       {
-        "entity": "Samsung",
-        "count": 74
-      },
-      {
-        "entity": "TrendForce",
-        "count": 52
-      },
-      {
-        "entity": "DDR",
-        "count": 44
-      },
-      {
-        "entity": "HBM",
-        "count": 43
-      },
-      {
-        "entity": "China",
-        "count": 43
-      },
-      {
-        "entity": "US",
-        "count": 35
-      },
-      {
-        "entity": "GPU",
-        "count": 30
+        "entity": "佛爾",
+        "count": 3
       },
       {
         "entity": "NAND",
-        "count": 28
+        "count": 3
       },
       {
-        "entity": "CPU",
-        "count": 24
+        "entity": "台灣",
+        "count": 2
       },
       {
-        "entity": "YoY",
-        "count": 24
+        "entity": "大華",
+        "count": 2
       },
       {
-        "entity": "CPO",
-        "count": 23
+        "entity": "TrendForce",
+        "count": 2
       },
       {
-        "entity": "MediaTek",
-        "count": 20
+        "entity": "修正",
+        "count": 2
+      },
+      {
+        "entity": "Hmm  TrendForce",
+        "count": 1
+      },
+      {
+        "entity": "Flash市場報告",
+        "count": 1
+      },
+      {
+        "entity": "年因ai需求爆發性成長 nand",
+        "count": 1
+      },
+      {
+        "entity": "季挺",
+        "count": 1
+      },
+      {
+        "entity": "季增",
+        "count": 1
+      },
+      {
+        "entity": "韓股歷",
+        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-21T15:30:39.000002+08:00",
-        "bucket_end": "2026-07-21T15:34:56.142859+08:00",
-        "positive": 91,
-        "neutral": 67,
-        "negative": 48
+        "bucket_start": "2026-07-21T07:45:00.000002+00:00",
+        "bucket_end": "2026-07-21T07:49:17.142859+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T15:34:56.142859+08:00",
-        "bucket_end": "2026-07-21T15:39:13.285716+08:00",
-        "positive": 60,
-        "neutral": 20,
-        "negative": 26
+        "bucket_start": "2026-07-21T07:49:17.142859+00:00",
+        "bucket_end": "2026-07-21T07:53:34.285716+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T15:39:13.285716+08:00",
-        "bucket_end": "2026-07-21T15:43:30.428573+08:00",
-        "positive": 24,
+        "bucket_start": "2026-07-21T07:53:34.285716+00:00",
+        "bucket_end": "2026-07-21T07:57:51.428573+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-21T07:57:51.428573+00:00",
+        "bucket_end": "2026-07-21T08:02:08.571430+00:00",
+        "positive": 1,
         "neutral": 1,
-        "negative": 4
-      },
-      {
-        "bucket_start": "2026-07-21T15:43:30.428573+08:00",
-        "bucket_end": "2026-07-21T15:47:47.571430+08:00",
-        "positive": 0,
-        "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T15:47:47.571430+08:00",
-        "bucket_end": "2026-07-21T15:52:04.714287+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T15:52:04.714287+08:00",
-        "bucket_end": "2026-07-21T15:56:21.857144+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T15:56:21.857144+08:00",
-        "bucket_end": "2026-07-21T16:00:39.000001+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T16:00:39.000001+08:00",
-        "bucket_end": "2026-07-21T16:04:56.142858+08:00",
+        "bucket_start": "2026-07-21T08:02:08.571430+00:00",
+        "bucket_end": "2026-07-21T08:06:25.714287+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-21T16:04:56.142858+08:00",
-        "bucket_end": "2026-07-21T16:09:13.285715+08:00",
+        "bucket_start": "2026-07-21T08:06:25.714287+00:00",
+        "bucket_end": "2026-07-21T08:10:42.857144+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T16:09:13.285715+08:00",
-        "bucket_end": "2026-07-21T16:13:30.428572+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T16:13:30.428572+08:00",
-        "bucket_end": "2026-07-21T16:17:47.571429+08:00",
+        "bucket_start": "2026-07-21T08:10:42.857144+00:00",
+        "bucket_end": "2026-07-21T08:15:00.000001+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T16:17:47.571429+08:00",
-        "bucket_end": "2026-07-21T16:22:04.714286+08:00",
+        "bucket_start": "2026-07-21T08:15:00.000001+00:00",
+        "bucket_end": "2026-07-21T08:19:17.142858+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-21T08:19:17.142858+00:00",
+        "bucket_end": "2026-07-21T08:23:34.285715+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T16:22:04.714286+08:00",
-        "bucket_end": "2026-07-21T16:26:21.857143+08:00",
+        "bucket_start": "2026-07-21T08:23:34.285715+00:00",
+        "bucket_end": "2026-07-21T08:27:51.428572+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T16:26:21.857143+08:00",
-        "bucket_end": "2026-07-21T16:30:39+08:00",
-        "positive": 0,
+        "bucket_start": "2026-07-21T08:27:51.428572+00:00",
+        "bucket_end": "2026-07-21T08:32:08.571429+00:00",
+        "positive": 1,
         "neutral": 1,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-21T08:32:08.571429+00:00",
+        "bucket_end": "2026-07-21T08:36:25.714286+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-21T08:36:25.714286+00:00",
+        "bucket_end": "2026-07-21T08:40:42.857143+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-21T08:40:42.857143+00:00",
+        "bucket_end": "2026-07-21T08:45:00+00:00",
+        "positive": 0,
+        "neutral": 0,
         "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "technews_tw",
-        "top_topic_id": 10,
-        "top_topic_label": "ai / hashtag / supply / demand",
-        "focus_share": 1.0,
-        "post_count": 4
-      },
-      {
         "handle": "jukan05",
-        "top_topic_id": 14,
-        "top_topic_label": "nand / kioxia / hashtag / layer",
+        "top_topic_id": 1,
+        "top_topic_label": "nand / 抗震高股息etf出列 / 直言當前股市熱潮堪比網路泡沫初期 / 公股逆勢卡位避風港",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "QQ_Timmy",
-        "top_topic_id": 14,
-        "top_topic_label": "nand / kioxia / hashtag / layer",
+        "top_topic_id": 1,
+        "top_topic_label": "nand / 抗震高股息etf出列 / 直言當前股市熱潮堪比網路泡沫初期 / 公股逆勢卡位避風港",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "TrendForce",
-        "top_topic_id": 10,
-        "top_topic_label": "ai / hashtag / supply / demand",
-        "focus_share": 0.159,
-        "post_count": 340
+        "handle": "ctee.fans",
+        "top_topic_id": 1,
+        "top_topic_label": "nand / 抗震高股息etf出列 / 直言當前股市熱潮堪比網路泡沫初期 / 公股逆勢卡位避風港",
+        "focus_share": 1.0,
+        "post_count": 2
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 1,
+        "top_topic_label": "nand / 抗震高股息etf出列 / 直言當前股市熱潮堪比網路泡沫初期 / 公股逆勢卡位避風港",
+        "focus_share": 0.75,
+        "post_count": 4
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 1,
+        "top_topic_label": "nand / 抗震高股息etf出列 / 直言當前股市熱潮堪比網路泡沫初期 / 公股逆勢卡位避風港",
+        "focus_share": 0.667,
+        "post_count": 3
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 10,
-        "label": "ai / hashtag / supply / demand",
-        "total_engagement": 551,
-        "post_count": 58
-      },
-      {
-        "topic_id": 14,
-        "label": "nand / kioxia / hashtag / layer",
-        "total_engagement": 397,
-        "post_count": 21
-      },
-      {
-        "topic_id": 13,
-        "label": "glass / substrate / intel / hashtag",
-        "total_engagement": 394,
-        "post_count": 19
-      },
-      {
-        "topic_id": 11,
-        "label": "ddr / spot / dram / micron",
-        "total_engagement": 371,
-        "post_count": 15
-      },
-      {
-        "topic_id": 17,
-        "label": "hbm / samsung / hashtag / micron",
-        "total_engagement": 359,
-        "post_count": 23
-      },
-      {
-        "topic_id": 6,
-        "label": "tsmc / euv / hashtag / apple",
-        "total_engagement": 326,
-        "post_count": 31
-      },
-      {
-        "topic_id": 5,
-        "label": "cpu / arm / agentic / hashtag",
-        "total_engagement": 319,
-        "post_count": 13
-      },
-      {
-        "topic_id": 12,
-        "label": "emib / intel / google / hashtag",
-        "total_engagement": 256,
-        "post_count": 16
-      },
-      {
-        "topic_id": 3,
-        "label": "nvidia / intel / hashtag / rubin",
-        "total_engagement": 213,
-        "post_count": 25
-      },
-      {
-        "topic_id": 15,
-        "label": "cpo / optical / photonics / silicon",
-        "total_engagement": 149,
-        "post_count": 21
+        "topic_id": 1,
+        "label": "nand / 抗震高股息etf出列 / 直言當前股市熱潮堪比網路泡沫初期 / 公股逆勢卡位避風港",
+        "total_engagement": 144,
+        "post_count": 9
       },
       {
         "topic_id": 0,
-        "label": "samsung / micro / hashtag / strategy",
-        "total_engagement": 127,
-        "post_count": 22
-      },
-      {
-        "topic_id": 1,
-        "label": "smic / nm / hashtag / nexperia",
-        "total_engagement": 127,
-        "post_count": 16
-      },
-      {
-        "topic_id": 2,
-        "label": "ai / inference / computing / hashtag",
-        "total_engagement": 109,
-        "post_count": 17
-      },
-      {
-        "topic_id": 7,
-        "label": "hbm / surge / trendforce / suppliers",
-        "total_engagement": 82,
-        "post_count": 13
-      },
-      {
-        "topic_id": 16,
-        "label": "huawei / apple / xiaomi / prices",
-        "total_engagement": 77,
-        "post_count": 18
-      },
-      {
-        "topic_id": 4,
-        "label": "spot / prices / nand / tlc",
-        "total_engagement": 70,
-        "post_count": 5
-      },
-      {
-        "topic_id": 9,
-        "label": "sic / researchers / gan / laser",
-        "total_engagement": 64,
-        "post_count": 11
-      },
-      {
-        "topic_id": 8,
-        "label": "zhitai / ymtc / nand / xtacking",
-        "total_engagement": 16,
+        "label": "ai / 負責評估頂尖模型安全的 / 監管重大震盪 / 標準與創新中心",
+        "total_engagement": 1,
         "post_count": 2
       }
     ],
@@ -598,10 +283,10 @@
           "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 346,
-          "likes": 3962,
-          "engagement": 4007,
-          "avg_engagement": 11.6
+          "post_count": 11,
+          "likes": 128,
+          "engagement": 145,
+          "avg_engagement": 13.2
         },
         "evening": {
           "post_count": 0,
