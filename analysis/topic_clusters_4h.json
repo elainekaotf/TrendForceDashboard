@@ -2,75 +2,50 @@
   "clusters": [
     {
       "id": 0,
-      "label": "ai / memory / dram / hbm",
-      "size": 34,
+      "label": "ai / trendforce / dram / memory",
+      "size": 10,
       "accounts": {
         "TrendForce": 2,
-        "technews_tw": 6,
-        "jukan05": 3,
-        "QQ_Timmy": 5,
-        "tphuang": 3,
-        "tengyanAI": 2,
-        "TrendForce.tw": 1,
-        "technewsinside": 6,
-        "ctee.fans": 6
+        "SemiAnalysis_": 3,
+        "tphuang": 5
       },
       "engagement_by_account": {
-        "TrendForce": 20,
-        "technews_tw": 3,
-        "jukan05": 2009,
-        "QQ_Timmy": 126,
-        "tphuang": 138,
-        "tengyanAI": 22,
-        "TrendForce.tw": 5,
-        "technewsinside": 70,
-        "ctee.fans": 66
-      }
-    },
-    {
-      "id": 9,
-      "label": "trendforce / dram / ai / nand",
-      "size": 2,
-      "accounts": {
-        "technews_tw": 1,
-        "technewsinside": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 0,
-        "technewsinside": 4
-      }
-    },
-    {
-      "id": 12,
-      "label": "ai / physical / token / 科技早報",
-      "size": 2,
-      "accounts": {
-        "technews_tw": 1,
-        "technewsinside": 1
-      },
-      "engagement_by_account": {
-        "technews_tw": 0,
-        "technewsinside": 6
-      }
-    },
-    {
-      "id": 15,
-      "label": "nvidia / ai / amd / rubin",
-      "size": 1,
-      "accounts": {
-        "TrendForce": 1
-      },
-      "engagement_by_account": {
-        "TrendForce": 17
+        "TrendForce": 2,
+        "SemiAnalysis_": 87,
+        "tphuang": 60
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 0,
+      "label": "ai / trendforce / dram / memory",
+      "own_count": 2,
+      "competitor_count": 8,
+      "competitor_engagement": 147,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "tphuang"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 0,
+      "label": "ai / trendforce / dram / memory",
+      "own_count": 2,
+      "competitor_count": 8,
+      "competitor_engagement": 147,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "tphuang"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-20T19:02:56+08:00",
-    "end_utc": "2026-07-20T23:02:56+08:00",
-    "start_tw": "Jul 20, 19:02",
-    "end_tw": "Jul 20, 23:02"
+    "start_utc": "2026-07-21T01:46:15+08:00",
+    "end_utc": "2026-07-21T05:46:15+08:00",
+    "start_tw": "Jul 21, 01:46",
+    "end_tw": "Jul 21, 05:46"
   }
 }
