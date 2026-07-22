@@ -1,79 +1,56 @@
 {
   "clusters": [
     {
-      "id": 5,
-      "label": "ai / nvidia / memory / openai",
-      "size": 8,
+      "id": 1,
+      "label": "ai / nvidia / memory / hbm",
+      "size": 13,
       "accounts": {
-        "SemiAnalysis_": 2,
-        "QQ_Timmy": 1,
-        "tphuang": 3,
-        "tengyanAI": 2
+        "ctee.fans": 13
       },
       "engagement_by_account": {
-        "SemiAnalysis_": 301,
-        "QQ_Timmy": 15,
-        "tphuang": 23,
-        "tengyanAI": 6
-      }
-    },
-    {
-      "id": 7,
-      "label": "nand / flash / dram / trendforce",
-      "size": 1,
-      "accounts": {
-        "TrendForce": 1
-      },
-      "engagement_by_account": {
-        "TrendForce": 0
+        "ctee.fans": 182
       }
     },
     {
       "id": 11,
-      "label": "dram / hbm / ddr / trendforce",
+      "label": "gb / nvl / tlc / nvidia",
       "size": 1,
       "accounts": {
-        "tphuang": 1
+        "ctee.fans": 1
       },
       "engagement_by_account": {
-        "tphuang": 3
+        "ctee.fans": 70
       }
     }
   ],
   "gaps": [
     {
-      "cluster_id": 5,
-      "label": "ai / nvidia / memory / openai",
+      "cluster_id": 1,
+      "label": "ai / nvidia / memory / hbm",
       "own_count": 0,
-      "competitor_count": 8,
-      "competitor_engagement": 345,
+      "competitor_count": 13,
+      "competitor_engagement": 182,
       "competitors_covering": [
-        "SemiAnalysis_",
-        "QQ_Timmy",
-        "tphuang",
-        "tengyanAI"
+        "ctee.fans"
       ]
     }
   ],
   "suggested_entry_points": [
     {
-      "cluster_id": 5,
-      "label": "ai / nvidia / memory / openai",
+      "cluster_id": 1,
+      "label": "ai / nvidia / memory / hbm",
       "own_count": 0,
-      "competitor_count": 8,
-      "competitor_engagement": 345,
+      "competitor_count": 13,
+      "competitor_engagement": 182,
       "competitors_covering": [
-        "SemiAnalysis_",
-        "QQ_Timmy",
-        "tphuang",
-        "tengyanAI"
+        "ctee.fans"
       ]
     }
   ],
   "window": {
-    "start_utc": "2026-07-21T23:46:04+08:00",
-    "end_utc": "2026-07-22T03:46:04+08:00",
-    "start_tw": "Jul 21, 23:46",
-    "end_tw": "Jul 22, 03:46"
+    "start_utc": "2026-07-21T22:29:07.248011+00:00",
+    "end_utc": "2026-07-22T02:29:07.248011+00:00",
+    "start_tw": "Jul 22, 06:29",
+    "end_tw": "Jul 22, 10:29"
   }
 }
