@@ -1,93 +1,117 @@
 {
-  "generated_at": "2026-07-22T03:18:30.794947+00:00",
+  "generated_at": "2026-07-22T04:45:00+00:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-21T19:18:30.794947+00:00",
-    "end_utc": "2026-07-22T03:18:30.794947+00:00",
-    "start_tw": "Jul 22, 03:18",
-    "end_tw": "Jul 22, 11:18"
+    "start_utc": "2026-07-21T20:45:00+00:00",
+    "end_utc": "2026-07-22T04:45:00+00:00",
+    "start_tw": "Jul 22, 04:45",
+    "end_tw": "Jul 22, 12:45"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 37,
+      "total_posts": 80,
       "sentiment_counts": {
-        "positive": 14,
-        "neutral": 19,
-        "negative": 4
+        "positive": 36,
+        "negative": 10,
+        "neutral": 34
       },
       "sentiment_share": {
-        "positive": 0.378,
-        "neutral": 0.514,
-        "negative": 0.108
+        "positive": 0.45,
+        "negative": 0.125,
+        "neutral": 0.425
       },
       "top_terms": [
-        "查看",
-        "看更",
-        "更多",
-        "查看更",
-        "看更多",
-        "查看更多",
-        "輝達",
         "黃仁",
         "仁勳",
-        "黃仁勳"
+        "黃仁勳",
+        "緯創",
+        "輝達",
+        "台積",
+        "積電",
+        "台積電",
+        "高達",
+        "德州"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 2,
-        "label": "rk / 沒再賣了 / 這檔金控買最多張 / 外資回補台積電逾百億",
-        "heat": 90.0,
-        "volume": 18,
-        "engagement": 983,
+        "topic_id": 1,
+        "label": "ai / 查看更多 / 暗光纖 / 黃仁勳親飛德州替緯創站台",
+        "heat": 73.6,
+        "volume": 43,
+        "engagement": 1116,
         "entities": [
-          "伺服器",
-          "台積電",
-          "美國",
-          "DRAM",
-          "Latter"
-        ]
-      },
-      {
-        "topic_id": 0,
-        "label": "緯創 / gb / 黃仁勳 / nvidia",
-        "heat": 14.0,
-        "volume": 3,
-        "engagement": 90,
-        "entities": [
+          "輝達",
           "緯創",
-          "黃仁勳",
-          "德州",
-          "美國",
-          "沃斯堡"
-        ]
-      },
-      {
-        "topic_id": 5,
-        "label": "ai / nvidia / 黃仁勳",
-        "heat": 13.5,
-        "volume": 8,
-        "engagement": 52,
-        "entities": [
-          "伺服器",
-          "高達",
-          "台積電",
           "台灣",
-          "上市"
+          "黃仁勳",
+          "德州"
         ]
       },
       {
-        "topic_id": 6,
-        "label": "南電喊到 / 記憶體第二 / 查看更多",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 0,
-        "entities": []
+        "topic_id": 2,
+        "label": "hynix / intel / sk / ohio",
+        "heat": 57.8,
+        "volume": 6,
+        "engagement": 3785,
+        "entities": [
+          "intel",
+          "Intel",
+          "ohio",
+          "Ohio",
+          "HBM"
+        ]
       },
       {
         "topic_id": 3,
-        "label": "名家評論 / 股東權益報酬率 / 和roa / 國票金控經營權之爭暫告一段落",
+        "label": "黃仁勳 / gb / 緯創 / 親自加持",
+        "heat": 13.3,
+        "volume": 4,
+        "engagement": 281,
+        "entities": [
+          "黃仁勳",
+          "緯創",
+          "全美",
+          "德州",
+          "美國"
+        ]
+      },
+      {
+        "topic_id": 8,
+        "label": "nvidia / 於德州啟用 / 超級電腦基地 / 親自站台",
+        "heat": 11.8,
+        "volume": 3,
+        "engagement": 343,
+        "entities": [
+          "黃仁勳",
+          "德州",
+          "緯創"
+        ]
+      },
+      {
+        "topic_id": 11,
+        "label": "中華電信 / 技術並布局量子技術 / 簽署合作備忘錄 / apn",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 2,
+        "entities": [
+          "中華電信",
+          "日本",
+          "富士通"
+        ]
+      },
+      {
+        "topic_id": 13,
+        "label": "美軍對伊作戰開支暴增至 / 國防預算面臨巨大缺口",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 5,
+        "entities": []
+      },
+      {
+        "topic_id": 10,
+        "label": "機器人 / 尚未具備自動手術功能 / 但一定程度證明 / 通用型人型平台開始有進入高門檻專業場景的潛在可行性",
         "heat": 10.0,
         "volume": 2,
         "engagement": 3,
@@ -95,287 +119,445 @@
       },
       {
         "topic_id": 4,
-        "label": "進逼 / 元價位 / 新台幣跌跌不休成最弱亞幣 / 查看更多",
+        "label": "年調漲價格最高 / 台積電 / 英特爾 / 摩根大通評估台積電在",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 27,
-        "entities": []
+        "engagement": 7,
+        "entities": [
+          "台積電",
+          "摩根",
+          "大通",
+          "英特爾"
+        ]
       },
       {
-        "topic_id": 1,
-        "label": "盤前 / rtx / spark牽手聯發科 / 台廠新品接力上場",
+        "topic_id": 7,
+        "label": "三星 / nvidia / gpu / 將混合鍵合量產時程延至",
         "heat": 10.0,
         "volume": 2,
         "engagement": 6,
         "entities": [
-          "輝達",
+          "三星"
+        ]
+      },
+      {
+        "topic_id": 12,
+        "label": "vertiv / 算力飆升引爆散熱大戰 / 宣布重金擴建義大利園區 / 年底前將散熱產能翻倍",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 5,
+        "entities": []
+      },
+      {
+        "topic_id": 9,
+        "label": "cybercab / 無人計程車就算深入偏區也能保持連線 / 衛星系統 / 特斯拉",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 5,
+        "entities": []
+      },
+      {
+        "topic_id": 14,
+        "label": "低成本 / ai / 擴建潮 / 與電子製造的震央",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 18,
+        "entities": [
+          "黃仁勳",
+          "台灣"
+        ]
+      },
+      {
+        "topic_id": 15,
+        "label": "年代以來超強奇蹟 / 台灣經濟成長率衝破",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 12,
+        "entities": [
+          "台灣"
+        ]
+      },
+      {
+        "topic_id": 6,
+        "label": "點史上最大漲 / 台股狂飆 / 檔全面進攻 / 千金軍團",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 217,
+        "entities": [
+          "台積電",
           "聯發科"
+        ]
+      },
+      {
+        "topic_id": 5,
+        "label": "meta / infrastructure / ai",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 208,
+        "entities": [
+          "AI",
+          "DSF",
+          "Grand Teton  ",
+          "Ariel",
+          "Meta Infrastructure"
+        ]
+      },
+      {
+        "topic_id": 0,
+        "label": "沒再賣了 / 外資回補台積電逾百億 / 這檔金控買最多張 / 查看更多",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 47,
+        "entities": [
+          "台積電"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "伺服器",
-        "count": 4
-      },
-      {
-        "entity": "輝達",
-        "count": 4
-      },
-      {
-        "entity": "台積電",
-        "count": 4
-      },
-      {
         "entity": "黃仁勳",
-        "count": 4
+        "count": 27
       },
       {
         "entity": "緯創",
-        "count": 4
+        "count": 26
       },
       {
         "entity": "台灣",
-        "count": 3
+        "count": 20
+      },
+      {
+        "entity": "輝達",
+        "count": 18
+      },
+      {
+        "entity": "台積電",
+        "count": 14
       },
       {
         "entity": "德州",
-        "count": 3
+        "count": 13
+      },
+      {
+        "entity": "intel",
+        "count": 10
       },
       {
         "entity": "美國",
-        "count": 3
-      },
-      {
-        "entity": "高達",
-        "count": 2
+        "count": 8
       },
       {
         "entity": "全美",
-        "count": 2
+        "count": 8
       },
       {
-        "entity": "聯發科",
-        "count": 2
+        "entity": "伺服器",
+        "count": 7
       },
       {
-        "entity": "DRAM",
-        "count": 1
+        "entity": "上市",
+        "count": 6
       },
       {
-        "entity": "Latter",
-        "count": 1
+        "entity": "Intel",
+        "count": 5
       },
       {
-        "entity": "Hybrid Bonding",
-        "count": 1
+        "entity": "ohio",
+        "count": 5
       },
       {
-        "entity": "TSV",
-        "count": 1
+        "entity": "Ohio",
+        "count": 5
+      },
+      {
+        "entity": "中華電信",
+        "count": 4
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-21T19:18:30.794949+00:00",
-        "bucket_end": "2026-07-21T19:52:47.937806+00:00",
-        "positive": 3,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T19:52:47.937806+00:00",
-        "bucket_end": "2026-07-21T20:27:05.080663+00:00",
+        "bucket_start": "2026-07-21T20:45:00.000002+00:00",
+        "bucket_end": "2026-07-21T21:19:17.142859+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T20:27:05.080663+00:00",
-        "bucket_end": "2026-07-21T21:01:22.223520+00:00",
+        "bucket_start": "2026-07-21T21:19:17.142859+00:00",
+        "bucket_end": "2026-07-21T21:53:34.285716+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T21:01:22.223520+00:00",
-        "bucket_end": "2026-07-21T21:35:39.366377+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T21:35:39.366377+00:00",
-        "bucket_end": "2026-07-21T22:09:56.509234+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T22:09:56.509234+00:00",
-        "bucket_end": "2026-07-21T22:44:13.652091+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T22:44:13.652091+00:00",
-        "bucket_end": "2026-07-21T23:18:30.794948+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-21T23:18:30.794948+00:00",
-        "bucket_end": "2026-07-21T23:52:47.937805+00:00",
+        "bucket_start": "2026-07-21T21:53:34.285716+00:00",
+        "bucket_end": "2026-07-21T22:27:51.428573+00:00",
         "positive": 2,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T23:52:47.937805+00:00",
-        "bucket_end": "2026-07-22T00:27:05.080662+00:00",
+        "bucket_start": "2026-07-21T22:27:51.428573+00:00",
+        "bucket_end": "2026-07-21T23:02:08.571430+00:00",
         "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-21T23:02:08.571430+00:00",
+        "bucket_end": "2026-07-21T23:36:25.714287+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-21T23:36:25.714287+00:00",
+        "bucket_end": "2026-07-22T00:10:42.857144+00:00",
+        "positive": 6,
         "neutral": 2,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-22T00:27:05.080662+00:00",
-        "bucket_end": "2026-07-22T01:01:22.223519+00:00",
+        "bucket_start": "2026-07-22T00:10:42.857144+00:00",
+        "bucket_end": "2026-07-22T00:45:00.000001+00:00",
         "positive": 2,
+        "neutral": 3,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-22T00:45:00.000001+00:00",
+        "bucket_end": "2026-07-22T01:19:17.142858+00:00",
+        "positive": 4,
         "neutral": 4,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-22T01:01:22.223519+00:00",
-        "bucket_end": "2026-07-22T01:35:39.366376+00:00",
-        "positive": 0,
-        "neutral": 2,
+        "bucket_start": "2026-07-22T01:19:17.142858+00:00",
+        "bucket_end": "2026-07-22T01:53:34.285715+00:00",
+        "positive": 4,
+        "neutral": 3,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-22T01:35:39.366376+00:00",
-        "bucket_end": "2026-07-22T02:09:56.509233+00:00",
-        "positive": 3,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T02:09:56.509233+00:00",
-        "bucket_end": "2026-07-22T02:44:13.652090+00:00",
-        "positive": 2,
+        "bucket_start": "2026-07-22T01:53:34.285715+00:00",
+        "bucket_end": "2026-07-22T02:27:51.428572+00:00",
+        "positive": 1,
         "neutral": 5,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T02:27:51.428572+00:00",
+        "bucket_end": "2026-07-22T03:02:08.571429+00:00",
+        "positive": 7,
+        "neutral": 7,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-22T03:02:08.571429+00:00",
+        "bucket_end": "2026-07-22T03:36:25.714286+00:00",
+        "positive": 5,
+        "neutral": 3,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-22T02:44:13.652090+00:00",
-        "bucket_end": "2026-07-22T03:18:30.794947+00:00",
+        "bucket_start": "2026-07-22T03:36:25.714286+00:00",
+        "bucket_end": "2026-07-22T04:10:42.857143+00:00",
+        "positive": 1,
+        "neutral": 3,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-22T04:10:42.857143+00:00",
+        "bucket_end": "2026-07-22T04:45:00+00:00",
         "positive": 2,
-        "neutral": 1,
-        "negative": 0
+        "neutral": 3,
+        "negative": 1
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "tphuang",
-        "top_topic_id": 2,
-        "top_topic_label": "rk / 沒再賣了 / 這檔金控買最多張 / 外資回補台積電逾百億",
-        "focus_share": 1.0,
-        "post_count": 3
-      },
-      {
-        "handle": "tengyanAI",
-        "top_topic_id": 2,
-        "top_topic_label": "rk / 沒再賣了 / 這檔金控買最多張 / 外資回補台積電逾百億",
+        "handle": "QQ_Timmy",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 查看更多 / 暗光纖 / 黃仁勳親飛德州替緯創站台",
         "focus_share": 1.0,
         "post_count": 2
       },
       {
         "handle": "TrendForce.tw",
-        "top_topic_id": 2,
-        "top_topic_label": "rk / 沒再賣了 / 這檔金控買最多張 / 外資回補台積電逾百億",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 查看更多 / 暗光纖 / 黃仁勳親飛德州替緯創站台",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "yutinghaosfinance",
-        "top_topic_id": 2,
-        "top_topic_label": "rk / 沒再賣了 / 這檔金控買最多張 / 外資回補台積電逾百億",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 查看更多 / 暗光纖 / 黃仁勳親飛德州替緯創站台",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "technewsinside",
+        "handle": "dylan522p",
         "top_topic_id": 5,
-        "top_topic_label": "ai / nvidia / 黃仁勳",
-        "focus_share": 0.533,
-        "post_count": 15
+        "top_topic_label": "meta / infrastructure / ai",
+        "focus_share": 1.0,
+        "post_count": 1
       },
       {
         "handle": "ctee.fans",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 查看更多 / 暗光纖 / 黃仁勳親飛德州替緯創站台",
+        "focus_share": 0.857,
+        "post_count": 21
+      },
+      {
+        "handle": "jukan05",
         "top_topic_id": 2,
-        "top_topic_label": "rk / 沒再賣了 / 這檔金控買最多張 / 外資回補台積電逾百億",
+        "top_topic_label": "hynix / intel / sk / ohio",
+        "focus_share": 0.625,
+        "post_count": 8
+      },
+      {
+        "handle": "TrendForce",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 查看更多 / 暗光纖 / 黃仁勳親飛德州替緯創站台",
+        "focus_share": 0.5,
+        "post_count": 2
+      },
+      {
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 8,
+        "top_topic_label": "nvidia / 於德州啟用 / 超級電腦基地 / 親自站台",
+        "focus_share": 0.5,
+        "post_count": 2
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 查看更多 / 暗光纖 / 黃仁勳親飛德州替緯創站台",
+        "focus_share": 0.409,
+        "post_count": 22
+      },
+      {
+        "handle": "technews_tw",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / 查看更多 / 暗光纖 / 黃仁勳親飛德州替緯創站台",
         "focus_share": 0.4,
-        "post_count": 15
+        "post_count": 20
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 2,
-        "label": "rk / 沒再賣了 / 這檔金控買最多張 / 外資回補台積電逾百億",
-        "total_engagement": 983,
-        "post_count": 18
-      },
-      {
-        "topic_id": 0,
-        "label": "緯創 / gb / 黃仁勳 / nvidia",
-        "total_engagement": 90,
-        "post_count": 3
-      },
-      {
-        "topic_id": 5,
-        "label": "ai / nvidia / 黃仁勳",
-        "total_engagement": 52,
-        "post_count": 8
-      },
-      {
-        "topic_id": 4,
-        "label": "進逼 / 元價位 / 新台幣跌跌不休成最弱亞幣 / 查看更多",
-        "total_engagement": 27,
-        "post_count": 2
+        "label": "hynix / intel / sk / ohio",
+        "total_engagement": 3785,
+        "post_count": 6
       },
       {
         "topic_id": 1,
-        "label": "盤前 / rtx / spark牽手聯發科 / 台廠新品接力上場",
+        "label": "ai / 查看更多 / 暗光纖 / 黃仁勳親飛德州替緯創站台",
+        "total_engagement": 1116,
+        "post_count": 43
+      },
+      {
+        "topic_id": 8,
+        "label": "nvidia / 於德州啟用 / 超級電腦基地 / 親自站台",
+        "total_engagement": 343,
+        "post_count": 3
+      },
+      {
+        "topic_id": 3,
+        "label": "黃仁勳 / gb / 緯創 / 親自加持",
+        "total_engagement": 281,
+        "post_count": 4
+      },
+      {
+        "topic_id": 6,
+        "label": "點史上最大漲 / 台股狂飆 / 檔全面進攻 / 千金軍團",
+        "total_engagement": 217,
+        "post_count": 2
+      },
+      {
+        "topic_id": 5,
+        "label": "meta / infrastructure / ai",
+        "total_engagement": 208,
+        "post_count": 2
+      },
+      {
+        "topic_id": 0,
+        "label": "沒再賣了 / 外資回補台積電逾百億 / 這檔金控買最多張 / 查看更多",
+        "total_engagement": 47,
+        "post_count": 2
+      },
+      {
+        "topic_id": 14,
+        "label": "低成本 / ai / 擴建潮 / 與電子製造的震央",
+        "total_engagement": 18,
+        "post_count": 2
+      },
+      {
+        "topic_id": 15,
+        "label": "年代以來超強奇蹟 / 台灣經濟成長率衝破",
+        "total_engagement": 12,
+        "post_count": 2
+      },
+      {
+        "topic_id": 4,
+        "label": "年調漲價格最高 / 台積電 / 英特爾 / 摩根大通評估台積電在",
+        "total_engagement": 7,
+        "post_count": 2
+      },
+      {
+        "topic_id": 7,
+        "label": "三星 / nvidia / gpu / 將混合鍵合量產時程延至",
         "total_engagement": 6,
         "post_count": 2
       },
       {
-        "topic_id": 3,
-        "label": "名家評論 / 股東權益報酬率 / 和roa / 國票金控經營權之爭暫告一段落",
+        "topic_id": 13,
+        "label": "美軍對伊作戰開支暴增至 / 國防預算面臨巨大缺口",
+        "total_engagement": 5,
+        "post_count": 2
+      },
+      {
+        "topic_id": 12,
+        "label": "vertiv / 算力飆升引爆散熱大戰 / 宣布重金擴建義大利園區 / 年底前將散熱產能翻倍",
+        "total_engagement": 5,
+        "post_count": 2
+      },
+      {
+        "topic_id": 9,
+        "label": "cybercab / 無人計程車就算深入偏區也能保持連線 / 衛星系統 / 特斯拉",
+        "total_engagement": 5,
+        "post_count": 2
+      },
+      {
+        "topic_id": 10,
+        "label": "機器人 / 尚未具備自動手術功能 / 但一定程度證明 / 通用型人型平台開始有進入高門檻專業場景的潛在可行性",
         "total_engagement": 3,
         "post_count": 2
       },
       {
-        "topic_id": 6,
-        "label": "南電喊到 / 記憶體第二 / 查看更多",
-        "total_engagement": 0,
+        "topic_id": 11,
+        "label": "中華電信 / 技術並布局量子技術 / 簽署合作備忘錄 / apn",
+        "total_engagement": 2,
         "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 32,
-          "likes": 1151,
-          "engagement": 1151,
-          "avg_engagement": 36.0
+          "post_count": 71,
+          "likes": 5272,
+          "engagement": 5768,
+          "avg_engagement": 81.2
         },
         "afternoon": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 9,
+          "likes": 278,
+          "engagement": 292,
+          "avg_engagement": 32.4
         },
         "evening": {
           "post_count": 0,
@@ -384,10 +566,10 @@
           "avg_engagement": 0.0
         },
         "late_night": {
-          "post_count": 5,
-          "likes": 4,
-          "engagement": 10,
-          "avg_engagement": 2.0
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         }
       },
       "peak_slot": "morning"
