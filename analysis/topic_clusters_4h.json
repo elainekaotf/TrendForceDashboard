@@ -2,31 +2,53 @@
   "clusters": [
     {
       "id": 1,
-      "label": "ai / memory / tsmc / dram",
-      "size": 18,
+      "label": "ai / trendforce / 台積電 / memory",
+      "size": 20,
       "accounts": {
-        "TrendForce": 3,
-        "technews_tw": 3,
+        "TrendForce": 1,
+        "technews_tw": 1,
         "jukan05": 1,
         "QQ_Timmy": 1,
-        "tengyanAI": 1,
         "TrendForce.tw": 2,
-        "technewsinside": 4,
-        "ctee.fans": 3
+        "technewsinside": 9,
+        "ctee.fans": 5
       },
       "engagement_by_account": {
-        "TrendForce": 62,
-        "technews_tw": 5,
-        "jukan05": 241,
+        "TrendForce": 30,
+        "technews_tw": 4,
+        "jukan05": 245,
         "QQ_Timmy": 19,
-        "tengyanAI": 26,
         "TrendForce.tw": 27,
-        "technewsinside": 214,
-        "ctee.fans": 23
+        "technewsinside": 72,
+        "ctee.fans": 61
       }
     },
     {
-      "id": 4,
+      "id": 5,
+      "label": "ai / trendforce / physical / token",
+      "size": 2,
+      "accounts": {
+        "technewsinside": 2
+      },
+      "engagement_by_account": {
+        "technewsinside": 1
+      }
+    },
+    {
+      "id": 7,
+      "label": "openai / ai / anthropic / gpt",
+      "size": 2,
+      "accounts": {
+        "technewsinside": 1,
+        "ctee.fans": 1
+      },
+      "engagement_by_account": {
+        "technewsinside": 6,
+        "ctee.fans": 31
+      }
+    },
+    {
+      "id": 9,
       "label": "nvidia / ai / amd / rubin",
       "size": 2,
       "accounts": {
@@ -37,38 +59,36 @@
       }
     },
     {
-      "id": 6,
-      "label": "hbm / dram / memory / samsung",
+      "id": 11,
+      "label": "dram / hbm / trendforce / nand",
       "size": 2,
       "accounts": {
-        "jukan05": 1,
+        "TrendForce": 1,
         "QQ_Timmy": 1
       },
       "engagement_by_account": {
-        "jukan05": 245,
+        "TrendForce": 17,
         "QQ_Timmy": 19
       }
     },
     {
-      "id": 15,
-      "label": "ai / 蘋果 / physical / token",
-      "size": 2,
+      "id": 6,
+      "label": "spacex / ipo / 馬斯克 / starlink",
+      "size": 1,
       "accounts": {
-        "technews_tw": 1,
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "technews_tw": 6,
-        "technewsinside": 0
+        "technewsinside": 7
       }
     }
   ],
   "gaps": [],
   "suggested_entry_points": [],
   "window": {
-    "start_utc": "2026-07-22T11:32:27+08:00",
-    "end_utc": "2026-07-22T15:32:27+08:00",
-    "start_tw": "Jul 22, 11:32",
-    "end_tw": "Jul 22, 15:32"
+    "start_utc": "2026-07-22T04:30:00+00:00",
+    "end_utc": "2026-07-22T08:30:00+00:00",
+    "start_tw": "Jul 22, 12:30",
+    "end_tw": "Jul 22, 16:30"
   }
 }

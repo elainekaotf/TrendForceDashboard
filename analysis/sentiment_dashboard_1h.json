@@ -1,217 +1,178 @@
 {
-  "generated_at": "2026-07-22T04:45:00+00:00",
+  "generated_at": "2026-07-22T08:30:00+00:00",
   "time_range": "1h",
   "window": {
-    "start_utc": "2026-07-22T03:45:00+00:00",
-    "end_utc": "2026-07-22T04:45:00+00:00",
-    "start_tw": "Jul 22, 11:45",
-    "end_tw": "Jul 22, 12:45"
+    "start_utc": "2026-07-22T07:30:00+00:00",
+    "end_utc": "2026-07-22T08:30:00+00:00",
+    "start_tw": "Jul 22, 15:30",
+    "end_tw": "Jul 22, 16:30"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 12,
+      "total_posts": 6,
       "sentiment_counts": {
-        "positive": 4,
-        "negative": 2,
-        "neutral": 6
+        "positive": 3,
+        "neutral": 3
       },
       "sentiment_share": {
-        "positive": 0.333,
-        "negative": 0.167,
+        "positive": 0.5,
         "neutral": 0.5
       },
       "top_terms": [
-        "網路",
-        "finity",
-        "apn",
-        "中華",
-        "華電",
-        "電信",
-        "中華電",
-        "華電信",
-        "中華電信",
-        "攜手"
+        "算力",
+        "bofa",
+        "vivek",
+        "arya",
+        "excellent",
+        "bearish",
+        "memory",
+        "closed",
+        "models",
+        "amortize"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 0,
-        "label": "美軍對伊作戰開支暴增至 / 國防預算面臨巨大缺口 / 機器人 / 尚未具備自動手術功能",
+        "label": "ai",
         "heat": 50.0,
-        "volume": 10,
-        "engagement": 99,
+        "volume": 6,
+        "engagement": 275,
         "entities": [
-          "中華電信",
-          "日本",
-          "富士通",
-          "HPC",
-          "FT  Samsung"
-        ]
-      },
-      {
-        "topic_id": 1,
-        "label": "黃仁勳",
-        "heat": 50.0,
-        "volume": 2,
-        "engagement": 204,
-        "entities": [
-          "黃仁勳",
-          "全美",
-          "緯創",
-          "德州"
+          "BofA s",
+          "Vivek Arya",
+          "HBM",
+          "中國",
+          "愛爾達"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "中華電信",
-        "count": 4
-      },
-      {
-        "entity": "日本",
-        "count": 3
-      },
-      {
-        "entity": "富士通",
-        "count": 3
-      },
-      {
-        "entity": "黃仁勳",
-        "count": 2
-      },
-      {
-        "entity": "HPC",
+        "entity": "BofA s",
         "count": 1
       },
       {
-        "entity": "FT  Samsung",
+        "entity": "Vivek Arya",
         "count": 1
       },
       {
-        "entity": "Mistral",
+        "entity": "HBM",
         "count": 1
       },
       {
-        "entity": "Samsung",
+        "entity": "中國",
         "count": 1
       },
       {
-        "entity": "全美",
+        "entity": "愛爾達",
         "count": 1
       },
       {
-        "entity": "緯創",
+        "entity": "奇特",
         "count": 1
       },
       {
-        "entity": "德州",
-        "count": 1
-      },
-      {
-        "entity": "輝達",
-        "count": 1
-      },
-      {
-        "entity": "美國",
+        "entity": "城鎮",
         "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-22T03:45:00.000002+00:00",
-        "bucket_end": "2026-07-22T03:49:17.142859+00:00",
-        "positive": 1,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T03:49:17.142859+00:00",
-        "bucket_end": "2026-07-22T03:53:34.285716+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T03:53:34.285716+00:00",
-        "bucket_end": "2026-07-22T03:57:51.428573+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T03:57:51.428573+00:00",
-        "bucket_end": "2026-07-22T04:02:08.571430+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-22T04:02:08.571430+00:00",
-        "bucket_end": "2026-07-22T04:06:25.714287+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T04:06:25.714287+00:00",
-        "bucket_end": "2026-07-22T04:10:42.857144+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T04:10:42.857144+00:00",
-        "bucket_end": "2026-07-22T04:15:00.000001+00:00",
-        "positive": 0,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T04:15:00.000001+00:00",
-        "bucket_end": "2026-07-22T04:19:17.142858+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T04:19:17.142858+00:00",
-        "bucket_end": "2026-07-22T04:23:34.285715+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-22T04:23:34.285715+00:00",
-        "bucket_end": "2026-07-22T04:27:51.428572+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T04:27:51.428572+00:00",
-        "bucket_end": "2026-07-22T04:32:08.571429+00:00",
+        "bucket_start": "2026-07-22T07:30:00.000002+00:00",
+        "bucket_end": "2026-07-22T07:34:17.142859+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-22T04:32:08.571429+00:00",
-        "bucket_end": "2026-07-22T04:36:25.714286+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T04:36:25.714286+00:00",
-        "bucket_end": "2026-07-22T04:40:42.857143+00:00",
+        "bucket_start": "2026-07-22T07:34:17.142859+00:00",
+        "bucket_end": "2026-07-22T07:38:34.285716+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-22T04:40:42.857143+00:00",
-        "bucket_end": "2026-07-22T04:45:00+00:00",
+        "bucket_start": "2026-07-22T07:38:34.285716+00:00",
+        "bucket_end": "2026-07-22T07:42:51.428573+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T07:42:51.428573+00:00",
+        "bucket_end": "2026-07-22T07:47:08.571430+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T07:47:08.571430+00:00",
+        "bucket_end": "2026-07-22T07:51:25.714287+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T07:51:25.714287+00:00",
+        "bucket_end": "2026-07-22T07:55:42.857144+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T07:55:42.857144+00:00",
+        "bucket_end": "2026-07-22T08:00:00.000001+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T08:00:00.000001+00:00",
+        "bucket_end": "2026-07-22T08:04:17.142858+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T08:04:17.142858+00:00",
+        "bucket_end": "2026-07-22T08:08:34.285715+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T08:08:34.285715+00:00",
+        "bucket_end": "2026-07-22T08:12:51.428572+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T08:12:51.428572+00:00",
+        "bucket_end": "2026-07-22T08:17:08.571429+00:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T08:17:08.571429+00:00",
+        "bucket_end": "2026-07-22T08:21:25.714286+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T08:21:25.714286+00:00",
+        "bucket_end": "2026-07-22T08:25:42.857143+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T08:25:42.857143+00:00",
+        "bucket_end": "2026-07-22T08:30:00+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
@@ -219,68 +180,48 @@
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "TrendForce",
-        "top_topic_id": 0,
-        "top_topic_label": "美軍對伊作戰開支暴增至 / 國防預算面臨巨大缺口 / 機器人 / 尚未具備自動手術功能",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "technews_tw",
-        "top_topic_id": 0,
-        "top_topic_label": "美軍對伊作戰開支暴增至 / 國防預算面臨巨大缺口 / 機器人 / 尚未具備自動手術功能",
-        "focus_share": 1.0,
-        "post_count": 3
-      },
-      {
         "handle": "jukan05",
         "top_topic_id": 0,
-        "top_topic_label": "美軍對伊作戰開支暴增至 / 國防預算面臨巨大缺口 / 機器人 / 尚未具備自動手術功能",
+        "top_topic_label": "ai",
         "focus_share": 1.0,
         "post_count": 1
-      },
-      {
-        "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "美軍對伊作戰開支暴增至 / 國防預算面臨巨大缺口 / 機器人 / 尚未具備自動手術功能",
-        "focus_share": 1.0,
-        "post_count": 2
       },
       {
         "handle": "technewsinside",
         "top_topic_id": 0,
-        "top_topic_label": "美軍對伊作戰開支暴增至 / 國防預算面臨巨大缺口 / 機器人 / 尚未具備自動手術功能",
-        "focus_share": 0.6,
-        "post_count": 5
+        "top_topic_label": "ai",
+        "focus_share": 1.0,
+        "post_count": 4
+      },
+      {
+        "handle": "ctee.fans",
+        "top_topic_id": 0,
+        "top_topic_label": "ai",
+        "focus_share": 1.0,
+        "post_count": 1
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 1,
-        "label": "黃仁勳",
-        "total_engagement": 204,
-        "post_count": 2
-      },
-      {
         "topic_id": 0,
-        "label": "美軍對伊作戰開支暴增至 / 國防預算面臨巨大缺口 / 機器人 / 尚未具備自動手術功能",
-        "total_engagement": 99,
-        "post_count": 10
+        "label": "ai",
+        "total_engagement": 275,
+        "post_count": 6
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 3,
-          "likes": 9,
-          "engagement": 11,
-          "avg_engagement": 3.7
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 9,
-          "likes": 278,
-          "engagement": 292,
-          "avg_engagement": 32.4
+          "post_count": 6,
+          "likes": 224,
+          "engagement": 275,
+          "avg_engagement": 45.8
         },
         "evening": {
           "post_count": 0,
