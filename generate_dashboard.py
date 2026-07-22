@@ -1242,7 +1242,7 @@ def main():
     const posts = VIDEO_RANKING[range] || [];
 
     if (posts.length === 0) {{
-      container.innerHTML = '<p class="empty">No video posts found across any tracked X account in this time range.</p>';
+      container.innerHTML = '<p class="empty">No video posts found on X in this time range.</p>';
       return;
     }}
 
@@ -1261,7 +1261,7 @@ def main():
       </tr>`).join('');
 
     container.innerHTML = `
-      <p class="muted">Top ${{ranked.length}} video post(s) across every tracked X account, ranked by ${{VIDEO_METRIC_LABELS[metric]}}.</p>
+      <p class="muted">Top ${{ranked.length}} video post(s) across X (any account, not just ones we track), ranked by ${{VIDEO_METRIC_LABELS[metric]}}.</p>
       <div class="table-wrap"><table><thead><tr><th>#</th><th>Account</th><th>Post</th><th>Views</th><th>Likes</th><th>Reposts</th><th>Link</th></tr></thead><tbody>${{rows}}</tbody></table></div>
     `;
   }}

@@ -138,5 +138,16 @@ if [ -f "$FACEBOOK_SRC/own_comments_facebook.json" ]; then
   mv "$tmp" "analysis/own_comments_facebook.json"
 fi
 
+# Optional: platform-wide video discovery (scrape_video_discovery.js) -
+# also a separate, on-demand scrape rather than one tied to a specific
+# tracked account, so it won't exist every cycle either. video_ranking.py
+# just sees fewer platform-wide videos if it's missing/stale, not an error.
+if [ -f "$TWITTER_SRC/csv/video_discovery.csv" ]; then
+  tmp="csv/video_discovery.csv.tmp.$$"
+  cp "$TWITTER_SRC/csv/video_discovery.csv" "$tmp"
+  mv "$tmp" "csv/video_discovery.csv"
+  synced=$((synced + 1))
+fi
+
 echo "sync_data: synced $synced account file(s), $missing missing"
 [ "$missing" -eq 0 ]

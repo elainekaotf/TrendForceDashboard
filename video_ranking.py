@@ -1,11 +1,16 @@
 """
 X Video Ranking - replaces FR-04's Manual Review Queue on the dashboard.
 
-Ranks video posts (hasVideo == 'yes') across every tracked X account (own +
-competitors, from accounts_config.json) by views/likes/retweets, for each of
-the 5 shortest shared time ranges (1h/4h/8h/1d/1w - see time_ranges.py).
-Metric selection happens client-side in generate_dashboard.py: this script
-embeds all three metrics per post so no per-metric file split is needed.
+Ranks video posts by views/likes/retweets, for each of the 5 shortest
+shared time ranges (1h/4h/8h/1d/1w - see time_ranges.py). Two sources feed
+into one pool: tracked accounts' own CSVs (hasVideo == 'yes', own +
+competitors from accounts_config.json) plus platform-wide results from
+scrape_video_discovery.js's keyword search (csv/video_discovery.csv, any
+account) - this is intentionally NOT limited to accounts we track, since
+the point is "what's the best video on X right now," not "how are our
+tracked accounts doing on video." Metric selection happens client-side in
+generate_dashboard.py: this script embeds all three metrics per post so no
+per-metric file split is needed.
 
 "now" is anchored to the freshest post timestamp across the video posts
 themselves (same reasoning as fuzzy_trend.py/cluster_topics.py: scraping
@@ -35,6 +40,7 @@ MAX_PER_RANGE = 50
 
 def load_video_posts():
     posts = []
+    seen_urls = set()
     cfg = PLATFORM_ACCOUNTS.get('X')
     if not cfg:
         return posts
@@ -49,10 +55,41 @@ def load_video_posts():
                 ts = parse_ts(row.get('timestamp'))
                 if not ts:
                     continue
+                url = row.get('tweetUrl') or ''
+                if url:
+                    seen_urls.add(url)
                 posts.append({
                     'handle': handle,
                     'text': (row.get('text') or '').strip(),
-                    'url': row.get('tweetUrl') or '',
+                    'url': url,
+                    'timestamp': row.get('timestamp'),
+                    '_ts': ts,
+                    'views': parse_count(row.get('views')),
+                    'likes': parse_count(row.get('likes')),
+                    'retweets': parse_count(row.get('retweets')),
+                })
+
+    # Platform-wide discovery (scrape_video_discovery.js, run on demand,
+    # not yet on a fixed schedule) - any account's video post, not just
+    # tracked own/competitor accounts. Dedup against tracked-account posts
+    # by URL: a tracked competitor's video can legitimately also match a
+    # discovery keyword search, and should only count once.
+    discovery_path = os.path.join(cfg['dir'], 'video_discovery.csv')
+    if os.path.exists(discovery_path):
+        with open(discovery_path, newline='', encoding='utf-8') as f:
+            for row in csv.DictReader(f):
+                url = row.get('tweetUrl') or ''
+                if url and url in seen_urls:
+                    continue
+                ts = parse_ts(row.get('timestamp'))
+                if not ts:
+                    continue
+                if url:
+                    seen_urls.add(url)
+                posts.append({
+                    'handle': (row.get('handle') or '').lstrip('@'),
+                    'text': (row.get('text') or '').strip(),
+                    'url': url,
                     'timestamp': row.get('timestamp'),
                     '_ts': ts,
                     'views': parse_count(row.get('views')),
