@@ -105,12 +105,14 @@ fi
 case "$JOB" in
   scan)
     run_step "fuzzy_trend_scan" fuzzy_trend.py scan
+    run_step "video_ranking"    video_ranking.py
     run_step "manual_review"    manual_review.py build
     ;;
   core)
     run_step "cluster_topics"  cluster_topics.py
     run_step "fuzzy_trend"     fuzzy_trend.py full
     run_step "nlp_sentiment"   nlp_sentiment.py
+    run_step "video_ranking"   video_ranking.py
     run_step "manual_review"   manual_review.py build
     ;;
   accounts)

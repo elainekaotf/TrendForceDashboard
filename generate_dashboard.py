@@ -11,8 +11,8 @@ is missing, e.g. before the first pipeline run):
   analysis/daily_summaries.json            FR-06 executive summaries
   analysis/account_status.json             FR-05 account status
   analysis/reply_queue.json                FR-05 reply drafts
-  analysis/review_queue.json               FR-04 review queue (summarized as
-                                            counts only - too large to list in full)
+  analysis/video_ranking.json              X Video Ranking (replaces the old FR-04
+                                            Manual Review Queue section)
 
 Topic Gaps, Rising Trends, and Sentiment all support a client-side time-range
 switch (4h/8h/1d/1w/1q, see time_ranges.py): every range's HTML is
@@ -470,31 +470,6 @@ def render_reply_queue(data):
     return panel(body, 'Own-account posts needing a reply', 'Never touches competitor accounts')
 
 
-def render_review_queue(data):
-    if not data:
-        return '<p class="empty">No FR-04 review queue yet.</p>'
-    records = list(data.values())
-    by_status, by_type = {}, {}
-    for r in records:
-        by_status[r['status']] = by_status.get(r['status'], 0) + 1
-        by_type[r['type']] = by_type.get(r['type'], 0) + 1
-
-    status_cards = ''.join(f'<div class="stat"><div class="stat-num">{fmt_int(c)}</div><div class="stat-label">{esc(s)}</div></div>'
-                            for s, c in sorted(by_status.items()))
-    type_chips = ''.join(f'<span class="chip">{esc(t)} <b>{fmt_int(c)}</b></span>' for t, c in sorted(by_type.items()))
-
-    pending = [r for r in records if r['status'] == 'pending'][:10]
-    rows = ''.join(f"""
-      <tr><td>{esc(r['type'])}</td><td>{esc(r.get('platform', ''))}</td><td class="cell-primary">{esc(r.get('handle', ''))}</td>
-      <td>{esc((r['automated'].get('topic_label') or r['automated'].get('rationale') or r['automated'].get('text', ''))[:80])}</td></tr>"""
-      for r in pending)
-
-    overview = panel(f'<div class="stat-grid">{status_cards}</div><div class="chip-row">{type_chips}</div>',
-                      'Queue overview', f"{fmt_int(len(records))} total records")
-    sample = panel(table(['Type', 'Platform', 'Handle', 'Automated label'], rows), 'Sample of pending items')
-    return overview + sample
-
-
 def main():
     os.makedirs(DOCS_DIR, exist_ok=True)
 
@@ -568,7 +543,7 @@ def main():
     daily_summaries = load('daily_summaries.json')
     account_status = load('account_status.json')
     reply_queue = load('reply_queue.json')
-    review_queue = load('review_queue.json')
+    video_ranking = load('video_ranking.json') or {}
 
     now_tw = datetime.now(TAIWAN_TZ).strftime('%B %d, %Y %H:%M Taiwan Time')
 
@@ -583,6 +558,8 @@ def main():
     window_caption_json = json.dumps(window_caption_by_range, ensure_ascii=False)
     window_bounds_json = json.dumps(window_bounds_by_range, ensure_ascii=False)
     keyword_index_json = json.dumps(keyword_index, ensure_ascii=False)
+    video_ranking_json = json.dumps(
+        {k: v for k, v in video_ranking.items() if not k.startswith('_')}, ensure_ascii=False)
     vader_lexicon_json = json.dumps(load_vader_lexicon())
     zh_pos_words, zh_neg_words, zh_t2s_map = load_chinese_sentiment_data()
     zh_pos_words_json = json.dumps(zh_pos_words, ensure_ascii=False)
@@ -860,7 +837,7 @@ def main():
   <button class="tab-btn" data-tab="rising">Rising Trends</button>
   <button class="tab-btn" data-tab="sentiment">Sentiment</button>
   <button class="tab-btn" data-tab="competitor">Competitor Watch</button>
-  <button class="tab-btn" data-tab="review">Review Queue</button>
+  <button class="tab-btn" data-tab="video-ranking">X Video Ranking</button>
   <button class="tab-btn" data-tab="accounts">Accounts</button>
   <button class="tab-btn" data-tab="replies">Reply Queue</button>
   <button class="tab-btn" data-tab="summaries">Daily Summaries</button>
@@ -881,7 +858,18 @@ def main():
     </div>
     <div id="competitor-results"><p class="empty">Type a topic or keyword to see every non-TrendForce account's post mentioning it, for the currently selected time range.</p></div>
     ''', 'Search competitor posts', 'Every account that is not ours')}</section>
-  <section id="review"><h2>FR-04 &middot; Manual Review Queue</h2>{render_review_queue(review_queue)}</section>
+  <section id="video-ranking" data-ranged="true">
+    <h2>X Video Ranking</h2>
+    <div class="keyword-search-bar">
+      <label for="video-metric-select">Rank by</label>
+      <select id="video-metric-select">
+        <option value="views" selected>Views</option>
+        <option value="likes">Likes</option>
+        <option value="retweets">Reposts</option>
+      </select>
+    </div>
+    <div id="video-ranking-content"></div>
+  </section>
   <section id="accounts"><h2>FR-05 &middot; Account Status</h2>{render_accounts(account_status)}</section>
   <section id="replies"><h2>FR-05 &middot; Reply Queue</h2>{render_reply_queue(reply_queue)}</section>
   <section id="summaries"><h2>FR-06 &middot; Daily Executive Summaries</h2>{render_summaries(daily_summaries)}</section>
@@ -915,6 +903,7 @@ def main():
   const RANGE_WINDOW = {window_caption_json};
   const RANGE_BOUNDS = {window_bounds_json};
   const KEYWORD_POSTS = {keyword_index_json};
+  const VIDEO_RANKING = {video_ranking_json};
 
   function escapeHtml(s) {{ const d = document.createElement('div'); d.textContent = s == null ? '' : String(s); return d.innerHTML; }}
   function escapeAttr(s) {{ return escapeHtml(s).replace(/"/g, '&quot;'); }}
@@ -1242,6 +1231,41 @@ def main():
     `;
   }}
 
+  const VIDEO_METRIC_LABELS = {{ views: 'Views', likes: 'Likes', retweets: 'Reposts' }};
+  const MAX_VIDEO_RESULTS = 10;
+
+  function renderVideoRanking(range) {{
+    const container = document.getElementById('video-ranking-content');
+    if (!container) return;
+    const metricSelect = document.getElementById('video-metric-select');
+    const metric = metricSelect ? metricSelect.value : 'views';
+    const posts = VIDEO_RANKING[range] || [];
+
+    if (posts.length === 0) {{
+      container.innerHTML = '<p class="empty">No video posts found across any tracked X account in this time range.</p>';
+      return;
+    }}
+
+    // Server ships up to 50 per range, pre-sorted by views - re-sort here
+    // so switching the metric dropdown never needs a re-fetch.
+    const ranked = [...posts].sort((a, b) => (b[metric] || 0) - (a[metric] || 0)).slice(0, MAX_VIDEO_RESULTS);
+    const rows = ranked.map((p, i) => `
+      <tr>
+        <td class="num">${{i + 1}}</td>
+        <td class="cell-primary">${{escapeHtml(p.handle)}}</td>
+        <td>${{escapeHtml(p.text.slice(0, 160))}}</td>
+        <td class="num">${{(p.views || 0).toLocaleString('en-US')}}</td>
+        <td class="num">${{(p.likes || 0).toLocaleString('en-US')}}</td>
+        <td class="num">${{(p.retweets || 0).toLocaleString('en-US')}}</td>
+        <td>${{p.url ? `<a href="${{escapeAttr(p.url)}}" target="_blank" rel="noopener noreferrer">Open post</a>` : '—'}}</td>
+      </tr>`).join('');
+
+    container.innerHTML = `
+      <p class="muted">Top ${{ranked.length}} video post(s) across every tracked X account, ranked by ${{VIDEO_METRIC_LABELS[metric]}}.</p>
+      <div class="table-wrap"><table><thead><tr><th>#</th><th>Account</th><th>Post</th><th>Views</th><th>Likes</th><th>Reposts</th><th>Link</th></tr></thead><tbody>${{rows}}</tbody></table></div>
+    `;
+  }}
+
   document.addEventListener('input', e => {{
     if (e.target.id === 'keyword-input') {{
       currentKeyword = e.target.value;
@@ -1250,6 +1274,12 @@ def main():
     if (e.target.id === 'competitor-keyword-input') {{
       currentCompetitorKeyword = e.target.value;
       renderCompetitorResults(document.getElementById('range-select').value);
+    }}
+  }});
+
+  document.addEventListener('change', e => {{
+    if (e.target.id === 'video-metric-select') {{
+      renderVideoRanking(document.getElementById('range-select').value);
     }}
   }});
 
@@ -1264,6 +1294,7 @@ def main():
     const competitorInput = document.getElementById('competitor-keyword-input');
     if (competitorInput) competitorInput.value = currentCompetitorKeyword;
     renderCompetitorResults(range);
+    renderVideoRanking(range);
   }}
 
   document.getElementById('range-select').addEventListener('change', e => applyRange(e.target.value));
