@@ -1,56 +1,73 @@
 {
   "clusters": [
     {
-      "id": 1,
-      "label": "ai / nvidia / memory / hbm",
-      "size": 13,
+      "id": 7,
+      "label": "ai / tsmc / memory / chip",
+      "size": 23,
       "accounts": {
-        "ctee.fans": 13
+        "TrendForce.tw": 1,
+        "technewsinside": 8,
+        "ctee.fans": 13,
+        "yutinghaosfinance": 1
       },
       "engagement_by_account": {
-        "ctee.fans": 182
+        "TrendForce.tw": 3,
+        "technewsinside": 512,
+        "ctee.fans": 288,
+        "yutinghaosfinance": 288
       }
     },
     {
       "id": 11,
-      "label": "gb / nvl / tlc / nvidia",
-      "size": 1,
+      "label": "ai / 蘋果 / physical / token",
+      "size": 3,
       "accounts": {
-        "ctee.fans": 1
+        "technewsinside": 3
       },
       "engagement_by_account": {
-        "ctee.fans": 70
+        "technewsinside": 22
+      }
+    },
+    {
+      "id": 6,
+      "label": "nvidia / ai / rubin / gpu",
+      "size": 2,
+      "accounts": {
+        "technewsinside": 2
+      },
+      "engagement_by_account": {
+        "technewsinside": 20
+      }
+    },
+    {
+      "id": 13,
+      "label": "rtx / spark / nvidia / windows",
+      "size": 2,
+      "accounts": {
+        "ctee.fans": 2
+      },
+      "engagement_by_account": {
+        "ctee.fans": 6
+      }
+    },
+    {
+      "id": 8,
+      "label": "台積電 / 英特爾 / ai / 魏哲家",
+      "size": 1,
+      "accounts": {
+        "technewsinside": 1
+      },
+      "engagement_by_account": {
+        "technewsinside": 5
       }
     }
   ],
-  "gaps": [
-    {
-      "cluster_id": 1,
-      "label": "ai / nvidia / memory / hbm",
-      "own_count": 0,
-      "competitor_count": 13,
-      "competitor_engagement": 182,
-      "competitors_covering": [
-        "ctee.fans"
-      ]
-    }
-  ],
-  "suggested_entry_points": [
-    {
-      "cluster_id": 1,
-      "label": "ai / nvidia / memory / hbm",
-      "own_count": 0,
-      "competitor_count": 13,
-      "competitor_engagement": 182,
-      "competitors_covering": [
-        "ctee.fans"
-      ]
-    }
-  ],
+  "gaps": [],
+  "suggested_entry_points": [],
   "window": {
-    "start_utc": "2026-07-21T22:29:07.248011+00:00",
-    "end_utc": "2026-07-22T02:29:07.248011+00:00",
-    "start_tw": "Jul 22, 06:29",
-    "end_tw": "Jul 22, 10:29"
+    "start_utc": "2026-07-21T23:18:30.794947+00:00",
+    "end_utc": "2026-07-22T03:18:30.794947+00:00",
+    "start_tw": "Jul 22, 07:18",
+    "end_tw": "Jul 22, 11:18"
   }
 }

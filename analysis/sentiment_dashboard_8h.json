@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-07-22T02:29:07.248011+00:00",
+  "generated_at": "2026-07-22T03:18:30.794947+00:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-21T18:29:07.248011+00:00",
-    "end_utc": "2026-07-22T02:29:07.248011+00:00",
-    "start_tw": "Jul 22, 02:29",
-    "end_tw": "Jul 22, 10:29"
+    "start_utc": "2026-07-21T19:18:30.794947+00:00",
+    "end_utc": "2026-07-22T03:18:30.794947+00:00",
+    "start_tw": "Jul 22, 03:18",
+    "end_tw": "Jul 22, 11:18"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 19,
+      "total_posts": 37,
       "sentiment_counts": {
-        "positive": 9,
-        "neutral": 8,
-        "negative": 2
+        "positive": 14,
+        "neutral": 19,
+        "negative": 4
       },
       "sentiment_share": {
-        "positive": 0.474,
-        "neutral": 0.421,
-        "negative": 0.105
+        "positive": 0.378,
+        "neutral": 0.514,
+        "negative": 0.108
       },
       "top_terms": [
         "查看",
@@ -28,19 +28,19 @@
         "查看更",
         "看更多",
         "查看更多",
-        "外資",
-        "金控",
-        "指標",
-        "edge"
+        "輝達",
+        "黃仁",
+        "仁勳",
+        "黃仁勳"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "gb / 記憶體第二 / 南電喊到 / 查看更多",
+        "topic_id": 2,
+        "label": "rk / 沒再賣了 / 這檔金控買最多張 / 外資回補台積電逾百億",
         "heat": 90.0,
-        "volume": 15,
-        "engagement": 253,
+        "volume": 18,
+        "engagement": 983,
         "entities": [
           "伺服器",
           "台積電",
@@ -50,16 +50,60 @@
         ]
       },
       {
-        "topic_id": 1,
-        "label": "名家評論 / 約民營金控一半不到 / 公股介入後如何有效翻轉實為當務之急 / 和roa",
+        "topic_id": 0,
+        "label": "緯創 / gb / 黃仁勳 / nvidia",
+        "heat": 14.0,
+        "volume": 3,
+        "engagement": 90,
+        "entities": [
+          "緯創",
+          "黃仁勳",
+          "德州",
+          "美國",
+          "沃斯堡"
+        ]
+      },
+      {
+        "topic_id": 5,
+        "label": "ai / nvidia / 黃仁勳",
+        "heat": 13.5,
+        "volume": 8,
+        "engagement": 52,
+        "entities": [
+          "伺服器",
+          "高達",
+          "台積電",
+          "台灣",
+          "上市"
+        ]
+      },
+      {
+        "topic_id": 6,
+        "label": "南電喊到 / 記憶體第二 / 查看更多",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 0,
+        "entities": []
+      },
+      {
+        "topic_id": 3,
+        "label": "名家評論 / 股東權益報酬率 / 和roa / 國票金控經營權之爭暫告一段落",
         "heat": 10.0,
         "volume": 2,
         "engagement": 3,
         "entities": []
       },
       {
-        "topic_id": 2,
-        "label": "台廠新品接力上場 / 輝達代理ai / spark牽手聯發科 / 盤前",
+        "topic_id": 4,
+        "label": "進逼 / 元價位 / 新台幣跌跌不休成最弱亞幣 / 查看更多",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 27,
+        "entities": []
+      },
+      {
+        "topic_id": 1,
+        "label": "盤前 / rtx / spark牽手聯發科 / 台廠新品接力上場",
         "heat": 10.0,
         "volume": 2,
         "engagement": 6,
@@ -72,22 +116,46 @@
     "named_entities": [
       {
         "entity": "伺服器",
-        "count": 2
-      },
-      {
-        "entity": "台積電",
-        "count": 2
+        "count": 4
       },
       {
         "entity": "輝達",
+        "count": 4
+      },
+      {
+        "entity": "台積電",
+        "count": 4
+      },
+      {
+        "entity": "黃仁勳",
+        "count": 4
+      },
+      {
+        "entity": "緯創",
+        "count": 4
+      },
+      {
+        "entity": "台灣",
+        "count": 3
+      },
+      {
+        "entity": "德州",
+        "count": 3
+      },
+      {
+        "entity": "美國",
+        "count": 3
+      },
+      {
+        "entity": "高達",
+        "count": 2
+      },
+      {
+        "entity": "全美",
         "count": 2
       },
       {
         "entity": "聯發科",
-        "count": 2
-      },
-      {
-        "entity": "美國",
         "count": 2
       },
       {
@@ -105,182 +173,203 @@
       {
         "entity": "TSV",
         "count": 1
-      },
-      {
-        "entity": "TPS",
-        "count": 1
-      },
-      {
-        "entity": "GB    Even",
-        "count": 1
-      },
-      {
-        "entity": "Rockchip s AIoT",
-        "count": 1
-      },
-      {
-        "entity": "RK     s NPU",
-        "count": 1
-      },
-      {
-        "entity": "CPU",
-        "count": 1
-      },
-      {
-        "entity": "AI",
-        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-21T18:29:07.248013+00:00",
-        "bucket_end": "2026-07-21T19:03:24.390870+00:00",
+        "bucket_start": "2026-07-21T19:18:30.794949+00:00",
+        "bucket_end": "2026-07-21T19:52:47.937806+00:00",
+        "positive": 3,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-21T19:52:47.937806+00:00",
+        "bucket_end": "2026-07-21T20:27:05.080663+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T19:03:24.390870+00:00",
-        "bucket_end": "2026-07-21T19:37:41.533727+00:00",
-        "positive": 2,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T19:37:41.533727+00:00",
-        "bucket_end": "2026-07-21T20:11:58.676584+00:00",
-        "positive": 1,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T20:11:58.676584+00:00",
-        "bucket_end": "2026-07-21T20:46:15.819441+00:00",
+        "bucket_start": "2026-07-21T20:27:05.080663+00:00",
+        "bucket_end": "2026-07-21T21:01:22.223520+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T20:46:15.819441+00:00",
-        "bucket_end": "2026-07-21T21:20:32.962298+00:00",
+        "bucket_start": "2026-07-21T21:01:22.223520+00:00",
+        "bucket_end": "2026-07-21T21:35:39.366377+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T21:20:32.962298+00:00",
-        "bucket_end": "2026-07-21T21:54:50.105155+00:00",
+        "bucket_start": "2026-07-21T21:35:39.366377+00:00",
+        "bucket_end": "2026-07-21T22:09:56.509234+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T21:54:50.105155+00:00",
-        "bucket_end": "2026-07-21T22:29:07.248012+00:00",
+        "bucket_start": "2026-07-21T22:09:56.509234+00:00",
+        "bucket_end": "2026-07-21T22:44:13.652091+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-21T22:29:07.248012+00:00",
-        "bucket_end": "2026-07-21T23:03:24.390869+00:00",
+        "bucket_start": "2026-07-21T22:44:13.652091+00:00",
+        "bucket_end": "2026-07-21T23:18:30.794948+00:00",
         "positive": 0,
         "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T23:03:24.390869+00:00",
-        "bucket_end": "2026-07-21T23:37:41.533726+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-21T23:37:41.533726+00:00",
-        "bucket_end": "2026-07-22T00:11:58.676583+00:00",
-        "positive": 1,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T00:11:58.676583+00:00",
-        "bucket_end": "2026-07-22T00:46:15.819440+00:00",
-        "positive": 0,
-        "neutral": 1,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-22T00:46:15.819440+00:00",
-        "bucket_end": "2026-07-22T01:20:32.962297+00:00",
-        "positive": 1,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T01:20:32.962297+00:00",
-        "bucket_end": "2026-07-22T01:54:50.105154+00:00",
-        "positive": 1,
+        "bucket_start": "2026-07-21T23:18:30.794948+00:00",
+        "bucket_end": "2026-07-21T23:52:47.937805+00:00",
+        "positive": 2,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-22T01:54:50.105154+00:00",
-        "bucket_end": "2026-07-22T02:29:07.248011+00:00",
+        "bucket_start": "2026-07-21T23:52:47.937805+00:00",
+        "bucket_end": "2026-07-22T00:27:05.080662+00:00",
         "positive": 0,
-        "neutral": 0,
+        "neutral": 2,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-22T00:27:05.080662+00:00",
+        "bucket_end": "2026-07-22T01:01:22.223519+00:00",
+        "positive": 2,
+        "neutral": 4,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T01:01:22.223519+00:00",
+        "bucket_end": "2026-07-22T01:35:39.366376+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T01:35:39.366376+00:00",
+        "bucket_end": "2026-07-22T02:09:56.509233+00:00",
+        "positive": 3,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T02:09:56.509233+00:00",
+        "bucket_end": "2026-07-22T02:44:13.652090+00:00",
+        "positive": 2,
+        "neutral": 5,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-22T02:44:13.652090+00:00",
+        "bucket_end": "2026-07-22T03:18:30.794947+00:00",
+        "positive": 2,
+        "neutral": 1,
         "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
         "handle": "tphuang",
-        "top_topic_id": 0,
-        "top_topic_label": "gb / 記憶體第二 / 南電喊到 / 查看更多",
+        "top_topic_id": 2,
+        "top_topic_label": "rk / 沒再賣了 / 這檔金控買最多張 / 外資回補台積電逾百億",
         "focus_share": 1.0,
         "post_count": 3
       },
       {
         "handle": "tengyanAI",
-        "top_topic_id": 0,
-        "top_topic_label": "gb / 記憶體第二 / 南電喊到 / 查看更多",
+        "top_topic_id": 2,
+        "top_topic_label": "rk / 沒再賣了 / 這檔金控買最多張 / 外資回補台積電逾百億",
         "focus_share": 1.0,
         "post_count": 2
       },
       {
+        "handle": "TrendForce.tw",
+        "top_topic_id": 2,
+        "top_topic_label": "rk / 沒再賣了 / 這檔金控買最多張 / 外資回補台積電逾百億",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 2,
+        "top_topic_label": "rk / 沒再賣了 / 這檔金控買最多張 / 外資回補台積電逾百億",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 5,
+        "top_topic_label": "ai / nvidia / 黃仁勳",
+        "focus_share": 0.533,
+        "post_count": 15
+      },
+      {
         "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "gb / 記憶體第二 / 南電喊到 / 查看更多",
-        "focus_share": 0.714,
-        "post_count": 14
+        "top_topic_id": 2,
+        "top_topic_label": "rk / 沒再賣了 / 這檔金控買最多張 / 外資回補台積電逾百億",
+        "focus_share": 0.4,
+        "post_count": 15
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "gb / 記憶體第二 / 南電喊到 / 查看更多",
-        "total_engagement": 253,
-        "post_count": 15
+        "topic_id": 2,
+        "label": "rk / 沒再賣了 / 這檔金控買最多張 / 外資回補台積電逾百億",
+        "total_engagement": 983,
+        "post_count": 18
       },
       {
-        "topic_id": 2,
-        "label": "台廠新品接力上場 / 輝達代理ai / spark牽手聯發科 / 盤前",
-        "total_engagement": 6,
+        "topic_id": 0,
+        "label": "緯創 / gb / 黃仁勳 / nvidia",
+        "total_engagement": 90,
+        "post_count": 3
+      },
+      {
+        "topic_id": 5,
+        "label": "ai / nvidia / 黃仁勳",
+        "total_engagement": 52,
+        "post_count": 8
+      },
+      {
+        "topic_id": 4,
+        "label": "進逼 / 元價位 / 新台幣跌跌不休成最弱亞幣 / 查看更多",
+        "total_engagement": 27,
         "post_count": 2
       },
       {
         "topic_id": 1,
-        "label": "名家評論 / 約民營金控一半不到 / 公股介入後如何有效翻轉實為當務之急 / 和roa",
+        "label": "盤前 / rtx / spark牽手聯發科 / 台廠新品接力上場",
+        "total_engagement": 6,
+        "post_count": 2
+      },
+      {
+        "topic_id": 3,
+        "label": "名家評論 / 股東權益報酬率 / 和roa / 國票金控經營權之爭暫告一段落",
         "total_engagement": 3,
+        "post_count": 2
+      },
+      {
+        "topic_id": 6,
+        "label": "南電喊到 / 記憶體第二 / 查看更多",
+        "total_engagement": 0,
         "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 14,
-          "likes": 252,
-          "engagement": 252,
-          "avg_engagement": 18.0
+          "post_count": 32,
+          "likes": 1151,
+          "engagement": 1151,
+          "avg_engagement": 36.0
         },
         "afternoon": {
           "post_count": 0,

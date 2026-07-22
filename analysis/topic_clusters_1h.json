@@ -1,24 +1,70 @@
 {
   "clusters": [
     {
-      "id": 1,
-      "label": "ai / nvidia / memory / hbm",
-      "size": 7,
+      "id": 7,
+      "label": "ai / tsmc / memory / chip",
+      "size": 6,
       "accounts": {
-        "ctee.fans": 7
+        "technewsinside": 1,
+        "ctee.fans": 5
       },
       "engagement_by_account": {
-        "ctee.fans": 6
+        "technewsinside": 71,
+        "ctee.fans": 0
+      }
+    },
+    {
+      "id": 11,
+      "label": "ai / 蘋果 / physical / token",
+      "size": 3,
+      "accounts": {
+        "technewsinside": 3
+      },
+      "engagement_by_account": {
+        "technewsinside": 22
+      }
+    },
+    {
+      "id": 6,
+      "label": "nvidia / ai / rubin / gpu",
+      "size": 1,
+      "accounts": {
+        "technewsinside": 1
+      },
+      "engagement_by_account": {
+        "technewsinside": 6
+      }
+    },
+    {
+      "id": 8,
+      "label": "台積電 / 英特爾 / ai / 魏哲家",
+      "size": 1,
+      "accounts": {
+        "technewsinside": 1
+      },
+      "engagement_by_account": {
+        "technewsinside": 5
+      }
+    },
+    {
+      "id": 13,
+      "label": "rtx / spark / nvidia / windows",
+      "size": 1,
+      "accounts": {
+        "ctee.fans": 1
+      },
+      "engagement_by_account": {
+        "ctee.fans": 0
       }
     }
   ],
   "gaps": [
     {
-      "cluster_id": 1,
-      "label": "ai / nvidia / memory / hbm",
-      "own_count": 0,
-      "competitor_count": 7,
-      "competitor_engagement": 6,
+      "cluster_id": 7,
+      "label": "ai / tsmc / memory / chip",
+      "own_count": 1,
+      "competitor_count": 5,
+      "competitor_engagement": 0,
       "competitors_covering": [
         "ctee.fans"
       ]
@@ -26,20 +72,20 @@
   ],
   "suggested_entry_points": [
     {
-      "cluster_id": 1,
-      "label": "ai / nvidia / memory / hbm",
-      "own_count": 0,
-      "competitor_count": 7,
-      "competitor_engagement": 6,
+      "cluster_id": 7,
+      "label": "ai / tsmc / memory / chip",
+      "own_count": 1,
+      "competitor_count": 5,
+      "competitor_engagement": 0,
       "competitors_covering": [
         "ctee.fans"
       ]
     }
   ],
   "window": {
-    "start_utc": "2026-07-22T01:29:07.248011+00:00",
-    "end_utc": "2026-07-22T02:29:07.248011+00:00",
-    "start_tw": "Jul 22, 09:29",
-    "end_tw": "Jul 22, 10:29"
+    "start_utc": "2026-07-22T02:18:30.794947+00:00",
+    "end_utc": "2026-07-22T03:18:30.794947+00:00",
+    "start_tw": "Jul 22, 10:18",
+    "end_tw": "Jul 22, 11:18"
   }
 }

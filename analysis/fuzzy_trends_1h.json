@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-22T02:29:07.248011+00:00",
+  "generated_at": "2026-07-22T03:18:30.794947+00:00",
   "range": "1h",
   "window_hours": 1,
   "window": {
-    "start_utc": "2026-07-22T01:29:07.248011+00:00",
-    "end_utc": "2026-07-22T02:29:07.248011+00:00",
-    "start_tw": "Jul 22, 09:29",
-    "end_tw": "Jul 22, 10:29"
+    "start_utc": "2026-07-22T02:18:30.794947+00:00",
+    "end_utc": "2026-07-22T03:18:30.794947+00:00",
+    "start_tw": "Jul 22, 10:18",
+    "end_tw": "Jul 22, 11:18"
   },
   "scan_only": false,
   "platforms": {
@@ -14,19 +14,115 @@
       "top_rising_topics": [
         {
           "rising_score": 50.0,
-          "volume_growth_rate": 1.333,
-          "engagement_acceleration": -0.949,
+          "volume_growth_rate": -0.143,
+          "engagement_acceleration": -0.638,
+          "active_accounts": 2,
+          "rationale": "volume -14% vs prior 1h, engagement rate -64%, 2 account(s) posting",
+          "topic_id": 7,
+          "label": "ai / tsmc / memory / chip",
+          "rising_kols": [
+            {
+              "rising_score": 90.0,
+              "volume_growth_rate": -0.8,
+              "engagement_acceleration": 0.614,
+              "active_accounts": 1,
+              "rationale": "posts -80%, engagement +61% vs prior 1h",
+              "handle": "technewsinside"
+            },
+            {
+              "rising_score": 90.0,
+              "volume_growth_rate": 4.0,
+              "engagement_acceleration": -1.0,
+              "active_accounts": 1,
+              "rationale": "posts +400%, engagement -100% vs prior 1h",
+              "handle": "ctee.fans"
+            },
+            {
+              "rising_score": 10.0,
+              "volume_growth_rate": -1.0,
+              "engagement_acceleration": -1.0,
+              "active_accounts": 0,
+              "rationale": "posts -100%, engagement -100% vs prior 1h",
+              "handle": "TrendForce.tw"
+            }
+          ],
+          "sub_topics": []
+        },
+        {
+          "rising_score": 50.0,
+          "volume_growth_rate": 3.0,
+          "engagement_acceleration": 7.333,
           "active_accounts": 1,
-          "rationale": "volume +133% vs prior 1h, engagement rate -95%, 1 account(s) posting",
-          "topic_id": 1,
-          "label": "ai / nvidia / memory / hbm",
+          "rationale": "volume +300% vs prior 1h, engagement rate +733%, 1 account(s) posting",
+          "topic_id": 11,
+          "label": "ai / 蘋果 / physical / token",
           "rising_kols": [
             {
               "rising_score": 50.0,
-              "volume_growth_rate": 1.333,
-              "engagement_acceleration": -0.949,
+              "volume_growth_rate": 3.0,
+              "engagement_acceleration": 7.333,
               "active_accounts": 1,
-              "rationale": "posts +133%, engagement -95% vs prior 1h",
+              "rationale": "posts +300%, engagement +733% vs prior 1h",
+              "handle": "technewsinside"
+            }
+          ],
+          "sub_topics": []
+        },
+        {
+          "rising_score": 27.2,
+          "volume_growth_rate": 1.0,
+          "engagement_acceleration": 6.0,
+          "active_accounts": 1,
+          "rationale": "volume +100% vs prior 1h, engagement rate +600%, 1 account(s) posting",
+          "topic_id": 6,
+          "label": "nvidia / ai / rubin / gpu",
+          "rising_kols": [
+            {
+              "rising_score": 50.0,
+              "volume_growth_rate": 1.0,
+              "engagement_acceleration": 6.0,
+              "active_accounts": 1,
+              "rationale": "posts +100%, engagement +600% vs prior 1h",
+              "handle": "technewsinside"
+            }
+          ],
+          "sub_topics": []
+        },
+        {
+          "rising_score": 20.7,
+          "volume_growth_rate": 1.0,
+          "engagement_acceleration": 5.0,
+          "active_accounts": 1,
+          "rationale": "volume +100% vs prior 1h, engagement rate +500%, 1 account(s) posting",
+          "topic_id": 8,
+          "label": "台積電 / 英特爾 / ai / 魏哲家",
+          "rising_kols": [
+            {
+              "rising_score": 50.0,
+              "volume_growth_rate": 1.0,
+              "engagement_acceleration": 5.0,
+              "active_accounts": 1,
+              "rationale": "posts +100%, engagement +500% vs prior 1h",
+              "handle": "technewsinside"
+            }
+          ],
+          "sub_topics": []
+        },
+        {
+          "rising_score": 10.0,
+          "volume_growth_rate": 1.0,
+          "engagement_acceleration": 0.0,
+          "active_accounts": 1,
+          "rationale": "volume +100% vs prior 1h, engagement rate +0%, 1 account(s) posting",
+          "topic_id": 13,
+          "label": "rtx / spark / nvidia / windows",
+          "rising_kols": [
+            {
+              "rising_score": 50.0,
+              "volume_growth_rate": 1.0,
+              "engagement_acceleration": 0.0,
+              "active_accounts": 1,
+              "rationale": "posts +100%, engagement +0% vs prior 1h",
               "handle": "ctee.fans"
             }
           ],
