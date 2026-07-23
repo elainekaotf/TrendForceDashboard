@@ -1,118 +1,87 @@
 {
-  "generated_at": "2026-07-23T01:43:06+08:00",
+  "generated_at": "2026-07-23T10:36:20+08:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-22T21:43:06+08:00",
-    "end_utc": "2026-07-23T01:43:06+08:00",
-    "start_tw": "Jul 22, 21:43",
-    "end_tw": "Jul 23, 01:43"
+    "start_utc": "2026-07-23T06:36:20+08:00",
+    "end_utc": "2026-07-23T10:36:20+08:00",
+    "start_tw": "Jul 23, 06:36",
+    "end_tw": "Jul 23, 10:36"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 22,
+      "total_posts": 16,
       "sentiment_counts": {
-        "positive": 10,
-        "negative": 6,
+        "negative": 3,
+        "positive": 7,
         "neutral": 6
       },
       "sentiment_share": {
-        "positive": 0.455,
-        "negative": 0.273,
-        "neutral": 0.273
+        "negative": 0.188,
+        "positive": 0.438,
+        "neutral": 0.375
       },
       "top_terms": [
-        "半導",
-        "導體",
-        "半導體",
-        "capex",
-        "capacity",
-        "kimi",
-        "approaches",
-        "amd",
-        "anthropic",
-        "gpu"
+        "trib",
+        "二季",
+        "季財",
+        "財報",
+        "第二季",
+        "二季財",
+        "季財報",
+        "第二季財",
+        "二季財報",
+        "nuclear"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "notice / kimi / capacity / bofa",
-        "heat": 90.0,
-        "volume": 15,
-        "engagement": 3183,
-        "entities": [
-          "台灣",
-          "美國",
-          "中國",
-          "彭博",
-          "kimi k"
-        ]
-      },
-      {
         "topic_id": 2,
-        "label": "ai / kimi / supply / constraint",
-        "heat": 14.7,
-        "volume": 3,
-        "engagement": 351,
+        "label": "ft / nuclear / trib",
+        "heat": 90.0,
+        "volume": 11,
+        "engagement": 301,
         "entities": [
-          "AI",
-          "Kimi K  DESTROYS",
-          "the Nemotron Committee",
-          "America",
-          "Jensen"
+          "china",
+          "FT Exclusive  Japan",
+          "US",
+          "American",
+          "japan"
         ]
       },
       {
-        "topic_id": 3,
-        "label": "capex / capacity / supply / demand",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 47,
+        "topic_id": 0,
+        "label": "ai / decades / trib / ft",
+        "heat": 38.6,
+        "volume": 3,
+        "engagement": 215,
         "entities": [
-          "NAND s Quiet",
-          "node",
-          "slc"
+          "chinese",
+          "Riyadh",
+          "Donald Trump",
+          "America",
+          "al l ul iU"
         ]
       },
       {
         "topic_id": 1,
-        "label": "amd / anthropic / mi / gpu",
+        "label": "日公布第二季財報",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 302,
+        "engagement": 30,
         "entities": [
-          "AMD",
-          "gpu",
-          "BofA Anthropic",
-          "AMD 合作案Anthropic",
-          "年上半年開始部署高達  gw  "
+          "德州",
+          "華爾街"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "台灣",
-        "count": 10
+        "entity": "US",
+        "count": 2
       },
       {
-        "entity": "美國",
-        "count": 6
-      },
-      {
-        "entity": "中國",
-        "count": 4
-      },
-      {
-        "entity": "China",
-        "count": 3
-      },
-      {
-        "entity": "AMD",
-        "count": 3
-      },
-      {
-        "entity": "AI",
+        "entity": "chinese",
         "count": 2
       },
       {
@@ -120,133 +89,149 @@
         "count": 2
       },
       {
-        "entity": "gpu",
-        "count": 2
-      },
-      {
-        "entity": "彭博",
-        "count": 2
-      },
-      {
-        "entity": "kimi k",
-        "count": 2
-      },
-      {
-        "entity": "NEV",
-        "count": 2
-      },
-      {
-        "entity": "富豪",
-        "count": 2
-      },
-      {
-        "entity": "台積電",
-        "count": 2
-      },
-      {
-        "entity": "NAND s Quiet",
+        "entity": "FT Exclusive  Japan",
         "count": 1
       },
       {
-        "entity": "node",
+        "entity": "American",
+        "count": 1
+      },
+      {
+        "entity": "japan",
+        "count": 1
+      },
+      {
+        "entity": "american",
+        "count": 1
+      },
+      {
+        "entity": "Riyadh",
+        "count": 1
+      },
+      {
+        "entity": "Donald Trump",
+        "count": 1
+      },
+      {
+        "entity": "America",
+        "count": 1
+      },
+      {
+        "entity": "al l ul iU",
+        "count": 1
+      },
+      {
+        "entity": "Asia",
+        "count": 1
+      },
+      {
+        "entity": "Google",
+        "count": 1
+      },
+      {
+        "entity": "AI",
+        "count": 1
+      },
+      {
+        "entity": "asia",
         "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-22T21:43:05.999994+08:00",
-        "bucket_end": "2026-07-22T22:00:14.571423+08:00",
+        "bucket_start": "2026-07-23T06:36:19.999994+08:00",
+        "bucket_end": "2026-07-23T06:53:28.571423+08:00",
         "positive": 0,
         "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T22:00:14.571423+08:00",
-        "bucket_end": "2026-07-22T22:17:23.142852+08:00",
-        "positive": 2,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T22:17:23.142852+08:00",
-        "bucket_end": "2026-07-22T22:34:31.714281+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T22:34:31.714281+08:00",
-        "bucket_end": "2026-07-22T22:51:40.285710+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-22T22:51:40.285710+08:00",
-        "bucket_end": "2026-07-22T23:08:48.857139+08:00",
-        "positive": 3,
-        "neutral": 1,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-22T23:08:48.857139+08:00",
-        "bucket_end": "2026-07-22T23:25:57.428568+08:00",
+        "bucket_start": "2026-07-23T06:53:28.571423+08:00",
+        "bucket_end": "2026-07-23T07:10:37.142852+08:00",
         "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-22T23:25:57.428568+08:00",
-        "bucket_end": "2026-07-22T23:43:05.999997+08:00",
-        "positive": 1,
+        "bucket_start": "2026-07-23T07:10:37.142852+08:00",
+        "bucket_end": "2026-07-23T07:27:45.714281+08:00",
+        "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-22T23:43:05.999997+08:00",
-        "bucket_end": "2026-07-23T00:00:14.571426+08:00",
-        "positive": 0,
+        "bucket_start": "2026-07-23T07:27:45.714281+08:00",
+        "bucket_end": "2026-07-23T07:44:54.285710+08:00",
+        "positive": 1,
         "neutral": 1,
-        "negative": 1
+        "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T00:00:14.571426+08:00",
-        "bucket_end": "2026-07-23T00:17:23.142855+08:00",
+        "bucket_start": "2026-07-23T07:44:54.285710+08:00",
+        "bucket_end": "2026-07-23T08:02:02.857139+08:00",
         "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T00:17:23.142855+08:00",
-        "bucket_end": "2026-07-23T00:34:31.714284+08:00",
+        "bucket_start": "2026-07-23T08:02:02.857139+08:00",
+        "bucket_end": "2026-07-23T08:19:11.428568+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T08:19:11.428568+08:00",
+        "bucket_end": "2026-07-23T08:36:19.999997+08:00",
         "positive": 2,
         "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T00:34:31.714284+08:00",
-        "bucket_end": "2026-07-23T00:51:40.285713+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T00:51:40.285713+08:00",
-        "bucket_end": "2026-07-23T01:08:48.857142+08:00",
-        "positive": 0,
-        "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-23T01:08:48.857142+08:00",
-        "bucket_end": "2026-07-23T01:25:57.428571+08:00",
+        "bucket_start": "2026-07-23T08:36:19.999997+08:00",
+        "bucket_end": "2026-07-23T08:53:28.571426+08:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T08:53:28.571426+08:00",
+        "bucket_end": "2026-07-23T09:10:37.142855+08:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T09:10:37.142855+08:00",
+        "bucket_end": "2026-07-23T09:27:45.714284+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T01:25:57.428571+08:00",
-        "bucket_end": "2026-07-23T01:43:06+08:00",
+        "bucket_start": "2026-07-23T09:27:45.714284+08:00",
+        "bucket_end": "2026-07-23T09:44:54.285713+08:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T09:44:54.285713+08:00",
+        "bucket_end": "2026-07-23T10:02:02.857142+08:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T10:02:02.857142+08:00",
+        "bucket_end": "2026-07-23T10:19:11.428571+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T10:19:11.428571+08:00",
+        "bucket_end": "2026-07-23T10:36:20+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
@@ -254,88 +239,47 @@
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "TrendForce",
-        "top_topic_id": 3,
-        "top_topic_label": "capex / capacity / supply / demand",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "tphuang",
-        "top_topic_id": 0,
-        "top_topic_label": "notice / kimi / capacity / bofa",
-        "focus_share": 1.0,
-        "post_count": 5
-      },
-      {
-        "handle": "technewsinside",
-        "top_topic_id": 0,
-        "top_topic_label": "notice / kimi / capacity / bofa",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 0,
-        "top_topic_label": "notice / kimi / capacity / bofa",
-        "focus_share": 0.889,
+        "handle": "ctee.fans",
+        "top_topic_id": 2,
+        "top_topic_label": "ft / nuclear / trib",
+        "focus_share": 0.778,
         "post_count": 9
       },
       {
-        "handle": "tengyanAI",
-        "top_topic_id": 3,
-        "top_topic_label": "capex / capacity / supply / demand",
-        "focus_share": 0.5,
-        "post_count": 2
-      },
-      {
-        "handle": "SemiAnalysis_",
+        "handle": "FT",
         "top_topic_id": 2,
-        "top_topic_label": "ai / kimi / supply / constraint",
-        "focus_share": 0.5,
-        "post_count": 2
-      },
-      {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 1,
-        "top_topic_label": "amd / anthropic / mi / gpu",
-        "focus_share": 0.5,
-        "post_count": 2
+        "top_topic_label": "ft / nuclear / trib",
+        "focus_share": 0.571,
+        "post_count": 7
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "notice / kimi / capacity / bofa",
-        "total_engagement": 3183,
-        "post_count": 15
+        "topic_id": 2,
+        "label": "ft / nuclear / trib",
+        "total_engagement": 301,
+        "post_count": 11
       },
       {
-        "topic_id": 2,
-        "label": "ai / kimi / supply / constraint",
-        "total_engagement": 351,
+        "topic_id": 0,
+        "label": "ai / decades / trib / ft",
+        "total_engagement": 215,
         "post_count": 3
       },
       {
         "topic_id": 1,
-        "label": "amd / anthropic / mi / gpu",
-        "total_engagement": 302,
-        "post_count": 2
-      },
-      {
-        "topic_id": 3,
-        "label": "capex / capacity / supply / demand",
-        "total_engagement": 47,
+        "label": "日公布第二季財報",
+        "total_engagement": 30,
         "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 16,
+          "likes": 413,
+          "engagement": 546,
+          "avg_engagement": 34.1
         },
         "afternoon": {
           "post_count": 0,
@@ -344,19 +288,19 @@
           "avg_engagement": 0.0
         },
         "evening": {
-          "post_count": 17,
-          "likes": 3681,
-          "engagement": 3744,
-          "avg_engagement": 220.2
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         },
         "late_night": {
-          "post_count": 5,
-          "likes": 106,
-          "engagement": 139,
-          "avg_engagement": 27.8
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         }
       },
-      "peak_slot": "evening"
+      "peak_slot": "morning"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,
