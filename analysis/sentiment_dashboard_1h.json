@@ -1,37 +1,37 @@
 {
-  "generated_at": "2026-07-23T04:45:00+00:00",
+  "generated_at": "2026-07-23T08:45:00+00:00",
   "time_range": "1h",
   "window": {
-    "start_utc": "2026-07-23T03:45:00+00:00",
-    "end_utc": "2026-07-23T04:45:00+00:00",
-    "start_tw": "Jul 23, 11:45",
-    "end_tw": "Jul 23, 12:45"
+    "start_utc": "2026-07-23T07:45:00+00:00",
+    "end_utc": "2026-07-23T08:45:00+00:00",
+    "start_tw": "Jul 23, 15:45",
+    "end_tw": "Jul 23, 16:45"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 11,
+      "total_posts": 14,
       "sentiment_counts": {
-        "positive": 4,
-        "negative": 2,
+        "positive": 8,
+        "negative": 1,
         "neutral": 5
       },
       "sentiment_share": {
-        "positive": 0.364,
-        "negative": 0.182,
-        "neutral": 0.455
+        "positive": 0.571,
+        "negative": 0.071,
+        "neutral": 0.357
       },
       "top_terms": [
-        "alphabet",
-        "指控",
-        "reuters",
-        "intel",
+        "cuda",
+        "chip",
+        "供應",
+        "bullish",
         "amd",
-        "pursuing",
-        "server",
-        "cpu",
-        "supply",
-        "agreements"
+        "advances",
+        "coding",
+        "naturally",
+        "accelerate",
+        "rocm"
       ]
     },
     "temperature_bar": [
@@ -40,248 +40,249 @@
         "label": "cluster-0",
         "heat": 90.0,
         "volume": 9,
-        "engagement": 267,
+        "engagement": 356,
         "entities": [
-          "韓國",
-          "李在明",
-          "黃仁勳",
-          "外國",
-          "天文"
+          "英特爾",
+          "超微",
+          "台灣",
+          "doesn",
+          "NAND"
         ]
       },
       {
         "topic_id": 1,
-        "label": "alphabet",
+        "label": "ai / cuda / chip",
         "heat": 10.0,
-        "volume": 2,
-        "engagement": 3,
+        "volume": 5,
+        "engagement": 172,
         "entities": [
-          "ALPHABET POST",
-          "TPU",
-          "Alphabet  GOOGL",
-          "alphabet googl  googl juicy"
+          "AMD",
+          "AI",
+          "美國陸軍",
+          "Anthropic",
+          "Wenfeng     DeepSeek"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "韓國",
-        "count": 2
-      },
-      {
-        "entity": "李在明",
-        "count": 2
-      },
-      {
-        "entity": "黃仁勳",
-        "count": 2
-      },
-      {
-        "entity": "外國",
-        "count": 2
-      },
-      {
-        "entity": "天文",
-        "count": 2
-      },
-      {
-        "entity": "黑洞",
-        "count": 2
-      },
-      {
-        "entity": "Reuters",
-        "count": 1
-      },
-      {
-        "entity": "Intel",
-        "count": 1
-      },
-      {
         "entity": "AMD",
+        "count": 2
+      },
+      {
+        "entity": "AI",
+        "count": 2
+      },
+      {
+        "entity": "英特爾",
+        "count": 2
+      },
+      {
+        "entity": "超微",
+        "count": 2
+      },
+      {
+        "entity": "美國陸軍",
+        "count": 2
+      },
+      {
+        "entity": "台灣",
+        "count": 2
+      },
+      {
+        "entity": "Anthropic",
         "count": 1
       },
       {
-        "entity": "CPU",
+        "entity": "Wenfeng     DeepSeek",
         "count": 1
       },
       {
-        "entity": "Chinese",
+        "entity": "Huawei",
         "count": 1
       },
       {
-        "entity": "intel",
+        "entity": "Huawei AI",
         "count": 1
       },
       {
-        "entity": "chinese",
+        "entity": "TileLang",
         "count": 1
       },
       {
-        "entity": "ALPHABET POST",
+        "entity": "CUDA",
         "count": 1
       },
       {
-        "entity": "TPU",
+        "entity": "doesn",
+        "count": 1
+      },
+      {
+        "entity": "NAND",
+        "count": 1
+      },
+      {
+        "entity": "日本",
         "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-23T03:45:00.000002+00:00",
-        "bucket_end": "2026-07-23T03:49:17.142859+00:00",
+        "bucket_start": "2026-07-23T07:45:00.000002+00:00",
+        "bucket_end": "2026-07-23T07:49:17.142859+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T03:49:17.142859+00:00",
-        "bucket_end": "2026-07-23T03:53:34.285716+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T03:53:34.285716+00:00",
-        "bucket_end": "2026-07-23T03:57:51.428573+00:00",
+        "bucket_start": "2026-07-23T07:49:17.142859+00:00",
+        "bucket_end": "2026-07-23T07:53:34.285716+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T03:57:51.428573+00:00",
-        "bucket_end": "2026-07-23T04:02:08.571430+00:00",
-        "positive": 1,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T04:02:08.571430+00:00",
-        "bucket_end": "2026-07-23T04:06:25.714287+00:00",
+        "bucket_start": "2026-07-23T07:53:34.285716+00:00",
+        "bucket_end": "2026-07-23T07:57:51.428573+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T04:06:25.714287+00:00",
-        "bucket_end": "2026-07-23T04:10:42.857144+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T04:10:42.857144+00:00",
-        "bucket_end": "2026-07-23T04:15:00.000001+00:00",
+        "bucket_start": "2026-07-23T07:57:51.428573+00:00",
+        "bucket_end": "2026-07-23T08:02:08.571430+00:00",
         "positive": 0,
         "neutral": 2,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T04:15:00.000001+00:00",
-        "bucket_end": "2026-07-23T04:19:17.142858+00:00",
+        "bucket_start": "2026-07-23T08:02:08.571430+00:00",
+        "bucket_end": "2026-07-23T08:06:25.714287+00:00",
         "positive": 0,
         "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T04:19:17.142858+00:00",
-        "bucket_end": "2026-07-23T04:23:34.285715+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T04:23:34.285715+00:00",
-        "bucket_end": "2026-07-23T04:27:51.428572+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T04:27:51.428572+00:00",
-        "bucket_end": "2026-07-23T04:32:08.571429+00:00",
-        "positive": 1,
-        "neutral": 1,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-23T04:32:08.571429+00:00",
-        "bucket_end": "2026-07-23T04:36:25.714286+00:00",
-        "positive": 0,
+        "bucket_start": "2026-07-23T08:06:25.714287+00:00",
+        "bucket_end": "2026-07-23T08:10:42.857144+00:00",
+        "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T04:36:25.714286+00:00",
-        "bucket_end": "2026-07-23T04:40:42.857143+00:00",
-        "positive": 0,
+        "bucket_start": "2026-07-23T08:10:42.857144+00:00",
+        "bucket_end": "2026-07-23T08:15:00.000001+00:00",
+        "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T04:40:42.857143+00:00",
-        "bucket_end": "2026-07-23T04:45:00+00:00",
+        "bucket_start": "2026-07-23T08:15:00.000001+00:00",
+        "bucket_end": "2026-07-23T08:19:17.142858+00:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T08:19:17.142858+00:00",
+        "bucket_end": "2026-07-23T08:23:34.285715+00:00",
         "positive": 0,
         "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T08:23:34.285715+00:00",
+        "bucket_end": "2026-07-23T08:27:51.428572+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T08:27:51.428572+00:00",
+        "bucket_end": "2026-07-23T08:32:08.571429+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T08:32:08.571429+00:00",
+        "bucket_end": "2026-07-23T08:36:25.714286+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T08:36:25.714286+00:00",
+        "bucket_end": "2026-07-23T08:40:42.857143+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T08:40:42.857143+00:00",
+        "bucket_end": "2026-07-23T08:45:00+00:00",
+        "positive": 0,
+        "neutral": 0,
         "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "cluster-0",
+        "handle": "QQ_Timmy",
+        "top_topic_id": 1,
+        "top_topic_label": "ai / cuda / chip",
         "focus_share": 1.0,
         "post_count": 1
-      },
-      {
-        "handle": "technewsinside",
-        "top_topic_id": 0,
-        "top_topic_label": "cluster-0",
-        "focus_share": 1.0,
-        "post_count": 6
       },
       {
         "handle": "ctee.fans",
         "top_topic_id": 0,
         "top_topic_label": "cluster-0",
         "focus_share": 1.0,
-        "post_count": 2
+        "post_count": 4
       },
       {
-        "handle": "tengyanAI",
+        "handle": "jukan05",
         "top_topic_id": 1,
-        "top_topic_label": "alphabet",
-        "focus_share": 1.0,
-        "post_count": 2
+        "top_topic_label": "ai / cuda / chip",
+        "focus_share": 0.667,
+        "post_count": 3
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 0,
+        "top_topic_label": "cluster-0",
+        "focus_share": 0.667,
+        "post_count": 6
       }
     ],
     "top_engagement_ranking": [
       {
         "topic_id": 0,
         "label": "cluster-0",
-        "total_engagement": 267,
+        "total_engagement": 356,
         "post_count": 9
       },
       {
         "topic_id": 1,
-        "label": "alphabet",
-        "total_engagement": 3,
-        "post_count": 2
+        "label": "ai / cuda / chip",
+        "total_engagement": 172,
+        "post_count": 5
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 2,
-          "likes": 174,
-          "engagement": 207,
-          "avg_engagement": 103.5
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 9,
-          "likes": 61,
-          "engagement": 63,
-          "avg_engagement": 7.0
+          "post_count": 14,
+          "likes": 431,
+          "engagement": 528,
+          "avg_engagement": 37.7
         },
         "evening": {
           "post_count": 0,
