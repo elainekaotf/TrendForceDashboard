@@ -40,6 +40,17 @@ INDUSTRY_KEYWORD_SETS = [
     ['DRAM', 'NAND', 'HBM', 'EUV', 'AI chip'],
 ]
 
+# Known industry acronyms that collide with ordinary words/names when
+# matched case-insensitively (NAND vs the name "Nand", found 2026-07-23 -
+# "Injured Inspector Nand Kishor Singh" case-insensitively matched "NAND").
+# Checking the TERM's own stored case (term.isupper()) isn't enough:
+# Rising Topic labels come from cluster_topics.py's TF-IDF tokenizer,
+# which lowercases everything, so a genuinely-meant "NAND" arrives here as
+# lowercase "nand" with no case signal left to check. This explicit
+# allowlist means term_in_text() still knows to require the ALL-CAPS form
+# in the actual post text regardless of how the term itself is cased.
+ACRONYM_TERMS = {'NAND', 'DRAM', 'HBM', 'EUV', 'SK', 'AI', 'TSMC', 'GPU', 'CPU', 'RAM', 'IC', 'AMD'}
+
 
 def load_rising_topic_keyword_sets():
     """Same file/label format scrape_video_discovery.js's getRisingTopicQueries()
@@ -76,15 +87,20 @@ def term_in_text(term, text):
     Word-boundary alone still isn't enough for all-caps industry acronyms
     (NAND, DRAM, HBM, EUV, SK, AI, ...) - "Injured Inspector Nand Kishor
     Singh" case-insensitively matched "NAND" as a whole word, tagging an
-    unrelated news video (found 2026-07-23). Industry acronyms are almost
-    always written in ALL CAPS in real posts, while a name/ordinary word
-    coinciding with one is typically title-case - so when the TERM ITSELF
-    is all-uppercase, require a case-SENSITIVE match against the original
-    text; ordinary lowercase/mixed-case terms (chip, foundry, ...) keep
-    case-insensitive matching since case can't disambiguate those anyway."""
+    unrelated news video (found 2026-07-23). Checking the TERM's own
+    stored case (term.isupper()) isn't enough either: Rising Topic labels
+    are already lowercased by cluster_topics.py's TF-IDF tokenizer before
+    they ever reach here, so a genuinely-meant "NAND" arrives as "nand"
+    with no case signal left. ACRONYM_TERMS is the explicit fix - any term
+    whose UPPERCASE form is a known acronym requires a case-SENSITIVE
+    match against that uppercase form in the original text, regardless of
+    how the term itself happens to be cased; ordinary words (chip,
+    foundry, ...) keep case-insensitive matching since case can't
+    disambiguate those anyway."""
     if re.fullmatch(r'[a-zA-Z0-9]+', term):
-        if term.isupper() and len(term) > 1:
-            return re.search(r'\b' + re.escape(term) + r'\b', text) is not None
+        upper = term.upper()
+        if upper in ACRONYM_TERMS and len(term) > 1:
+            return re.search(r'\b' + re.escape(upper) + r'\b', text) is not None
         return re.search(r'\b' + re.escape(term.lower()) + r'\b', text.lower()) is not None
     return term.lower() in text.lower()
 
