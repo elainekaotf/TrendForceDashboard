@@ -591,24 +591,15 @@ def main():
     margin: 0; -webkit-font-smoothing: antialiased;
   }}
   header {{
-    padding: 34px 32px 26px; position: relative; overflow: hidden;
-    background: linear-gradient(180deg, rgba(77,163,255,0.09), rgba(77,163,255,0.01) 70%, transparent);
-    border-bottom: 1px solid var(--border-soft);
+    padding: 34px 32px 26px; position: relative;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
   }}
   header::before {{
     content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
-    background: linear-gradient(180deg, var(--blue), var(--gold) 130%);
+    background: var(--blue);
   }}
-  header::after {{
-    content: ''; position: absolute; right: -80px; top: -120px; width: 280px; height: 280px;
-    border-radius: 50%; background: radial-gradient(circle, rgba(77,163,255,0.16), transparent 70%);
-    pointer-events: none;
-  }}
-  header h1 {{
-    margin: 0; font-size: 27px; font-weight: 800; letter-spacing: -0.02em;
-    background: linear-gradient(120deg, #ffffff 30%, var(--blue) 110%);
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-  }}
+  header h1 {{ margin: 0; font-size: 27px; font-weight: 800; letter-spacing: -0.02em; }}
   header .muted {{ margin-top: 7px; font-size: 13px; }}
   .muted {{ color: var(--muted); font-size: 13px; }}
   nav {{
