@@ -88,29 +88,66 @@ class UnsupportedLinkedInAccount(Exception):
     pass
 
 
+def is_linkedin_profile_url(raw):
+    """A /in/ URL is a personal profile, not a company page - handled by a
+    completely different scraper (scrape_profiles_linkedin.js, see
+    normalize_linkedin_profile_slug/add_linkedin_profile_to_scraper below).
+    Checked before normalize_linkedin_slug so a profile request takes that
+    separate path instead of being rejected."""
+    return bool(re.search(r'linkedin\.com/in/', raw, re.IGNORECASE))
+
+
 def normalize_linkedin_slug(raw):
-    """LinkedIn is COMPANY PAGES ONLY - scrape_accounts_linkedin.js has no
-    personal-profile scraping capability at all (found 2026-07-23, when a
-    /in/ profile URL was requested: different page structure entirely from
-    a company page, and a materially more sensitive thing to scrape than a
-    public company brand account). Reject a /in/ URL outright with a clear
-    reason rather than mis-parsing it into a bogus "slug".
+    """LinkedIn COMPANY PAGES - scrape_accounts_linkedin.js's technique
+    (positional URN matching against a company-feed GraphQL endpoint)
+    doesn't apply to personal profiles, which is why that's a separate
+    scraper/path (see is_linkedin_profile_url) rather than something this
+    function should ever need to handle - if a /in/ URL somehow reaches
+    here anyway (should be caught by the caller first), reject loudly
+    rather than silently mis-parsing it into a bogus "slug".
 
     Accepts either a bare slug or a full /company/<slug>/ URL. The slug
     itself becomes both the accounts_config.json handle AND the CSV
     filename for newly added accounts (see main()) - no separate
     display-name mapping needed, unlike the legacy 'TrendForce' entry."""
     h = raw.strip()
-    if re.search(r'linkedin\.com/in/', h, re.IGNORECASE):
+    if is_linkedin_profile_url(h):
         raise UnsupportedLinkedInAccount(
-            f"{raw!r} looks like a personal profile URL (/in/...), not a company page (/company/...). "
-            f"scrape_accounts_linkedin.js only supports company pages - personal-profile scraping isn't "
-            f"built and needs its own separate work, not just a config change."
+            f"{raw!r} is a personal profile URL (/in/...), not a company page (/company/...) - "
+            f"this should have been routed to the profile path instead, not normalize_linkedin_slug."
         )
     h = re.sub(r'^https?://(www\.)?linkedin\.com/company/', '', h, flags=re.IGNORECASE)
     h = h.rstrip('/')
     h = re.split(r'[/?#]', h)[0]
     return h
+
+
+def normalize_linkedin_profile_slug(raw):
+    """Accepts either a bare /in/ slug or a full profile URL. The slug
+    becomes the accounts_config.json handle AND the CSV filename
+    (csv/profiles/<slug>.csv, per scrape_profiles_linkedin.js) - mirrors
+    normalize_linkedin_slug's company-page convention exactly."""
+    h = raw.strip()
+    h = re.sub(r'^https?://(www\.)?linkedin\.com/in/', '', h, flags=re.IGNORECASE)
+    h = h.rstrip('/')
+    return re.split(r'[/?#]', h)[0]
+
+
+def derive_profile_display_name(slug):
+    """scrape_profiles_linkedin.js's PROFILES array and its CLI filtering
+    (`node scrape_profiles_linkedin.js "<name>"`) key off a human-readable
+    NAME, not the slug - a request only ever supplies a URL/slug, so
+    approximate a name from it. LinkedIn profile slugs often end in a
+    generated alnum ID (e.g. "subhash-km-6b5443123") - strip a trailing
+    segment that looks like one (alnum, 6+ chars, has a digit) rather than
+    showing it as part of the "name". Good enough for an automated
+    approval; rename by hand in the PROFILES array afterward if the
+    result reads oddly."""
+    parts = slug.split('-')
+    if len(parts) > 1 and re.fullmatch(r'[0-9a-z]{6,}', parts[-1]) and any(c.isdigit() for c in parts[-1]):
+        parts = parts[:-1]
+    name = ' '.join(p.capitalize() for p in parts if p)
+    return name or slug
 
 
 def add_linkedin_account_to_scraper(handle, slug):
@@ -137,6 +174,27 @@ def add_linkedin_account_to_scraper(handle, slug):
     return True
 
 
+def add_linkedin_profile_to_scraper(name, slug):
+    """Same safe-array-edit approach as add_linkedin_account_to_scraper,
+    targeting scrape_profiles_linkedin.js's PROFILES array instead (name/slug
+    pairs, not handle/slug - that script's CLI filters by name, not slug)."""
+    if not LINKEDIN_PROFILES_JS.exists():
+        print(f"[WARN] {LINKEDIN_PROFILES_JS} not found - add the profile there by hand.")
+        return False
+    text = LINKEDIN_PROFILES_JS.read_text(encoding='utf-8')
+    if f"slug: '{slug}'" in text:
+        print(f"{slug} is already in {LINKEDIN_PROFILES_JS.name}'s PROFILES list.")
+        return True
+    new_entry = f"  {{ name: '{name}', slug: '{slug}' }},\n"
+    updated = re.sub(r'(const PROFILES = \[\n)', r'\1' + new_entry, text, count=1)
+    if updated == text:
+        print(f"[WARN] Couldn't find PROFILES array in {LINKEDIN_PROFILES_JS} - add it there by hand.")
+        return False
+    LINKEDIN_PROFILES_JS.write_text(updated, encoding='utf-8')
+    print(f"Added {{ name: '{name}', slug: '{slug}' }} to {LINKEDIN_PROFILES_JS.name}'s PROFILES list.")
+    return True
+
+
 def load_config():
     if CONFIG_PATH.exists():
         return json.loads(CONFIG_PATH.read_text(encoding='utf-8'))
@@ -153,15 +211,20 @@ def main():
     if len(args) != 2 or args[0] not in ('X', 'Facebook', 'LinkedIn'):
         print(__doc__)
         sys.exit(1)
-    platform, handle = args
-    if platform == 'LinkedIn':
+    platform, raw_handle = args
+    is_linkedin_profile = platform == 'LinkedIn' and is_linkedin_profile_url(raw_handle)
+    profile_name = None
+    if is_linkedin_profile:
+        handle = normalize_linkedin_profile_slug(raw_handle)
+        profile_name = derive_profile_display_name(handle)
+    elif platform == 'LinkedIn':
         try:
-            handle = normalize_linkedin_slug(handle)
+            handle = normalize_linkedin_slug(raw_handle)
         except UnsupportedLinkedInAccount as e:
             print(f"[REJECTED] {e}")
             sys.exit(1)
     else:
-        handle = normalize_handle(handle)
+        handle = normalize_handle(raw_handle)
 
     cfg = load_config()
     cfg.setdefault(platform, {}).setdefault('own', list(_default_own(platform)))
@@ -199,6 +262,19 @@ def main():
             print("Parsing the scraped HTML into a CSV ...")
             subprocess.run(['python3', 'parse_facebook.py', page_url], cwd=FACEBOOK_SCRAPER_DIR)
             scraped = True
+    elif platform == 'LinkedIn' and is_linkedin_profile:
+        if not LINKEDIN_SCRAPER_DIR.exists():
+            print(f"[WARN] {LINKEDIN_SCRAPER_DIR} not found - skipping scrape trigger.")
+        else:
+            add_linkedin_profile_to_scraper(profile_name, handle)
+            scrolls = ONBOARDING_SCROLLS['LinkedIn']
+            print(f"Starting a one-off LinkedIn profile scrape for {profile_name} ({scrolls} scrolls) ...")
+            result = subprocess.run(
+                ['node', 'scrape_profiles_linkedin.js', profile_name, str(scrolls)], cwd=LINKEDIN_SCRAPER_DIR,
+            )
+            scraped = result.returncode == 0
+            if not scraped:
+                print(f"[WARN] LinkedIn profile scrape exited with code {result.returncode} - check for a manual-login prompt or a bad slug.")
     elif platform == 'LinkedIn':
         if not LINKEDIN_SCRAPER_DIR.exists():
             print(f"[WARN] {LINKEDIN_SCRAPER_DIR} not found - skipping scrape trigger.")
