@@ -67,6 +67,12 @@ def load_video_posts():
                     'views': parse_count(row.get('views')),
                     'likes': parse_count(row.get('likes')),
                     'retweets': parse_count(row.get('retweets')),
+                    # Tracked-account posts come from a plain timeline
+                    # scrape, not a topic-keyword search - there's no
+                    # topic to attribute them to (unlike discovery posts
+                    # below, which are inherently tied to whichever query
+                    # found them).
+                    'topic': '',
                 })
 
     # Platform-wide discovery (scrape_video_discovery.js, run on demand,
@@ -95,6 +101,7 @@ def load_video_posts():
                     'views': parse_count(row.get('views')),
                     'likes': parse_count(row.get('likes')),
                     'retweets': parse_count(row.get('retweets')),
+                    'topic': (row.get('topic') or '').strip(),
                 })
     return posts
 

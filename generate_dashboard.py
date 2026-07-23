@@ -1254,6 +1254,7 @@ def main():
         <td class="num">${{i + 1}}</td>
         <td class="cell-primary">${{escapeHtml(p.handle)}}</td>
         <td>${{escapeHtml(p.text.slice(0, 160))}}</td>
+        <td>${{p.topic ? escapeHtml(p.topic) : '<span class="muted">—</span>'}}</td>
         <td class="num">${{(p.views || 0).toLocaleString('en-US')}}</td>
         <td class="num">${{(p.likes || 0).toLocaleString('en-US')}}</td>
         <td class="num">${{(p.retweets || 0).toLocaleString('en-US')}}</td>
@@ -1261,8 +1262,8 @@ def main():
       </tr>`).join('');
 
     container.innerHTML = `
-      <p class="muted">Top ${{ranked.length}} video post(s) across X (any account, not just ones we track), ranked by ${{VIDEO_METRIC_LABELS[metric]}}.</p>
-      <div class="table-wrap"><table><thead><tr><th>#</th><th>Account</th><th>Post</th><th>Views</th><th>Likes</th><th>Reposts</th><th>Link</th></tr></thead><tbody>${{rows}}</tbody></table></div>
+      <p class="muted">Top ${{ranked.length}} video post(s) across X (any account, not just ones we track), ranked by ${{VIDEO_METRIC_LABELS[metric]}}. Topics column shows which industry keyword or Rising Topic surfaced a video found via keyword search - blank for videos from accounts we track directly.</p>
+      <div class="table-wrap"><table><thead><tr><th>#</th><th>Account</th><th>Post</th><th>Topics</th><th>Views</th><th>Likes</th><th>Reposts</th><th>Link</th></tr></thead><tbody>${{rows}}</tbody></table></div>
     `;
   }}
 
