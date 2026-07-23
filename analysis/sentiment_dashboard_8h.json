@@ -1,88 +1,101 @@
 {
-  "generated_at": "2026-07-22T21:02:23.126000+08:00",
+  "generated_at": "2026-07-23T01:43:06+08:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-22T13:02:23.126000+08:00",
-    "end_utc": "2026-07-22T21:02:23.126000+08:00",
-    "start_tw": "Jul 22, 13:02",
-    "end_tw": "Jul 22, 21:02"
+    "start_utc": "2026-07-22T17:43:06+08:00",
+    "end_utc": "2026-07-23T01:43:06+08:00",
+    "start_tw": "Jul 22, 17:43",
+    "end_tw": "Jul 23, 01:43"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 64,
+      "total_posts": 59,
       "sentiment_counts": {
         "positive": 26,
-        "negative": 11,
-        "neutral": 27
+        "negative": 10,
+        "neutral": 23
       },
       "sentiment_share": {
-        "positive": 0.406,
-        "negative": 0.172,
-        "neutral": 0.422
+        "positive": 0.441,
+        "negative": 0.169,
+        "neutral": 0.39
       },
       "top_terms": [
-        "demand",
-        "suppliers",
-        "hashtag",
-        "prices",
-        "成長",
+        "capacity",
         "chip",
+        "amd",
+        "anthropic",
+        "成長",
+        "scale",
         "datatrack",
-        "hbm",
-        "ssd",
-        "trendforce"
+        "核心",
+        "supply",
+        "demand"
       ]
     },
     "temperature_bar": [
       {
         "topic_id": 0,
-        "label": "ai / amd / nvidia / mi",
+        "label": "scale / capex / capacity / vs",
         "heat": 90.0,
         "volume": 32,
-        "engagement": 436,
+        "engagement": 4418,
         "entities": [
-          "美國",
-          "緯創",
-          "德州",
           "台灣",
-          "HBM"
-        ]
-      },
-      {
-        "topic_id": 4,
-        "label": "memory / hbm / inference / trendforce",
-        "heat": 52.7,
-        "volume": 3,
-        "engagement": 671,
-        "entities": [
-          "AI",
-          "HBM",
-          "HBF",
-          "SRAM",
-          "Inference"
-        ]
-      },
-      {
-        "topic_id": 1,
-        "label": "ai",
-        "heat": 17.7,
-        "volume": 10,
-        "engagement": 105,
-        "entities": [
+          "美國",
           "中國",
-          "友訊",
-          "奇特",
-          "日本",
-          "衛浴"
+          "台積電",
+          "彭博"
         ]
       },
       {
-        "topic_id": 10,
-        "label": "gdp / chain / supply / equipment",
-        "heat": 12.4,
+        "topic_id": 5,
+        "label": "amd / anthropic / claude / chip",
+        "heat": 15.6,
+        "volume": 4,
+        "engagement": 688,
+        "entities": [
+          "AMD",
+          "gpu",
+          "Ryzen       X",
+          "Claude",
+          "BofA Anthropic"
+        ]
+      },
+      {
+        "topic_id": 2,
+        "label": "ai / anthropic / kimi / approaches",
+        "heat": 15.2,
+        "volume": 8,
+        "engagement": 391,
+        "entities": [
+          "Kimi K  DESTROYS",
+          "the Nemotron Committee",
+          "America",
+          "Jensen",
+          "China"
+        ]
+      },
+      {
+        "topic_id": 6,
+        "label": "token / budgeting / meta / strategy",
+        "heat": 12.3,
+        "volume": 2,
+        "engagement": 147,
+        "entities": [
+          "API",
+          "Meta s compute",
+          "MSL",
+          "Meta s neocloud"
+        ]
+      },
+      {
+        "topic_id": 9,
+        "label": "gdp / chain / supply / kimi",
+        "heat": 11.5,
         "volume": 3,
-        "engagement": 48,
+        "engagement": 91,
         "entities": [
           "China",
           "Kimi K",
@@ -92,11 +105,39 @@
         ]
       },
       {
-        "topic_id": 11,
-        "label": "datatrack / chip / servicing / reassessing",
-        "heat": 10.0,
+        "topic_id": 3,
+        "label": "inference / memory / hbm / trendforce",
+        "heat": 11.4,
         "volume": 2,
-        "engagement": 6,
+        "engagement": 80,
+        "entities": [
+          "AI",
+          "HBF",
+          "HBM",
+          "SRAM",
+          "Inference"
+        ]
+      },
+      {
+        "topic_id": 1,
+        "label": "samsung / nvidia / bonders / hybridbonding",
+        "heat": 10.2,
+        "volume": 2,
+        "engagement": 10,
+        "entities": [
+          "Samsung",
+          "buff",
+          "nvidia",
+          "samsung  nvidia  samsung",
+          "BESI"
+        ]
+      },
+      {
+        "topic_id": 4,
+        "label": "datatrack / chip / servicing / reassessing",
+        "heat": 10.2,
+        "volume": 2,
+        "engagement": 11,
         "entities": [
           "US",
           "Japan",
@@ -106,78 +147,9 @@
         ]
       },
       {
-        "topic_id": 6,
-        "label": "spot / module / remains / nand",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 51,
-        "entities": [
-          "Aggressive Module",
-          "US",
-          "NAND"
-        ]
-      },
-      {
-        "topic_id": 3,
-        "label": "dram / ddr / prices / branded",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 53,
-        "entities": [
-          "DRAM",
-          "DDR",
-          "DRAM Spot Market Edges Higher",
-          "Branded DDR  Demand Supports Prices   ",
-          "US"
-        ]
-      },
-      {
-        "topic_id": 8,
-        "label": "token / budgeting / meta / strategy",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 55,
-        "entities": [
-          "API",
-          "Meta s compute",
-          "MSL",
-          "Meta s neocloud"
-        ]
-      },
-      {
-        "topic_id": 5,
-        "label": "現貨跌勢 / 模組廠積極補貨暫緩 / 惟價格反彈仍乏力 / nand",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 28,
-        "entities": []
-      },
-      {
-        "topic_id": 2,
-        "label": "將於",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 11,
-        "entities": [
-          "城鎮"
-        ]
-      },
-      {
         "topic_id": 7,
-        "label": "samsung / hybrid / mass / bonding",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 0,
-        "entities": [
-          "Samsung",
-          "BESI",
-          "Samsung Reportedly Builds"
-        ]
-      },
-      {
-        "topic_id": 9,
-        "label": "hdd / resonac / component / tdk",
-        "heat": 10.0,
+        "label": "hdd / resonac / tdk / component",
+        "heat": 10.1,
         "volume": 2,
         "engagement": 4,
         "entities": [
@@ -187,39 +159,66 @@
           "TDK",
           "TrendForce"
         ]
+      },
+      {
+        "topic_id": 8,
+        "label": "notice / approaches / construction",
+        "heat": 10.0,
+        "volume": 1,
+        "engagement": 19,
+        "entities": [
+          "MIIT"
+        ]
+      },
+      {
+        "topic_id": 10,
+        "label": "equipment / japanese / controls / suppliers",
+        "heat": 10.0,
+        "volume": 1,
+        "engagement": 0,
+        "entities": [
+          "U S  Seeks",
+          "Japanese",
+          "Dutch Equipment Suppliers Reassess China Exposure",
+          "DataTrack"
+        ]
       }
     ],
     "named_entities": [
       {
-        "entity": "US",
-        "count": 7
+        "entity": "台灣",
+        "count": 11
       },
       {
         "entity": "美國",
-        "count": 7
+        "count": 9
       },
       {
         "entity": "AI",
-        "count": 6
-      },
-      {
-        "entity": "HBM",
-        "count": 6
-      },
-      {
-        "entity": "緯創",
-        "count": 5
+        "count": 8
       },
       {
         "entity": "China",
-        "count": 4
-      },
-      {
-        "entity": "台灣",
-        "count": 4
+        "count": 7
       },
       {
         "entity": "中國",
+        "count": 7
+      },
+      {
+        "entity": "US",
+        "count": 5
+      },
+      {
+        "entity": "Samsung",
+        "count": 4
+      },
+      {
+        "entity": "china",
+        "count": 4
+      },
+      {
+        "entity": "AMD",
         "count": 4
       },
       {
@@ -231,263 +230,260 @@
         "count": 3
       },
       {
-        "entity": "DRAM",
+        "entity": "台積電",
         "count": 3
       },
       {
-        "entity": "DDR",
-        "count": 3
+        "entity": "Netherlands",
+        "count": 2
       },
       {
-        "entity": "德州",
-        "count": 3
+        "entity": "DataTrack",
+        "count": 2
       },
       {
-        "entity": "智慧",
-        "count": 3
-      },
-      {
-        "entity": "韓國",
-        "count": 3
+        "entity": "HBM",
+        "count": 2
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-22T13:02:23.126002+08:00",
-        "bucket_end": "2026-07-22T13:36:40.268859+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 1
+        "bucket_start": "2026-07-22T17:43:06.000002+08:00",
+        "bucket_end": "2026-07-22T18:17:23.142859+08:00",
+        "positive": 2,
+        "neutral": 3,
+        "negative": 0
       },
       {
-        "bucket_start": "2026-07-22T13:36:40.268859+08:00",
-        "bucket_end": "2026-07-22T14:10:57.411716+08:00",
+        "bucket_start": "2026-07-22T18:17:23.142859+08:00",
+        "bucket_end": "2026-07-22T18:51:40.285716+08:00",
         "positive": 4,
-        "neutral": 3,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-22T14:10:57.411716+08:00",
-        "bucket_end": "2026-07-22T14:45:14.554573+08:00",
-        "positive": 1,
-        "neutral": 3,
-        "negative": 3
-      },
-      {
-        "bucket_start": "2026-07-22T14:45:14.554573+08:00",
-        "bucket_end": "2026-07-22T15:19:31.697430+08:00",
-        "positive": 2,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T15:19:31.697430+08:00",
-        "bucket_end": "2026-07-22T15:53:48.840287+08:00",
-        "positive": 2,
         "neutral": 2,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-22T15:53:48.840287+08:00",
-        "bucket_end": "2026-07-22T16:28:05.983144+08:00",
-        "positive": 0,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T16:28:05.983144+08:00",
-        "bucket_end": "2026-07-22T17:02:23.126001+08:00",
-        "positive": 3,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T17:02:23.126001+08:00",
-        "bucket_end": "2026-07-22T17:36:40.268858+08:00",
-        "positive": 3,
-        "neutral": 1,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-22T17:36:40.268858+08:00",
-        "bucket_end": "2026-07-22T18:10:57.411715+08:00",
-        "positive": 1,
-        "neutral": 3,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T18:10:57.411715+08:00",
-        "bucket_end": "2026-07-22T18:45:14.554572+08:00",
-        "positive": 5,
-        "neutral": 2,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-22T18:45:14.554572+08:00",
-        "bucket_end": "2026-07-22T19:19:31.697429+08:00",
+        "bucket_start": "2026-07-22T18:51:40.285716+08:00",
+        "bucket_end": "2026-07-22T19:25:57.428573+08:00",
         "positive": 1,
         "neutral": 4,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-22T19:19:31.697429+08:00",
-        "bucket_end": "2026-07-22T19:53:48.840286+08:00",
+        "bucket_start": "2026-07-22T19:25:57.428573+08:00",
+        "bucket_end": "2026-07-22T20:00:14.571430+08:00",
         "positive": 2,
         "neutral": 2,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-22T19:53:48.840286+08:00",
-        "bucket_end": "2026-07-22T20:28:05.983143+08:00",
+        "bucket_start": "2026-07-22T20:00:14.571430+08:00",
+        "bucket_end": "2026-07-22T20:34:31.714287+08:00",
         "positive": 0,
         "neutral": 1,
         "negative": 2
       },
       {
-        "bucket_start": "2026-07-22T20:28:05.983143+08:00",
-        "bucket_end": "2026-07-22T21:02:23.126000+08:00",
+        "bucket_start": "2026-07-22T20:34:31.714287+08:00",
+        "bucket_end": "2026-07-22T21:08:48.857144+08:00",
+        "positive": 6,
+        "neutral": 3,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T21:08:48.857144+08:00",
+        "bucket_end": "2026-07-22T21:43:06.000001+08:00",
         "positive": 1,
         "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T21:43:06.000001+08:00",
+        "bucket_end": "2026-07-22T22:17:23.142858+08:00",
+        "positive": 2,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T22:17:23.142858+08:00",
+        "bucket_end": "2026-07-22T22:51:40.285715+08:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 3
+      },
+      {
+        "bucket_start": "2026-07-22T22:51:40.285715+08:00",
+        "bucket_end": "2026-07-22T23:25:57.428572+08:00",
+        "positive": 3,
+        "neutral": 2,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-22T23:25:57.428572+08:00",
+        "bucket_end": "2026-07-23T00:00:14.571429+08:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-23T00:00:14.571429+08:00",
+        "bucket_end": "2026-07-23T00:34:31.714286+08:00",
+        "positive": 2,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T00:34:31.714286+08:00",
+        "bucket_end": "2026-07-23T01:08:48.857143+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-23T01:08:48.857143+08:00",
+        "bucket_end": "2026-07-23T01:43:06+08:00",
+        "positive": 0,
+        "neutral": 0,
         "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "jukan05",
-        "top_topic_id": 4,
-        "top_topic_label": "memory / hbm / inference / trendforce",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 8,
-        "top_topic_label": "token / budgeting / meta / strategy",
-        "focus_share": 1.0,
-        "post_count": 2
-      },
-      {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / amd / nvidia / mi",
-        "focus_share": 1.0,
-        "post_count": 6
-      },
-      {
         "handle": "tengyanAI",
         "top_topic_id": 0,
-        "top_topic_label": "ai / amd / nvidia / mi",
+        "top_topic_label": "scale / capex / capacity / vs",
         "focus_share": 1.0,
         "post_count": 2
-      },
-      {
-        "handle": "tphuang",
-        "top_topic_id": 10,
-        "top_topic_label": "gdp / chain / supply / equipment",
-        "focus_share": 1.0,
-        "post_count": 2
-      },
-      {
-        "handle": "ctee.fans",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / amd / nvidia / mi",
-        "focus_share": 0.909,
-        "post_count": 11
       },
       {
         "handle": "TrendForce.tw",
         "top_topic_id": 0,
-        "top_topic_label": "ai / amd / nvidia / mi",
+        "top_topic_label": "scale / capex / capacity / vs",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "ctee.fans",
+        "top_topic_id": 0,
+        "top_topic_label": "scale / capex / capacity / vs",
+        "focus_share": 1.0,
+        "post_count": 6
+      },
+      {
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 0,
+        "top_topic_label": "scale / capex / capacity / vs",
+        "focus_share": 0.889,
+        "post_count": 9
+      },
+      {
+        "handle": "jukan05",
+        "top_topic_id": 0,
+        "top_topic_label": "scale / capex / capacity / vs",
+        "focus_share": 0.667,
+        "post_count": 3
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 0,
+        "top_topic_label": "scale / capex / capacity / vs",
+        "focus_share": 0.6,
+        "post_count": 5
+      },
+      {
+        "handle": "tphuang",
+        "top_topic_id": 0,
+        "top_topic_label": "scale / capex / capacity / vs",
+        "focus_share": 0.571,
+        "post_count": 7
+      },
+      {
+        "handle": "technewsinside",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / anthropic / kimi / approaches",
+        "focus_share": 0.545,
+        "post_count": 11
+      },
+      {
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 6,
+        "top_topic_label": "token / budgeting / meta / strategy",
         "focus_share": 0.5,
         "post_count": 4
       },
       {
-        "handle": "technewsinside",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / amd / nvidia / mi",
-        "focus_share": 0.478,
-        "post_count": 23
-      },
-      {
         "handle": "TrendForce",
-        "top_topic_id": 11,
-        "top_topic_label": "datatrack / chip / servicing / reassessing",
-        "focus_share": 0.154,
-        "post_count": 13
+        "top_topic_id": 0,
+        "top_topic_label": "scale / capex / capacity / vs",
+        "focus_share": 0.182,
+        "post_count": 11
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 4,
-        "label": "memory / hbm / inference / trendforce",
-        "total_engagement": 671,
-        "post_count": 3
-      },
-      {
         "topic_id": 0,
-        "label": "ai / amd / nvidia / mi",
-        "total_engagement": 436,
+        "label": "scale / capex / capacity / vs",
+        "total_engagement": 4418,
         "post_count": 32
       },
       {
-        "topic_id": 1,
-        "label": "ai",
-        "total_engagement": 105,
-        "post_count": 10
-      },
-      {
-        "topic_id": 8,
-        "label": "token / budgeting / meta / strategy",
-        "total_engagement": 55,
-        "post_count": 2
-      },
-      {
-        "topic_id": 3,
-        "label": "dram / ddr / prices / branded",
-        "total_engagement": 53,
-        "post_count": 2
-      },
-      {
-        "topic_id": 6,
-        "label": "spot / module / remains / nand",
-        "total_engagement": 51,
-        "post_count": 2
-      },
-      {
-        "topic_id": 10,
-        "label": "gdp / chain / supply / equipment",
-        "total_engagement": 48,
-        "post_count": 3
-      },
-      {
         "topic_id": 5,
-        "label": "現貨跌勢 / 模組廠積極補貨暫緩 / 惟價格反彈仍乏力 / nand",
-        "total_engagement": 28,
-        "post_count": 2
+        "label": "amd / anthropic / claude / chip",
+        "total_engagement": 688,
+        "post_count": 4
       },
       {
         "topic_id": 2,
-        "label": "將於",
-        "total_engagement": 11,
-        "post_count": 2
+        "label": "ai / anthropic / kimi / approaches",
+        "total_engagement": 391,
+        "post_count": 8
       },
       {
-        "topic_id": 11,
-        "label": "datatrack / chip / servicing / reassessing",
-        "total_engagement": 6,
+        "topic_id": 6,
+        "label": "token / budgeting / meta / strategy",
+        "total_engagement": 147,
         "post_count": 2
       },
       {
         "topic_id": 9,
-        "label": "hdd / resonac / component / tdk",
-        "total_engagement": 4,
+        "label": "gdp / chain / supply / kimi",
+        "total_engagement": 91,
+        "post_count": 3
+      },
+      {
+        "topic_id": 3,
+        "label": "inference / memory / hbm / trendforce",
+        "total_engagement": 80,
+        "post_count": 2
+      },
+      {
+        "topic_id": 8,
+        "label": "notice / approaches / construction",
+        "total_engagement": 19,
+        "post_count": 1
+      },
+      {
+        "topic_id": 4,
+        "label": "datatrack / chip / servicing / reassessing",
+        "total_engagement": 11,
+        "post_count": 2
+      },
+      {
+        "topic_id": 1,
+        "label": "samsung / nvidia / bonders / hybridbonding",
+        "total_engagement": 10,
         "post_count": 2
       },
       {
         "topic_id": 7,
-        "label": "samsung / hybrid / mass / bonding",
-        "total_engagement": 0,
+        "label": "hdd / resonac / tdk / component",
+        "total_engagement": 4,
         "post_count": 2
+      },
+      {
+        "topic_id": 10,
+        "label": "equipment / japanese / controls / suppliers",
+        "total_engagement": 0,
+        "post_count": 1
       }
     ],
     "posting_timeslot_analysis": {
@@ -499,25 +495,25 @@
           "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 35,
-          "likes": 1023,
-          "engagement": 1204,
-          "avg_engagement": 34.4
+          "post_count": 1,
+          "likes": 12,
+          "engagement": 12,
+          "avg_engagement": 12.0
         },
         "evening": {
-          "post_count": 29,
-          "likes": 238,
-          "engagement": 264,
-          "avg_engagement": 9.1
+          "post_count": 53,
+          "likes": 5361,
+          "engagement": 5708,
+          "avg_engagement": 107.7
         },
         "late_night": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 5,
+          "likes": 106,
+          "engagement": 139,
+          "avg_engagement": 27.8
         }
       },
-      "peak_slot": "afternoon"
+      "peak_slot": "evening"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,

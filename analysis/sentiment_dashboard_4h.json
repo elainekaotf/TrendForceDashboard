@@ -1,171 +1,118 @@
 {
-  "generated_at": "2026-07-22T21:02:23.126000+08:00",
+  "generated_at": "2026-07-23T01:43:06+08:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-22T17:02:23.126000+08:00",
-    "end_utc": "2026-07-22T21:02:23.126000+08:00",
-    "start_tw": "Jul 22, 17:02",
-    "end_tw": "Jul 22, 21:02"
+    "start_utc": "2026-07-22T21:43:06+08:00",
+    "end_utc": "2026-07-23T01:43:06+08:00",
+    "start_tw": "Jul 22, 21:43",
+    "end_tw": "Jul 23, 01:43"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 35,
+      "total_posts": 22,
       "sentiment_counts": {
-        "positive": 14,
-        "negative": 5,
-        "neutral": 16
+        "positive": 10,
+        "negative": 6,
+        "neutral": 6
       },
       "sentiment_share": {
-        "positive": 0.4,
-        "negative": 0.143,
-        "neutral": 0.457
+        "positive": 0.455,
+        "negative": 0.273,
+        "neutral": 0.273
       },
       "top_terms": [
-        "datatrack",
+        "半導",
+        "導體",
+        "半導體",
+        "capex",
         "capacity",
-        "hashtag",
-        "chip",
-        "controls",
-        "japan",
-        "exposure",
-        "inference",
-        "trendforce",
-        "晶片"
+        "kimi",
+        "approaches",
+        "amd",
+        "anthropic",
+        "gpu"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 3,
-        "label": "capacity / datatrack / resonac / hdd",
-        "heat": 90.0,
-        "volume": 17,
-        "engagement": 75,
-        "entities": [
-          "華爾街日報",
-          "Japanese",
-          "AI",
-          "GE",
-          "GEV"
-        ]
-      },
-      {
-        "topic_id": 1,
-        "label": "ai",
-        "heat": 74.3,
-        "volume": 7,
-        "engagement": 74,
-        "entities": [
-          "友訊",
-          "台灣",
-          "中國",
-          "安永",
-          "深度"
-        ]
-      },
-      {
         "topic_id": 0,
-        "label": "gdp / supply / chain / equipment",
-        "heat": 31.5,
-        "volume": 3,
-        "engagement": 48,
+        "label": "notice / kimi / capacity / bofa",
+        "heat": 90.0,
+        "volume": 15,
+        "engagement": 3183,
         "entities": [
-          "China",
-          "Kimi K",
-          "Japan",
-          "kimi k   ",
-          "InP"
-        ]
-      },
-      {
-        "topic_id": 5,
-        "label": "token / budgeting / meta / strategy",
-        "heat": 28.7,
-        "volume": 2,
-        "engagement": 55,
-        "entities": [
-          "API",
-          "Meta s compute",
-          "MSL",
-          "Meta s neocloud"
+          "台灣",
+          "美國",
+          "中國",
+          "彭博",
+          "kimi k"
         ]
       },
       {
         "topic_id": 2,
-        "label": "inference / memory / hbm / trendforce",
-        "heat": 26.5,
-        "volume": 2,
-        "engagement": 53,
+        "label": "ai / kimi / supply / constraint",
+        "heat": 14.7,
+        "volume": 3,
+        "engagement": 351,
         "entities": [
           "AI",
-          "HBF",
-          "HBM",
-          "SRAM",
-          "Inference"
+          "Kimi K  DESTROYS",
+          "the Nemotron Committee",
+          "America",
+          "Jensen"
         ]
       },
       {
-        "topic_id": 6,
-        "label": "chip / datatrack / reassessing / servicing",
+        "topic_id": 3,
+        "label": "capex / capacity / supply / demand",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 6,
+        "engagement": 47,
         "entities": [
-          "US",
-          "Japan",
-          "Netherlands",
-          "China",
-          "buff ly"
+          "NAND s Quiet",
+          "node",
+          "slc"
         ]
       },
       {
-        "topic_id": 4,
-        "label": "samsung / hybrid / bonding / mass",
+        "topic_id": 1,
+        "label": "amd / anthropic / mi / gpu",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 0,
+        "engagement": 302,
         "entities": [
-          "Samsung",
-          "BESI",
-          "Samsung Reportedly Builds"
+          "AMD",
+          "gpu",
+          "BofA Anthropic",
+          "AMD 合作案Anthropic",
+          "年上半年開始部署高達  gw  "
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "AI",
+        "entity": "台灣",
+        "count": 10
+      },
+      {
+        "entity": "美國",
         "count": 6
       },
       {
-        "entity": "US",
+        "entity": "中國",
         "count": 4
       },
       {
         "entity": "China",
-        "count": 4
-      },
-      {
-        "entity": "Japan",
         "count": 3
       },
       {
-        "entity": "HBF",
+        "entity": "AMD",
         "count": 3
       },
       {
-        "entity": "中國",
-        "count": 3
-      },
-      {
-        "entity": "Samsung",
-        "count": 3
-      },
-      {
-        "entity": "Netherlands",
-        "count": 2
-      },
-      {
-        "entity": "DataTrack",
+        "entity": "AI",
         "count": 2
       },
       {
@@ -173,225 +120,212 @@
         "count": 2
       },
       {
-        "entity": "HBM",
+        "entity": "gpu",
         "count": 2
       },
       {
-        "entity": "SRAM",
+        "entity": "彭博",
         "count": 2
       },
       {
-        "entity": "TrendForce",
+        "entity": "kimi k",
         "count": 2
       },
       {
-        "entity": "華爾街日報",
+        "entity": "NEV",
         "count": 2
       },
       {
-        "entity": "美國",
+        "entity": "富豪",
         "count": 2
+      },
+      {
+        "entity": "台積電",
+        "count": 2
+      },
+      {
+        "entity": "NAND s Quiet",
+        "count": 1
+      },
+      {
+        "entity": "node",
+        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-22T17:02:23.125994+08:00",
-        "bucket_end": "2026-07-22T17:19:31.697423+08:00",
+        "bucket_start": "2026-07-22T21:43:05.999994+08:00",
+        "bucket_end": "2026-07-22T22:00:14.571423+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T22:00:14.571423+08:00",
+        "bucket_end": "2026-07-22T22:17:23.142852+08:00",
+        "positive": 2,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T22:17:23.142852+08:00",
+        "bucket_end": "2026-07-22T22:34:31.714281+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T22:34:31.714281+08:00",
+        "bucket_end": "2026-07-22T22:51:40.285710+08:00",
         "positive": 1,
+        "neutral": 0,
+        "negative": 3
+      },
+      {
+        "bucket_start": "2026-07-22T22:51:40.285710+08:00",
+        "bucket_end": "2026-07-22T23:08:48.857139+08:00",
+        "positive": 3,
         "neutral": 1,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-22T17:19:31.697423+08:00",
-        "bucket_end": "2026-07-22T17:36:40.268852+08:00",
+        "bucket_start": "2026-07-22T23:08:48.857139+08:00",
+        "bucket_end": "2026-07-22T23:25:57.428568+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T23:25:57.428568+08:00",
+        "bucket_end": "2026-07-22T23:43:05.999997+08:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-22T23:43:05.999997+08:00",
+        "bucket_end": "2026-07-23T00:00:14.571426+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-23T00:00:14.571426+08:00",
+        "bucket_end": "2026-07-23T00:17:23.142855+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T00:17:23.142855+08:00",
+        "bucket_end": "2026-07-23T00:34:31.714284+08:00",
         "positive": 2,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-22T17:36:40.268852+08:00",
-        "bucket_end": "2026-07-22T17:53:48.840281+08:00",
+        "bucket_start": "2026-07-23T00:34:31.714284+08:00",
+        "bucket_end": "2026-07-23T00:51:40.285713+08:00",
         "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T17:53:48.840281+08:00",
-        "bucket_end": "2026-07-22T18:10:57.411710+08:00",
-        "positive": 1,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T18:10:57.411710+08:00",
-        "bucket_end": "2026-07-22T18:28:05.983139+08:00",
-        "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-22T18:28:05.983139+08:00",
-        "bucket_end": "2026-07-22T18:45:14.554568+08:00",
-        "positive": 4,
-        "neutral": 2,
+        "bucket_start": "2026-07-23T00:51:40.285713+08:00",
+        "bucket_end": "2026-07-23T01:08:48.857142+08:00",
+        "positive": 0,
+        "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-22T18:45:14.554568+08:00",
-        "bucket_end": "2026-07-22T19:02:23.125997+08:00",
-        "positive": 1,
-        "neutral": 3,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T19:02:23.125997+08:00",
-        "bucket_end": "2026-07-22T19:19:31.697426+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T19:19:31.697426+08:00",
-        "bucket_end": "2026-07-22T19:36:40.268855+08:00",
-        "positive": 2,
-        "neutral": 1,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-22T19:36:40.268855+08:00",
-        "bucket_end": "2026-07-22T19:53:48.840284+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T19:53:48.840284+08:00",
-        "bucket_end": "2026-07-22T20:10:57.411713+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-22T20:10:57.411713+08:00",
-        "bucket_end": "2026-07-22T20:28:05.983142+08:00",
+        "bucket_start": "2026-07-23T01:08:48.857142+08:00",
+        "bucket_end": "2026-07-23T01:25:57.428571+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-22T20:28:05.983142+08:00",
-        "bucket_end": "2026-07-22T20:45:14.554571+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T20:45:14.554571+08:00",
-        "bucket_end": "2026-07-22T21:02:23.126000+08:00",
+        "bucket_start": "2026-07-23T01:25:57.428571+08:00",
+        "bucket_end": "2026-07-23T01:43:06+08:00",
         "positive": 0,
-        "neutral": 2,
+        "neutral": 0,
         "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 5,
-        "top_topic_label": "token / budgeting / meta / strategy",
-        "focus_share": 1.0,
-        "post_count": 2
-      },
-      {
-        "handle": "QQ_Timmy",
+        "handle": "TrendForce",
         "top_topic_id": 3,
-        "top_topic_label": "capacity / datatrack / resonac / hdd",
+        "top_topic_label": "capex / capacity / supply / demand",
         "focus_share": 1.0,
         "post_count": 1
-      },
-      {
-        "handle": "tengyanAI",
-        "top_topic_id": 3,
-        "top_topic_label": "capacity / datatrack / resonac / hdd",
-        "focus_share": 1.0,
-        "post_count": 2
-      },
-      {
-        "handle": "TrendForce.tw",
-        "top_topic_id": 3,
-        "top_topic_label": "capacity / datatrack / resonac / hdd",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
-        "handle": "ctee.fans",
-        "top_topic_id": 3,
-        "top_topic_label": "capacity / datatrack / resonac / hdd",
-        "focus_share": 1.0,
-        "post_count": 6
       },
       {
         "handle": "tphuang",
         "top_topic_id": 0,
-        "top_topic_label": "gdp / supply / chain / equipment",
+        "top_topic_label": "notice / kimi / capacity / bofa",
         "focus_share": 1.0,
-        "post_count": 2
+        "post_count": 5
       },
       {
         "handle": "technewsinside",
-        "top_topic_id": 1,
-        "top_topic_label": "ai",
-        "focus_share": 0.583,
-        "post_count": 12
+        "top_topic_id": 0,
+        "top_topic_label": "notice / kimi / capacity / bofa",
+        "focus_share": 1.0,
+        "post_count": 1
       },
       {
-        "handle": "TrendForce",
-        "top_topic_id": 3,
-        "top_topic_label": "capacity / datatrack / resonac / hdd",
-        "focus_share": 0.333,
+        "handle": "yutinghaosfinance",
+        "top_topic_id": 0,
+        "top_topic_label": "notice / kimi / capacity / bofa",
+        "focus_share": 0.889,
         "post_count": 9
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 3,
+        "top_topic_label": "capex / capacity / supply / demand",
+        "focus_share": 0.5,
+        "post_count": 2
+      },
+      {
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / kimi / supply / constraint",
+        "focus_share": 0.5,
+        "post_count": 2
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 1,
+        "top_topic_label": "amd / anthropic / mi / gpu",
+        "focus_share": 0.5,
+        "post_count": 2
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 3,
-        "label": "capacity / datatrack / resonac / hdd",
-        "total_engagement": 75,
-        "post_count": 17
-      },
-      {
-        "topic_id": 1,
-        "label": "ai",
-        "total_engagement": 74,
-        "post_count": 7
-      },
-      {
-        "topic_id": 5,
-        "label": "token / budgeting / meta / strategy",
-        "total_engagement": 55,
-        "post_count": 2
+        "topic_id": 0,
+        "label": "notice / kimi / capacity / bofa",
+        "total_engagement": 3183,
+        "post_count": 15
       },
       {
         "topic_id": 2,
-        "label": "inference / memory / hbm / trendforce",
-        "total_engagement": 53,
-        "post_count": 2
-      },
-      {
-        "topic_id": 0,
-        "label": "gdp / supply / chain / equipment",
-        "total_engagement": 48,
+        "label": "ai / kimi / supply / constraint",
+        "total_engagement": 351,
         "post_count": 3
       },
       {
-        "topic_id": 6,
-        "label": "chip / datatrack / reassessing / servicing",
-        "total_engagement": 6,
+        "topic_id": 1,
+        "label": "amd / anthropic / mi / gpu",
+        "total_engagement": 302,
         "post_count": 2
       },
       {
-        "topic_id": 4,
-        "label": "samsung / hybrid / bonding / mass",
-        "total_engagement": 0,
+        "topic_id": 3,
+        "label": "capex / capacity / supply / demand",
+        "total_engagement": 47,
         "post_count": 2
       }
     ],
@@ -404,22 +338,22 @@
           "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 6,
-          "likes": 42,
-          "engagement": 47,
-          "avg_engagement": 7.8
-        },
-        "evening": {
-          "post_count": 29,
-          "likes": 238,
-          "engagement": 264,
-          "avg_engagement": 9.1
-        },
-        "late_night": {
           "post_count": 0,
           "likes": 0,
           "engagement": 0,
           "avg_engagement": 0.0
+        },
+        "evening": {
+          "post_count": 17,
+          "likes": 3681,
+          "engagement": 3744,
+          "avg_engagement": 220.2
+        },
+        "late_night": {
+          "post_count": 5,
+          "likes": 106,
+          "engagement": 139,
+          "avg_engagement": 27.8
         }
       },
       "peak_slot": "evening"

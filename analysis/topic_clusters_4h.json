@@ -2,41 +2,88 @@
   "clusters": [
     {
       "id": 0,
-      "label": "ai / 台積電 / memory / tsmc",
-      "size": 14,
+      "label": "ai / 台積電 / memory / spacex",
+      "size": 19,
       "accounts": {
-        "TrendForce": 3,
-        "SemiAnalysis_": 2,
-        "jukan05": 2,
-        "QQ_Timmy": 2,
-        "tphuang": 5
+        "TrendForce": 1,
+        "SemiAnalysis_": 1,
+        "QQ_Timmy": 1,
+        "tphuang": 5,
+        "tengyanAI": 1,
+        "technewsinside": 1,
+        "yutinghaosfinance": 9
       },
       "engagement_by_account": {
         "TrendForce": 23,
-        "SemiAnalysis_": 362,
-        "jukan05": 1037,
-        "QQ_Timmy": 27,
-        "tphuang": 117
+        "SemiAnalysis_": 75,
+        "QQ_Timmy": 12,
+        "tphuang": 117,
+        "tengyanAI": 24,
+        "technewsinside": 106,
+        "yutinghaosfinance": 3195
       }
     },
     {
-      "id": 1,
-      "label": "openai / ai / anthropic / gpt",
-      "size": 1,
+      "id": 5,
+      "label": "amd / nvidia / ai / mi",
+      "size": 2,
       "accounts": {
+        "SemiAnalysis_": 1,
         "QQ_Timmy": 1
       },
       "engagement_by_account": {
-        "QQ_Timmy": 48
+        "SemiAnalysis_": 287,
+        "QQ_Timmy": 15
+      }
+    },
+    {
+      "id": 9,
+      "label": "dram / hbm / memory / samsung",
+      "size": 1,
+      "accounts": {
+        "tengyanAI": 1
+      },
+      "engagement_by_account": {
+        "tengyanAI": 29
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 0,
+      "label": "ai / 台積電 / memory / spacex",
+      "own_count": 2,
+      "competitor_count": 17,
+      "competitor_engagement": 3423,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "QQ_Timmy",
+        "tphuang",
+        "tengyanAI",
+        "yutinghaosfinance"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 0,
+      "label": "ai / 台積電 / memory / spacex",
+      "own_count": 2,
+      "competitor_count": 17,
+      "competitor_engagement": 3423,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "QQ_Timmy",
+        "tphuang",
+        "tengyanAI",
+        "yutinghaosfinance"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-22T21:01:36+08:00",
-    "end_utc": "2026-07-23T01:01:36+08:00",
-    "start_tw": "Jul 22, 21:01",
-    "end_tw": "Jul 23, 01:01"
+    "start_utc": "2026-07-22T21:43:06+08:00",
+    "end_utc": "2026-07-23T01:43:06+08:00",
+    "start_tw": "Jul 22, 21:43",
+    "end_tw": "Jul 23, 01:43"
   }
 }
