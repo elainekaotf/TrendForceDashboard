@@ -212,6 +212,20 @@ def main():
     if corrected:
         print(f"Corrected {corrected} stale/mismatched topic tag(s) that didn't actually appear in their post's text.")
 
+    # "General" means nothing in our own keyword/topic vocabulary matched
+    # the post at all - excluded rather than shown, since the ranking is
+    # meant to surface videos relevant to TrendForce's actual coverage,
+    # not just whatever's popular on X regardless of subject.
+    before_count = len(posts)
+    posts = [p for p in posts if p['topic'] != 'General']
+    dropped = before_count - len(posts)
+    if dropped:
+        print(f"Excluded {dropped} post(s) with no matching topic (General).")
+
+    if not posts:
+        print('No video posts with a matching topic found, skipping.')
+        return
+
     now = max(p['_ts'] for p in posts)
     result = {}
     for range_key in RANGES:
