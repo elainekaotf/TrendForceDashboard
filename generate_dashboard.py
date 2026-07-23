@@ -171,18 +171,21 @@ def account_profile_url(platform, handle):
         return f'https://www.facebook.com/{handle}'
     if platform == 'LinkedIn':
         # Unlike X/Facebook, LinkedIn's own scraper (scrape_accounts_linkedin.js)
-        # tracks accounts by a company-page URL slug that isn't the same
-        # string as the display handle stored here (e.g. handle "TrendForce"
-        # -> slug "trendforce-corporation") - accounts_config.json only has
-        # the handle, so resolve via the same small ACCOUNTS map the scraper
-        # itself uses rather than guessing a URL from the handle directly.
-        slug = LINKEDIN_HANDLE_TO_SLUG.get(handle)
-        return f'https://www.linkedin.com/company/{slug}/' if slug else None
+        # tracks accounts by a company-page URL slug - historically not the
+        # same string as the display handle (e.g. handle "TrendForce" ->
+        # slug "trendforce-corporation"), so check the legacy override map
+        # first. Accounts added via add_account.py from here on use the
+        # slug itself as the handle (simpler, no separate mapping needed),
+        # so falling back to the handle itself covers those without this
+        # dict needing an edit for every new account.
+        slug = LINKEDIN_HANDLE_TO_SLUG.get(handle, handle)
+        return f'https://www.linkedin.com/company/{slug}/'
     return None
 
 
-# Mirrors the ACCOUNTS list in TrendforceLinkedinScraper/scrape_accounts_linkedin.js -
-# add an entry here whenever a LinkedIn company page is added there.
+# Legacy handle->slug overrides for LinkedIn accounts added before
+# add_account.py used the slug itself as the handle - add_account.py's
+# own additions don't need an entry here (see account_profile_url above).
 LINKEDIN_HANDLE_TO_SLUG = {
     'TrendForce': 'trendforce-corporation',
 }

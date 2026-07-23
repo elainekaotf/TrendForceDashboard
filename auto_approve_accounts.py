@@ -30,7 +30,7 @@ from pathlib import Path
 
 BASE = Path(__file__).resolve().parent
 REPO = 'elainekaotf/TrendForceDashboard'
-SUPPORTED_PLATFORMS = ('X', 'Facebook')
+SUPPORTED_PLATFORMS = ('X', 'Facebook', 'LinkedIn')
 
 ADD_TITLE_RE = re.compile(r'^Add account:\s*([^/]+)/(.+)$')
 REMOVE_TITLE_RE = re.compile(r'^Remove account:\s*([^/]+)/(.+)$')

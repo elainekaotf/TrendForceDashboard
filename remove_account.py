@@ -8,6 +8,7 @@ issue instead. Run this script locally to approve the request.
 Usage:
     python3 remove_account.py X SomeCompetitorHandle
     python3 remove_account.py Facebook SomePage
+    python3 remove_account.py LinkedIn some-company-slug
 
 Removes the handle from accounts_config.json (own or competitors,
 whichever list it's in) and re-runs the pipeline so it disappears from
@@ -32,6 +33,7 @@ from pathlib import Path
 BASE = Path(__file__).resolve().parent
 CONFIG_PATH = BASE / 'accounts_config.json'
 TWITTER_SCRAPER_DIR = Path('/Users/elainekao/TrendforceTwitterScraper')
+LINKEDIN_ACCOUNTS_JS = Path('/Users/elainekao/TrendforceLinkedinScraper/scrape_accounts_linkedin.js')
 
 
 def normalize_handle(raw):
@@ -40,6 +42,28 @@ def normalize_handle(raw):
     h = h.lstrip('@').rstrip('/')
     h = re.split(r'[/?#]', h)[0]
     return h
+
+
+def normalize_linkedin_slug(raw):
+    h = raw.strip()
+    h = re.sub(r'^https?://(www\.)?linkedin\.com/company/', '', h, flags=re.IGNORECASE)
+    h = h.rstrip('/')
+    return re.split(r'[/?#]', h)[0]
+
+
+def remove_linkedin_account_from_scraper(slug):
+    """Same small, safely-editable ACCOUNTS array add_account.py writes to -
+    remove the matching {handle, slug} entry (matched by slug, since slug
+    is the stable identifier) rather than leaving it to keep getting
+    scraped after removal from accounts_config.json."""
+    if not LINKEDIN_ACCOUNTS_JS.exists():
+        return
+    text = LINKEDIN_ACCOUNTS_JS.read_text(encoding='utf-8')
+    pattern = re.compile(r"[ \t]*\{\s*handle:\s*'[^']*',\s*slug:\s*'" + re.escape(slug) + r"'\s*\},?\n?")
+    updated = pattern.sub('', text)
+    if updated != text:
+        LINKEDIN_ACCOUNTS_JS.write_text(updated, encoding='utf-8')
+        print(f"Removed {slug} from {LINKEDIN_ACCOUNTS_JS.name}'s ACCOUNTS list.")
 
 
 def load_config():
@@ -53,10 +77,11 @@ def save_config(cfg):
 
 
 def main():
-    if len(sys.argv) != 3 or sys.argv[1] not in ('X', 'Facebook'):
+    if len(sys.argv) != 3 or sys.argv[1] not in ('X', 'Facebook', 'LinkedIn'):
         print(__doc__)
         sys.exit(1)
-    platform, handle = sys.argv[1], normalize_handle(sys.argv[2])
+    platform = sys.argv[1]
+    handle = normalize_linkedin_slug(sys.argv[2]) if platform == 'LinkedIn' else normalize_handle(sys.argv[2])
 
     cfg = load_config()
     removed_from = None
@@ -80,6 +105,8 @@ def main():
             f"[REMINDER] {TWITTER_SCRAPER_DIR / 'scraper.js'}'s KNOWN_ACCOUNTS still has @{handle} - "
             f"the scraper will keep collecting it on its own schedule until you remove it there by hand too."
         )
+    elif platform == 'LinkedIn':
+        remove_linkedin_account_from_scraper(handle)
 
     print("Running the TrendForceDash pipeline (sync, rebuild, regenerate, publish) ...")
     ok = True
