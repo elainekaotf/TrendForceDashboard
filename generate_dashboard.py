@@ -847,7 +847,7 @@ def main():
 <body>
 <header>
   <h1>TrendForceDash</h1>
-  <div class="muted">Generated {esc(now_tw)} &middot; FR-01 through FR-06</div>
+  <div class="muted">Last updated {esc(now_tw)}</div>
 </header>
 <nav>
   <button class="tab-btn active" data-tab="gaps">Topic Gaps</button>
