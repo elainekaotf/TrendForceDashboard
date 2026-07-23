@@ -25,6 +25,57 @@ from time_ranges import RANGE_HOURS, parse_ts, taiwan_str
 
 BASE = os.path.dirname(__file__)
 OUT_FILE = os.path.join(BASE, 'analysis', 'video_ranking.json')
+RISING_TOPICS_FILE = os.path.join(BASE, 'analysis', 'fuzzy_trends_1d.json')
+
+# Mirrors KEYWORD_BATCHES in TrendforceTwitterScraper/scrape_video_discovery.js -
+# duplicated intentionally (the two repos can't share code) so posts that
+# never got a topic from a search query in the first place - tracked-account
+# posts (plain timeline scrape, not a search) and discovery rows written
+# before topic-tagging existed - can still be assigned one by matching
+# their own text against the same keyword sets.
+INDUSTRY_KEYWORD_SETS = [
+    ['TSMC', 'Nvidia', 'Samsung', 'SK hynix', 'Micron'],
+    ['Intel', 'AMD', 'semiconductor', 'chip', 'foundry'],
+    ['DRAM', 'NAND', 'HBM', 'EUV', 'AI chip'],
+]
+
+
+def load_rising_topic_keyword_sets():
+    """Same file/label format scrape_video_discovery.js's getRisingTopicQueries()
+    reads - reused here as fallback classification keywords, not as new
+    search queries."""
+    try:
+        with open(RISING_TOPICS_FILE, encoding='utf-8') as f:
+            data = json.load(f)
+    except (OSError, ValueError):
+        return []
+    sets = []
+    seen_labels = set()
+    for platform_data in data.get('platforms', {}).values():
+        for topic in platform_data.get('top_rising_topics', []):
+            label = topic.get('label')
+            if not label or label in seen_labels:
+                continue
+            seen_labels.add(label)
+            terms = [t.strip() for t in label.split(' / ') if t.strip()]
+            if terms:
+                sets.append((label, terms))
+    return sets
+
+
+def assign_fallback_topic(text, keyword_sets):
+    """Picks whichever keyword set has the most terms appearing in the
+    post's own text (case-insensitive substring match - fine for both
+    English terms and Chinese, which has no word-boundary concept anyway).
+    Falls back to 'General' rather than leaving a post with no topic at
+    all, since every post should show something in the Topics column."""
+    text_lower = text.lower()
+    best_label, best_score = None, 0
+    for label, terms in keyword_sets:
+        score = sum(1 for t in terms if t.lower() in text_lower)
+        if score > best_score:
+            best_label, best_score = label, score
+    return best_label or 'General'
 
 # Only the 5 shortest ranges - 1mo/1q don't add anything for a ranking
 # meant to surface what's currently taking off, and every extra range is
@@ -113,6 +164,16 @@ def main():
     if not posts:
         print('No video posts found across any tracked X account, skipping.')
         return
+
+    keyword_sets = [(' / '.join(terms), terms) for terms in INDUSTRY_KEYWORD_SETS]
+    keyword_sets += load_rising_topic_keyword_sets()
+    backfilled = 0
+    for p in posts:
+        if not p['topic']:
+            p['topic'] = assign_fallback_topic(p['text'], keyword_sets)
+            backfilled += 1
+    if backfilled:
+        print(f"Assigned a fallback topic (content match) to {backfilled} post(s) with no search-derived topic.")
 
     now = max(p['_ts'] for p in posts)
     result = {}

@@ -1262,7 +1262,7 @@ def main():
       </tr>`).join('');
 
     container.innerHTML = `
-      <p class="muted">Top ${{ranked.length}} video post(s) across X (any account, not just ones we track), ranked by ${{VIDEO_METRIC_LABELS[metric]}}. Topics column shows which industry keyword or Rising Topic surfaced a video found via keyword search - blank for videos from accounts we track directly.</p>
+      <p class="muted">Top ${{ranked.length}} video post(s) across X (any account, not just ones we track), ranked by ${{VIDEO_METRIC_LABELS[metric]}}. Topics shows which industry keyword or Rising Topic the post matches - either what search found it, or (for tracked-account posts, which come from a plain timeline scrape) the closest content match; "General" means no keyword set matched.</p>
       <div class="table-wrap"><table><thead><tr><th>#</th><th>Account</th><th>Post</th><th>Topics</th><th>Views</th><th>Likes</th><th>Reposts</th><th>Link</th></tr></thead><tbody>${{rows}}</tbody></table></div>
     `;
   }}
