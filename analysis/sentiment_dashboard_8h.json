@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-07-23T23:07:48.065000+08:00",
+  "generated_at": "2026-07-24T01:21:46+08:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-23T15:07:48.065000+08:00",
-    "end_utc": "2026-07-23T23:07:48.065000+08:00",
-    "start_tw": "Jul 23, 15:07",
-    "end_tw": "Jul 23, 23:07"
+    "start_utc": "2026-07-23T17:21:46+08:00",
+    "end_utc": "2026-07-24T01:21:46+08:00",
+    "start_tw": "Jul 23, 17:21",
+    "end_tw": "Jul 24, 01:21"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 69,
+      "total_posts": 70,
       "sentiment_counts": {
-        "positive": 49,
-        "negative": 11,
-        "neutral": 9
+        "positive": 50,
+        "neutral": 7,
+        "negative": 13
       },
       "sentiment_share": {
-        "positive": 0.71,
-        "negative": 0.159,
-        "neutral": 0.13
+        "positive": 0.714,
+        "neutral": 0.1,
+        "negative": 0.186
       },
       "top_terms": [
         "photonics",
@@ -31,42 +31,39 @@
         "scale",
         "volume",
         "optics",
-        "advanced"
+        "ceo"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 1,
-        "label": "photonics / optical / rack / hashtag",
+        "topic_id": 4,
+        "label": "photonics / ai / optical / hashtag",
         "heat": 90.0,
-        "volume": 44,
-        "engagement": 2066,
+        "volume": 45,
+        "engagement": 2732,
         "entities": [
           "AI",
           "European",
-          "XIVER",
           "TTM",
-          "Brussels"
+          "Taiwan",
+          "PCB"
         ]
       },
       {
-        "topic_id": 0,
-        "label": "ai / mission / cuda / chip",
+        "topic_id": 10,
+        "label": "asml / guidance / raised / raise",
         "heat": 11.7,
-        "volume": 3,
-        "engagement": 103,
+        "volume": 2,
+        "engagement": 220,
         "entities": [
-          "Wenfeng     DeepSeek",
-          "Huawei",
-          "Huawei AI",
-          "TileLang",
-          "CUDA"
+          "Subscribe",
+          "WFE"
         ]
       },
       {
-        "topic_id": 4,
-        "label": "quantum / shelf / qkd / fibre",
-        "heat": 10.0,
+        "topic_id": 2,
+        "label": "quantum / qkd / shelf / fibre",
+        "heat": 11.7,
         "volume": 2,
         "engagement": 150,
         "entities": [
@@ -78,9 +75,9 @@
         ]
       },
       {
-        "topic_id": 7,
+        "topic_id": 8,
         "label": "quantum / quix / computer / renema",
-        "heat": 10.0,
+        "heat": 11.7,
         "volume": 2,
         "engagement": 148,
         "entities": [
@@ -93,32 +90,50 @@
       },
       {
         "topic_id": 6,
-        "label": "summary / excellent",
-        "heat": 10.0,
+        "label": "xiver / photonpath / integrated / platform",
+        "heat": 11.7,
         "volume": 2,
-        "engagement": 0,
+        "engagement": 154,
         "entities": [
-          "Worth"
+          "XIVER",
+          "PhotonPath",
+          "Oxyn",
+          "AI",
+          "Optica"
         ]
       },
       {
-        "topic_id": 5,
-        "label": "quantum / glasgow / hardware / scotland",
-        "heat": 10.0,
+        "topic_id": 9,
+        "label": "fusion / lutz / costs / photonics",
+        "heat": 11.7,
         "volume": 2,
-        "engagement": 0,
+        "engagement": 150,
         "entities": [
-          "UK",
-          "Glasgow",
-          "Scotland",
-          "Optica s Quantum     Conference",
-          "Jose Pozo  CTO"
+          "Lutz",
+          "Europe",
+          "Photonics",
+          "Light Conversion",
+          "Lithuania"
+        ]
+      },
+      {
+        "topic_id": 12,
+        "label": "equipment / ip / scale / royal",
+        "heat": 11.7,
+        "volume": 2,
+        "engagement": 74,
+        "entities": [
+          "European",
+          "Brussels",
+          "Europe",
+          "China",
+          "Optica GAMA"
         ]
       },
       {
         "topic_id": 3,
         "label": "lidar / hashtag / sensing / autonomy",
-        "heat": 10.0,
+        "heat": 11.1,
         "volume": 2,
         "engagement": 40,
         "entities": [
@@ -130,23 +145,9 @@
         ]
       },
       {
-        "topic_id": 8,
-        "label": "openai / ed / zitron / buyer",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 16,
-        "entities": [
-          "Ed Zitron",
-          "the Financial Times",
-          "Ed",
-          "OpenAI",
-          "Spectrum X"
-        ]
-      },
-      {
-        "topic_id": 2,
+        "topic_id": 11,
         "label": "inp / direct / inch / nvidia",
-        "heat": 10.0,
+        "heat": 11.0,
         "volume": 2,
         "engagement": 36,
         "entities": [
@@ -158,59 +159,69 @@
         ]
       },
       {
-        "topic_id": 12,
-        "label": "runs / ai / ceo / joined",
-        "heat": 10.0,
+        "topic_id": 1,
+        "label": "ai / continues / numbers / compound",
+        "heat": 10.7,
         "volume": 2,
-        "engagement": 36,
+        "engagement": 24,
         "entities": [
+          "季增",
           "AI",
-          "Sherman",
-          "Texas",
-          "Jensen Huang",
-          "Coherent Corp"
+          "Gemini",
+          "GM",
+          "AI Max     "
         ]
       },
       {
-        "topic_id": 11,
-        "label": "quantum / bn / glasgow / clocks",
-        "heat": 10.0,
+        "topic_id": 0,
+        "label": "openai / ed / buyer / zitron",
+        "heat": 10.5,
         "volume": 2,
-        "engagement": 106,
+        "engagement": 16,
         "entities": [
-          "Quantum",
-          "USD",
-          "GBP",
-          "QUANTUM SCALE OR",
-          "the Optica Quantum     "
+          "Ed Zitron",
+          "the Financial Times",
+          "Ed",
+          "OpenAI",
+          "Spectrum X"
         ]
       },
       {
-        "topic_id": 9,
-        "label": "asml / niesing / lithography / photonics",
+        "topic_id": 13,
+        "label": "solar / larger / continues / rd",
         "heat": 10.0,
-        "volume": 2,
-        "engagement": 88,
+        "volume": 1,
+        "engagement": 31,
         "entities": [
-          "Niesing",
-          "PHOTONICS",
-          "the Optica GAMA Meeting      ",
-          "Brussels",
-          "Henk Niesing"
+          "PCTC",
+          "CSSC GSI",
+          "KOBC",
+          "s  st   k",
+          "LNG"
         ]
       },
       {
-        "topic_id": 10,
-        "label": "lutz / fusion / costs / photonics",
+        "topic_id": 5,
+        "label": "summary / excellent",
         "heat": 10.0,
         "volume": 2,
-        "engagement": 150,
+        "engagement": 0,
         "entities": [
-          "Lutz",
-          "Europe",
-          "Photonics",
-          "Light Conversion",
-          "Lithuania"
+          "Worth"
+        ]
+      },
+      {
+        "topic_id": 7,
+        "label": "quantum / glasgow / hardware / jose",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 0,
+        "entities": [
+          "UK",
+          "Glasgow",
+          "Scotland",
+          "Optica s Quantum     Conference",
+          "Jose Pozo  CTO"
         ]
       }
     ],
@@ -225,7 +236,7 @@
       },
       {
         "entity": "Europe",
-        "count": 15
+        "count": 16
       },
       {
         "entity": "Brussels",
@@ -278,189 +289,203 @@
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-23T15:07:48.065002+08:00",
-        "bucket_end": "2026-07-23T15:42:05.207859+08:00",
-        "positive": 1,
-        "neutral": 3,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-23T15:42:05.207859+08:00",
-        "bucket_end": "2026-07-23T16:16:22.350716+08:00",
-        "positive": 3,
-        "neutral": 2,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-23T16:16:22.350716+08:00",
-        "bucket_end": "2026-07-23T16:50:39.493573+08:00",
-        "positive": 5,
-        "neutral": 3,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T16:50:39.493573+08:00",
-        "bucket_end": "2026-07-23T17:24:56.636430+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T17:24:56.636430+08:00",
-        "bucket_end": "2026-07-23T17:59:13.779287+08:00",
+        "bucket_start": "2026-07-23T17:21:46.000002+08:00",
+        "bucket_end": "2026-07-23T17:56:03.142859+08:00",
         "positive": 28,
         "neutral": 0,
         "negative": 6
       },
       {
-        "bucket_start": "2026-07-23T17:59:13.779287+08:00",
-        "bucket_end": "2026-07-23T18:33:30.922144+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T18:33:30.922144+08:00",
-        "bucket_end": "2026-07-23T19:07:48.065001+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T19:07:48.065001+08:00",
-        "bucket_end": "2026-07-23T19:42:05.207858+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T19:42:05.207858+08:00",
-        "bucket_end": "2026-07-23T20:16:22.350715+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T20:16:22.350715+08:00",
-        "bucket_end": "2026-07-23T20:50:39.493572+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T20:50:39.493572+08:00",
-        "bucket_end": "2026-07-23T21:24:56.636429+08:00",
+        "bucket_start": "2026-07-23T17:56:03.142859+08:00",
+        "bucket_end": "2026-07-23T18:30:20.285716+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-23T21:24:56.636429+08:00",
-        "bucket_end": "2026-07-23T21:59:13.779286+08:00",
-        "positive": 0,
-        "neutral": 0,
+        "bucket_start": "2026-07-23T18:30:20.285716+08:00",
+        "bucket_end": "2026-07-23T19:04:37.428573+08:00",
+        "positive": 1,
+        "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T21:59:13.779286+08:00",
-        "bucket_end": "2026-07-23T22:33:30.922143+08:00",
+        "bucket_start": "2026-07-23T19:04:37.428573+08:00",
+        "bucket_end": "2026-07-23T19:38:54.571430+08:00",
+        "positive": 3,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T19:38:54.571430+08:00",
+        "bucket_end": "2026-07-23T20:13:11.714287+08:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T22:33:30.922143+08:00",
-        "bucket_end": "2026-07-23T23:07:48.065000+08:00",
+        "bucket_start": "2026-07-23T20:13:11.714287+08:00",
+        "bucket_end": "2026-07-23T20:47:28.857144+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-23T20:47:28.857144+08:00",
+        "bucket_end": "2026-07-23T21:21:46.000001+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-23T21:21:46.000001+08:00",
+        "bucket_end": "2026-07-23T21:56:03.142858+08:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T21:56:03.142858+08:00",
+        "bucket_end": "2026-07-23T22:30:20.285715+08:00",
+        "positive": 3,
+        "neutral": 3,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T22:30:20.285715+08:00",
+        "bucket_end": "2026-07-23T23:04:37.428572+08:00",
         "positive": 4,
         "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-23T23:04:37.428572+08:00",
+        "bucket_end": "2026-07-23T23:38:54.571429+08:00",
+        "positive": 7,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-23T23:38:54.571429+08:00",
+        "bucket_end": "2026-07-24T00:13:11.714286+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T00:13:11.714286+08:00",
+        "bucket_end": "2026-07-24T00:47:28.857143+08:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T00:47:28.857143+08:00",
+        "bucket_end": "2026-07-24T01:21:46+08:00",
+        "positive": 0,
+        "neutral": 1,
         "negative": 1
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "ctee.fans",
-        "top_topic_id": 1,
-        "top_topic_label": "photonics / optical / rack / hashtag",
-        "focus_share": 1.0,
-        "post_count": 5
-      },
-      {
-        "handle": "subhash-km-6b5443123",
-        "top_topic_id": 1,
-        "top_topic_label": "photonics / optical / rack / hashtag",
-        "focus_share": 1.0,
-        "post_count": 4
-      },
-      {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 0,
-        "top_topic_label": "ai / mission / cuda / chip",
+        "handle": "TrendForce",
+        "top_topic_id": 4,
+        "top_topic_label": "photonics / ai / optical / hashtag",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "technewsinside",
-        "top_topic_id": 1,
-        "top_topic_label": "photonics / optical / rack / hashtag",
-        "focus_share": 0.875,
-        "post_count": 8
+        "handle": "jukan05",
+        "top_topic_id": 4,
+        "top_topic_label": "photonics / ai / optical / hashtag",
+        "focus_share": 1.0,
+        "post_count": 1
       },
       {
-        "handle": "jukan05",
-        "top_topic_id": 1,
-        "top_topic_label": "photonics / optical / rack / hashtag",
+        "handle": "subhash-km-6b5443123",
+        "top_topic_id": 4,
+        "top_topic_label": "photonics / ai / optical / hashtag",
+        "focus_share": 1.0,
+        "post_count": 2
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 4,
+        "top_topic_label": "photonics / ai / optical / hashtag",
+        "focus_share": 0.8,
+        "post_count": 5
+      },
+      {
+        "handle": "tphuang",
+        "top_topic_id": 4,
+        "top_topic_label": "photonics / ai / optical / hashtag",
+        "focus_share": 0.8,
+        "post_count": 5
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 4,
+        "top_topic_label": "photonics / ai / optical / hashtag",
+        "focus_share": 0.8,
+        "post_count": 5
+      },
+      {
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 10,
+        "top_topic_label": "asml / guidance / raised / raise",
         "focus_share": 0.667,
         "post_count": 3
       },
       {
         "handle": "josepozophotonics",
-        "top_topic_id": 1,
-        "top_topic_label": "photonics / optical / rack / hashtag",
-        "focus_share": 0.542,
+        "top_topic_id": 4,
+        "top_topic_label": "photonics / ai / optical / hashtag",
+        "focus_share": 0.583,
         "post_count": 48
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 1,
-        "label": "photonics / optical / rack / hashtag",
-        "total_engagement": 2066,
-        "post_count": 44
-      },
-      {
         "topic_id": 4,
-        "label": "quantum / shelf / qkd / fibre",
-        "total_engagement": 150,
-        "post_count": 2
+        "label": "photonics / ai / optical / hashtag",
+        "total_engagement": 2732,
+        "post_count": 45
       },
       {
         "topic_id": 10,
-        "label": "lutz / fusion / costs / photonics",
+        "label": "asml / guidance / raised / raise",
+        "total_engagement": 220,
+        "post_count": 2
+      },
+      {
+        "topic_id": 6,
+        "label": "xiver / photonpath / integrated / platform",
+        "total_engagement": 154,
+        "post_count": 2
+      },
+      {
+        "topic_id": 2,
+        "label": "quantum / qkd / shelf / fibre",
         "total_engagement": 150,
         "post_count": 2
       },
       {
-        "topic_id": 7,
+        "topic_id": 9,
+        "label": "fusion / lutz / costs / photonics",
+        "total_engagement": 150,
+        "post_count": 2
+      },
+      {
+        "topic_id": 8,
         "label": "quantum / quix / computer / renema",
         "total_engagement": 148,
         "post_count": 2
       },
       {
-        "topic_id": 11,
-        "label": "quantum / bn / glasgow / clocks",
-        "total_engagement": 106,
-        "post_count": 2
-      },
-      {
-        "topic_id": 0,
-        "label": "ai / mission / cuda / chip",
-        "total_engagement": 103,
-        "post_count": 3
-      },
-      {
-        "topic_id": 9,
-        "label": "asml / niesing / lithography / photonics",
-        "total_engagement": 88,
+        "topic_id": 12,
+        "label": "equipment / ip / scale / royal",
+        "total_engagement": 74,
         "post_count": 2
       },
       {
@@ -470,32 +495,38 @@
         "post_count": 2
       },
       {
-        "topic_id": 2,
+        "topic_id": 11,
         "label": "inp / direct / inch / nvidia",
         "total_engagement": 36,
         "post_count": 2
       },
       {
-        "topic_id": 12,
-        "label": "runs / ai / ceo / joined",
-        "total_engagement": 36,
+        "topic_id": 13,
+        "label": "solar / larger / continues / rd",
+        "total_engagement": 31,
+        "post_count": 1
+      },
+      {
+        "topic_id": 1,
+        "label": "ai / continues / numbers / compound",
+        "total_engagement": 24,
         "post_count": 2
       },
       {
-        "topic_id": 8,
-        "label": "openai / ed / zitron / buyer",
+        "topic_id": 0,
+        "label": "openai / ed / buyer / zitron",
         "total_engagement": 16,
         "post_count": 2
       },
       {
-        "topic_id": 6,
+        "topic_id": 5,
         "label": "summary / excellent",
         "total_engagement": 0,
         "post_count": 2
       },
       {
-        "topic_id": 5,
-        "label": "quantum / glasgow / hardware / scotland",
+        "topic_id": 7,
+        "label": "quantum / glasgow / hardware / jose",
         "total_engagement": 0,
         "post_count": 2
       }
@@ -509,22 +540,22 @@
           "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 53,
-          "likes": 2241,
-          "engagement": 2391,
-          "avg_engagement": 45.1
+          "post_count": 34,
+          "likes": 1759,
+          "engagement": 1812,
+          "avg_engagement": 53.3
         },
         "evening": {
-          "post_count": 16,
-          "likes": 541,
-          "engagement": 548,
-          "avg_engagement": 34.2
+          "post_count": 32,
+          "likes": 1698,
+          "engagement": 1921,
+          "avg_engagement": 60.0
         },
         "late_night": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 4,
+          "likes": 33,
+          "engagement": 42,
+          "avg_engagement": 10.5
         }
       },
       "peak_slot": "afternoon"

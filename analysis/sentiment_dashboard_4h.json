@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-07-23T23:07:48.065000+08:00",
+  "generated_at": "2026-07-24T01:21:46+08:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-23T19:07:48.065000+08:00",
-    "end_utc": "2026-07-23T23:07:48.065000+08:00",
-    "start_tw": "Jul 23, 19:07",
-    "end_tw": "Jul 23, 23:07"
+    "start_utc": "2026-07-23T21:21:46+08:00",
+    "end_utc": "2026-07-24T01:21:46+08:00",
+    "start_tw": "Jul 23, 21:21",
+    "end_tw": "Jul 24, 01:21"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 16,
+      "total_posts": 25,
       "sentiment_counts": {
-        "negative": 3,
-        "neutral": 1,
-        "positive": 12
+        "neutral": 4,
+        "positive": 17,
+        "negative": 4
       },
       "sentiment_share": {
-        "negative": 0.188,
-        "neutral": 0.062,
-        "positive": 0.75
+        "neutral": 0.16,
+        "positive": 0.68,
+        "negative": 0.16
       },
       "top_terms": [
         "photonics",
@@ -27,34 +27,34 @@
         "optical",
         "infrastructure",
         "manufacturing",
+        "capacity",
         "volume",
         "photonic",
-        "quantum",
-        "scale",
-        "ceo"
+        "revenue",
+        "demand"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "photonics / generation / manufacturing / asml",
-        "heat": 90.0,
-        "volume": 8,
-        "engagement": 276,
+        "topic_id": 4,
+        "label": "photonics / photonic / optica / manufacturing",
+        "heat": 83.3,
+        "volume": 5,
+        "engagement": 251,
         "entities": [
-          "XIVER",
-          "AI",
-          "European",
           "Europe",
+          "European",
+          "XIVER",
+          "TTM",
           "PhotonPath"
         ]
       },
       {
-        "topic_id": 2,
-        "label": "quantum / glasgow / quix / hardware",
-        "heat": 21.3,
-        "volume": 4,
-        "engagement": 202,
+        "topic_id": 0,
+        "label": "quantum / adoption / summary / excellent",
+        "heat": 81.0,
+        "volume": 6,
+        "engagement": 232,
         "entities": [
           "Glasgow",
           "Quantum",
@@ -64,28 +64,56 @@
         ]
       },
       {
-        "topic_id": 1,
-        "label": "excellent / summary / photonic / marketing",
-        "heat": 10.0,
-        "volume": 4,
-        "engagement": 70,
+        "topic_id": 3,
+        "label": "asml / guidance / raised / raise",
+        "heat": 50.0,
+        "volume": 3,
+        "engagement": 264,
         "entities": [
-          "TTM",
-          "STG",
+          "Niesing",
+          "Subscribe",
+          "WFE",
+          "PHOTONICS",
+          "the Optica GAMA Meeting      "
+        ]
+      },
+      {
+        "topic_id": 1,
+        "label": "nyse / capacity / tsmc / expansion",
+        "heat": 50.0,
+        "volume": 7,
+        "engagement": 108,
+        "entities": [
           "Ed Zitron",
-          "European",
-          "TTM Technologies"
+          "馬丁",
+          "N",
+          "Coherent Corp",
+          "Sherman"
+        ]
+      },
+      {
+        "topic_id": 2,
+        "label": "ai / glm / models / gpt",
+        "heat": 15.3,
+        "volume": 4,
+        "engagement": 122,
+        "entities": [
+          "季增",
+          "GLM",
+          "GPT",
+          "Chinese",
+          "Ppl"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "European",
+        "entity": "AI",
         "count": 9
       },
       {
-        "entity": "AI",
-        "count": 8
+        "entity": "European",
+        "count": 9
       },
       {
         "entity": "Europe",
@@ -128,152 +156,185 @@
         "count": 4
       },
       {
+        "entity": "季增",
+        "count": 3
+      },
+      {
         "entity": "QuiX",
         "count": 3
       },
       {
         "entity": "Renema",
         "count": 3
-      },
-      {
-        "entity": "Ed Zitron",
-        "count": 3
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-23T19:07:48.064994+08:00",
-        "bucket_end": "2026-07-23T19:24:56.636423+08:00",
+        "bucket_start": "2026-07-23T21:21:45.999994+08:00",
+        "bucket_end": "2026-07-23T21:38:54.571423+08:00",
         "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T21:38:54.571423+08:00",
+        "bucket_end": "2026-07-23T21:56:03.142852+08:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T21:56:03.142852+08:00",
+        "bucket_end": "2026-07-23T22:13:11.714281+08:00",
+        "positive": 1,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T22:13:11.714281+08:00",
+        "bucket_end": "2026-07-23T22:30:20.285710+08:00",
+        "positive": 2,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T19:24:56.636423+08:00",
-        "bucket_end": "2026-07-23T19:42:05.207852+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T19:42:05.207852+08:00",
-        "bucket_end": "2026-07-23T19:59:13.779281+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T19:59:13.779281+08:00",
-        "bucket_end": "2026-07-23T20:16:22.350710+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T20:16:22.350710+08:00",
-        "bucket_end": "2026-07-23T20:33:30.922139+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T20:33:30.922139+08:00",
-        "bucket_end": "2026-07-23T20:50:39.493568+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T20:50:39.493568+08:00",
-        "bucket_end": "2026-07-23T21:07:48.064997+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T21:07:48.064997+08:00",
-        "bucket_end": "2026-07-23T21:24:56.636426+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-23T21:24:56.636426+08:00",
-        "bucket_end": "2026-07-23T21:42:05.207855+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T21:42:05.207855+08:00",
-        "bucket_end": "2026-07-23T21:59:13.779284+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T21:59:13.779284+08:00",
-        "bucket_end": "2026-07-23T22:16:22.350713+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T22:16:22.350713+08:00",
-        "bucket_end": "2026-07-23T22:33:30.922142+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T22:33:30.922142+08:00",
-        "bucket_end": "2026-07-23T22:50:39.493571+08:00",
+        "bucket_start": "2026-07-23T22:30:20.285710+08:00",
+        "bucket_end": "2026-07-23T22:47:28.857139+08:00",
         "positive": 4,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-23T22:50:39.493571+08:00",
-        "bucket_end": "2026-07-23T23:07:48.065000+08:00",
+        "bucket_start": "2026-07-23T22:47:28.857139+08:00",
+        "bucket_end": "2026-07-23T23:04:37.428568+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T23:04:37.428568+08:00",
+        "bucket_end": "2026-07-23T23:21:45.999997+08:00",
+        "positive": 7,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-23T23:21:45.999997+08:00",
+        "bucket_end": "2026-07-23T23:38:54.571426+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T23:38:54.571426+08:00",
+        "bucket_end": "2026-07-23T23:56:03.142855+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T23:56:03.142855+08:00",
+        "bucket_end": "2026-07-24T00:13:11.714284+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T00:13:11.714284+08:00",
+        "bucket_end": "2026-07-24T00:30:20.285713+08:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T00:30:20.285713+08:00",
+        "bucket_end": "2026-07-24T00:47:28.857142+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T00:47:28.857142+08:00",
+        "bucket_end": "2026-07-24T01:04:37.428571+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T01:04:37.428571+08:00",
+        "bucket_end": "2026-07-24T01:21:46+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 1
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "subhash-km-6b5443123",
-        "top_topic_id": 0,
-        "top_topic_label": "photonics / generation / manufacturing / asml",
-        "focus_share": 1.0,
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 3,
+        "top_topic_label": "asml / guidance / raised / raise",
+        "focus_share": 0.667,
+        "post_count": 3
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 1,
+        "top_topic_label": "nyse / capacity / tsmc / expansion",
+        "focus_share": 0.667,
+        "post_count": 3
+      },
+      {
+        "handle": "tphuang",
+        "top_topic_id": 2,
+        "top_topic_label": "ai / glm / models / gpt",
+        "focus_share": 0.667,
+        "post_count": 3
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 1,
+        "top_topic_label": "nyse / capacity / tsmc / expansion",
+        "focus_share": 0.5,
         "post_count": 2
       },
       {
         "handle": "josepozophotonics",
         "top_topic_id": 0,
-        "top_topic_label": "photonics / generation / manufacturing / asml",
-        "focus_share": 0.429,
+        "top_topic_label": "quantum / adoption / summary / excellent",
+        "focus_share": 0.357,
         "post_count": 14
       }
     ],
     "top_engagement_ranking": [
       {
+        "topic_id": 3,
+        "label": "asml / guidance / raised / raise",
+        "total_engagement": 264,
+        "post_count": 3
+      },
+      {
+        "topic_id": 4,
+        "label": "photonics / photonic / optica / manufacturing",
+        "total_engagement": 251,
+        "post_count": 5
+      },
+      {
         "topic_id": 0,
-        "label": "photonics / generation / manufacturing / asml",
-        "total_engagement": 276,
-        "post_count": 8
+        "label": "quantum / adoption / summary / excellent",
+        "total_engagement": 232,
+        "post_count": 6
       },
       {
         "topic_id": 2,
-        "label": "quantum / glasgow / quix / hardware",
-        "total_engagement": 202,
+        "label": "ai / glm / models / gpt",
+        "total_engagement": 122,
         "post_count": 4
       },
       {
         "topic_id": 1,
-        "label": "excellent / summary / photonic / marketing",
-        "total_engagement": 70,
-        "post_count": 4
+        "label": "nyse / capacity / tsmc / expansion",
+        "total_engagement": 108,
+        "post_count": 7
       }
     ],
     "posting_timeslot_analysis": {
@@ -291,16 +352,16 @@
           "avg_engagement": 0.0
         },
         "evening": {
-          "post_count": 16,
-          "likes": 541,
-          "engagement": 548,
-          "avg_engagement": 34.2
+          "post_count": 21,
+          "likes": 880,
+          "engagement": 935,
+          "avg_engagement": 44.5
         },
         "late_night": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 4,
+          "likes": 33,
+          "engagement": 42,
+          "avg_engagement": 10.5
         }
       },
       "peak_slot": "evening"
