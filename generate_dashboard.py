@@ -170,6 +170,15 @@ def account_profile_url(platform, handle):
     if platform == 'Facebook':
         return f'https://www.facebook.com/{handle}'
     if platform == 'LinkedIn':
+        # A tracked INDIVIDUAL's personal profile (scrape_profiles_linkedin.js,
+        # a deliberately separate scraper from company-page tracking) - its
+        # CSV landing in csv/linkedin/profiles/ rather than alongside company
+        # pages (same distinction cluster_topics.py's load_posts() checks) is
+        # the only signal available here for which URL shape to build, since
+        # accounts_config.json doesn't otherwise distinguish "company" from
+        # "person" - a bare handle string looks the same either way.
+        if os.path.exists(os.path.join(BASE, 'csv', 'linkedin', 'profiles', f'{handle}.csv')):
+            return f'https://www.linkedin.com/in/{handle}/'
         # Unlike X/Facebook, LinkedIn's own scraper (scrape_accounts_linkedin.js)
         # tracks accounts by a company-page URL slug - historically not the
         # same string as the display handle (e.g. handle "TrendForce" ->

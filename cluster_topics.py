@@ -352,6 +352,14 @@ def load_posts():
         loader = LOADERS[platform]
         for handle in cfg['own'] + cfg['competitors']:
             path = os.path.join(cfg['dir'], f'{handle}.csv')
+            if not os.path.exists(path) and platform == 'LinkedIn':
+                # A tracked individual's personal profile (scrape_profiles_linkedin.js) -
+                # a fundamentally different scrape from a company page, but
+                # sync_data.sh lands its CSV in a 'profiles' subdirectory
+                # rather than alongside company pages, so check there too
+                # before giving up. Same 6-column schema either way, so
+                # load_linkedin_posts() needs no change.
+                path = os.path.join(cfg['dir'], 'profiles', f'{handle}.csv')
             if not os.path.exists(path):
                 continue
             for post in loader(handle, path):

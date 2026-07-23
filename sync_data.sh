@@ -104,16 +104,26 @@ for h in "${FB_HANDLES[@]}"; do
   fi
 done
 
-mkdir -p csv/linkedin
+mkdir -p csv/linkedin csv/linkedin/profiles
 for h in "${LI_HANDLES[@]}"; do
   # Same one-file-per-handle shape as X's scraper (scrape_accounts_linkedin.js
   # keeps writing csv/<handle>.csv in place, not dated files like Facebook's),
   # so the same tmp+mv atomic-copy pattern as the X loop above applies here.
+  # A tracked individual's personal profile (scrape_profiles_linkedin.js)
+  # writes to csv/profiles/<handle>.csv instead of csv/<handle>.csv - a
+  # company-page handle never has a profiles/ file and vice versa, so try
+  # the company path first and fall back rather than needing to know in
+  # advance which kind a given handle is.
   src="$LINKEDIN_SRC/csv/$h.csv"
+  dest="csv/linkedin/$h.csv"
+  if [ ! -f "$src" ]; then
+    src="$LINKEDIN_SRC/csv/profiles/$h.csv"
+    dest="csv/linkedin/profiles/$h.csv"
+  fi
   if [ -f "$src" ]; then
-    tmp="csv/linkedin/$h.csv.tmp.$$"
+    tmp="$dest.tmp.$$"
     cp "$src" "$tmp"
-    mv "$tmp" "csv/linkedin/$h.csv"
+    mv "$tmp" "$dest"
     synced=$((synced + 1))
   else
     echo "[WARN] sync_data: missing $src"
