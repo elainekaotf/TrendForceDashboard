@@ -1,281 +1,287 @@
 {
-  "generated_at": "2026-07-23T03:00:00+00:00",
+  "generated_at": "2026-07-23T04:45:00+00:00",
   "time_range": "1h",
   "window": {
-    "start_utc": "2026-07-23T02:00:00+00:00",
-    "end_utc": "2026-07-23T03:00:00+00:00",
-    "start_tw": "Jul 23, 10:00",
-    "end_tw": "Jul 23, 11:00"
+    "start_utc": "2026-07-23T03:45:00+00:00",
+    "end_utc": "2026-07-23T04:45:00+00:00",
+    "start_tw": "Jul 23, 11:45",
+    "end_tw": "Jul 23, 12:45"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 10,
+      "total_posts": 11,
       "sentiment_counts": {
-        "negative": 4,
-        "neutral": 3,
-        "positive": 3
+        "positive": 4,
+        "negative": 2,
+        "neutral": 5
       },
       "sentiment_share": {
-        "negative": 0.4,
-        "neutral": 0.3,
-        "positive": 0.3
+        "positive": 0.364,
+        "negative": 0.182,
+        "neutral": 0.455
       },
       "top_terms": [
-        "財報",
-        "反映",
-        "料中",
-        "資料中",
-        "料中心",
-        "資料中心",
-        "預期",
-        "緯創",
-        "ibm",
-        "texas"
+        "alphabet",
+        "指控",
+        "reuters",
+        "intel",
+        "amd",
+        "pursuing",
+        "server",
+        "cpu",
+        "supply",
+        "agreements"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 1,
-        "label": "資料中心及汽車市場需求持續回溫 / 日公布第二季財報 / 德州儀器 / 反映工業",
+        "topic_id": 0,
+        "label": "cluster-0",
         "heat": 90.0,
-        "volume": 6,
-        "engagement": 40,
+        "volume": 9,
+        "engagement": 267,
         "entities": [
-          "德州",
-          "華爾街",
-          "FT Exclusive  Japan",
-          "US",
-          "American"
+          "韓國",
+          "李在明",
+          "黃仁勳",
+          "外國",
+          "天文"
         ]
       },
       {
-        "topic_id": 0,
-        "label": "ai / ibm",
+        "topic_id": 1,
+        "label": "alphabet",
         "heat": 10.0,
-        "volume": 4,
-        "engagement": 14,
+        "volume": 2,
+        "engagement": 3,
         "entities": [
-          "馬斯克",
-          "奧德賽",
-          "緯創",
-          "諾蘭",
-          "荷馬"
+          "ALPHABET POST",
+          "TPU",
+          "Alphabet  GOOGL",
+          "alphabet googl  googl juicy"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "緯創",
-        "count": 3
-      },
-      {
-        "entity": "馬斯克",
+        "entity": "韓國",
         "count": 2
       },
       {
-        "entity": "奧德賽",
+        "entity": "李在明",
         "count": 2
       },
       {
-        "entity": "美國",
+        "entity": "黃仁勳",
         "count": 2
       },
       {
-        "entity": "德州",
+        "entity": "外國",
         "count": 2
       },
       {
-        "entity": "華爾街",
+        "entity": "天文",
         "count": 2
       },
       {
-        "entity": "FT Exclusive  Japan",
+        "entity": "黑洞",
+        "count": 2
+      },
+      {
+        "entity": "Reuters",
         "count": 1
       },
       {
-        "entity": "US",
+        "entity": "Intel",
         "count": 1
       },
       {
-        "entity": "American",
+        "entity": "AMD",
         "count": 1
       },
       {
-        "entity": "japan",
+        "entity": "CPU",
         "count": 1
       },
       {
-        "entity": "american",
+        "entity": "Chinese",
         "count": 1
       },
       {
-        "entity": "諾蘭",
+        "entity": "intel",
         "count": 1
       },
       {
-        "entity": "荷馬",
+        "entity": "chinese",
         "count": 1
       },
       {
-        "entity": "林建勳",
+        "entity": "ALPHABET POST",
         "count": 1
       },
       {
-        "entity": "伺服器",
+        "entity": "TPU",
         "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-23T02:00:00.000002+00:00",
-        "bucket_end": "2026-07-23T02:04:17.142859+00:00",
+        "bucket_start": "2026-07-23T03:45:00.000002+00:00",
+        "bucket_end": "2026-07-23T03:49:17.142859+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T02:04:17.142859+00:00",
-        "bucket_end": "2026-07-23T02:08:34.285716+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T02:08:34.285716+00:00",
-        "bucket_end": "2026-07-23T02:12:51.428573+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T02:12:51.428573+00:00",
-        "bucket_end": "2026-07-23T02:17:08.571430+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T02:17:08.571430+00:00",
-        "bucket_end": "2026-07-23T02:21:25.714287+00:00",
+        "bucket_start": "2026-07-23T03:49:17.142859+00:00",
+        "bucket_end": "2026-07-23T03:53:34.285716+00:00",
         "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T02:21:25.714287+00:00",
-        "bucket_end": "2026-07-23T02:25:42.857144+00:00",
+        "bucket_start": "2026-07-23T03:53:34.285716+00:00",
+        "bucket_end": "2026-07-23T03:57:51.428573+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T02:25:42.857144+00:00",
-        "bucket_end": "2026-07-23T02:30:00.000001+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-23T02:30:00.000001+00:00",
-        "bucket_end": "2026-07-23T02:34:17.142858+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T02:34:17.142858+00:00",
-        "bucket_end": "2026-07-23T02:38:34.285715+00:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-23T02:38:34.285715+00:00",
-        "bucket_end": "2026-07-23T02:42:51.428572+00:00",
-        "positive": 0,
+        "bucket_start": "2026-07-23T03:57:51.428573+00:00",
+        "bucket_end": "2026-07-23T04:02:08.571430+00:00",
+        "positive": 1,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T02:42:51.428572+00:00",
-        "bucket_end": "2026-07-23T02:47:08.571429+00:00",
+        "bucket_start": "2026-07-23T04:02:08.571430+00:00",
+        "bucket_end": "2026-07-23T04:06:25.714287+00:00",
         "positive": 0,
         "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T04:06:25.714287+00:00",
+        "bucket_end": "2026-07-23T04:10:42.857144+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T04:10:42.857144+00:00",
+        "bucket_end": "2026-07-23T04:15:00.000001+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T04:15:00.000001+00:00",
+        "bucket_end": "2026-07-23T04:19:17.142858+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T04:19:17.142858+00:00",
+        "bucket_end": "2026-07-23T04:23:34.285715+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T04:23:34.285715+00:00",
+        "bucket_end": "2026-07-23T04:27:51.428572+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T04:27:51.428572+00:00",
+        "bucket_end": "2026-07-23T04:32:08.571429+00:00",
+        "positive": 1,
+        "neutral": 1,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-23T02:47:08.571429+00:00",
-        "bucket_end": "2026-07-23T02:51:25.714286+00:00",
+        "bucket_start": "2026-07-23T04:32:08.571429+00:00",
+        "bucket_end": "2026-07-23T04:36:25.714286+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T02:51:25.714286+00:00",
-        "bucket_end": "2026-07-23T02:55:42.857143+00:00",
+        "bucket_start": "2026-07-23T04:36:25.714286+00:00",
+        "bucket_end": "2026-07-23T04:40:42.857143+00:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T02:55:42.857143+00:00",
-        "bucket_end": "2026-07-23T03:00:00+00:00",
+        "bucket_start": "2026-07-23T04:40:42.857143+00:00",
+        "bucket_end": "2026-07-23T04:45:00+00:00",
         "positive": 0,
-        "neutral": 0,
+        "neutral": 1,
         "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "FT",
-        "top_topic_id": 1,
-        "top_topic_label": "資料中心及汽車市場需求持續回溫 / 日公布第二季財報 / 德州儀器 / 反映工業",
+        "handle": "jukan05",
+        "top_topic_id": 0,
+        "top_topic_label": "cluster-0",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "ctee.fans",
-        "top_topic_id": 1,
-        "top_topic_label": "資料中心及汽車市場需求持續回溫 / 日公布第二季財報 / 德州儀器 / 反映工業",
-        "focus_share": 1.0,
-        "post_count": 4
-      },
-      {
         "handle": "technewsinside",
         "top_topic_id": 0,
-        "top_topic_label": "ai / ibm",
-        "focus_share": 0.8,
-        "post_count": 5
+        "top_topic_label": "cluster-0",
+        "focus_share": 1.0,
+        "post_count": 6
+      },
+      {
+        "handle": "ctee.fans",
+        "top_topic_id": 0,
+        "top_topic_label": "cluster-0",
+        "focus_share": 1.0,
+        "post_count": 2
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 1,
+        "top_topic_label": "alphabet",
+        "focus_share": 1.0,
+        "post_count": 2
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 1,
-        "label": "資料中心及汽車市場需求持續回溫 / 日公布第二季財報 / 德州儀器 / 反映工業",
-        "total_engagement": 40,
-        "post_count": 6
+        "topic_id": 0,
+        "label": "cluster-0",
+        "total_engagement": 267,
+        "post_count": 9
       },
       {
-        "topic_id": 0,
-        "label": "ai / ibm",
-        "total_engagement": 14,
-        "post_count": 4
+        "topic_id": 1,
+        "label": "alphabet",
+        "total_engagement": 3,
+        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 10,
-          "likes": 49,
-          "engagement": 54,
-          "avg_engagement": 5.4
+          "post_count": 2,
+          "likes": 174,
+          "engagement": 207,
+          "avg_engagement": 103.5
         },
         "afternoon": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 9,
+          "likes": 61,
+          "engagement": 63,
+          "avg_engagement": 7.0
         },
         "evening": {
           "post_count": 0,
@@ -290,7 +296,7 @@
           "avg_engagement": 0.0
         }
       },
-      "peak_slot": "morning"
+      "peak_slot": "afternoon"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,

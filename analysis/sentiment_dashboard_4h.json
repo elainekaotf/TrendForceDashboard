@@ -1,74 +1,113 @@
 {
-  "generated_at": "2026-07-23T03:00:00+00:00",
+  "generated_at": "2026-07-23T04:45:00+00:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-22T23:00:00+00:00",
-    "end_utc": "2026-07-23T03:00:00+00:00",
-    "start_tw": "Jul 23, 07:00",
-    "end_tw": "Jul 23, 11:00"
+    "start_utc": "2026-07-23T00:45:00+00:00",
+    "end_utc": "2026-07-23T04:45:00+00:00",
+    "start_tw": "Jul 23, 08:45",
+    "end_tw": "Jul 23, 12:45"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 32,
+      "total_posts": 38,
       "sentiment_counts": {
-        "negative": 6,
-        "positive": 11,
-        "neutral": 15
+        "positive": 14,
+        "negative": 7,
+        "neutral": 17
       },
       "sentiment_share": {
-        "negative": 0.188,
-        "positive": 0.344,
-        "neutral": 0.469
+        "positive": 0.368,
+        "negative": 0.184,
+        "neutral": 0.447
       },
       "top_terms": [
+        "alphabet",
         "財報",
-        "預期",
-        "trib",
-        "二季",
-        "季財",
-        "第二季",
-        "二季財",
-        "季財報",
-        "第二季財",
-        "二季財報"
+        "sold",
+        "ibm",
+        "反映",
+        "料中",
+        "資料中",
+        "料中心",
+        "資料中心",
+        "預期"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 2,
-        "label": "日公布第二季財報",
+        "topic_id": 0,
+        "label": "analysis / alphabet / sold / dollar",
         "heat": 90.0,
-        "volume": 15,
-        "engagement": 527,
+        "volume": 21,
+        "engagement": 193,
         "entities": [
-          "china",
-          "緯創",
-          "Macquarie",
-          "Wikramanayake",
-          "China"
-        ]
-      },
-      {
-        "topic_id": 1,
-        "label": "ai / trib / ft",
-        "heat": 47.8,
-        "volume": 7,
-        "engagement": 307,
-        "entities": [
-          "chinese",
-          "馬斯克",
-          "奧德賽",
-          "緯創",
-          "US"
+          "國巨",
+          "黃仁勳",
+          "外國",
+          "天文",
+          "黑洞"
         ]
       },
       {
         "topic_id": 5,
-        "label": "nuclear / decades / ft / trib",
-        "heat": 14.7,
+        "label": "intel / amd",
+        "heat": 50.0,
+        "volume": 2,
+        "engagement": 205,
+        "entities": [
+          "intel",
+          "Intel",
+          "skhynix",
+          "SKhynix",
+          "Ohio"
+        ]
+      },
+      {
+        "topic_id": 1,
+        "label": "ai / ibm / alphabet",
+        "heat": 16.6,
+        "volume": 6,
+        "engagement": 29,
+        "entities": [
+          "馬斯克",
+          "奧德賽",
+          "緯創",
+          "韓國",
+          "李在明"
+        ]
+      },
+      {
+        "topic_id": 3,
+        "label": "anthropic / 輝達 / amd / ai",
+        "heat": 13.5,
         "volume": 3,
-        "engagement": 153,
+        "engagement": 36,
+        "entities": [
+          "輝達",
+          "超微",
+          "廣發證券",
+          "Kimi K"
+        ]
+      },
+      {
+        "topic_id": 4,
+        "label": "turbine / gev / sold / decades",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 36,
+        "entities": [
+          "GEV",
+          "GE",
+          "Vernova"
+        ]
+      },
+      {
+        "topic_id": 6,
+        "label": "nuclear / ft / trib / decades",
+        "heat": 10.0,
+        "volume": 2,
+        "engagement": 48,
         "entities": [
           "FT Exclusive  Japan",
           "US",
@@ -78,30 +117,8 @@
         ]
       },
       {
-        "topic_id": 0,
-        "label": "ibm / alphabet / ai / google",
-        "heat": 12.4,
-        "volume": 3,
-        "engagement": 22,
-        "entities": [
-          "AI"
-        ]
-      },
-      {
-        "topic_id": 4,
-        "label": "anthropic / 輝達 / ai",
-        "heat": 10.0,
-        "volume": 2,
-        "engagement": 25,
-        "entities": [
-          "輝達",
-          "超微",
-          "廣發證券"
-        ]
-      },
-      {
-        "topic_id": 3,
-        "label": "資料中心及汽車市場需求持續回溫 / 德州儀器 / 反映工業 / texas",
+        "topic_id": 2,
+        "label": "instruments / 日公布第二季財報 / 德州儀器 / 反映工業",
         "heat": 10.0,
         "volume": 2,
         "engagement": 4,
@@ -113,31 +130,31 @@
     ],
     "named_entities": [
       {
-        "entity": "輝達",
-        "count": 5
-      },
-      {
-        "entity": "緯創",
+        "entity": "intel",
         "count": 4
       },
       {
-        "entity": "US",
-        "count": 2
-      },
-      {
-        "entity": "AI",
-        "count": 2
-      },
-      {
-        "entity": "chinese",
-        "count": 2
-      },
-      {
-        "entity": "china",
-        "count": 2
+        "entity": "輝達",
+        "count": 4
       },
       {
         "entity": "馬斯克",
+        "count": 3
+      },
+      {
+        "entity": "緯創",
+        "count": 3
+      },
+      {
+        "entity": "美國",
+        "count": 3
+      },
+      {
+        "entity": "Intel",
+        "count": 2
+      },
+      {
+        "entity": "skhynix",
         "count": 2
       },
       {
@@ -145,7 +162,7 @@
         "count": 2
       },
       {
-        "entity": "美國",
+        "entity": "國巨",
         "count": 2
       },
       {
@@ -153,190 +170,217 @@
         "count": 2
       },
       {
-        "entity": "德州",
+        "entity": "韓國",
         "count": 2
       },
       {
-        "entity": "華爾街",
+        "entity": "李在明",
         "count": 2
       },
       {
-        "entity": "FT Exclusive  Japan",
-        "count": 1
+        "entity": "黃仁勳",
+        "count": 2
       },
       {
-        "entity": "American",
-        "count": 1
+        "entity": "外國",
+        "count": 2
       },
       {
-        "entity": "japan",
-        "count": 1
+        "entity": "天文",
+        "count": 2
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-22T22:59:59.999994+00:00",
-        "bucket_end": "2026-07-22T23:17:08.571423+00:00",
+        "bucket_start": "2026-07-23T00:44:59.999994+00:00",
+        "bucket_end": "2026-07-23T01:02:08.571423+00:00",
         "positive": 1,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T23:17:08.571423+00:00",
-        "bucket_end": "2026-07-22T23:34:17.142852+00:00",
-        "positive": 1,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T23:34:17.142852+00:00",
-        "bucket_end": "2026-07-22T23:51:25.714281+00:00",
-        "positive": 0,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-22T23:51:25.714281+00:00",
-        "bucket_end": "2026-07-23T00:08:34.285710+00:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T00:08:34.285710+00:00",
-        "bucket_end": "2026-07-23T00:25:42.857139+00:00",
-        "positive": 1,
-        "neutral": 1,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-23T00:25:42.857139+00:00",
-        "bucket_end": "2026-07-23T00:42:51.428568+00:00",
-        "positive": 3,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T00:42:51.428568+00:00",
-        "bucket_end": "2026-07-23T00:59:59.999997+00:00",
-        "positive": 0,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-23T00:59:59.999997+00:00",
-        "bucket_end": "2026-07-23T01:17:08.571426+00:00",
-        "positive": 1,
+        "bucket_start": "2026-07-23T01:02:08.571423+00:00",
+        "bucket_end": "2026-07-23T01:19:17.142852+00:00",
+        "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T01:17:08.571426+00:00",
-        "bucket_end": "2026-07-23T01:34:17.142855+00:00",
+        "bucket_start": "2026-07-23T01:19:17.142852+00:00",
+        "bucket_end": "2026-07-23T01:36:25.714281+00:00",
+        "positive": 1,
+        "neutral": 3,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T01:36:25.714281+00:00",
+        "bucket_end": "2026-07-23T01:53:34.285710+00:00",
         "positive": 0,
         "neutral": 2,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T01:34:17.142855+00:00",
-        "bucket_end": "2026-07-23T01:51:25.714284+00:00",
-        "positive": 1,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T01:51:25.714284+00:00",
-        "bucket_end": "2026-07-23T02:08:34.285713+00:00",
+        "bucket_start": "2026-07-23T01:53:34.285710+00:00",
+        "bucket_end": "2026-07-23T02:10:42.857139+00:00",
         "positive": 2,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-23T02:08:34.285713+00:00",
-        "bucket_end": "2026-07-23T02:25:42.857142+00:00",
+        "bucket_start": "2026-07-23T02:10:42.857139+00:00",
+        "bucket_end": "2026-07-23T02:27:51.428568+00:00",
+        "positive": 2,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T02:27:51.428568+00:00",
+        "bucket_end": "2026-07-23T02:44:59.999997+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-23T02:44:59.999997+00:00",
+        "bucket_end": "2026-07-23T03:02:08.571426+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-23T03:02:08.571426+00:00",
+        "bucket_end": "2026-07-23T03:19:17.142855+00:00",
+        "positive": 2,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T03:19:17.142855+00:00",
+        "bucket_end": "2026-07-23T03:36:25.714284+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T03:36:25.714284+00:00",
+        "bucket_end": "2026-07-23T03:53:34.285713+00:00",
+        "positive": 1,
+        "neutral": 1,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-23T03:53:34.285713+00:00",
+        "bucket_end": "2026-07-23T04:10:42.857142+00:00",
         "positive": 1,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T02:25:42.857142+00:00",
-        "bucket_end": "2026-07-23T02:42:51.428571+00:00",
+        "bucket_start": "2026-07-23T04:10:42.857142+00:00",
+        "bucket_end": "2026-07-23T04:27:51.428571+00:00",
         "positive": 0,
-        "neutral": 1,
-        "negative": 2
+        "neutral": 2,
+        "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T02:42:51.428571+00:00",
-        "bucket_end": "2026-07-23T03:00:00+00:00",
-        "positive": 0,
-        "neutral": 0,
+        "bucket_start": "2026-07-23T04:27:51.428571+00:00",
+        "bucket_end": "2026-07-23T04:45:00+00:00",
+        "positive": 1,
+        "neutral": 2,
         "negative": 1
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "yutinghaosfinance",
-        "top_topic_id": 2,
-        "top_topic_label": "日公布第二季財報",
+        "handle": "jukan05",
+        "top_topic_id": 5,
+        "top_topic_label": "intel / amd",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
-        "handle": "ctee.fans",
-        "top_topic_id": 2,
-        "top_topic_label": "日公布第二季財報",
-        "focus_share": 0.833,
-        "post_count": 12
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 0,
+        "top_topic_label": "analysis / alphabet / sold / dollar",
+        "focus_share": 1.0,
+        "post_count": 1
       },
       {
         "handle": "FT",
+        "top_topic_id": 6,
+        "top_topic_label": "nuclear / ft / trib / decades",
+        "focus_share": 1.0,
+        "post_count": 2
+      },
+      {
+        "handle": "ctee.fans",
+        "top_topic_id": 0,
+        "top_topic_label": "analysis / alphabet / sold / dollar",
+        "focus_share": 0.818,
+        "post_count": 11
+      },
+      {
+        "handle": "TrendForce",
         "top_topic_id": 5,
-        "top_topic_label": "nuclear / decades / ft / trib",
+        "top_topic_label": "intel / amd",
         "focus_share": 0.5,
-        "post_count": 6
+        "post_count": 2
+      },
+      {
+        "handle": "tengyanAI",
+        "top_topic_id": 0,
+        "top_topic_label": "analysis / alphabet / sold / dollar",
+        "focus_share": 0.5,
+        "post_count": 4
       },
       {
         "handle": "technewsinside",
-        "top_topic_id": 1,
-        "top_topic_label": "ai / trib / ft",
-        "focus_share": 0.462,
-        "post_count": 13
+        "top_topic_id": 0,
+        "top_topic_label": "analysis / alphabet / sold / dollar",
+        "focus_share": 0.471,
+        "post_count": 17
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 2,
-        "label": "日公布第二季財報",
-        "total_engagement": 527,
-        "post_count": 15
-      },
-      {
-        "topic_id": 1,
-        "label": "ai / trib / ft",
-        "total_engagement": 307,
-        "post_count": 7
-      },
-      {
         "topic_id": 5,
-        "label": "nuclear / decades / ft / trib",
-        "total_engagement": 153,
-        "post_count": 3
-      },
-      {
-        "topic_id": 4,
-        "label": "anthropic / 輝達 / ai",
-        "total_engagement": 25,
+        "label": "intel / amd",
+        "total_engagement": 205,
         "post_count": 2
       },
       {
         "topic_id": 0,
-        "label": "ibm / alphabet / ai / google",
-        "total_engagement": 22,
-        "post_count": 3
+        "label": "analysis / alphabet / sold / dollar",
+        "total_engagement": 193,
+        "post_count": 21
+      },
+      {
+        "topic_id": 6,
+        "label": "nuclear / ft / trib / decades",
+        "total_engagement": 48,
+        "post_count": 2
+      },
+      {
+        "topic_id": 4,
+        "label": "turbine / gev / sold / decades",
+        "total_engagement": 36,
+        "post_count": 2
       },
       {
         "topic_id": 3,
-        "label": "資料中心及汽車市場需求持續回溫 / 德州儀器 / 反映工業 / texas",
+        "label": "anthropic / 輝達 / amd / ai",
+        "total_engagement": 36,
+        "post_count": 3
+      },
+      {
+        "topic_id": 1,
+        "label": "ai / ibm / alphabet",
+        "total_engagement": 29,
+        "post_count": 6
+      },
+      {
+        "topic_id": 2,
+        "label": "instruments / 日公布第二季財報 / 德州儀器 / 反映工業",
         "total_engagement": 4,
         "post_count": 2
       }
@@ -344,16 +388,16 @@
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 32,
-          "likes": 935,
-          "engagement": 1038,
-          "avg_engagement": 32.4
+          "post_count": 29,
+          "likes": 426,
+          "engagement": 488,
+          "avg_engagement": 16.8
         },
         "afternoon": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 9,
+          "likes": 61,
+          "engagement": 63,
+          "avg_engagement": 7.0
         },
         "evening": {
           "post_count": 0,
