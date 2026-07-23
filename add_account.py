@@ -11,6 +11,7 @@ Usage:
     python3 add_account.py Facebook SomeCompetitorPage
     python3 add_account.py LinkedIn some-company-slug
     python3 add_account.py LinkedIn https://www.linkedin.com/company/some-company/
+    python3 add_account.py LinkedIn https://www.linkedin.com/in/some-person/    (personal profile)
     python3 add_account.py X technews_tw --own      (register/promote as an own account, not a competitor)
 
 Marking an account 'own' changes real behavior elsewhere: FR-01/02's
@@ -22,8 +23,12 @@ own accounts). Only mark an account own if TrendForce actually operates it.
 This is the entire "accept a request" flow in one command: it registers
 the handle, triggers a real one-off scrape (Facebook via
 scrape_facebook.js + parse_facebook.py; X via scrape_accounts.js, which
-writes csv/<handle>.csv directly; LinkedIn via scrape_accounts_linkedin.js,
-COMPANY PAGES ONLY - see normalize_linkedin_slug), then runs
+writes csv/<handle>.csv directly; LinkedIn company pages via
+scrape_accounts_linkedin.js - see normalize_linkedin_slug; LinkedIn
+personal profiles via the separate scrape_profiles_linkedin.js - see
+is_linkedin_profile_url/normalize_linkedin_profile_slug, added
+2026-07-23 after two profile requests sat rejected since the original
+LinkedIn support only covered company pages), then runs
 `run_pipeline.sh core` to sync, rebuild every analysis file, regenerate
 the dashboard, and publish it to GitHub Pages - so accepting a request
 never needs a second command.
@@ -31,8 +36,9 @@ never needs a second command.
 X's KNOWN_ACCOUNTS list in scraper.js still needs the handle added by
 hand for it to stay covered by *future* scheduled runs (there's no CLI
 hook for that file) - this script prints a reminder but can't do that
-part for you. LinkedIn's own ACCOUNTS list in scrape_accounts_linkedin.js
-IS updated automatically (a small, simple-enough array to edit safely).
+part for you. LinkedIn's own ACCOUNTS/PROFILES lists in
+scrape_accounts_linkedin.js/scrape_profiles_linkedin.js ARE updated
+automatically (small, simple-enough arrays to edit safely).
 """
 import json
 import os
@@ -47,6 +53,7 @@ FACEBOOK_SCRAPER_DIR = Path('/Users/elainekao/TrendforceFacebookScraper')
 TWITTER_SCRAPER_DIR = Path('/Users/elainekao/TrendforceTwitterScraper')
 LINKEDIN_SCRAPER_DIR = Path('/Users/elainekao/TrendforceLinkedinScraper')
 LINKEDIN_ACCOUNTS_JS = LINKEDIN_SCRAPER_DIR / 'scrape_accounts_linkedin.js'
+LINKEDIN_PROFILES_JS = LINKEDIN_SCRAPER_DIR / 'scrape_profiles_linkedin.js'
 # Mirrors cluster_topics.py's _DEFAULT_OWN - duplicated rather than imported
 # so this script stays lightweight (no sklearn/pandas import chain) for a
 # one-off local CLI action.
