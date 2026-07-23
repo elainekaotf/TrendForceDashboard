@@ -1,178 +1,82 @@
 {
-  "generated_at": "2026-07-23T17:42:35.934000+08:00",
+  "generated_at": "2026-07-23T23:07:48.065000+08:00",
   "time_range": "1h",
   "window": {
-    "start_utc": "2026-07-23T16:42:35.934000+08:00",
-    "end_utc": "2026-07-23T17:42:35.934000+08:00",
-    "start_tw": "Jul 23, 16:42",
-    "end_tw": "Jul 23, 17:42"
+    "start_utc": "2026-07-23T22:07:48.065000+08:00",
+    "end_utc": "2026-07-23T23:07:48.065000+08:00",
+    "start_tw": "Jul 23, 22:07",
+    "end_tw": "Jul 23, 23:07"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 35,
+      "total_posts": 14,
       "sentiment_counts": {
-        "neutral": 1,
-        "positive": 28,
-        "negative": 6
+        "positive": 12,
+        "negative": 2
       },
       "sentiment_share": {
-        "neutral": 0.029,
-        "positive": 0.8,
-        "negative": 0.171
+        "positive": 0.857,
+        "negative": 0.143
       },
       "top_terms": [
         "photonics",
         "optica",
         "optical",
-        "manufacturing",
         "infrastructure",
+        "manufacturing",
+        "volume",
         "photonic",
+        "quantum",
         "scale",
-        "optics",
-        "advanced",
-        "brussels"
+        "ceo"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 3,
-        "label": "hashtag / chip / reflow / imec",
+        "topic_id": 0,
+        "label": "photonics / manufacturing / asml / excellent",
         "heat": 90.0,
-        "volume": 8,
-        "engagement": 488,
+        "volume": 10,
+        "engagement": 339,
         "entities": [
-          "AI",
-          "Netherlands",
-          "Vifo",
-          "IBM",
-          "Diana Mojahed"
-        ]
-      },
-      {
-        "topic_id": 5,
-        "label": "ttm / optical / conversation / photonics",
-        "heat": 84.4,
-        "volume": 6,
-        "engagement": 450,
-        "entities": [
-          "PCB",
-          "TTM",
-          "Fermat",
-          "TTM Technologies",
-          "European"
-        ]
-      },
-      {
-        "topic_id": 2,
-        "label": "photonics / summary / excellent / asml",
-        "heat": 48.0,
-        "volume": 6,
-        "engagement": 210,
-        "entities": [
-          "Brussels",
-          "PhotonHub",
           "European",
-          "Intel",
-          "CPO"
+          "AI",
+          "Europe",
+          "XIVER",
+          "TTM"
         ]
       },
       {
         "topic_id": 1,
         "label": "quantum / glasgow / quix / hardware",
-        "heat": 33.4,
-        "volume": 5,
-        "engagement": 210,
-        "entities": [
-          "Quantum",
-          "Glasgow",
-          "QuiX",
-          "Renema",
-          "UK"
-        ]
-      },
-      {
-        "topic_id": 0,
-        "label": "ai / taiwan / ceo / huang",
-        "heat": 21.0,
-        "volume": 4,
-        "engagement": 185,
-        "entities": [
-          "AI",
-          "Taiwan",
-          "XIVER",
-          "PhotonPath",
-          "Taipei"
-        ]
-      },
-      {
-        "topic_id": 4,
-        "label": "netherlands / photonics / gmbh / nd",
-        "heat": 20.4,
-        "volume": 4,
-        "engagement": 180,
-        "entities": [
-          "European",
-          "Photonics",
-          "Darren Berns",
-          "Reinhard Voelkel",
-          "Wonder"
-        ]
-      },
-      {
-        "topic_id": 6,
-        "label": "fusion / laser / lutz / marvel",
         "heat": 10.0,
-        "volume": 2,
-        "engagement": 95,
+        "volume": 4,
+        "engagement": 202,
         "entities": [
-          "Lutz",
-          "Europe",
-          "Lutz Aschke",
-          "Photonics",
-          "Light Conversion"
+          "Glasgow",
+          "Quantum",
+          "UK",
+          "QuiX",
+          "Renema"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "AI",
-        "count": 20
-      },
-      {
         "entity": "European",
-        "count": 14
+        "count": 9
       },
       {
-        "entity": "Brussels",
-        "count": 10
+        "entity": "AI",
+        "count": 8
       },
       {
         "entity": "Europe",
-        "count": 9
-      },
-      {
-        "entity": "Taiwan",
-        "count": 9
-      },
-      {
-        "entity": "Optica",
-        "count": 6
-      },
-      {
-        "entity": "PCB",
-        "count": 6
-      },
-      {
-        "entity": "PhotonHub",
         "count": 6
       },
       {
         "entity": "Quantum",
-        "count": 5
-      },
-      {
-        "entity": "UK",
         "count": 5
       },
       {
@@ -184,176 +88,163 @@
         "count": 5
       },
       {
-        "entity": "Optica GAMA",
-        "count": 5
+        "entity": "Glasgow",
+        "count": 4
       },
       {
-        "entity": "CPO",
-        "count": 5
+        "entity": "UK",
+        "count": 4
       },
       {
-        "entity": "Fermat",
-        "count": 5
+        "entity": "Optica",
+        "count": 4
+      },
+      {
+        "entity": "PhotonPath",
+        "count": 4
+      },
+      {
+        "entity": "STG",
+        "count": 4
+      },
+      {
+        "entity": "Brussels",
+        "count": 4
+      },
+      {
+        "entity": "QuiX",
+        "count": 3
+      },
+      {
+        "entity": "Renema",
+        "count": 3
+      },
+      {
+        "entity": "Ed Zitron",
+        "count": 3
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-23T16:42:35.934002+08:00",
-        "bucket_end": "2026-07-23T16:46:53.076859+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T16:46:53.076859+08:00",
-        "bucket_end": "2026-07-23T16:51:10.219716+08:00",
+        "bucket_start": "2026-07-23T22:07:48.065002+08:00",
+        "bucket_end": "2026-07-23T22:12:05.207859+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T16:51:10.219716+08:00",
-        "bucket_end": "2026-07-23T16:55:27.362573+08:00",
+        "bucket_start": "2026-07-23T22:12:05.207859+08:00",
+        "bucket_end": "2026-07-23T22:16:22.350716+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T16:55:27.362573+08:00",
-        "bucket_end": "2026-07-23T16:59:44.505430+08:00",
+        "bucket_start": "2026-07-23T22:16:22.350716+08:00",
+        "bucket_end": "2026-07-23T22:20:39.493573+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T16:59:44.505430+08:00",
-        "bucket_end": "2026-07-23T17:04:01.648287+08:00",
+        "bucket_start": "2026-07-23T22:20:39.493573+08:00",
+        "bucket_end": "2026-07-23T22:24:56.636430+08:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-23T22:24:56.636430+08:00",
+        "bucket_end": "2026-07-23T22:29:13.779287+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T17:04:01.648287+08:00",
-        "bucket_end": "2026-07-23T17:08:18.791144+08:00",
+        "bucket_start": "2026-07-23T22:29:13.779287+08:00",
+        "bucket_end": "2026-07-23T22:33:30.922144+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T17:08:18.791144+08:00",
-        "bucket_end": "2026-07-23T17:12:35.934001+08:00",
+        "bucket_start": "2026-07-23T22:33:30.922144+08:00",
+        "bucket_end": "2026-07-23T22:37:48.065001+08:00",
+        "positive": 4,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-23T22:37:48.065001+08:00",
+        "bucket_end": "2026-07-23T22:42:05.207858+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T17:12:35.934001+08:00",
-        "bucket_end": "2026-07-23T17:16:53.076858+08:00",
+        "bucket_start": "2026-07-23T22:42:05.207858+08:00",
+        "bucket_end": "2026-07-23T22:46:22.350715+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T17:16:53.076858+08:00",
-        "bucket_end": "2026-07-23T17:21:10.219715+08:00",
+        "bucket_start": "2026-07-23T22:46:22.350715+08:00",
+        "bucket_end": "2026-07-23T22:50:39.493572+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T17:21:10.219715+08:00",
-        "bucket_end": "2026-07-23T17:25:27.362572+08:00",
+        "bucket_start": "2026-07-23T22:50:39.493572+08:00",
+        "bucket_end": "2026-07-23T22:54:56.636429+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T17:25:27.362572+08:00",
-        "bucket_end": "2026-07-23T17:29:44.505429+08:00",
+        "bucket_start": "2026-07-23T22:54:56.636429+08:00",
+        "bucket_end": "2026-07-23T22:59:13.779286+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T17:29:44.505429+08:00",
-        "bucket_end": "2026-07-23T17:34:01.648286+08:00",
+        "bucket_start": "2026-07-23T22:59:13.779286+08:00",
+        "bucket_end": "2026-07-23T23:03:30.922143+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T17:34:01.648286+08:00",
-        "bucket_end": "2026-07-23T17:38:18.791143+08:00",
+        "bucket_start": "2026-07-23T23:03:30.922143+08:00",
+        "bucket_end": "2026-07-23T23:07:48.065000+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T17:38:18.791143+08:00",
-        "bucket_end": "2026-07-23T17:42:35.934000+08:00",
-        "positive": 21,
-        "neutral": 0,
-        "negative": 5
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "ctee.fans",
-        "top_topic_id": 3,
-        "top_topic_label": "hashtag / chip / reflow / imec",
-        "focus_share": 1.0,
-        "post_count": 1
-      },
-      {
         "handle": "josepozophotonics",
-        "top_topic_id": 3,
-        "top_topic_label": "hashtag / chip / reflow / imec",
-        "focus_share": 0.206,
-        "post_count": 34
+        "top_topic_id": 0,
+        "top_topic_label": "photonics / manufacturing / asml / excellent",
+        "focus_share": 0.714,
+        "post_count": 14
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 3,
-        "label": "hashtag / chip / reflow / imec",
-        "total_engagement": 488,
-        "post_count": 8
-      },
-      {
-        "topic_id": 5,
-        "label": "ttm / optical / conversation / photonics",
-        "total_engagement": 450,
-        "post_count": 6
+        "topic_id": 0,
+        "label": "photonics / manufacturing / asml / excellent",
+        "total_engagement": 339,
+        "post_count": 10
       },
       {
         "topic_id": 1,
         "label": "quantum / glasgow / quix / hardware",
-        "total_engagement": 210,
-        "post_count": 5
-      },
-      {
-        "topic_id": 2,
-        "label": "photonics / summary / excellent / asml",
-        "total_engagement": 210,
-        "post_count": 6
-      },
-      {
-        "topic_id": 0,
-        "label": "ai / taiwan / ceo / huang",
-        "total_engagement": 185,
+        "total_engagement": 202,
         "post_count": 4
-      },
-      {
-        "topic_id": 4,
-        "label": "netherlands / photonics / gmbh / nd",
-        "total_engagement": 180,
-        "post_count": 4
-      },
-      {
-        "topic_id": 6,
-        "label": "fusion / laser / lutz / marvel",
-        "total_engagement": 95,
-        "post_count": 2
       }
     ],
     "posting_timeslot_analysis": {
@@ -365,16 +256,16 @@
           "avg_engagement": 0.0
         },
         "afternoon": {
-          "post_count": 35,
-          "likes": 1765,
-          "engagement": 1818,
-          "avg_engagement": 51.9
-        },
-        "evening": {
           "post_count": 0,
           "likes": 0,
           "engagement": 0,
           "avg_engagement": 0.0
+        },
+        "evening": {
+          "post_count": 14,
+          "likes": 535,
+          "engagement": 541,
+          "avg_engagement": 38.6
         },
         "late_night": {
           "post_count": 0,
@@ -383,7 +274,7 @@
           "avg_engagement": 0.0
         }
       },
-      "peak_slot": "afternoon"
+      "peak_slot": "evening"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,
