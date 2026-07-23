@@ -1,40 +1,49 @@
 {
   "clusters": [
     {
-      "id": 1,
-      "label": "ai / memory / spacex / hbm",
-      "size": 13,
+      "id": 3,
+      "label": "ai / nvidia / trendforce / memory",
+      "size": 35,
       "accounts": {
-        "jukan05": 2,
-        "QQ_Timmy": 1,
-        "technewsinside": 6,
-        "ctee.fans": 4
+        "ctee.fans": 1,
+        "josepozophotonics": 34
       },
       "engagement_by_account": {
-        "jukan05": 145,
-        "QQ_Timmy": 2,
-        "technewsinside": 47,
-        "ctee.fans": 88
-      }
-    },
-    {
-      "id": 0,
-      "label": "nand / dram / memory / ssd",
-      "size": 1,
-      "accounts": {
-        "jukan05": 1
-      },
-      "engagement_by_account": {
-        "jukan05": 246
+        "ctee.fans": 6,
+        "josepozophotonics": 1812
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 3,
+      "label": "ai / nvidia / trendforce / memory",
+      "own_count": 0,
+      "competitor_count": 35,
+      "competitor_engagement": 1818,
+      "competitors_covering": [
+        "ctee.fans",
+        "josepozophotonics"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 3,
+      "label": "ai / nvidia / trendforce / memory",
+      "own_count": 0,
+      "competitor_count": 35,
+      "competitor_engagement": 1818,
+      "competitors_covering": [
+        "ctee.fans",
+        "josepozophotonics"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-23T07:45:00+00:00",
-    "end_utc": "2026-07-23T08:45:00+00:00",
-    "start_tw": "Jul 23, 15:45",
-    "end_tw": "Jul 23, 16:45"
+    "start_utc": "2026-07-23T16:42:35.934000+08:00",
+    "end_utc": "2026-07-23T17:42:35.934000+08:00",
+    "start_tw": "Jul 23, 16:42",
+    "end_tw": "Jul 23, 17:42"
   }
 }

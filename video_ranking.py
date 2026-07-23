@@ -64,18 +64,29 @@ def load_rising_topic_keyword_sets():
     return sets
 
 
-def term_in_text(term, text_lower):
+def term_in_text(term, text):
     """Plain substring matching false-positives on short ASCII terms found
     inside an unrelated word - found 2026-07-23: Rising Topic label
     "sk / hynix / samsung / hbm" has "sk" as its own term (cluster_topics.py's
     TF-IDF vectorizer tokenizes "SK hynix" into separate unigrams), and "sk"
     is a substring of "Haskell". Word-boundary match for pure ASCII
     alnum terms avoids that; multi-word terms and CJK terms (which carry no
-    spaces to bound on) keep plain substring matching, same as before."""
-    term_lower = term.lower()
-    if re.fullmatch(r'[a-z0-9]+', term_lower):
-        return re.search(r'\b' + re.escape(term_lower) + r'\b', text_lower) is not None
-    return term_lower in text_lower
+    spaces to bound on) keep plain substring matching, same as before.
+
+    Word-boundary alone still isn't enough for all-caps industry acronyms
+    (NAND, DRAM, HBM, EUV, SK, AI, ...) - "Injured Inspector Nand Kishor
+    Singh" case-insensitively matched "NAND" as a whole word, tagging an
+    unrelated news video (found 2026-07-23). Industry acronyms are almost
+    always written in ALL CAPS in real posts, while a name/ordinary word
+    coinciding with one is typically title-case - so when the TERM ITSELF
+    is all-uppercase, require a case-SENSITIVE match against the original
+    text; ordinary lowercase/mixed-case terms (chip, foundry, ...) keep
+    case-insensitive matching since case can't disambiguate those anyway."""
+    if re.fullmatch(r'[a-zA-Z0-9]+', term):
+        if term.isupper() and len(term) > 1:
+            return re.search(r'\b' + re.escape(term) + r'\b', text) is not None
+        return re.search(r'\b' + re.escape(term.lower()) + r'\b', text.lower()) is not None
+    return term.lower() in text.lower()
 
 
 def topic_matches_text(topic_label, text):
@@ -90,20 +101,18 @@ def topic_matches_text(topic_label, text):
     terms = [t.strip() for t in topic_label.split(' / ') if t.strip()]
     if not terms:
         return False
-    text_lower = text.lower()
-    return any(term_in_text(t, text_lower) for t in terms)
+    return any(term_in_text(t, text) for t in terms)
 
 
 def assign_fallback_topic(text, keyword_sets):
     """Picks whichever keyword set has the most terms appearing in the
-    post's own text (word-boundary match for ASCII terms, substring for
-    CJK - see term_in_text). Falls back to 'General' rather than leaving a
-    post with no topic at all, since every post should show something in
-    the Topics column."""
-    text_lower = text.lower()
+    post's own text (word-boundary match for ASCII terms, case-sensitive
+    for all-caps acronym terms, substring for CJK - see term_in_text).
+    Falls back to 'General' rather than leaving a post with no topic at
+    all, since every post should show something in the Topics column."""
     best_label, best_score = None, 0
     for label, terms in keyword_sets:
-        score = sum(1 for t in terms if term_in_text(t, text_lower))
+        score = sum(1 for t in terms if term_in_text(t, text))
         if score > best_score:
             best_label, best_score = label, score
     return best_label or 'General'

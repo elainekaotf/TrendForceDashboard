@@ -1,64 +1,145 @@
 {
-  "generated_at": "2026-07-23T08:45:00+00:00",
+  "generated_at": "2026-07-23T17:42:35.934000+08:00",
   "range": "1h",
   "window_hours": 1,
   "window": {
-    "start_utc": "2026-07-23T07:45:00+00:00",
-    "end_utc": "2026-07-23T08:45:00+00:00",
-    "start_tw": "Jul 23, 15:45",
-    "end_tw": "Jul 23, 16:45"
+    "start_utc": "2026-07-23T16:42:35.934000+08:00",
+    "end_utc": "2026-07-23T17:42:35.934000+08:00",
+    "start_tw": "Jul 23, 16:42",
+    "end_tw": "Jul 23, 17:42"
   },
   "scan_only": false,
   "platforms": {
     "Facebook": {
       "top_rising_topics": [
         {
-          "rising_score": 90.0,
-          "volume_growth_rate": 1.0,
-          "engagement_acceleration": -0.007,
-          "active_accounts": 2,
-          "rationale": "volume +100% vs prior 1h, engagement rate -1%, 2 account(s) posting",
-          "topic_id": 1,
-          "label": "ai / memory / spacex / hbm",
+          "rising_score": 50.0,
+          "volume_growth_rate": -0.889,
+          "engagement_acceleration": -0.581,
+          "active_accounts": 1,
+          "rationale": "volume -89% vs prior 1h, engagement rate -58%, 1 account(s) posting",
+          "topic_id": 3,
+          "label": "ai / nvidia / trendforce / memory",
           "rising_kols": [
             {
               "rising_score": 90.0,
-              "volume_growth_rate": 1.0,
-              "engagement_acceleration": 0.257,
+              "volume_growth_rate": -0.667,
+              "engagement_acceleration": -0.78,
               "active_accounts": 1,
-              "rationale": "posts +100%, engagement +26% vs prior 1h",
+              "rationale": "posts -67%, engagement -78% vs prior 1h",
               "handle": "ctee.fans"
             },
             {
               "rising_score": 10.0,
-              "volume_growth_rate": 1.0,
-              "engagement_acceleration": -0.288,
-              "active_accounts": 1,
-              "rationale": "posts +100%, engagement -29% vs prior 1h",
-              "handle": "technewsinside"
-            }
-          ],
-          "sub_topics": []
-        },
-        {
-          "rising_score": 10.0,
-          "volume_growth_rate": -1.0,
-          "engagement_acceleration": -1.0,
-          "active_accounts": 0,
-          "rationale": "volume -100% vs prior 1h, engagement rate -100%, 0 account(s) posting",
-          "topic_id": 15,
-          "label": "iphone / 蘋果 / apple / openai",
-          "rising_kols": [
-            {
-              "rising_score": 50.0,
               "volume_growth_rate": -1.0,
               "engagement_acceleration": -1.0,
               "active_accounts": 0,
               "rationale": "posts -100%, engagement -100% vs prior 1h",
-              "handle": "ctee.fans"
+              "handle": "technewsinside"
             }
           ],
           "sub_topics": []
+        }
+      ]
+    },
+    "LinkedIn": {
+      "top_rising_topics": [
+        {
+          "rising_score": 50.0,
+          "volume_growth_rate": 34.0,
+          "engagement_acceleration": 53.294,
+          "active_accounts": 1,
+          "rationale": "volume +3400% vs prior 1h, engagement rate +5329%, 1 account(s) posting",
+          "topic_id": 3,
+          "label": "ai / nvidia / trendforce / memory",
+          "rising_kols": [
+            {
+              "rising_score": 50.0,
+              "volume_growth_rate": 34.0,
+              "engagement_acceleration": 53.294,
+              "active_accounts": 1,
+              "rationale": "posts +3400%, engagement +5329% vs prior 1h",
+              "handle": "josepozophotonics"
+            }
+          ],
+          "sub_topics": [
+            {
+              "rising_score": 90.0,
+              "volume_growth_rate": 14.0,
+              "engagement_acceleration": 57.286,
+              "active_accounts": 1,
+              "rationale": "volume +1400% vs prior 1h, engagement rate +5729%, 1 account(s) posting",
+              "sub_topic_id": 2,
+              "label": "hashtag / chip / imec / optics",
+              "rising_kols": [
+                {
+                  "rising_score": 50.0,
+                  "volume_growth_rate": 14.0,
+                  "engagement_acceleration": 57.286,
+                  "active_accounts": 1,
+                  "rationale": "posts +1400%, engagement +5729% vs prior 1h",
+                  "handle": "josepozophotonics"
+                }
+              ]
+            },
+            {
+              "rising_score": 82.0,
+              "volume_growth_rate": 11.0,
+              "engagement_acceleration": 54.727,
+              "active_accounts": 1,
+              "rationale": "volume +1100% vs prior 1h, engagement rate +5473%, 1 account(s) posting",
+              "sub_topic_id": 0,
+              "label": "photonics / optical / netherlands / ttm",
+              "rising_kols": [
+                {
+                  "rising_score": 50.0,
+                  "volume_growth_rate": 11.0,
+                  "engagement_acceleration": 54.727,
+                  "active_accounts": 1,
+                  "rationale": "posts +1100%, engagement +5473% vs prior 1h",
+                  "handle": "josepozophotonics"
+                }
+              ]
+            },
+            {
+              "rising_score": 10.0,
+              "volume_growth_rate": 5.0,
+              "engagement_acceleration": 42.0,
+              "active_accounts": 1,
+              "rationale": "volume +500% vs prior 1h, engagement rate +4200%, 1 account(s) posting",
+              "sub_topic_id": 1,
+              "label": "quantum / glasgow / quix / hardware",
+              "rising_kols": [
+                {
+                  "rising_score": 50.0,
+                  "volume_growth_rate": 5.0,
+                  "engagement_acceleration": 42.0,
+                  "active_accounts": 1,
+                  "rationale": "posts +500%, engagement +4200% vs prior 1h",
+                  "handle": "josepozophotonics"
+                }
+              ]
+            },
+            {
+              "rising_score": 10.0,
+              "volume_growth_rate": 4.0,
+              "engagement_acceleration": 49.5,
+              "active_accounts": 1,
+              "rationale": "volume +400% vs prior 1h, engagement rate +4950%, 1 account(s) posting",
+              "sub_topic_id": 3,
+              "label": "photonics / fusion / laser / lutz",
+              "rising_kols": [
+                {
+                  "rising_score": 50.0,
+                  "volume_growth_rate": 4.0,
+                  "engagement_acceleration": 49.5,
+                  "active_accounts": 1,
+                  "rationale": "posts +400%, engagement +4950% vs prior 1h",
+                  "handle": "josepozophotonics"
+                }
+              ]
+            }
+          ]
         }
       ]
     }
