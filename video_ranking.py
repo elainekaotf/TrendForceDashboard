@@ -19,6 +19,7 @@ lags wall-clock time, so "last hour" from real now would usually be empty).
 import csv
 import json
 import os
+import re
 
 from cluster_topics import PLATFORM_ACCOUNTS, parse_count
 from time_ranges import RANGE_HOURS, parse_ts, taiwan_str
@@ -63,16 +64,46 @@ def load_rising_topic_keyword_sets():
     return sets
 
 
+def term_in_text(term, text_lower):
+    """Plain substring matching false-positives on short ASCII terms found
+    inside an unrelated word - found 2026-07-23: Rising Topic label
+    "sk / hynix / samsung / hbm" has "sk" as its own term (cluster_topics.py's
+    TF-IDF vectorizer tokenizes "SK hynix" into separate unigrams), and "sk"
+    is a substring of "Haskell". Word-boundary match for pure ASCII
+    alnum terms avoids that; multi-word terms and CJK terms (which carry no
+    spaces to bound on) keep plain substring matching, same as before."""
+    term_lower = term.lower()
+    if re.fullmatch(r'[a-z0-9]+', term_lower):
+        return re.search(r'\b' + re.escape(term_lower) + r'\b', text_lower) is not None
+    return term_lower in text_lower
+
+
+def topic_matches_text(topic_label, text):
+    """A stored topic came from scrape_video_discovery.js's search results,
+    which can be wrong: X's search matches against the account's username
+    too, not just tweet content - found 2026-07-23 (@ChipGotIt_'s account
+    name contains "Chip", tagging an unrelated video "...chip / foundry"
+    purely from that). The scraper itself was fixed to filter these out
+    going forward, but rows written before that fix are already on disk -
+    re-validate every stored topic against the post's own text here so a
+    stale bad tag gets reclassified instead of trusted at face value."""
+    terms = [t.strip() for t in topic_label.split(' / ') if t.strip()]
+    if not terms:
+        return False
+    text_lower = text.lower()
+    return any(term_in_text(t, text_lower) for t in terms)
+
+
 def assign_fallback_topic(text, keyword_sets):
     """Picks whichever keyword set has the most terms appearing in the
-    post's own text (case-insensitive substring match - fine for both
-    English terms and Chinese, which has no word-boundary concept anyway).
-    Falls back to 'General' rather than leaving a post with no topic at
-    all, since every post should show something in the Topics column."""
+    post's own text (word-boundary match for ASCII terms, substring for
+    CJK - see term_in_text). Falls back to 'General' rather than leaving a
+    post with no topic at all, since every post should show something in
+    the Topics column."""
     text_lower = text.lower()
     best_label, best_score = None, 0
     for label, terms in keyword_sets:
-        score = sum(1 for t in terms if t.lower() in text_lower)
+        score = sum(1 for t in terms if term_in_text(t, text_lower))
         if score > best_score:
             best_label, best_score = label, score
     return best_label or 'General'
@@ -168,12 +199,18 @@ def main():
     keyword_sets = [(' / '.join(terms), terms) for terms in INDUSTRY_KEYWORD_SETS]
     keyword_sets += load_rising_topic_keyword_sets()
     backfilled = 0
+    corrected = 0
     for p in posts:
         if not p['topic']:
             p['topic'] = assign_fallback_topic(p['text'], keyword_sets)
             backfilled += 1
+        elif not topic_matches_text(p['topic'], p['text']):
+            p['topic'] = assign_fallback_topic(p['text'], keyword_sets)
+            corrected += 1
     if backfilled:
         print(f"Assigned a fallback topic (content match) to {backfilled} post(s) with no search-derived topic.")
+    if corrected:
+        print(f"Corrected {corrected} stale/mismatched topic tag(s) that didn't actually appear in their post's text.")
 
     now = max(p['_ts'] for p in posts)
     result = {}
