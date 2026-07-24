@@ -1,58 +1,72 @@
 {
-  "generated_at": "2026-07-24T10:16:29.717000+08:00",
+  "generated_at": "2026-07-24T04:45:00+00:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-24T06:16:29.717000+08:00",
-    "end_utc": "2026-07-24T10:16:29.717000+08:00",
-    "start_tw": "Jul 24, 06:16",
-    "end_tw": "Jul 24, 10:16"
+    "start_utc": "2026-07-24T00:45:00+00:00",
+    "end_utc": "2026-07-24T04:45:00+00:00",
+    "start_tw": "Jul 24, 08:45",
+    "end_tw": "Jul 24, 12:45"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 22,
+      "total_posts": 45,
       "sentiment_counts": {
-        "positive": 14,
-        "neutral": 4,
-        "negative": 4
+        "negative": 6,
+        "neutral": 14,
+        "positive": 25
       },
       "sentiment_share": {
-        "positive": 0.636,
-        "neutral": 0.182,
-        "negative": 0.182
+        "negative": 0.133,
+        "neutral": 0.311,
+        "positive": 0.556
       },
       "top_terms": [
         "photonics",
+        "amd",
         "optica",
         "infrastructure",
         "optical",
-        "volume",
         "photonic",
         "manufacturing",
-        "nvidia",
-        "scale",
-        "quantum"
+        "quantum",
+        "volume",
+        "ceo"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 3,
-        "label": "volume / photonics / listing / excellent",
+        "topic_id": 0,
+        "label": "photonics / helios / manufacturing / nasdaq",
         "heat": 90.0,
-        "volume": 14,
-        "engagement": 989,
+        "volume": 25,
+        "engagement": 1451,
         "entities": [
-          "AI",
           "XIVER",
+          "European",
+          "TTM",
           "PhotonPath",
-          "Ed Zitron",
-          "Lutz"
+          "AI"
         ]
       },
       {
-        "topic_id": 0,
+        "topic_id": 4,
+        "label": "amd / ai / gpu / 蘇姿丰",
+        "heat": 16.7,
+        "volume": 7,
+        "engagement": 183,
+        "entities": [
+          "AMD",
+          "蘇姿丰",
+          "AI",
+          "Renny",
+          "Gorgon Halo"
+        ]
+      },
+      {
+        "topic_id": 7,
         "label": "quantum / glasgow / quix / hardware",
-        "heat": 18.1,
+        "heat": 16.7,
         "volume": 4,
         "engagement": 202,
         "entities": [
@@ -65,37 +79,79 @@
       },
       {
         "topic_id": 1,
-        "label": "nvidia / digitimes / adoption / architecture",
-        "heat": 17.6,
-        "volume": 3,
-        "engagement": 258,
+        "label": "hynix / dram / device / stacked",
+        "heat": 12.9,
+        "volume": 2,
+        "engagement": 476,
         "entities": [
-          "gpu",
-          "Nvidia    V HVDC",
-          "AI",
-          "Nvidia",
-          "nvidia  nvidia"
+          "DRAM",
+          "North American",
+          "Apple",
+          "AI"
+        ]
+      },
+      {
+        "topic_id": 3,
+        "label": "ai",
+        "heat": 10.6,
+        "volume": 2,
+        "engagement": 13,
+        "entities": [
+          "新一波"
         ]
       },
       {
         "topic_id": 2,
-        "label": "optical / photonic / optica / photonics",
+        "label": "蘋果",
+        "heat": 10.4,
+        "volume": 2,
+        "engagement": 10,
+        "entities": [
+          "福特",
+          "三星"
+        ]
+      },
+      {
+        "topic_id": 8,
+        "label": "cash / machines",
         "heat": 10.0,
         "volume": 1,
-        "engagement": 42,
+        "engagement": 2,
+        "entities": []
+      },
+      {
+        "topic_id": 6,
+        "label": "sensing / photonic / autonomy / optica",
+        "heat": 10.0,
+        "volume": 1,
+        "engagement": 20,
         "entities": [
-          "TTM",
-          "STG",
-          "European",
-          "TTM Technologies",
-          "PCB"
+          "UK",
+          "BST         ",
+          "AI",
+          "Time of Flight",
+          "Zoom"
+        ]
+      },
+      {
+        "topic_id": 5,
+        "label": "nvidia / marketing / optics / partners",
+        "heat": 10.0,
+        "volume": 1,
+        "engagement": 8,
+        "entities": [
+          "Ed Zitron",
+          "the Financial Times",
+          "Ed",
+          "OpenAI",
+          "Spectrum X"
         ]
       }
     ],
     "named_entities": [
       {
         "entity": "AI",
-        "count": 8
+        "count": 10
       },
       {
         "entity": "European",
@@ -112,6 +168,14 @@
       {
         "entity": "TTM",
         "count": 5
+      },
+      {
+        "entity": "AMD",
+        "count": 4
+      },
+      {
+        "entity": "蘇姿丰",
+        "count": 4
       },
       {
         "entity": "Glasgow",
@@ -138,198 +202,241 @@
         "count": 4
       },
       {
+        "entity": "花旗",
+        "count": 3
+      },
+      {
         "entity": "QuiX",
-        "count": 3
-      },
-      {
-        "entity": "Renema",
-        "count": 3
-      },
-      {
-        "entity": "Ed Zitron",
-        "count": 3
-      },
-      {
-        "entity": "Lutz",
         "count": 3
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-24T06:16:29.716994+08:00",
-        "bucket_end": "2026-07-24T06:33:38.288423+08:00",
+        "bucket_start": "2026-07-24T00:44:59.999994+00:00",
+        "bucket_end": "2026-07-24T01:02:08.571423+00:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T01:02:08.571423+00:00",
+        "bucket_end": "2026-07-24T01:19:17.142852+00:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T01:19:17.142852+00:00",
+        "bucket_end": "2026-07-24T01:36:25.714281+00:00",
+        "positive": 1,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T01:36:25.714281+00:00",
+        "bucket_end": "2026-07-24T01:53:34.285710+00:00",
         "positive": 1,
         "neutral": 1,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-24T06:33:38.288423+08:00",
-        "bucket_end": "2026-07-24T06:50:46.859852+08:00",
-        "positive": 0,
-        "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-24T06:50:46.859852+08:00",
-        "bucket_end": "2026-07-24T07:07:55.431281+08:00",
+        "bucket_start": "2026-07-24T01:53:34.285710+00:00",
+        "bucket_end": "2026-07-24T02:10:42.857139+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T02:10:42.857139+00:00",
+        "bucket_end": "2026-07-24T02:27:51.428568+00:00",
+        "positive": 13,
+        "neutral": 1,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-24T02:27:51.428568+00:00",
+        "bucket_end": "2026-07-24T02:44:59.999997+00:00",
+        "positive": 0,
+        "neutral": 4,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T02:44:59.999997+00:00",
+        "bucket_end": "2026-07-24T03:02:08.571426+00:00",
         "positive": 3,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T07:07:55.431281+08:00",
-        "bucket_end": "2026-07-24T07:25:04.002710+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T07:25:04.002710+08:00",
-        "bucket_end": "2026-07-24T07:42:12.574139+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T07:42:12.574139+08:00",
-        "bucket_end": "2026-07-24T07:59:21.145568+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T07:59:21.145568+08:00",
-        "bucket_end": "2026-07-24T08:16:29.716997+08:00",
-        "positive": 0,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-24T08:16:29.716997+08:00",
-        "bucket_end": "2026-07-24T08:33:38.288426+08:00",
-        "positive": 0,
+        "bucket_start": "2026-07-24T03:02:08.571426+00:00",
+        "bucket_end": "2026-07-24T03:19:17.142855+00:00",
+        "positive": 1,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-24T08:33:38.288426+08:00",
-        "bucket_end": "2026-07-24T08:50:46.859855+08:00",
+        "bucket_start": "2026-07-24T03:19:17.142855+00:00",
+        "bucket_end": "2026-07-24T03:36:25.714284+00:00",
         "positive": 0,
         "neutral": 0,
-        "negative": 0
+        "negative": 3
       },
       {
-        "bucket_start": "2026-07-24T08:50:46.859855+08:00",
-        "bucket_end": "2026-07-24T09:07:55.431284+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T09:07:55.431284+08:00",
-        "bucket_end": "2026-07-24T09:25:04.002713+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T09:25:04.002713+08:00",
-        "bucket_end": "2026-07-24T09:42:12.574142+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T09:42:12.574142+08:00",
-        "bucket_end": "2026-07-24T09:59:21.145571+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T09:59:21.145571+08:00",
-        "bucket_end": "2026-07-24T10:16:29.717000+08:00",
-        "positive": 4,
+        "bucket_start": "2026-07-24T03:36:25.714284+00:00",
+        "bucket_end": "2026-07-24T03:53:34.285713+00:00",
+        "positive": 1,
         "neutral": 1,
-        "negative": 1
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T03:53:34.285713+00:00",
+        "bucket_end": "2026-07-24T04:10:42.857142+00:00",
+        "positive": 2,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T04:10:42.857142+00:00",
+        "bucket_end": "2026-07-24T04:27:51.428571+00:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T04:27:51.428571+00:00",
+        "bucket_end": "2026-07-24T04:45:00+00:00",
+        "positive": 0,
+        "neutral": 3,
+        "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "tphuang",
-        "top_topic_id": 3,
-        "top_topic_label": "volume / photonics / listing / excellent",
+        "handle": "TrendForce",
+        "top_topic_id": 0,
+        "top_topic_label": "photonics / helios / manufacturing / nasdaq",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 0,
+        "top_topic_label": "photonics / helios / manufacturing / nasdaq",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "QQ_Timmy",
+        "top_topic_id": 0,
+        "top_topic_label": "photonics / helios / manufacturing / nasdaq",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
+        "handle": "ctee.fans",
+        "top_topic_id": 0,
+        "top_topic_label": "photonics / helios / manufacturing / nasdaq",
+        "focus_share": 1.0,
+        "post_count": 8
+      },
+      {
         "handle": "subhash-km-6b5443123",
-        "top_topic_id": 3,
-        "top_topic_label": "volume / photonics / listing / excellent",
+        "top_topic_id": 8,
+        "top_topic_label": "cash / machines",
         "focus_share": 1.0,
         "post_count": 1
       },
       {
         "handle": "jukan05",
-        "top_topic_id": 3,
-        "top_topic_label": "volume / photonics / listing / excellent",
+        "top_topic_id": 1,
+        "top_topic_label": "hynix / dram / device / stacked",
         "focus_share": 0.667,
-        "post_count": 6
+        "post_count": 3
       },
       {
         "handle": "josepozophotonics",
-        "top_topic_id": 3,
-        "top_topic_label": "volume / photonics / listing / excellent",
-        "focus_share": 0.583,
+        "top_topic_id": 0,
+        "top_topic_label": "photonics / helios / manufacturing / nasdaq",
+        "focus_share": 0.5,
         "post_count": 12
       },
       {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 1,
-        "top_topic_label": "nvidia / digitimes / adoption / architecture",
-        "focus_share": 0.5,
-        "post_count": 2
+        "handle": "technewsinside",
+        "top_topic_id": 0,
+        "top_topic_label": "photonics / helios / manufacturing / nasdaq",
+        "focus_share": 0.444,
+        "post_count": 18
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 3,
-        "label": "volume / photonics / listing / excellent",
-        "total_engagement": 989,
-        "post_count": 14
+        "topic_id": 0,
+        "label": "photonics / helios / manufacturing / nasdaq",
+        "total_engagement": 1451,
+        "post_count": 25
       },
       {
         "topic_id": 1,
-        "label": "nvidia / digitimes / adoption / architecture",
-        "total_engagement": 258,
-        "post_count": 3
+        "label": "hynix / dram / device / stacked",
+        "total_engagement": 476,
+        "post_count": 2
       },
       {
-        "topic_id": 0,
+        "topic_id": 7,
         "label": "quantum / glasgow / quix / hardware",
         "total_engagement": 202,
         "post_count": 4
       },
       {
+        "topic_id": 4,
+        "label": "amd / ai / gpu / 蘇姿丰",
+        "total_engagement": 183,
+        "post_count": 7
+      },
+      {
+        "topic_id": 6,
+        "label": "sensing / photonic / autonomy / optica",
+        "total_engagement": 20,
+        "post_count": 1
+      },
+      {
+        "topic_id": 3,
+        "label": "ai",
+        "total_engagement": 13,
+        "post_count": 2
+      },
+      {
         "topic_id": 2,
-        "label": "optical / photonic / optica / photonics",
-        "total_engagement": 42,
+        "label": "蘋果",
+        "total_engagement": 10,
+        "post_count": 2
+      },
+      {
+        "topic_id": 5,
+        "label": "nvidia / marketing / optics / partners",
+        "total_engagement": 8,
+        "post_count": 1
+      },
+      {
+        "topic_id": 8,
+        "label": "cash / machines",
+        "total_engagement": 2,
         "post_count": 1
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 22,
-          "likes": 1312,
-          "engagement": 1491,
-          "avg_engagement": 67.8
+          "post_count": 37,
+          "likes": 2148,
+          "engagement": 2264,
+          "avg_engagement": 61.2
         },
         "afternoon": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 8,
+          "likes": 101,
+          "engagement": 101,
+          "avg_engagement": 12.6
         },
         "evening": {
           "post_count": 0,
