@@ -1,25 +1,25 @@
 {
-  "generated_at": "2026-07-24T14:20:00+00:00",
+  "generated_at": "2026-07-24T22:25:18+08:00",
   "time_range": "8h",
   "window": {
-    "start_utc": "2026-07-24T06:20:00+00:00",
-    "end_utc": "2026-07-24T14:20:00+00:00",
-    "start_tw": "Jul 24, 14:20",
-    "end_tw": "Jul 24, 22:20"
+    "start_utc": "2026-07-24T14:25:18+08:00",
+    "end_utc": "2026-07-24T22:25:18+08:00",
+    "start_tw": "Jul 24, 14:25",
+    "end_tw": "Jul 24, 22:25"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 91,
+      "total_posts": 94,
       "sentiment_counts": {
-        "positive": 39,
-        "neutral": 32,
-        "negative": 20
+        "positive": 40,
+        "neutral": 33,
+        "negative": 21
       },
       "sentiment_share": {
-        "positive": 0.429,
-        "neutral": 0.352,
-        "negative": 0.22
+        "positive": 0.426,
+        "neutral": 0.351,
+        "negative": 0.223
       },
       "top_terms": [
         "半導",
@@ -37,10 +37,10 @@
     "temperature_bar": [
       {
         "topic_id": 0,
-        "label": "nvidia / semiconductor / hbm / amd",
+        "label": "nvidia / ymtc / ipo / hbm",
         "heat": 90.0,
-        "volume": 48,
-        "engagement": 2515,
+        "volume": 51,
+        "engagement": 2299,
         "entities": [
           "美國",
           "日本",
@@ -52,7 +52,7 @@
       {
         "topic_id": 3,
         "label": "ai / cpu / meta / gpu",
-        "heat": 13.3,
+        "heat": 13.6,
         "volume": 9,
         "engagement": 129,
         "entities": [
@@ -66,7 +66,7 @@
       {
         "topic_id": 6,
         "label": "半導體 / ai",
-        "heat": 11.8,
+        "heat": 12.0,
         "volume": 4,
         "engagement": 67,
         "entities": [
@@ -78,9 +78,23 @@
         ]
       },
       {
-        "topic_id": 11,
+        "topic_id": 4,
+        "label": "amd / hbm / samsung / nvidia",
+        "heat": 11.5,
+        "volume": 2,
+        "engagement": 387,
+        "entities": [
+          "AMD",
+          "samsung",
+          "Nvidia",
+          "Samsung Electronics",
+          "HBM"
+        ]
+      },
+      {
+        "topic_id": 13,
         "label": "針對",
-        "heat": 11.6,
+        "heat": 11.5,
         "volume": 2,
         "engagement": 276,
         "entities": [
@@ -89,9 +103,9 @@
         ]
       },
       {
-        "topic_id": 12,
+        "topic_id": 8,
         "label": "輝達 / gpu",
-        "heat": 11.6,
+        "heat": 11.5,
         "volume": 2,
         "engagement": 153,
         "entities": [
@@ -103,7 +117,7 @@
       {
         "topic_id": 2,
         "label": "首次超過 / 年下半年合計市占率 / 大品牌全是中國企業 / 中國掃地機器人已拿下全球七成市場",
-        "heat": 11.6,
+        "heat": 11.5,
         "volume": 2,
         "engagement": 696,
         "entities": [
@@ -113,7 +127,7 @@
       {
         "topic_id": 7,
         "label": "國防",
-        "heat": 11.0,
+        "heat": 11.1,
         "volume": 2,
         "engagement": 35,
         "entities": [
@@ -125,9 +139,9 @@
         ]
       },
       {
-        "topic_id": 8,
+        "topic_id": 9,
         "label": "intel / revenue / strongest / yoy",
-        "heat": 10.7,
+        "heat": 10.8,
         "volume": 3,
         "engagement": 27,
         "entities": [
@@ -139,9 +153,9 @@
         ]
       },
       {
-        "topic_id": 4,
-        "label": "vertiv / 為美國海軍研究生院新一代 / 打造基礎設施 / ai基礎設施",
-        "heat": 10.7,
+        "topic_id": 10,
+        "label": "vertiv / gb / 為美國海軍研究生院新一代 / 打造基礎設施",
+        "heat": 10.8,
         "volume": 2,
         "engagement": 26,
         "entities": [
@@ -152,9 +166,9 @@
         ]
       },
       {
-        "topic_id": 10,
+        "topic_id": 12,
         "label": "億美元合作協議 / 輝達 / ai",
-        "heat": 10.7,
+        "heat": 10.8,
         "volume": 2,
         "engagement": 27,
         "entities": [
@@ -166,10 +180,10 @@
       },
       {
         "topic_id": 14,
-        "label": "amd / nm / zen / florence",
+        "label": "amd / nm / zen / epyc",
         "heat": 10.5,
-        "volume": 3,
-        "engagement": 20,
+        "volume": 2,
+        "engagement": 19,
         "entities": [
           "AMD",
           "EPYC",
@@ -202,7 +216,7 @@
       },
       {
         "topic_id": 1,
-        "label": "dram / cxmt / ipo / rmb",
+        "label": "dram / ipo / cxmt / rmb",
         "heat": 10.0,
         "volume": 3,
         "engagement": 3,
@@ -215,7 +229,7 @@
         ]
       },
       {
-        "topic_id": 13,
+        "topic_id": 17,
         "label": "hynix / samsung / sk / scale",
         "heat": 10.0,
         "volume": 1,
@@ -229,29 +243,17 @@
         ]
       },
       {
-        "topic_id": 17,
-        "label": "hbm / nvidia / interconnects / mi",
-        "heat": 10.0,
-        "volume": 1,
-        "engagement": 297,
-        "entities": [
-          "Nvidia Rubin Ultra",
-          "HBM"
-        ]
-      },
-      {
         "topic_id": 16,
-        "label": "ipo",
+        "label": "semiconductor / fab / manufacturing / investments",
         "heat": 10.0,
         "volume": 1,
-        "engagement": 21,
+        "engagement": 211,
         "entities": [
-          "長江",
-          "高管正"
+          "Semiconductor Equipment Delivery Times Double  Putting Chipmakers"
         ]
       },
       {
-        "topic_id": 9,
+        "topic_id": 11,
         "label": "dram / stacked / logic / customer",
         "heat": 10.0,
         "volume": 2,
@@ -294,11 +296,19 @@
         "count": 6
       },
       {
+        "entity": "China",
+        "count": 5
+      },
+      {
         "entity": "YoY",
         "count": 5
       },
       {
         "entity": "DRAM",
+        "count": 4
+      },
+      {
+        "entity": "CXMT",
         "count": 4
       },
       {
@@ -310,162 +320,161 @@
         "count": 4
       },
       {
-        "entity": "China",
-        "count": 3
-      },
-      {
-        "entity": "CXMT",
-        "count": 3
-      },
-      {
         "entity": "IPO",
         "count": 3
       },
       {
-        "entity": "intel",
+        "entity": "china",
         "count": 3
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-24T06:20:00.000002+00:00",
-        "bucket_end": "2026-07-24T06:54:17.142859+00:00",
+        "bucket_start": "2026-07-24T14:25:18.000002+08:00",
+        "bucket_end": "2026-07-24T14:59:35.142859+08:00",
         "positive": 1,
         "neutral": 3,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-24T06:54:17.142859+00:00",
-        "bucket_end": "2026-07-24T07:28:34.285716+00:00",
+        "bucket_start": "2026-07-24T14:59:35.142859+08:00",
+        "bucket_end": "2026-07-24T15:33:52.285716+08:00",
         "positive": 2,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-24T07:28:34.285716+00:00",
-        "bucket_end": "2026-07-24T08:02:51.428573+00:00",
-        "positive": 3,
         "neutral": 1,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-24T08:02:51.428573+00:00",
-        "bucket_end": "2026-07-24T08:37:08.571430+00:00",
-        "positive": 6,
-        "neutral": 3,
-        "negative": 5
-      },
-      {
-        "bucket_start": "2026-07-24T08:37:08.571430+00:00",
-        "bucket_end": "2026-07-24T09:11:25.714287+00:00",
-        "positive": 2,
-        "neutral": 3,
         "negative": 2
       },
       {
-        "bucket_start": "2026-07-24T09:11:25.714287+00:00",
-        "bucket_end": "2026-07-24T09:45:42.857144+00:00",
+        "bucket_start": "2026-07-24T15:33:52.285716+08:00",
+        "bucket_end": "2026-07-24T16:08:09.428573+08:00",
+        "positive": 3,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T16:08:09.428573+08:00",
+        "bucket_end": "2026-07-24T16:42:26.571430+08:00",
+        "positive": 6,
+        "neutral": 5,
+        "negative": 5
+      },
+      {
+        "bucket_start": "2026-07-24T16:42:26.571430+08:00",
+        "bucket_end": "2026-07-24T17:16:43.714287+08:00",
+        "positive": 3,
+        "neutral": 1,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-24T17:16:43.714287+08:00",
+        "bucket_end": "2026-07-24T17:51:00.857144+08:00",
         "positive": 2,
         "neutral": 4,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-24T09:45:42.857144+00:00",
-        "bucket_end": "2026-07-24T10:20:00.000001+00:00",
-        "positive": 5,
+        "bucket_start": "2026-07-24T17:51:00.857144+08:00",
+        "bucket_end": "2026-07-24T18:25:18.000001+08:00",
+        "positive": 4,
         "neutral": 1,
         "negative": 3
       },
       {
-        "bucket_start": "2026-07-24T10:20:00.000001+00:00",
-        "bucket_end": "2026-07-24T10:54:17.142858+00:00",
+        "bucket_start": "2026-07-24T18:25:18.000001+08:00",
+        "bucket_end": "2026-07-24T18:59:35.142858+08:00",
         "positive": 2,
         "neutral": 2,
-        "negative": 1
+        "negative": 2
       },
       {
-        "bucket_start": "2026-07-24T10:54:17.142858+00:00",
-        "bucket_end": "2026-07-24T11:28:34.285715+00:00",
-        "positive": 3,
-        "neutral": 3,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T11:28:34.285715+00:00",
-        "bucket_end": "2026-07-24T12:02:51.428572+00:00",
+        "bucket_start": "2026-07-24T18:59:35.142858+08:00",
+        "bucket_end": "2026-07-24T19:33:52.285715+08:00",
         "positive": 5,
         "neutral": 4,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-24T12:02:51.428572+00:00",
-        "bucket_end": "2026-07-24T12:37:08.571429+00:00",
-        "positive": 1,
+        "bucket_start": "2026-07-24T19:33:52.285715+08:00",
+        "bucket_end": "2026-07-24T20:08:09.428572+08:00",
+        "positive": 4,
         "neutral": 3,
-        "negative": 1
+        "negative": 0
       },
       {
-        "bucket_start": "2026-07-24T12:37:08.571429+00:00",
-        "bucket_end": "2026-07-24T13:11:25.714286+00:00",
-        "positive": 2,
+        "bucket_start": "2026-07-24T20:08:09.428572+08:00",
+        "bucket_end": "2026-07-24T20:42:26.571429+08:00",
+        "positive": 0,
         "neutral": 4,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-24T13:11:25.714286+00:00",
-        "bucket_end": "2026-07-24T13:45:42.857143+00:00",
+        "bucket_start": "2026-07-24T20:42:26.571429+08:00",
+        "bucket_end": "2026-07-24T21:16:43.714286+08:00",
+        "positive": 2,
+        "neutral": 3,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-24T21:16:43.714286+08:00",
+        "bucket_end": "2026-07-24T21:51:00.857143+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-24T13:45:42.857143+00:00",
-        "bucket_end": "2026-07-24T14:20:00+00:00",
-        "positive": 4,
-        "neutral": 1,
+        "bucket_start": "2026-07-24T21:51:00.857143+08:00",
+        "bucket_end": "2026-07-24T22:25:18+08:00",
+        "positive": 5,
+        "neutral": 2,
         "negative": 3
       }
     ],
     "coverage_focus_ranking": [
       {
+        "handle": "tphuang",
+        "top_topic_id": 0,
+        "top_topic_label": "nvidia / ymtc / ipo / hbm",
+        "focus_share": 1.0,
+        "post_count": 3
+      },
+      {
         "handle": "ctee.fans",
         "top_topic_id": 0,
-        "top_topic_label": "nvidia / semiconductor / hbm / amd",
+        "top_topic_label": "nvidia / ymtc / ipo / hbm",
         "focus_share": 1.0,
         "post_count": 12
       },
       {
         "handle": "yutinghaosfinance",
         "top_topic_id": 0,
-        "top_topic_label": "nvidia / semiconductor / hbm / amd",
+        "top_topic_label": "nvidia / ymtc / ipo / hbm",
         "focus_share": 0.778,
         "post_count": 18
       },
       {
-        "handle": "jukan05",
+        "handle": "QQ_Timmy",
         "top_topic_id": 0,
-        "top_topic_label": "nvidia / semiconductor / hbm / amd",
+        "top_topic_label": "nvidia / ymtc / ipo / hbm",
         "focus_share": 0.5,
         "post_count": 4
       },
       {
         "handle": "technewsinside",
         "top_topic_id": 0,
-        "top_topic_label": "nvidia / semiconductor / hbm / amd",
+        "top_topic_label": "nvidia / ymtc / ipo / hbm",
         "focus_share": 0.452,
         "post_count": 42
       },
       {
         "handle": "TrendForce",
         "top_topic_id": 1,
-        "top_topic_label": "dram / cxmt / ipo / rmb",
+        "top_topic_label": "dram / ipo / cxmt / rmb",
         "focus_share": 0.273,
         "post_count": 11
       },
       {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 8,
-        "top_topic_label": "intel / revenue / strongest / yoy",
+        "handle": "jukan05",
+        "top_topic_id": 17,
+        "top_topic_label": "hynix / samsung / sk / scale",
         "focus_share": 0.25,
         "post_count": 4
       }
@@ -473,9 +482,9 @@
     "top_engagement_ranking": [
       {
         "topic_id": 0,
-        "label": "nvidia / semiconductor / hbm / amd",
-        "total_engagement": 2515,
-        "post_count": 48
+        "label": "nvidia / ymtc / ipo / hbm",
+        "total_engagement": 2299,
+        "post_count": 51
       },
       {
         "topic_id": 2,
@@ -484,25 +493,31 @@
         "post_count": 2
       },
       {
-        "topic_id": 13,
+        "topic_id": 17,
         "label": "hynix / samsung / sk / scale",
         "total_engagement": 440,
         "post_count": 1
       },
       {
-        "topic_id": 17,
-        "label": "hbm / nvidia / interconnects / mi",
-        "total_engagement": 297,
-        "post_count": 1
+        "topic_id": 4,
+        "label": "amd / hbm / samsung / nvidia",
+        "total_engagement": 387,
+        "post_count": 2
       },
       {
-        "topic_id": 11,
+        "topic_id": 13,
         "label": "針對",
         "total_engagement": 276,
         "post_count": 2
       },
       {
-        "topic_id": 12,
+        "topic_id": 16,
+        "label": "semiconductor / fab / manufacturing / investments",
+        "total_engagement": 211,
+        "post_count": 1
+      },
+      {
+        "topic_id": 8,
         "label": "輝達 / gpu",
         "total_engagement": 153,
         "post_count": 2
@@ -526,34 +541,28 @@
         "post_count": 2
       },
       {
-        "topic_id": 8,
+        "topic_id": 9,
         "label": "intel / revenue / strongest / yoy",
         "total_engagement": 27,
         "post_count": 3
       },
       {
-        "topic_id": 10,
+        "topic_id": 12,
         "label": "億美元合作協議 / 輝達 / ai",
         "total_engagement": 27,
         "post_count": 2
       },
       {
-        "topic_id": 4,
-        "label": "vertiv / 為美國海軍研究生院新一代 / 打造基礎設施 / ai基礎設施",
+        "topic_id": 10,
+        "label": "vertiv / gb / 為美國海軍研究生院新一代 / 打造基礎設施",
         "total_engagement": 26,
         "post_count": 2
       },
       {
-        "topic_id": 16,
-        "label": "ipo",
-        "total_engagement": 21,
-        "post_count": 1
-      },
-      {
         "topic_id": 14,
-        "label": "amd / nm / zen / florence",
-        "total_engagement": 20,
-        "post_count": 3
+        "label": "amd / nm / zen / epyc",
+        "total_engagement": 19,
+        "post_count": 2
       },
       {
         "topic_id": 15,
@@ -568,14 +577,14 @@
         "post_count": 2
       },
       {
-        "topic_id": 9,
+        "topic_id": 11,
         "label": "dram / stacked / logic / customer",
         "total_engagement": 4,
         "post_count": 2
       },
       {
         "topic_id": 1,
-        "label": "dram / cxmt / ipo / rmb",
+        "label": "dram / ipo / cxmt / rmb",
         "total_engagement": 3,
         "post_count": 3
       }
@@ -595,10 +604,10 @@
           "avg_engagement": 65.8
         },
         "evening": {
-          "post_count": 50,
-          "likes": 1935,
-          "engagement": 2061,
-          "avg_engagement": 41.2
+          "post_count": 53,
+          "likes": 1985,
+          "engagement": 2124,
+          "avg_engagement": 40.1
         },
         "late_night": {
           "post_count": 0,

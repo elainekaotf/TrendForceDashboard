@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-07-24T14:20:00+00:00",
+  "generated_at": "2026-07-24T22:25:18+08:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-24T10:20:00+00:00",
-    "end_utc": "2026-07-24T14:20:00+00:00",
-    "start_tw": "Jul 24, 18:20",
-    "end_tw": "Jul 24, 22:20"
+    "start_utc": "2026-07-24T18:25:18+08:00",
+    "end_utc": "2026-07-24T22:25:18+08:00",
+    "start_tw": "Jul 24, 18:25",
+    "end_tw": "Jul 24, 22:25"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 43,
+      "total_posts": 45,
       "sentiment_counts": {
         "positive": 19,
-        "neutral": 17,
-        "negative": 7
+        "neutral": 18,
+        "negative": 8
       },
       "sentiment_share": {
-        "positive": 0.442,
-        "neutral": 0.395,
-        "negative": 0.163
+        "positive": 0.422,
+        "neutral": 0.4,
+        "negative": 0.178
       },
       "top_terms": [
         "dram",
-        "ipo",
         "cxmt",
+        "ipo",
         "debut",
         "jul",
         "raise",
@@ -39,22 +39,32 @@
         "topic_id": 0,
         "label": "cluster-0",
         "heat": 90.0,
-        "volume": 28,
-        "engagement": 1170,
+        "volume": 30,
+        "engagement": 1217,
         "entities": [
           "美國",
           "台灣",
           "日本",
           "新凱",
-          "巴西"
+          "Honda"
+        ]
+      },
+      {
+        "topic_id": 1,
+        "label": "ai",
+        "heat": 11.2,
+        "volume": 4,
+        "engagement": 22,
+        "entities": [
+          "祖克柏"
         ]
       },
       {
         "topic_id": 3,
         "label": "intel / revenue / strongest / yoy",
-        "heat": 11.5,
-        "volume": 3,
-        "engagement": 27,
+        "heat": 10.4,
+        "volume": 2,
+        "engagement": 9,
         "entities": [
           "Intel",
           "YoY",
@@ -64,26 +74,8 @@
         ]
       },
       {
-        "topic_id": 1,
-        "label": "ai",
-        "heat": 10.9,
-        "volume": 3,
-        "engagement": 16,
-        "entities": [
-          "祖克柏"
-        ]
-      },
-      {
-        "topic_id": 5,
-        "label": "uber / ai / 裁員",
-        "heat": 10.3,
-        "volume": 2,
-        "engagement": 8,
-        "entities": []
-      },
-      {
         "topic_id": 7,
-        "label": "dram / stacked / logic / device",
+        "label": "dram / logic / stacked / customer",
         "heat": 10.1,
         "volume": 2,
         "engagement": 4,
@@ -96,7 +88,7 @@
       },
       {
         "topic_id": 2,
-        "label": "cxmt / dram / ipo / rmb",
+        "label": "dram / cxmt / ipo / rmb",
         "heat": 10.0,
         "volume": 3,
         "engagement": 3,
@@ -124,13 +116,34 @@
       },
       {
         "topic_id": 4,
-        "label": "ipo",
+        "label": "ymtc / ipo",
         "heat": 10.0,
         "volume": 1,
         "engagement": 21,
         "entities": [
           "長江",
           "高管正"
+        ]
+      },
+      {
+        "topic_id": 8,
+        "label": "intel",
+        "heat": 10.0,
+        "volume": 1,
+        "engagement": 18,
+        "entities": []
+      },
+      {
+        "topic_id": 5,
+        "label": "demand / ymtc / cxmt / capacity",
+        "heat": 10.0,
+        "volume": 1,
+        "engagement": 16,
+        "entities": [
+          "CXMT",
+          "China",
+          "CXMT ASP",
+          "china"
         ]
       }
     ],
@@ -144,11 +157,19 @@
         "count": 7
       },
       {
+        "entity": "China",
+        "count": 5
+      },
+      {
         "entity": "YoY",
         "count": 5
       },
       {
         "entity": "DRAM",
+        "count": 4
+      },
+      {
+        "entity": "CXMT",
         "count": 4
       },
       {
@@ -160,19 +181,19 @@
         "count": 4
       },
       {
-        "entity": "China",
-        "count": 3
-      },
-      {
-        "entity": "CXMT",
-        "count": 3
-      },
-      {
         "entity": "IPO",
         "count": 3
       },
       {
+        "entity": "china",
+        "count": 3
+      },
+      {
         "entity": "新凱",
+        "count": 3
+      },
+      {
+        "entity": "Honda",
         "count": 3
       },
       {
@@ -186,114 +207,106 @@
       {
         "entity": "AI",
         "count": 3
-      },
-      {
-        "entity": "Shanghai s STAR Market",
-        "count": 2
-      },
-      {
-        "entity": "Lip Bu Tan",
-        "count": 2
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-24T10:19:59.999994+00:00",
-        "bucket_end": "2026-07-24T10:37:08.571423+00:00",
-        "positive": 2,
+        "bucket_start": "2026-07-24T18:25:17.999994+08:00",
+        "bucket_end": "2026-07-24T18:42:26.571423+08:00",
+        "positive": 1,
         "neutral": 2,
-        "negative": 0
+        "negative": 1
       },
       {
-        "bucket_start": "2026-07-24T10:37:08.571423+00:00",
-        "bucket_end": "2026-07-24T10:54:17.142852+00:00",
+        "bucket_start": "2026-07-24T18:42:26.571423+08:00",
+        "bucket_end": "2026-07-24T18:59:35.142852+08:00",
         "positive": 1,
         "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-24T10:54:17.142852+00:00",
-        "bucket_end": "2026-07-24T11:11:25.714281+00:00",
+        "bucket_start": "2026-07-24T18:59:35.142852+08:00",
+        "bucket_end": "2026-07-24T19:16:43.714281+08:00",
         "positive": 2,
         "neutral": 2,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-24T11:11:25.714281+00:00",
-        "bucket_end": "2026-07-24T11:28:34.285710+00:00",
-        "positive": 1,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T11:28:34.285710+00:00",
-        "bucket_end": "2026-07-24T11:45:42.857139+00:00",
+        "bucket_start": "2026-07-24T19:16:43.714281+08:00",
+        "bucket_end": "2026-07-24T19:33:52.285710+08:00",
         "positive": 3,
         "neutral": 2,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-24T11:45:42.857139+00:00",
-        "bucket_end": "2026-07-24T12:02:51.428568+00:00",
-        "positive": 2,
-        "neutral": 2,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T12:02:51.428568+00:00",
-        "bucket_end": "2026-07-24T12:19:59.999997+00:00",
+        "bucket_start": "2026-07-24T19:33:52.285710+08:00",
+        "bucket_end": "2026-07-24T19:51:00.857139+08:00",
         "positive": 1,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T19:51:00.857139+08:00",
+        "bucket_end": "2026-07-24T20:08:09.428568+08:00",
+        "positive": 3,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-24T12:19:59.999997+00:00",
-        "bucket_end": "2026-07-24T12:37:08.571426+00:00",
+        "bucket_start": "2026-07-24T20:08:09.428568+08:00",
+        "bucket_end": "2026-07-24T20:25:17.999997+08:00",
+        "positive": 0,
+        "neutral": 2,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T20:25:17.999997+08:00",
+        "bucket_end": "2026-07-24T20:42:26.571426+08:00",
         "positive": 0,
         "neutral": 2,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-24T12:37:08.571426+00:00",
-        "bucket_end": "2026-07-24T12:54:17.142855+00:00",
+        "bucket_start": "2026-07-24T20:42:26.571426+08:00",
+        "bucket_end": "2026-07-24T20:59:35.142855+08:00",
         "positive": 0,
-        "neutral": 1,
+        "neutral": 0,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-24T12:54:17.142855+00:00",
-        "bucket_end": "2026-07-24T13:11:25.714284+00:00",
+        "bucket_start": "2026-07-24T20:59:35.142855+08:00",
+        "bucket_end": "2026-07-24T21:16:43.714284+08:00",
         "positive": 2,
         "neutral": 3,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-24T13:11:25.714284+00:00",
-        "bucket_end": "2026-07-24T13:28:34.285713+00:00",
+        "bucket_start": "2026-07-24T21:16:43.714284+08:00",
+        "bucket_end": "2026-07-24T21:33:52.285713+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-24T13:28:34.285713+00:00",
-        "bucket_end": "2026-07-24T13:45:42.857142+00:00",
+        "bucket_start": "2026-07-24T21:33:52.285713+08:00",
+        "bucket_end": "2026-07-24T21:51:00.857142+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-24T13:45:42.857142+00:00",
-        "bucket_end": "2026-07-24T14:02:51.428571+00:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-24T14:02:51.428571+00:00",
-        "bucket_end": "2026-07-24T14:20:00+00:00",
-        "positive": 3,
+        "bucket_start": "2026-07-24T21:51:00.857142+08:00",
+        "bucket_end": "2026-07-24T22:08:09.428571+08:00",
+        "positive": 2,
         "neutral": 1,
         "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-24T22:08:09.428571+08:00",
+        "bucket_end": "2026-07-24T22:25:18+08:00",
+        "positive": 3,
+        "neutral": 1,
+        "negative": 1
       }
     ],
     "coverage_focus_ranking": [
@@ -322,20 +335,27 @@
         "handle": "technewsinside",
         "top_topic_id": 0,
         "top_topic_label": "cluster-0",
-        "focus_share": 0.737,
-        "post_count": 19
+        "focus_share": 0.778,
+        "post_count": 18
+      },
+      {
+        "handle": "tphuang",
+        "top_topic_id": 0,
+        "top_topic_label": "cluster-0",
+        "focus_share": 0.667,
+        "post_count": 3
       },
       {
         "handle": "TrendForce",
         "top_topic_id": 2,
-        "top_topic_label": "cxmt / dram / ipo / rmb",
+        "top_topic_label": "dram / cxmt / ipo / rmb",
         "focus_share": 0.429,
         "post_count": 7
       },
       {
         "handle": "QQ_Timmy",
-        "top_topic_id": 3,
-        "top_topic_label": "intel / revenue / strongest / yoy",
+        "top_topic_id": 0,
+        "top_topic_label": "cluster-0",
         "focus_share": 0.333,
         "post_count": 3
       }
@@ -344,8 +364,8 @@
       {
         "topic_id": 0,
         "label": "cluster-0",
-        "total_engagement": 1170,
-        "post_count": 28
+        "total_engagement": 1217,
+        "post_count": 30
       },
       {
         "topic_id": 6,
@@ -354,38 +374,44 @@
         "post_count": 1
       },
       {
-        "topic_id": 3,
-        "label": "intel / revenue / strongest / yoy",
-        "total_engagement": 27,
-        "post_count": 3
+        "topic_id": 1,
+        "label": "ai",
+        "total_engagement": 22,
+        "post_count": 4
       },
       {
         "topic_id": 4,
-        "label": "ipo",
+        "label": "ymtc / ipo",
         "total_engagement": 21,
         "post_count": 1
       },
       {
-        "topic_id": 1,
-        "label": "ai",
-        "total_engagement": 16,
-        "post_count": 3
+        "topic_id": 8,
+        "label": "intel",
+        "total_engagement": 18,
+        "post_count": 1
       },
       {
         "topic_id": 5,
-        "label": "uber / ai / 裁員",
-        "total_engagement": 8,
+        "label": "demand / ymtc / cxmt / capacity",
+        "total_engagement": 16,
+        "post_count": 1
+      },
+      {
+        "topic_id": 3,
+        "label": "intel / revenue / strongest / yoy",
+        "total_engagement": 9,
         "post_count": 2
       },
       {
         "topic_id": 7,
-        "label": "dram / stacked / logic / device",
+        "label": "dram / logic / stacked / customer",
         "total_engagement": 4,
         "post_count": 2
       },
       {
         "topic_id": 2,
-        "label": "cxmt / dram / ipo / rmb",
+        "label": "dram / cxmt / ipo / rmb",
         "total_engagement": 3,
         "post_count": 3
       }
@@ -405,10 +431,10 @@
           "avg_engagement": 0.0
         },
         "evening": {
-          "post_count": 43,
-          "likes": 1604,
-          "engagement": 1689,
-          "avg_engagement": 39.3
+          "post_count": 45,
+          "likes": 1652,
+          "engagement": 1750,
+          "avg_engagement": 38.9
         },
         "late_night": {
           "post_count": 0,
