@@ -1,349 +1,275 @@
 {
-  "generated_at": "2026-07-24T01:21:46+08:00",
+  "generated_at": "2026-07-24T08:08:47+08:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-23T21:21:46+08:00",
-    "end_utc": "2026-07-24T01:21:46+08:00",
-    "start_tw": "Jul 23, 21:21",
-    "end_tw": "Jul 24, 01:21"
+    "start_utc": "2026-07-24T04:08:47+08:00",
+    "end_utc": "2026-07-24T08:08:47+08:00",
+    "start_tw": "Jul 24, 04:08",
+    "end_tw": "Jul 24, 08:08"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 25,
+      "total_posts": 13,
       "sentiment_counts": {
+        "positive": 4,
         "neutral": 4,
-        "positive": 17,
-        "negative": 4
+        "negative": 5
       },
       "sentiment_share": {
-        "neutral": 0.16,
-        "positive": 0.68,
-        "negative": 0.16
+        "positive": 0.308,
+        "neutral": 0.308,
+        "negative": 0.385
       },
       "top_terms": [
-        "photonics",
-        "optica",
-        "optical",
-        "infrastructure",
-        "manufacturing",
-        "capacity",
-        "volume",
-        "photonic",
-        "revenue",
-        "demand"
+        "nvidia",
+        "intel",
+        "billion",
+        "entering",
+        "digitimes",
+        "semianalysis",
+        "banks",
+        "lend",
+        "gpus",
+        "zero"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 4,
-        "label": "photonics / photonic / optica / manufacturing",
-        "heat": 83.3,
-        "volume": 5,
-        "engagement": 251,
-        "entities": [
-          "Europe",
-          "European",
-          "XIVER",
-          "TTM",
-          "PhotonPath"
-        ]
-      },
-      {
         "topic_id": 0,
-        "label": "quantum / adoption / summary / excellent",
-        "heat": 81.0,
-        "volume": 6,
-        "engagement": 232,
+        "label": "intel / entering / digitimes / semianalysis",
+        "heat": 90.0,
+        "volume": 10,
+        "engagement": 1163,
         "entities": [
-          "Glasgow",
-          "Quantum",
-          "UK",
-          "QuiX",
-          "Renema"
-        ]
-      },
-      {
-        "topic_id": 3,
-        "label": "asml / guidance / raised / raise",
-        "heat": 50.0,
-        "volume": 3,
-        "engagement": 264,
-        "entities": [
-          "Niesing",
-          "Subscribe",
-          "WFE",
-          "PHOTONICS",
-          "the Optica GAMA Meeting      "
+          "Intel",
+          "intel",
+          "Escrowed Shares",
+          "the U S  Department of Commerce  The",
+          "Trump"
         ]
       },
       {
         "topic_id": 1,
-        "label": "nyse / capacity / tsmc / expansion",
-        "heat": 50.0,
-        "volume": 7,
-        "engagement": 108,
+        "label": "nvidia / semianalysis / digitimes",
+        "heat": 10.0,
+        "volume": 3,
+        "engagement": 258,
         "entities": [
-          "Ed Zitron",
-          "馬丁",
-          "N",
-          "Coherent Corp",
-          "Sherman"
-        ]
-      },
-      {
-        "topic_id": 2,
-        "label": "ai / glm / models / gpt",
-        "heat": 15.3,
-        "volume": 4,
-        "engagement": 122,
-        "entities": [
-          "季增",
-          "GLM",
-          "GPT",
-          "Chinese",
-          "Ppl"
+          "gpu",
+          "Nvidia    V HVDC",
+          "AI",
+          "Nvidia",
+          "nvidia  nvidia"
         ]
       }
     ],
     "named_entities": [
       {
-        "entity": "AI",
-        "count": 9
-      },
-      {
-        "entity": "European",
-        "count": 9
-      },
-      {
-        "entity": "Europe",
+        "entity": "Intel",
         "count": 6
       },
       {
-        "entity": "Quantum",
-        "count": 5
+        "entity": "intel",
+        "count": 2
       },
       {
-        "entity": "XIVER",
-        "count": 5
+        "entity": "gpu",
+        "count": 1
       },
       {
-        "entity": "TTM",
-        "count": 5
+        "entity": "Escrowed Shares",
+        "count": 1
       },
       {
-        "entity": "Glasgow",
-        "count": 4
+        "entity": "the U S  Department of Commerce  The",
+        "count": 1
       },
       {
-        "entity": "UK",
-        "count": 4
+        "entity": "Trump",
+        "count": 1
       },
       {
-        "entity": "Optica",
-        "count": 4
+        "entity": "Hats",
+        "count": 1
       },
       {
-        "entity": "PhotonPath",
-        "count": 4
+        "entity": "Foundry",
+        "count": 1
       },
       {
-        "entity": "STG",
-        "count": 4
+        "entity": "foundry  xeon intel",
+        "count": 1
       },
       {
-        "entity": "Brussels",
-        "count": 4
+        "entity": "Morgan Stanley",
+        "count": 1
       },
       {
-        "entity": "季增",
-        "count": 3
+        "entity": "U S",
+        "count": 1
       },
       {
-        "entity": "QuiX",
-        "count": 3
+        "entity": "morgan stanley",
+        "count": 1
       },
       {
-        "entity": "Renema",
-        "count": 3
+        "entity": "South Korean",
+        "count": 1
+      },
+      {
+        "entity": "korean",
+        "count": 1
+      },
+      {
+        "entity": "DigiTimes",
+        "count": 1
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-23T21:21:45.999994+08:00",
-        "bucket_end": "2026-07-23T21:38:54.571423+08:00",
+        "bucket_start": "2026-07-24T04:08:46.999994+08:00",
+        "bucket_end": "2026-07-24T04:25:55.571423+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T21:38:54.571423+08:00",
-        "bucket_end": "2026-07-23T21:56:03.142852+08:00",
-        "positive": 2,
+        "bucket_start": "2026-07-24T04:25:55.571423+08:00",
+        "bucket_end": "2026-07-24T04:43:04.142852+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 2
+      },
+      {
+        "bucket_start": "2026-07-24T04:43:04.142852+08:00",
+        "bucket_end": "2026-07-24T05:00:12.714281+08:00",
+        "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T21:56:03.142852+08:00",
-        "bucket_end": "2026-07-23T22:13:11.714281+08:00",
-        "positive": 1,
-        "neutral": 2,
+        "bucket_start": "2026-07-24T05:00:12.714281+08:00",
+        "bucket_end": "2026-07-24T05:17:21.285710+08:00",
+        "positive": 0,
+        "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T22:13:11.714281+08:00",
-        "bucket_end": "2026-07-23T22:30:20.285710+08:00",
-        "positive": 2,
+        "bucket_start": "2026-07-24T05:17:21.285710+08:00",
+        "bucket_end": "2026-07-24T05:34:29.857139+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-24T05:34:29.857139+08:00",
+        "bucket_end": "2026-07-24T05:51:38.428568+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T05:51:38.428568+08:00",
+        "bucket_end": "2026-07-24T06:08:46.999997+08:00",
+        "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T22:30:20.285710+08:00",
-        "bucket_end": "2026-07-23T22:47:28.857139+08:00",
-        "positive": 4,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-23T22:47:28.857139+08:00",
-        "bucket_end": "2026-07-23T23:04:37.428568+08:00",
+        "bucket_start": "2026-07-24T06:08:46.999997+08:00",
+        "bucket_end": "2026-07-24T06:25:55.571426+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T23:04:37.428568+08:00",
-        "bucket_end": "2026-07-23T23:21:45.999997+08:00",
-        "positive": 7,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-23T23:21:45.999997+08:00",
-        "bucket_end": "2026-07-23T23:38:54.571426+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T23:38:54.571426+08:00",
-        "bucket_end": "2026-07-23T23:56:03.142855+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T23:56:03.142855+08:00",
-        "bucket_end": "2026-07-24T00:13:11.714284+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T00:13:11.714284+08:00",
-        "bucket_end": "2026-07-24T00:30:20.285713+08:00",
+        "bucket_start": "2026-07-24T06:25:55.571426+08:00",
+        "bucket_end": "2026-07-24T06:43:04.142855+08:00",
         "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T00:30:20.285713+08:00",
-        "bucket_end": "2026-07-24T00:47:28.857142+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T00:47:28.857142+08:00",
-        "bucket_end": "2026-07-24T01:04:37.428571+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T01:04:37.428571+08:00",
-        "bucket_end": "2026-07-24T01:21:46+08:00",
-        "positive": 0,
         "neutral": 1,
         "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-24T06:43:04.142855+08:00",
+        "bucket_end": "2026-07-24T07:00:12.714284+08:00",
+        "positive": 3,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T07:00:12.714284+08:00",
+        "bucket_end": "2026-07-24T07:17:21.285713+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T07:17:21.285713+08:00",
+        "bucket_end": "2026-07-24T07:34:29.857142+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T07:34:29.857142+08:00",
+        "bucket_end": "2026-07-24T07:51:38.428571+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T07:51:38.428571+08:00",
+        "bucket_end": "2026-07-24T08:08:47+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 3,
-        "top_topic_label": "asml / guidance / raised / raise",
-        "focus_share": 0.667,
-        "post_count": 3
-      },
-      {
-        "handle": "tengyanAI",
-        "top_topic_id": 1,
-        "top_topic_label": "nyse / capacity / tsmc / expansion",
-        "focus_share": 0.667,
-        "post_count": 3
-      },
-      {
         "handle": "tphuang",
-        "top_topic_id": 2,
-        "top_topic_label": "ai / glm / models / gpt",
-        "focus_share": 0.667,
+        "top_topic_id": 0,
+        "top_topic_label": "intel / entering / digitimes / semianalysis",
+        "focus_share": 1.0,
         "post_count": 3
       },
       {
-        "handle": "QQ_Timmy",
-        "top_topic_id": 1,
-        "top_topic_label": "nyse / capacity / tsmc / expansion",
-        "focus_share": 0.5,
-        "post_count": 2
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 0,
+        "top_topic_label": "intel / entering / digitimes / semianalysis",
+        "focus_share": 0.75,
+        "post_count": 4
       },
       {
-        "handle": "josepozophotonics",
+        "handle": "jukan05",
         "top_topic_id": 0,
-        "top_topic_label": "quantum / adoption / summary / excellent",
-        "focus_share": 0.357,
-        "post_count": 14
+        "top_topic_label": "intel / entering / digitimes / semianalysis",
+        "focus_share": 0.667,
+        "post_count": 6
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 3,
-        "label": "asml / guidance / raised / raise",
-        "total_engagement": 264,
-        "post_count": 3
-      },
-      {
-        "topic_id": 4,
-        "label": "photonics / photonic / optica / manufacturing",
-        "total_engagement": 251,
-        "post_count": 5
-      },
-      {
         "topic_id": 0,
-        "label": "quantum / adoption / summary / excellent",
-        "total_engagement": 232,
-        "post_count": 6
-      },
-      {
-        "topic_id": 2,
-        "label": "ai / glm / models / gpt",
-        "total_engagement": 122,
-        "post_count": 4
+        "label": "intel / entering / digitimes / semianalysis",
+        "total_engagement": 1163,
+        "post_count": 10
       },
       {
         "topic_id": 1,
-        "label": "nyse / capacity / tsmc / expansion",
-        "total_engagement": 108,
-        "post_count": 7
+        "label": "nvidia / semianalysis / digitimes",
+        "total_engagement": 258,
+        "post_count": 3
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 10,
+          "likes": 870,
+          "engagement": 1045,
+          "avg_engagement": 104.5
         },
         "afternoon": {
           "post_count": 0,
@@ -352,19 +278,19 @@
           "avg_engagement": 0.0
         },
         "evening": {
-          "post_count": 21,
-          "likes": 880,
-          "engagement": 935,
-          "avg_engagement": 44.5
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         },
         "late_night": {
-          "post_count": 4,
-          "likes": 33,
-          "engagement": 42,
-          "avg_engagement": 10.5
+          "post_count": 3,
+          "likes": 331,
+          "engagement": 376,
+          "avg_engagement": 125.3
         }
       },
-      "peak_slot": "evening"
+      "peak_slot": "morning"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,
