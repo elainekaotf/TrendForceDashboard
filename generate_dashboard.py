@@ -37,6 +37,7 @@ from datetime import datetime, timezone, timedelta
 
 from time_ranges import RANGE_ORDER, RANGE_LABELS, RANGE_HOURS, MIN_WINDOW_POSTS, parse_ts, window_bounds, format_window
 from cluster_topics import load_posts
+from video_ranking import RANGES as VIDEO_RANKING_RANGES
 
 BASE = os.path.dirname(__file__)
 ANALYSIS_DIR = os.path.join(BASE, 'analysis')
@@ -878,7 +879,7 @@ def main():
     </div>
     <div id="competitor-results"><p class="empty">Type a topic or keyword to see every non-TrendForce account's post mentioning it, for the currently selected time range.</p></div>
     ''', 'Search competitor posts', 'Every account that is not ours')}</section>
-  <section id="video-ranking" data-ranged="true">
+  <section id="video-ranking" data-ranged="true" data-ranges="{','.join(VIDEO_RANKING_RANGES)}">
     <h2>X Video Ranking</h2>
     <div class="keyword-search-bar">
       <label for="video-metric-select">Rank by</label>
@@ -937,6 +938,27 @@ def main():
       target.classList.add('active');
       document.getElementById('range-bar').style.display =
         target.dataset.ranged === 'true' ? 'flex' : 'none';
+
+      // Some sections only have data for a subset of ranges (X Video
+      // Ranking has no month/quarter - video_ranking.py only computes
+      // 1h/4h/8h/1d/1w) - hide options that section doesn't support
+      // rather than offering a range that will always come up empty.
+      const select = document.getElementById('range-select');
+      const allowed = target.dataset.ranges ? target.dataset.ranges.split(',') : null;
+      let currentStillValid = true;
+      Array.from(select.options).forEach(opt => {{
+        const visible = !allowed || allowed.includes(opt.value);
+        opt.hidden = !visible;
+        opt.disabled = !visible;
+        if (opt.value === select.value && !visible) currentStillValid = false;
+      }});
+      if (!currentStillValid) {{
+        const firstVisible = Array.from(select.options).find(opt => !opt.hidden);
+        if (firstVisible) {{
+          select.value = firstVisible.value;
+          applyRange(select.value);
+        }}
+      }}
     }});
   }});
 
