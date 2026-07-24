@@ -1,58 +1,72 @@
 {
-  "generated_at": "2026-07-24T08:08:47+08:00",
+  "generated_at": "2026-07-24T10:16:29.717000+08:00",
   "time_range": "4h",
   "window": {
-    "start_utc": "2026-07-24T04:08:47+08:00",
-    "end_utc": "2026-07-24T08:08:47+08:00",
-    "start_tw": "Jul 24, 04:08",
-    "end_tw": "Jul 24, 08:08"
+    "start_utc": "2026-07-24T06:16:29.717000+08:00",
+    "end_utc": "2026-07-24T10:16:29.717000+08:00",
+    "start_tw": "Jul 24, 06:16",
+    "end_tw": "Jul 24, 10:16"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 13,
+      "total_posts": 22,
       "sentiment_counts": {
-        "positive": 4,
+        "positive": 14,
         "neutral": 4,
-        "negative": 5
+        "negative": 4
       },
       "sentiment_share": {
-        "positive": 0.308,
-        "neutral": 0.308,
-        "negative": 0.385
+        "positive": 0.636,
+        "neutral": 0.182,
+        "negative": 0.182
       },
       "top_terms": [
+        "photonics",
+        "optica",
+        "infrastructure",
+        "optical",
+        "volume",
+        "photonic",
+        "manufacturing",
         "nvidia",
-        "intel",
-        "billion",
-        "entering",
-        "digitimes",
-        "semianalysis",
-        "banks",
-        "lend",
-        "gpus",
-        "zero"
+        "scale",
+        "quantum"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "intel / entering / digitimes / semianalysis",
+        "topic_id": 3,
+        "label": "volume / photonics / listing / excellent",
         "heat": 90.0,
-        "volume": 10,
-        "engagement": 1163,
+        "volume": 14,
+        "engagement": 989,
         "entities": [
-          "Intel",
-          "intel",
-          "Escrowed Shares",
-          "the U S  Department of Commerce  The",
-          "Trump"
+          "AI",
+          "XIVER",
+          "PhotonPath",
+          "Ed Zitron",
+          "Lutz"
+        ]
+      },
+      {
+        "topic_id": 0,
+        "label": "quantum / glasgow / quix / hardware",
+        "heat": 18.1,
+        "volume": 4,
+        "engagement": 202,
+        "entities": [
+          "Glasgow",
+          "Quantum",
+          "UK",
+          "QuiX",
+          "Renema"
         ]
       },
       {
         "topic_id": 1,
-        "label": "nvidia / semianalysis / digitimes",
-        "heat": 10.0,
+        "label": "nvidia / digitimes / adoption / architecture",
+        "heat": 17.6,
         "volume": 3,
         "engagement": 258,
         "entities": [
@@ -62,214 +76,254 @@
           "Nvidia",
           "nvidia  nvidia"
         ]
+      },
+      {
+        "topic_id": 2,
+        "label": "optical / photonic / optica / photonics",
+        "heat": 10.0,
+        "volume": 1,
+        "engagement": 42,
+        "entities": [
+          "TTM",
+          "STG",
+          "European",
+          "TTM Technologies",
+          "PCB"
+        ]
       }
     ],
     "named_entities": [
       {
-        "entity": "Intel",
+        "entity": "AI",
+        "count": 8
+      },
+      {
+        "entity": "European",
         "count": 6
       },
       {
-        "entity": "intel",
-        "count": 2
+        "entity": "Quantum",
+        "count": 5
       },
       {
-        "entity": "gpu",
-        "count": 1
+        "entity": "XIVER",
+        "count": 5
       },
       {
-        "entity": "Escrowed Shares",
-        "count": 1
+        "entity": "TTM",
+        "count": 5
       },
       {
-        "entity": "the U S  Department of Commerce  The",
-        "count": 1
+        "entity": "Glasgow",
+        "count": 4
       },
       {
-        "entity": "Trump",
-        "count": 1
+        "entity": "UK",
+        "count": 4
       },
       {
-        "entity": "Hats",
-        "count": 1
+        "entity": "Optica",
+        "count": 4
       },
       {
-        "entity": "Foundry",
-        "count": 1
+        "entity": "PhotonPath",
+        "count": 4
       },
       {
-        "entity": "foundry  xeon intel",
-        "count": 1
+        "entity": "Europe",
+        "count": 4
       },
       {
-        "entity": "Morgan Stanley",
-        "count": 1
+        "entity": "STG",
+        "count": 4
       },
       {
-        "entity": "U S",
-        "count": 1
+        "entity": "QuiX",
+        "count": 3
       },
       {
-        "entity": "morgan stanley",
-        "count": 1
+        "entity": "Renema",
+        "count": 3
       },
       {
-        "entity": "South Korean",
-        "count": 1
+        "entity": "Ed Zitron",
+        "count": 3
       },
       {
-        "entity": "korean",
-        "count": 1
-      },
-      {
-        "entity": "DigiTimes",
-        "count": 1
+        "entity": "Lutz",
+        "count": 3
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-24T04:08:46.999994+08:00",
-        "bucket_end": "2026-07-24T04:25:55.571423+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T04:25:55.571423+08:00",
-        "bucket_end": "2026-07-24T04:43:04.142852+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 2
-      },
-      {
-        "bucket_start": "2026-07-24T04:43:04.142852+08:00",
-        "bucket_end": "2026-07-24T05:00:12.714281+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T05:00:12.714281+08:00",
-        "bucket_end": "2026-07-24T05:17:21.285710+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T05:17:21.285710+08:00",
-        "bucket_end": "2026-07-24T05:34:29.857139+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-24T05:34:29.857139+08:00",
-        "bucket_end": "2026-07-24T05:51:38.428568+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T05:51:38.428568+08:00",
-        "bucket_end": "2026-07-24T06:08:46.999997+08:00",
-        "positive": 0,
-        "neutral": 1,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T06:08:46.999997+08:00",
-        "bucket_end": "2026-07-24T06:25:55.571426+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-24T06:25:55.571426+08:00",
-        "bucket_end": "2026-07-24T06:43:04.142855+08:00",
+        "bucket_start": "2026-07-24T06:16:29.716994+08:00",
+        "bucket_end": "2026-07-24T06:33:38.288423+08:00",
         "positive": 1,
         "neutral": 1,
         "negative": 1
       },
       {
-        "bucket_start": "2026-07-24T06:43:04.142855+08:00",
-        "bucket_end": "2026-07-24T07:00:12.714284+08:00",
+        "bucket_start": "2026-07-24T06:33:38.288423+08:00",
+        "bucket_end": "2026-07-24T06:50:46.859852+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T06:50:46.859852+08:00",
+        "bucket_end": "2026-07-24T07:07:55.431281+08:00",
         "positive": 3,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-24T07:00:12.714284+08:00",
-        "bucket_end": "2026-07-24T07:17:21.285713+08:00",
+        "bucket_start": "2026-07-24T07:07:55.431281+08:00",
+        "bucket_end": "2026-07-24T07:25:04.002710+08:00",
         "positive": 0,
         "neutral": 1,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-24T07:17:21.285713+08:00",
-        "bucket_end": "2026-07-24T07:34:29.857142+08:00",
+        "bucket_start": "2026-07-24T07:25:04.002710+08:00",
+        "bucket_end": "2026-07-24T07:42:12.574139+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-24T07:34:29.857142+08:00",
-        "bucket_end": "2026-07-24T07:51:38.428571+08:00",
+        "bucket_start": "2026-07-24T07:42:12.574139+08:00",
+        "bucket_end": "2026-07-24T07:59:21.145568+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-24T07:51:38.428571+08:00",
-        "bucket_end": "2026-07-24T08:08:47+08:00",
+        "bucket_start": "2026-07-24T07:59:21.145568+08:00",
+        "bucket_end": "2026-07-24T08:16:29.716997+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 1
+      },
+      {
+        "bucket_start": "2026-07-24T08:16:29.716997+08:00",
+        "bucket_end": "2026-07-24T08:33:38.288426+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T08:33:38.288426+08:00",
+        "bucket_end": "2026-07-24T08:50:46.859855+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T08:50:46.859855+08:00",
+        "bucket_end": "2026-07-24T09:07:55.431284+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T09:07:55.431284+08:00",
+        "bucket_end": "2026-07-24T09:25:04.002713+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T09:25:04.002713+08:00",
+        "bucket_end": "2026-07-24T09:42:12.574142+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T09:42:12.574142+08:00",
+        "bucket_end": "2026-07-24T09:59:21.145571+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T09:59:21.145571+08:00",
+        "bucket_end": "2026-07-24T10:16:29.717000+08:00",
+        "positive": 4,
+        "neutral": 1,
+        "negative": 1
       }
     ],
     "coverage_focus_ranking": [
       {
         "handle": "tphuang",
-        "top_topic_id": 0,
-        "top_topic_label": "intel / entering / digitimes / semianalysis",
+        "top_topic_id": 3,
+        "top_topic_label": "volume / photonics / listing / excellent",
         "focus_share": 1.0,
-        "post_count": 3
+        "post_count": 1
       },
       {
-        "handle": "SemiAnalysis_",
-        "top_topic_id": 0,
-        "top_topic_label": "intel / entering / digitimes / semianalysis",
-        "focus_share": 0.75,
-        "post_count": 4
+        "handle": "subhash-km-6b5443123",
+        "top_topic_id": 3,
+        "top_topic_label": "volume / photonics / listing / excellent",
+        "focus_share": 1.0,
+        "post_count": 1
       },
       {
         "handle": "jukan05",
-        "top_topic_id": 0,
-        "top_topic_label": "intel / entering / digitimes / semianalysis",
+        "top_topic_id": 3,
+        "top_topic_label": "volume / photonics / listing / excellent",
         "focus_share": 0.667,
         "post_count": 6
+      },
+      {
+        "handle": "josepozophotonics",
+        "top_topic_id": 3,
+        "top_topic_label": "volume / photonics / listing / excellent",
+        "focus_share": 0.583,
+        "post_count": 12
+      },
+      {
+        "handle": "SemiAnalysis_",
+        "top_topic_id": 1,
+        "top_topic_label": "nvidia / digitimes / adoption / architecture",
+        "focus_share": 0.5,
+        "post_count": 2
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "intel / entering / digitimes / semianalysis",
-        "total_engagement": 1163,
-        "post_count": 10
+        "topic_id": 3,
+        "label": "volume / photonics / listing / excellent",
+        "total_engagement": 989,
+        "post_count": 14
       },
       {
         "topic_id": 1,
-        "label": "nvidia / semianalysis / digitimes",
+        "label": "nvidia / digitimes / adoption / architecture",
         "total_engagement": 258,
         "post_count": 3
+      },
+      {
+        "topic_id": 0,
+        "label": "quantum / glasgow / quix / hardware",
+        "total_engagement": 202,
+        "post_count": 4
+      },
+      {
+        "topic_id": 2,
+        "label": "optical / photonic / optica / photonics",
+        "total_engagement": 42,
+        "post_count": 1
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 10,
-          "likes": 870,
-          "engagement": 1045,
-          "avg_engagement": 104.5
+          "post_count": 22,
+          "likes": 1312,
+          "engagement": 1491,
+          "avg_engagement": 67.8
         },
         "afternoon": {
           "post_count": 0,
@@ -284,10 +338,10 @@
           "avg_engagement": 0.0
         },
         "late_night": {
-          "post_count": 3,
-          "likes": 331,
-          "engagement": 376,
-          "avg_engagement": 125.3
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         }
       },
       "peak_slot": "morning"

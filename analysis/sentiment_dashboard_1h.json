@@ -1,61 +1,63 @@
 {
-  "generated_at": "2026-07-23T23:07:48.065000+08:00",
+  "generated_at": "2026-07-24T10:16:29.717000+08:00",
   "time_range": "1h",
   "window": {
-    "start_utc": "2026-07-23T22:07:48.065000+08:00",
-    "end_utc": "2026-07-23T23:07:48.065000+08:00",
-    "start_tw": "Jul 23, 22:07",
-    "end_tw": "Jul 23, 23:07"
+    "start_utc": "2026-07-24T09:16:29.717000+08:00",
+    "end_utc": "2026-07-24T10:16:29.717000+08:00",
+    "start_tw": "Jul 24, 09:16",
+    "end_tw": "Jul 24, 10:16"
   },
   "keyword": null,
   "widgets": {
     "sentiment_overview": {
-      "total_posts": 14,
+      "total_posts": 13,
       "sentiment_counts": {
-        "positive": 12,
+        "neutral": 1,
+        "positive": 10,
         "negative": 2
       },
       "sentiment_share": {
-        "positive": 0.857,
-        "negative": 0.143
+        "neutral": 0.077,
+        "positive": 0.769,
+        "negative": 0.154
       },
       "top_terms": [
         "photonics",
         "optica",
-        "optical",
         "infrastructure",
-        "manufacturing",
-        "volume",
+        "optical",
         "photonic",
+        "manufacturing",
         "quantum",
-        "scale",
-        "ceo"
+        "volume",
+        "ceo",
+        "roughly"
       ]
     },
     "temperature_bar": [
       {
-        "topic_id": 0,
-        "label": "photonics / manufacturing / asml / excellent",
+        "topic_id": 1,
+        "label": "photonics / manufacturing / cash / ai",
         "heat": 90.0,
-        "volume": 10,
-        "engagement": 339,
+        "volume": 8,
+        "engagement": 252,
         "entities": [
-          "European",
           "AI",
-          "Europe",
           "XIVER",
-          "TTM"
+          "European",
+          "TTM",
+          "PhotonPath"
         ]
       },
       {
-        "topic_id": 1,
-        "label": "quantum / glasgow / quix / hardware",
+        "topic_id": 0,
+        "label": "quantum / glasgow / quix / optics",
         "heat": 10.0,
-        "volume": 4,
-        "engagement": 202,
+        "volume": 5,
+        "engagement": 210,
         "entities": [
-          "Glasgow",
           "Quantum",
+          "Glasgow",
           "UK",
           "QuiX",
           "Renema"
@@ -64,15 +66,11 @@
     ],
     "named_entities": [
       {
-        "entity": "European",
-        "count": 9
-      },
-      {
         "entity": "AI",
-        "count": 8
+        "count": 7
       },
       {
-        "entity": "Europe",
+        "entity": "European",
         "count": 6
       },
       {
@@ -104,11 +102,11 @@
         "count": 4
       },
       {
-        "entity": "STG",
+        "entity": "Europe",
         "count": 4
       },
       {
-        "entity": "Brussels",
+        "entity": "STG",
         "count": 4
       },
       {
@@ -122,138 +120,149 @@
       {
         "entity": "Ed Zitron",
         "count": 3
+      },
+      {
+        "entity": "Lutz",
+        "count": 3
       }
     ],
     "sentiment_trend_curve": [
       {
-        "bucket_start": "2026-07-23T22:07:48.065002+08:00",
-        "bucket_end": "2026-07-23T22:12:05.207859+08:00",
+        "bucket_start": "2026-07-24T09:16:29.717002+08:00",
+        "bucket_end": "2026-07-24T09:20:46.859859+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T22:12:05.207859+08:00",
-        "bucket_end": "2026-07-23T22:16:22.350716+08:00",
+        "bucket_start": "2026-07-24T09:20:46.859859+08:00",
+        "bucket_end": "2026-07-24T09:25:04.002716+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T22:16:22.350716+08:00",
-        "bucket_end": "2026-07-23T22:20:39.493573+08:00",
+        "bucket_start": "2026-07-24T09:25:04.002716+08:00",
+        "bucket_end": "2026-07-24T09:29:21.145573+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T22:20:39.493573+08:00",
-        "bucket_end": "2026-07-23T22:24:56.636430+08:00",
-        "positive": 1,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T22:24:56.636430+08:00",
-        "bucket_end": "2026-07-23T22:29:13.779287+08:00",
+        "bucket_start": "2026-07-24T09:29:21.145573+08:00",
+        "bucket_end": "2026-07-24T09:33:38.288430+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T22:29:13.779287+08:00",
-        "bucket_end": "2026-07-23T22:33:30.922144+08:00",
+        "bucket_start": "2026-07-24T09:33:38.288430+08:00",
+        "bucket_end": "2026-07-24T09:37:55.431287+08:00",
         "positive": 0,
         "neutral": 0,
         "negative": 0
       },
       {
-        "bucket_start": "2026-07-23T22:33:30.922144+08:00",
-        "bucket_end": "2026-07-23T22:37:48.065001+08:00",
+        "bucket_start": "2026-07-24T09:37:55.431287+08:00",
+        "bucket_end": "2026-07-24T09:42:12.574144+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T09:42:12.574144+08:00",
+        "bucket_end": "2026-07-24T09:46:29.717001+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T09:46:29.717001+08:00",
+        "bucket_end": "2026-07-24T09:50:46.859858+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T09:50:46.859858+08:00",
+        "bucket_end": "2026-07-24T09:55:04.002715+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T09:55:04.002715+08:00",
+        "bucket_end": "2026-07-24T09:59:21.145572+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T09:59:21.145572+08:00",
+        "bucket_end": "2026-07-24T10:03:38.288429+08:00",
+        "positive": 0,
+        "neutral": 1,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T10:03:38.288429+08:00",
+        "bucket_end": "2026-07-24T10:07:55.431286+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T10:07:55.431286+08:00",
+        "bucket_end": "2026-07-24T10:12:12.574143+08:00",
+        "positive": 0,
+        "neutral": 0,
+        "negative": 0
+      },
+      {
+        "bucket_start": "2026-07-24T10:12:12.574143+08:00",
+        "bucket_end": "2026-07-24T10:16:29.717000+08:00",
         "positive": 4,
         "neutral": 0,
         "negative": 1
-      },
-      {
-        "bucket_start": "2026-07-23T22:37:48.065001+08:00",
-        "bucket_end": "2026-07-23T22:42:05.207858+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T22:42:05.207858+08:00",
-        "bucket_end": "2026-07-23T22:46:22.350715+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T22:46:22.350715+08:00",
-        "bucket_end": "2026-07-23T22:50:39.493572+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T22:50:39.493572+08:00",
-        "bucket_end": "2026-07-23T22:54:56.636429+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T22:54:56.636429+08:00",
-        "bucket_end": "2026-07-23T22:59:13.779286+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T22:59:13.779286+08:00",
-        "bucket_end": "2026-07-23T23:03:30.922143+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
-      },
-      {
-        "bucket_start": "2026-07-23T23:03:30.922143+08:00",
-        "bucket_end": "2026-07-23T23:07:48.065000+08:00",
-        "positive": 0,
-        "neutral": 0,
-        "negative": 0
       }
     ],
     "coverage_focus_ranking": [
       {
+        "handle": "subhash-km-6b5443123",
+        "top_topic_id": 1,
+        "top_topic_label": "photonics / manufacturing / cash / ai",
+        "focus_share": 1.0,
+        "post_count": 1
+      },
+      {
         "handle": "josepozophotonics",
-        "top_topic_id": 0,
-        "top_topic_label": "photonics / manufacturing / asml / excellent",
-        "focus_share": 0.714,
-        "post_count": 14
+        "top_topic_id": 1,
+        "top_topic_label": "photonics / manufacturing / cash / ai",
+        "focus_share": 0.583,
+        "post_count": 12
       }
     ],
     "top_engagement_ranking": [
       {
-        "topic_id": 0,
-        "label": "photonics / manufacturing / asml / excellent",
-        "total_engagement": 339,
-        "post_count": 10
+        "topic_id": 1,
+        "label": "photonics / manufacturing / cash / ai",
+        "total_engagement": 252,
+        "post_count": 8
       },
       {
-        "topic_id": 1,
-        "label": "quantum / glasgow / quix / hardware",
-        "total_engagement": 202,
-        "post_count": 4
+        "topic_id": 0,
+        "label": "quantum / glasgow / quix / optics",
+        "total_engagement": 210,
+        "post_count": 5
       }
     ],
     "posting_timeslot_analysis": {
       "slots": {
         "morning": {
-          "post_count": 0,
-          "likes": 0,
-          "engagement": 0,
-          "avg_engagement": 0.0
+          "post_count": 13,
+          "likes": 456,
+          "engagement": 462,
+          "avg_engagement": 35.5
         },
         "afternoon": {
           "post_count": 0,
@@ -262,10 +271,10 @@
           "avg_engagement": 0.0
         },
         "evening": {
-          "post_count": 14,
-          "likes": 535,
-          "engagement": 541,
-          "avg_engagement": 38.6
+          "post_count": 0,
+          "likes": 0,
+          "engagement": 0,
+          "avg_engagement": 0.0
         },
         "late_night": {
           "post_count": 0,
@@ -274,7 +283,7 @@
           "avg_engagement": 0.0
         }
       },
-      "peak_slot": "evening"
+      "peak_slot": "morning"
     },
     "competitor_mentions": null,
     "platform_share_bar": null,

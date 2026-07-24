@@ -2,60 +2,95 @@
   "clusters": [
     {
       "id": 0,
-      "label": "ai / nvidia / memory / tsmc",
-      "size": 22,
+      "label": "ai / memory / tsmc / chip",
+      "size": 29,
       "accounts": {
-        "SemiAnalysis_": 6,
-        "jukan05": 6,
-        "QQ_Timmy": 1,
+        "SemiAnalysis_": 5,
+        "jukan05": 4,
         "tphuang": 6,
-        "tengyanAI": 3
+        "subhash-km-6b5443123": 2,
+        "josepozophotonics": 12
       },
       "engagement_by_account": {
-        "SemiAnalysis_": 639,
-        "jukan05": 845,
-        "QQ_Timmy": 4,
+        "SemiAnalysis_": 509,
+        "jukan05": 717,
         "tphuang": 255,
-        "tengyanAI": 50
+        "subhash-km-6b5443123": 5,
+        "josepozophotonics": 460
+      }
+    },
+    {
+      "id": 3,
+      "label": "nvidia / ai / jensen / amd",
+      "size": 3,
+      "accounts": {
+        "SemiAnalysis_": 1,
+        "jukan05": 2
+      },
+      "engagement_by_account": {
+        "SemiAnalysis_": 130,
+        "jukan05": 128
       }
     }
   ],
   "gaps": [
     {
       "cluster_id": 0,
-      "label": "ai / nvidia / memory / tsmc",
+      "label": "ai / memory / tsmc / chip",
       "own_count": 0,
-      "competitor_count": 22,
-      "competitor_engagement": 1793,
+      "competitor_count": 29,
+      "competitor_engagement": 1946,
       "competitors_covering": [
         "SemiAnalysis_",
         "jukan05",
-        "QQ_Timmy",
         "tphuang",
-        "tengyanAI"
+        "subhash-km-6b5443123",
+        "josepozophotonics"
+      ]
+    },
+    {
+      "cluster_id": 3,
+      "label": "nvidia / ai / jensen / amd",
+      "own_count": 0,
+      "competitor_count": 3,
+      "competitor_engagement": 258,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "jukan05"
       ]
     }
   ],
   "suggested_entry_points": [
     {
       "cluster_id": 0,
-      "label": "ai / nvidia / memory / tsmc",
+      "label": "ai / memory / tsmc / chip",
       "own_count": 0,
-      "competitor_count": 22,
-      "competitor_engagement": 1793,
+      "competitor_count": 29,
+      "competitor_engagement": 1946,
       "competitors_covering": [
         "SemiAnalysis_",
         "jukan05",
-        "QQ_Timmy",
         "tphuang",
-        "tengyanAI"
+        "subhash-km-6b5443123",
+        "josepozophotonics"
+      ]
+    },
+    {
+      "cluster_id": 3,
+      "label": "nvidia / ai / jensen / amd",
+      "own_count": 0,
+      "competitor_count": 3,
+      "competitor_engagement": 258,
+      "competitors_covering": [
+        "SemiAnalysis_",
+        "jukan05"
       ]
     }
   ],
   "window": {
-    "start_utc": "2026-07-24T00:08:47+08:00",
-    "end_utc": "2026-07-24T08:08:47+08:00",
-    "start_tw": "Jul 24, 00:08",
-    "end_tw": "Jul 24, 08:08"
+    "start_utc": "2026-07-24T02:16:29.717000+08:00",
+    "end_utc": "2026-07-24T10:16:29.717000+08:00",
+    "start_tw": "Jul 24, 02:16",
+    "end_tw": "Jul 24, 10:16"
   }
 }
