@@ -39,6 +39,15 @@ from time_ranges import RANGE_ORDER, RANGE_LABELS, RANGE_HOURS, MIN_WINDOW_POSTS
 from cluster_topics import load_posts
 from video_ranking import RANGES as VIDEO_RANKING_RANGES
 
+# FR-03 (Sentiment/Competitor Watch) explicitly spec's "hourly / every 4
+# hours / daily / monthly / quarterly" - no 8h, no 1w. FR-01/02 (Topic
+# Gaps/Rising Trends) only need 4h/8h/1d/1w/1q per those FRs' own
+# scheduling section - no 1h, no 1mo. Derived by filtering RANGE_ORDER
+# rather than hardcoding the order, so these stay consistent if
+# RANGE_ORDER's own ordering ever changes.
+FR0102_RANGES = [r for r in RANGE_ORDER if r in {'4h', '8h', '1d', '1w', '1q'}]
+FR03_RANGES = [r for r in RANGE_ORDER if r in {'1h', '4h', '1d', '1mo', '1q'}]
+
 BASE = os.path.dirname(__file__)
 ANALYSIS_DIR = os.path.join(BASE, 'analysis')
 DOCS_DIR = os.path.join(BASE, 'docs')
@@ -870,10 +879,10 @@ def main():
     <select id="range-select">{range_options}</select>
     <span id="range-window" class="muted"></span>
   </div>
-  <section id="gaps" class="active" data-ranged="true"><h2>FR-01 &middot; Topic Gaps</h2><div id="gaps-content"></div></section>
-  <section id="rising" data-ranged="true"><h2>FR-02 &middot; Rising Topics &amp; KOLs</h2><div id="rising-content"></div></section>
-  <section id="sentiment" data-ranged="true"><h2>FR-03 &middot; Sentiment Dashboard</h2><div id="sentiment-content"></div></section>
-  <section id="competitor" data-ranged="true"><h2>Competitor Watch</h2>{panel(f'''
+  <section id="gaps" class="active" data-ranged="true" data-ranges="{','.join(FR0102_RANGES)}"><h2>FR-01 &middot; Topic Gaps</h2><div id="gaps-content"></div></section>
+  <section id="rising" data-ranged="true" data-ranges="{','.join(FR0102_RANGES)}"><h2>FR-02 &middot; Rising Topics &amp; KOLs</h2><div id="rising-content"></div></section>
+  <section id="sentiment" data-ranged="true" data-ranges="{','.join(FR03_RANGES)}"><h2>FR-03 &middot; Sentiment Dashboard</h2><div id="sentiment-content"></div></section>
+  <section id="competitor" data-ranged="true" data-ranges="{','.join(FR03_RANGES)}"><h2>Competitor Watch</h2>{panel(f'''
     <div class="keyword-search-bar">
       <input type="text" id="competitor-keyword-input" placeholder="Search a topic or keyword, e.g. nvidia, tariff, dram..." autocomplete="off">
     </div>
