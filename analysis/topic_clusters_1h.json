@@ -1,49 +1,60 @@
 {
   "clusters": [
     {
-      "id": 4,
-      "label": "ai / trendforce / 台積電 / openai",
-      "size": 15,
+      "id": 1,
+      "label": "ai / nvidia / memory / dram",
+      "size": 10,
       "accounts": {
-        "technewsinside": 5,
-        "ctee.fans": 2,
+        "tphuang": 2,
         "yutinghaosfinance": 8
       },
       "engagement_by_account": {
-        "technewsinside": 398,
-        "ctee.fans": 9,
-        "yutinghaosfinance": 797
+        "tphuang": 29,
+        "yutinghaosfinance": 597
       }
     },
     {
-      "id": 6,
-      "label": "nvidia / ai / jensen / amd",
+      "id": 10,
+      "label": "spacex / ipo / 馬斯克 / starlink",
       "size": 1,
       "accounts": {
-        "technewsinside": 1
+        "yutinghaosfinance": 1
       },
       "engagement_by_account": {
-        "technewsinside": 6
-      }
-    },
-    {
-      "id": 14,
-      "label": "半導體 / 英特爾 / ai / 台積電",
-      "size": 1,
-      "accounts": {
-        "technewsinside": 1
-      },
-      "engagement_by_account": {
-        "technewsinside": 18
+        "yutinghaosfinance": 293
       }
     }
   ],
-  "gaps": [],
-  "suggested_entry_points": [],
+  "gaps": [
+    {
+      "cluster_id": 1,
+      "label": "ai / nvidia / memory / dram",
+      "own_count": 0,
+      "competitor_count": 10,
+      "competitor_engagement": 626,
+      "competitors_covering": [
+        "tphuang",
+        "yutinghaosfinance"
+      ]
+    }
+  ],
+  "suggested_entry_points": [
+    {
+      "cluster_id": 1,
+      "label": "ai / nvidia / memory / dram",
+      "own_count": 0,
+      "competitor_count": 10,
+      "competitor_engagement": 626,
+      "competitors_covering": [
+        "tphuang",
+        "yutinghaosfinance"
+      ]
+    }
+  ],
   "window": {
-    "start_utc": "2026-07-24T07:40:00+00:00",
-    "end_utc": "2026-07-24T08:40:00+00:00",
-    "start_tw": "Jul 24, 15:40",
-    "end_tw": "Jul 24, 16:40"
+    "start_utc": "2026-07-24T21:25:18+08:00",
+    "end_utc": "2026-07-24T22:25:18+08:00",
+    "start_tw": "Jul 24, 21:25",
+    "end_tw": "Jul 24, 22:25"
   }
 }

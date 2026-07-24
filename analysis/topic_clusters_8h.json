@@ -1,59 +1,61 @@
 {
   "clusters": [
     {
-      "id": 4,
-      "label": "ai / trendforce / 台積電 / openai",
+      "id": 1,
+      "label": "ai / nvidia / memory / dram",
       "size": 78,
       "accounts": {
-        "TrendForce": 1,
-        "SemiAnalysis_": 1,
-        "jukan05": 5,
-        "QQ_Timmy": 1,
-        "technewsinside": 32,
-        "ctee.fans": 17,
-        "yutinghaosfinance": 8,
-        "subhash-km-6b5443123": 1,
-        "josepozophotonics": 12
+        "TrendForce": 6,
+        "jukan05": 2,
+        "QQ_Timmy": 2,
+        "tphuang": 3,
+        "technewsinside": 36,
+        "ctee.fans": 12,
+        "yutinghaosfinance": 17
       },
       "engagement_by_account": {
-        "TrendForce": 18,
-        "SemiAnalysis_": 688,
-        "jukan05": 1749,
-        "QQ_Timmy": 26,
-        "technewsinside": 1406,
-        "ctee.fans": 289,
-        "yutinghaosfinance": 797,
-        "subhash-km-6b5443123": 2,
-        "josepozophotonics": 460
+        "TrendForce": 8,
+        "jukan05": 651,
+        "QQ_Timmy": 36,
+        "tphuang": 63,
+        "technewsinside": 897,
+        "ctee.fans": 126,
+        "yutinghaosfinance": 1945
+      }
+    },
+    {
+      "id": 5,
+      "label": "amd / nvidia / mi / ai",
+      "size": 5,
+      "accounts": {
+        "TrendForce": 2,
+        "jukan05": 1,
+        "QQ_Timmy": 1,
+        "technewsinside": 1
+      },
+      "engagement_by_account": {
+        "TrendForce": 19,
+        "jukan05": 386,
+        "QQ_Timmy": 23,
+        "technewsinside": 1
+      }
+    },
+    {
+      "id": 4,
+      "label": "intel / tsmc / foundry / 英特爾",
+      "size": 3,
+      "accounts": {
+        "TrendForce": 2,
+        "QQ_Timmy": 1
+      },
+      "engagement_by_account": {
+        "TrendForce": 9,
+        "QQ_Timmy": 18
       }
     },
     {
       "id": 2,
-      "label": "ai / physical / 蘋果 / 科技早報",
-      "size": 2,
-      "accounts": {
-        "technewsinside": 1,
-        "ctee.fans": 1
-      },
-      "engagement_by_account": {
-        "technewsinside": 6,
-        "ctee.fans": 27
-      }
-    },
-    {
-      "id": 3,
-      "label": "memory / dram / micron / samsung",
-      "size": 2,
-      "accounts": {
-        "jukan05": 2
-      },
-      "engagement_by_account": {
-        "jukan05": 642
-      }
-    },
-    {
-      "id": 10,
-      "label": "iphone / 蘋果 / apple / ios",
+      "label": "ai / physical / token / 蘋果",
       "size": 2,
       "accounts": {
         "technewsinside": 2
@@ -63,56 +65,78 @@
       }
     },
     {
-      "id": 6,
-      "label": "nvidia / ai / jensen / amd",
+      "id": 3,
+      "label": "hbm / dram / memory / samsung",
       "size": 1,
       "accounts": {
-        "technewsinside": 1
+        "jukan05": 1
       },
       "engagement_by_account": {
-        "technewsinside": 6
+        "jukan05": 297
       }
     },
     {
-      "id": 8,
-      "label": "etf / 台股 / 台股etf / 韓股",
+      "id": 9,
+      "label": "google / tpu / ai / gemini",
       "size": 1,
       "accounts": {
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "technewsinside": 15
+        "technewsinside": 4
       }
     },
     {
-      "id": 13,
-      "label": "台股 / 台股逐洞賽 / 台積電 / 台股雷達",
+      "id": 10,
+      "label": "spacex / ipo / 馬斯克 / starlink",
       "size": 1,
       "accounts": {
-        "technewsinside": 1
+        "yutinghaosfinance": 1
       },
       "engagement_by_account": {
-        "technewsinside": 3
+        "yutinghaosfinance": 293
       }
     },
     {
-      "id": 14,
-      "label": "半導體 / 英特爾 / ai / 台積電",
+      "id": 12,
+      "label": "川普 / 荷莫茲海峽 / 加密貨幣 / 關稅",
       "size": 1,
       "accounts": {
         "technewsinside": 1
       },
       "engagement_by_account": {
-        "technewsinside": 18
+        "technewsinside": 17
+      }
+    },
+    {
+      "id": 15,
+      "label": "trendforce / ai / dram / nand",
+      "size": 1,
+      "accounts": {
+        "TrendForce": 1
+      },
+      "engagement_by_account": {
+        "TrendForce": 15
+      }
+    },
+    {
+      "id": 17,
+      "label": "openai / ai / chatgpt / gpt",
+      "size": 1,
+      "accounts": {
+        "technewsinside": 1
+      },
+      "engagement_by_account": {
+        "technewsinside": 5
       }
     }
   ],
   "gaps": [],
   "suggested_entry_points": [],
   "window": {
-    "start_utc": "2026-07-24T00:40:00+00:00",
-    "end_utc": "2026-07-24T08:40:00+00:00",
-    "start_tw": "Jul 24, 08:40",
-    "end_tw": "Jul 24, 16:40"
+    "start_utc": "2026-07-24T14:25:18+08:00",
+    "end_utc": "2026-07-24T22:25:18+08:00",
+    "start_tw": "Jul 24, 14:25",
+    "end_tw": "Jul 24, 22:25"
   }
 }
